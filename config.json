@@ -1,0 +1,79 @@
+{
+  "pipeline": {
+    "input_dir": "dataset",
+    "output_dir": "result",
+    "temp_dir": "temp",
+    "max_workers": 4,
+    "version_prefix": "v"
+  },
+  "embedding": {
+    "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+    "clustering_threshold": 0.55
+  },
+  "steps": {
+    "step_0_generate_qa": {
+      "function": "generate_qa_v0",
+      "api_required": true,
+      "description": "步骤 0: 生成原始问答对",
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.vveai.com/v1",
+        "api_key": ""
+      }
+    },
+    "step_1_pollution_check": {
+      "function": "pollution_check_main",
+      "api_required": true,
+      "description": "步骤 1: 选项打乱和污染检查",
+      "enable_contamination_check": true,
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.vveai.com/v1",
+        "api_key": ""
+      }
+    },
+    "step_2_full_context": {
+      "function": "full_context_main",
+      "api_required": true,
+      "description": "步骤 2: 题目合理性验证",
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.vveai.com/v1",
+        "api_key": ""
+      }
+    },
+    "step_3_label": {
+      "function": "label_main",
+      "api_required": true,
+      "description": "步骤 3: 问题标注",
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.vveai.com/v1",
+        "api_key": ""
+      }
+    },
+    "step_4_new_qa": {
+      "function": "new_qa_main",
+      "api_required": true,
+      "description": "步骤 4: 问答精炼重构",
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.vveai.com/v1",
+        "api_key": ""
+      }
+    }
+  },
+  "tools": {
+    "option_perturbation": {
+      "function": "option_perturbation",
+      "api_required": true,
+      "description": "选项扰动生成和评分",
+      "llm": {
+        "gen_model": "Qwen/Qwen3-14B",
+        "score_model": "Qwen/Qwen2.5-7B-Instruct",
+        "base_url": "https://api.siliconflow.cn/v1",
+        "api_key": ""
+      }
+    }
+  }
+}

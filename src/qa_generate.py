@@ -442,6 +442,8 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
 
     all_data = []
     total_qa_count = 0
+    skipped_count = 0
+    generated_count = 0
 
     print(f"--- 步骤 0 开始处理：共 {len(json_files)} 个文件 ---")
     
@@ -454,10 +456,14 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
       with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+      # 提取 conversation 和 已有的 qa
+      existing_qa = []
       if isinstance(data, list):
         conversation = data[0].get("conversation", {}) if data else {}
+        existing_qa = data[0].get("qa", []) if data else []
       elif isinstance(data, dict):
         conversation = data.get("conversation", {})
+        existing_qa = data.get("qa", [])
       else:
         print(f"[SKIP] {file_path} 数据类型不支持: {type(data)}")
         continue
@@ -467,41 +473,52 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
         continue
 
       speakers = conversation.get("speakers", [])
-      print(f"\n处理文件 {file_path}, 说话者: {speakers}")
+      
+      # 检查是否已有问答对
+      if existing_qa and isinstance(existing_qa, list) and len(existing_qa) > 0:
+        # 已有问答对，直接使用
+        print(f"\n✓ {filename} 已存在 {len(existing_qa)} 个问答对，跳过生成")
+        current_qa = existing_qa
+        skipped_count += 1
+      else:
+        # 没有问答对，调用 LLM 生成
+        print(f"\n⚙ {filename} 未找到问答对，开始生成 (说话者: {speakers})")
+        
+        answer_prompt = QA_GENERATE_PROMPT.format(
+          conversation=conversation,
+          user_list=speakers,
+          question_num=1,
+          total_question_num=len(speakers) * 4
+        )
 
-      answer_prompt = QA_GENERATE_PROMPT.format(
-        conversation=conversation,
-        user_list=speakers,
-        question_num=1,
-        total_question_num=len(speakers) * 4
-      )
+        all_question = call_openai_json(
+          answer_prompt=answer_prompt,
+          model=llm_config.model,
+          api_key=llm_config.api_key,
+          base_url=llm_config.base_url
+        )
 
-      all_question = call_openai_json(
-        answer_prompt=answer_prompt,
-        model=llm_config.model,
-        api_key=llm_config.api_key,
-        base_url=llm_config.base_url
-      )
+        answer_prompt_2 = QA_GENERATE_PROMPT_2.format(
+          conversation=conversation,
+        )
 
-      answer_prompt_2 = QA_GENERATE_PROMPT_2.format(
-        conversation=conversation,
-      )
+        all_question_2 = call_openai_json(
+          answer_prompt=answer_prompt_2,
+          model=llm_config.model,
+          api_key=llm_config.api_key,
+          base_url=llm_config.base_url
+        )
 
-      all_question_2 = call_openai_json(
-        answer_prompt=answer_prompt_2,
-        model=llm_config.model,
-        api_key=llm_config.api_key,
-        base_url=llm_config.base_url
-      )
+        current_qa = []
+        if "qa" in all_question and isinstance(all_question["qa"], list):
+          current_qa.extend(all_question["qa"])
+          print(f"  生成类别1-4问题: {len(all_question['qa'])} 个")
 
-      current_qa = []
-      if "qa" in all_question and isinstance(all_question["qa"], list):
-        current_qa.extend(all_question["qa"])
-        print(f"  生成类别1-4问题: {len(all_question['qa'])} 个")
-
-      if "qa" in all_question_2 and isinstance(all_question_2["qa"], list):
-        current_qa.extend(all_question_2["qa"])
-        print(f"  生成类别5-6问题: {len(all_question_2['qa'])} 个")
+        if "qa" in all_question_2 and isinstance(all_question_2["qa"], list):
+          current_qa.extend(all_question_2["qa"])
+          print(f"  生成类别5-6问题: {len(all_question_2['qa'])} 个")
+        
+        generated_count += 1
 
       file_data = {
         "filename": filename,
@@ -514,6 +531,12 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
     with open(v0_path, "w", encoding="utf-8") as f:
       json.dump(all_data, f, ensure_ascii=False, indent=2)
 
-    # Statistics reporting removed - only report pending questions at start
+    print(f"\n--- 步骤 0 完成统计 ---")
+    print(f"  总文件数: {len(json_files)}")
+    print(f"  跳过生成 (已有QA): {skipped_count}")
+    print(f"  LLM生成 (新QA): {generated_count}")
+    print(f"  总问答对数: {total_qa_count}")
+    print(f"  输出文件: {v0_path}")
+    
     return v0_path
 

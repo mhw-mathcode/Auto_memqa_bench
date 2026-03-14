@@ -1,0 +1,2857 @@
+[
+  {
+    "qa": [
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "Which statement best describes Harry's underlying approach to the various religious beliefs held by others?",
+        "option": [
+          "A. He strictly enforces his own beliefs on everyone around him.",
+          "B. He believes all religions are inherently harmful and destructive to family unity.",
+          "C. He accepts and tolerates a wide variety of differing faiths within his own household without conflict.",
+          "D. He only respects beliefs that are rooted in ancient history and texts.",
+          "E. He ignores the topic of religion entirely because it causes too many arguments."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Edith, I was raised on the Torah... My wife, on the Quran. My oldest son is an Atheist. My youngest is a Scientologist. My daughter is studying Hinduism. I imagine that there is room there for a holy war in my living room. But we practice live and let live.",
+            "dia_id": "D14:149"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry lists multiple contrasting religions practiced by his immediate family members.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "His concluding statement 'we practice live and let live' demonstrates a stable, tolerant persona regarding diverse beliefs.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "How does Harry attempt to change the mood of the room early in the afternoon?",
+        "option": [
+          "A. By demanding everyone sit down and listen to him.",
+          "B. By suggesting they play a game and acting out a primal scenario.",
+          "C. By aggressively questioning Dan about his scientific theories.",
+          "D. By immediately asking John to reveal his true identity.",
+          "E. By leaving the room to check on Will outside."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Well, we still have an afternoon to kill, right?",
+            "dia_id": "D14:19"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Charades?",
+            "dia_id": "D14:20"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "(grunts like ape)",
+            "dia_id": "D14:24"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry recognizes they have an afternoon to kill and suggests a game.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He immediately engages in play-acting an ape, indicating a playful short-term state.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "What is the chronological sequence of legal or moral codes referenced by Harry and Dan?",
+        "option": [
+          "A. Hammurabi's code followed by the Ten Commandments.",
+          "B. The Ten Commandments followed by Hammurabi's code.",
+          "C. The Torah followed by the New Testament.",
+          "D. The Ten Commandments, then Hammurabi's code, then the Torah.",
+          "E. Hammurabi's code followed by the Quran."
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Don't. The commandments are just modern updates of more ancient laws. Hammurabi's code.",
+            "dia_id": "D14:147"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "That's right, and they weren't the first, right?",
+            "dia_id": "D14:148"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan explicitly states the commandments are updates of the more ancient Hammurabi's code.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry agrees with this sequence, confirming the temporal order of these codes.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "What specific action does Harry take when Edith expresses her desire to leave?",
+        "option": [
+          "A. He immediately grabs his coat and offers to drive her home.",
+          "B. He ignores her entirely and continues questioning John.",
+          "C. He refuses her request and tells her to sit down because he wants to hear the rest of the story.",
+          "D. He asks Dan to take her home instead so he can stay.",
+          "E. He tells her she is overreacting and shouldn't be so sensitive."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "I don't think I wanna hear this. Harry, will you take me home?",
+            "dia_id": "D14:135"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "No! Not right now. I do want to hear this.",
+            "dia_id": "D14:136"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Why don't you sit down?",
+            "dia_id": "D14:150"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry explicitly denies Edith's request to be taken home.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He follows up his refusal by specifically instructing her to sit down.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "What specific familial relationships does Harry outline when discussing religion?",
+        "option": [
+          "A. He mentions his mother, father, brother, and sister.",
+          "B. He mentions his wife, his oldest son, his youngest son, and his daughter.",
+          "C. He mentions his wife, his two brothers, and his uncle.",
+          "D. He mentions his ex-wife, his current wife, and his adopted son.",
+          "E. He mentions his grandfather, his mother, and his two daughters."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Edith, I was raised on the Torah... My wife, on the Quran. My oldest son is an Atheist. My youngest is a Scientologist. My daughter is studying Hinduism.",
+            "dia_id": "D14:149"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry lists the specific members of his family.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The list explicitly includes his wife, oldest son, youngest son, and daughter.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 6,
+        "question": "How many words does Harry claim he can use to summarize the Ten Commandments?",
+        "option": [
+          "A. Five",
+          "B. Ten",
+          "C. Twelve",
+          "D. Fifteen",
+          "E. Twenty"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "I can give you the Ten Commandments in ten words: Don't. Don't, don't, don't. Don't, don't, don't, don't, don't, don't.",
+            "dia_id": "D14:145"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry explicitly states the exact number of words he needs for his summary.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "Which statement best aligns with John's overarching view on the origin of the universe?",
+        "option": [
+          "A. He believes in a literal interpretation of the Biblical creation story.",
+          "B. He actively worships a pantheon of immortal gods from New Guinea.",
+          "C. He suspects the universe may not have been created, but simply accumulated through interacting fields.",
+          "D. He is certain that a prime mover exists and actively controls all field energies.",
+          "E. He believes that humanity was seeded on Earth by extraterrestrial beings."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "It's here, I'm not so sure it was created.",
+            "dia_id": "D14:94"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Maybe it's just accumulated, fields affecting fields.",
+            "dia_id": "D14:96"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John expresses doubt that the universe was actively created.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He proposes an alternative continuous process of accumulation via fields.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "How does John react to Will's emotional apology upon returning indoors?",
+        "option": [
+          "A. He harshly criticizes Will for his earlier actions.",
+          "B. He ignores Will and continues talking to Dan.",
+          "C. He offers a brief, universal statement indicating that everyone requires assistance.",
+          "D. He angrily demands that Will leave the premises immediately.",
+          "E. He bursts into tears and apologizes for deceiving everyone."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "I still don't believe you, of course. You need help.",
+            "dia_id": "D14:212"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Everybody needs help.",
+            "dia_id": "D14:213"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will tells John that he needs help.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John's immediate response is a calm, generalized acceptance that everyone needs help.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "According to John's narrative, what is the sequence of regions he inhabited after meeting the Buddha?",
+        "option": [
+          "A. India, then Tibet, then Rome.",
+          "B. The Mediterranean, then the near East, then central Europe.",
+          "C. Central Europe, then the Mediterranean, then New Guinea.",
+          "D. The near East, then India, then the Roman Empire.",
+          "E. Tibet, then the near East, then Brussels."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Guy met the Buddha, likes what he heard, thought about it for a while- Say 500 years, while he returned to the Mediterranean, became an Etruscan. Seeped into the Roman Empire. He didn't like what they became- A giant killing machine. He went to the near East thinking, \"Why not pass the Buddha's teachings on in a modern form?\"",
+            "dia_id": "D14:157"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Thus, I was resurrected, and I ascended to central Europe to get away as far as possible.",
+            "dia_id": "D14:166"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "After meeting the Buddha, John returned to the Mediterranean.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He then traveled to the near East to pass on the teachings.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Following the crucifixion event, he ascended to central Europe.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "What specific physiological techniques did John claim to employ during the crucifixion?",
+        "option": [
+          "A. He used hallucinogenic herbs to induce a state of complete unconsciousness.",
+          "B. He blocked the pain and slowed his bodily processes until they were undetectable.",
+          "C. He convinced his captors to tie him instead of using nails, avoiding physical damage.",
+          "D. He relied on a mechanism allowing survival for thousands of years to rapidly heal his wounds.",
+          "E. He hypnotized the guards into believing he was dead while he escaped."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "He blocked the pain, as he had learned to do in Tibet and India. He also learned to slow his body processes down to the point where they were undetectable. They thought he was dead.",
+            "dia_id": "D14:165"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John details the exact actions he took to survive.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "These actions specifically included blocking pain and slowing body processes to an undetectable level.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "How does John describe the nature of his brief relationship with the man he met in the 1600s?",
+        "option": [
+          "A. They formed a lifelong partnership and traveled the world together.",
+          "B. They became bitter enemies after discovering their shared condition.",
+          "C. They conversed for a couple of days but parted with mutual uncertainty about each other's authenticity.",
+          "D. They immediately recognized each other as brothers and shared all their secrets.",
+          "E. They agreed to start a new religion together based on their longevity."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Anyway, he said yes, but from another time, another place. We talked for two days. It was all pretty convincing, but we couldn't be sure.",
+            "dia_id": "D14:73"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "We each confirmed what the other said, but how do we know if the confirmation was genuine or an echo? ... He said he was inclined with the same reservation.",
+            "dia_id": "D14:74"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "We parted, agreeing to keep in touch- But of course, we didn't-",
+            "dia_id": "D14:76"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John and the man spoke for two days but maintained reservations about whether the other was playing a game.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "They parted ways and failed to keep in touch, showing a brief and ultimately disconnected relationship.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 6,
+        "question": "According to John, exactly how many years passed between his initial meeting with another supposed immortal and the time he thought he saw him again?",
+        "option": [
+          "A. 100",
+          "B. 200",
+          "C. 500",
+          "D. 1600",
+          "E. 2000"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "We parted, agreeing to keep in touch- But of course, we didn't- And 200 years later I thought I saw him in a train station in Brussels.",
+            "dia_id": "D14:76"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explicitly states the numerical gap in years before seeing the man again.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "Which statement best captures Dan's intellectual approach to John's extraordinary claims?",
+        "option": [
+          "A. He completely rejects them as blasphemous and refuses to engage.",
+          "B. He explores the logical implications of the claims, such as biological mechanisms and societal survival.",
+          "C. He violently demands physical proof of John's age.",
+          "D. He immediately assumes John is suffering from a severe mental breakdown.",
+          "E. He tries to use the claims to prove the literal truth of the King James Bible."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Think about it- A mechanism allowing survival for thousands of years?",
+            "dia_id": "D14:44"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Well then we'd have to go to Mars as a colony as we expanded, as we'd have to.",
+            "dia_id": "D14:46"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "That, uh, raises an interesting question, John. Could there be others like you who escaped the aging process as you have?",
+            "dia_id": "D14:58"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan engages with John's premise by posing theoretical questions about biology and expansion.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He analytically deduces the possibility of other immortals based on John's existence.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "How does Dan react when Edith and Art aggressively question John's motives?",
+        "option": [
+          "A. He joins them in demanding that John stop telling lies.",
+          "B. He defends John by firmly reminding the group of their established relationship with him.",
+          "C. He quietly leaves the room to avoid the escalating conflict.",
+          "D. He begins to cry and begs everyone to stop fighting.",
+          "E. He threatens to call the authorities if John doesn't tell the truth."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "What the hell were you thinking, Art?",
+            "dia_id": "D14:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Oh, come on. Something had to be done.",
+            "dia_id": "D14:9"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "I have to say I agree.",
+            "dia_id": "D14:10"
+          },
+          {
+            "id": "E4",
+            "speaker": "Dan",
+            "utterance": "And he's our friend. Whatever else on earth is going on, he's our friend!",
+            "dia_id": "D14:11"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art and Edith justify their harsh actions toward John.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan immediately pushes back against their hostility by asserting John's status as a friend.",
+            "based_on": [
+              "E4"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 3,
+        "question": "According to Dan, what is the chronological lineage of mythological figures that precede the Christ figure?",
+        "option": [
+          "A. Jesus, then Hercules, then Krishna.",
+          "B. Hercules, then Krishna, then Jesus.",
+          "C. Krishna, then Hercules, leading to the Christ figure.",
+          "D. The Buddha, then Misis, then Hercules.",
+          "E. Krishna, then the Buddha, then Jesus."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "The Christ figure goes all the way back to Krishna- Hercules, of course.",
+            "dia_id": "D14:174"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan traces the Christ figure backward in time.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He starts at Krishna as the furthest back, then mentions Hercules as another predecessor.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What synthesis does Dan make regarding the philosophical teachings of Jesus?",
+        "option": [
+          "A. He states they are purely original thoughts that had never been spoken before.",
+          "B. He equates them to the strict laws found in Hammurabi's code.",
+          "C. He summarizes them as a blend of Buddhist philosophy delivered with a Hebrew accent.",
+          "D. He dismisses them entirely as Vatican flapdoodle.",
+          "E. He claims they are identical to the teachings of the Greek gods."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Taken alone, the philosophical teachings of Jesus are Buddhism with a Hebrew accent- Kindness, tolerance, brotherhood, love... A ruthless realism acknowledging that life is as it is here on earth, here and now.",
+            "dia_id": "D14:190"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan isolates the philosophical teachings from the mythology.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He explicitly defines these teachings as Buddhism with a Hebrew accent.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "How does Dan explicitly categorize his relationship with John when confronting Art and Edith?",
+        "option": [
+          "A. He refers to John as his patient.",
+          "B. He refers to John as a distant acquaintance.",
+          "C. He refers to John as his friend.",
+          "D. He refers to John as his scientific subject.",
+          "E. He refers to John as his former professor."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "And he's our friend. Whatever else on earth is going on, he's our friend!",
+            "dia_id": "D14:11"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan addresses the group regarding John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He uses the explicit relational term 'friend' twice to define their connection.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 6,
+        "question": "How many versions of new testaments does Dan mention numerically to argue his point about revisionism?",
+        "option": [
+          "A. One",
+          "B. Five",
+          "C. A dozen",
+          "D. Twenty",
+          "E. A hundred"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "There are a dozen new new testaments, from Hebrew to Greek to Latin to Tyndale, all the way to King James, all revisionist, and all called revealed truth.",
+            "dia_id": "D14:143"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan counters Edith's claim about a new New Testament.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He quantifies the existing versions by stating there are 'a dozen'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 1,
+        "question": "Which statement best defines Edith's core perspective on biblical texts?",
+        "option": [
+          "A. She views them as interesting historical documents filled with myths.",
+          "B. She believes they are entirely metaphorical and shouldn't be taken literally.",
+          "C. She firmly believes they represent the literal word of God, progressively clarified over time.",
+          "D. She thinks only the Old Testament is valid, while the New Testament is a fabrication.",
+          "E. She considers them to be heavily flawed texts that have been corrupted by early Christian leaders."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Do you believe literally everything in the bible, Edith?",
+            "dia_id": "D14:184"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Yes!",
+            "dia_id": "D14:185"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "...N- Uh- Before you say it, I know it's undergone a lot of changes, but God has spoken through man to make his word clearer.",
+            "dia_id": "D14:186"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith explicitly answers 'Yes' to believing literally everything in the Bible.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She justifies changes in the text as God working through man to clarify his word.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "What immediate emotional reaction does Edith have when John begins to explain the true origins of the New Testament?",
+        "option": [
+          "A. She becomes intensely curious and leans in to hear more.",
+          "B. She laughs and assumes it's just another one of John's jokes.",
+          "C. She feels deeply uncomfortable and immediately asks to be taken home.",
+          "D. She becomes physically violent and tries to strike John.",
+          "E. She falls entirely silent and refuses to speak for the rest of the conversation."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "The New Testament in a hundred words or less. You ready?",
+            "dia_id": "D14:133",
+            "dia_id2": "D14:134"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "I don't think I wanna hear this. Harry, will you take me home?",
+            "dia_id": "D14:135"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John announces he is going to summarize the New Testament.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith's immediate response is avoidance, asking to leave the situation entirely.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "How does Edith attempt to trap John regarding his timeline during the discussion about his past?",
+        "option": [
+          "A. She asks him to name the exact date the Buddha died.",
+          "B. She suddenly interrupts to ask for his exact location in a specific year from the 13th century.",
+          "C. She demands to know how many days he spent traveling to Rome.",
+          "D. She questions him about the specific year the Hammurabi code was written.",
+          "E. She asks him how old he was when the King James Bible was published."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "There was a man in the 1600s.",
+            "dia_id": "D14:64"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "(interrupting)",
+            "dia_id": "D14:65"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Where were you in 1292 A.D.?",
+            "dia_id": "D14:66"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John begins a story set in the 1600s.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith interrupts to demand his location at a completely different, highly specific historical date (1292 AD).",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "What is Edith's specific response after Harry tells her to sit down during the religious debate?",
+        "option": [
+          "A. She storms out of the room, slamming the door behind her.",
+          "B. She hesitantly complies and takes a seat.",
+          "C. She slaps Harry across the face and demands he take her home.",
+          "D. She begins to cry uncontrollably and drops to the floor.",
+          "E. She completely ignores Harry and continues to stand."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Why don't you sit down?",
+            "dia_id": "D14:150"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Edith hesitantly sits",
+            "dia_id": "D14:151"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry instructs Edith to sit.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The stage direction notes that Edith complies, but does so hesitantly.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "How does Edith describe her relationship with John when expressing concern over his mental state?",
+        "option": [
+          "A. She states that he has always been a bitter rival of hers.",
+          "B. She refers to him as merely a colleague she barely knows.",
+          "C. She explicitly calls him one of her favorite people.",
+          "D. She describes him as a dangerous man who cannot be trusted.",
+          "E. She claims he was the best student she ever taught."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "One of my favorite people has disappeared. Can you get Alzheimer's at 35? Maybe I'm trying to wake him up. Maybe I'm too sad to cry.",
+            "dia_id": "D14:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith is explaining her harshness towards John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She reveals her underlying affection by identifying him as 'One of my favorite people'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 6,
+        "question": "What is the exact numerical year that Edith suddenly asks John about to test his memory?",
+        "option": [
+          "A. 1066",
+          "B. 1292",
+          "C. 1492",
+          "D. 1600",
+          "E. 1812"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Where were you in 1292 A.D.?",
+            "dia_id": "D14:66"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith interrupts John to ask a specific question with a date.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The exact date she uses is 1292.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 1,
+        "question": "Which option best reflects Art's consistent behavioral pattern when confronted with John's story?",
+        "option": [
+          "A. He quietly accepts every detail without question to avoid conflict.",
+          "B. He actively searches for logical inconsistencies and demands tangible proof.",
+          "C. He immediately tries to find religious meaning in John's words.",
+          "D. He continuously tries to change the subject to more mundane topics.",
+          "E. He frequently leaves the room because he finds the conversation boring."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "Ah. See, you said this was a first.",
+            "dia_id": "D14:69"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "How do you know that?",
+            "dia_id": "D14:131"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "Let me see your wrists.",
+            "dia_id": "D14:168"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art points out a contradiction in John's story about meeting someone else.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He challenges John's source of knowledge regarding the apostles.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "He demands physical evidence (wrists) to verify the crucifixion claim, showing a stable skeptical persona.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 2,
+        "question": "How does Art's immediate demeanor change when John implies he was a figure in the Bible?",
+        "option": [
+          "A. He becomes incredibly calm and speaks in a hushed, reverent tone.",
+          "B. He bursts into uncontrollable laughter, thinking it's a brilliant joke.",
+          "C. He becomes highly agitated and loudly questions how John could be part of what he considers myth.",
+          "D. He immediately drops to his knees and begins to pray.",
+          "E. He turns to Edith and gently comforts her."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "You may think you know him, but it's mostly myth.",
+            "dia_id": "D14:122"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "(loudly) The entire bible is...mostly m-myth and allegory with maybe some...basis in historical events. Y-You...were part of that history?!",
+            "dia_id": "D14:123",
+            "dia_id2": "D14:124",
+            "dia_id3": "D14:125"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John suggests the biblical figure is mostly myth.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art reacts loudly and with a stutter, aggressively questioning how John could be part of that history.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 3,
+        "question": "What discrepancy does Art catch in John's sequential telling of his history regarding other immortals?",
+        "option": [
+          "A. John claimed he met someone in the 1600s, but previously stated he had never revealed his secret before today.",
+          "B. John claimed he lived in Tibet before moving to India, which contradicts a previous timeline.",
+          "C. John claimed he was crucified before meeting the Buddha, which makes no chronological sense.",
+          "D. John claimed he met a caveman thousands of years ago, but also said he lived alone.",
+          "E. John claimed he was in Brussels 500 years ago, but trains weren't invented yet."
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Anyway, it was the 1600s, and I met a man, and I had a hunch that he was...like me, so I told him.",
+            "dia_id": "D14:68"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Ah. See, you said this was a first.",
+            "dia_id": "D14:69"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "I forgot.",
+            "dia_id": "D14:70"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John mentions telling a man in the 1600s about his condition.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art immediately notes that this contradicts a previous statement where John apparently said telling the group was a 'first'.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 4,
+        "question": "What precise action does Art demand from John to verify his claims about the crucifixion?",
+        "option": [
+          "A. He demands John recite the Lord's Prayer in Aramaic.",
+          "B. He asks John to show him the scars on his wrists.",
+          "C. He asks John to describe the exact dimensions of the cross.",
+          "D. He tells John to reproduce the technique for slowing his heartbeat.",
+          "E. He demands John show him the spear wound on his side."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "Let me see your wrists.",
+            "dia_id": "D14:168"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "I don't scar. Besides, they tied me...but nails and blood make better religious Art.",
+            "dia_id": "D14:169"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art issues a direct command for physical proof related to the crucifixion.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The specific proof he demands is to see John's wrists.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 5,
+        "question": "How does Art interact with Edith when she expresses shock over John's narrative?",
+        "option": [
+          "A. He gently holds her hand and offers to walk her to her car.",
+          "B. He aggressively tells her to sit down, mocking her for acting like she believes John.",
+          "C. He ignores her distress entirely and asks Harry a question.",
+          "D. He agrees with her shock and demands that John stop speaking.",
+          "E. He asks Dan to intervene because Edith is becoming hysterical."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "I don't think I wanna hear this. Harry, will you take me home?",
+            "dia_id": "D14:135"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Sit down, Edith. You act like you believe him.",
+            "dia_id": "D14:137"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith expresses a desire to leave the room.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art directly commands her to sit down, adding a dismissive comment about her apparent belief.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 6,
+        "question": "How many corroborating details does Art sarcastically claim John could provide to back up his story?",
+        "option": [
+          "A. Ten",
+          "B. A hundred",
+          "C. A thousand",
+          "D. Ten thousand",
+          "E. A million"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "No doubt you could give us a thousand details, John, corroborating your story, from the Magdalene to the Buddha to now.",
+            "dia_id": "D14:53"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art is expressing skepticism about John's ability to fabricate the story.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He uses a specific number, 'a thousand', to quantify the details John could provide.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 1,
+        "question": "How does Will typically handle his moments of extreme emotional distress, based on his own request?",
+        "option": [
+          "A. He seeks out the comfort of a large group of friends.",
+          "B. He demands that someone stay with him at all times.",
+          "C. He prefers to be alone to process his infantile feelings.",
+          "D. He immediately seeks professional medical intervention.",
+          "E. He turns to prayer and quiet meditation in a church."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Please, permit me to be infantile by myself.",
+            "dia_id": "D14:2"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will is experiencing significant emotional pain regarding Mary.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He explicitly asks to be left alone ('by myself') to experience his 'infantile' feelings, indicating this coping mechanism.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 2,
+        "question": "What is Will's immediate physical and emotional state upon returning to the group at the end of the scene?",
+        "option": [
+          "A. He is sweating profusely and breathing heavily from running.",
+          "B. He is completely calm and speaks with absolute clarity and authority.",
+          "C. He is violently angry and immediately attacks John.",
+          "D. He is shivering, freezing, and expresses feelings of shame.",
+          "E. He is laughing hysterically and claiming it was all a joke."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "I--I--I drove for a while, and then I sat for a while. I'm so ashamed.",
+            "dia_id": "D14:208"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "(Shivering)",
+            "dia_id": "D14:209"
+          },
+          {
+            "id": "E3",
+            "speaker": "Will",
+            "utterance": "And I'm freezing!",
+            "dia_id": "D14:210"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will verbally states that he feels ashamed.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "His physical state is explicitly described as shivering and freezing.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 3,
+        "question": "What is the sequence of actions Will takes after walking away from John?",
+        "option": [
+          "A. He walked to town, bought a coffee, and walked back.",
+          "B. He sat in the garden, read a book, and then fell asleep.",
+          "C. He drove his car for a while, then sat for a while before returning.",
+          "D. He called the police, waited in his car, and then came inside.",
+          "E. He paced around the house, chopped some wood, and came back in."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(hands him the gun, turns around and walks away)",
+            "dia_id": "D14:5"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "I--I--I drove for a while, and then I sat for a while. I'm so ashamed.",
+            "dia_id": "D14:208"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will initially leaves John by walking away.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Upon returning, he recounts that in the interim, he drove and then sat.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 4,
+        "question": "What specific action does Will take regarding the gun he possesses?",
+        "option": [
+          "A. He throws it into the woods out of frustration.",
+          "B. He points it at John and threatens him.",
+          "C. He unloads the bullets and puts the gun in his pocket.",
+          "D. He hands the gun directly to John and walks away.",
+          "E. He places the gun carefully on the table before sitting down."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(hands him the gun, turns around and walks away)",
+            "dia_id": "D14:5"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(checks gun to find it unloaded)",
+            "dia_id": "D14:6"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The text contains a stage direction detailing Will's physical action with the weapon.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The action is handing the gun to John.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 5,
+        "question": "How does Will directly assess John's mental well-being in their final interaction of the scene?",
+        "option": [
+          "A. He tells John that he thinks John is completely sane and brilliant.",
+          "B. He tells John that he needs professional help because he doesn't believe him.",
+          "C. He asks John if he would like to speak to a priest.",
+          "D. He demands that John be institutionalized immediately.",
+          "E. He suggests that John is just tired and needs to sleep."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "I still don't believe you, of course. You need help.",
+            "dia_id": "D14:212"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will addresses John directly regarding his claims.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He explicitly states 'You need help' as a conclusion to his disbelief.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 6,
+        "question": "How many bullets were found in the gun immediately after Will handed it over?",
+        "option": [
+          "A. Zero",
+          "B. One",
+          "C. Two",
+          "D. Six",
+          "E. Ten"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(hands him the gun, turns around and walks away)",
+            "dia_id": "D14:5"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(checks gun to find it unloaded)",
+            "dia_id": "D14:6"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will relinquishes the gun.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John checks the gun and the text explicitly states it is 'unloaded', meaning there are zero bullets in it.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      }
+    ],
+    "conversation": {
+      "speakers": [
+        "Harry",
+        "John",
+        "Dan",
+        "Edith",
+        "Art",
+        "Will"
+      ],
+      "session_1": [
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D14:0",
+          "text": "Scene 10: Jesus"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:1",
+          "text": "Will! I didn't know about Mary. I'm sorry. I can see how this might have hit you."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:2",
+          "text": "Please, permit me to be infantile by myself."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:3",
+          "text": "(holding out his hand, with the other hand on Will's arm)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:4",
+          "text": "Will, please."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:5",
+          "text": "(hands him the gun, turns around and walks away)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:6",
+          "text": "(checks gun to find it unloaded)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:7",
+          "text": "Meanwhile, inside."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:8",
+          "text": "What the hell were you thinking, Art?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:9",
+          "text": "Oh, come on. Something had to be done."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:10",
+          "text": "I have to say I agree."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:11",
+          "text": "And he's our friend. Whatever else on earth is going on, he's our friend!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:12",
+          "text": "You sure about that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:13",
+          "text": "Why the hell are you being so hard on him, Edith?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:14",
+          "text": "One of my favorite people has disappeared. Can you get Alzheimer's at 35? Maybe I'm trying to wake him up. Maybe I'm too sad to cry."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:15",
+          "text": "(entering)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:16",
+          "text": "What I said about myself hurt him. He struck back."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:17",
+          "text": "Expertly- That stuff about stealing life forces?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:18",
+          "text": "I've always wondered about the reasons."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:19",
+          "text": "Well, we still have an afternoon to kill, right?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:20",
+          "text": "Charades?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:21",
+          "text": "(chuckling)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:22",
+          "text": "No. John? I have a charade, and it is just for you. A'right? Sandy, come here. Come on, come on, come on. Okay, this one's for you."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:23",
+          "text": "A'right. Ready?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:24",
+          "text": "(grunts like ape)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:25",
+          "text": "(notices Sandy and wolf whistles)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:26",
+          "text": "(more grunting, play-acts whacking Sandy on head with club)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:27",
+          "text": "Ooh! ...Unh."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:28",
+          "text": "(puts arm around Sandy)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:29",
+          "text": "My first wedding?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:30",
+          "text": "There you go. There you go! Very good, and I bet at least one of us..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:31",
+          "text": "(points around the room)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:32",
+          "text": "...is your direct descendent."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:33",
+          "text": "And I didn't even send a Christmas card."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:34",
+          "text": "Christmas card? What about a birthday card? And don't even get me started on the candles... with the blowing and the..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:35",
+          "text": "(huffs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:36",
+          "text": "...and all the candles!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:37",
+          "text": "Yeah, all right. I tried."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:38",
+          "text": "Well, uh, call me underdeveloped, but I'd like to hear more."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:39",
+          "text": "Me too."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D14:40",
+          "text": "More."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:41",
+          "text": "You double-damn swear this isn't some cockamamie science fiction story you're pulling on us?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:42",
+          "text": "Next question."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:43",
+          "text": "You- You- You realize this is an invitation to men in white suits with happy pills."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:44",
+          "text": "Think about it- A mechanism allowing survival for thousands of years?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:45",
+          "text": "Run out of room even faster."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:46",
+          "text": "Well then we'd have to go to Mars as a colony as we expanded, as we'd have to."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:47",
+          "text": "I'd like that. On a planet of another star?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:48",
+          "text": "I envy you."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D14:49",
+          "text": "Did you have a pet dinosaur?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:50",
+          "text": "(smiling)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:51",
+          "text": "They were a little bit before my time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:52",
+          "text": "At least something is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:53",
+          "text": "No doubt you could give us a thousand details, John, corroborating your story, from the Magdalene to the Buddha to now."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:54",
+          "text": "Ten thousand, and you could stay out of the books."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:55",
+          "text": "Oh, it's getting chilly."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:56",
+          "text": "(beckoning to the fireplace)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:57",
+          "text": "Here, come over here. Join me."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:58",
+          "text": "That, uh, raises an interesting question, John."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:59",
+          "text": "Could there be others like you who escaped the aging process as you have?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:60",
+          "text": "Representing something terrific we don't even know about biology."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:61",
+          "text": "We're learning all the time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:62",
+          "text": "Yeah, but how would he know? He doesn't wear an armband, an I.D. Badge saying \"yabba dabba doo.\""
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:63",
+          "text": "(chuckles)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:64",
+          "text": "There was a man in the 1600s."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:65",
+          "text": "(interrupting)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:66",
+          "text": "Where were you in 1292 A.D.?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:67",
+          "text": "Where were you a year ago on this date?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:68",
+          "text": "Anyway, it was the 1600s, and I met a man, and I had a hunch that he was...like me, so I told him."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:69",
+          "text": "Ah. See, you said this was a first."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:70",
+          "text": "I forgot."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:71",
+          "text": "A crack in your story, John?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:72",
+          "text": "A touch of senility."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:73",
+          "text": "Anyway, he said yes, but from another time, another place. We talked for two days. It was all pretty convincing, but we couldn't be sure."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:74",
+          "text": "We each confirmed what the other said, but how do we know if the confirmation was genuine or an echo? I knew I was legit, but I thought, \"maybe he's playing a game on me.\" You know, a scholar of all we spoke about. He said he was inclined with the same reservation."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:75",
+          "text": "Now, that's interesting. Just as we can never be sure, even if we wanted to- I mean, if we were sure, you couldn't be sure of that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:76",
+          "text": "We parted, agreeing to keep in touch- But of course, we didn't- And 200 years later I thought I saw him in a train station in Brussels. Lost him in the crowd."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:77",
+          "text": "Oh, what a shame."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:78",
+          "text": "I- I mean, if it were true."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:79",
+          "text": "Okay, here's one for you. What do you do in your spare time?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:80",
+          "text": "(laughing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:81",
+          "text": "Oh every 50 years or so, when I wanna get away from the rush, I go down to a primitive tribe in New Guinea, Where I'm worshipped as an immortal god, and they have a huge statue of me. It's a big party. Yeah, I've got a lot of pictures of it, but I've already packed them up. I'm sorry."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:82",
+          "text": "I won't make the obvious nasty crack about more unwashed cavemen."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:83",
+          "text": "Actually, bathing was the style until the middle ages when the church told us it was sinful to wash away god's dirt, so people were sewn into their underwear in October and they popped out in April."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:84",
+          "text": "You said you just happened. I don't believe that. If your story's true, why did God allow you to happen?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:85",
+          "text": "That makes an interesting point. Are you religious, John?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:86",
+          "text": "I don't follow a known religion. No."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:87",
+          "text": "Ever?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:88",
+          "text": "Long time ago I did, like most people. Some just never get over it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:89",
+          "text": "Do you believe in god?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:90",
+          "text": "As Laplace said, \"I have no need of that hypothesis.\" He may be around, though."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:91",
+          "text": "He's everywhere. We just can't see him."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:92",
+          "text": "Pfft. If this were the best I could do, I'd be hiding, too."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:93",
+          "text": "And creation..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:94",
+          "text": "It's here, I'm not so sure it was created."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:95",
+          "text": "What then?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:96",
+          "text": "Maybe it's just accumulated, fields affecting fields."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:97",
+          "text": "What about the source of the field energies?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:98",
+          "text": "Wouldn't that imply a prime mover?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:99",
+          "text": "I'd wonder about the source of the prime mover, and turtles all the way down, infinite regress, but that doesn't imply anything to me."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:100",
+          "text": "...Back to the mystery."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:101",
+          "text": "It's a very old question, but there's no answer except in religious terms. If you have faith, it's answered."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:102",
+          "text": "Did you ever meet any person from our religious history? A Biblical figure?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:103",
+          "text": "In a way."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:104",
+          "text": "Who?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:105",
+          "text": "We should skip this one."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:106",
+          "text": "No, no, no skipping. Come on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:107",
+          "text": "Next question."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:108",
+          "text": "No, come on!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:109",
+          "text": "Everyone clamoring."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:110",
+          "text": "Come on, spit it out!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:111",
+          "text": "Good lord! You were one of them!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:112",
+          "text": "This is going in a direction that I- I- I- I didn't expect. I hoped it wouldn't- We...should call it a night."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:113",
+          "text": "Come on! You were someone in religious history?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:114",
+          "text": "(hesitates)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:115",
+          "text": "Yes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:116",
+          "text": "In the bible?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:117",
+          "text": "(hesitates)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:118",
+          "text": "Yes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:119",
+          "text": "Someone we know?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:120",
+          "text": "How could we not know someone in the bible?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:121",
+          "text": "I mean somebody important."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:122",
+          "text": "You may think you know him, but it's mostly myth."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:123",
+          "text": "(loudly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:124",
+          "text": "The entire bible is...mostly m-myth and allegory with maybe some...basis in historical events."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:125",
+          "text": "Y-You...were part of that history?!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:126",
+          "text": "Yes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D14:127",
+          "text": "Moses."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:128",
+          "text": "Moses was based on Misis, a Syrian myth, and there are earlier versions- All found floating on water, the staff that changed to a snake, waters that were parted so followers could be led to freedom and even receive laws on stone or wooden tablets."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D14:129",
+          "text": "One of the apostles"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:130",
+          "text": "They weren't really apostles. They didn't do any real teaching. Peter the fisherman learned a little more about fishing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:131",
+          "text": "How do you know that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:132",
+          "text": "The mythical overlay is so enormous...and not good. The truth is so… so… simple."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:133",
+          "text": "The New Testament in a hundred words or less."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:134",
+          "text": "You ready?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:135",
+          "text": "I don't think I wanna hear this. Harry, will you take me home?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:136",
+          "text": "No! Not right now. I do want to hear this."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:137",
+          "text": "Sit down, Edith. You act like you believe him."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:138",
+          "text": "(softly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:139",
+          "text": "It's sacrilege."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:140",
+          "text": "How can it be sacrilege? He hasn't said anything yet."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:141",
+          "text": "(righteously)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:142",
+          "text": "The new New Testament is sacrilege."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:143",
+          "text": "There are a dozen new new testaments, from Hebrew to Greek to Latin to Tyndale, all the way to King James, all revisionist, and all called revealed truth."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:144",
+          "text": "I mean a new New Testament in 100 words."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:145",
+          "text": "I can give you the Ten Commandments in ten words: Don't. Don't, don't, don't. Don't, don't, don't, don't, don't, don't."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:146",
+          "text": "(laughing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:147",
+          "text": "Don't. The commandments are just modern updates of more ancient laws. Hammurabi's code."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:148",
+          "text": "That's right, and they weren't the first, right?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:149",
+          "text": "Edith, I was raised on the Torah... My wife, on the Quran. My oldest son is an Atheist. My youngest is a Scientologist. My daughter is studying Hinduism. I imagine that there is room there for a holy war in my living room. But we practice live and let live."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:150",
+          "text": "Why don't you sit down?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:151",
+          "text": "Edith hesitantly sits"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:152",
+          "text": "What is your preferred version of the bible?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:153",
+          "text": "The King James, of course. It's the most modern, the work of great scholars."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:154",
+          "text": "Modern is good."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:155",
+          "text": "Alright, John, hit us with the short form."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:156",
+          "text": "Choral/religious music..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:157",
+          "text": "Guy met the Buddha, likes what he heard, thought about it for a while- Say 500 years, while he returned to the Mediterranean, became an Etruscan. Seeped into the Roman Empire. He didn't like what they became- A giant killing machine. He went to the near East thinking, \"Why not pass the Buddha's teachings on in a modern form?\" So he tried. One dissident against Rome?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:158",
+          "text": "Rome won. The rest is history. Well, sort of."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:159",
+          "text": "Lot of fairy tales mixed in."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:160",
+          "text": "(quietly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:161",
+          "text": "I knew it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:162",
+          "text": "He's saying he was Christ."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:163",
+          "text": "Oh, no. That's the medal they pinned on Jesus to fulfill prophecy."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:164",
+          "text": "The crucifixion."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:165",
+          "text": "He blocked the pain, as he had learned to do in Tibet and India. He also learned to slow his body processes down to the point where they were undetectable. They thought he was dead. So his followers pulled him from the cross, placed him in a cave... His body normalized as he had trained it to... He attempted to go away undetected, but some devotees were standing watch. Tried to explain. They were ecstatic."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:166",
+          "text": "Thus, I was resurrected, and I ascended to central Europe to get away as far as possible."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:167",
+          "text": "You don't mean a word of this, John. My god, why are you doing this?!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:168",
+          "text": "Let me see your wrists."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:169",
+          "text": "I don't scar. Besides, they tied me...but nails and blood make better religious Art."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:170",
+          "text": "(laughing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:171",
+          "text": "All the speculations about Jesus. He was black, he was Asian, he was a blue-eyed Aryan with a golden beard and hair straight out of Vidal Sassoon's, he was a benevolent alien, he never existed at all."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:172",
+          "text": "...Now he's a caveman."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:173",
+          "text": "(laughs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:174",
+          "text": "The Christ figure goes all the way back to Krishna- Hercules, of course."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:175",
+          "text": "Hercules?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:176",
+          "text": "Born of a virgin: Alcmene. A god for a father: Zeus. The only begotten. The savior- The Greek?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:177",
+          "text": "\"Soter\". The Good Shepherd, the Prince of Peace, bringing gentle persuasion and divine wisdom. He died, joined his father on Olympus a thousand years before Gethsemane."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:178",
+          "text": "How can you compare Pagan mythology to the true word?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:179",
+          "text": "Pretty damn closely, I'd say."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:180",
+          "text": "The early Christian leaders, they threw away Hebrew manuscripts and borrowed from Pagan sources all over the place."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:181",
+          "text": "Do you realize how...inconsiderately you're treating my feelings?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:182",
+          "text": "About as inconsiderately as we're treating John's."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:183",
+          "text": "Well, he does- he doesn't believe what he's saying!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D14:184",
+          "text": "Do you believe literally everything in the bible, Edith?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:185",
+          "text": "Yes!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:186",
+          "text": "...N- Uh- Before you say it, I know it's undergone a lot of changes, but God has spoken through man to make his word clearer."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:187",
+          "text": "He couldn't get it right the first time?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:188",
+          "text": "We-we're imperfect! He had t-to work to make us understand."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:189",
+          "text": "He couldn't get us right the first time, Edith?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:190",
+          "text": "Taken alone, the philosophical teachings of Jesus are Buddhism with a Hebrew accent- Kindness, tolerance, brotherhood, love... A ruthless realism acknowledging that life is as it is here on earth, here and now."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:191",
+          "text": "The Kingdom of God, meaning...goodness, is...is right here, where it should be. \"I am what I am becoming.\" That's what the Buddha brought in."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:192",
+          "text": "And that's what I taught. But a talking snake make a lady eat an apple, so we're screwed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:193",
+          "text": "Heaven and Hell were peddled so priests could rule through seduction and terror...save our souls that we never lost in the first place."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:194",
+          "text": "I threw a clean pass...they ran it out of the ballpark."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:195",
+          "text": "This is blasphemy. It's horrible! Who else were you? Solomon? Elvis? Jack the Ripper?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:196",
+          "text": "It's been said that Buddha and Jesus would laugh or cry if they'd known what was done in their name."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:197",
+          "text": "And if there is a creator, he'd probably feel the same way."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:198",
+          "text": "I see ceremony, ritual, processions, genuflecting, moaning, intoning, venerating cookies and wine."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:199",
+          "text": "And I think...it's not what I had in mind."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D14:200",
+          "text": "But that's Vatican flapdoodle. It doesn't have a thing to do with God."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D14:201",
+          "text": "As you said, John. Everywhere, religions...from exalting life to purging joy as a sin. Rome does it as grand opera. A simple path to goodness needs a supernatural roadmap."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D14:202",
+          "text": "Supernatural..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D14:203",
+          "text": "A stupid word, I mean...anything that happens, happens within nature, whether we believe in it or not."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:204",
+          "text": "(looks up)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:205",
+          "text": "...Like a 14,000-year-old caveman."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:206",
+          "text": "The sound of a car approaching..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:207",
+          "text": "John heads outside to receive Will."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:208",
+          "text": "I--I--I drove for a while, and then I sat for a while. I'm so ashamed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:209",
+          "text": "(Shivering)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:210",
+          "text": "And I'm freezing!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:211",
+          "text": "Well, come inside."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:212",
+          "text": "I still don't believe you, of course. You need help."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D14:213",
+          "text": "Everybody needs help."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:214",
+          "text": "Yes, well, some more than others."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D14:215",
+          "text": "Fade out."
+        }
+      ]
+    }
+  }
+]

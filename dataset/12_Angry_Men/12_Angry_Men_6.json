@@ -1,0 +1,1475 @@
+{
+    "qa": [],
+    "conversation": {
+        "speaker_1": "JUDGE",
+        "speaker_2": "CLERK",
+        "speaker_3": "#8",
+        "speaker_4": "#7",
+        "speaker_5": "GUARD",
+        "speaker_6": "#5",
+        "speaker_7": "#10",
+        "speaker_8": "FOREMAN",
+        "speaker_9": "#3",
+        "speaker_10": "#2",
+        "speaker_11": "#12",
+        "speaker_12": "#4",
+        "speaker_13": "#11",
+        "speaker_14": "#6",
+        "speaker_15": "#9",
+        "session_1_date_time": "Unknown",
+        "session_1": [
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:1",
+                "text": "#8 continues to walk."
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:2",
+                "text": "This is, I think, even more quickly that the old man walked in the courtroom."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:3",
+                "text": "If you think I should go faster, I will."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:4",
+                "text": "He speeds up his pace slightly, reaches the wall and turns. He heads for the second chair, the chair simulating the door to the outer hallway."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:5",
+                "text": "Come on, willya! Let's get this kid stuff over with!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:6",
+                "text": "They watch as #8 reaches the last chair. Camera is now on medium close up of him. He pretends to open an imaginary chain lock, and then opens the imaginary door,"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:7",
+                "text": "Stop!"
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:8",
+                "text": "Right."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:9",
+                "text": "What's the time?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:10",
+                "text": "Camera is on #8 in foreground, and #2 in background, surrounded by four or five of the jurors."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:11",
+                "text": "Fifteen... Twenty... Thirty... Thirty-three seconds exactly."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D6:12",
+                "text": "Thirty-three seconds!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:13",
+                "text": "The other jurors around #2 ad lib their surprise."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:14",
+                "text": "I think this is what happened. The old man bad heard the fight between the boy and his father a few hours earlier. Then, while lying in bed he heard a body hit the floor in the boy’s apartment, and he heard the woman scream from across the street. He got up, tried to get to the door, heard someone racing down the stairs, and assumed it was the boy."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D6:15",
+                "text": "I think that's possible."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:16",
+                "text": "CLOSE UP - #3"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:17",
+                "text": "Standing, furious."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:18",
+                "text": "Assumed? Now listen to me, you people! I’ve seen all kinds of dishonesty in my day... but this little display takes the cake!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:19",
+                "text": "MEDIUM SHOT - #8 IN FOREGROUND, #3 IN BACKGROUND #'S 2, 4, 5, 6 ALSO IN SHOT"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:20",
+                "text": "You come in here with your heart bleeding all over the floor about slum kids and injustice, and you make up some wild stories, and all of a sudden you start getting through to some of these old ladies in here! Well you're not getting through to me! I've had enough!"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:21",
+                "text": "What’s the matter with you people? Every one of you knows this kid is guilty! He's got to burn! We're letting him slip through our fingers here!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:22",
+                "text": "MEDIUM SHOT - #8, AND BEHIND HIM #'S 11, 12, 9, FOREMAN"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:23",
+                "text": "Slip through our fingers? Are you his executioner?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:24",
+                "text": "MEDIUM SHOT - #3, AND BEHIND HIM #’S 2, 4, 5, 6, 7, 10"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:25",
+                "text": "I’m one of ’em."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:26",
+                "text": "MEDIUM SHOT"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:27",
+                "text": "Maybe you’d like to pull the switch..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:28",
+                "text": "MEDIUM SHOT"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:29",
+                "text": "For this kid? You bet I’d like to pull the switch!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:30",
+                "text": "MEDIUM SHOT"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:31",
+                "text": "I'm sorry for you..."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:32",
+                "text": "Don’t start with me now!"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:33",
+                "text": "What it must feel like to want to pull the switch!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:34",
+                "text": "CLOSE UP - #3"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:35",
+                "text": "Listen, you shut up!"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:36",
+                "text": "Ever since we walked into this room you’ve been behaving like a self-appointed public avenger!"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:37",
+                "text": "I'm telling you now! Shut up!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:38",
+                "text": "CLOSE UP - #8, OVER #3'S SHOULDER"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:39",
+                "text": "You want to see this boy die because you personally want it, not because of the facts."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:40",
+                "text": "Shut up!"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:41",
+                "text": "You’re a sadist..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:42",
+                "text": "MEDIUM SHOT - #3, #8 AND THE REST OF THE JURY GROUPED AROUND THEM"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:43",
+                "text": "Shut up!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:44",
+                "text": "And he lunges wildly at #8. #8 holds his ground as #3 is caught by many hands and held back. He strains against the hands, big face dark with rage."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:45",
+                "text": "Let me go! I'll kill him! I'll kill him!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:46",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:47",
+                "text": "You don’t really mean you'll kill me, do you?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:48",
+                "text": "MEDIUM SHOT - THE ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:49",
+                "text": "Still held, he stares bitterly at #8. Then, finally, he shrugs off the many hands on him adjusts his jacket and walks around the group of silent, watching men to the window, camera moving up high, and holding on him and the entire jury. He stands at the window and there is not a sound for a moment. Then we hear the sound of the door being opened. Some of the jurors turn their heads in that direction."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:50",
+                "text": "MEDIUM SHOT - GUARD IN THE DOORWAY"
+            },
+            {
+                "speaker": "GUARD",
+                "type": "dialogue",
+                "dia_id": "D6:51",
+                "text": "Is there anything wrong, gentlemen? I heard some noise."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:52",
+                "text": "No. There’s nothing wrong."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:53",
+                "text": "He walks toward the door, picking up the diagram of the apartment on the way. He reaches the door. Camera holds on shot of Foreman and guard."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:54",
+                "text": "The Guard takes the plan, looks carefully around the room then exits. There is a pause. The others look at the #3."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:55",
+                "text": "Well, what are you staring at?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:56",
+                "text": "The others, embarrassed, turn away. Some of them take their seats."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D6:57",
+                "text": "Well, -- I suppose someone has to -- start it off again."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:58",
+                "text": "It's getting late."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:59",
+                "text": "What do they do, take us out to restaurant for supper?"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:60",
+                "text": "How do I know?"
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:61",
+                "text": "I wonder if they let us go home in case we can’t finish tonight. I've got a boy with mumps."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:62",
+                "text": "He’s out to here. The wife says he looks like Mussolini."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:63",
+                "text": "Camera holds on him as he subsides into embarrassed silence. No one laughs."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:64",
+                "text": "MEDIUM SHOT - #’S 2, 3, 4, 5, 6, 7"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:65",
+                "text": "Sitting silently, each trying to think of some way to break cut of his own personal embarrassment. The room begins to darken perceptibly now. No one notices it."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:66",
+                "text": "MEDIUM SHOT - #’S 8, 9, 10, 11, 12, FOREMAN"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:67",
+                "text": "And now #11 clears his throat slightly and leans forward. Camera closes in on him as he talks."
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:68",
+                "text": "Pardon. This fighting. This is not why we are here, to fight. We have a responsibility. This, I have always thought, is a remarkable thing about democracy. That we are, uh, what is the word?"
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:69",
+                "text": "Notified. That we are notified by mail to come down to this place and decide on the guilt or innocence of a man we have never heard of before. We have nothing to gain or lose by our verdict. This is one of the reasons why we are strong. We should not make it a personal thing."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:70",
+                "text": "Now fearing perhaps that he has forced his views on others a bit too passionately, #11 sits back, somewhat embarrassed."
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:71",
+                "text": "Thank you."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:72",
+                "text": "Again there is a silence. Camera is on #11, #12, and Foreman."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D6:73",
+                "text": "Um, if no one else has an idea I may have a cutie here. I mean I haven't put much thought into it. Anyway, lemme throw it out on the stoop and see if the cat licks it up."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:74",
+                "text": "See if the cat licks it up?"
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D6:75",
+                "text": "Yeah! Now, if the boy arrived henna..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:76",
+                "text": "The Foreman laughs and then #12 realizes that he has fallen into the trap he set for himself earlier. He stops in mid-sentence. #11 joins in the laughter. The edge is off the tension now, but #12 shuts up tight and begins to doodle furiously."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:77",
+                "text": "MEDIUM SHOT - #'S 4, 5, 6, 7"
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:78",
+                "text": "Look at how dark it’s getting. We’re gonna have a storm."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:79",
+                "text": "There is a pause."
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:80",
+                "text": "Boy it's hot."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:81",
+                "text": "He yanks open his tie and fans himself with some papers. Then idly, he turns to #4. #4 still sits there in tie and jacket, seemingly not bothered by the heat at all. #5 looks at him."
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:82",
+                "text": "Don't you sweat?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D6:83",
+                "text": "No, I don’t."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:84",
+                "text": "#5, surprised at #4's coldness, turns away. There is a pause. #6 looks around a bit nervously."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D6:85",
+                "text": "Uh, listen, I was wondering if maybe we shouldn't take another vote."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:86",
+                "text": "Great idea. Maybe we can follow this one up with dancing and refreshments."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D6:87",
+                "text": "Mr. Foreman?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:88",
+                "text": "MEDIUM SHOT - #'S 10, 11, 12, FOREMAN"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:89",
+                "text": "It's all right with me. Anyone doesn't want to vote?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:90",
+                "text": "He looks around the table. There is no answer. #12 doodles away still annoyed with himself."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:91",
+                "text": "I think we ought to have an open ballot. Call out our votes, y’know? Let's see who stands where."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:92",
+                "text": "That sounds fair. Anyone object?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:93",
+                "text": "There is no answer."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:94",
+                "text": "All right. I’ll call off your jury numbers."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:95",
+                "text": "He takes a pencil and paper and draws a line down the middle of the paper."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:96",
+                "text": "I vote guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:97",
+                "text": "He makes a check on one side of the line."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:98",
+                "text": "Number two?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:99",
+                "text": "CLOSE UP - #2"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:100",
+                "text": "He has a hard decision to make. He thinks for a long moment."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:101",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:102",
+                "text": "Number 3?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:103",
+                "text": "Camera pans down to #3. He is staring at #2."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:104",
+                "text": "Guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:105",
+                "text": "Camera, pans to #4. He sits back, relaxed, at ease."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:106",
+                "text": "Number 4?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D6:107",
+                "text": "Guilty."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:108",
+                "text": "Number 5?"
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:109",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:110",
+                "text": "Number 6?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:111",
+                "text": "Camera pans down to #6. He stares down at the table, picking at a piece of cuticle on his thumb. His decision is difficult too."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D6:112",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:113",
+                "text": "As soon as he speaks he puts his sore thumb in his mouth, sucks on the cuticle. Camera pans to #7. He is looking disgustedly at #6."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:114",
+                "text": "Number 7?"
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:115",
+                "text": "Guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:116",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:117",
+                "text": "Number 8?"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:118",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:119",
+                "text": "Camera pans to #9. He is in the process of taking a pill out of a bottle."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:120",
+                "text": "Number 9?"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:121",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:122",
+                "text": "Camera pans to #10. He is touching his tender nose appraisingly."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:123",
+                "text": "Number 10?"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:124",
+                "text": "Guilty!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:125",
+                "text": "Camera pans to #11. He watches #10 with some distaste."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:126",
+                "text": "Number 11?"
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:127",
+                "text": "Not guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:128",
+                "text": "Camera pans to #12. He doodles concentric circles on a pad."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:129",
+                "text": "Number 12?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:130",
+                "text": "There is a pause."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:131",
+                "text": "Number 12?"
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D6:132",
+                "text": "Guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:133",
+                "text": "Camera pans to Foreman. He tallies his marks quickly."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:134",
+                "text": "Six to six."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:135",
+                "text": "MEDIUM CLOSE UP - #7"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:136",
+                "text": "He repeats his Clem McCarthy take-off."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:137",
+                "text": "And, we go into extra innings here!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:138",
+                "text": "He gets up and heads for the water fountain, camera panning with him. As he passes #10, #10 starts to rise, annoyed."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:139",
+                "text": "Camera holds on #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:140",
+                "text": "Six to six! I'm telling you, some of you people in here are out of your minds. A kid like that."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:141",
+                "text": "I don’t think the kind of boy he is has anything to do with it. The facts are supposed to determine the case."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:142",
+                "text": "Ah, don't give me any of that! I‘m sick and tired of facts. You can twist 'em any way you like. Know what I mean?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:143",
+                "text": "He walks away. Camera holds on #9. He half rises, angrily, and calls after #10."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:144",
+                "text": "That’s exactly the point this gentleman has been making. I mean you keep shouting at the top of your lungs..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:145",
+                "text": "#8 puts his hand on #9's shoulder. #9 looks at him. #8's expression says, \"he isn't worth over-exiting yourself.\" #9 sits down, quite agitated. He takes out a handkerchief and mops his brow with it. We hear ad lib conversation at the water cooler."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:146",
+                "text": "I’d like to be a little younger. That man..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:147",
+                "text": "He stops, unable to go on. Then, trying to calm himself:"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:148",
+                "text": "It’s very hot in here."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:149",
+                "text": "#8 nods sympathetically."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:150",
+                "text": "D'you want some water?"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D6:151",
+                "text": "No thanks."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:152",
+                "text": "#9 continues to mop his brow. #8 rises and camera holds on medium close-up of him as he walks to the window. He stands there, looking out. It has grown considerably darker now, oppressively still. The room is silent save for a murmur of voices at the fountain. #8 runs his hands over his face wearily. Then he opens his tie."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:153",
+                "text": "MEDIUM SHOT - #’S 7, 10, 3 AT THE WATER FOUNTAIN"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:154",
+                "text": "#3 is drinking. #7 holds a cup under the faucet. #10 waits his turn. #7 turns to the window. His cup overflows. He turns to it, steps away from the fountain and begins to drink, staring at the window. #2 walks into shot to wait his turn at the fountain."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:155",
+                "text": "It’s going to rain."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:156",
+                "text": "No!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:157",
+                "text": "#2 meekly turns away and gets a paper cup. #7 turns to him."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:158",
+                "text": "How come you switched?"
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:159",
+                "text": "Well, it just seemed to me..."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:160",
+                "text": "I mean you haven't got a leg to stand on. You know that, don'tcha?"
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:161",
+                "text": "Well I don’t feel that way. There’re a lot of details that never came out..."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:162",
+                "text": "Details! You’re just letting yourself get by a bunch'a what d'ya callem... intellectuals."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:163",
+                "text": "Now that’s not so."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:164",
+                "text": "Ah come on. You’re like everybody else. You think too much, you get mixed up."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:165",
+                "text": "Know what I mean?"
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:166",
+                "text": "Now listen, I don't think you have any right to..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:167",
+                "text": "But #10 has crumpled his cup, flipped it an the floor and walked away, leaving #2 in the middle of a sentence."
+            },
+            {
+                "speaker": "#2",
+                "type": "dialogue",
+                "dia_id": "D6:168",
+                "text": "Loudmouth!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:169",
+                "text": "#2 turns to #7, opens his mouth as if to speak, then, decides not to. He walks over to the other window, camera dollying with him. He puts his head against the glass ands stares out. It is darker now than before."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:170",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:171",
+                "text": "Still at window staring out. We see a portion of the skyline behind him, outside window. There is absolute silence in the room."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:172",
+                "text": "LONG SHOT - ENTIRE ROOM FROM OVERHEAD"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:173",
+                "text": "There is no movement in the room. Everyone waits for the storm now. And suddenly it comes. We hear only the sound of the rain, pouring down into the silence. No lightning. No thunder. Heads turn toward the windows. There is no talk. The rain pours down as if this were a tropical storm."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:174",
+                "text": "MEDIUM SHOT - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:175",
+                "text": "He steps back from the window as the rain splashes in. Than he reaches forward and closes the window. We hear the sound of the other window being closed by #2. #8 stares out the window."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:176",
+                "text": "LONG SHOT - ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:177",
+                "text": "From Foreman's end of table. They all stare at the windows silently. The room is quite dark now. The rain pours down."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:178",
+                "text": "MEDIUM SHOTS - GROUPS OF JURORS"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:179",
+                "text": "Their faces in shadows for the first time, staring at the depressing spectacle of the rain."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:180",
+                "text": "MEDIUM SHOT - THE FOREMAN"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:181",
+                "text": "Seated at table. Finally he gets up and camera follows him as he walks over to the door. Next to it is a light switch. He flips it on."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:182",
+                "text": "LONG SHOT - THE ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:183",
+                "text": "There is a flickering of light, and then the overhead fluorescent lamps come on full, throwing harsh white light on to the jurors. At the same moment we hear the first crack of thunder. (Through out the remainder of the play the rain continues, and now and then there are flashes of lightning and the rumble of thunder.) The foreman walks over to the windows now, and looks out. Camera moves in on him. He stands next to #8."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:184",
+                "text": "Wow!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:185",
+                "text": "He speaks almost to himself,"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:186",
+                "text": "Look at that, will ya!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:187",
+                "text": "#8 nods and continues to look out."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:188",
+                "text": "Think it’ll cool things off?"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:189",
+                "text": "Yeah, I guess so."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:190",
+                "text": "Boy! Look at it go! Reminds me of the storm we had last... November something. What a storm! Right in the middle of the game. We're behind 7-6, but we’re just startin' to move the ball, off tackle, y'know! Boom! Boom! Boom! Boy I’ll never forget that. We had this kid Slattery. A real ox. Wish I had another one like him."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:191",
+                "text": "He looks up to find #8 looking at him."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:192",
+                "text": "h, I probably forgot to tell you I'm assistant head coach at the Andrew J. McCorkle High School. That's in Queens."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:193",
+                "text": "#8 nods, smiles briefly and looks out the window."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:194",
+                "text": "So anyway we're movin' real nice. Their line is comin' apart. I'm tellin' ya, this Slattery! Boy!"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D6:195",
+                "text": "And all of a sudden it starts to come down cats and dogs. It was murder. I swear I almost bawled. We couldn't go nowhere!"
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:196",
+                "text": "Hey, let's get this fan goin' in here. What d’ya say?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:197",
+                "text": "The Foreman turns to the sound of the voice. He looks at #8 for a moment. Then he walks across the room, camera moving with him."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:198",
+                "text": "Then he climbs down and turns around as if waiting for applause. No one speaks. His smile fades, and camera follows him as he slowly walks to his seat and sits down."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:199",
+                "text": "MEDIUM SHOT - #7"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:200",
+                "text": "He is back in his seat now. He looks up at the fan. Then he takes a page from his scrap pad, crumples it up and flips it up at the fan. He tears off another page and repeats this business. And another."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:201",
+                "text": "CLOSE UP - THE FAN"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:202",
+                "text": "A wad of paper hits it, and is flung off by the blades."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:203",
+                "text": "MEDIUM SHOT - #'S 3, 4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:204",
+                "text": "Standing near the water fountain. The wad of paper strikes #3 in the shoulder. He turns around angrily."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:205",
+                "text": "Sorry."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:206",
+                "text": "#3 turns back to #4."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:207",
+                "text": "What a stupid thing to do."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:208",
+                "text": "#4 bends to get a drink of water. #3 waits till he straightens up."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:209",
+                "text": "Some rain, huh?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:210",
+                "text": "#4, drinking, nods."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:211",
+                "text": "Well, what d'ya think of this thing? It’s even-steven."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:212",
+                "text": "#4 nods as he drinks."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:213",
+                "text": "Kind of surprising, isn’t it?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D6:214",
+                "text": "Yes."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:215",
+                "text": "Listen, that business before, you know where what's-his-name, that tall guy over there was baiting me, I mean that doesn’t prove anything. Listen, I'm a very excitable person, y'know. So where does he get off to call me a public avenger, and a sadist and everything? Anybody in his right mind'd blow his stack, wouldn't he? He was just trying to bait me."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D6:216",
+                "text": "He did an excellent job."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:217",
+                "text": "We hear jumbled ad lib conversation in background."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D6:218",
+                "text": "Now I'm being sincere about this. I'm no small potatoes like some of these people. I run a messenger service that employs over sixty-five workers. Well maybe that doesn't mean anything to you, but I consider myself a respectable citizen, and I’m trying to do my duty in here very sincerely. He has no call to act like that. I mean I could really’ve belted him one!"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:219",
+                "text": "Listen, I’ll tell you what I think."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:220",
+                "text": "#'s 3 and 4 turn in the direction of his voice."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:221",
+                "text": "MEDIUM SHOT - #10, STANDING AT HIS SEAT"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D6:222",
+                "text": "We’re goin' nowhere here. I'm ready to walk into court right now and declare a hung jury. There's no point in this thing goin' on any more."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:223",
+                "text": "LONG SHOT - THE ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:224",
+                "text": "Most of them are seated now. #'s 3 and #4 walk back to their seats."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:225",
+                "text": "I go for that too. Let's take it into the judge and let the kid take his chances with twelve other guys."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D6:226",
+                "text": "I don't think the court will accept hung jury. We haven't been in, here very long."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:227",
+                "text": "Well let’s find out!"
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:228",
+                "text": "I am not in favor of this."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:229",
+                "text": "Listen, this kid wouldn't stand a chance with another jury and you know it."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:230",
+                "text": "C'mon, we're hung. Nobody's gonna change his opinion. Let’s take it inside."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:231",
+                "text": "MEDIUM SHOT - #'S 5,6,7"
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:232",
+                "text": "You still don't think there’s any room for a reasonable doubt?"
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:233",
+                "text": "No I don't!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:234",
+                "text": "CLOSE UP - #11"
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D6:235",
+                "text": "Pardon. Maybe you don’t fully understand the term reasonable doubt..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:236",
+                "text": "MEDIUM SHOT - #’3 4, 5, 6, 7 SHOOTING PAST #11'S PROFILE"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D6:237",
+                "text": "#7 reacts strongly to this. He walks around the table until he is standing behind #4, speaking angrily to #11 as he goes."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:238",
+                "text": "What d'ya mean I don't understand it? Who d'ya think you are to talk to me like that?"
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:239",
+                "text": "How d'ya like this guy? I’m tellin' ya they're all alike. He comes over to this country running for his life and before he can even take a big breath he's telling us how to run the show! The arrogance of the guy!"
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:240",
+                "text": "Wait a second! Nobody around here’s asking where you came from!"
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D6:241",
+                "text": "I was born right here!"
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D6:242",
+                "text": "Or where your father came from!"
+            }
+        ]
+    }
+}

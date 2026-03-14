@@ -1,0 +1,3012 @@
+{
+  "qa": [
+    {
+      "character": "Dr. Stockmann",
+      "category": 1,
+      "question": "Which statement best describes the Doctor's fundamental approach to managing his scientific findings in relation to civic leadership?",
+      "option": [
+        "A. He believes in sharing credit with local authorities to ensure his projects are funded quickly.",
+        "B. He defers to the established chain of command when presenting findings that could disrupt the town's economy.",
+        "C. He insists on prioritizing scientific truth and public welfare regardless of the political or financial fallout.",
+        "D. He selectively releases information to the independent press to negotiate a better position with the Mayor.",
+        "E. He prefers to keep his discoveries confidential until the Householders' Association guarantees their absolute support."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I don't care what it is! I intend to be free to express my opinion on any subject under the sun.", "dia_id": "D2:261" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "In any case I shall have done my duty towards the public—towards the community, I, who am called its enemy!", "dia_id": "D2:316" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann demands complete freedom to share his opinions and findings, rejecting restrictions.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He views publishing the truth as his ultimate duty to the community, even if the leadership labels him an enemy, showing he prioritizes truth over political harmony.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 2,
+      "question": "How does the Doctor's emotional focus shift after his confrontation with his brother regarding the water report?",
+      "option": [
+        "A. He shifts from trusting the press to relying entirely on Morten Kiil's financial backing.",
+        "B. He transitions from feeling secure in the community's support to a state of righteous defiance against authority.",
+        "C. He goes from being mildly irritated by his wife's nagging to completely ignoring his family's welfare.",
+        "D. He changes from doubting his own scientific data to seeking a compromise with the town engineer.",
+        "E. He moves from wanting to share credit with his brother to demanding sole recognition for the discovery."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I should think it was a good thing. By Jove, it's a fine thing to feel this bond of brotherhood between oneself and one's fellow citizens!", "dia_id": "D2:176" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "The boys— I No, even if the whole world goes to pieces, I will never bow my neck to this yokel", "dia_id": "D2:324" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Before the meeting, the Doctor feels a strong, positive bond and support from his fellow citizens.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "After the confrontation, his state becomes fiercely defiant, declaring he will not bow down even if the world falls apart.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 3,
+      "question": "Which sequence correctly maps the Doctor's actions concerning the water supply discovery?",
+      "option": [
+        "A. He consulted the Mayor, conducted the tests, and then informed the independent press.",
+        "B. He promised the report to the press, conducted the tests, and then alerted his family.",
+        "C. He secured Aslaksen's backing, sent the report to the Mayor, and then conducted his investigations.",
+        "D. He conducted his investigations secretly, sent the report to the Mayor, and later permitted the press to use it.",
+        "E. He informed Morten Kiil, conducted the tests, and then demanded the Mayor fix the conduits."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Was it necessary to make all these investigations behind my back?", "dia_id": "D2:190" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes, because until I was absolutely certain about it—", "dia_id": "D2:191" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "In that case I promise you—. Look here, in that case you may print my report—every word of it.", "dia_id": "D2:159" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "The investigations were completed behind the Mayor's back before the report was submitted.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "After having already sent the report to his brother, the Doctor subsequently gives Hovstad permission to print it if necessary.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 4,
+      "question": "What specific measure does the Doctor conclude is necessary to resolve the crisis at the Baths?",
+      "option": [
+        "A. Closing the Baths permanently and relocating the town's primary water source.",
+        "B. Building a sewer to divert the impurities from Molledal and relaying the water conduits.",
+        "C. Forcing the Mayor to publicly apologize for the initial construction mistakes.",
+        "D. Applying chemical treatments to the water supply during the warm summer months.",
+        "E. Initiating a public demonstration led by the Householders' Association to demand new pipes."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "And your reasoning leads you to this conclusion, that we must build a sewer to draw off the alleged impurities from Molledal and must relay the water conduits.", "dia_id": "D2:198" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes. Do you see any other way out of it? I don't.", "dia_id": "D2:199" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter states that the Doctor's reasoning requires building a sewer for the impurities and relaying the conduits.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "The Doctor explicitly confirms this is the only solution he sees.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 5,
+      "question": "What is the professional power dynamic between the Doctor and Peter Stockmann regarding the Baths?",
+      "option": [
+        "A. They are equal partners on the Baths Committee with identical voting rights.",
+        "B. The Doctor is an independent contractor who answers only to the Householders' Association.",
+        "C. The Doctor is a subordinate officer on the Baths' staff, while Peter is his official chief.",
+        "D. The Doctor holds the highest authority due to his medical expertise, superseding the Mayor.",
+        "E. Peter is merely a financial advisor, while the Doctor directs all official public affairs."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "But as a subordinate member of the staff of the Baths, you have no right to express any opinion which runs contrary to that of your superiors.", "dia_id": "D2:258" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "I forbid it—I, your chief; and if I forbid it, you have to obey.", "dia_id": "D2:264" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter explicitly identifies the Doctor as a subordinate member of the Baths' staff.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Peter establishes himself as the Doctor's direct superior or 'chief' who commands obedience.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 6,
+      "question": "According to the Doctor's estimations, roughly how many infusoria are polluting the town's water supply?",
+      "option": [
+        "A. Exactly fifteen to twenty thousand.",
+        "B. Several dozen highly venomous beasts.",
+        "C. Hundreds of thousands of them.",
+        "D. Around ten to five pounds worth.",
+        "E. Millions of unidentifiable bacteria."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Infusoria—yes.", "dia_id": "D2:37" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Certainly; hundreds of thousands of them, probably.", "dia_id": "D2:39" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "The creatures in the water are identified as Infusoria.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "The Doctor quantifies their presence as probably numbering in the hundreds of thousands.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 1,
+      "question": "What is Hovstad's underlying ideological motivation for involving his newspaper in the water supply issue?",
+      "option": [
+        "A. He wants to increase his paper's circulation to match the wealth of the old town families.",
+        "B. He believes it is his duty to dismantle the authority of the local officials and empower the lower classes.",
+        "C. He aims to protect the financial investments of the Householders' Association from government overreach.",
+        "D. He seeks personal revenge against the Mayor for previously forcing his paper to climb down a peg.",
+        "E. He is fundamentally a moderate who wishes to negotiate peace between the scientific and political factions."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "Yes. When I took over the \"People's Messenger\" my idea was to break up this ring of self-opinionated old fossils who had got hold of all the influence.", "dia_id": "D2:92" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "Yes—and in my opinion a journalist incurs a heavy responsibility if he neglects a favourable opportunity of emancipating the masses—the humble and oppressed...", "dia_id": "D2:104" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad's long-term goal with the paper is to break the power of the influential 'old fossils'.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He views his journalistic responsibility as emancipating the humble and oppressed masses from this ruling class.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 2,
+      "question": "How does Hovstad react to Aslaksen's attitude toward confronting the local authorities?",
+      "option": [
+        "A. He fully embraces Aslaksen's approach because he fears his paper will be ruined again.",
+        "B. He admires Aslaksen's moderation and asks him to co-write the leading article.",
+        "C. He is frustrated by Aslaksen's extreme caution and wishes to inject more virility into the townsfolk.",
+        "D. He ignores Aslaksen entirely and instead focuses on convincing Morten Kiil to fund the campaign.",
+        "E. He believes Aslaksen is secretly working for the Mayor to suppress the Doctor's report."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "We shall proceed with the greatest moderation, Doctor. Moderation is always my aim...", "dia_id": "D2:123" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "Yes, I am. He is one of those who are floundering in a bog... so overcome with caution and scruple that they never dare to take any decided step.", "dia_id": "D2:150" },
+        { "id": "E3", "speaker": "Hovstad", "utterance": "That is why I want to seize this opportunity, and try if I cannot manage to put a little virility into these well-intentioned people for once...", "dia_id": "D2:154" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen preaches moderation and caution.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Hovstad criticizes this caution as floundering and lacking the courage to take a decided step, desiring to add 'virility' to their actions.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 3,
+      "question": "Regarding the publication of the Doctor's findings, when does Hovstad actually receive the physical report?",
+      "option": [
+        "A. Immediately after Aslaksen promises the support of the Householders' Association.",
+        "B. Right before Morten Kiil arrives to question the Doctor about the water supply.",
+        "C. During his initial conversation with the Doctor, before Aslaksen enters the room.",
+        "D. After Aslaksen leaves the room and the Doctor confirms the Mayor might refuse to act.",
+        "E. After Peter Stockmann threatens to dismiss the Doctor from his position at the Baths."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "Well, I must say goodbye, Doctor... Are you going my way, towards the printing-office. Mr. Hovstad?", "dia_id": "D2:143" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "I will come later; I have something to settle up first.", "dia_id": "D2:146" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "In that case I promise you—. Look here, in that case you may print my report—every word of it.", "dia_id": "D2:159" },
+        { "id": "E4", "speaker": "Dr. Stockmann", "utterance": "Here it is; take it with you. It can do no harm for you to read it through, and you can give it me back later on.", "dia_id": "D2:161" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen leaves and Hovstad stays behind to settle something.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Once alone, they discuss the Mayor potentially refusing, and the Doctor physically hands over the report to Hovstad.",
+          "based_on": ["E1", "E2", "E3", "E4"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 4,
+      "question": "What concrete action does Hovstad promise to take regarding the town's authorities and the water crisis?",
+      "option": [
+        "A. He will organize a public protest outside the Mayor's office.",
+        "B. He will write a leading article to stir up the authorities in his newspaper.",
+        "C. He will petition Morten Kiil to donate his wealth to the public baths.",
+        "D. He will resign from the 'People's Messenger' if the Doctor is fired.",
+        "E. He will help the town engineer draft a new plan for the conduits."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "We are going to stir them up in the paper tomorrow, Aslaksen.", "dia_id": "D2:142" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "Anyway, I will get a leading article ready; and if the Mayor refuses to take the matter up—", "dia_id": "D2:156" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad commits to using his paper to 'stir them up'.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He specifies the action by stating he will get a leading article ready.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 5,
+      "question": "What is Hovstad's professional role in the town?",
+      "option": [
+        "A. He is the local secretary of the Temperance Society.",
+        "B. He is a medical assistant working under Dr. Stockmann.",
+        "C. He is the head of the printing office and the town engineer.",
+        "D. He is a journalist who took over the 'People's Messenger'.",
+        "E. He is a member of the Baths Committee representing the wealthy families."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "Yes. When I took over the \"People's Messenger\" my idea was to break up this ring...", "dia_id": "D2:92" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "Yes—and in my opinion a journalist incurs a heavy responsibility...", "dia_id": "D2:104" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad refers to himself as a journalist.",
+          "based_on": ["E2"]
+        },
+        {
+          "step": 2,
+          "inference": "He specifically mentions taking over the publication called the 'People's Messenger'.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 6,
+      "question": "When does Hovstad state his paper will take action to stir up the authorities?",
+      "option": [
+        "A. Sometime later on.",
+        "B. In at least two years.",
+        "C. Tomorrow.",
+        "D. At Christmas.",
+        "E. About midday."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "We are going to stir them up in the paper tomorrow, Aslaksen.", "dia_id": "D2:142" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad explicitly sets the timeline for his paper's action to 'tomorrow'.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 1,
+      "question": "Which statement best captures Mrs. Stockmann's primary long-term concern during crises?",
+      "option": [
+        "A. She prioritizes exposing the corrupt official infallibility of the town's leadership.",
+        "B. She emphasizes the physical health of the sick folk who visit the Baths.",
+        "C. She is consistently focused on preserving her family's financial security and basic livelihood.",
+        "D. She relies entirely on her father's wealth to solve her husband's professional disputes.",
+        "E. She encourages her husband to act violently and aggressively toward his superiors."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "But towards your family, Thomas? Towards your own home! Do you think that is doing your duty towards those you have to provide for?", "dia_id": "D2:317" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "You will find yourself again without the means of subsistence, with no income to count upon. I should think we had had enough of that in the old days. Remember that, Thomas; think what that means.", "dia_id": "D2:321" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann challenges Thomas on his duty to provide for his family and home.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "She explicitly fears returning to a time without income or subsistence, proving her primary driver is the family's financial survival.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 2,
+      "question": "How does Mrs. Stockmann's immediate state change as the argument between her husband and Peter escalates?",
+      "option": [
+        "A. She shifts from being quietly observant to fiercely defending her husband's scientific integrity.",
+        "B. She goes from being mildly curious about Peter's reaction to becoming deeply fearful of the punitive consequences.",
+        "C. She moves from supporting the 'compact majority' to denouncing the independent press.",
+        "D. She transitions from trusting her father's promises to begging Peter for a financial loan.",
+        "E. She changes from being indifferent to the report to eagerly helping Hovstad publish it."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "I am extremely curious to know how he takes it.", "dia_id": "D2:10" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Yes, it is sinful to treat you so, it is perfectly true. But, good heavens, one has to put up with so much injustice in this world. There are the boys, Thomas! Look at them! What is to become of them? Oh, no, no, you can never have the heart—.", "dia_id": "D2:323" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Initially, she is merely 'extremely curious' about how Peter will receive the discovery.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "As the conflict worsens, she is consumed by fear over what will become of the boys due to the injustice they must endure, begging Thomas to reconsider.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 3,
+      "question": "When does Mrs. Stockmann attempt to convince Thomas to share credit for the discovery with his brother?",
+      "option": [
+        "A. After Peter threatens Thomas with immediate dismissal from the Baths.",
+        "B. While Petra is telling Morten Kiil about the infusoria on her way to school.",
+        "C. Right after delivering the sealed letter, but before Morten Kiil arrives.",
+        "D. During the discussion with Hovstad regarding the leading article.",
+        "E. Immediately after Aslaksen refuses to drink a glass of sherry."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "NARRATION", "utterance": "(SCENE.—The same. The door into the dining room is shut. It is morning. MRS. STOCKMANN, with a sealed letter in her hand, comes in from the dining room...)", "dia_id": "D2:1" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "I will tell you what, Thomas—you should be good natured, and share the credit of this with him. Couldn't you make out that it was he who set you on the scent of this discovery?", "dia_id": "D2:14" },
+        { "id": "E3", "speaker": "STAGE", "utterance": "(MORTEN KIIL puts his head in through the door leading from the hall, looks around in an enquiring manner, and chuckles.)", "dia_id": "D2:16" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann brings the letter at the beginning of the scene.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "She suggests sharing the credit shortly after reading the letter's contents, right before Morten Kiil enters the room.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 4,
+      "question": "What physical action does Mrs. Stockmann perform at the very beginning of the scene?",
+      "option": [
+        "A. She locks the dining room door to prevent the boys from entering.",
+        "B. She hands Dr. Stockmann a sealed letter from his brother Peter.",
+        "C. She pours a glass of sherry for Aslaksen.",
+        "D. She hides the manuscript containing the water report in the study.",
+        "E. She escorts Morten Kiil into the hallway."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "NARRATION", "utterance": "(SCENE.—The same. The door into the dining room is shut. It is morning. MRS. STOCKMANN, with a sealed letter in her hand, comes in from the dining room, goes to the door of the DOCTOR'S study, and peeps in.)", "dia_id": "D2:1" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "A letter from your brother.", "dia_id": "D2:4" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "The scene opens with Mrs. Stockmann holding a sealed letter.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "She identifies the item to Thomas as a letter from his brother.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 5,
+      "question": "How is Mrs. Stockmann related to Morten Kiil?",
+      "option": [
+        "A. She is his sister.",
+        "B. She is his niece.",
+        "C. She is his daughter.",
+        "D. She is his landlord.",
+        "E. She is his medical nurse."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "STAGE", "utterance": "(MORTEN KIIL puts his head in through the door leading from the hall...)", "dia_id": "D2:16" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Father!—is it you?", "dia_id": "D2:18" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When Morten Kiil enters, Mrs. Stockmann directly addresses him as 'Father'.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 6,
+      "question": "Based on Mrs. Stockmann's dialogue, what is the minimum number of sons she has?",
+      "option": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4",
+        "E. 0"
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "There are the boys, Thomas! Look at them! What is to become of them?", "dia_id": "D2:323" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "She refers to 'the boys' in the plural form, which grammatically dictates there must be at least 2 sons present.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 1,
+      "question": "What is Peter Stockmann's primary guiding principle when making administrative decisions for the town?",
+      "option": [
+        "A. He believes in full transparency and sharing all municipal reports with the voting public.",
+        "B. He insists on prioritizing the economic welfare and established reputation of the local authorities over disruptive new ideas.",
+        "C. He seeks to completely dismantle the Householders' Association to consolidate his own power.",
+        "D. He operates on the belief that the independent press is the most reliable tool for civic improvement.",
+        "E. He believes that admitting administrative blunders publicly strengthens the public's trust in the government."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Oh, the public doesn't require any new ideas. The public is best served by the good, old established ideas it already has.", "dia_id": "D2:240" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Without moral authority I am powerless to direct public affairs as seems, to my judgment, to be best for the common good. And on that account... it appears to me to be a matter of importance that your report should not be delivered to the Committee.", "dia_id": "D2:222" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter explicitly states that established ideas are better for the public than new ones.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He suppresses the report specifically to maintain the 'moral authority' required to direct affairs, demonstrating his reliance on reputation and established order over disruptive truths.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 2,
+      "question": "How does Peter's immediate objective manifest during his argument with the Doctor?",
+      "option": [
+        "A. He tries to negotiate a middle ground by offering to pay for half of the required sewer repairs.",
+        "B. He attempts to charm Petra into convincing her father to drop the investigation entirely.",
+        "C. He rigidly demands complete suppression of the report and a public retraction of the findings under threat of termination.",
+        "D. He seeks to publicly humiliate Hovstad to prevent the 'People's Messenger' from going to print.",
+        "E. He frantically attempts to rewrite the report himself before the Baths Committee meets."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "What we shall expect is that, after making further investigations, you will come to the conclusion that the matter is not by any means as dangerous or as critical as you imagined in the first instance.", "dia_id": "D2:252" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Dismissed from the staff of the Baths. I shall be obliged to propose that you shall immediately be given notice...", "dia_id": "D2:283" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter requires the Doctor to publicly state that the issue is not dangerous (a retraction/suppression).",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He enforces this demand by threatening immediate dismissal from the Baths if the Doctor disobeys.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 3,
+      "question": "Which event occurred first in Peter's sequence of actions regarding the water crisis?",
+      "option": [
+        "A. He forbade Thomas from publishing his findings.",
+        "B. He received the report detailing the condition of the water.",
+        "C. He threatened to dismiss Thomas from the Baths.",
+        "D. He broached the subject of alterations with the town engineer.",
+        "E. He discovered that Petra had been eavesdropping."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I received from you yesterday, after office hours, a report dealing with the condition of the water at the Baths.", "dia_id": "D2:184" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "I made a pretext this morning to go and see the town engineer...", "dia_id": "D2:200" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter states he received the report 'yesterday'.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He visited the town engineer 'this morning', meaning receiving the report happened chronologically first.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 4,
+      "question": "What specific consequence does Peter formally threaten to impose on Thomas if he does not comply?",
+      "option": [
+        "A. He will cut off all of Katherine's household allowance.",
+        "B. He will have Morten Kiil removed from the town council permanently.",
+        "C. He will propose that Thomas be immediately dismissed from the staff of the Baths.",
+        "D. He will sue the 'People's Messenger' for libel and financial damages.",
+        "E. He will personally confess to the original construction blunder and resign."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Then I shall not be able to prevent your being dismissed.", "dia_id": "D2:279" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Dismissed from the staff of the Baths. I shall be obliged to propose that you shall immediately be given notice, and shall not be allowed any further participation in the Baths' affairs.", "dia_id": "D2:283" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter states that disobedience will lead to dismissal.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He specifies that he will personally propose the immediate notice of dismissal from the Baths.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 5,
+      "question": "What is the relationship between Peter Stockmann and Petra?",
+      "option": [
+        "A. Peter is Petra's father.",
+        "B. Peter is Petra's brother.",
+        "C. Peter is Petra's uncle.",
+        "D. Peter is Petra's grandfather.",
+        "E. Peter is Petra's teacher."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Uncle, that is a shameful way to treat a man like father!", "dia_id": "D2:286" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra addresses Peter Stockmann as 'Uncle'.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 6,
+      "question": "According to the information Peter obtained, how much would the proposed alterations to the conduits cost?",
+      "option": [
+        "A. Five to ten pounds.",
+        "B. Fifteen to twenty thousand pounds.",
+        "C. Exactly ten pounds given to charity.",
+        "D. Hundreds of thousands of pounds.",
+        "E. Less than five thousand pounds."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "According to the information I obtained, the expenses would probably mount up to fifteen or twenty thousand pounds.", "dia_id": "D2:202" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter explicitly states the estimated financial cost obtained from his inquiry is fifteen or twenty thousand pounds.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 1,
+      "question": "What is Petra's defining long-term value as demonstrated through her reactions?",
+      "option": [
+        "A. She believes her family's safety should always come before the truth.",
+        "B. She strongly supports principled defiance and doing what is useful over yielding to authority.",
+        "C. She thinks the younger generation should respectfully submit to the wealthy old families.",
+        "D. She values her grandfather's wealth above her father's scientific career.",
+        "E. She prefers keeping municipal secrets hidden to protect the town's income."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "And to be able to do so much that is good and useful, father!", "dia_id": "D2:177" },
+        { "id": "E2", "speaker": "Petra", "utterance": "Father is splendid! He will not give in.", "dia_id": "D2:328" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra praises the ability to do things that are good and useful, validating her father's early optimism.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "When her father refuses to yield to the Mayor's threats, she calls him 'splendid', confirming she values unyielding integrity over submission.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 2,
+      "question": "How does Petra react immediately after her uncle threatens her father?",
+      "option": [
+        "A. She breaks down crying and begs him to apologize.",
+        "B. She quietly leaves the room to go back to school.",
+        "C. She interjects with anger, calling his behavior shameful.",
+        "D. She sides with her mother and tells her father to think of the boys.",
+        "E. She laughs at the Mayor, thinking it is a joke."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Dismissed from the staff of the Baths. I shall be obliged to propose that you shall immediately be given notice...", "dia_id": "D2:283" },
+        { "id": "E2", "speaker": "Petra", "utterance": "Uncle, that is a shameful way to treat a man like father!", "dia_id": "D2:286" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter threatens immediate dismissal.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Petra responds directly to this threat by calling it a 'shameful way to treat a man like father', demonstrating outrage.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 3,
+      "question": "Which of the following describes the timeline of Petra's physical presence or actions in the scene?",
+      "option": [
+        "A. She returns from school, talks to Morten Kiil, and then eavesdrops on her uncle.",
+        "B. She tells Morten Kiil the news, returns from school, and later eavesdrops on the brothers.",
+        "C. She eavesdrops on the brothers, tells Morten Kiil the news, and then leaves for school.",
+        "D. She returns from school, eavesdrops on Aslaksen, and then tells Morten Kiil.",
+        "E. She reads the sealed letter, leaves for school, and returns to eavesdrop."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Petra ran in on her way to the school—", "dia_id": "D2:25" },
+        { "id": "E2", "speaker": "Petra", "utterance": "Yes, I have just come from the school.", "dia_id": "D2:166" },
+        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "Oh, so you have been eavesdropping.", "dia_id": "D2:268" },
+        { "id": "E4", "speaker": "Petra", "utterance": "Yes, I was listening.", "dia_id": "D2:270" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Morten Kiil confirms Petra informed him of the water issue while she was on her way to school.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Later in the scene, Petra announces she has returned from school.",
+          "based_on": ["E2"]
+        },
+        {
+          "step": 3,
+          "inference": "After returning, she is caught listening in on Peter and Thomas's argument.",
+          "based_on": ["E2", "E3", "E4"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 4,
+      "question": "What specific act does Petra admit to doing during the confrontation between her father and her uncle?",
+      "option": [
+        "A. She admits to forging the report to make the infusoria look worse.",
+        "B. She admits that she intentionally lied to Morten Kiil to pull his leg.",
+        "C. She admits to eavesdropping on the conversation between the two brothers.",
+        "D. She admits she gave the sealed letter to Hovstad instead of her father.",
+        "E. She admits she secretly supports the Mayor's plan to hush up the scandal."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Oh, so you have been eavesdropping.", "dia_id": "D2:268" },
+        { "id": "E2", "speaker": "Petra", "utterance": "Yes, I was listening.", "dia_id": "D2:270" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter accuses her of eavesdropping on the argument.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Petra explicitly confirms she was listening.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 5,
+      "question": "What is the relationship between Petra and Dr. Stockmann?",
+      "option": [
+        "A. Petra is Dr. Stockmann's wife.",
+        "B. Petra is Dr. Stockmann's medical assistant.",
+        "C. Petra is Dr. Stockmann's daughter.",
+        "D. Petra is Dr. Stockmann's sister.",
+        "E. Petra is Dr. Stockmann's niece."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "And to be able to do so much that is good and useful, father!", "dia_id": "D2:177" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "And for one's own native town into the bargain, my child!", "dia_id": "D2:178" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra calls Dr. Stockmann 'father'.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Dr. Stockmann responds to her by calling her 'my child', solidifying the father-daughter relationship.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 6,
+      "question": "How many uncles does Petra directly speak to or reference in the dialogue?",
+      "option": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4",
+        "E. 0"
+      ],
+      "answer": "A",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Uncle, that is a shameful way to treat a man like father!", "dia_id": "D2:286" },
+        { "id": "E2", "speaker": "Petra", "utterance": "If only I could give uncle a piece of my mind—", "dia_id": "D2:301" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra addresses Peter Stockmann as 'Uncle' and later refers to 'uncle' in the singular.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Since she only ever mentions 'uncle' in the singular form when referring to Peter, the count is exactly 1.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 1,
+      "question": "What core personal and political philosophy defines Aslaksen's behavior in town affairs?",
+      "option": [
+        "A. He believes in using aggressive journalism to intimidate the local officials.",
+        "B. He insists on absolute secrecy when dealing with any municipal blunders.",
+        "C. He prioritizes strict moderation and avoiding any discourtesy to those in power.",
+        "D. He fully supports reckless expenditures if it guarantees the health of the citizens.",
+        "E. He believes that the small tradesmen should violently overthrow the Mayor."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "We shall proceed with the greatest moderation, Doctor. Moderation is always my aim; it is the greatest virtue in a citizen—at least, I think so.", "dia_id": "D2:123" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "No, no, no; there must be no discourtesy to the authorities, Mr. Hovstad. It is no use falling foul of those upon whom our welfare so closely depends.", "dia_id": "D2:135" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen explicitly identifies 'moderation' as his aim and the greatest virtue in a citizen.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He further clarifies this means showing no discourtesy to authorities because welfare depends on them.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 2,
+      "question": "What is Aslaksen's immediate motivation for visiting the Doctor?",
+      "option": [
+        "A. He wants to warn the Doctor that the Mayor plans to fire him.",
+        "B. He is seeking treatment for a sudden illness he contracted from the Baths.",
+        "C. He wants to pledge the backing of the small tradesmen to ensure the Baths are improved.",
+        "D. He hopes to borrow fifteen to twenty thousand pounds from Morten Kiil.",
+        "E. He is trying to convince the Doctor to stop Hovstad from printing the paper."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "Is what I heard from Mr. Billing true, sir—that you mean to improve our water supply?", "dia_id": "D2:113" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "Well, I have come to say that I will back that up by every means in my power... Because it may be no bad thing to have us small tradesmen at your back.", "dia_id": "D2:115" },
+        { "id": "E3", "speaker": "Aslaksen", "utterance": "We shall all make our living out of them... That is why we will back up the project as strongly as possible.", "dia_id": "D2:125" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen verifies the rumor about improving the water supply.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He pledges the backing of the small tradesmen because the Baths are essential for their living.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 3,
+      "question": "When Aslaksen departs from the Doctor's house, what is his immediate next step before meeting Hovstad at the printing-office?",
+      "option": [
+        "A. He plans to go straight to the Mayor to apologize for the demonstration.",
+        "B. He intends to go into town to prepare the ground with some householders.",
+        "C. He plans to have a glass of beer at the local tavern with Mr. Billing.",
+        "D. He is going to school to speak with Petra about the infusoria.",
+        "E. He decides to confront the town engineer about the broken pipes."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "I am going into town now to talk this over with one or two householders, and prepare the ground.", "dia_id": "D2:139" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "Are you going my way, towards the printing-office. Mr. Hovstad?", "dia_id": "D2:145" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen states he is heading into town to prepare the ground with householders.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He leaves immediately after this, mentioning his general direction is toward the printing-office.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 4,
+      "question": "What specific action does Aslaksen propose to take if the local authorities are too slow to act?",
+      "option": [
+        "A. He will organize a boycott of the Baths by all local tradesmen.",
+        "B. He will physically dismantle the old conduit pipes himself.",
+        "C. He will set on foot a moderate testimonial or address of thanks from the townsmen.",
+        "D. He will publish a violent attack on the Mayor in the 'People's Messenger'.",
+        "E. He will drink a glass of alcohol to show his rebellion against the Temperance Society."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "So you see it would be an easy matter for me to set on foot some testimonial, if necessary.", "dia_id": "D2:131" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "Yes, some kind of an address of thanks from the townsmen for your share in a matter of such importance to the community. I need scarcely say that it would have to be drawn up with the greatest regard to moderation...", "dia_id": "D2:133" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen proposes setting up a testimonial.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He defines this action as a moderate address of thanks from the townsmen to demonstrate support.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 5,
+      "question": "What are Aslaksen's two specific leadership roles within the local community?",
+      "option": [
+        "A. He is the Mayor and the Chairman of the Baths Committee.",
+        "B. He is the Editor of the 'People's Messenger' and the town engineer.",
+        "C. He is the Chairman of the Householders' Association and the local secretary of the Temperance Society.",
+        "D. He is the head medical officer and the President of the Tradesmen Union.",
+        "E. He is a school teacher and the treasurer for Morten Kiil's charities."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "And as I am at present Chairman of the Householders' Association.", "dia_id": "D2:125" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "And, what is more, local secretary of the Temperance Society—you know, sir, I suppose, that I am a worker in the temperance cause?", "dia_id": "D2:127" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen explicitly states he is the Chairman of the Householders' Association.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He adds that he is also the local secretary of the Temperance Society.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Aslaksen",
+      "category": 6,
+      "question": "How many householders does Aslaksen explicitly state he is going to talk to immediately upon leaving the Doctor's house?",
+      "option": [
+        "A. Hundreds of thousands.",
+        "B. Fifteen or twenty.",
+        "C. Ten or twelve.",
+        "D. One or two.",
+        "E. Five."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "I am going into town now to talk this over with one or two householders, and prepare the ground.", "dia_id": "D2:139" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen gives a specific numeric range ('one or two') of householders he plans to speak with right away.",
+          "based_on": ["E1"]
+        }
+      ]
+    }
+  ],
+  "conversation": {
+    "Mrs. Stockmann": "speaker_1",
+    "Dr. Stockmann": "speaker_2",
+    "Morten Kiil": "speaker_3",
+    "Hovstad": "speaker_4",
+    "Aslaksen": "speaker_5",
+    "Petra": "speaker_6",
+    "Peter Stockmann": "speaker_7",
+    "session_2": [
+      {
+        "speaker": "NARRATION",
+        "dia_id": "D2:1",
+        "type": "narration",
+        "text": "(SCENE.—The same. The door into the dining room is shut. It is morning. MRS. STOCKMANN, with a sealed letter in her hand, comes in from the dining room, goes to the door of the DOCTOR'S study, and peeps in.)"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:2",
+        "type": "dialog",
+        "text": "Are you in, Thomas?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:3",
+        "type": "dialog",
+        "text": "Yes, I have just come in. What is it?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:4",
+        "type": "dialog",
+        "text": "A letter from your brother."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:5",
+        "type": "dialog",
+        "text": "Aha, let us see! I return herewith the manuscript you sent me H'm!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:6",
+        "type": "dialog",
+        "text": "What does he say?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:7",
+        "type": "dialog",
+        "text": "Oh, he only writes that he will come up here himself about midday."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:8",
+        "type": "dialog",
+        "text": "Well, try and remember to be at home this time."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:9",
+        "type": "dialog",
+        "text": "That will be all right; I have got through all my morning visits."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:10",
+        "type": "dialog",
+        "text": "I am extremely curious to know how he takes it."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:11",
+        "type": "dialog",
+        "text": "You will see he won't like it's having been I, and not he, that made the discovery."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:12",
+        "type": "dialog",
+        "text": "Aren't you a little nervous about that?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:13",
+        "type": "dialog",
+        "text": "Oh, he really will be pleased enough, you know. But, at the same time, Peter is so confoundedly afraid of anyone's doing any service to the town except himself."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:14",
+        "type": "dialog",
+        "text": "I will tell you what, Thomas—you should be good natured, and share the credit of this with him. Couldn't you make out that it was he who set you on the scent of this discovery?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:15",
+        "type": "dialog",
+        "text": "I am quite willing. If only I can get the thing set right. I—"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D2:16",
+        "type": "stage",
+        "text": "(MORTEN KIIL puts his head in through the door leading from the hall, looks around in an enquiring manner, and chuckles.)"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:17",
+        "type": "dialog",
+        "text": "Is it—is it true?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:18",
+        "type": "dialog",
+        "text": "Father!—is it you?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:19",
+        "type": "dialog",
+        "text": "Ah, Mr. Kiil—good morning, good morning!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:20",
+        "type": "dialog",
+        "text": "But come along in."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:21",
+        "type": "dialog",
+        "text": "If it is true, I will; if not, I am off."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:22",
+        "type": "dialog",
+        "text": "If what is true?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:23",
+        "type": "dialog",
+        "text": "This tale about the water supply, is it true?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:24",
+        "type": "dialog",
+        "text": "Certainly it is true, but how did you come to hear it?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:25",
+        "type": "dialog",
+        "text": "Petra ran in on her way to the school—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:26",
+        "type": "dialog",
+        "text": "Did she?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:27",
+        "type": "dialog",
+        "text": "Yes; and she declares that—I thought she was only making a fool of me—but it isn't like Petra to do that."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:28",
+        "type": "dialog",
+        "text": "Of course not. How could you imagine such a thing!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:29",
+        "type": "dialog",
+        "text": "Oh well, it is better never to trust anybody; you may find you have been made a fool of before you know where you are. But it is really true, all the same?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:30",
+        "type": "dialog",
+        "text": "You can depend upon it that it is true. Won't you sit down? Isn't it a real bit of luck for the town—"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:31",
+        "type": "dialog",
+        "text": "A bit of luck for the town?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:32",
+        "type": "dialog",
+        "text": "Yes, that I made the discovery in good time."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:33",
+        "type": "dialog",
+        "text": "Yes, yes. Yes!—But I should never have thought you the sort of man to pull your own brother's leg like this!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:34",
+        "type": "dialog",
+        "text": "Pull his leg!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:35",
+        "type": "dialog",
+        "text": "Really, father dear—"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:36",
+        "type": "dialog",
+        "text": "Let me see, what was the story? Some kind of beast that had got into the water-pipes, wasn't it?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:37",
+        "type": "dialog",
+        "text": "Infusoria—yes."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:38",
+        "type": "dialog",
+        "text": "And a lot of these beasts had got in, according to Petra—a tremendous lot."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:39",
+        "type": "dialog",
+        "text": "Certainly; hundreds of thousands of them, probably."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:40",
+        "type": "dialog",
+        "text": "But no one can see them—isn't that so?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:41",
+        "type": "dialog",
+        "text": "Yes; you can't see them,"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:42",
+        "type": "dialog",
+        "text": "Damn—it's the finest story I have ever heard!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:43",
+        "type": "dialog",
+        "text": "What do you mean?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:44",
+        "type": "dialog",
+        "text": "But you will never get the Mayor to believe a thing like that."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:45",
+        "type": "dialog",
+        "text": "We shall see."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:46",
+        "type": "dialog",
+        "text": "Do you think he will be fool enough to—?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:47",
+        "type": "dialog",
+        "text": "I hope the whole town will be fools enough."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:48",
+        "type": "dialog",
+        "text": "The whole town! Well, it wouldn't be a bad thing. It would just serve them right, and teach them a lesson. They think themselves so much cleverer than we old fellows. They hounded me out of the council; they did, I tell you—they hounded me out. Now they shall pay for it. You pull their legs too, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:49",
+        "type": "dialog",
+        "text": "Really, I—"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:50",
+        "type": "dialog",
+        "text": "You pull their legs! If you can work it so that the Mayor and his friends all swallow the same bait, I will give ten pounds to a charity—like a shot!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:51",
+        "type": "dialog",
+        "text": "That is very kind of you."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:52",
+        "type": "dialog",
+        "text": "Yes, I haven't got much money to throw away, I can tell you; but, if you can work this, I will give five pounds to a charity at Christmas."
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D2:53",
+        "type": "stage",
+        "text": "(HOVSTAD comes in by the hall door.)"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:54",
+        "type": "dialog",
+        "text": "Good morning! Oh, I beg your pardon"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:55",
+        "type": "dialog",
+        "text": "Not at all; come in."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:56",
+        "type": "dialog",
+        "text": "Oho!—is he in this too?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:57",
+        "type": "dialog",
+        "text": "What do you mean?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:58",
+        "type": "dialog",
+        "text": "Certainly he is."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:59",
+        "type": "dialog",
+        "text": "I might have known it! It must get into the papers. You know how to do it, Thomas! Set your wits to work. Now I must go."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:60",
+        "type": "dialog",
+        "text": "Won't you stay a little while?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D2:61",
+        "type": "dialog",
+        "text": "No, I must be off now. You keep up this game for all it is worth; you won't repent it, I'm damned if you will!"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D2:62",
+        "type": "stage",
+        "text": "(He goes out; MRS. STOCKMANN follows him into the hall.)"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:63",
+        "type": "dialog",
+        "text": "Just imagine—the old chap doesn't believe a word of all this about the water supply."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:64",
+        "type": "dialog",
+        "text": "Oh that was it, then?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:65",
+        "type": "dialog",
+        "text": "Yes, that was what we were talking about. Perhaps it is the same thing that brings you here?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:66",
+        "type": "dialog",
+        "text": "Yes, it is, Can you spare me a few minutes, Doctor?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:67",
+        "type": "dialog",
+        "text": "As long as you like, my dear fellow."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:68",
+        "type": "dialog",
+        "text": "Have you heard from the Mayor yet?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:69",
+        "type": "dialog",
+        "text": "Not yet. He is coming here later."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:70",
+        "type": "dialog",
+        "text": "I have given the matter a great deal of thought since last night."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:71",
+        "type": "dialog",
+        "text": "Well?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:72",
+        "type": "dialog",
+        "text": "From your point of view, as a doctor and a man of science, this affair of the water supply is an isolated matter. I mean, you do not realise that it involves a great many other things."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:73",
+        "type": "dialog",
+        "text": "How do you mean?—Let us sit down, my dear fellow. No, sit here on the couch. Now then. You mean that?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:74",
+        "type": "dialog",
+        "text": "You said yesterday that the pollution of the water was due to impurities in the soil."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:75",
+        "type": "dialog",
+        "text": "Yes, unquestionably it is due to that poisonous morass up at Molledal."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:76",
+        "type": "dialog",
+        "text": "Begging your pardon, Doctor, I fancy it is due to quite another morass altogether."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:77",
+        "type": "dialog",
+        "text": "What morass?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:78",
+        "type": "dialog",
+        "text": "The morass that the whole life of our town is built on and is rotting in."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:79",
+        "type": "dialog",
+        "text": "What the deuce are you driving at, Hovstad?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:80",
+        "type": "dialog",
+        "text": "The whole of the town's interests have, little by little, got into the hands of a pack of officials."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:81",
+        "type": "dialog",
+        "text": "Oh, come!—they are not all officials."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:82",
+        "type": "dialog",
+        "text": "No, but those that are not officials are at any rate the officials' friends and adherents; it is the wealthy folk, the old families in the town, that have got us entirely in their hands."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:83",
+        "type": "dialog",
+        "text": "Yes, but after all they are men of ability and knowledge."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:84",
+        "type": "dialog",
+        "text": "Did they show any ability or knowledge when they laid the conduit pipes where they are now?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:85",
+        "type": "dialog",
+        "text": "No, of course that was a great piece of stupidity on their part. But that is going to be set right now."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:86",
+        "type": "dialog",
+        "text": "Do you think that will be all such plain sailing?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:87",
+        "type": "dialog",
+        "text": "Plain sailing or no, it has got to be done, anyway."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:88",
+        "type": "dialog",
+        "text": "Yes, provided the press takes up the question."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:89",
+        "type": "dialog",
+        "text": "I don't think that will be necessary, my dear fellow, I am certain my brother—"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:90",
+        "type": "dialog",
+        "text": "Excuse me, doctor; I feel bound to tell you I am inclined to take the matter up."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:91",
+        "type": "dialog",
+        "text": "In the paper?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:92",
+        "type": "dialog",
+        "text": "Yes. When I took over the \"People's Messenger\" my idea was to break up this ring of self-opinionated old fossils who had got hold of all the influence."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:93",
+        "type": "dialog",
+        "text": "But you know you told me yourself what the result had been; you nearly ruined your paper."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:94",
+        "type": "dialog",
+        "text": "Yes, at the time we were obliged to climb down a peg or two, it is quite true—because there was a danger of the whole project of the Baths coming to nothing if they failed us. But now the scheme has been carried through, and we can dispense with these grand gentlemen."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:95",
+        "type": "dialog",
+        "text": "Dispense with them, yes; but, we owe them a great debt of gratitude."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:96",
+        "type": "dialog",
+        "text": "That shall be recognised ungrudgingly, But a journalist of my democratic tendencies cannot let such an opportunity as this slip. The bubble of official infallibility must be pricked. This superstition must be destroyed, like any other."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:97",
+        "type": "dialog",
+        "text": "I am whole-heartedly with you in that, Mr. Hovstad; if it is a superstition, away with it!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:98",
+        "type": "dialog",
+        "text": "I should be very reluctant to bring the Mayor into it, because he is your brother. But I am sure you will agree with me that truth should be the first consideration."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:99",
+        "type": "dialog",
+        "text": "That goes without saying. Yes, but—but—"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:100",
+        "type": "dialog",
+        "text": "You must not misjudge me. I am neither more self-interested nor more ambitious than most men."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:101",
+        "type": "dialog",
+        "text": "My dear fellow—who suggests anything of the kind?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:102",
+        "type": "dialog",
+        "text": "I am of humble origin, as you know; and that has given me opportunities of knowing what is the most crying need in the humbler ranks of life. It is that they should be allowed some part in the direction of public affairs, Doctor. That is what will develop their faculties and intelligence and self respect—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:103",
+        "type": "dialog",
+        "text": "I quite appreciate that."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:104",
+        "type": "dialog",
+        "text": "Yes—and in my opinion a journalist incurs a heavy responsibility if he neglects a favourable opportunity of emancipating the masses—the humble and oppressed. I know well enough that in exalted circles I shall be called an agitator, and all that sort of thing; but they may call what they like. If only my conscience doesn't reproach me, then—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:105",
+        "type": "dialog",
+        "text": "Quite right! Quite right, Mr. Hovstad. But all the same—devil take it! Come in!"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D2:106",
+        "type": "stage",
+        "text": "(ASLAKSEN appears at the door. He is poorly but decently dressed, in black, with a slightly crumpled white neckcloth; he wears gloves and has a felt hat in his hand.)"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:107",
+        "type": "dialog",
+        "text": "Excuse my taking the liberty, Doctor—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:108",
+        "type": "dialog",
+        "text": "Ah, it is you, Aslaksen!"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:109",
+        "type": "dialog",
+        "text": "Yes, Doctor."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:110",
+        "type": "dialog",
+        "text": "Is it me you want, Aslaksen?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:111",
+        "type": "dialog",
+        "text": "No; I didn't know I should find you here. No, it was the Doctor I—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:112",
+        "type": "dialog",
+        "text": "I am quite at your service. What is it?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:113",
+        "type": "dialog",
+        "text": "Is what I heard from Mr. Billing true, sir—that you mean to improve our water supply?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:114",
+        "type": "dialog",
+        "text": "Yes, for the Baths."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:115",
+        "type": "dialog",
+        "text": "Quite so, I understand. Well, I have come to say that I will back that up by every means in my power."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:116",
+        "type": "dialog",
+        "text": "You see!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:117",
+        "type": "dialog",
+        "text": "I shall be very grateful to you, but—"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:118",
+        "type": "dialog",
+        "text": "Because it may be no bad thing to have us small tradesmen at your back. We form, as it were, a compact majority in the town—if we choose. And it is always a good thing to have the majority with you, Doctor."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:119",
+        "type": "dialog",
+        "text": "That is undeniably true; but I confess I don't see why such unusual precautions should be necessary in this case. It seems to me that such a plain, straightforward thing—"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:120",
+        "type": "dialog",
+        "text": "Oh, it may be very desirable, all the same. I know our local authorities so well; officials are not generally very ready to act on proposals that come from other people. That is why I think it would not be at all amiss if we made a little demonstration."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:121",
+        "type": "dialog",
+        "text": "That's right."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:122",
+        "type": "dialog",
+        "text": "Demonstration, did you say? What on earth are you going to make a demonstration about?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:123",
+        "type": "dialog",
+        "text": "We shall proceed with the greatest moderation, Doctor. Moderation is always my aim; it is the greatest virtue in a citizen—at least, I think so."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:124",
+        "type": "dialog",
+        "text": "It is well known to be a characteristic of yours, Mr. Aslaksen."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:125",
+        "type": "dialog",
+        "text": "Yes, I think I may pride myself on that. And this matter of the water supply is of the greatest importance to us small tradesmen. The Baths promise to be a regular gold-mine for the town. We shall all make our living out of them, especially those of us who are householder. That is why we will back up the project as strongly as possible. And as I am at present Chairman of the Householders' Association."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:126",
+        "type": "dialog",
+        "text": "Yes—?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:127",
+        "type": "dialog",
+        "text": "And, what is more, local secretary of the Temperance Society—you know, sir, I suppose, that I am a worker in the temperance cause?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:128",
+        "type": "dialog",
+        "text": "Of course, of course."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:129",
+        "type": "dialog",
+        "text": "Well, you can understand that I come into contact with a great many people. And as I have the reputation of a temperate and law-abiding citizen—like yourself, Doctor—I have a certain influence in the town, a little bit of power, if I may be allowed to say so."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:130",
+        "type": "dialog",
+        "text": "I know that quite well, Mr. Aslaksen."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:131",
+        "type": "dialog",
+        "text": "So you see it would be an easy matter for me to set on foot some testimonial, if necessary."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:132",
+        "type": "dialog",
+        "text": "A testimonial?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:133",
+        "type": "dialog",
+        "text": "Yes, some kind of an address of thanks from the townsmen for your share in a matter of such importance to the community. I need scarcely say that it would have to be drawn up with the greatest regard to moderation, so as not to offend the authorities—who, after all, have the reins in their hands. If we pay strict attention to that, no one can take it amiss, I should think!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:134",
+        "type": "dialog",
+        "text": "Well, and even supposing they didn't like it—"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:135",
+        "type": "dialog",
+        "text": "No, no, no; there must be no discourtesy to the authorities, Mr. Hovstad. It is no use falling foul of those upon whom our welfare so closely depends. I have done that in my time, and no good ever comes of it. But no one can take exception to a reasonable and frank expression of a citizen's views."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:136",
+        "type": "dialog",
+        "text": "I can't tell you, dear Mr. Aslaksen, how extremely pleased I am to find such hearty support among my fellow-citizens. I am delighted—delighted! Now, you will take a small glass of sherry, eh?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:137",
+        "type": "dialog",
+        "text": "No, thank you; I never drink alcohol of that kind."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:138",
+        "type": "dialog",
+        "text": "Well, what do you say to a glass of beer, then?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:139",
+        "type": "dialog",
+        "text": "Nor that either, thank you, Doctor. I never drink anything as early as this. I am going into town now to talk this over with one or two householders, and prepare the ground."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:140",
+        "type": "dialog",
+        "text": "It is tremendously kind of you, Mr. Aslaksen; but I really cannot understand the necessity for all these precautions. It seems to me that the thing should go of itself."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:141",
+        "type": "dialog",
+        "text": "The authorities are somewhat slow to move, Doctor. Far be it from me to seem to blame them—"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:142",
+        "type": "dialog",
+        "text": "We are going to stir them up in the paper tomorrow, Aslaksen."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:143",
+        "type": "dialog",
+        "text": "But not violently, I trust, Mr. Hovstad. Proceed with moderation, or you will do nothing with them. You may take my advice; I have gathered my experience in the school of life. Well, I must say goodbye, Doctor. You know now that we small tradesmen are at your back at all events, like a solid wall. You have the compact majority on your side Doctor."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:144",
+        "type": "dialog",
+        "text": "I am very much obliged, dear Mr. Aslaksen, Goodbye, goodbye."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:145",
+        "type": "dialog",
+        "text": "Are you going my way, towards the printing-office. Mr. Hovstad?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:146",
+        "type": "dialog",
+        "text": "I will come later; I have something to settle up first."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D2:147",
+        "type": "dialog",
+        "text": "Very well."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:148",
+        "type": "dialog",
+        "text": "Well, what do you think of that, Doctor? Don't you think it is high time we stirred a little life into all this slackness and vacillation and cowardice?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:149",
+        "type": "dialog",
+        "text": "Are you referring to Aslaksen?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:150",
+        "type": "dialog",
+        "text": "Yes, I am. He is one of those who are floundering in a bog—decent enough fellow though he may be, otherwise. And most of the people here are in just the same case—see-sawing and edging first to one side and then to the other, so overcome with caution and scruple that they never dare to take any decided step."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:151",
+        "type": "dialog",
+        "text": "Yes, but Aslaksen seemed to me so thoroughly well-intentioned."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:152",
+        "type": "dialog",
+        "text": "There is one thing I esteem higher than that; and that is for a man to be self-reliant and sure of himself."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:153",
+        "type": "dialog",
+        "text": "I think you are perfectly right there."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:154",
+        "type": "dialog",
+        "text": "That is why I want to seize this opportunity, and try if I cannot manage to put a little virility into these well-intentioned people for once. The idol of Authority must be shattered in this town. This gross and inexcusable blunder about the water supply must be brought home to the mind of every municipal voter."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:155",
+        "type": "dialog",
+        "text": "Very well; if you are of opinion that it is for the good of the community, so be it. But not until I have had a talk with my brother."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:156",
+        "type": "dialog",
+        "text": "Anyway, I will get a leading article ready; and if the Mayor refuses to take the matter up—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:157",
+        "type": "dialog",
+        "text": "How can you suppose such a thing possible!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:158",
+        "type": "dialog",
+        "text": "It is conceivable. And in that case—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:159",
+        "type": "dialog",
+        "text": "In that case I promise you—. Look here, in that case you may print my report—every word of it."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:160",
+        "type": "dialog",
+        "text": "May I? Have I your word for it?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:161",
+        "type": "dialog",
+        "text": "Here it is; take it with you. It can do no harm for you to read it through, and you can give it me back later on."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:162",
+        "type": "dialog",
+        "text": "Good, good! That is what I will do. And now goodbye, Doctor."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:163",
+        "type": "dialog",
+        "text": "Goodbye, goodbye. You will see everything will run quite smoothly, Mr. Hovstad—quite smoothly."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D2:164",
+        "type": "dialog",
+        "text": "Hm!—we shall see."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:165",
+        "type": "dialog",
+        "text": "Katherine! Oh, you are back, Petra?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:166",
+        "type": "dialog",
+        "text": "Yes, I have just come from the school."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:167",
+        "type": "dialog",
+        "text": "Has he not been here yet?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:168",
+        "type": "dialog",
+        "text": "Peter? No, but I have had a long talk with Hovstad. He is quite excited about my discovery, I find it has a much wider bearing than I at first imagined. And he has put his paper at my disposal if necessity should arise."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:169",
+        "type": "dialog",
+        "text": "Do you think it will?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:170",
+        "type": "dialog",
+        "text": "Not for a moment. But at all events it makes me feel proud to know that I have the liberal-minded independent press on my side. Yes, and just imagine—I have had a visit from the Chairman of the Householders' Association!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:171",
+        "type": "dialog",
+        "text": "Oh! What did he want?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:172",
+        "type": "dialog",
+        "text": "To offer me his support too. They will support me in a body if it should be necessary. Katherine—do you know what I have got behind me?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:173",
+        "type": "dialog",
+        "text": "Behind you? No, what have you got behind you?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:174",
+        "type": "dialog",
+        "text": "The compact majority."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:175",
+        "type": "dialog",
+        "text": "Really? Is that a good thing for you Thomas?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:176",
+        "type": "dialog",
+        "text": "I should think it was a good thing. By Jove, it's a fine thing to feel this bond of brotherhood between oneself and one's fellow citizens!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:177",
+        "type": "dialog",
+        "text": "And to be able to do so much that is good and useful, father!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:178",
+        "type": "dialog",
+        "text": "And for one's own native town into the bargain, my child!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:179",
+        "type": "dialog",
+        "text": "That was a ring at the bell."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:180",
+        "type": "dialog",
+        "text": "It must be he, then. Come in!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:181",
+        "type": "dialog",
+        "text": "Good morning."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:182",
+        "type": "dialog",
+        "text": "Glad to see you, Peter!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:183",
+        "type": "dialog",
+        "text": "Good morning, Peter, How are you?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:184",
+        "type": "dialog",
+        "text": "So so, thank you. I received from you yesterday, after office hours, a report dealing with the condition of the water at the Baths."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:185",
+        "type": "dialog",
+        "text": "Yes. Have you read it?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:186",
+        "type": "dialog",
+        "text": "Yes, I have,"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:187",
+        "type": "dialog",
+        "text": "And what have you to say to it?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:188",
+        "type": "dialog",
+        "text": "Hm!—"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:189",
+        "type": "dialog",
+        "text": "Come along, Petra."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:190",
+        "type": "dialog",
+        "text": "Was it necessary to make all these investigations behind my back?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:191",
+        "type": "dialog",
+        "text": "Yes, because until I was absolutely certain about it—"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:192",
+        "type": "dialog",
+        "text": "Then you mean that you are absolutely certain now?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:193",
+        "type": "dialog",
+        "text": "Surely you are convinced of that."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:194",
+        "type": "dialog",
+        "text": "Is it your intention to bring this document before the Baths Committee as a sort of official communication?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:195",
+        "type": "dialog",
+        "text": "Certainly. Something must be done in the matter—and that quickly."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:196",
+        "type": "dialog",
+        "text": "As usual, you employ violent expressions in your report. You say, amongst other things, that what we offer visitors in our Baths is a permanent supply of poison."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:197",
+        "type": "dialog",
+        "text": "Well, can you describe it any other way, Peter? Just think—water that is poisonous, whether you drink it or bathe in it! And this we offer to the poor sick folk who come to us trustfully and pay us at an exorbitant rate to be made well again!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:198",
+        "type": "dialog",
+        "text": "And your reasoning leads you to this conclusion, that we must build a sewer to draw off the alleged impurities from Molledal and must relay the water conduits."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:199",
+        "type": "dialog",
+        "text": "Yes. Do you see any other way out of it? I don't."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:200",
+        "type": "dialog",
+        "text": "I made a pretext this morning to go and see the town engineer, and, as if only half seriously, broached the subject of these proposals as a thing we might perhaps have to take under consideration some time later on."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:201",
+        "type": "dialog",
+        "text": "Some time later on!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:202",
+        "type": "dialog",
+        "text": "He smiled at what he considered to be my extravagance, naturally. Have you taken the trouble to consider what your proposed alterations would cost? According to the information I obtained, the expenses would probably mount up to fifteen or twenty thousand pounds."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:203",
+        "type": "dialog",
+        "text": "Would it cost so much?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:204",
+        "type": "dialog",
+        "text": "Yes; and the worst part of it would be that the work would take at least two years."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:205",
+        "type": "dialog",
+        "text": "Two years? Two whole years?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:206",
+        "type": "dialog",
+        "text": "At least. And what are we to do with the Baths in the meantime? Close them? Indeed we should be obliged to. And do you suppose anyone would come near the place after it had got out that the water was dangerous?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:207",
+        "type": "dialog",
+        "text": "Yes but, Peter, that is what it is."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:208",
+        "type": "dialog",
+        "text": "And all this at this juncture—just as the Baths are beginning to be known. There are other towns in the neighbourhood with qualifications to attract visitors for bathing purposes. Don't you suppose they would immediately strain every nerve to divert the entire stream of strangers to themselves? Unquestionably they would; and then where should we be? We should probably have to abandon the whole thing, which has cost us so much money-and then you would have ruined your native town."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:209",
+        "type": "dialog",
+        "text": "I—should have ruined—!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:210",
+        "type": "dialog",
+        "text": "It is simply and solely through the Baths that the town has before it any future worth mentioning. You know that just as well as I."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:211",
+        "type": "dialog",
+        "text": "But what do you think ought to be done, then?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:212",
+        "type": "dialog",
+        "text": "Your report has not convinced me that the condition of the water at the Baths is as bad as you represent it to be."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:213",
+        "type": "dialog",
+        "text": "I tell you it is even worse!—or at all events it will be in summer, when the warm weather comes."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:214",
+        "type": "dialog",
+        "text": "As I said, I believe you exaggerate the matter considerably. A capable physician ought to know what measures to take—he ought to be capable of preventing injurious influences or of remedying them if they become obviously persistent."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:215",
+        "type": "dialog",
+        "text": "Well? What more?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:216",
+        "type": "dialog",
+        "text": "The water supply for the Baths is now an established fact, and in consequence must be treated as such. But probably the Committee, at its discretion, will not be disinclined to consider the question of how far it might be possible to introduce certain improvements consistently with a reasonable expenditure."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:217",
+        "type": "dialog",
+        "text": "And do you suppose that I will have anything to do with such a piece of trickery as that?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:218",
+        "type": "dialog",
+        "text": "Trickery!!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:219",
+        "type": "dialog",
+        "text": "Yes, it would be a trick—a fraud, a lie, a downright crime towards the public, towards the whole community!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:220",
+        "type": "dialog",
+        "text": "I have not, as I remarked before, been able to convince myself that there is actually any imminent danger."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:221",
+        "type": "dialog",
+        "text": "You have! It is impossible that you should not be convinced. I know I have represented the facts absolutely truthfully and fairly. And you know it very well, Peter, only you won't acknowledge it. It was owing to your action that both the Baths and the water conduits were built where they are; and that is what you won't acknowledge—that damnable blunder of yours. Pooh!—do you suppose I don't see through you?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:222",
+        "type": "dialog",
+        "text": "And even if that were true? If I perhaps guard my reputation somewhat anxiously, it is in the interests of the town. Without moral authority I am powerless to direct public affairs as seems, to my judgment, to be best for the common good. And on that account—and for various other reasons too—it appears to me to be a matter of importance that your report should not be delivered to the Committee. In the interests of the public, you must withhold it. Then, later on, I will raise the question and we will do our best, privately; but nothing of this unfortunate affair not a single word of it—must come to the ears of the public."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:223",
+        "type": "dialog",
+        "text": "I am afraid you will not be able to prevent that now, my dear Peter."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:224",
+        "type": "dialog",
+        "text": "It must and shall be prevented."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:225",
+        "type": "dialog",
+        "text": "It is no use, I tell you. There are too many people that know about it."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:226",
+        "type": "dialog",
+        "text": "That know about it? Who? Surely you don't mean those fellows on the \"People's Messenger\"?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:227",
+        "type": "dialog",
+        "text": "Yes, they know. The liberal-minded independent press is going to see that you do your duty."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:228",
+        "type": "dialog",
+        "text": "You are an extraordinarily independent man, Thomas. Have you given no thought to the consequences this may have for yourself?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:229",
+        "type": "dialog",
+        "text": "Consequences?—for me?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:230",
+        "type": "dialog",
+        "text": "For you and yours, yes."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:231",
+        "type": "dialog",
+        "text": "What the deuce do you mean?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:232",
+        "type": "dialog",
+        "text": "I believe I have always behaved in a brotherly way to you—haven't I always been ready to oblige or to help you?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:233",
+        "type": "dialog",
+        "text": "Yes, you have, and I am grateful to you for it."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:234",
+        "type": "dialog",
+        "text": "There is no need. Indeed, to some extent I was forced to do so—for my own sake. I always hoped that, if I helped to improve your financial position, I should be able to keep some check on you."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:235",
+        "type": "dialog",
+        "text": "What! Then it was only for your own sake—!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:236",
+        "type": "dialog",
+        "text": "Up to a certain point, yes. It is painful for a man in an official position to have his nearest relative compromising himself time after time."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:237",
+        "type": "dialog",
+        "text": "And do you consider that I do that?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:238",
+        "type": "dialog",
+        "text": "Yes, unfortunately, you do, without even being aware of it. You have a restless, pugnacious, rebellious disposition. And then there is that disastrous propensity of yours to want to write about every sort of possible and impossible thing. The moment an idea comes into your head, you must needs go and write a newspaper article or a whole pamphlet about it."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:239",
+        "type": "dialog",
+        "text": "Well, but is it not the duty of a citizen to let the public share in any new ideas he may have?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:240",
+        "type": "dialog",
+        "text": "Oh, the public doesn't require any new ideas. The public is best served by the good, old established ideas it already has."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:241",
+        "type": "dialog",
+        "text": "And that is your honest opinion?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:242",
+        "type": "dialog",
+        "text": "Yes, and for once I must talk frankly to you. Hitherto I have tried to avoid doing so, because I know how irritable you are; but now I must tell you the truth, Thomas. You have no conception what an amount of harm you do yourself by your impetuosity. You complain of the authorities, you even complain of the government—you are always pulling them to pieces; you insist that you have been neglected and persecuted. But what else can such a cantankerous man as you expect?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:243",
+        "type": "dialog",
+        "text": "What next! Cantankerous, am I?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:244",
+        "type": "dialog",
+        "text": "Yes, Thomas, you are an extremely cantankerous man to work with—I know that to my cost. You disregard everything that you ought to have consideration for. You seem completely to forget that it is me you have to thank for your appointment here as medical officer to the Baths."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:245",
+        "type": "dialog",
+        "text": "I was entitled to it as a matter of course!—I and nobody else! I was the first person to see that the town could be made into a flourishing watering-place, and I was the only one who saw it at that time. I had to fight single-handed in support of the idea for many years; and I wrote and wrote—"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:246",
+        "type": "dialog",
+        "text": "Undoubtedly. But things were not ripe for the scheme then—though, of course, you could not judge of that in your out-of-the-way corner up north. But as soon as the opportune moment came I—and the others—took the matter into our hands."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:247",
+        "type": "dialog",
+        "text": "Yes, and made this mess of all my beautiful plan. It is pretty obvious now what clever fellows you were!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:248",
+        "type": "dialog",
+        "text": "To my mind the whole thing only seems to mean that you are seeking another outlet for your combativeness. You want to pick a quarrel with your superiors—an old habit of yours. You cannot put up with any authority over you. You look askance at anyone who occupies a superior official position; you regard him as a personal enemy, and then any stick is good enough to beat him with. But now I have called your attention to the fact that the town's interests are at stake—and, incidentally, my own too. And therefore, I must tell you, Thomas, that you will find me inexorable with regard to what I am about to require you to do."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:249",
+        "type": "dialog",
+        "text": "And what is that?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:250",
+        "type": "dialog",
+        "text": "As you have been so indiscreet as to speak of this delicate matter to outsiders, despite the fact that you ought to have treated it as entirely official and confidential, it is obviously impossible to hush it up now. All sorts of rumours will get about directly, and everybody who has a grudge against us will take care to embellish these rumours. So it will be necessary for you to refute them publicly."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:251",
+        "type": "dialog",
+        "text": "I! How? I don't understand."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:252",
+        "type": "dialog",
+        "text": "What we shall expect is that, after making further investigations, you will come to the conclusion that the matter is not by any means as dangerous or as critical as you imagined in the first instance."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:253",
+        "type": "dialog",
+        "text": "Oho!—so that is what you expect!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:254",
+        "type": "dialog",
+        "text": "And, what is more, we shall expect you to make public profession of your confidence in the Committee and in their readiness to consider fully and conscientiously what steps may be necessary to remedy any possible defects."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:255",
+        "type": "dialog",
+        "text": "But you will never be able to do that by patching and tinkering at it—never! Take my word for it, Peter; I mean what I say, as deliberately and emphatically as possible."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:256",
+        "type": "dialog",
+        "text": "As an officer under the Committee, you have no right to any individual opinion."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:257",
+        "type": "dialog",
+        "text": "No right?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:258",
+        "type": "dialog",
+        "text": "In your official capacity, no. As a private person, it is quite another matter. But as a subordinate member of the staff of the Baths, you have no right to express any opinion which runs contrary to that of your superiors."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:259",
+        "type": "dialog",
+        "text": "This is too much! I, a doctor, a man of science, have no right to—!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:260",
+        "type": "dialog",
+        "text": "The matter in hand is not simply a scientific one. It is a complicated matter, and has its economic as well as its technical side."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:261",
+        "type": "dialog",
+        "text": "I don't care what it is! I intend to be free to express my opinion on any subject under the sun."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:262",
+        "type": "dialog",
+        "text": "As you please—but not on any subject concerning the Baths. That we forbid."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:263",
+        "type": "dialog",
+        "text": "You forbid—! You! A pack of—"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:264",
+        "type": "dialog",
+        "text": "I forbid it—I, your chief; and if I forbid it, you have to obey."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:265",
+        "type": "dialog",
+        "text": "Peter—if you were not my brother—"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:266",
+        "type": "dialog",
+        "text": "Father, you shan't stand this!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:267",
+        "type": "dialog",
+        "text": "Petra, Petra!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:268",
+        "type": "dialog",
+        "text": "Oh, so you have been eavesdropping."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:269",
+        "type": "dialog",
+        "text": "You were talking so loud, we couldn't help it!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:270",
+        "type": "dialog",
+        "text": "Yes, I was listening."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:271",
+        "type": "dialog",
+        "text": "Well, after all, I am very glad—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:272",
+        "type": "dialog",
+        "text": "You were saying something about forbidding and obeying?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:273",
+        "type": "dialog",
+        "text": "You obliged me to take that tone with you."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:274",
+        "type": "dialog",
+        "text": "And so I am to give myself the lie, publicly?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:275",
+        "type": "dialog",
+        "text": "We consider it absolutely necessary that you should make some such public statement as I have asked for."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:276",
+        "type": "dialog",
+        "text": "And if I do not—obey?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:277",
+        "type": "dialog",
+        "text": "Then we shall publish a statement ourselves to reassure the public."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:278",
+        "type": "dialog",
+        "text": "Very well; but in that case I shall use my pen against you. I stick to what I have said; I will show that I am right and that you are wrong. And what will you do then?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:279",
+        "type": "dialog",
+        "text": "Then I shall not be able to prevent your being dismissed."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:280",
+        "type": "dialog",
+        "text": "What—?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:281",
+        "type": "dialog",
+        "text": "Father—dismissed!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:282",
+        "type": "dialog",
+        "text": "Dismissed!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:283",
+        "type": "dialog",
+        "text": "Dismissed from the staff of the Baths. I shall be obliged to propose that you shall immediately be given notice, and shall not be allowed any further participation in the Baths' affairs."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:284",
+        "type": "dialog",
+        "text": "You would dare to do that!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:285",
+        "type": "dialog",
+        "text": "It is you that are playing the daring game."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:286",
+        "type": "dialog",
+        "text": "Uncle, that is a shameful way to treat a man like father!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:287",
+        "type": "dialog",
+        "text": "Do hold your tongue, Petra!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:288",
+        "type": "dialog",
+        "text": "Oh, so we volunteer our opinions already, do we? Of course. Katherine, I imagine you are the most sensible person in this house. Use any influence you may have over your husband, and make him see what this will entail for his family as well as—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:289",
+        "type": "dialog",
+        "text": "My family is my own concern and nobody else's!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:290",
+        "type": "dialog",
+        "text": "—for his own family, as I was saying, as well as for the town he lives in."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:291",
+        "type": "dialog",
+        "text": "It is I who have the real good of the town at heart! I want to lay bare the defects that sooner or later must come to the light of day. I will show whether I love my native town."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:292",
+        "type": "dialog",
+        "text": "You, who in your blind obstinacy want to cut off the most important source of the town's welfare?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:293",
+        "type": "dialog",
+        "text": "The source is poisoned, man! Are you mad? We are making our living by retailing filth and corruption! The whole of our flourishing municipal life derives its sustenance from a lie!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:294",
+        "type": "dialog",
+        "text": "All imagination—or something even worse. The man who can throw out such offensive insinuations about his native town must be an enemy to our community."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:295",
+        "type": "dialog",
+        "text": "Do you dare to—!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:296",
+        "type": "dialog",
+        "text": "Thomas!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:297",
+        "type": "dialog",
+        "text": "Don't lose your temper, father!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D2:298",
+        "type": "dialog",
+        "text": "I will not expose myself to violence. Now you have had a warning; so reflect on what you owe to yourself and your family. Goodbye."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:299",
+        "type": "dialog",
+        "text": "Am I to put up with such treatment as this? In my own house, Katherine! What do you think of that!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:300",
+        "type": "dialog",
+        "text": "Indeed it is both shameful and absurd, Thomas—"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:301",
+        "type": "dialog",
+        "text": "If only I could give uncle a piece of my mind—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:302",
+        "type": "dialog",
+        "text": "It is my own fault. I ought to have flown out at him long ago!—shown my teeth!—bitten! To hear him call me an enemy to our community! Me! I shall not take that lying down, upon my soul!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:303",
+        "type": "dialog",
+        "text": "But, dear Thomas, your brother has power on his side."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:304",
+        "type": "dialog",
+        "text": "Yes, but I have right on mine, I tell you."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:305",
+        "type": "dialog",
+        "text": "Oh yes, right—right. What is the use of having right on your side if you have not got might?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:306",
+        "type": "dialog",
+        "text": "Oh, mother!—how can you say such a thing!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:307",
+        "type": "dialog",
+        "text": "Do you imagine that in a free country it is no use having right on your side? You are absurd, Katherine. Besides, haven't I got the liberal-minded, independent press to lead the way, and the compact majority behind me? That is might enough, I should think!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:308",
+        "type": "dialog",
+        "text": "But, good heavens, Thomas, you don't mean to?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:309",
+        "type": "dialog",
+        "text": "Don't mean to what?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:310",
+        "type": "dialog",
+        "text": "To set yourself up in opposition to your brother."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:311",
+        "type": "dialog",
+        "text": "In God's name, what else do you suppose I should do but take my stand on right and truth?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:312",
+        "type": "dialog",
+        "text": "Yes, I was just going to say that."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:313",
+        "type": "dialog",
+        "text": "But it won't do you any earthly good. If they won't do it, they won't."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:314",
+        "type": "dialog",
+        "text": "Oho, Katherine! Just give me time, and you will see how I will carry the war into their camp."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:315",
+        "type": "dialog",
+        "text": "Yes, you carry the war into their camp, and you get your dismissal—that is what you will do."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:316",
+        "type": "dialog",
+        "text": "In any case I shall have done my duty towards the public—towards the community, I, who am called its enemy!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:317",
+        "type": "dialog",
+        "text": "But towards your family, Thomas? Towards your own home! Do you think that is doing your duty towards those you have to provide for?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:318",
+        "type": "dialog",
+        "text": "Ah, don't think always first of us, mother."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:319",
+        "type": "dialog",
+        "text": "Oh, it is easy for you to talk; you are able to shift for yourself, if need be. But remember the boys, Thomas; and think a little of yourself too, and of me—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:320",
+        "type": "dialog",
+        "text": "I think you are out of your senses, Katherine! If I were to be such a miserable coward as to go on my knees to Peter and his damned crew, do you suppose I should ever know an hour's peace of mind all my life afterwards?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:321",
+        "type": "dialog",
+        "text": "I don't know anything about that; but God preserve us from the peace of mind we shall have, all the same, if you go on defying him! You will find yourself again without the means of subsistence, with no income to count upon. I should think we had had enough of that in the old days. Remember that, Thomas; think what that means."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:322",
+        "type": "dialog",
+        "text": "And this is what this slavery can bring upon a free, honourable man! Isn't it horrible, Katherine?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:323",
+        "type": "dialog",
+        "text": "Yes, it is sinful to treat you so, it is perfectly true. But, good heavens, one has to put up with so much injustice in this world. There are the boys, Thomas! Look at them! What is to become of them? Oh, no, no, you can never have the heart—."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:324",
+        "type": "dialog",
+        "text": "The boys— I No, even if the whole world goes to pieces, I will never bow my neck to this yokel"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:325",
+        "type": "dialog",
+        "text": "Thomas—what are you going to do!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D2:326",
+        "type": "dialog",
+        "text": "I mean to have the right to look my sons in the face when they are grown men."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D2:327",
+        "type": "dialog",
+        "text": "God help us all!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D2:328",
+        "type": "dialog",
+        "text": "Father is splendid! He will not give in."
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D2:329",
+        "type": "stage",
+        "text": "(The boys look on in amazement; PETRA signs to them not to speak.)"
+      }
+    ]
+  },
+  "sample_id": "conv-2"
+}

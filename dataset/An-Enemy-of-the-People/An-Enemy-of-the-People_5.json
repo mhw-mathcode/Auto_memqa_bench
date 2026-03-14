@@ -1,0 +1,2947 @@
+{
+  "qa": [
+    {
+      "character": "Dr. Stockmann",
+      "category": 1,
+      "question": "Which statement best describes Dr. Stockmann's consistent reaction to the townspeople's opposition and attempts to control him across different interactions?",
+      "option": [
+        "A. He is easily intimidated and immediately seeks ways to apologize and regain his former position.",
+        "B. He becomes defensive but ultimately agrees to compromise if it benefits his family financially.",
+        "C. He views the opposition as a validation of his own moral superiority and stubbornly refuses to yield.",
+        "D. He ignores the opposition entirely and focuses solely on his scientific research without engaging them in any way.",
+        "E. He attempts to reason calmly with his opponents to reach a mutually beneficial understanding that satisfies the town."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "If we went to another town, do you suppose we should not find the common people just as insolent as they are here? Depend upon it, there is not much to choose between them.", "dia_id": "D5:20" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes, and now I feel I have the whole town ON my back— I would not do it if I had the devil and his dam on my back—! Never—never, I tell you!", "dia_id": "D5:115" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann believes the opposition from the common people is widespread and insolent everywhere, showing his disdain for their control.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "When pressed by Peter to conform to the town's wishes, he fiercely refuses, demonstrating his stubbornness and sense of moral superiority against the majority.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 2,
+      "question": "What was Dr. Stockmann's immediate reaction upon learning that his family was financially provided for by a relative's will?",
+      "option": [
+        "A. He was highly suspicious of the motives and demanded to see the legal documents immediately.",
+        "B. He felt immense relief and joy, eagerly calling for his wife to share the blessed feeling of security.",
+        "C. He felt insulted that he would need to rely on charity and rejected the inheritance out of hand.",
+        "D. He was indifferent, stating that money was less important than maintaining his scientific integrity and public standing.",
+        "E. He panicked, realizing that this wealth would make him a much bigger target for the town's growing anger."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Hm!—hadn't you really? Then I suppose you had no notion, either, that a considerable portion of his wealth will come to your children, you and your wife having a life-rent of the capital. Has he never told you so?", "dia_id": "D5:128" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Oh, nothing, nothing; you can go back. Provided for!—Just think of it, we are all provided for! And for life! What a blessed feeling it is to know one is provided for!", "dia_id": "D5:134" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter informs Dr. Stockmann that his family will inherit a considerable portion of Mr. Kiil's wealth.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Dr. Stockmann reacts with extreme joy and relief, exclaiming what a 'blessed feeling' it is to be provided for.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 3,
+      "question": "What sequence of events led Dr. Stockmann to change his mind from wanting to leave the town to deciding to stay and fight?",
+      "option": [
+        "A. He first received the eviction notice, then was dismissed from the Baths, and finally received Horster's offer of housing.",
+        "B. He first planned to leave due to the town's hostility, but after rejecting Kiil's blackmail and Hovstad's corrupt offer, he resolved to stay.",
+        "C. He first planned to stay and fight, but after Petra was fired, he briefly decided to leave before Horster offered his house.",
+        "D. He first learned of his dismissal, then was threatened by Morten Kiil, and finally realized Hovstad and Aslaksen were corrupt.",
+        "E. He first decided to leave, but changed his mind when Morten Kiil offered him a large sum of money to stay and rebuild the Baths."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "We won't live in such a disgusting hole any longer. Pack up as quickly as you can, Katherine; the sooner we can get away, the better.", "dia_id": "D5:45" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!", "dia_id": "D5:261" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Yes, here. This is the field of battle—this is where the fight will be. This is where I shall triumph! As soon as I have had my trousers sewn up I shall go out and look for another house. We must have a roof over our heads for the winter.", "dia_id": "D5:264" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Early in the morning, after Petra is fired, Dr. Stockmann explicitly tells his wife to pack up so they can leave.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "After dealing with Morten Kiil's threats and driving out Hovstad/Aslaksen, he completely reverses his decision and declares they are staying.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "He defines the town as his field of battle where he will fight, showing a sequence from fleeing to making a stand.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 4,
+      "question": "How did Dr. Stockmann physically react to the proposal from the men representing the 'People's Messenger'?",
+      "option": [
+        "A. He calmly escorted them to the door and politely asked them never to return to his home.",
+        "B. He accepted their offer enthusiastically and immediately began drafting an article with them.",
+        "C. He became enraged, grabbed an umbrella, and forcefully drove them toward the window.",
+        "D. He threw his inkpot at their heads and ordered his daughter to scrub the floor after they left.",
+        "E. He ignored their presence entirely and continued searching for stones under his cabinet."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Quite so; that would be a great trial to such a friend of the people as you are. But I am an enemy of the people, remember! Where have I put my stick? Where the devil is my stick?", "dia_id": "D5:230" },
+        { "id": "E2", "speaker": "Aslaksen", "utterance": "Take care what you are doing with that umbrella.", "dia_id": "D5:240" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When Hovstad and Aslaksen offer to support him for a return, Dr. Stockmann searches for his stick to attack them.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He grabs an umbrella and threatens them with it, ultimately shouting for them to jump out the window.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 5,
+      "question": "What is the explicit familial relationship between Dr. Stockmann and Peter Stockmann?",
+      "option": [
+        "A. They are cousins who have been engaged in a long-standing property dispute over the Baths.",
+        "B. They are father and son, with Peter demanding obedience from the younger doctor.",
+        "C. They are brothers, a fact Peter uses to advise the doctor to be more discreet.",
+        "D. They are uncle and nephew, representing different generations of the town's leadership.",
+        "E. They are unrelated men who happen to share the same surname due to the town's history."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "You understand, very well what I mean. But, as your brother and as a man of discretion, I advise you not to build too much upon expectations and prospects that may so very easily fail you.", "dia_id": "D5:122" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter Stockmann explicitly refers to himself as Dr. Stockmann's brother while giving him advice.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 6,
+      "question": "To start his new educational endeavor, how many boys does Dr. Stockmann state he must have at a minimum?",
+      "option": [
+        "A. 3",
+        "B. 6",
+        "C. 10",
+        "D. 12",
+        "E. 15"
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "And my school shall be in the room where they insulted me and called me an enemy of the people. But we are too few as we are; I must have at least twelve boys to begin with.", "dia_id": "D5:292" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann clearly states the specific number of boys required to start his school.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 1,
+      "question": "Which statement best characterizes Mrs. Stockmann's continuous approach to her husband's escalating conflicts?",
+      "option": [
+        "A. She blindly encourages his aggressive actions, urging him to fight harder against the townspeople.",
+        "B. She secretly plots with Peter Stockmann to have her husband removed from his position at the Baths.",
+        "C. She remains cautious and frequently urges him to control himself and consider the practical consequences.",
+        "D. She completely ignores the political situation, focusing entirely on the daily chores of the household.",
+        "E. She constantly threatens to leave him and take the children back to her father's house in the country."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "But, Thomas, are you sure we are well advised to take this step?", "dia_id": "D5:15" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Control yourself, Thomas!", "dia_id": "D5:250" },
+        { "id": "E3", "speaker": "Mrs. Stockmann", "utterance": "But, dear Thomas, I should have thought events had showed you what use it is to preach.", "dia_id": "D5:273" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann constantly questions the wisdom of her husband's extreme actions, such as leaving town or physically fighting.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "She points out the practical failures of his previous preaching, demonstrating her cautious, consequence-focused mindset.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 2,
+      "question": "How did Mrs. Stockmann initially react when she observed her husband attacking the newspapermen?",
+      "option": [
+        "A. She cheered him on and helped him push them out the window.",
+        "B. She was alarmed and pleaded with him to regain his composure.",
+        "C. She immediately fainted from the shock of the sudden violence.",
+        "D. She ran out of the room to call the police to arrest the intruders.",
+        "E. She ignored the fight and calmly asked Petra to lock the front door."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "Good gracious, Thomas! What is happening?", "dia_id": "D5:246" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Control yourself, Thomas!", "dia_id": "D5:250" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann enters the room in a state of shock, asking what is happening during the assault.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "She immediately tells her husband to control himself, showing her alarm and desire to stop the violence.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 3,
+      "question": "Over the course of the morning, how did Mrs. Stockmann's understanding of their residential future evolve?",
+      "option": [
+        "A. She began by insisting they stay, then agreed to leave, and finally decided to move in with Peter.",
+        "B. She first questioned if leaving for good was necessary, then accepted they were packing to leave, and was ultimately shocked when her husband declared they were staying.",
+        "C. She initially wanted to move to the New World, but after Horster's offer, she decided the town was safer.",
+        "D. She first planned to move to her father's house, then packed her bags for America, and finally unpacked them.",
+        "E. She was always determined to stay in their current house and never wavered in her resistance to moving."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "There is no doubt they have behaved very ill toward you, Thomas; but is that sufficient reason for our leaving our native country for good and all?", "dia_id": "D5:19" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Yes, but we are going away, you know, Thomas.", "dia_id": "D5:257" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!", "dia_id": "D5:261" },
+        { "id": "E4", "speaker": "Mrs. Stockmann", "utterance": "Here, in the town?", "dia_id": "D5:263" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann starts the morning questioning whether they really need to leave the country permanently.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Later, she has accepted the plan to leave, reminding Thomas that they are going away.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "When Thomas suddenly declares they are staying, she is taken aback and seeks clarification.",
+          "based_on": ["E3", "E4"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 4,
+      "question": "What specific action did Mrs. Stockmann take immediately following Peter Stockmann's harsh dismissal of her husband?",
+      "option": [
+        "A. She physically pushed Peter out the door and locked it behind him.",
+        "B. She tried to calm her husband down and hushed his demands for the maid to clean up.",
+        "C. She tore up the dismissal document and threw it directly into the fireplace.",
+        "D. She demanded that Peter apologize to her children before he left the house.",
+        "E. She went to the sitting room and refused to speak to either of them for an hour."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "All is over between us. Your dismissal is irrevocable—we have a weapon against you now.", "dia_id": "D5:143" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "For shame! For shame! Katherine, you must have the floor scrubbed after him! Let—what's her name—devil take it, the girl who has always got soot on her nose—", "dia_id": "D5:144" },
+        { "id": "E3", "speaker": "Mrs. Stockmann", "utterance": "Hush, Thomas, be quiet!", "dia_id": "D5:145" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "After Peter formally severs ties and leaves, Dr. Stockmann angrily demands that Katherine have the floor scrubbed.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Instead of complying with the angry request, Mrs. Stockmann hushes her husband and tells him to be quiet.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 5,
+      "question": "What is the specific familial relationship between Mrs. Stockmann (Katherine) and Morten Kiil?",
+      "option": [
+        "A. She is his niece, who inherited the house from him.",
+        "B. She is his daughter, as indicated by him being the children's grandfather.",
+        "C. She is his much younger sister, whom he has financially supported.",
+        "D. She is his former employee who married into the Stockmann family.",
+        "E. She is his distant cousin who manages his tannery business affairs."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Father, grandfather is here, asking if he may speak to you alone.", "dia_id": "D5:146" },
+        { "id": "E2", "speaker": "Morten Kiil", "utterance": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas! If you still make out that these animals and other nasty things of that sort come from my tannery, it will be exactly as if you were to flay broad strips of skin from Katherine's body, and Petra's, and the boys'; and no decent man would do that—unless he were mad.", "dia_id": "D5:170" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra tells her father that her 'grandfather' is here, and Morten Kiil enters immediately after.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Morten Kiil refers to Katherine's body alongside Petra's and the boys', identifying Katherine (Mrs. Stockmann) as the direct familial link (his daughter) connecting him to the grandchildren.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 6,
+      "question": "How many 'Noes' did Mrs. Stockmann observe written on the document her husband showed her?",
+      "option": [
+        "A. One",
+        "B. Two",
+        "C. Three",
+        "D. Four",
+        "E. Five"
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I will tell you later on; I have something else to think about now. Look there, Katherine; what is written there?", "dia_id": "D5:253" },
+        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Three big Noes; what does that mean", "dia_id": "D5:254" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When prompted by her husband to read the document, Mrs. Stockmann explicitly counts the negative responses.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "She states aloud that she sees 'Three big Noes' written there.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 1,
+      "question": "Which statement best captures Petra's consistent values and attitude toward her father's societal struggles?",
+      "option": [
+        "A. She is resentful of her father because his political views caused her to lose her teaching position.",
+        "B. She remains a fiercely loyal ally who supports his defiance and willingly joins his new educational cause.",
+        "C. She constantly advises him to compromise with the mayor in order to protect the family's income.",
+        "D. She is entirely indifferent to the town's politics and only cares about finding a new husband.",
+        "E. She acts as a spy for the 'People's Messenger', secretly hoping her father will be defeated."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Bah!—you should only laugh at them, father,", "dia_id": "D5:58" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "but I will make liberal-minded and high-minded men of you. You must help me with that, Petra.", "dia_id": "D5:290" },
+        { "id": "E3", "speaker": "Petra", "utterance": "Yes, father, you may be sure I will.", "dia_id": "D5:291" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When Dr. Stockmann is distressed by being called an enemy of the people, Petra encourages him to defy them by laughing at them.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "When he decides to start his own school to educate the boys to be high-minded, she eagerly agrees to help him, proving her ongoing loyalty and alignment with his ideals.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 2,
+      "question": "How did Petra feel about her employer's decision to dismiss her from her job?",
+      "option": [
+        "A. She was furious at Mrs. Busk and verbally attacked her before storming out of the school.",
+        "B. She was completely devastated and cried uncontrollably on her way back to her family's house.",
+        "C. She recognized that Mrs. Busk was personally pained to do it but was forced by public pressure.",
+        "D. She felt relieved because she had always hated the restrictive environment of the school.",
+        "E. She blamed her father entirely and demanded that he compensate her for the lost wages."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "Who would have thought Mrs. Busk was a woman like that!", "dia_id": "D5:31" },
+        { "id": "E2", "speaker": "Petra", "utterance": "Mrs. Busk isn't a bit like that, mother; I saw quite plainly how it hurt her to do it. But she didn't dare do otherwise, she said; and so I got my notice.", "dia_id": "D5:32" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When her mother criticizes Mrs. Busk's character, Petra immediately defends her.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Petra explains that she saw it hurt Mrs. Busk to fire her, showing understanding that the dismissal was driven by fear of the community, not malice.",
+          "based_on": ["E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 3,
+      "question": "What sequence of interactions defines Petra's involvement with the written communications on this morning?",
+      "option": [
+        "A. She first delivered a letter from the landlord, then read a notice from the mayor, and finally wrote a response to Mrs. Busk.",
+        "B. She first revealed the anonymous letters sent to her boss, and later was tasked with delivering her father's written response to Morten Kiil.",
+        "C. She first received a letter of support from Captain Horster, then read the eviction notice, and finally sent a telegram.",
+        "D. She first wrote an anonymous letter to the newspaper, then received her dismissal, and finally delivered the 'Three Noes'.",
+        "E. She first delivered the eviction notice to her father, then threw the 'Three Noes' out the window, and finally left."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk showed me no less than three letters she received this morning—", "dia_id": "D5:37" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "I will tell you that too, later on. There, Petra; tell sooty-face to run over to the \"Badger's\" with that, as quick as she can. Hurry up!", "dia_id": "D5:255" },
+        { "id": "E3", "speaker": "Petra", "utterance": "She has gone with it.", "dia_id": "D5:260" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Early in the conversation, Petra brings up the three anonymous letters that led to her dismissal.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Much later, after the fight with the journalists, Dr. Stockmann hands her the paper with 'Three big Noes' and instructs her to have it sent to Morten Kiil.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "Petra executes this task, confirming the sequence of her involvement with the letters.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 4,
+      "question": "What specific action did Petra take after her employer showed her the anonymous letters?",
+      "option": [
+        "A. She begged Mrs. Busk to reconsider and offered to publicly renounce her father's views.",
+        "B. She identified the guest who had spread the rumors and went to his house to confront him.",
+        "C. She decided it was best to leave the school at once after receiving her notice of dismissal.",
+        "D. She stole the letters from Mrs. Busk's desk to show them as proof to her father.",
+        "E. She demanded a formal hearing with the school board to contest the unfair dismissal."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk gave me my notice; so I thought it was best to go at once.", "dia_id": "D5:29" },
+        { "id": "E2", "speaker": "Petra", "utterance": "And two of them were to the effect that a man, who has been our guest here, was declaring last night at the Club that my views on various subjects are extremely emancipated—", "dia_id": "D5:41" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra explains that she received her notice because of the letters complaining about her emancipated views.",
+          "based_on": ["E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Following this notice, she explicitly states that her response was to leave the premises immediately.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 5,
+      "question": "What is the professional relationship between Petra and Mrs. Busk?",
+      "option": [
+        "A. Mrs. Busk is Petra's wealthy patron who funds her private tutoring business.",
+        "B. Mrs. Busk is Petra's former student who has now become a rival teacher.",
+        "C. Mrs. Busk is Petra's employer who ultimately gives her notice of dismissal.",
+        "D. Mrs. Busk is Petra's teaching assistant who betrayed her to the school board.",
+        "E. Mrs. Busk is Petra's landlady who evicted her from the schoolhouse."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk gave me my notice; so I thought it was best to go at once.", "dia_id": "D5:29" },
+        { "id": "E2", "speaker": "Petra", "utterance": "No, you know I wouldn't. Mrs. Busk's own views are tolerably emancipated, when we are alone together; but now that this report about me is being spread, she dare not keep me on any longer.", "dia_id": "D5:43" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra states that Mrs. Busk gave her notice and that she 'dare not keep me on any longer'.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "The ability to keep someone on and give them a dismissal notice firmly establishes Mrs. Busk as Petra's employer.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 6,
+      "question": "How many letters did Petra say her employer received regarding her views?",
+      "option": [
+        "A. One",
+        "B. Two",
+        "C. Three",
+        "D. Four",
+        "E. Five"
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk showed me no less than three letters she received this morning—", "dia_id": "D5:37" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra explicitly quantifies the number of letters shown to her by Mrs. Busk.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 1,
+      "question": "Which statement best describes Peter Stockmann's consistent strategy when dealing with his brother's rebellion?",
+      "option": [
+        "A. He relies entirely on physical violence and police intervention to enforce his rules.",
+        "B. He constantly offers his brother significant financial bribes out of his own pocket to maintain the peace.",
+        "C. He uses societal pressure, professional threats, and manipulation of public opinion to force compliance.",
+        "D. He breaks down emotionally, crying and begging his brother to think of their shared childhood.",
+        "E. He ignores the rebellion entirely, assuming the townspeople will naturally support the scientific truth."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "The Householders' Association is circulating a list from house to house. All right-minded citizens are being called upon to give up employing you; and I can assure you that not a single head of a family will risk refusing his signature. They simply dare not.", "dia_id": "D5:104" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" },
+        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "I see that they were nothing else than the stipulated price for that vindictive old man's will.", "dia_id": "D5:141" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter informs Dr. Stockmann of the organized boycott, showing his reliance on coordinated societal pressure.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He dangles the possibility of reinstating his brother's position if he writes a public apology, demonstrating coercive professional threats.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "He later attempts to invalidate Dr. Stockmann's moral standing by framing the rebellion as a greedy plot to secure an inheritance.",
+          "based_on": ["E3"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 2,
+      "question": "What was Peter Stockmann's immediate physical sensation upon entering his brother's disordered house?",
+      "option": [
+        "A. He felt overwhelmingly hot and asked to open all the remaining windows.",
+        "B. He felt a sharp pain in his chest from the stress of the previous night.",
+        "C. He felt a draft and complained that he was shivering and had caught a cold.",
+        "D. He felt nauseous from the lingering smell of the town's polluted water.",
+        "E. He felt exhausted and immediately demanded to sit down on the nearest chair."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I daresay you find it rather draughty here today. Put your hat on.", "dia_id": "D5:93" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Thank you, if I may. I think I caught cold last night; I stood and shivered—", "dia_id": "D5:94" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann notes the room is drafty (due to broken windows) and tells Peter to put his hat on.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Peter agrees, stating he feels he caught a cold and was shivering.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 3,
+      "question": "In what order did Peter Stockmann deploy his arguments to force his brother into submission during their meeting?",
+      "option": [
+        "A. He first brought up Mr. Kiil's will, then asked for a written apology, and finally delivered the formal dismissal from the Baths.",
+        "B. He first suggested Dr. Stockmann leave town, then accused him of conspiring with Hovstad, and finally threatened his children.",
+        "C. He first presented the formal dismissal, then demanded a written apology, and finally accused him of plotting to secure Mr. Kiil's inheritance.",
+        "D. He first warned of the Householders' boycott, then delivered the dismissal, and finally begged him to think of their family name.",
+        "E. He first accused him of conspiring with Mr. Kiil, then threatened a boycott, and finally offered him a promotion if he stayed silent."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I have this document for you, from the Baths Committee.", "dia_id": "D5:98" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" },
+        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "Do you really ask me to believe that you are ignorant of the terms of Mr. Kiil's will?", "dia_id": "D5:124" },
+        { "id": "E4", "speaker": "Peter Stockmann", "utterance": "I see that the whole thing was a combined manoeuvre on your part and his. These violent, reckless attacks that you have made against the leading men of the town, under the pretence that it was in the name of truth—", "dia_id": "D5:139" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter begins the confrontation by handing over the formal dismissal document.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He then transitions to advising a six-month exile followed by a written apology to regain the appointment.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "When Dr. Stockmann refuses, Peter shifts tactics and brings up the terms of Mr. Kiil's will, ultimately accusing his brother of a manipulative plot.",
+          "based_on": ["E2", "E3", "E4"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 4,
+      "question": "What specific conclusion did Peter Stockmann draw when he observed his brother's joy over the news of Mr. Kiil's will?",
+      "option": [
+        "A. He concluded that his brother had finally lost his mind due to the stress of the broken windows.",
+        "B. He concluded that his brother was genuinely surprised and innocent of any financial scheming.",
+        "C. He concluded that the attacks on the town were actually a coordinated plot to earn the inheritance.",
+        "D. He concluded that he needed to immediately contest the will in court to protect the town's funds.",
+        "E. He concluded that Morten Kiil was secretly funding the 'People's Messenger' newspaper."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "But he won't do that, my dear Peter. The \"Badger\" is much too delighted at my attack on you and your wise friends.", "dia_id": "D5:136" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Ah, that throws a light on various things.", "dia_id": "D5:137" },
+        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "I see that they were nothing else than the stipulated price for that vindictive old man's will.", "dia_id": "D5:141" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann mentions that Kiil is delighted by the attacks on Peter and his friends.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Hearing this, Peter explicitly states this 'throws a light' and declares the attacks were the 'stipulated price' to secure the will.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 5,
+      "question": "What is the professional connection between Peter Stockmann and the entity issuing Dr. Stockmann's dismissal?",
+      "option": [
+        "A. He is merely a messenger for the Householders' Association, having no real power himself.",
+        "B. He acts as the representative and deliverer of the document for the Baths Committee.",
+        "C. He is the landlord of the building where the Baths Committee meets.",
+        "D. He is the independent lawyer hired by Mr. Kiil to audit the Baths.",
+        "E. He is the editor of the 'People's Messenger' who published the dismissal notice."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I have this document for you, from the Baths Committee.", "dia_id": "D5:98" },
+        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Yes, dating from today. It gives us pain to do it; but, to speak frankly, we dared not do otherwise on account of public opinion.", "dia_id": "D5:100" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter Stockmann personally delivers the dismissal document.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He states it is from the Baths Committee and uses 'us' and 'we' to describe the decision-makers, establishing him as a representative of that committee.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 6,
+      "question": "How long of a period did Peter Stockmann advise his brother to take to 'think things over' before writing an apology?",
+      "option": [
+        "A. One month",
+        "B. Three months",
+        "C. Six months",
+        "D. One year",
+        "E. Two years"
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter Stockmann specifies the exact duration of time Dr. Stockmann should take to reconsider his stance.",
+          "based_on": ["E1"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 1,
+      "question": "Which statement best identifies Hovstad's underlying operational mindset regarding the newspaper and town politics?",
+      "option": [
+        "A. He is a steadfast idealist who will always publish the absolute truth regardless of the financial cost to himself.",
+        "B. He is a deeply religious man who bases all his editorial decisions on strict moral theology.",
+        "C. He is an aggressive anarchist who wants to destroy all institutions simply for the sake of chaos.",
+        "D. He is a pragmatic opportunist who views politics as a struggle for survival where one must adapt to secure resources.",
+        "E. He is a completely submissive follower who never takes any initiative without Peter Stockmann's direct orders."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition; it doesn't go really well; and I should be very unwilling to suspend the paper now, when there is so much work to do here in the political way.", "dia_id": "D5:229" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "It is a natural law; every animal must fight for its own livelihood.", "dia_id": "D5:236" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad attempts to leverage Dr. Stockmann's presumed newfound wealth to prop up his failing newspaper under the guise of political work.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "When threatened, he justifies his exploitative actions as a 'natural law' of animals fighting for livelihood, confirming his survivalist, opportunistic ideology.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 2,
+      "question": "What was Hovstad's immediate reaction when Dr. Stockmann suddenly grabbed his umbrella and ordered him out the window?",
+      "option": [
+        "A. He burst into laughter, assuming it was a joke.",
+        "B. He drew a weapon to defend himself against the assault.",
+        "C. He calmly sat down and refused to be intimidated.",
+        "D. He questioned Dr. Stockmann's sanity and appealed to a witness about the assault.",
+        "E. He immediately jumped out the window to avoid being hit."
+      ],
+      "answer": "D",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "Are you quite mad!", "dia_id": "D5:242" },
+        { "id": "E3", "speaker": "Hovstad", "utterance": "An assault on an unoffending man! I call you to witness, Captain Horster.", "dia_id": "D5:248" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "When ordered out the window, Hovstad's first verbal response is to ask if the doctor is mad.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "As the situation escalates, Hovstad formally calls Captain Horster to witness the assault, showing his defensive, legalistic panic.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 3,
+      "question": "What sequence reveals Hovstad's changing stance toward Dr. Stockmann during their meeting?",
+      "option": [
+        "A. He first offered his paper's support, then demanded money, and finally admitted he had betrayed the doctor the night before.",
+        "B. He first defended his actions at the meeting as necessary, then deduced a stock plot, and finally offered the paper's support in exchange for financial rescue.",
+        "C. He first begged for forgiveness, then offered to buy the Baths shares, and finally threatened physical violence.",
+        "D. He first accused the doctor of madness, then offered the Householders' Association's backing, and finally fled.",
+        "E. He first threatened to publish a bad review, then discovered Kiil's involvement, and finally offered to split the profits."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Hovstad", "utterance": "Call it what you like, we could not do otherwise.", "dia_id": "D5:197" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "And you should not have let your name appear in the affair. There was no need for anyone to know that the attack on the Baths came from you. You ought to have consulted me, Dr. Stockmann.", "dia_id": "D5:210" },
+        { "id": "E3", "speaker": "Aslaksen", "utterance": "Perhaps Mr. Hovstad had better—", "dia_id": "D5:215" },
+        { "id": "E4", "speaker": "Aslaksen", "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.", "dia_id": "D5:217" },
+        { "id": "E5", "speaker": "Hovstad", "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition...", "dia_id": "D5:229" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad begins by defending their betrayal the previous night, stating they couldn't do otherwise.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Once they mention Kiil buying shares, Hovstad criticizes Dr. Stockmann's lack of finesse in hiding his involvement in the 'scheme'.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "Finally, having assumed it is a profitable scheme, Hovstad (with Aslaksen) offers the paper's support while heavily implying he needs financial rescue in return.",
+          "based_on": ["E2", "E3", "E4", "E5"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 4,
+      "question": "What specifically did Hovstad threaten to do if Dr. Stockmann refused to financially rescue his newspaper?",
+      "option": [
+        "A. He threatened to burn down the Stockmann house.",
+        "B. He threatened to go to the police and have Dr. Stockmann arrested for assault.",
+        "C. He threatened to take an evil view of the affair and relentlessly hunt the doctor down in the press.",
+        "D. He threatened to tell Mr. Kiil that the doctor was planning to steal the inheritance.",
+        "E. He threatened to permanently shut down the newspaper and blame the doctor for the job losses."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "And suppose I don't give you a single penny of all I get out of it? Money is not very easy to get out of us rich folk, please to remember!", "dia_id": "D5:233" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "And you please to remember that this affair of the shares can be represented in two ways!", "dia_id": "D5:234" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Yes, and you are just the man to do it. If I don't come to the rescue of the \"People's Messenger,\" you will certainly take an evil view of the affair; you will hunt me down, I can well imagine—pursue me—try to throttle me as a dog does a hare.", "dia_id": "D5:235" },
+        { "id": "E4", "speaker": "Hovstad", "utterance": "It is a natural law; every animal must fight for its own livelihood.", "dia_id": "D5:236" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann asks what happens if he gives no money, and Hovstad warns that the affair can be represented in two ways in the press.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "Dr. Stockmann outlines the threat (taking an evil view, hunting him down), and Hovstad confirms this vicious intent by citing 'natural law'.",
+          "based_on": ["E2", "E3", "E4"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 5,
+      "question": "What is the professional relationship between Hovstad and Aslaksen?",
+      "option": [
+        "A. They are fierce competitors running rival newspapers in the town.",
+        "B. They are collaborators and representatives of the 'People's Messenger' newspaper.",
+        "C. Hovstad is the mayor, and Aslaksen is his appointed chief of police.",
+        "D. Hovstad is the landlord of the building where Aslaksen operates his printing press.",
+        "E. They are a doctor and patient, meeting by chance at the Stockmann house."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Aslaksen", "utterance": "Perhaps Mr. Hovstad had better—", "dia_id": "D5:215" },
+        { "id": "E2", "speaker": "Hovstad", "utterance": "No, you tell him, Aslaksen.", "dia_id": "D5:216" },
+        { "id": "E3", "speaker": "Aslaksen", "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.", "dia_id": "D5:217" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad and Aslaksen arrive together and coordinate who should speak.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "They act as a unified front offering the 'People's Messenger' to the doctor, showing they are collaborative partners in running/managing the paper.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 6,
+      "question": "How many individuals did Dr. Stockmann explicitly order out of the window?",
+      "option": [
+        "A. One",
+        "B. Two",
+        "C. Three",
+        "D. Four",
+        "E. Five"
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Out of the window, Mr. Aslaksen! Jump, I tell you! You will have to do it, sooner or later.", "dia_id": "D5:243" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann specifically targets Mr. Hovstad to go out the window.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "Dr. Stockmann then specifically targets a second person, Mr. Aslaksen, to jump out the window, making the total two.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 1,
+      "question": "Which statement best defines Morten Kiil's primary motivation for his actions regarding the Baths?",
+      "option": [
+        "A. He is deeply concerned about public health and wants to ensure the town's water is thoroughly cleaned.",
+        "B. He wants to help his son-in-law become the most powerful political figure in the entire country.",
+        "C. He is fiercely protective of his own reputation and wants to clear his name from accusations of pollution.",
+        "D. He is a greedy capitalist who only bought the shares to sell them at a massive profit the next day.",
+        "E. He feels guilty for polluting the water and wants to donate his entire fortune to the poor to make amends."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "You said yesterday that the worst of this pollution came from my tannery. If that is true, then my grandfather and my father before me, and I myself, for many years past, have been poisoning the town like three destroying angels. Do you think I am going to sit quiet under that reproach?", "dia_id": "D5:162" },
+        { "id": "E2", "speaker": "Morten Kiil", "utterance": "No, thank you. I am jealous of my name and reputation. They call me \"the Badger,\" I am told. A badger is a kind of pig, I believe; but I am not going to give them the right to call me that. I mean to live and die a clean man.", "dia_id": "D5:164" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Kiil expresses outrage that Dr. Stockmann blamed his family's tannery for the pollution.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He explicitly states he is jealous of his name and reputation and refuses to die with the stigma of being a polluter, which drives his blackmail attempt.",
+          "based_on": ["E1", "E2"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 2,
+      "question": "What was Morten Kiil's immediate emotional tone when he first confronted Dr. Stockmann about the condition of his house?",
+      "option": [
+        "A. He was profoundly sad and offered sympathy for the broken windows.",
+        "B. He was terrified of the mob and begged Dr. Stockmann to protect him.",
+        "C. He was highly amused and sarcastic, mocking the doctor's 'comfortable' situation.",
+        "D. He was apologetic and confessed he had accidentally caused the riot.",
+        "E. He was deeply confused and repeatedly asked who had damaged the property."
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "I won't sit. You look very comfortable here today, Thomas.", "dia_id": "D5:148" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes, don't we!", "dia_id": "D5:149" },
+        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Very comfortable—plenty of fresh air. I should think you have got enough to-day of that oxygen you were talking about yesterday. Your conscience must be in splendid order to-day, I should think.", "dia_id": "D5:150" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Despite the room having broken windows and being in disorder, Kiil calls it 'very comfortable'.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He continues his sarcasm by calling the draft from the broken panes 'plenty of fresh air' and mocking the doctor's previous talks about oxygen and conscience.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 3,
+      "question": "What sequence of actions defines Morten Kiil's blackmail attempt against Dr. Stockmann?",
+      "option": [
+        "A. He first threatened Katherine, then bought the shares, and finally demanded an apology to the mayor.",
+        "B. He first bought all the cheap Baths shares using Katherine's inheritance, then demanded the doctor clear his tannery's name, and finally gave him a strict deadline.",
+        "C. He first gave a strict deadline, then asked for a scientific antidote, and finally bought the shares.",
+        "D. He first offered the shares as a gift, then withdrew the offer when insulted, and finally donated them to charity.",
+        "E. He first brought Hovstad as a witness, then demanded the doctor buy the shares from him, and finally left in anger."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas!", "dia_id": "D5:170" },
+        { "id": "E2", "speaker": "Morten Kiil", "utterance": "You shall cleanse me, Thomas.", "dia_id": "D5:166" },
+        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Kiil begins by revealing he has already bought the shares with the money meant for Katherine and the children.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He then makes his demand: the doctor must publicly 'cleanse' his reputation regarding the tannery.",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 3,
+          "inference": "Finally, he sets a strict temporal deadline, giving the doctor until two o'clock to decide before the shares are given away.",
+          "based_on": ["E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 4,
+      "question": "What specifically did Morten Kiil threaten to do if Dr. Stockmann refused his terms?",
+      "option": [
+        "A. He threatened to have Dr. Stockmann thrown into prison for defamation.",
+        "B. He threatened to immediately donate the shares (and thus the family's inheritance) to charity.",
+        "C. He threatened to physically assault the doctor with his own umbrella.",
+        "D. He threatened to burn down the remaining structures of the Baths.",
+        "E. He threatened to permanently disown Katherine and never speak to his grandchildren again."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "And what does Katherine get?", "dia_id": "D5:187" },
+        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Not a halfpenny. Look at those two!", "dia_id": "D5:188" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Kiil gives an ultimatum with a specific consequence if the answer is no.",
+          "based_on": ["E1"]
+        },
+        {
+          "step": 2,
+          "inference": "He explicitly states that if refused, the shares will go to a charity that very day, leaving Katherine with 'not a halfpenny'.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 5,
+      "question": "What is the relationship between Morten Kiil and Dr. Stockmann?",
+      "option": [
+        "A. Morten Kiil is Dr. Stockmann's landlord who is evicting him from his current house.",
+        "B. Morten Kiil is Dr. Stockmann's father-in-law, whose money is intended for the doctor's wife.",
+        "C. Morten Kiil is Dr. Stockmann's medical patient who suffers from delusions.",
+        "D. Morten Kiil is Dr. Stockmann's younger brother who runs a rival medical practice.",
+        "E. Morten Kiil is Dr. Stockmann's former schoolteacher who taught him science."
+      ],
+      "answer": "B",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Petra", "utterance": "Father, grandfather is here, asking if he may speak to you alone.", "dia_id": "D5:146" },
+        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Certainly he may. Come in, Mr. Kiil. What can I do for you? Won't you sit down?", "dia_id": "D5:147" },
+        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "And you have gone and taken Katherine's money for this!", "dia_id": "D5:169" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra refers to Morten Kiil as her grandfather when speaking to her father (Dr. Stockmann).",
+          "based_on": ["E1", "E2"]
+        },
+        {
+          "step": 2,
+          "inference": "This makes Morten Kiil the father of Dr. Stockmann's wife, Katherine, confirming he is Dr. Stockmann's father-in-law.",
+          "based_on": ["E1", "E2", "E3"]
+        }
+      ]
+    },
+    {
+      "character": "Morten Kiil",
+      "category": 6,
+      "question": "By what precise hour did Morten Kiil demand an answer from Dr. Stockmann?",
+      "option": [
+        "A. Twelve o'clock",
+        "B. One o'clock",
+        "C. Two o'clock",
+        "D. Three o'clock",
+        "E. Four o'clock"
+      ],
+      "answer": "C",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Morten Kiil sets a strict numerical deadline for when he must receive his answer.",
+          "based_on": ["E1"]
+        }
+      ]
+    }
+  ],
+  "conversation": {
+    "Dr. Stockmann": "speaker_1",
+    "Mrs. Stockmann": "speaker_2",
+    "Petra": "speaker_3",
+    "Horster": "speaker_4",
+    "Peter Stockmann": "speaker_5",
+    "Morten Kiil": "speaker_6",
+    "Hovstad": "speaker_7",
+    "Aslaksen": "speaker_8",
+    "Horsier": "speaker_9",
+    "Morten": "speaker_10",
+    "Ejlif": "speaker_11",
+    "The Boys": "speaker_12",
+    "session_5": [
+      {
+        "speaker": "NARRATION",
+        "dia_id": "D5:1",
+        "type": "narration",
+        "text": "(SCENE.—DR. STOCKMANN'S study. Bookcases and cabinets containing specimens, line the walls. At the back is a door leading to the hall; in the foreground on the left, a door leading to the sitting-room. In the righthand wall are two windows, of which all the panes are broken. The DOCTOR'S desk, littered with books and papers, stands in the middle of the room, which is in disorder. It is morning. DR. STOCKMANN in dressing-gown, slippers and a smoking-cap, is bending down and raking with an umbrella under one of the cabinets. After a little while he rakes out a stone.)"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:2",
+        "type": "dialog",
+        "text": "Katherine, I have found another one."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:3",
+        "type": "dialog",
+        "text": "Oh, you will find a lot more yet, I expect."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:4",
+        "type": "dialog",
+        "text": "I shall treasure these stones as relics. Ejlif and Morten shall look at them every day, and when they are grown up they shall inherit them as heirlooms. Hasn't—what the deuce is her name?—the girl, you know—hasn't she been to fetch the glazier yet?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:5",
+        "type": "dialog",
+        "text": "Yes, but he said he didn't know if he would be able to come today."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:6",
+        "type": "dialog",
+        "text": "You will see he won't dare to come."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:7",
+        "type": "dialog",
+        "text": "Well, that is just what Randine thought—that he didn't dare to, on account of the neighbours. What is it you want, Randine? Give it to me. Here is a letter for you, Thomas."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:8",
+        "type": "dialog",
+        "text": "Let me see it. Ah!—of course."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:9",
+        "type": "dialog",
+        "text": "Who is it from?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:10",
+        "type": "dialog",
+        "text": "From the landlord. Notice to quit."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:11",
+        "type": "dialog",
+        "text": "Is it possible? Such a nice man"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:12",
+        "type": "dialog",
+        "text": "Does not dare do otherwise, he says. Doesn't like doing it, but dare not do otherwise—on account of his fellow-citizens—out of regard for public opinion. Is in a dependent position—dares not offend certain influential men."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:13",
+        "type": "dialog",
+        "text": "There, you see, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:14",
+        "type": "dialog",
+        "text": "Yes, yes, I see well enough; the whole lot of them in the town are cowards; not a man among them dares do anything for fear of the others. But it doesn't matter to us, Katherine. We are going to sail away to the New World,"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:15",
+        "type": "dialog",
+        "text": "But, Thomas, are you sure we are well advised to take this step?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:16",
+        "type": "dialog",
+        "text": "Are you suggesting that I should stay here, where they have pilloried me as an enemy of the people—branded me—broken my windows! And just look here, Katherine—they have torn a great rent in my black trousers too!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:17",
+        "type": "dialog",
+        "text": "Oh, dear!—and they are the best pair you have got!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:18",
+        "type": "dialog",
+        "text": "You should never wear your best trousers when you go out to fight for freedom and truth. It is not that I care so much about the trousers, you know; you can always sew them up again for me. But that the common herd should dare to make this attack on me, as if they were my equals—that is what I cannot, for the life of me, swallow!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:19",
+        "type": "dialog",
+        "text": "There is no doubt they have behaved very ill toward you, Thomas; but is that sufficient reason for our leaving our native country for good and all?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:20",
+        "type": "dialog",
+        "text": "If we went to another town, do you suppose we should not find the common people just as insolent as they are here? Depend upon it, there is not much to choose between them. Oh, well, let the curs snap—that is not the worst part of it. The worst is that, from one end of this country to the other, every man is the slave of his Party. Although, as far as that goes, I daresay it is not much better in the free West either; the compact majority, and liberal public opinion, and all that infernal old bag of tricks are probably rampant there too. But there things are done on a larger scale, you see. They may kill you, but they won't put you to death by slow torture. They don't squeeze a free man's soul in a vice, as they do here. And, if need be, one can live in solitude. (Walks up and down.) If only I knew where there was a virgin forest or a small South Sea island for sale, cheap—"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:21",
+        "type": "dialog",
+        "text": "But think of the boys, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:22",
+        "type": "dialog",
+        "text": "What a strange woman you are, Katherine! Would you prefer to have the boys grow up in a society like this? You saw for yourself last night that half the population are out of their minds; and if the other half have not lost their senses, it is because they are mere brutes, with no sense to lose."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:23",
+        "type": "dialog",
+        "text": "But, Thomas dear, the imprudent things you said had something to do with it, you know."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:24",
+        "type": "dialog",
+        "text": "Well, isn't what I said perfectly true? Don't they turn every idea topsy-turvy? Don't they make a regular hotchpotch of right and wrong? Don't they say that the things I know are true, are lies? The craziest part of it all is the fact of these \"liberals,\" men of full age, going about in crowds imagining that they are the broad-minded party! Did you ever hear anything like it, Katherine!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:25",
+        "type": "dialog",
+        "text": "Yes, yes, it's mad enough of them, certainly; but—"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:26",
+        "type": "dialog",
+        "text": "Yes. I have been given notice of dismissal."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:27",
+        "type": "dialog",
+        "text": "Dismissal?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:28",
+        "type": "dialog",
+        "text": "You too?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:29",
+        "type": "dialog",
+        "text": "Mrs. Busk gave me my notice; so I thought it was best to go at once."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:30",
+        "type": "dialog",
+        "text": "You were perfectly right, too!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:31",
+        "type": "dialog",
+        "text": "Who would have thought Mrs. Busk was a woman like that!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:32",
+        "type": "dialog",
+        "text": "Mrs. Busk isn't a bit like that, mother; I saw quite plainly how it hurt her to do it. But she didn't dare do otherwise, she said; and so I got my notice."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:33",
+        "type": "dialog",
+        "text": "She didn't dare do otherwise, either! It's delicious!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:34",
+        "type": "dialog",
+        "text": "Well, after the dreadful scenes last night—"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:35",
+        "type": "dialog",
+        "text": "It was not only that. Just listen to this, father!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:36",
+        "type": "dialog",
+        "text": "Well?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:37",
+        "type": "dialog",
+        "text": "Mrs. Busk showed me no less than three letters she received this morning—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:38",
+        "type": "dialog",
+        "text": "Anonymous, I suppose?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:39",
+        "type": "dialog",
+        "text": "Yes."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:40",
+        "type": "dialog",
+        "text": "Yes, because they didn't dare to risk signing their names, Katherine!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:41",
+        "type": "dialog",
+        "text": "And two of them were to the effect that a man, who has been our guest here, was declaring last night at the Club that my views on various subjects are extremely emancipated—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:42",
+        "type": "dialog",
+        "text": "You did not deny that, I hope?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:43",
+        "type": "dialog",
+        "text": "No, you know I wouldn't. Mrs. Busk's own views are tolerably emancipated, when we are alone together; but now that this report about me is being spread, she dare not keep me on any longer."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:44",
+        "type": "dialog",
+        "text": "And someone who had been a guest of ours! That shows you the return you get for your hospitality, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:45",
+        "type": "dialog",
+        "text": "We won't live in such a disgusting hole any longer. Pack up as quickly as you can, Katherine; the sooner we can get away, the better."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:46",
+        "type": "dialog",
+        "text": "Be quiet—I think I hear someone in the hall. See who it is, Petra."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:47",
+        "type": "dialog",
+        "text": "Oh, it's you, Captain Horster! Do come in."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:48",
+        "type": "dialog",
+        "text": "Good morning. I thought I would just come in and see how you were."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:49",
+        "type": "dialog",
+        "text": "Thanks—that is really kind of you."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:50",
+        "type": "dialog",
+        "text": "And thank you, too, for helping us through the crowd,"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:51",
+        "type": "dialog",
+        "text": "How did you manage to get home again?"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:52",
+        "type": "dialog",
+        "text": "Oh, somehow or other. I am fairly strong, and there is more sound than fury about these folk."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:53",
+        "type": "dialog",
+        "text": "Yes, isn't their swinish cowardice astonishing? Look here, I will show you something! There are all the stones they have thrown through my windows. Just look at them! I'm hanged if there are more than two decently large bits of hard stone in the whole heap; the rest are nothing but gravel—wretched little things. And yet they stood out there bawling and swearing that they would do me some violence; but as for doing anything—you don't see much of that in this town."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:54",
+        "type": "dialog",
+        "text": "Just as well for you this time, doctor!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:55",
+        "type": "dialog",
+        "text": "True enough. But it makes one angry all the same; because if some day it should be a question of a national fight in real earnest, you will see that public opinion will be in favour of taking to one's heels, and the compact majority will turn tail like a flock of sheep, Captain Horster. That is what is so mournful to think of; it gives me so much concern, that—. No, devil take it, it is ridiculous to care about it! They have called me an enemy of the people, so an enemy of the people let me be!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:56",
+        "type": "dialog",
+        "text": "You will never be that, Thomas."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:57",
+        "type": "dialog",
+        "text": "Don't swear to that, Katherine. To be called an ugly name may have the same effect as a pin-scratch in the lung. And that hateful name—I can't get quit of it. It is sticking here in the pit of my stomach, eating into me like a corrosive acid. And no magnesia will remove it."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:58",
+        "type": "dialog",
+        "text": "Bah!—you should only laugh at them, father,"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:59",
+        "type": "dialog",
+        "text": "They will change their minds some day, Doctor."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:60",
+        "type": "dialog",
+        "text": "Yes, Thomas, as sure as you are standing here."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:61",
+        "type": "dialog",
+        "text": "Perhaps, when it is too late. Much good may it do them! They may wallow in their filth then and rue the day when they drove a patriot into exile. When do you sail, Captain Horster?"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:62",
+        "type": "dialog",
+        "text": "Hm!—that was just what I had come to speak about—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:63",
+        "type": "dialog",
+        "text": "Why, has anything gone wrong with the ship?"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:64",
+        "type": "dialog",
+        "text": "No; but what has happened is that I am not to sail in it."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:65",
+        "type": "dialog",
+        "text": "Do you mean that you have been dismissed from your command?"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:66",
+        "type": "dialog",
+        "text": "Yes, that's just it."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:67",
+        "type": "dialog",
+        "text": "You too."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:68",
+        "type": "dialog",
+        "text": "There, you see, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:69",
+        "type": "dialog",
+        "text": "And that for the truth's sake! Oh, if I had thought such a thing possible—"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:70",
+        "type": "dialog",
+        "text": "You mustn't take it to heart; I shall be sure to find a job with some ship-owner or other, elsewhere."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:71",
+        "type": "dialog",
+        "text": "And that is this man Vik—a wealthy man, independent of everyone and everything—! Shame on him!"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:72",
+        "type": "dialog",
+        "text": "He is quite an excellent fellow otherwise; he told me himself he would willingly have kept me on, if only he had dared—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:73",
+        "type": "dialog",
+        "text": "But he didn't dare? No, of course not."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:74",
+        "type": "dialog",
+        "text": "It is not such an easy matter, he said, for a party man—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:75",
+        "type": "dialog",
+        "text": "The worthy man spoke the truth. A party is like a sausage machine; it mashes up all sorts of heads together into the same mincemeat—fatheads and blockheads, all in one mash!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:76",
+        "type": "dialog",
+        "text": "Come, come, Thomas dear!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:77",
+        "type": "dialog",
+        "text": "If only you had not come home with us, things might not have come to this pass."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:78",
+        "type": "dialog",
+        "text": "I do not regret it."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:79",
+        "type": "dialog",
+        "text": "Thank you for that!"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:80",
+        "type": "dialog",
+        "text": "And so what I came to say was that if you are determined to go away, I have thought of another plan—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:81",
+        "type": "dialog",
+        "text": "That's splendid!—if only we can get away at once."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:82",
+        "type": "dialog",
+        "text": "Hush!—wasn't that some one knocking?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:83",
+        "type": "dialog",
+        "text": "That is uncle, surely."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:84",
+        "type": "dialog",
+        "text": "Aha! Come in!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:85",
+        "type": "dialog",
+        "text": "Dear Thomas, promise me definitely—"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:86",
+        "type": "dialog",
+        "text": "Oh, you are engaged. In that case, I will—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:87",
+        "type": "dialog",
+        "text": "No, no, come in."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:88",
+        "type": "dialog",
+        "text": "But I wanted to speak to you alone."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:89",
+        "type": "dialog",
+        "text": "We will go into the sitting-room in the meanwhile."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:90",
+        "type": "dialog",
+        "text": "And I will look in again later."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:91",
+        "type": "dialog",
+        "text": "No, go in there with them, Captain Horster; I want to hear more about—."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:92",
+        "type": "dialog",
+        "text": "Very well, I will wait, then."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:93",
+        "type": "dialog",
+        "text": "I daresay you find it rather draughty here today. Put your hat on."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:94",
+        "type": "dialog",
+        "text": "Thank you, if I may. I think I caught cold last night; I stood and shivered—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:95",
+        "type": "dialog",
+        "text": "Really? I found it warm enough."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:96",
+        "type": "dialog",
+        "text": "I regret that it was not in my power to prevent those excesses last night."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:97",
+        "type": "dialog",
+        "text": "Have you anything in particular to say to me besides that?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:98",
+        "type": "dialog",
+        "text": "I have this document for you, from the Baths Committee."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:99",
+        "type": "dialog",
+        "text": "My dismissal?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:100",
+        "type": "dialog",
+        "text": "Yes, dating from today. It gives us pain to do it; but, to speak frankly, we dared not do otherwise on account of public opinion."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:101",
+        "type": "dialog",
+        "text": "Dared not? I seem to have heard that word before, today."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:102",
+        "type": "dialog",
+        "text": "I must beg you to understand your position clearly. For the future you must not count on any practice whatever in the town."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:103",
+        "type": "dialog",
+        "text": "Devil take the practice! But why are you so sure of that?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:104",
+        "type": "dialog",
+        "text": "The Householders' Association is circulating a list from house to house. All right-minded citizens are being called upon to give up employing you; and I can assure you that not a single head of a family will risk refusing his signature. They simply dare not."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:105",
+        "type": "dialog",
+        "text": "No, no; I don't doubt it. But what then?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:106",
+        "type": "dialog",
+        "text": "If I might advise you, it would be best to leave the place for a little while—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:107",
+        "type": "dialog",
+        "text": "Yes, the propriety of leaving the place has occurred to me."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:108",
+        "type": "dialog",
+        "text": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:109",
+        "type": "dialog",
+        "text": "I might have my appointment restored to me, do you mean?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:110",
+        "type": "dialog",
+        "text": "Perhaps. It is not at all impossible."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:111",
+        "type": "dialog",
+        "text": "But what about public opinion, then? Surely you would not dare to do it on account of public feeling..."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:112",
+        "type": "dialog",
+        "text": "Public opinion is an extremely mutable thing. And, to be quite candid with you, it is a matter of great importance to us to have some admission of that sort from you in writing."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:113",
+        "type": "dialog",
+        "text": "Oh, that's what you are after, is it! I will just trouble you to remember what I said to you lately about foxy tricks of that sort!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:114",
+        "type": "dialog",
+        "text": "Your position was quite different then. At that time you had reason to suppose you had the whole town at your back—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:115",
+        "type": "dialog",
+        "text": "Yes, and now I feel I have the whole town ON my back— I would not do it if I had the devil and his dam on my back—! Never—never, I tell you!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:116",
+        "type": "dialog",
+        "text": "A man with a family has no right to behave as you do."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:117",
+        "type": "dialog",
+        "text": "I have no right! There is only one single thing in the world a free man has no right to do. Do you know what that is?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:118",
+        "type": "dialog",
+        "text": "No"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:119",
+        "type": "dialog",
+        "text": "Of course you don't, but I will tell you. A free man has no right to soil himself with filth; he has no right to behave in a way that would justify his spitting in his own face."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:120",
+        "type": "dialog",
+        "text": "This sort of thing sounds extremely plausible, of course; and if there were no other explanation for your obstinacy—. But as it happens that there is."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:121",
+        "type": "dialog",
+        "text": "What do you mean?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:122",
+        "type": "dialog",
+        "text": "You understand, very well what I mean. But, as your brother and as a man of discretion, I advise you not to build too much upon expectations and prospects that may so very easily fail you."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:123",
+        "type": "dialog",
+        "text": "What in the world is all this about?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:124",
+        "type": "dialog",
+        "text": "Do you really ask me to believe that you are ignorant of the terms of Mr. Kiil's will?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:125",
+        "type": "dialog",
+        "text": "I know that the small amount he possesses is to go to an institution for indigent old workpeople. How does that concern me?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:126",
+        "type": "dialog",
+        "text": "In the first place, it is by no means a small amount that is in question. Mr. Kiil is a fairly wealthy man."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:127",
+        "type": "dialog",
+        "text": "I had no notion of that!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:128",
+        "type": "dialog",
+        "text": "Hm!—hadn't you really? Then I suppose you had no notion, either, that a considerable portion of his wealth will come to your children, you and your wife having a life-rent of the capital. Has he never told you so?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:129",
+        "type": "dialog",
+        "text": "Never, on my honour! Quite the reverse; he has consistently done nothing but fume at being so unconscionably heavily taxed. But are you perfectly certain of this, Peter?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:130",
+        "type": "dialog",
+        "text": "I have it from an absolutely reliable source."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:131",
+        "type": "dialog",
+        "text": "Then, thank God, Katherine is provided for—and the children too! I must tell her this at once—Katherine, Katherine!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:132",
+        "type": "dialog",
+        "text": "Hush, don't say a word yet!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:133",
+        "type": "dialog",
+        "text": "What is the matter?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:134",
+        "type": "dialog",
+        "text": "Oh, nothing, nothing; you can go back. Provided for!—Just think of it, we are all provided for! And for life! What a blessed feeling it is to know one is provided for!"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:135",
+        "type": "dialog",
+        "text": "Yes, but that is just exactly what you are not. Mr. Kiil can alter his will any day he likes."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:136",
+        "type": "dialog",
+        "text": "But he won't do that, my dear Peter. The \"Badger\" is much too delighted at my attack on you and your wise friends."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:137",
+        "type": "dialog",
+        "text": "Ah, that throws a light on various things."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:138",
+        "type": "dialog",
+        "text": "What things?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:139",
+        "type": "dialog",
+        "text": "I see that the whole thing was a combined manoeuvre on your part and his. These violent, reckless attacks that you have made against the leading men of the town, under the pretence that it was in the name of truth—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:140",
+        "type": "dialog",
+        "text": "What about them?"
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:141",
+        "type": "dialog",
+        "text": "I see that they were nothing else than the stipulated price for that vindictive old man's will."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:142",
+        "type": "dialog",
+        "text": "Peter—you are the most disgusting plebeian I have ever met in all my life."
+      },
+      {
+        "speaker": "Peter Stockmann",
+        "dia_id": "D5:143",
+        "type": "dialog",
+        "text": "All is over between us. Your dismissal is irrevocable—we have a weapon against you now."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:144",
+        "type": "dialog",
+        "text": "For shame! For shame! Katherine, you must have the floor scrubbed after him! Let—what's her name—devil take it, the girl who has always got soot on her nose—"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:145",
+        "type": "dialog",
+        "text": "Hush, Thomas, be quiet!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:146",
+        "type": "dialog",
+        "text": "Father, grandfather is here, asking if he may speak to you alone."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:147",
+        "type": "dialog",
+        "text": "Certainly he may. Come in, Mr. Kiil. What can I do for you? Won't you sit down?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:148",
+        "type": "dialog",
+        "text": "I won't sit. You look very comfortable here today, Thomas."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:149",
+        "type": "dialog",
+        "text": "Yes, don't we!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:150",
+        "type": "dialog",
+        "text": "Very comfortable—plenty of fresh air. I should think you have got enough to-day of that oxygen you were talking about yesterday. Your conscience must be in splendid order to-day, I should think."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:151",
+        "type": "dialog",
+        "text": "It is."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:152",
+        "type": "dialog",
+        "text": "So I should think. Do you know what I have got here?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:153",
+        "type": "dialog",
+        "text": "A good conscience, too, I hope."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:154",
+        "type": "dialog",
+        "text": "Bah!—No, it is something better than that."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:155",
+        "type": "dialog",
+        "text": "Shares in the Baths?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:156",
+        "type": "dialog",
+        "text": "They were not difficult to get today."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:157",
+        "type": "dialog",
+        "text": "And you have been buying—?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:158",
+        "type": "dialog",
+        "text": "As many as I could pay for."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:159",
+        "type": "dialog",
+        "text": "But, my dear Mr. Kiil—consider the state of the Baths' affairs!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:160",
+        "type": "dialog",
+        "text": "If you behave like a reasonable man, you can soon set the Baths on their feet again."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:161",
+        "type": "dialog",
+        "text": "Well, you can see for yourself that I have done all I can, but—. They are all mad in this town!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:162",
+        "type": "dialog",
+        "text": "You said yesterday that the worst of this pollution came from my tannery. If that is true, then my grandfather and my father before me, and I myself, for many years past, have been poisoning the town like three destroying angels. Do you think I am going to sit quiet under that reproach?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:163",
+        "type": "dialog",
+        "text": "Unfortunately I am afraid you will have to."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:164",
+        "type": "dialog",
+        "text": "No, thank you. I am jealous of my name and reputation. They call me \"the Badger,\" I am told. A badger is a kind of pig, I believe; but I am not going to give them the right to call me that. I mean to live and die a clean man."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:165",
+        "type": "dialog",
+        "text": "And how are you going to set about it?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:166",
+        "type": "dialog",
+        "text": "You shall cleanse me, Thomas."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:167",
+        "type": "dialog",
+        "text": "I!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:168",
+        "type": "dialog",
+        "text": "Do you know what money I have bought these shares with?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:169",
+        "type": "dialog",
+        "text": "And you have gone and taken Katherine's money for this!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:170",
+        "type": "dialog",
+        "text": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas! If you still make out that these animals and other nasty things of that sort come from my tannery, it will be exactly as if you were to flay broad strips of skin from Katherine's body, and Petra's, and the boys'; and no decent man would do that—unless he were mad."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:171",
+        "type": "dialog",
+        "text": "Yes, but I am mad; I am mad!"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:172",
+        "type": "dialog",
+        "text": "You cannot be so absurdly mad as all that, when it is a question of your wife and children."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:173",
+        "type": "dialog",
+        "text": "Why couldn't you consult me about it, before you went and bought all that trash?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:174",
+        "type": "dialog",
+        "text": "What is done cannot be undone."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:175",
+        "type": "dialog",
+        "text": "If only I were not so certain about it—! But I am absolutely convinced that I am right."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:176",
+        "type": "dialog",
+        "text": "If you stick to your mad idea, this won't be worth much, you know."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:177",
+        "type": "dialog",
+        "text": "But, hang it all! It might be possible for science to discover some prophylactic, I should think—or some antidote of some kind—"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:178",
+        "type": "dialog",
+        "text": "To kill these animals, do you mean?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:179",
+        "type": "dialog",
+        "text": "Yes, or to make them innocuous."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:180",
+        "type": "dialog",
+        "text": "Couldn't you try some rat's-bane?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:181",
+        "type": "dialog",
+        "text": "Don't talk nonsense! They all say it is only imagination, you know. Well, let it go at that! Let them have their own way about it! Haven't the ignorant, narrow-minded curs reviled me as an enemy of the people?—and haven't they been ready to tear the clothes off my back too?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:182",
+        "type": "dialog",
+        "text": "And broken all your windows to pieces!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:183",
+        "type": "dialog",
+        "text": "And then there is my duty to my family. I must talk it over with Katherine; she is great on those things."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:184",
+        "type": "dialog",
+        "text": "That is right; be guided by a reasonable woman's advice."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:185",
+        "type": "dialog",
+        "text": "To think you could do such a preposterous thing!  Risking Katherine's money in this way, and putting me in such a horribly painful dilemma! When I look at you, I think I see the devil himself—."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:186",
+        "type": "dialog",
+        "text": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:187",
+        "type": "dialog",
+        "text": "And what does Katherine get?"
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:188",
+        "type": "dialog",
+        "text": "Not a halfpenny. Look at those two!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:189",
+        "type": "dialog",
+        "text": "What the devil!—have YOU actually the face to come into my house?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:190",
+        "type": "dialog",
+        "text": "Certainly."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:191",
+        "type": "dialog",
+        "text": "We have something to say to you, you see."
+      },
+      {
+        "speaker": "Morten Kiil",
+        "dia_id": "D5:192",
+        "type": "dialog",
+        "text": "Yes or no—before two o'clock."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:193",
+        "type": "dialog",
+        "text": "Aha!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:194",
+        "type": "dialog",
+        "text": "Well, what do you want with me? Be brief."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:195",
+        "type": "dialog",
+        "text": "I can quite understand that you are annoyed with us for our attitude at the meeting yesterday."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:196",
+        "type": "dialog",
+        "text": "Attitude, do you call it? Yes, it was a charming attitude! I call it weak, womanish—damnably shameful!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:197",
+        "type": "dialog",
+        "text": "Call it what you like, we could not do otherwise."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:198",
+        "type": "dialog",
+        "text": "You DARED not do otherwise—isn't that it?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:199",
+        "type": "dialog",
+        "text": "Well, if you like to put it that way."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:200",
+        "type": "dialog",
+        "text": "But why did you not let us have word of it beforehand?—just a hint to Mr. Hovstad or to me?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:201",
+        "type": "dialog",
+        "text": "A hint? Of what?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:202",
+        "type": "dialog",
+        "text": "Of what was behind it all."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:203",
+        "type": "dialog",
+        "text": "I don't understand you in the least—"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:204",
+        "type": "dialog",
+        "text": "Oh yes, you do, Dr. Stockmann."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:205",
+        "type": "dialog",
+        "text": "It is no good making a mystery of it any longer."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:206",
+        "type": "dialog",
+        "text": "What the devil do you both mean?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:207",
+        "type": "dialog",
+        "text": "May I ask if your father-in-law is not going round the town buying up all the shares in the Baths?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:208",
+        "type": "dialog",
+        "text": "Yes, he has been buying Baths shares today; but—"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:209",
+        "type": "dialog",
+        "text": "It would have been more prudent to get someone else to do it—someone less nearly related to you."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:210",
+        "type": "dialog",
+        "text": "And you should not have let your name appear in the affair. There was no need for anyone to know that the attack on the Baths came from you. You ought to have consulted me, Dr. Stockmann."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:211",
+        "type": "dialog",
+        "text": "Are such things conceivable? Are such things possible?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:212",
+        "type": "dialog",
+        "text": "Evidently they are. But it is better to use a little finesse, you know."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:213",
+        "type": "dialog",
+        "text": "And it is much better to have several persons in a thing of that sort; because the responsibility of each individual is lessened, when there are others with him."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:214",
+        "type": "dialog",
+        "text": "Come to the point, gentlemen. What do you want?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:215",
+        "type": "dialog",
+        "text": "Perhaps Mr. Hovstad had better—"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:216",
+        "type": "dialog",
+        "text": "No, you tell him, Aslaksen."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:217",
+        "type": "dialog",
+        "text": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:218",
+        "type": "dialog",
+        "text": "Do you dare do that now? What about public opinion? Are you not afraid of a storm breaking upon our heads?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:219",
+        "type": "dialog",
+        "text": "We will try to weather it."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:220",
+        "type": "dialog",
+        "text": "And you must be ready to go off quickly on a new tack, Doctor. As soon as your invective has done its work—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:221",
+        "type": "dialog",
+        "text": "Do you mean, as soon as my father-in-law and I have got hold of the shares at a low figure?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:222",
+        "type": "dialog",
+        "text": "Your reasons for wishing to get the control of the Baths are mainly scientific, I take it."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:223",
+        "type": "dialog",
+        "text": "Of course; it was for scientific reasons that I persuaded the old \"Badger\" to stand in with me in the matter. So we will tinker at the conduit-pipes a little, and dig up a little bit of the shore, and it shan't cost the town a sixpence. That will be all right—eh?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:224",
+        "type": "dialog",
+        "text": "I think so—if you have the \"People's Messenger\" behind you."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:225",
+        "type": "dialog",
+        "text": "The Press is a power in a free community. Doctor."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:226",
+        "type": "dialog",
+        "text": "Quite so. And so is public opinion. And you, Mr. Aslaksen—I suppose you will be answerable for the Householders' Association?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:227",
+        "type": "dialog",
+        "text": "Yes, and for the Temperance Society. You may rely on that."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:228",
+        "type": "dialog",
+        "text": "But, gentlemen—I really am ashamed to ask the question—but, what return do you—?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:229",
+        "type": "dialog",
+        "text": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition; it doesn't go really well; and I should be very unwilling to suspend the paper now, when there is so much work to do here in the political way."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:230",
+        "type": "dialog",
+        "text": "Quite so; that would be a great trial to such a friend of the people as you are. But I am an enemy of the people, remember! Where have I put my stick? Where the devil is my stick?"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:231",
+        "type": "dialog",
+        "text": "What's that?"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:232",
+        "type": "dialog",
+        "text": "Surely you never mean—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:233",
+        "type": "dialog",
+        "text": "And suppose I don't give you a single penny of all I get out of it? Money is not very easy to get out of us rich folk, please to remember!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:234",
+        "type": "dialog",
+        "text": "And you please to remember that this affair of the shares can be represented in two ways!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:235",
+        "type": "dialog",
+        "text": "Yes, and you are just the man to do it. If I don't come to the rescue of the \"People's Messenger,\" you will certainly take an evil view of the affair; you will hunt me down, I can well imagine—pursue me—try to throttle me as a dog does a hare."
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:236",
+        "type": "dialog",
+        "text": "It is a natural law; every animal must fight for its own livelihood."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:237",
+        "type": "dialog",
+        "text": "And get its food where it can, you know."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:238",
+        "type": "dialog",
+        "text": "Then you go and look for yours in the gutter; because I am going to show you which is the strongest animal of us three! Ah, now—!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:239",
+        "type": "dialog",
+        "text": "You are surely not going to use violence!"
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:240",
+        "type": "dialog",
+        "text": "Take care what you are doing with that umbrella."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:241",
+        "type": "dialog",
+        "text": "Out of the window with you, Mr. Hovstad!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:242",
+        "type": "dialog",
+        "text": "Are you quite mad!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:243",
+        "type": "dialog",
+        "text": "Out of the window, Mr. Aslaksen! Jump, I tell you! You will have to do it, sooner or later."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:244",
+        "type": "dialog",
+        "text": "Moderation, Doctor—I am a delicate man—I can stand so little—(calls out) help, help!"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D5:245",
+        "type": "stage",
+        "text": "(MRS. STOCKMANN, PETRA and HORSTER come in from the sitting-room.)"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:246",
+        "type": "dialog",
+        "text": "Good gracious, Thomas! What is happening?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:247",
+        "type": "dialog",
+        "text": "Jump out, I tell you! Out into the gutter!"
+      },
+      {
+        "speaker": "Hovstad",
+        "dia_id": "D5:248",
+        "type": "dialog",
+        "text": "An assault on an unoffending man! I call you to witness, Captain Horster."
+      },
+      {
+        "speaker": "Aslaksen",
+        "dia_id": "D5:249",
+        "type": "dialog",
+        "text": "If only I knew the way about here—."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:250",
+        "type": "dialog",
+        "text": "Control yourself, Thomas!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:251",
+        "type": "dialog",
+        "text": "Upon my soul, they have escaped after all."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:252",
+        "type": "dialog",
+        "text": "What did they want you to do?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:253",
+        "type": "dialog",
+        "text": "I will tell you later on; I have something else to think about now. Look there, Katherine; what is written there?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:254",
+        "type": "dialog",
+        "text": "Three big Noes; what does that mean"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:255",
+        "type": "dialog",
+        "text": "I will tell you that too, later on. There, Petra; tell sooty-face to run over to the \"Badger's\" with that, as quick as she can. Hurry up!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:256",
+        "type": "dialog",
+        "text": "Well, I think I have had a visit from every one of the devil's messengers to-day! But now I am going to sharpen my pen till they can feel its point; I shall dip it in venom and gall; I shall hurl my inkpot at their heads!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:257",
+        "type": "dialog",
+        "text": "Yes, but we are going away, you know, Thomas."
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D5:258",
+        "type": "stage",
+        "text": "(PETRA comes back.)"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:259",
+        "type": "dialog",
+        "text": "Well?"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:260",
+        "type": "dialog",
+        "text": "She has gone with it."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:261",
+        "type": "dialog",
+        "text": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:262",
+        "type": "dialog",
+        "text": "Stay here?"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:263",
+        "type": "dialog",
+        "text": "Here, in the town?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:264",
+        "type": "dialog",
+        "text": "Yes, here. This is the field of battle—this is where the fight will be. This is where I shall triumph! As soon as I have had my trousers sewn up I shall go out and look for another house. We must have a roof over our heads for the winter."
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:265",
+        "type": "dialog",
+        "text": "That you shall have in my house."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:266",
+        "type": "dialog",
+        "text": "Can I?"
+      },
+      {
+        "speaker": "Horsier",
+        "dia_id": "D5:267",
+        "type": "dialog",
+        "text": "Yes, quite well. I have plenty of room, and I am almost never at home."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:268",
+        "type": "dialog",
+        "text": "How good of you, Captain Horster!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:269",
+        "type": "dialog",
+        "text": "Thank you!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:270",
+        "type": "dialog",
+        "text": "Thank you, thank you! That is one trouble over! Now I can set to work in earnest at once. There is an endless amount of things to look through here, Katherine! Luckily I shall have all my time at my disposal; because I have been dismissed from the Baths, you know."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:271",
+        "type": "dialog",
+        "text": "Oh yes, I expected that."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:272",
+        "type": "dialog",
+        "text": "And they want to take my practice away from me too. Let them! I have got the poor people to fall back upon, anyway—those that don't pay anything; and, after all, they need me most, too. But, by Jove, they will have to listen to me; I shall preach to them in season and out of season, as it says somewhere."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:273",
+        "type": "dialog",
+        "text": "But, dear Thomas, I should have thought events had showed you what use it is to preach."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:274",
+        "type": "dialog",
+        "text": "You are really ridiculous, Katherine. Do you want me to let myself be beaten off the field by public opinion and the compact majority and all that devilry? No, thank you! And what I want to do is so simple and clear and straightforward. I only want to drum into the heads of these curs the fact that the liberals are the most insidious enemies of freedom—that party programmes strangle every young and vigorous truth—that considerations of expediency turn morality and justice upside down—and that they will end by making life here unbearable. Don't you think, Captain Horster, that I ought to be able to make people understand that?"
+      },
+      {
+        "speaker": "Horster",
+        "dia_id": "D5:275",
+        "type": "dialog",
+        "text": "Very likely; I don't know much about such things myself."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:276",
+        "type": "dialog",
+        "text": "Well, look here—I will explain! It is the party leaders that must be exterminated. A party leader is like a wolf, you see—like a voracious wolf. He requires a certain number of smaller victims to prey upon every year, if he is to live. Just look at Hovstad and Aslaksen! How many smaller victims have they not put an end to—or at any rate maimed and mangled until they are fit for nothing except to be householders or subscribers to the \"People's Messenger\"! Come here, Katherine—look how beautifully the sun shines to-day! And this lovely spring air I am drinking in!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:277",
+        "type": "dialog",
+        "text": "Yes, if only we could live on sunshine and spring air,"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:278",
+        "type": "dialog",
+        "text": "Oh, you will have to pinch and save a bit—then we shall get along. That gives me very little concern. What is much worse is, that I know of no one who is liberal-minded and high-minded enough to venture to take up my work after me."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:279",
+        "type": "dialog",
+        "text": "Don't think about that, father; you have plenty of time before you.—Hello, here are the boys already!"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D5:280",
+        "type": "stage",
+        "text": "(EJLIF and MORTEN come in from the sitting-room.)"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:281",
+        "type": "dialog",
+        "text": "Have you got a holiday?"
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:282",
+        "type": "dialog",
+        "text": "No; but we were fighting with the other boys between lessons—"
+      },
+      {
+        "speaker": "Ejlif",
+        "dia_id": "D5:283",
+        "type": "dialog",
+        "text": "That isn't true; it was the other boys were fighting with us."
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:284",
+        "type": "dialog",
+        "text": "Well, and then Mr. Rorlund said we had better stay at home for a day or two."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:285",
+        "type": "dialog",
+        "text": "I have it! I have it, by Jove! You shall never set foot in the school again!"
+      },
+      {
+        "speaker": "The Boys",
+        "dia_id": "D5:286",
+        "type": "dialog",
+        "text": "No more school!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:287",
+        "type": "dialog",
+        "text": "But, Thomas—"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:288",
+        "type": "dialog",
+        "text": "Never, I say. I will educate you myself; that is to say, you shan't learn a blessed thing—"
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:289",
+        "type": "dialog",
+        "text": "Hooray!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:290",
+        "type": "dialog",
+        "text": "but I will make liberal-minded and high-minded men of you. You must help me with that, Petra."
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:291",
+        "type": "dialog",
+        "text": "Yes, father, you may be sure I will."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:292",
+        "type": "dialog",
+        "text": "And my school shall be in the room where they insulted me and called me an enemy of the people. But we are too few as we are; I must have at least twelve boys to begin with."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:293",
+        "type": "dialog",
+        "text": "You will certainly never get them in this town."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:294",
+        "type": "dialog",
+        "text": "We shall. Don't you know any street urchins—regular ragamuffins—?"
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:295",
+        "type": "dialog",
+        "text": "Yes, father, I know lots!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:296",
+        "type": "dialog",
+        "text": "That's capital! Bring me some specimens of them. I am going to experiment with curs, just for once; there may be some exceptional heads among them."
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:297",
+        "type": "dialog",
+        "text": "And what are we going to do, when you have made liberal-minded and high-minded men of us?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:298",
+        "type": "dialog",
+        "text": "Then you shall drive all the wolves out of the country, my boys!"
+      },
+      {
+        "speaker": "STAGE",
+        "dia_id": "D5:299",
+        "type": "stage",
+        "text": "(EJLIF looks rather doubtful about it; MORTEN jumps about crying \"Hurrah!\")"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:300",
+        "type": "dialog",
+        "text": "Let us hope it won't be the wolves that will drive you out of the country, Thomas."
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:301",
+        "type": "dialog",
+        "text": "Are you out of your mind, Katherine? Drive me out! Now—when I am the strongest man in the town!"
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:302",
+        "type": "dialog",
+        "text": "The strongest—now?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:303",
+        "type": "dialog",
+        "text": "Yes, and I will go so far as to say that now I am the strongest man in the whole world."
+      },
+      {
+        "speaker": "Morten",
+        "dia_id": "D5:304",
+        "type": "dialog",
+        "text": "I say!"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:305",
+        "type": "dialog",
+        "text": "Hush! You mustn't say anything about it yet; but I have made a great discovery."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:306",
+        "type": "dialog",
+        "text": "Another one?"
+      },
+      {
+        "speaker": "Dr. Stockmann",
+        "dia_id": "D5:307",
+        "type": "dialog",
+        "text": "Yes. It is this, let me tell you—that the strongest man in the world is he who stands most alone."
+      },
+      {
+        "speaker": "Mrs. Stockmann",
+        "dia_id": "D5:308",
+        "type": "dialog",
+        "text": "Oh, Thomas, Thomas!"
+      },
+      {
+        "speaker": "Petra",
+        "dia_id": "D5:309",
+        "type": "dialog",
+        "text": "Father!"
+      }
+    ]
+  },
+  "sample_id": "conv-5"
+}

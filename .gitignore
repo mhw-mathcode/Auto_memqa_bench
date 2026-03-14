@@ -1,0 +1,76 @@
+# ------------------------------
+# Python runtime/cache artifacts
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.ipynb_checkpoints/
+
+# ------------------------------
+# Virtual environments
+# ------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ------------------------------
+# Build/package artifacts
+# ------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ------------------------------
+# Editor/OS files
+# ------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Local secrets and custom config
+# ------------------------------
+.env
+.env.*
+!.env.example
+config.json
+config.local.json
+my_config.json
+
+# ------------------------------
+# Pipeline/intermediate outputs
+# ------------------------------
+temp/
+**/*_v0.json
+**/*_v1.json
+**/*_v2.json
+**/*_v3.json
+**/*_v4.json
+
+# QA-only incremental scratch files
+*.partial
+*.tmp
+
+# Pollution check artifacts
+membership_results_api.json
+
+# Analysis/export artifacts
+final_best_question.json
+result/category_stats.json
+result/category_stats.csv
+result/random_questions.csv
+
+# If you don't want to upload final outputs, uncomment the next line:
+# result/*.json

@@ -1,0 +1,3358 @@
+[
+  {
+    "qa": [
+      {
+        "character": "Sandy",
+        "category": 1,
+        "question": "Which statement best describes a consistent pattern in Sandy's behavior throughout the conversation?",
+        "option": [
+          "A. She frequently interrupts others to share historical facts.",
+          "B. She offers assistance to John and remains in his vicinity.",
+          "C. She expresses doubt about John's claims and challenges him.",
+          "D. She provides detailed information about composers.",
+          "E. She remains silent during most of the discussion."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "John and Sandy enter.",
+            "dia_id": "D18:17"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:24, Sandy offers to help John, indicating a helpful attitude.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:17, she enters with John, showing she is with him.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D18:25, she smiles at John, indicating friendliness.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These actions consistently show her as a helper and companion to John.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 2,
+        "question": "How does Sandy's immediate emotional response differ between her interaction with John in scene 1c and in scene 2?",
+        "option": [
+          "A. In scene 1c, she is skeptical, while in scene 2, she is amused.",
+          "B. In scene 1c, she is reassuring, while in scene 2, she is amused.",
+          "C. In scene 1c, she is angry, while in scene 2, she is curious.",
+          "D. In scene 1c, she is indifferent, while in scene 2, she is concerned.",
+          "E. In scene 1c, she is confused, while in scene 2, she is informative."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Crazy? No.",
+            "dia_id": "D17:2"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "There are predators out there.",
+            "dia_id": "D18:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:2, Sandy responds to John's comment about being crazy with a reassuring 'Crazy? No.'",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:25-26, after John talks about the fireplace, she smiles and makes a playful comment about predators, indicating amusement.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, her response in scene 1c is reassuring, while in scene 2 it is amused.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 3,
+        "question": "During the debate in scene 1b, where is Sandy located?",
+        "option": [
+          "A. In the room, participating in the debate.",
+          "B. Outside with John, looking at the stars.",
+          "C. In the kitchen preparing food.",
+          "D. She has already left the gathering.",
+          "E. She is listening from another room."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "(exits with Sandy, carrying boxes)",
+            "dia_id": "D15:28"
+          },
+          {
+            "id": "E2",
+            "speaker": null,
+            "utterance": "John is looking at the stars.",
+            "dia_id": "D17:0"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Crazy? No.",
+            "dia_id": "D17:2"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:28, John exits with Sandy, so they leave the room at the end of scene 1a.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D17:0 and D17:2, they are outside together in scene 1c, which occurs after scene 1b.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Therefore, during scene 1b, they are outside.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 4,
+        "question": "What action does Sandy take in scene 1a that leads to her being outside with John in scene 1c?",
+        "option": [
+          "A. She asks John about his beliefs.",
+          "B. She offers to help him carry boxes.",
+          "C. She follows him out of curiosity.",
+          "D. She decides to take a walk.",
+          "E. She is asked to leave by the others."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(exits with Sandy, carrying boxes)",
+            "dia_id": "D15:28"
+          },
+          {
+            "id": "E3",
+            "speaker": null,
+            "utterance": "John is looking at the stars.",
+            "dia_id": "D17:0"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:24, Sandy offers to help John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D15:28, she exits with him, so her offer leads to their departure.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D17:0, they are outside, confirming that her action resulted in them being outside.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "Based on her actions, what role does Sandy most likely have in relation to John?",
+        "option": [
+          "A. She is his skeptic and critic.",
+          "B. She is his helper and companion.",
+          "C. She is his historian and biographer.",
+          "D. She is his student and follower.",
+          "E. She is his adversary."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "John and Sandy enter.",
+            "dia_id": "D18:17"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy offers help in D15:24, indicating a helper role.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She enters with John in D18:17, showing she is with him.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "She smiles at him in D18:25, indicating friendliness.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These actions collectively show she is a helper and companion.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "Which of the following best captures Harry's attitude towards John's claims?",
+        "option": [
+          "A. He dismisses them as delusional.",
+          "B. He is curious and tests them with humor.",
+          "C. He believes them completely.",
+          "D. He is indifferent.",
+          "E. He thinks John is on drugs."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "No, no, no, no. I've done a lot of consulting work with the narcotics division. I've seen people...tripping, strung out- Whatever's up with John, it isn't that. I've looked for signs- None.",
+            "dia_id": "D16:10"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "We're all here, trapped by your story...hoping for a...revolution? I don't know.",
+            "dia_id": "D18:73"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Quote the Sermon on the Mount.",
+            "dia_id": "D18:79"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:10, Harry rules out drugs, showing he has considered and engaged with John's condition.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:73, he expresses curiosity about being trapped by the story.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D18:79, he tests John by asking for a quote, showing skeptical curiosity.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These indicate he is curious and tests John, often with humor (as seen in other lines like D18:18).",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "How does Harry's emotional tone change between his interactions in scene 1b and scene 2?",
+        "option": [
+          "A. He becomes more skeptical and dismissive.",
+          "B. He shifts from annoyance to playful curiosity.",
+          "C. He remains consistently humorous.",
+          "D. He becomes more emotional and tearful.",
+          "E. He becomes more withdrawn."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Well, you're finally fulfilling one prophecy about the millennium, John.",
+            "dia_id": "D18:18"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "So did Beethoven do physics on the side?",
+            "dia_id": "D18:33"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:14, Harry expresses annoyance at Dan.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:18 and D18:33, he makes playful jokes, showing curiosity and humor.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, his tone shifts from annoyance to playful curiosity.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "After Harry says 'Oh, shut up' in scene 1b, what is his next utterance in the conversation?",
+        "option": [
+          "A. 'Chheh, dream on.'",
+          "B. 'What?'",
+          "C. 'Now we're on the floor listening to Beethoven.'",
+          "D. 'I should be home, uh, kissing my wife.'",
+          "E. 'Quote the Sermon on the Mount.'"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Chheh, dream on.",
+            "dia_id": "D18:7"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "D16:14 is Harry's last line in scene 1b.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The next time Harry speaks is in scene 2 at D18:7, which is 'Chheh, dream on.'",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "What personal information does Harry volunteer during the conversation?",
+        "option": [
+          "A. He mentions his work in narcotics and his wife.",
+          "B. He talks about his childhood and education.",
+          "C. He reveals his religious beliefs.",
+          "D. He discusses his travel experiences.",
+          "E. He shares his opinion on music."
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "I've done a lot of consulting work with the narcotics division.",
+            "dia_id": "D16:10"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "I should be home, uh, kissing my wife.",
+            "dia_id": "D18:72"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:10, Harry mentions his work with narcotics.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:72, he mentions his wife.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are the only personal details he volunteers.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "Which two characters does Harry directly address in different scenes?",
+        "option": [
+          "A. Dan and John",
+          "B. Will and Art",
+          "C. Sandy and Edith",
+          "D. Linda and Dan",
+          "E. John and Will"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Quote the Sermon on the Mount.",
+            "dia_id": "D18:79"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:14, Harry addresses Dan (as 'shut up' is directed at Dan).",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:79, Harry addresses John directly.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, he directly addresses Dan and John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "What is a consistent element in John's self-identification throughout the conversation?",
+        "option": [
+          "A. He claims to be the son of God.",
+          "B. He always calls himself John.",
+          "C. He believes he is a caveman.",
+          "D. He denies any connection to Jesus.",
+          "E. He insists on being called Jesus."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I called myself John. I almost always do.",
+            "dia_id": "D18:64"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "As tales of the resurrection spread, the name was confused with the Hebrew \"Yochanan\", meaning \"God is gracious\". My stay on earth was seen as divine proof of immortality. That led to \"God is salvation\", or Hebrew \"Yahshua\", which in translation became my proper name, changing to late Greek, \"Iesous\", Then to late Latin, \"Iesus\", and finally medieval Latin, \"Jesus\".",
+            "dia_id": "D18:65"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:64, John explicitly states he calls himself John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:65, he explains how that name evolved into Jesus, reinforcing that his original name was John.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, consistently he identifies as John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "Which of the following best describes John's emotional state in scene 1c compared to his reaction to Edith's challenge in scene 2?",
+        "option": [
+          "A. In scene 1c he is angry, in scene 2 he is sad.",
+          "B. In scene 1c he is contemplative, in scene 2 he is amused.",
+          "C. In scene 1c he is joyful, in scene 2 he is indifferent.",
+          "D. In scene 1c he is confused, in scene 2 he is defensive.",
+          "E. In scene 1c he is fearful, in scene 2 he is calm."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Maybe it'd be easier if I were.",
+            "dia_id": "D17:1"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "John shakes his head, smiling.",
+            "dia_id": "D18:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:1, John is contemplative, pondering if being crazy would be easier.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:49 and D18:75, John smiles in response to Edith's challenges, showing amusement.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, he is contemplative in scene 1c and amused in scene 2.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "According to John, what is the correct sequence of name changes from his original name to 'Jesus'?",
+        "option": [
+          "A. John -> Yochanan -> Yahshua -> Iesous -> Jesus",
+          "B. Yochanan -> Yahshua -> Iesous -> Jesus",
+          "C. John -> Yahshua -> Iesous -> Jesus",
+          "D. Yahshua -> Iesous -> Jesus -> John",
+          "E. John -> Jesus -> Iesous -> Yahshua"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I called myself John. I almost always do.",
+            "dia_id": "D18:64"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "As tales of the resurrection spread, the name was confused with the Hebrew \"Yochanan\", meaning \"God is gracious\". My stay on earth was seen as divine proof of immortality. That led to \"God is salvation\", or Hebrew \"Yahshua\", which in translation became my proper name, changing to late Greek, \"Iesous\", Then to late Latin, \"Iesus\", and finally medieval Latin, \"Jesus\".",
+            "dia_id": "D18:65"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John says he called himself John originally.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Then the name was confused with Yochanan, then became Yahshua, then Iesous, then Iesus, then Jesus.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus the sequence is John -> Yochanan -> Yahshua -> Iesous -> Iesus -> Jesus. Option A lists John -> Yochanan -> Yahshua -> Iesous -> Jesus, which matches (Iesus is intermediate).",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "Which of the following actions does John perform on two separate occasions in scene 2?",
+        "option": [
+          "A. He puts on music.",
+          "B. He smiles.",
+          "C. He stands up.",
+          "D. He speaks about Beethoven.",
+          "E. He looks at the stars."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "John shakes his head, smiling.",
+            "dia_id": "D18:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:49, John smiles.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:75, John shakes his head and smiles.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he smiles twice in scene 2.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "Which two characters does John direct non-verbal communication towards in different scenes?",
+        "option": [
+          "A. Sandy and Edith",
+          "B. Will and Dan",
+          "C. Harry and Linda",
+          "D. Art and Sandy",
+          "E. Edith and Will"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Coyote howls. John then looks at Sandy.",
+            "dia_id": "D17:3"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:3, John looks at Sandy.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:49, John smiles at Edith.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he directs non-verbal communication to Sandy and Edith.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 1,
+        "question": "Which statement best describes a consistent pattern in Sandy's behavior throughout the conversation?",
+        "option": [
+          "A. She frequently interrupts others to share historical facts.",
+          "B. She offers assistance to John and remains in his vicinity.",
+          "C. She expresses doubt about John's claims and challenges him.",
+          "D. She provides detailed information about composers.",
+          "E. She remains silent during most of the discussion."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "John and Sandy enter.",
+            "dia_id": "D18:17"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:24, Sandy offers to help John, indicating a helpful attitude.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:17, she enters with John, showing she is with him.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D18:25, she smiles at John, indicating friendliness.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These actions consistently show her as a helper and companion to John.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 2,
+        "question": "How does Sandy's immediate emotional response differ between her interaction with John in scene 1c and in scene 2?",
+        "option": [
+          "A. In scene 1c, she is skeptical, while in scene 2, she is amused.",
+          "B. In scene 1c, she is reassuring, while in scene 2, she is amused.",
+          "C. In scene 1c, she is angry, while in scene 2, she is curious.",
+          "D. In scene 1c, she is indifferent, while in scene 2, she is concerned.",
+          "E. In scene 1c, she is confused, while in scene 2, she is informative."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Crazy? No.",
+            "dia_id": "D17:2"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "There are predators out there.",
+            "dia_id": "D18:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:2, Sandy responds to John's comment about being crazy with a reassuring 'Crazy? No.'",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:25-26, after John talks about the fireplace, she smiles and makes a playful comment about predators, indicating amusement.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, her response in scene 1c is reassuring, while in scene 2 it is amused.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 3,
+        "question": "During the debate in scene 1b, where is Sandy located?",
+        "option": [
+          "A. In the room, participating in the debate.",
+          "B. Outside with John, looking at the stars.",
+          "C. In the kitchen preparing food.",
+          "D. She has already left the gathering.",
+          "E. She is listening from another room."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "(exits with Sandy, carrying boxes)",
+            "dia_id": "D15:28"
+          },
+          {
+            "id": "E2",
+            "speaker": null,
+            "utterance": "John is looking at the stars.",
+            "dia_id": "D17:0"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Crazy? No.",
+            "dia_id": "D17:2"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:28, John exits with Sandy, so they leave the room at the end of scene 1a.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D17:0 and D17:2, they are outside together in scene 1c, which occurs after scene 1b.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Therefore, during scene 1b, they are outside.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 4,
+        "question": "What action does Sandy take in scene 1a that leads to her being outside with John in scene 1c?",
+        "option": [
+          "A. She asks John about his beliefs.",
+          "B. She offers to help him carry boxes.",
+          "C. She follows him out of curiosity.",
+          "D. She decides to take a walk.",
+          "E. She is asked to leave by the others."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(exits with Sandy, carrying boxes)",
+            "dia_id": "D15:28"
+          },
+          {
+            "id": "E3",
+            "speaker": null,
+            "utterance": "John is looking at the stars.",
+            "dia_id": "D17:0"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:24, Sandy offers to help John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D15:28, she exits with him, so her offer leads to their departure.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D17:0, they are outside, confirming that her action resulted in them being outside.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "Based on her actions, what role does Sandy most likely have in relation to John?",
+        "option": [
+          "A. She is his skeptic and critic.",
+          "B. She is his helper and companion.",
+          "C. She is his historian and biographer.",
+          "D. She is his student and follower.",
+          "E. She is his adversary."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "I'll help.",
+            "dia_id": "D15:24"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "John and Sandy enter.",
+            "dia_id": "D18:17"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "(smiling)",
+            "dia_id": "D18:25"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy offers help in D15:24, indicating a helper role.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She enters with John in D18:17, showing she is with him.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "She smiles at him in D18:25, indicating friendliness.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These actions collectively show she is a helper and companion.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "Which of the following best captures Harry's attitude towards John's claims?",
+        "option": [
+          "A. He dismisses them as delusional.",
+          "B. He is curious and tests them with humor.",
+          "C. He believes them completely.",
+          "D. He is indifferent.",
+          "E. He thinks John is on drugs."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "No, no, no, no. I've done a lot of consulting work with the narcotics division. I've seen people...tripping, strung out- Whatever's up with John, it isn't that. I've looked for signs- None.",
+            "dia_id": "D16:10"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "We're all here, trapped by your story...hoping for a...revolution? I don't know.",
+            "dia_id": "D18:73"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Quote the Sermon on the Mount.",
+            "dia_id": "D18:79"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:10, Harry rules out drugs, showing he has considered and engaged with John's condition.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:73, he expresses curiosity about being trapped by the story.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D18:79, he tests John by asking for a quote, showing skeptical curiosity.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 4,
+            "inference": "These indicate he is curious and tests John, often with humor (as seen in other lines like D18:18).",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "How does Harry's emotional tone change between his interactions in scene 1b and scene 2?",
+        "option": [
+          "A. He becomes more skeptical and dismissive.",
+          "B. He shifts from annoyance to playful curiosity.",
+          "C. He remains consistently humorous.",
+          "D. He becomes more emotional and tearful.",
+          "E. He becomes more withdrawn."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Well, you're finally fulfilling one prophecy about the millennium, John.",
+            "dia_id": "D18:18"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "So did Beethoven do physics on the side?",
+            "dia_id": "D18:33"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:14, Harry expresses annoyance at Dan.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:18 and D18:33, he makes playful jokes, showing curiosity and humor.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, his tone shifts from annoyance to playful curiosity.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "After Harry says 'Oh, shut up' in scene 1b, what is his next utterance in the conversation?",
+        "option": [
+          "A. 'Chheh, dream on.'",
+          "B. 'What?'",
+          "C. 'Now we're on the floor listening to Beethoven.'",
+          "D. 'I should be home, uh, kissing my wife.'",
+          "E. 'Quote the Sermon on the Mount.'"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Chheh, dream on.",
+            "dia_id": "D18:7"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "D16:14 is Harry's last line in scene 1b.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The next time Harry speaks is in scene 2 at D18:7, which is 'Chheh, dream on.'",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "What personal information does Harry volunteer during the conversation?",
+        "option": [
+          "A. He mentions his work in narcotics and his wife.",
+          "B. He talks about his childhood and education.",
+          "C. He reveals his religious beliefs.",
+          "D. He discusses his travel experiences.",
+          "E. He shares his opinion on music."
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "I've done a lot of consulting work with the narcotics division.",
+            "dia_id": "D16:10"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "I should be home, uh, kissing my wife.",
+            "dia_id": "D18:72"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:10, Harry mentions his work with narcotics.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:72, he mentions his wife.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are the only personal details he volunteers.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "Which two characters does Harry directly address in different scenes?",
+        "option": [
+          "A. Dan and John",
+          "B. Will and Art",
+          "C. Sandy and Edith",
+          "D. Linda and Dan",
+          "E. John and Will"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Oh, shut up.",
+            "dia_id": "D16:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Quote the Sermon on the Mount.",
+            "dia_id": "D18:79"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:14, Harry addresses Dan (as 'shut up' is directed at Dan).",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:79, Harry addresses John directly.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, he directly addresses Dan and John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "What is a consistent element in John's self-identification throughout the conversation?",
+        "option": [
+          "A. He claims to be the son of God.",
+          "B. He always calls himself John.",
+          "C. He believes he is a caveman.",
+          "D. He denies any connection to Jesus.",
+          "E. He insists on being called Jesus."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I called myself John. I almost always do.",
+            "dia_id": "D18:64"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "As tales of the resurrection spread, the name was confused with the Hebrew \"Yochanan\", meaning \"God is gracious\". My stay on earth was seen as divine proof of immortality. That led to \"God is salvation\", or Hebrew \"Yahshua\", which in translation became my proper name, changing to late Greek, \"Iesous\", Then to late Latin, \"Iesus\", and finally medieval Latin, \"Jesus\".",
+            "dia_id": "D18:65"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:64, John explicitly states he calls himself John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:65, he explains how that name evolved into Jesus, reinforcing that his original name was John.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, consistently he identifies as John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "Which of the following best describes John's emotional state in scene 1c compared to his reaction to Edith's challenge in scene 2?",
+        "option": [
+          "A. In scene 1c he is angry, in scene 2 he is sad.",
+          "B. In scene 1c he is contemplative, in scene 2 he is amused.",
+          "C. In scene 1c he is joyful, in scene 2 he is indifferent.",
+          "D. In scene 1c he is confused, in scene 2 he is defensive.",
+          "E. In scene 1c he is fearful, in scene 2 he is calm."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Maybe it'd be easier if I were.",
+            "dia_id": "D17:1"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "John shakes his head, smiling.",
+            "dia_id": "D18:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:1, John is contemplative, pondering if being crazy would be easier.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:49 and D18:75, John smiles in response to Edith's challenges, showing amusement.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, he is contemplative in scene 1c and amused in scene 2.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "According to John, what is the correct sequence of name changes from his original name to 'Jesus'?",
+        "option": [
+          "A. John -> Yochanan -> Yahshua -> Iesous -> Jesus",
+          "B. Yochanan -> Yahshua -> Iesous -> Jesus",
+          "C. John -> Yahshua -> Iesous -> Jesus",
+          "D. Yahshua -> Iesous -> Jesus -> John",
+          "E. John -> Jesus -> Iesous -> Yahshua"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I called myself John. I almost always do.",
+            "dia_id": "D18:64"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "As tales of the resurrection spread, the name was confused with the Hebrew \"Yochanan\", meaning \"God is gracious\". My stay on earth was seen as divine proof of immortality. That led to \"God is salvation\", or Hebrew \"Yahshua\", which in translation became my proper name, changing to late Greek, \"Iesous\", Then to late Latin, \"Iesus\", and finally medieval Latin, \"Jesus\".",
+            "dia_id": "D18:65"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John says he called himself John originally.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Then the name was confused with Yochanan, then became Yahshua, then Iesous, then Iesus, then Jesus.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus the sequence is John -> Yochanan -> Yahshua -> Iesous -> Iesus -> Jesus. Option A lists John -> Yochanan -> Yahshua -> Iesous -> Jesus, which matches (Iesus is intermediate).",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "Which of the following actions does John perform on two separate occasions in scene 2?",
+        "option": [
+          "A. He puts on music.",
+          "B. He smiles.",
+          "C. He stands up.",
+          "D. He speaks about Beethoven.",
+          "E. He looks at the stars."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "John shakes his head, smiling.",
+            "dia_id": "D18:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:49, John smiles.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:75, John shakes his head and smiles.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he smiles twice in scene 2.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "Which two characters does John direct non-verbal communication towards in different scenes?",
+        "option": [
+          "A. Sandy and Edith",
+          "B. Will and Dan",
+          "C. Harry and Linda",
+          "D. Art and Sandy",
+          "E. Edith and Will"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Coyote howls. John then looks at Sandy.",
+            "dia_id": "D17:3"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "John smiles.",
+            "dia_id": "D18:49"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D17:3, John looks at Sandy.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:49, John smiles at Edith.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he directs non-verbal communication to Sandy and Edith.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "Which statement best describes Dan's approach to John's story?",
+        "option": [
+          "A. He is skeptical and dismissive.",
+          "B. He is curious and open to possibilities, while providing historical context.",
+          "C. He is emotionally invested and tearful.",
+          "D. He is indifferent and bored.",
+          "E. He tries to prove John wrong."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "We think that language came into existence sixty thousand years ago. The structure of Stone Age culture is evidence of the ability to communicate... verbally.",
+            "dia_id": "D16:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Look, we have two simple choices. We can get all bent out of shape intellectualizing or bench- pressing logic, or we can simply relax and enjoy it. I can listen critically, but I don't have to make up my mind about anything.",
+            "dia_id": "D18:4"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "That is fascinating, though, isn't it, a brave attempt to teach Buddhism in the West.",
+            "dia_id": "D18:1"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan provides historical context in D16:12.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He advocates for relaxing and enjoying the story in D18:4, showing openness.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "He finds it fascinating in D18:1, showing curiosity.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "Which two statements by Dan indicate a friendly or familiar attitude towards John?",
+        "option": [
+          "A. 'That is fascinating' and 'We have two simple choices'",
+          "B. 'It's just like old times' and 'my friend'",
+          "C. 'Do you have faith?' and 'But you...'",
+          "D. 'You've got...four men of science' and 'It's just like old times'",
+          "E. 'We think that language...' and 'It's just like old times'"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "It's just like old times.",
+            "dia_id": "D18:76"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "You've got...four men of science completely baffled, my friend.",
+            "dia_id": "D18:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:31, Dan calls John 'my friend'.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:76, Dan says 'It's just like old times', implying familiarity.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Both indicate a friendly or familiar attitude.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 3,
+        "question": "Which historical topics does Dan mention first and later in the conversation?",
+        "option": [
+          "A. First Stone Age, then Buddhism",
+          "B. First Buddhism, then Stone Age",
+          "C. First Kennedy assassination, then Stone Age",
+          "D. First Christianity, then language",
+          "E. First 2,000 years, then 60,000 years"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "We think that language came into existence sixty thousand years ago. The structure of Stone Age culture is evidence of the ability to communicate... verbally.",
+            "dia_id": "D16:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "That is fascinating, though, isn't it, a brave attempt to teach Buddhism in the West.",
+            "dia_id": "D18:1"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:12 (scene 1b), Dan mentions the Stone Age.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:1 (scene 2), Dan mentions Buddhism.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he mentions Stone Age first, then Buddhism.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What two questions does Dan ask John during the conversation?",
+        "option": [
+          "A. 'Do you have a destination in mind?' and 'Do you have faith?'",
+          "B. 'Did you have any religious beliefs?' and 'Then you didn't claim to be the Son of God?'",
+          "C. 'What about the name \"Jesus\"?' and 'How do you know that?'",
+          "D. 'Were you a medicine man?' and 'Do you have faith?'",
+          "E. 'Are there any more revelations?' and 'Quote the Sermon on the Mount.'"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Did you have, um... any religious beliefs? Or didn't you give it much thought?",
+            "dia_id": "D18:37"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Then you didn't claim to be the Son of God?",
+            "dia_id": "D18:67"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:37, Dan asks about religious beliefs.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:67, Dan asks if he claimed to be the Son of God.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are two questions Dan asks John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "What terms does Dan use to refer to John in different scenes?",
+        "option": [
+          "A. 'the caveman' and 'the man'",
+          "B. 'our caveman' and 'my friend'",
+          "C. 'the subject' and 'the patient'",
+          "D. 'the stranger' and 'the guest'",
+          "E. 'the prophet' and 'the teacher'"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Do you think that perhaps our caveman has a monkey on his back?",
+            "dia_id": "D16:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "You've got...four men of science completely baffled, my friend.",
+            "dia_id": "D18:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:8, Dan calls John 'our caveman'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:31, Dan calls John 'my friend'.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he uses these two terms.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 6,
+        "question": "What two numbers does Dan mention in the conversation?",
+        "option": [
+          "A. 60,000 and 2,000",
+          "B. 60,000 and 4",
+          "C. 60,000 and 1,000",
+          "D. 4 and 2,000",
+          "E. 60,000 and 60"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "We think that language came into existence sixty thousand years ago.",
+            "dia_id": "D16:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "You've got...four men of science completely baffled, my friend.",
+            "dia_id": "D18:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:12, Dan mentions 60,000.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:31, Dan mentions 4.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he mentions 60,000 and 4.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 1,
+        "question": "What is Edith's primary concern throughout the conversation?",
+        "option": [
+          "A. To learn about Buddhism",
+          "B. To determine whether John is really Jesus",
+          "C. To discuss the Kennedy assassination",
+          "D. To share her knowledge of the Bible",
+          "E. To prove that religion is false"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "You said he was sane.",
+            "dia_id": "D16:6"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "You weren't Jesus!",
+            "dia_id": "D18:48"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "W-were you?",
+            "dia_id": "D18:87"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:6, Edith questions Will's statement about John's sanity, showing interest in John's identity.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:48, she directly asserts that John wasn't Jesus.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "In D18:87, she finally asks if he was Jesus, revealing her central concern.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "How does Edith's demeanor change from scene 1b to scene 2?",
+        "option": [
+          "A. From curious to emotionally vulnerable",
+          "B. From angry to calm",
+          "C. From indifferent to interested",
+          "D. From humorous to serious",
+          "E. From skeptical to believing"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Drugs?",
+            "dia_id": "D16:9"
+          },
+          {
+            "id": "E2",
+            "speaker": null,
+            "utterance": "(timidly, her voice quivering, eyes tearing up)",
+            "dia_id": "D18:86"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D16:9, Edith asks a curious question about drugs.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:86, she becomes timid and tearful, showing emotional vulnerability.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus her demeanor shifts from curiosity to vulnerability.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "In what order does Edith mention Kennedy and Christianity in scene 2?",
+        "option": [
+          "A. First Kennedy, then Christianity",
+          "B. First Christianity, then Kennedy",
+          "C. She mentions only Kennedy",
+          "D. She mentions only Christianity",
+          "E. She mentions them simultaneously"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "I don't think anybody will deify Kennedy.",
+            "dia_id": "D18:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Christianity has been a worldwide belief for 2,000 years.",
+            "dia_id": "D18:45"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:14, Edith mentions Kennedy.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:45, she mentions Christianity.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus she mentions Kennedy first, then Christianity.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "What is Edith's first direct challenge to John and what is her last?",
+        "option": [
+          "A. 'You weren't Jesus!' and 'W-were you?'",
+          "B. 'Drugs?' and 'You weren't Jesus!'",
+          "C. 'Do you know them all?' and 'W-were you?'",
+          "D. 'Christianity has been...' and 'You weren't Jesus!'",
+          "E. 'You think that's all religion is about...' and 'W-were you?'"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "You weren't Jesus!",
+            "dia_id": "D18:48"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "W-were you?",
+            "dia_id": "D18:87"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:48, Edith directly tells John he wasn't Jesus.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:87, she asks if he was Jesus, which is her last direct address to him.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are her first and last direct challenges.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "Who does Edith repeatedly accuse of not being Jesus?",
+        "option": [
+          "A. Will",
+          "B. John",
+          "C. Dan",
+          "D. Harry",
+          "E. Art"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "You weren't Jesus!",
+            "dia_id": "D18:48"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "You. Weren't. Jesus.",
+            "dia_id": "D18:78"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D18:48, Edith says 'You weren't Jesus!' to John.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:78, she repeats 'You. Weren't. Jesus.' to John.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus she repeatedly accuses John.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 1,
+        "question": "What is Will's profession?",
+        "option": [
+          "A. Anthropologist",
+          "B. Psychiatrist",
+          "C. Historian",
+          "D. Philosopher",
+          "E. Teacher"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Since I graduated Harvard medical school and finished my residency, I've had that feeling.",
+            "dia_id": "D15:7"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "I had a private practice for a while, and then I taught.",
+            "dia_id": "D15:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:7, Will mentions graduating from Harvard medical school and residency, indicating medical training.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D15:10, he mentions having a private practice, which is typical for a psychiatrist.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus, he is a psychiatrist.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 2,
+        "question": "In which two instances does Will express amusement or exasperation?",
+        "option": [
+          "A. When John says he is as sane as the caveman, and when Edith insists John wasn't Jesus",
+          "B. When Harry jokes, and when Dan asks a question",
+          "C. When John talks about fire, and when Sandy smiles",
+          "D. When Art mentions Sacre du Printemps, and when Linda asks about medicine men",
+          "E. When Dan says 'our caveman', and when Harry says 'dream on'"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Oh, god, I- (laughs)",
+            "dia_id": "D15:16"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Oh, Edith.",
+            "dia_id": "D18:50"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:16, Will laughs after John says 'I think you're as sane as he is.'",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:50, Will says 'Oh, Edith' in response to Edith's outburst, showing exasperation.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are two instances of amusement/exasperation.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 3,
+        "question": "What is the chronological order of Will's career events as he describes them?",
+        "option": [
+          "A. Graduated Harvard, had private practice, taught, met caveman",
+          "B. Had private practice, taught, graduated Harvard, met caveman",
+          "C. Taught, had private practice, met caveman, graduated Harvard",
+          "D. Met caveman, graduated Harvard, had private practice, taught",
+          "E. Graduated Harvard, taught, had private practice, met caveman"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Since I graduated Harvard medical school and finished my residency, I've had that feeling.",
+            "dia_id": "D15:7"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "I had a private practice for a while, and then I taught. Nothing unusual- Oh, until one day, I met a caveman who thought he was Jesus.",
+            "dia_id": "D15:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:7, he mentions graduating first.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D15:10, he says he had a private practice, then taught, then met the caveman.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus the order is: graduated, private practice, taught, met caveman.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 4,
+        "question": "What physical actions does Will perform in scene 1a and scene 2?",
+        "option": [
+          "A. He lies on the couch and then rises to his feet",
+          "B. He stands by the fire and then sits down",
+          "C. He exits the room and then returns",
+          "D. He warms himself and then leaves",
+          "E. He plonks himself and then walks out"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(plonks himself on the couch)",
+            "dia_id": "D15:3"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "(rises to his feet)",
+            "dia_id": "D18:51"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:3, Will lies on the couch.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:51, he rises to his feet.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These are his physical actions in the two scenes.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 5,
+        "question": "Which two characters does Will directly address in the conversation?",
+        "option": [
+          "A. John and Edith",
+          "B. Dan and Harry",
+          "C. Sandy and Linda",
+          "D. Art and John",
+          "E. Edith and Dan"
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "When did you begin to believe you were Jesus?",
+            "dia_id": "D15:5"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Oh, Edith.",
+            "dia_id": "D18:50"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "In D15:5, Will addresses John directly.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In D18:50, Will addresses Edith directly.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Thus he directly addresses John and Edith.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      }
+    ],
+    "conversation": {
+      "speakers": [
+        "Sandy",
+        "John",
+        "Harry",
+        "Linda",
+        "Dan",
+        "Edith",
+        "Art",
+        "Will"
+      ],
+      "session_1": [
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D15:0",
+          "text": "Scene 1a: Eventide"
+        },
+        {
+          "type": "narration",
+          "speaker": null,
+          "dia_id": "D15:0",
+          "text": "Fade in, Will is warming himself in front of the fire, it is darker."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:1",
+          "text": "From the Buddha to the cross, I have always imagined both as entirely mythic. Ye- but I would like to hear more."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:2",
+          "text": "May I lie on the couch for a moment? I'm not as young as I used to be."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:3",
+          "text": "(plonks himself on the couch)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:4",
+          "text": "Ohh! Hah, so! You were Jesus. Well, perhaps somebody had to be, for better or for worse. The jury is still out."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:5",
+          "text": "When did you begin to believe you were Jesus?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:6",
+          "text": "When did you begin to believe you were a psychiatrist?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:7",
+          "text": "Since I graduated Harvard medical school and finished my residency, I've had that feeling."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:8",
+          "text": "Oh, I sometimes dream about it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:9",
+          "text": "Have you acted upon this belief?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:10",
+          "text": "I had a private practice for a while, and then I taught. Nothing unusual- Oh, until one day, I met a caveman who thought he was Jesus."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:11",
+          "text": "Do you find that unusual?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:12",
+          "text": "Very. I would stake my reputation he is as sane as I am, so why does he persist in such a story?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:13",
+          "text": "There must be a reason, though."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:14",
+          "text": "Unless I imagined it all? Is that possible?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:15",
+          "text": "I think you're as sane as he is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:16",
+          "text": "Oh, god, I- (laughs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:17",
+          "text": "No."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:18",
+          "text": "Did you ever find it prudent to worship yourself rather than be thought a heretic? That would be something!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:19",
+          "text": "At the time Christianity was considered heresy, I had to pretend other faiths."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D15:20",
+          "text": "And what does Jesus have to say to those present who find it difficult to believe in Him?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:21",
+          "text": "Believe in what he tried to teach, without rigmarole. Piety is not what the lessons bring to people. It's the mistake they bring to the lessons."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:22",
+          "text": "(slowly getting up and putting on his jacket)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:23",
+          "text": "Well, it's getting to be night. I still have stuff to carry and a long drive."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D15:24",
+          "text": "I'll help."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D15:25",
+          "text": "John, do you have a destination in mind?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D15:26",
+          "text": "Never mind. I won't ask."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:27",
+          "text": "Thank you."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D15:28",
+          "text": "(exits with Sandy, carrying boxes)"
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D16:0",
+          "text": "Scene 1b: Debate"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D16:1",
+          "text": "Anyone mentally ill can imagine a fantastic background- Even an entire life- and sincerely believe it. The man who thinks he is Napoleon does believe it. His true identity has taken a backseat to his delusion and the need for it. If that's the case with John, there is a grave disorder."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D16:2",
+          "text": "Organized brilliantly. He's got an answer for everything."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D16:3",
+          "text": "It might involve rejection of his father, of his entire early past, replaced by this fantasy."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D16:4",
+          "text": "He says he can't remember his father."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D16:5",
+          "text": "Precisely. Why?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D16:6",
+          "text": "You said he was sane."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D16:7",
+          "text": "Did I?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D16:8",
+          "text": "Do you think that perhaps our caveman has a monkey on his back?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D16:9",
+          "text": "Drugs?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D16:10",
+          "text": "No, no, no, no. I've done a lot of consulting work with the narcotics division. I've seen people...tripping, strung out- Whatever's up with John, it isn't that. I've looked for signs- None."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D16:11",
+          "text": "Could cavemen really talk?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D16:12",
+          "text": "We think that language came into existence sixty thousand years ago. The structure of Stone Age culture is evidence of the ability to communicate... verbally."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D16:13",
+          "text": "Harry wolf whistles, clicks his tongue."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D16:14",
+          "text": "Oh, shut up."
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D17:0",
+          "text": "Scene 1c: Sandy"
+        },
+        {
+          "type": "narration",
+          "speaker": null,
+          "dia_id": "D17:0",
+          "text": "John is looking at the stars."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D17:1",
+          "text": "Maybe it'd be easier if I were."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D17:2",
+          "text": "Crazy? No."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D17:3",
+          "text": "Coyote howls. John then looks at Sandy."
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D18:0",
+          "text": "Scene 2: The Last Spell"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:1",
+          "text": "That is fascinating, though, isn't it, a brave attempt to teach Buddhism in the West. It's no wonder he failed. We're not ready for it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:2",
+          "text": "You're talking as if you believed him."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:3",
+          "text": "Well, it is possible, isn't it? I mean, anything is possible."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:4",
+          "text": "Look, we have two simple choices. We can get all bent out of shape intellectualizing or bench- pressing logic, or we can simply relax and enjoy it. I can listen critically, but I don't have to make up my mind about anything. But you think you do?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D18:5",
+          "text": "Well, unfortunately, there's no authorities on prehistory, so we couldn't stop him there."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:6",
+          "text": "There are experts on the bible."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:7",
+          "text": "Chheh, dream on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:8",
+          "text": "Yeah, thus the lost years of Jesus. He didn't exist until John put on a hat."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:9",
+          "text": "I don't believe in angels and the nativity and the star in the East, but there are stories about the childhood of Jesus."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D18:10",
+          "text": "History hates a vacuum. Improvisation, some of it very sincere, fills the gaps. It would have been easy to falsify a past back then- A few words, credulity- Time would do the rest."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:11",
+          "text": "Now you're talking as if you believed him."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D18:12",
+          "text": "Well, look at the popular myths surrounding the Kennedy assassination in a few short years- You had, uh, conspiracy, mafia, CIA- That's a mystique that'll never go away."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:13",
+          "text": "It's always been a small step from a fallen leader to a god."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:14",
+          "text": "I don't think anybody will deify Kennedy. We're more sophisticated than that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:15",
+          "text": "We are?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:16",
+          "text": "We are."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:17",
+          "text": "John and Sandy enter."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:18",
+          "text": "Well, you're finally fulfilling one prophecy about the millennium, John."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:19",
+          "text": "What's that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:20",
+          "text": "Here you are again."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:21",
+          "text": "John makes himself comfortable between Sandy and the fireplace."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D18:22",
+          "text": "You like the fire, John."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:23",
+          "text": "Everywhere I've lived, I've had a fireplace."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:24",
+          "text": "Childhood fixation, I guess. Helps me to feel secure."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:25",
+          "text": "(smiling)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:26",
+          "text": "There are predators out there."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:27",
+          "text": "One thing I didn't pack...I thought I might need it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:28",
+          "text": "John puts on a tape/record of Beethoven's 7th Symphony."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D18:29",
+          "text": "Wouldn't Sacre du Printemps be more appropriate?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:30",
+          "text": "What?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:31",
+          "text": "You've got...four men of science completely baffled, my friend. We- We don't know what to make of you."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:32",
+          "text": "Did you know Voltaire was the first to suggest that the universe was created by a gigantic explosion? I think Paul would agree. And then Goethe was the first to suggest that spiral nebulae were swirling masses of stars. We now call them galaxies. It's kind of funny how often new concepts of science find their first tentative forms of expression in the arts."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:33",
+          "text": "So did Beethoven do physics on the side?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:34",
+          "text": "He spent most of his time lying on the floor in front of his legless piano surrounded by orange peels and apple cores."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:35",
+          "text": "Now we're on the floor listening to Beethoven."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:36",
+          "text": "Full circle."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:37",
+          "text": "Did you have, um... any religious beliefs? Or didn't you give it much thought?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:38",
+          "text": "You can't get there with thought."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:39",
+          "text": "You have faith?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:40",
+          "text": "In a lot of things."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:41",
+          "text": "Do you have faith in the future of the race?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:42",
+          "text": "I've seen species come and go. Depends on their balance with the environment."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:43",
+          "text": "We've made a mess of it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:44",
+          "text": "There's still time, if we use it well."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:45",
+          "text": "Christianity has been a worldwide belief for 2,000 years."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:46",
+          "text": "How long did the Egyptians worship Isis? Or the Sumerians Ishtar? In India, sacred cows wandered freely as reincarnated souls. In a thousand years, they'll be barbecued and their souls will be in squirrels."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:47",
+          "text": "(firmly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:48",
+          "text": "You weren't Jesus!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:49",
+          "text": "John smiles."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D18:50",
+          "text": "Oh, Edith."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D18:51",
+          "text": "(rises to his feet)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:52",
+          "text": "(clearing her throat)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D18:53",
+          "text": "If it rains, y-..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:54",
+          "text": "(interrupting)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:55",
+          "text": "-It won't."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D18:56",
+          "text": "How do you know that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:57",
+          "text": "I don't smell it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D18:58",
+          "text": "Were you... I guess a... medicine man?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:59",
+          "text": "I was a shaman a few times. I… revealed some truths to eat a little better."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:60",
+          "text": "You think that's all religion is about..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:61",
+          "text": "selling hope and survival?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:62",
+          "text": "The Old Testament sells fear and guilt. The New Testament is a good code of ethics, put into my mouth by poets and philosophers that are much smarter than I am. The message is never practiced. Fairy tales build churches."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D18:63",
+          "text": "What about the name \"Jesus\"? Did you pull that out of a hat?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:64",
+          "text": "I called myself John. I almost always do."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:65",
+          "text": "As tales of the resurrection spread, the name was confused with the Hebrew \"Yochanan\", meaning \"God is gracious\". My stay on earth was seen as divine proof of immortality. That led to \"God is salvation\", or Hebrew \"Yahshua\", which in translation became my proper name, changing to late Greek, \"Iesous\", Then to late Latin, \"Iesus\", and finally medieval Latin, \"Jesus\"."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:66",
+          "text": "And it was a wonder to watch it all happen."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:67",
+          "text": "Then you didn't claim to be the Son of God?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:68",
+          "text": "Began as a schoolhouse and ended as a temple. I said I had a master that was greater than myself. I never said he was my father. I wanted to teach what I learned. I never claimed to be king of the Jews, I never walked on water, I never raised the dead. I never spoke of divine except in the sense of human goodness on earth."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:69",
+          "text": "(pause)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:70",
+          "text": "No wise men came from the East to worship at a manger. ...I did do a little healing with some eastern medicine I'd learned... That's it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:71",
+          "text": "The three wise men began as a myth about the birth of the Buddha."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:72",
+          "text": "John, I should be home, uh, kissing my wife."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:73",
+          "text": "We're all here, trapped by your story...hoping for a...revolution? I don't know."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:74",
+          "text": "Are there any, uh...more revelations for us?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:75",
+          "text": "John shakes his head, smiling."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:76",
+          "text": "It's just like old times."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:77",
+          "text": "(after a pause, glaring at John, and then firmly, again)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:78",
+          "text": "You. Weren't. Jesus."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D18:79",
+          "text": "Quote the Sermon on the Mount."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:80",
+          "text": "Which one? Darby? King James? New American Standard?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:81",
+          "text": "Do you know them all?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:82",
+          "text": "No one knows the one, not even me."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:83",
+          "text": "I...I did some teaching on a hill one day. Not that many people stayed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D18:84",
+          "text": "But you..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:85",
+          "text": "Biblical Jesus said, \"Who do you think I am?\" He gave them a choice. I'm giving you one."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:86",
+          "text": "(timidly, her voice quivering, eyes tearing up)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D18:87",
+          "text": "W-were you?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:88",
+          "text": "If I said no, could you ever be sure?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D18:89",
+          "text": "Edith's lips quiver, and she suddenly lets out a sob. Art switches the light on to break the spell."
+        }
+      ]
+    }
+  }
+]

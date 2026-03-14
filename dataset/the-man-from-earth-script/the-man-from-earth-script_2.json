@@ -1,0 +1,3132 @@
+[
+  {
+    "qa": [
+      {
+        "character": "Sandy",
+        "category": 1,
+        "question": "Which of the following best reflects Sandy's typical engagement with the group's deeper philosophical discussions based on her actions?",
+        "option": [
+          "A. She consistently drives the intellectual debate forward.",
+          "B. She actively attempts to disprove John's claims using biology.",
+          "C. She tends to focus on practical hosting duties and lighthearted interjections.",
+          "D. She acts as the primary skeptic, questioning the timeline.",
+          "E. She avoids the room entirely whenever the topic becomes serious."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Is anyone hungry?",
+            "dia_id": "D5:62"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "(Heads off-stage to the kitchen)",
+            "dia_id": "D5:63"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Oh, John, you don't look a day over nine hundred!",
+            "dia_id": "D7:4"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy interrupts a deep conversation to ask about food and leaves for the kitchen.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "When John reveals his age, Sandy responds with a joke rather than scientific inquiry.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "These behaviors establish a pattern of practical hosting and lightheartedness.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 2,
+        "question": "What immediate need drives Sandy's action right after Linda comments on the chance to learn?",
+        "option": [
+          "A. The need to answer the ringing telephone.",
+          "B. The need to fetch Ellie's midterm.",
+          "C. The desire to examine the parrot beak burin.",
+          "D. The intention to provide food for the group.",
+          "E. The urge to confront John about his age."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Yeah. What a chance to learn.",
+            "dia_id": "D5:61"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Is anyone hungry?",
+            "dia_id": "D5:62"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "(Heads off-stage to the kitchen)",
+            "dia_id": "D5:63"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Right after Linda speaks, Sandy asks about hunger.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Sandy then moves to the kitchen, indicating her goal is to get food.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 3,
+        "question": "Regarding the handling of the midterm paper, what is the correct sequence of events involving Sandy?",
+        "option": [
+          "A. Sandy graded the paper, placed it with periodicals, then gave it to John.",
+          "B. Sandy answered the phone, took the paper from John, and placed it with periodicals.",
+          "C. Sandy picked the paper up with periodicals, John asked for it, and then John changed the grade.",
+          "D. John asked for the paper, Sandy went to the kitchen to find it, and John graded it.",
+          "E. Sandy called Ellie, picked up the paper, and gave it to John to grade."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Do we have Ellie's midterm here?",
+            "dia_id": "D8:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Yeah, sorry. I picked it up with the periodicals.",
+            "dia_id": "D8:10"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "(Changes grade on paper)",
+            "dia_id": "D8:13"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy's action of picking up the paper with periodicals happened in the past.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John subsequently asks for it and then modifies the grade on it.",
+            "based_on": [
+              "E1",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 4,
+        "question": "How did Sandy interact with the student's exam material?",
+        "option": [
+          "A. She intentionally hid it to prank John.",
+          "B. She accidentally grouped it with other reading materials.",
+          "C. She marked the grade as C+ before handing it over.",
+          "D. She read it to evaluate the history content.",
+          "E. She discarded it in the kitchen."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Do we have Ellie's midterm here?",
+            "dia_id": "D8:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Yeah, sorry. I picked it up with the periodicals.",
+            "dia_id": "D8:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy apologizes for having picked it up with the periodicals.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "This indicates an inadvertent grouping of the exam with magazines/journals.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "Based on the interactions, what is the relationship between Sandy and John regarding their physical environment?",
+        "option": [
+          "A. They are competing academic rivals from different departments.",
+          "B. They share access to the same domestic items and space.",
+          "C. Sandy is an outsider visiting John's house for the first time.",
+          "D. Sandy is John's student inquiring about her grades.",
+          "E. They have no shared knowledge of the physical items in the location."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Do we have Ellie's midterm here?",
+            "dia_id": "D8:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Yeah, sorry. I picked it up with the periodicals.",
+            "dia_id": "D8:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John asks Sandy 'Do we have...' implying shared access/residence.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Sandy knows where household/shared items (periodicals) are.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 6,
+        "question": "What exact numerical age does Sandy hyperbolically assign to John?",
+        "option": [
+          "A. 14,000",
+          "B. 35",
+          "C. 190",
+          "D. 900",
+          "E. 2000"
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Oh, John, you don't look a day over nine hundred!",
+            "dia_id": "D7:4"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy explicitly states the number nine hundred.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "Which statement describes Harry's established method of engaging with John's hypothetical scenarios?",
+        "option": [
+          "A. He immediately accepts the premise as absolute truth and defends it.",
+          "B. He refuses to participate and attempts to change the subject to biology.",
+          "C. He uses playful pressure and scientific rationalization to humor the premise.",
+          "D. He becomes visibly angry and leaves the room to avoid the discussion.",
+          "E. He quietly listens without offering any theories of his own."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "10, 9, 8, 7, 6, 5...",
+            "dia_id": "D5:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Alright, alright, I'll play, I'll play.",
+            "dia_id": "D5:46"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Alright, um, in science fiction terms, I would say... Perfect cellular regeneration...",
+            "dia_id": "D5:47"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry pressures John by counting down.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry explicitly agrees to 'play' and offers a biological/sci-fi rationalization.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "What immediate response does Harry have to John grunting like a caveman?",
+        "option": [
+          "A. He asks Edith what she thinks about it.",
+          "B. He begins explaining perfect cellular regeneration.",
+          "C. He is initially startled and then finds it amusing.",
+          "D. He immediately pours himself a drink.",
+          "E. He questions the archaeological accuracy of the grunt."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "(slowly leans forward and suddenly GRUNTS LOUDLY like a caveman)",
+            "dia_id": "D6:21"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Everyone jumps, startled, and then laughs.",
+            "dia_id": "D6:22"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "(laughs)",
+            "dia_id": "D7:54"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John grunts, causing everyone to jump and laugh.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry's later isolated laugh confirms his amused state following the continuous conversation.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "According to Harry's biological explanation, what is the chronological order of cellular turnover?",
+        "option": [
+          "A. Stomach lining, pancreas, entire body.",
+          "B. Pancreas, stomach lining, entire body.",
+          "C. Entire body, stomach lining, pancreas.",
+          "D. Mesenchymal stem cells, stomach lining, pancreas.",
+          "E. Pancreas, entire body, stomach lining."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "The pancreas turns over cells every twenty-four hours, the stomach lining in three days, the entire body in seven years...",
+            "dia_id": "D5:57"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "24 hours is less than 3 days, which is less than 7 years.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The sequence from shortest to longest duration is pancreas, stomach lining, entire body.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "How did Harry physically interact with the Magdalenian artifact?",
+        "option": [
+          "A. He picked it up from the box and handed it to Dan.",
+          "B. He took it from Art, examined it, and passed it to Edith.",
+          "C. He bought it at a thrift shop and showed it to the group.",
+          "D. He refused to touch it when Dan offered it to him.",
+          "E. He took it from Edith and returned it to the box."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "(examines it carefully)",
+            "dia_id": "D4:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Can I, uh...?",
+            "dia_id": "D4:24"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "Yeah.",
+            "dia_id": "D4:25"
+          },
+          {
+            "id": "E4",
+            "speaker": "Harry",
+            "utterance": "(motioning to Edith then handing her the burin)",
+            "dia_id": "D4:27"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry asks to hold the artifact after Art examines it.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry then hands the artifact to Edith.",
+            "based_on": [
+              "E4"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "Based on how others refer to his expertise, what is Harry's professional identity within the group?",
+        "option": [
+          "A. An anthropologist specializing in Cro-Magnon history.",
+          "B. A medical doctor treating the others.",
+          "C. A historian familiar with Columbus.",
+          "D. A biologist.",
+          "E. A pre-med student taking an exam."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "What does the biologist say?",
+            "dia_id": "D5:43"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Cigarettes. And ice-cream.",
+            "dia_id": "D5:44"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith directs a question to 'the biologist'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry immediately answers Edith's question, confirming he fills this role.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 6,
+        "question": "According to Harry, what is the maximum natural lifespan the human body appears designed to achieve?",
+        "option": [
+          "A. 14,000 years",
+          "B. 140 centuries",
+          "C. 190 years",
+          "D. 7 years",
+          "E. 900 years"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "...Actually, the human body appears designed to live about a hundred and ninety years...",
+            "dia_id": "D5:48"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry explicitly states the number is a hundred and ninety.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "Which behavior represents John's long-term survival strategy when living among normal humans?",
+        "option": [
+          "A. He isolates himself in the mountains to avoid contact.",
+          "B. He periodically relocates when his lack of aging becomes noticeable.",
+          "C. He relies on perfect cellular regeneration to fake his own death.",
+          "D. He continually assumes leadership of new groups.",
+          "E. He sells ancient artifacts to fund his travels."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Every ten years or so, when people start to notice I don't age, I move on.",
+            "dia_id": "D7:8"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John states his ongoing behavioral pattern regarding his lack of aging.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "This pattern is moving on every ten years.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "What emotional or mental state prompts John to propose his initial hypothetical question to the group?",
+        "option": [
+          "A. He is angry about Dan mocking his artifact.",
+          "B. He is tempted to test the waters with a secret but is uncertain of the outcome.",
+          "C. He is desperate for Harry to explain his biology.",
+          "D. He is frustrated by Ellie's poor midterm grade.",
+          "E. He is eager to prove his superiority over Art's knowledge."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "There is something I'm tempted to tell you, I think. I've never done this before and I wonder how it'll pan out.",
+            "dia_id": "D5:10"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "...I wonder if I could ask you a silly question.",
+            "dia_id": "D5:11"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "What if a man from the upper Paleolithic...survived until the present day?",
+            "dia_id": "D5:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John expresses temptation and uncertainty ('wonder how it'll pan out').",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He immediately follows this feeling by asking his hypothetical question.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "According to John's narrative of his early life, what is the sequence of his changing perceptions of his own condition?",
+        "option": [
+          "A. He thought he was blessed, then cursed, then thought something was wrong with him.",
+          "B. He thought he had a mission, then thought he was a bad guy, then thought he was blessed.",
+          "C. He thought something was wrong with him, then wondered if he was cursed or blessed, then considered having a mission.",
+          "D. He realized he didn't age, learned to learn, then thought he was cursed.",
+          "E. He was chased away, became a leader, then thought he had a mission."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "At first I thought there was, uh, something wrong with me - maybe I was a bad guy for not dying.",
+            "dia_id": "D7:50"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Then I began to wonder if I was cursed, or perhaps blessed.",
+            "dia_id": "D7:50"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "Then I thought maybe I had a mission.",
+            "dia_id": "D7:50"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explicitly lists his thought process chronologically using 'At first', 'Then', and 'Then'.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "How did John come into possession of the  burin being examined by the group?",
+        "option": [
+          "A. He crafted it himself during the Magdalenian period.",
+          "B. He excavated it during an archaeological dig with Art.",
+          "C. He bought it cheaply at a secondhand store.",
+          "D. He traded it for a history midterm.",
+          "E. He received it as a going-away gift from Dan."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "So where'd you get that, John?",
+            "dia_id": "D4:21"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
+            "dia_id": "D4:22"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan asks John about the origin of the tool.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John confirms he purchased it at a thrift shop for a low price.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "What is John's formal relationship to the person on the phone named Ellie?",
+        "option": [
+          "A. He is her pre-Med advisor.",
+          "B. He is her biological father.",
+          "C. He is her roommate.",
+          "D. He is her history instructor.",
+          "E. He is her colleague in the biology department."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Yes, Ellie?",
+            "dia_id": "D8:3"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "No, you're worried about your parents? Don't- don't worry. You passed, C+.",
+            "dia_id": "D8:12"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "Good kid. What does a pre-Med need with history?",
+            "dia_id": "D8:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John informs Ellie of her passing grade.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He notes she is a pre-Med taking history, implying he teaches the history class she just passed.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 6,
+        "question": "According to John, at what specific age did his physical body stop noticeably aging?",
+        "option": [
+          "A. 14,000",
+          "B. 10",
+          "C. 35",
+          "D. 190",
+          "E. 2000"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "In what I call my first lifetime, I aged to about thirty-five. What you see.",
+            "dia_id": "D7:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John equates his current physical appearance to the age he reached in his first lifetime.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He specifies that age as thirty-five.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 1,
+        "question": "Based on Linda's questions, which of the following represents her consistent interaction style in the group?",
+        "option": [
+          "A. She relies on making academic corrections to Dan's statements.",
+          "B. She persistently asks requests for clarification and functional knowledge.",
+          "C. She frequently answers questions with biological facts.",
+          "D. She acts to shut down Harry's jokes.",
+          "E. She physically leaves the room during arguments."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's a...burin?",
+            "dia_id": "D4:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "What's the selective advantage of height?",
+            "dia_id": "D5:28"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "What would keep him alive?",
+            "dia_id": "D5:42"
+          },
+          {
+            "id": "E4",
+            "speaker": "Linda",
+            "utterance": "So how would you know an ocean from a lake?",
+            "dia_id": "D7:46"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda repeatedly asks direct 'what' and 'how' questions to gain understanding.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 2,
+        "question": "What prompts Linda to physically strike Art?",
+        "option": [
+          "A. Art refuses to let her see the burin.",
+          "B. Art gives a condescending answer to John about answering silly questions.",
+          "C. Art insults her understanding of the selective advantage of height.",
+          "D. Art laughs at John's Columbus story.",
+          "E. Art claims to be 14,000 years old."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "John we're teachers, we answer silly questions all the time.",
+            "dia_id": "D5:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Hey!",
+            "dia_id": "D5:13"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "(elbowing Art)",
+            "dia_id": "D5:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art makes a statement implying John's question will be silly.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Linda objects with 'Hey!' and elbows him immediately after.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 3,
+        "question": "In what order does Linda pursue lines of inquiry regarding John's survival and experience?",
+        "option": [
+          "A. She asks about oceans, then about biological survival, then about height.",
+          "B. She asks about height advantage, then survival mechanisms, then distinguishing oceans.",
+          "C. She asks about the burin, then oceans, then height advantage.",
+          "D. She asks about survival mechanisms, then height advantage, then oceans.",
+          "E. She asks about distinguishing oceans, then height advantage, then survival mechanisms."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's the selective advantage of height?",
+            "dia_id": "D5:28"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "What would keep him alive?",
+            "dia_id": "D5:42"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "So how would you know an ocean from a lake?",
+            "dia_id": "D7:46"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The temporal progression of the scenes establishes the order: Height (Scene 5a), Survival (Scene 5a later), Oceans (Scene 6a).",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 4,
+        "question": "What specific action does Linda take when reacting to John's hypothetical about living without aging?",
+        "option": [
+          "A. She questions the validity of his history degree.",
+          "B. She enthusiastically frames it as an opportunity for continuous education.",
+          "C. She leaves to check on the midterm exam.",
+          "D. She physically recoils from him.",
+          "E. She demands to know his biological secret."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "Well, if I could stay healthy and I didn't age, I mean, why not?",
+            "dia_id": "D5:60"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Yeah. What a chance to learn.",
+            "dia_id": "D5:61"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda agrees with Art's positive reception.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She specifically identifies the benefit as a 'chance to learn'.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 5,
+        "question": "Which of the following describes the professional relationship status shared by Linda, Art, and John?",
+        "option": [
+          "A. They are all medical doctors.",
+          "B. They are all students taking a midterm.",
+          "C. They are all members of a teaching faculty.",
+          "D. They are an archaeologist, a biologist, and a historian.",
+          "E. They have no explicit professional relationship."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "John we're teachers, we answer silly questions all the time.",
+            "dia_id": "D5:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Hey!",
+            "dia_id": "D5:13"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "(elbowing Art)",
+            "dia_id": "D5:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art explicitly includes John and the group present as 'teachers'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Linda reacts to this collective characterization, confirming her inclusion in the group identity.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 6,
+        "question": "Based on the text, what numerical value is directly associated with the item Linda explicitly seeks to understand?",
+        "option": [
+          "A. 14,000",
+          "B. 190",
+          "C. 5",
+          "D. 7",
+          "E. 900"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's a...burin?",
+            "dia_id": "D4:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
+            "dia_id": "D4:22"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda specifically asks what a burin is.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John reveals the burin cost 5 bucks.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "Which of the following describes Dan's typical approach to analyzing the statements made by the group?",
+        "option": [
+          "A. He relies on referencing biology and stem cells.",
+          "B. He constantly corrects geological and anthropological terminology based on textbook knowledge.",
+          "C. He primarily focuses on making jokes about prehistoric vampires.",
+          "D. He defers all questions to Art.",
+          "E. He tries to quickly end conversations he finds boring."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
+            "dia_id": "D4:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "A later Cro-Magnon, without getting technical.",
+            "dia_id": "D4:18"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "West - something you learned in school.",
+            "dia_id": "D7:27"
+          },
+          {
+            "id": "E4",
+            "speaker": "Dan",
+            "utterance": "Yes, the end of the Pleistocene. So far what he says fits.",
+            "dia_id": "D7:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan identifies the tool with highly specific archaeological terms.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan critically assesses John's statements against academic standards (school, Pleistocene).",
+            "based_on": [
+              "E3",
+              "E4"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "What is Dan's immediate emotional/mental state when John casually claims to have sailed with Columbus?",
+        "option": [
+          "A. He is completely convinced and supportive.",
+          "B. He is deeply offended and angry.",
+          "C. He is confused and assumes a joke is being told.",
+          "D. He is frightened and tries to leave.",
+          "E. He immediately starts calculating the dates."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I had a chance to sail with Columbus, only I'm not the adventurous type.",
+            "dia_id": "D6:4"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "What?",
+            "dia_id": "D6:5"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "I suppose there's a joke in there somewhere, but I don't get it.",
+            "dia_id": "D6:11"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan expresses immediate confusion ('What?').",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He follows up by stating he suspects it's a joke he doesn't understand.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 3,
+        "question": "In what order does Dan provide environmental and anthropological information to the group?",
+        "option": [
+          "A. He describes body heat radiation, then identifies the Magdalenian era, then confirms the Pleistocene end.",
+          "B. He identifies the Magdalenian era, then describes body heat radiation, then confirms the Pleistocene end.",
+          "C. He confirms the Pleistocene end, then describes body heat radiation, then identifies the Magdalenian era.",
+          "D. He identifies the Magdalenian era, then confirms the Pleistocene end, then describes body heat radiation.",
+          "E. He describes body heat radiation, then confirms the Pleistocene end, then identifies the Magdalenian era."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
+            "dia_id": "D4:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Actually, tall and skinny radiates heat more effectively in warmer climates.",
+            "dia_id": "D5:30"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "Yes, the end of the Pleistocene. So far what he says fits.",
+            "dia_id": "D7:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The chronological sequence in the dialogue is Scene 4 (Magdalenian), Scene 5a (Heat radiation), Scene 6a (Pleistocene).",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What is Dan's explicit proposal to John if John writes a science-fiction story?",
+        "option": [
+          "A. Dan offers to publish it for him.",
+          "B. Dan offers to review it to correct anthropological errors.",
+          "C. Dan refuses to read it out of spite.",
+          "D. Dan asks to be a co-author.",
+          "E. Dan suggests selling it to Art."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "If you do write that, let me have a look at it.",
+            "dia_id": "D5:39"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "I'm sure you'll make some anthropological boners.",
+            "dia_id": "D5:40"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "It's a deal.",
+            "dia_id": "D5:41"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan asks to look at the story to catch 'anthropological boners' (mistakes).",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "How is Dan's relationship to Art explicitly established through their shared knowledge?",
+        "option": [
+          "A. Dan is Art's student.",
+          "B. Dan references the title of a book written by Art.",
+          "C. Dan relies on Art to identify the burin.",
+          "D. Art corrects Dan's knowledge of body heat.",
+          "E. Dan and Art are romantic partners."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Well, seriously, as Art's book title suggests, he might be like any of us.",
+            "dia_id": "D5:24"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan directly names Art as the author of a book.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 6,
+        "question": "What exact numerical span of centuries does Dan state the hypothetical man would have lived through?",
+        "option": [
+          "A. 14,000",
+          "B. 190",
+          "C. 140",
+          "D. 200",
+          "E. 10"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "No, he wouldn't. John's hypothetical man would've lived through a hundred and forty centuries...",
+            "dia_id": "D5:34"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan says 'a hundred and forty centuries'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 1,
+        "question": "Which of the following aligns with Edith's consistent mode of interpreting the unknown?",
+        "option": [
+          "A. She relies strictly on biological data and stem cell research.",
+          "B. She defers to archaeological evidence and textbooks.",
+          "C. She frequently evokes stereotypes or religious explanations.",
+          "D. She acts purely out of a desire for scientific debate.",
+          "E. She prefers to ignore the conversation and read periodicals."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "But...he'd be a caveman.",
+            "dia_id": "D5:33"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Do you still think you do? God works in mysterious ways.",
+            "dia_id": "D7:51"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
+            "dia_id": "D7:35"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith relies on the stereotypical 'caveman with a club' imagery.",
+            "based_on": [
+              "E1",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She introduces a theological interpretation ('God works in mysterious ways') to John's survival.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "What short-term feeling drives Edith's reaction immediately after John abruptly alters his behavior?",
+        "option": [
+          "A. Scientific curiosity.",
+          "B. Sudden fright.",
+          "C. Academic arrogance.",
+          "D. Romantic attraction.",
+          "E. Intense anger."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "(slowly leans forward and suddenly GRUNTS LOUDLY like a caveman)",
+            "dia_id": "D6:21"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Everyone jumps, startled, and then laughs.",
+            "dia_id": "D6:22"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Oh!",
+            "dia_id": "D6:23"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John grunts, causing the group to jump and be startled.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith's exclamation 'Oh!' is a direct reaction to being startled.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "Identify the correct sequence of Edith's interactions regarding the hypothetical caveman.",
+        "option": [
+          "A. She questions the biologist, then assumes the man is a stereotype, then asks about a mission.",
+          "B. She assumes the man is a stereotype, then questions the biologist, then asks about a mission.",
+          "C. She asks about a mission, then assumes the man is a stereotype, then questions the biologist.",
+          "D. She questions the biologist, then asks about a mission, then assumes the man is a stereotype.",
+          "E. She assumes the man is a stereotype, then asks about a mission, then questions the biologist."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "But...he'd be a caveman.",
+            "dia_id": "D5:33"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "What does the biologist say?",
+            "dia_id": "D5:43"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Do you still think you do? God works in mysterious ways.",
+            "dia_id": "D7:51"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Chronological order of scenes puts the caveman assumption first.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The question directed to the biologist comes later in the same scene.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "The theological 'mission' question occurs in a later scene.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "What is Edith's stated attitude towards the prospect of perfect physical renewal and immortality?",
+        "option": [
+          "A. She believes it is an affront to God's mysterious ways.",
+          "B. She explicitly refuses it, wanting to die naturally.",
+          "C. She characterizes it as a highly desirable secret.",
+          "D. She mocks it as an impossible science fiction trope.",
+          "E. She insists only a caveman would want it."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "...Now if a quirk in his immune system led to perfect detox, perfect renewal, then yeah. He could, uh... duck decay.",
+            "dia_id": "D5:57"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Mm, that's a secret we'd all love to have.",
+            "dia_id": "D5:58"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry describes the biological mechanism of perfect renewal/immortality.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith responds to this by stating everyone would want that secret.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "Which group member does Edith directly rely on to provide scientific legitimacy to John's survival claim?",
+        "option": [
+          "A. Dan",
+          "B. Harry",
+          "C. Art",
+          "D. Linda",
+          "E. Sandy"
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "What does the biologist say?",
+            "dia_id": "D5:43"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Cigarettes. And ice-cream.",
+            "dia_id": "D5:44"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith explicitly defers to the authority of 'the biologist'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry is the one who answers, identifying him as the biologist she relies on.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 6,
+        "question": "Based solely on the provided dialogue, how many times does Edith explicitly use the exact word 'caveman'?",
+        "option": [
+          "A. 0",
+          "B. 1",
+          "C. 2",
+          "D. 3",
+          "E. 4"
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Dan! A caveman?",
+            "dia_id": "D5:25"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "But...he'd be a caveman.",
+            "dia_id": "D5:33"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
+            "dia_id": "D7:35"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith uses the word in D5:25.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith uses the word in D5:33.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "Edith uses the word in D7:35. Total is 3.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 1,
+        "question": "What characterizes Art's typical contribution to the historical discussions?",
+        "option": [
+          "A. He frequently contradicts textbook facts to support John.",
+          "B. He brings practical, functional knowledge of primitive tools and traits.",
+          "C. He primarily relies on biological arguments regarding stem cells.",
+          "D. He consistently ignores evidence that conflicts with his books.",
+          "E. He tries to quickly change the topic whenever John brings up the past."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "A burin's a flint tool for grooving wood and bone, antlers especially, to make spear and harpoon points...",
+            "dia_id": "D4:15"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Except that as a rule, we've grown taller.",
+            "dia_id": "D5:27"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "Better to see predators in tall grass, my dear.",
+            "dia_id": "D5:29"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art defines the practical use of a primitive tool.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art explains the practical evolutionary advantage of height.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 2,
+        "question": "What is Art's immediate reaction to the claim that John sailed with Columbus?",
+        "option": [
+          "A. He assumes John is entirely serious and asks for details.",
+          "B. He physically attacks John.",
+          "C. He expresses nervous bemusement and points out the obvious reality.",
+          "D. He immediately tries to explain the claim biologically.",
+          "E. He angrily walks out of the room."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I had a chance to sail with Columbus, only I'm not the adventurous type.",
+            "dia_id": "D6:4"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "(Bemused, laughing nervously)",
+            "dia_id": "D6:9"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "Look around, John. We just did.",
+            "dia_id": "D6:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John makes his Columbus statement.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art laughs nervously and points out they just 'fell off an edge'.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 3,
+        "question": "Regarding the burin, what is the sequence of Art's physical interactions and verbal evaluations?",
+        "option": [
+          "A. He evaluates its function, asks to see it, then confirms its identity.",
+          "B. He asks to see it, evaluates its function, then confirms its identity.",
+          "C. He asks to see it, confirms its identity, then evaluates its function.",
+          "D. He confirms its identity, asks to see it, then evaluates its function.",
+          "E. He evaluates its function, confirms its identity, then asks to see it."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "May I see that?",
+            "dia_id": "D4:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Yes indeed, that's what it is.",
+            "dia_id": "D4:13"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "A burin's a flint tool for grooving wood and bone...",
+            "dia_id": "D4:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art first asks to see the item.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He then confirms 'that's what it is' after examining.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "He then explains its function to Linda.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 4,
+        "question": "How does Art describe his own professional method for obtaining artifacts like the burin?",
+        "option": [
+          "A. He usually buys them at thrift shops for $5.",
+          "B. He has to go digging to find them.",
+          "C. He trades textbooks for them.",
+          "D. He inherited them from early Magdalenians.",
+          "E. He crafts them himself to teach his classes."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
+            "dia_id": "D4:22"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "You lucky dog! Me, I gotta go digging for this kinda stuff.",
+            "dia_id": "D4:23"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John obtained his from a thrift shop.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art contrasts John's luck with his own method, which is 'digging'.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 5,
+        "question": "What explicit common professional status does Art claim he shares with John?",
+        "option": [
+          "A. They are both published authors.",
+          "B. They are both teachers.",
+          "C. They are both thrift shop owners.",
+          "D. They are both biologists.",
+          "E. They are both anthropologists."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "John we're teachers, we answer silly questions all the time.",
+            "dia_id": "D5:12"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art explicitly pairs himself and John under the label 'we're teachers'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 6,
+        "question": "What is the specific price of the item Art envies John for finding?",
+        "option": [
+          "A. 14,000 bucks",
+          "B. 10 bucks",
+          "C. 5 bucks",
+          "D. 190 bucks",
+          "E. 140 bucks"
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
+            "dia_id": "D4:22"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "You lucky dog! Me, I gotta go digging for this kinda stuff.",
+            "dia_id": "D4:23"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John states the price is 5 bucks.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art expresses envy over this specific acquisition.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      }
+    ],
+    "conversation": {
+      "speakers": [
+        "Sandy",
+        "Linda",
+        "Harry",
+        "John",
+        "Dan",
+        "Edith",
+        "Art"
+      ],
+      "session_1": [
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D4:0",
+          "text": "Scene 4: The Burin"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:1",
+          "text": "John, we're all sorry to see you go. Truly."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:2",
+          "text": "..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:3",
+          "text": "Okay. Now we're done with that, what do we do for the rest of the afternoon?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:4",
+          "text": "Anyone got a good topic?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:5",
+          "text": "Dan picks up a carved flint tool from a box."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:6",
+          "text": "Like this, maybe? Heh."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D4:7",
+          "text": "What is that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:8",
+          "text": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:9",
+          "text": "May I see that?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:10",
+          "text": "Sure."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:11",
+          "text": "(hands it over)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:12",
+          "text": "(examines it carefully)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:13",
+          "text": "Yes indeed, that's what it is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D4:14",
+          "text": "What's a...burin?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:15",
+          "text": "A burin's a flint tool for grooving wood and bone, antlers especially, to make spear and harpoon points. Magdalenians weren't noted for flint work, so this is a very nice specimen."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:16",
+          "text": "(smirking)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:17",
+          "text": "Okay. What's a \"Magdalenian\"?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:18",
+          "text": "A later Cro-Magnon, without getting technical."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:19",
+          "text": "It's the final culture of the upper-Paleolithic."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:20",
+          "text": "If stones could speak, eh, Art?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:21",
+          "text": "So where'd you get that, John?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:22",
+          "text": "Believe it or not, from a thrift shop. 5 bucks."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:23",
+          "text": "You lucky dog! Me, I gotta go digging for this kinda stuff."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:24",
+          "text": "Can I, uh...?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D4:25",
+          "text": "Yeah."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:26",
+          "text": "Huh..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:27",
+          "text": "(motioning to Edith then handing her the burin)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:28",
+          "text": "(surveying the room)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:29",
+          "text": "...Maybe..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:30",
+          "text": "I'm glad you did this."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:31",
+          "text": "Did what?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:32",
+          "text": "You mean, come over?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:33",
+          "text": "...Maybe?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:34",
+          "text": "Definitely."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D4:35",
+          "text": "Gee, thanks!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:36",
+          "text": "Well, so are we(?)."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D4:37",
+          "text": "So are we! We couldn't let you just run off."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:38",
+          "text": "(taking the burin from Edith to put back into the box)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D4:39",
+          "text": "Thanks."
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D5:0",
+          "text": "Scene 5a: The Set-up"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:1",
+          "text": "John, what is up, huh?! Are you running from the cops? We won't turn you in!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:2",
+          "text": "(pacing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:3",
+          "text": "Yeah come on, out with it. You're among friends."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D5:4",
+          "text": "Snoopy friends."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:5",
+          "text": "Forget it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:6",
+          "text": "You are creating the mystery here. Obviously you have something you'd like to say. Say it!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:7",
+          "text": "Well, maybe I..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:8",
+          "text": "10, 9, 8, 7, 6, 5..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D5:9",
+          "text": "Harry, stop."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:10",
+          "text": "There is something I'm tempted to tell you, I think. I've never done this before and I wonder how it'll pan out."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:11",
+          "text": "...I wonder if I could ask you a silly question."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:12",
+          "text": "John we're teachers, we answer silly questions all the time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D5:13",
+          "text": "Hey!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D5:14",
+          "text": "(elbowing Art)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:15",
+          "text": "What if a man from the upper Paleolithic...survived until the present day?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:16",
+          "text": "...Wh-what d'ya mean \"survived\"? Never died?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:17",
+          "text": "Yes. What would he be like?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:18",
+          "text": "Arnold Schwarzenegger."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:19",
+          "text": "A few smirks."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:20",
+          "text": "It's an interesting idea. What, are you working on a science-fiction story?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:21",
+          "text": "Say I am. What would he be like?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:22",
+          "text": "Pretty tired."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:23",
+          "text": "Everyone chuckles."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:24",
+          "text": "Well, seriously, as Art's book title suggests, he might be like any of us."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D5:25",
+          "text": "Dan! A caveman?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:26",
+          "text": "Well, there's no anatomical difference between, say, a Cro-Magnon and us."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:27",
+          "text": "Except that as a rule, we've grown taller."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D5:28",
+          "text": "What's the selective advantage of height?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:29",
+          "text": "Better to see predators in tall grass, my dear."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:30",
+          "text": "Actually, tall and skinny radiates heat more effectively in warmer climates."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:31",
+          "text": "And as for Neanderthals, that strain's still with us, of course."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:32",
+          "text": "Arnold Schwarzenegger!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D5:33",
+          "text": "But...he'd be a caveman."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:34",
+          "text": "No, he wouldn't. John's hypothetical man would've lived through a hundred and forty centuries..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:35",
+          "text": "Yeah, roughly."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:36",
+          "text": "...And changed with every one of them. I mean, assuming normal intelligence. Well, we think men of the upper Paleolithic were as intelligent as we are. They just didn't know as much."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:37",
+          "text": "John's man would have learned as the race learned. In fact, if he had an inquiring mind, his knowledge might be...astonishing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:38",
+          "text": "(pointing at John)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:39",
+          "text": "If you do write that, let me have a look at it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:40",
+          "text": "I'm sure you'll make some anthropological boners."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:41",
+          "text": "It's a deal."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D5:42",
+          "text": "What would keep him alive?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D5:43",
+          "text": "What does the biologist say?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:44",
+          "text": "Cigarettes. And ice-cream."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:45",
+          "text": "Everyone scoffs and chuckles."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:46",
+          "text": "Alright, alright, I'll play, I'll play."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:47",
+          "text": "Alright, um, in science fiction terms, I would say..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:48",
+          "text": "...Perfect cellular regeneration caused by circulating Mesenchymal stem cells originating from bone marrow. Especially in the vital organs. Actually, the human body appears designed to live about a hundred and ninety years. Most of us just die..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:49",
+          "text": "(motions to his glass)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:50",
+          "text": "...of slow poisoning."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:51",
+          "text": "(smiles and takes a sip)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:52",
+          "text": "Maybe he did something right. Something everybody else in history had done wrong."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:53",
+          "text": "What, like eat the food, drink the water and breathe the air?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:54",
+          "text": "...Prior to modern times, those were pristine."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:55",
+          "text": "We've extended our lifespan in a world that's, uh... not fit to live in."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D5:56",
+          "text": "(sighs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D5:57",
+          "text": "Y'know, it could happen! Yeah! The pancreas turns over cells every twenty-four hours, the stomach lining in three days, the entire body in seven years, but the process falters. Waste accumulates, eventually proves fatal to function. Now if a quirk in his immune system led to perfect detox, perfect renewal, then yeah. He could, uh... duck decay."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D5:58",
+          "text": "Mm, that's a secret we'd all love to have."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D5:59",
+          "text": "Would you really want to do that? ...Live 14,000 years?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D5:60",
+          "text": "Well, if I could stay healthy and I didn't age, I mean, why not?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D5:61",
+          "text": "Yeah. What a chance to learn."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D5:62",
+          "text": "Is anyone hungry?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D5:63",
+          "text": "(Heads off-stage to the kitchen)"
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D6:0",
+          "text": "Scene 5b: The Revelation"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D6:1",
+          "text": "Y'know, the more I think about it, yeah, it's possible. Anything is possible, right? After all, one century's magic, another century's science. They thought Columbus was a nut-case, right? Pasteur? Copernicus?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:2",
+          "text": "Aristarchus long before that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:3",
+          "text": "(Nonchalantly, as he gets up to pour himself another drink)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:4",
+          "text": "I had a chance to sail with Columbus, only I'm not the adventurous type."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D6:5",
+          "text": "What?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D6:6",
+          "text": "Music starts..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:7",
+          "text": "I was pretty sure the Earth was round, but at that point, I still thought he might fall off an edge some place..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:8",
+          "text": "Incredulous, confused reactions."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D6:9",
+          "text": "(Bemused, laughing nervously)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D6:10",
+          "text": "Look around, John. We just did."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D6:11",
+          "text": "I suppose there's a joke in there somewhere, but I don't get it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:12",
+          "text": "There's nothing to get."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:13",
+          "text": "Music builds..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D6:14",
+          "text": "What are we talking about?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D6:15",
+          "text": "We were just talking about a caveman...who survives until the present time."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:16",
+          "text": "As you said, what a chance to learn, once I learned to learn."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D6:17",
+          "text": "Did you start the whiskey before we got here?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:18",
+          "text": "Pretend it's science fiction. Figure it out."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D6:19",
+          "text": "Okay, a- (heh heh) -very old Cro-Magnon living until the- present."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D6:20",
+          "text": "Music crescendos..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:21",
+          "text": "(slowly leans forward and suddenly GRUNTS LOUDLY like a caveman)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D6:22",
+          "text": "Everyone jumps, startled, and then laughs."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D6:23",
+          "text": "Oh!"
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D7:0",
+          "text": "Scene 6a: The First Lifetime"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D7:1",
+          "text": "(entering)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D7:2",
+          "text": "What?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:3",
+          "text": "John just confided that he's fourteen thousand years old."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D7:4",
+          "text": "Oh, John, you don't look a day over nine hundred!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:5",
+          "text": "(laughing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:6",
+          "text": "Okay!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:7",
+          "text": "Alright Spock, I'll play your little game. What do you want? What's the punch line?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:8",
+          "text": "Every ten years or so, when people start to notice I don't age, I move on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:9",
+          "text": "Pause."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:10",
+          "text": "...That's very good, that's very quick John. I wanna read that story when you're done."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:11",
+          "text": "You want more?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:12",
+          "text": "Yeah, by all means. This is great! Alright, now... (chuckles) ...So you think you're a- a- uh- Cro-Magnon."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:13",
+          "text": "Well, I didn't learn it in school. That's my best guess. Based on archaeological data, maps, anthropological research. Since Mesopotamia, I've got the last...four thousand years straight."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:14",
+          "text": "Well you're ahead of most people, so please, go on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:15",
+          "text": "Well you know the background stuff, so I'll make it brief. In what I call my first lifetime, I aged to about thirty-five. What you see. I ended up leading my group. They saw me as magical. I didn't even have to fight for it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:16",
+          "text": "Then, fear came. And they chased me away. They thought that I was...stealing their lives away to stay young."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:17",
+          "text": "The prehistoric origin of the vampire myth. That is good!"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:18",
+          "text": "First thousand years, I didn't know up from sideways."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D7:19",
+          "text": "How do you know the first thousand years?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:20",
+          "text": "An informed guess, based on what I've learned in my memories."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:21",
+          "text": "Most people can scarcely remember their childhood, but you have memories of that time?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:22",
+          "text": "Like yours. Selective. Y'know, the high points, the low points, traumas. They stick in the mind forever. Put down at three or thirty-five, you still feel a twinge."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D7:23",
+          "text": "Go on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:24",
+          "text": "I kept getting chased because I wouldn't die, so I got the hang of joining new groups I found. I also got the idea of periodically moving on. We were semi-nomadic, of course, following the weather and the game we hunted. The first two- thousand years were cold. We learned it was warmer at lower elevations. Late glacial period, I assume."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:25",
+          "text": "What was the terrain like?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:26",
+          "text": "Mountainous. Vast plains to the West-"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D7:27",
+          "text": "West - something you learned in school."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:28",
+          "text": "Towards the setting sun. I suspect I saw the British Isles from what is now the French coast."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:29",
+          "text": "Huge mountains on the other side of an enormous deep valley that was shadowed by the setting sun. This is before they were separated from the continent by rising seas, as the glaciers melted."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:30",
+          "text": "That happened?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D7:31",
+          "text": "Yes, the end of the Pleistocene. So far what he says fits."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D7:32",
+          "text": "Oh, yeah, into any textbook."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:33",
+          "text": "And that's where I found it. How can I have knowledgeable recall if I didn't have knowledge?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:34",
+          "text": "It's all retrospective. All I can do is integrate my recollections with modern findings."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D7:35",
+          "text": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:36",
+          "text": "You'd be more fun conscious."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D7:37",
+          "text": "Oh, John."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:38",
+          "text": "Let me get this straight. We're not talking about, uh, reincarnation. You're not saying that you remember, whatever the hell it would be, 200 separate lifetimes, dying and being born again and yada yada?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:39",
+          "text": "One lifetime."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:40",
+          "text": "Some lifetime."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:41",
+          "text": "(laughs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:42",
+          "text": "Wow! Maybe there is something to this reincarnation thing. You're supposed to come back again and again, learn and learn, and somehow, John, you just managed to bypass all the other bodies."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D7:43",
+          "text": "Well, what's the point?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D7:44",
+          "text": "What about oceans?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:45",
+          "text": "Didn't see them till much later."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D7:46",
+          "text": "So how would you know an ocean from a lake?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:47",
+          "text": "Big waves. Something else I can only surmise in retrospect."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D7:48",
+          "text": "Were you curious about where it all came from?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:49",
+          "text": "We would look up at the sky and wonder. \"There's gotta be some big guys up there. What else made all this down here?\""
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:50",
+          "text": "At first I thought there was, uh, something wrong with me - maybe I was a bad guy for not dying. Then I began to wonder if I was cursed, or perhaps blessed. Then I thought maybe I had a mission."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D7:51",
+          "text": "Do you still think you do? God works in mysterious ways."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:52",
+          "text": "I think I just happened."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D7:53",
+          "text": "Phone rings, aside."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:54",
+          "text": "(laughs)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D7:55",
+          "text": "Wow."
+        },
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D8:0",
+          "text": "Scene 6b: Ellie's Midterm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:1",
+          "text": "(picking up the phone, set slightly away from stage)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:2",
+          "text": "Hello?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:3",
+          "text": "Yes, Ellie?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:4",
+          "text": "What's wrong?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:5",
+          "text": "(calls out)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:6",
+          "text": "Sandy?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D8:7",
+          "text": "Coming."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D8:8",
+          "text": "Yeah?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:9",
+          "text": "Do we have Ellie's midterm here?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D8:10",
+          "text": "Yeah, sorry. I picked it up with the periodicals."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:11",
+          "text": "Got it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:12",
+          "text": "No, you're worried about your parents? Don't- don't worry. You passed, C+."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:13",
+          "text": "(Changes grade on paper)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:14",
+          "text": "Take care of yourself."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D8:15",
+          "text": "Good kid. What does a pre-Med need with history?"
+        }
+      ]
+    }
+  }
+]

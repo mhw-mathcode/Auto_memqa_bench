@@ -1,0 +1,1463 @@
+{
+    "qa": [],
+    "conversation": {
+        "speaker_1": "JUDGE",
+        "speaker_2": "CLERK",
+        "speaker_3": "#8",
+        "speaker_4": "#7",
+        "speaker_5": "GUARD",
+        "speaker_6": "#5",
+        "speaker_7": "#10",
+        "speaker_8": "FOREMAN",
+        "speaker_9": "#3",
+        "speaker_10": "#2",
+        "speaker_11": "#12",
+        "speaker_12": "#4",
+        "speaker_13": "#11",
+        "speaker_14": "#6",
+        "speaker_15": "#9",
+        "session_1_date_time": "Unknown",
+        "session_1": [
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:1",
+                "text": "They stare each other in the eyes for a long moment. Then #7 looks down."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D8:2",
+                "text": "I... don't think he's guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:3",
+                "text": "#11 looks at him disgustedly, then sits down. #7 stands there defeated."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:4",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:5",
+                "text": "I want another vote."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:6",
+                "text": "There is a silence in the room."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:7",
+                "text": "CLOSE UP - FOREMAN"
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:8",
+                "text": "Okay, there's another vote called for. I guess the quickest way is a show of hands. Anybody object?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:9",
+                "text": "He looks around the table questioningly. There is no answer."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:10",
+                "text": "All those voting not guilty raise your hands."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:11",
+                "text": "LONG SHOT - THE ENTIRE JURY, SHOOTING FROM BEHIND #7'S SEAT"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:12",
+                "text": "#7 is still standing. #10 still sits in chair at side of room. #'s 2, 5, 6, 7, 8, 9, 11 puts up their hands immediately. The Foreman starts to count the upraised hands. Camera moves in slowly, as he counts, on #'s 11, 12 and Foreman himself."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:13",
+                "text": "One. Two. Three. Four. Five. Six. Seven."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:14",
+                "text": "The seventh number is #11. #12's hand is down, but his face is a mask of indecision. As the Foreman's counting finger moves past him, he suddenly raises his hand."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:15",
+                "text": "Eight."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:16",
+                "text": "The Foreman stops counting and looks around the table. Slowly now, almost embarrassedly, he raises his own hand."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:17",
+                "text": "Nine."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:18",
+                "text": "He lowers his hand."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:19",
+                "text": "All those voting guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:20",
+                "text": "MEDIUM SHOT - #'S 3, 4, 5, AND IN BACKGROUND AGAINST WALL, #10"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:21",
+                "text": "#10 jumps to his feet, angrily raising his hand. #'s 3 and 4 raise their hands."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:22",
+                "text": "Three."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:23",
+                "text": "They lower their hands."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:24",
+                "text": "The vote is nine to three in favor of acquittal."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:25",
+                "text": "#10 is standing angrily now behind #4."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:26",
+                "text": "I don't understand you people! I mean all these picky little points you keep bringing up. They don't mean nothing!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:27",
+                "text": "He starts a walk around table. Camera pans with him till he reaches his seat. He stands behind it. He continues to talk during his walk. Everyone is seated at table now but #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:28",
+                "text": "You saw this kid just like I did. You're not gonna tell me you believe that phoney story about losing the knife, and that business about being at the movies. Look, you know how these people lie! It's born in them!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:29",
+                "text": "He whips out a handkerchief and blows his nose."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:30",
+                "text": "I mean what the heck, I don't have to tell you. They don't know what the truth is! And lemme tell you, they don’t need any real big reason to kill someone either! No sir!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:31",
+                "text": "MEDIUM SHOT - CENTERED ON #5"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:32",
+                "text": "As #10 talks, #5 gets up from his seat and walks over to the coat rack. He stands with his back to #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:33",
+                "text": "You know, they get drunk... oh they're very big drinkers, all of 'em, and bang, someone's lying in the gutter. Oh, nobody's blaming them for it. That's how they are! By nature! You know what I mean?"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:34",
+                "text": "Violent!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:35",
+                "text": "MEDIUM SHOT - CENTERED ON #10"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:36",
+                "text": "#9 gets up from the table and walks to the window, stands with his back to #10 as #10 talks."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:37",
+                "text": "Human life don't mean as much to them as it does to us!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:38",
+                "text": "#11 gets up and walks to the other window as he goes, #10 whirls to him."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:39",
+                "text": "Hey, where are you going?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:40",
+                "text": "#11 pays no attention, stands with his back to the window. #10 turns back to the table. He begins to sound slightly desperate."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:41",
+                "text": "Look, these people're lushing it up and fighting all the time, and if somebody gets killed, so somebody gets killed! They don't care. Oh sure, there are some good things about 'em too. Look, I'm the first one to say that."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:42",
+                "text": "LONG SHOT - THE ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:43",
+                "text": "#8 gets up and walks to the nearest wall, and stands with his face to it."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:44",
+                "text": "I've known a couple who were okay, but that’s the exception, you know what I mean?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:45",
+                "text": "#2 gets up, and a moment later so does #6. They each walk to positions along the wall, and stand with their backs to #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:46",
+                "text": "Most of 'em, it's like they have no feelings. They can do anything. What’s going on here?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:47",
+                "text": "CLOSE UP - #10"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:48",
+                "text": "I'm tryin’ to tell you you're making a big mistake, you people. This kid is a liar! I know it. I know all about them! I mean what's happening in here? I'm speaking my piece, and you..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:49",
+                "text": "MEDIUM SHOT - THE RIGHT SIDE OF JURY, FROM BEHIND FOREMAN"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:50",
+                "text": "The Foreman gets up and walks to the water cooler. #12 follows him. They stand with their backs toward #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:51",
+                "text": "Listen to me! They're no good! There's not a one of ’em who's any good."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:52",
+                "text": "#7 gets up and walks to the window, stands with his back to #10."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:53",
+                "text": "Boy, are you smart! Well I'm telling you we better watch out! This kid on trial here, his type... Well don't you know about them?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:54",
+                "text": "MEDIUM SHOT - CENTERED ON #3"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:55",
+                "text": "He gets up and, standing at his seat, turns his back on #10. #4 gets up and starts the long walk around the table toward #10"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:56",
+                "text": "What are you doing? Listen to me! I’m trying to tell you something!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:57",
+                "text": "MEDIUM CLOSE UP - #10"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:58",
+                "text": "He gesticulates wildly."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:59",
+                "text": "There’s a danger here! These people are wild! Don't you know about it?"
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:60",
+                "text": "Listen to me!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:61",
+                "text": "He turns furiously, and finds himself face to face with #4."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:62",
+                "text": "Listen to me!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:63",
+                "text": "#4 stares at him as he trails off into silence. There is a long pause."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:64",
+                "text": "If you open your mouth again I’m going to split your skull!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:65",
+                "text": "#4 stares contemptuously at #10. There is no sound, no move. Then #10 looks down at the table."
+            },
+            {
+                "speaker": "#10",
+                "type": "dialogue",
+                "dia_id": "D8:66",
+                "text": "I'm only tryin' to tell you..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:67",
+                "text": "There is a long pause. Then #4 turns and walks away from him."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:68",
+                "text": "LONG SHOT FROM ABOVE - THE ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:69",
+                "text": "The only movement and sound in the room are #4's footsteps. He walks slowly back to his seat. We see the entire room. The other ten jurors stand in various attitudes and postures around the walls of the room, their backs to #10. #4 reaches his chair."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:70",
+                "text": "He pulls it out and sits down, Then, slowly, the jurors begin to return to their seats. #10 stands head down, without moving, until the last of the jurors have silently taken their seats."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:71",
+                "text": "Then he begins a walk which takes him to a chair at the far end of the room against a wall. He sags into it, beaten. He lowers his head into his hands sits there."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:72",
+                "text": "MEDIUM CLOSE UP - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:73",
+                "text": "As is everyone else, #8 is embarrassed. He looks around the table. Than he clears his throat."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:74",
+                "text": "It’s very hard to keep personal prejudice out of a thing like this. And no matter where you run into it, prejudice obscures the truth."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:75",
+                "text": "He pauses. There is silence."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:76",
+                "text": "MEDIUM SHOT - CENTERED ON #4."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:77",
+                "text": "#4 looks at #8 steadily."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:78",
+                "text": "Well I don't think any real damage has been done here. Because I don’t really know what the truth is. No one ever will, I suppose. Nine of us now seem to feel that the defendant is innocent, but we're just gambling on probabilities. We may be wrong."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:79",
+                "text": "MEDIUM CLOSE UP - #8"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:80",
+                "text": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:81",
+                "text": "CLOSE UP - #4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:82",
+                "text": "Listening."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:83",
+                "text": "We nine can't understand how you three are still so sure."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:84",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:85",
+                "text": "He pauses for a moment."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:86",
+                "text": "Maybe you can tell us."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:87",
+                "text": "MEDIUM SHOT - CENTERED ON #4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:88",
+                "text": "He looks strongly at #8."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:89",
+                "text": "I’ll try."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:90",
+                "text": "He looks at #3, and then back to #8."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:91",
+                "text": "You've made some excellent points. The last one, in which you \"proved\" that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:92",
+                "text": "He stands up and stretches, and then continues to stand."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:93",
+                "text": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:94",
+                "text": "And how, brother! As far as I’m concerned that’s the most important testimony."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:95",
+                "text": "#4 looks down at #3 with some coldness."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:96",
+                "text": "And two. The fact that this woman described the stabbing by saying she saw the boy raise his arm over his head and plunge the knife down into the father's chest. She saw him do it... the wrong way."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:97",
+                "text": "That’s right! That's absolutely right!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:98",
+                "text": "MEDIUM SHOT - CENTERED ON #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:99",
+                "text": "He listens carefully as goes on, and we can see that he has no real answer to this."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:100",
+                "text": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:101",
+                "text": "LONG SHOT - THE ENTIRE JURY"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:102",
+                "text": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:103",
+                "text": "MEDIUM SHOT - CENTERED ON #4"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:104",
+                "text": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:105",
+                "text": "As far as I can see, this is unshakeable testimony."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:106",
+                "text": "That’s what I mean! That's the whole case!"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:107",
+                "text": "What do you think?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:108",
+                "text": "CLOSE UP - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:109",
+                "text": "#8 hesitates for a moment, then doesn't answer."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:110",
+                "text": "MEDIUM SHOT - CENTERED ON #4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:111",
+                "text": "He looks in the direction of #12."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:112",
+                "text": "How about you?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:113",
+                "text": "MEDIUM SHOT - #12"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:114",
+                "text": "He has never been sold on voting not guilty, and is now swayed in the opposite direction, yet he is apprehensive about how he will look in the eyes of the other jurors if he shifts his vote again."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:115",
+                "text": "Well... I don’t know. There’s so much evidence to sift."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:116",
+                "text": "He pauses, and chews at a fingernail."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:117",
+                "text": "This is a pretty complicated business."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:118",
+                "text": "He looks around indecisively."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:119",
+                "text": "Frankly, I don’t see how you can vote for acquittal."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:120",
+                "text": "Well, it’s not so easy to arrange the evidence in order..."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:121",
+                "text": "You can throw out all the other evidence. The woman saw him do it. What else do you want?"
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:122",
+                "text": "Well maybe..."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:123",
+                "text": "Let’s vote on it."
+            },
+            {
+                "speaker": "FOREMAN",
+                "type": "dialogue",
+                "dia_id": "D8:124",
+                "text": "Okay. There’s another vote called for. Anybody object?"
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:125",
+                "text": "I'm changing my vote. I think he's guilty."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:126",
+                "text": "He looks down at the table, ashamed."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:127",
+                "text": "MEDIUM CLOSE UP - #8"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:128",
+                "text": "Turning his head toward #12, angry, upset, but helpless."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:129",
+                "text": "MEDIUM CLOSE UP - #3"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:130",
+                "text": "Smiling slightly."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:131",
+                "text": "Anybody else?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:132",
+                "text": "He looks around the table challengingly."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:133",
+                "text": "The vote is eight to four."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:134",
+                "text": "There is a pause."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:135",
+                "text": "MEDIUM SHOT - #'S 11, 12"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:136",
+                "text": "#12, tormented, gets up and walks to the window."
+            },
+            {
+                "speaker": "#11",
+                "type": "dialogue",
+                "dia_id": "D8:137",
+                "text": "Why is this such a personal triumph for you, this one vote?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:138",
+                "text": "MEDIUM SHOT - #'S 2, 3, 4"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:139",
+                "text": "I’m the competitive type!"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:140",
+                "text": "Okay, now here’s what I think. I think we're a hung jury. Let's take it inside to the judge."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:141",
+                "text": "There is no answer to this."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:142",
+                "text": "Well I want to hear an argument. I say we're hung."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:143",
+                "text": "He turns toward #8."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:144",
+                "text": "MEDIUM SHOT - #'S 7, 8, 9, SHOOTING OVER #3'S SHOULDER"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:145",
+                "text": "Come on. You're the leader of the cause. What about it?"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:146",
+                "text": "Let's go over it again."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:147",
+                "text": "We went over it again!"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:148",
+                "text": "Batton, Barton, Durstine and Osborn up there is bouncin' backwards and forwards like a tennis ball..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:149",
+                "text": "CLOSE UP - #12"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:150",
+                "text": "Standing at the window. He turns around."
+            },
+            {
+                "speaker": "#12",
+                "type": "dialogue",
+                "dia_id": "D8:151",
+                "text": "Say, listen... what d'ya think you’re saying here. You have no right to..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:152",
+                "text": "MEDIUM SHOT - CENTERED ON #3, SHOOTING BETWEEN #8 AND #9"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:153",
+                "text": "#4 has his eyeglasses off and polishing him."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:154",
+                "text": "I apologize on my knees."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:155",
+                "text": "Come on! Let's get out from under this thing. I'm sicka arguing with you already."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:156",
+                "text": "There’s no point in getting nasty about it. You keep trying to make this into a contest."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:157",
+                "text": "Okay."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:158",
+                "text": "Maybe we can talk about setting some kind of a time limit."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D8:159",
+                "text": "Once around, to the dealer."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:160",
+                "text": "#4 looks witheringly in his direction. Still polishing his glasses he turns around to the wall clock and peers up at it."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:161",
+                "text": "It's um..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:162",
+                "text": "He squints and then puts on his glasses."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:163",
+                "text": "...quarter after six."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:164",
+                "text": "He turns back to the table, taken off his glasses and lays them down on the table. He looks tired now. He closes his eyes end clasps his fingers over the marks left by his eyeglasses at the sides of his nose. He rubs these areas as he speaks."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:165",
+                "text": "Someone before mentioned seven o'clock. I think that's a point at which we might begin, to discuss the question of whether we're a hung jury or not."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:166",
+                "text": "CLOSE UP - #9"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:167",
+                "text": "He is looking closely at and obviously as thought of some thing tremendously exciting."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:168",
+                "text": "Don’t you feel well?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:169",
+                "text": "CLOSE UP - #4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:170",
+                "text": "He Looks up at #9, annoyed."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:171",
+                "text": "I feel perfectly well... Thank you."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:172",
+                "text": "I was saying that seven o'clock would be a reasonable time to..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:173",
+                "text": "MEDIUM SHOT - CENTERED ON #9 OVER #4’S SHOULDER"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:174",
+                "text": "The reason I asked about that was because you were rubbing your nose like ..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:175",
+                "text": "#9 notes #4 glaring at him."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:176",
+                "text": "I’m sorry for interrupting. But you made a gesture that reminded me..."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:177",
+                "text": "I’m trying to settle something here. Do you mind?"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:178",
+                "text": "I think this is important."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:179",
+                "text": "#4 looks at him for a moment, then shrugs and leans back, relinquishing the floor."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:180",
+                "text": "Thank you."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:181",
+                "text": "He looks around the table for a moment, then back at #4."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:182",
+                "text": "I'm sure you'll pardon me for this, but I was wondering why you were rubbing your nose like that."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:183",
+                "text": "MEDIUM SHOT - #'S 3, 4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:184",
+                "text": "MEDIUM SHOT - CENTERED ON #9"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:185",
+                "text": "Ah come on now, will ya please!"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:186",
+                "text": "At this point I happen to be taking to the gentleman sitting next to you."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:187",
+                "text": "MEDIUM SHOT - #'S 3, 4, SHOOTING PAST #9'S PROFILE"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:188",
+                "text": "#3 looks annoyed. During these next lines he sight deeply, gets up from the table and strolls to the water cooler."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:189",
+                "text": "Now, why were you rubbing your nose?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:190",
+                "text": "Well, if it's any of your business I was rubbing it because it bothers me a little."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:191",
+                "text": "I'm sorry. Is it because of your eyeglasses?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:192",
+                "text": "It is. Now could we get on to something else?"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:193",
+                "text": "Your eyeglasses make those deep impressions on the aides of your nose. I hadn't noticed that before. They must be annoying."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:194",
+                "text": "They are annoying."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:195",
+                "text": "MEDIUM SHOT - #'S 7, 8, 9"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:196",
+                "text": "I wouldn't know about that. I've never worn eyeglasses."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:197",
+                "text": "He points to his eyes and smiles lightly."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:198",
+                "text": "Twenty-twenty."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D8:199",
+                "text": "Listen, will you come on already with the optometrist bit!"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:200",
+                "text": "You have excellent recuperative powers!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:201",
+                "text": "#7 looks disgustedly at him. Now #9 turns to #4. Camera moves in on #9's face for close-up."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:202",
+                "text": "The woman who testified that she saw the filing had those same marks on the sides of her nose."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:203",
+                "text": "CLOSE UP - #4"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:204",
+                "text": "Digesting this."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:205",
+                "text": "LONG SHOT - ENTIRE JURY"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:206",
+                "text": "There is a silence in the room for a moment. Then we hear a slow babble of ad lib conversation. #9 stands up, very excited."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:207",
+                "text": "Please!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:208",
+                "text": "The conversation continues."
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:209",
+                "text": "Please!"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:210",
+                "text": "It quiets down."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:211",
+                "text": "MEDIUM SHOT - CENTERED ON #9"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:212",
+                "text": "Just a minute, and then I'll be finished. I don't know if anyone else noticed that about her. I didn't think about it then but I've been going over her face in ay mind. She had those marks. She kept rubbing them, in court."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:213",
+                "text": "He demonstrates."
+            },
+            {
+                "speaker": "#5",
+                "type": "dialogue",
+                "dia_id": "D8:214",
+                "text": "He's right! She did do that a lot."
+            },
+            {
+                "speaker": "#7",
+                "type": "dialogue",
+                "dia_id": "D8:215",
+                "text": "So what if she did?"
+            },
+            {
+                "speaker": "#9",
+                "type": "dialogue",
+                "dia_id": "D8:216",
+                "text": "This woman was about forty-five years old. She was making a tremendous effort to look thirty-five for her first public appearance. Heavy make-up. Dyed hair. Brand-new clothes that should have been worn by a younger woman. No eyeglasses. Women do that. See if you can get a mental picture of her."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:217",
+                "text": "MEDIUM SHOT - #3"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:218",
+                "text": "At water cooler, glaring at #9. He begins to stride toward the table, camera dollying with him. He ends up standing behind #5 shouting across at #9."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:219",
+                "text": "What d'ya mean, no glasses’?"
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:220",
+                "text": "No. They couldn't."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:221",
+                "text": "Listen, what are you saying here? I didn't see any marks."
+            },
+            {
+                "speaker": "#4",
+                "type": "dialogue",
+                "dia_id": "D8:222",
+                "text": "I did. Strange, but I didn't think about it before..."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D8:223",
+                "text": "Now that we're talking about it, I saw them. I mean it never occurred to me..."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:224",
+                "text": "#3 steps back, thinking. #9 leans back and opens up his bottle of pills. He slips one tiny pill under his tongue. He suddenly looks very old and very tired."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:225",
+                "text": "MEDIUM SHOT - #8, #9"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:226",
+                "text": "#8 looks warmly at #9. #9 drops the stopper of his bottle. #8 picks up it for him, smiles at him, hands it to him."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:227",
+                "text": "MEDIUM SHOT - #'S 3, 4, 5, SHOOTING PAST #’S 8 AND 9"
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:228",
+                "text": "Well what about the lawyer? Why didn't he say something?"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:229",
+                "text": "There are twelve people in here concentrating on this case. Eleven of us didn't think of it either."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:230",
+                "text": "Okay, Clarence Darrow. Then what about the District Attorney? You think he'd try to pull a trick like that, have her testify without glasses?"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:231",
+                "text": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:232",
+                "text": "CLOSE UP - #6"
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D8:233",
+                "text": "My wife. Listen, I’m telling ya, as soon as we walk outa the house..."
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:234",
+                "text": "Maybe the District Attorney didn't know either."
+            },
+            {
+                "speaker": "#6",
+                "type": "dialogue",
+                "dia_id": "D8:235",
+                "text": "Yeah, that's what I was just gonna say."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:236",
+                "text": "MEDIUM SHOT - CENTERED ON #3"
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:237",
+                "text": "He is stopped by this momentarily. He stares around the room."
+            },
+            {
+                "speaker": "#3",
+                "type": "dialogue",
+                "dia_id": "D8:238",
+                "text": "Okay. She had marks on her nose. I’m givin' ya this. From glasses. Right? She never wore 'em out of the house so people' d think she was gorgeous. But when she saw this kid kill his father she was in the house. Alone. That’s all."
+            },
+            {
+                "speaker": null,
+                "type": "narration",
+                "dia_id": "D8:239",
+                "text": "CLOSE UP - #6"
+            },
+            {
+                "speaker": "#8",
+                "type": "dialogue",
+                "dia_id": "D8:240",
+                "text": "Do you wear your glasses when you go to bed?"
+            }
+        ]
+    }
+}

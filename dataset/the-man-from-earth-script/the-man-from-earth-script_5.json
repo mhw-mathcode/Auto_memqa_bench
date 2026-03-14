@@ -1,0 +1,1979 @@
+[
+  {
+    "qa": [
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "How does Harry generally respond when the group conversation delves heavily into topics of mortality and dying?",
+        "option": [
+          "A. He encourages the group to explore the psychological depths of the fear.",
+          "B. He attempts to pivot the discussion away from the subject entirely.",
+          "C. He quietly leaves the room to avoid hearing the details.",
+          "D. He confronts Will directly about his morbid curiosity.",
+          "E. He uses his medical knowledge to explain the physiological process."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Hey, how about changing the subject, Will?",
+            "dia_id": "D13:44"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Enough with the, uh- With the dying.",
+            "dia_id": "D13:45"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry verbally requests to alter the current topic of conversation.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry specifically identifies 'the dying' as the topic he wants to move away from, showing a pattern of avoidance regarding mortality discussions.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "What immediate action does Harry announce he will take while the room's furniture is being cleared out?",
+        "option": [
+          "A. He plans to assist the CharityNow men with the heavy lifting.",
+          "B. He states his intention to sit in a remaining chair and consume alcohol in a corner.",
+          "C. He decides to follow the movers out to ensure everything is loaded properly.",
+          "D. He asks John if he can claim one of the discarded pieces for himself.",
+          "E. He offers to call a different charity organization to take the remaining items."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Here, take this chair. I'm gonna go drink in the corner.",
+            "dia_id": "D13:6"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry physically yields his current seating and declares his immediate next physical action is to go to a corner and drink.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "At what point in the sequence of events does Harry disclose the medical reality of Will's spouse?",
+        "option": [
+          "A. Immediately after Will questions John about primitive man's view of death.",
+          "B. Right before Will retrieves the weapon from his coat pocket.",
+          "C. Only after Will has completely exited the room following the confrontation.",
+          "D. While the CharityNow workers are in the middle of taking the couch.",
+          "E. Right after Dan threatens to break Will's arm."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(storms off)",
+            "dia_id": "D13:102"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "(quietly)",
+            "dia_id": "D13:107"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Mary passed away yesterday.",
+            "dia_id": "D13:108"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will physically leaves the room first.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Following Will's departure, Harry reveals the information about Mary's death to the remaining group.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "What specific label does Harry jokingly apply to John after hearing about his past family life?",
+        "option": [
+          "A. The world's oldest surviving patriarch.",
+          "B. History's biggest bigamist.",
+          "C. A creature devoid of human emotional attachment.",
+          "D. A man who steals the life force of his companions.",
+          "E. The most unattached traveler in the modern era."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I'd move on. I had to move on.",
+            "dia_id": "D13:59"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Making him history's biggest bigamist.",
+            "dia_id": "D13:60"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explains his historical method of dealing with marriages and families by simply moving on.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Harry responds to this specific confession by assigning John the title of history's biggest bigamist.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "Based on Harry's statements to the group, what was the precise marital relationship between Mary and Will?",
+        "option": [
+          "A. Mary was Will's estranged sibling.",
+          "B. Mary was Will's recently deceased wife.",
+          "C. Mary was Will's former colleague who suffered from cancer.",
+          "D. Mary was Will's daughter who passed away unexpectedly.",
+          "E. Mary was John's former wife whom Will had known."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Mary passed away yesterday.",
+            "dia_id": "D13:108"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Who?",
+            "dia_id": "D13:110"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "His wife. She had, uh, pancreatic cancer.",
+            "dia_id": "D13:111"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry introduces the subject of Mary passing away.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "When asked for clarification by Linda, Harry explicitly identifies Mary as 'His wife', referring to Will who just left.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 6,
+        "question": "According to the specific timeline provided by Harry, exactly how many days have passed since Mary died?",
+        "option": [
+          "A. Zero days, it happened earlier that same morning.",
+          "B. One day, as she passed away yesterday.",
+          "C. Two days, right before the group gathered.",
+          "D. Seven days, approximately one week prior.",
+          "E. It is unspecified in the text when exactly she died."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Mary passed away yesterday.",
+            "dia_id": "D13:108"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry explicitly uses the word 'yesterday' to quantify the time elapsed since Mary's death, which equates to one day.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "What philosophy dictates John's long-term behavior regarding the accumulation of physical property and residences?",
+        "option": [
+          "A. He hoards wealth because he knows he will need it for centuries.",
+          "B. He donates everything because he feels guilt over his unnatural lifespan.",
+          "C. He avoids leaving much behind because his existence requires constant relocation.",
+          "D. He keeps only historical artifacts that remind him of his past families.",
+          "E. He prefers to rent properties exclusively so he never has to sell them."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "It's the only way to move.",
+            "dia_id": "D13:11"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "I've owned castles, but why leave a lot if you're always leaving? I have money.",
+            "dia_id": "D13:22"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John confirms that traveling light is a necessity for his constant movement.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He elaborates that accumulating large properties like castles is pointless since his lifestyle demands that he is 'always leaving'.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "What is John's immediate physical response when Dan makes a violent threat toward the armed Will?",
+        "option": [
+          "A. He steps between them and tells Dan to calm down.",
+          "B. He reaches out an arm to hold Dan back from attacking.",
+          "C. He quickly disarms Will before Dan can make a move.",
+          "D. He verbally commands Dan to leave the room immediately.",
+          "E. He dashes out of the door to find help."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Now you give me that gun or I'm gonna break your goddamn arm.",
+            "dia_id": "D13:92"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "(John reaches out an arm holding Dan back)",
+            "dia_id": "D13:93"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan issues a direct physical threat to Will.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "In direct reaction to this escalation, John physically restrains Dan with his arm.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "Which event directly precedes John's sudden departure from the room?",
+        "option": [
+          "A. Will putting the gun down and leaving to grade papers.",
+          "B. Dan asking what the hell the situation was all about.",
+          "C. Harry quietly revealing the recent passing of Mary.",
+          "D. Edith asking where Will managed to get a gun.",
+          "E. The CharityNow workers successfully removing the couch."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Mary passed away yesterday.",
+            "dia_id": "D13:108"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "John glances up and dashes out of the door after Will.",
+            "dia_id": "D13:109"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry shares the news of Mary's death with the room.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Immediately following this revelation, John reacts by glancing up and dashing out the door.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "How does John manage the situation with the CharityNow workers while maintaining seating for his guests?",
+        "option": [
+          "A. He asks the workers to come back tomorrow to retrieve the couch.",
+          "B. He stops them from taking the couch, stating he will keep it for now.",
+          "C. He allows them to take the couch but asks them to leave the chairs.",
+          "D. He pays the workers extra to leave the couch until the party is over.",
+          "E. He tells the workers the couch belongs to Dan and cannot be donated."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Edith, Dan and Sandy rise off the couch.",
+            "dia_id": "D13:37"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Gentlemen, I'm- I'm gonna keep the couch.",
+            "dia_id": "D13:38"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The guests are forced to stand up as the charity workers prepare to remove the couch.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John intervenes by directly telling the workers that he has decided to keep the couch instead of donating it.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "Who does John identify as potentially filling the role of a patriarchal figure in his early life memory?",
+        "option": [
+          "A. A tribal elder who taught him how to hunt and survive.",
+          "B. An older brother who functioned as a social father.",
+          "C. A man who banished him when he realized John wasn't aging.",
+          "D. A neighboring chieftain who adopted him after his biological father died.",
+          "E. Will's ancestor, which explains their current confrontational dynamic."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Surely you remember your father?",
+            "dia_id": "D13:50"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "I seem to remember a figure, perhaps an older brother, a social father, maybe.",
+            "dia_id": "D13:51"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will prompts John to recall his father from prehistory.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John responds by suggesting his memory of a father figure was likely an older brother acting as a social father.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 6,
+        "question": "When discussing the passage of time with Will, how many distinct chronological measurement units does John use to describe the turbulence of human lives?",
+        "option": [
+          "A. None, he only uses the metaphor of a wheat field.",
+          "B. One, specifically focusing on the span of a century.",
+          "C. Two, mentioning only days and months.",
+          "D. Three, referring to a day, a year, or a century.",
+          "E. Four, referencing seconds, hours, days, and years."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "As one grows older, the days, weeks, months go by more quickly. What does a day or a year or a century mean to you? The birth-death cycle?",
+            "dia_id": "D13:23"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Turbulence. I meet someone, learn their name, say a word, they're gone. Others come like waves. Rise, fall. Ripples in a wheat field, blown by the wind.",
+            "dia_id": "D13:24"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will frames a question utilizing three specific units of time: a day, a year, or a century.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John accepts this premise and answers how those specific units of time (day, year, century) manifest to him as 'Turbulence'.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "Based on his reaction to extreme escalation, what characterizes Dan's primary method for handling direct physical threats?",
+        "option": [
+          "A. He immediately calls for law enforcement to intervene.",
+          "B. He attempts to de-escalate the situation through logical persuasion.",
+          "C. He responds with immediate threats of severe physical force to neutralize the danger.",
+          "D. He cowers behind the furniture to protect himself from harm.",
+          "E. He relies entirely on John to manage the danger."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(pulls out a gun)",
+            "dia_id": "D13:90"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Now you give me that gun or I'm gonna break your goddamn arm.",
+            "dia_id": "D13:92"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will introduces a lethal threat by producing a firearm.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan's immediate and instinctual response to the weapon is to threaten severe physical violence (breaking an arm) to achieve compliance.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "What is Dan's state of mind immediately after Will leaves the room?",
+        "option": [
+          "A. He is profoundly relieved and sits back down on the couch.",
+          "B. He is highly confused and agitated about what just transpired.",
+          "C. He is furious with John for not allowing him to attack Will.",
+          "D. He is apologetic for his aggressive outburst.",
+          "E. He is deeply saddened because he suddenly realizes Mary died."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(storms off)",
+            "dia_id": "D13:102"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Jesus Christ. What the hell was that all about?",
+            "dia_id": "D13:103"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will ends the confrontation by leaving the scene entirely.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan's immediate utterance consists of a profanity and a question demanding an explanation, indicating severe confusion and lingering agitation.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 3,
+        "question": "At what exact moment does Dan physically rise from his seated position?",
+        "option": [
+          "A. Right after John tells the CharityNow guys to take all the furniture.",
+          "B. When Will asks John if he fears death.",
+          "C. When the CharityNow worker addresses the women on the couch.",
+          "D. Exactly when Will pulls the gun from his coat pocket.",
+          "E. Right after Harry reveals that Mary has passed away."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "CHARITYNOW GUY #2 (To Edith on the couch)",
+            "dia_id": "D13:35"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "I'm sorry, ma'am.",
+            "dia_id": "D13:36"
+          },
+          {
+            "id": "E3",
+            "speaker": "Will",
+            "utterance": "Edith, Dan and Sandy rise off the couch.",
+            "dia_id": "D13:37"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The Charity worker approaches and speaks to the occupants of the couch.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Prompted by this direct interaction from the mover, Dan and the others physically stand up.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What specific boundary does Dan assert Will has crossed during the interrogation of John?",
+        "option": [
+          "A. Asking John about his deceased wives.",
+          "B. Accusing John of stealing the lives of his fellows.",
+          "C. Suggesting that John is an unknowing vampire.",
+          "D. Refusing to allow John to keep the couch.",
+          "E. Demanding to know if John will attend his funeral."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Or are you a vampire, John? Even an unknowing one? Do you stand alive and tall in a graveyard that you helped to fill?",
+            "dia_id": "D13:82"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "That's going too far.",
+            "dia_id": "D13:83"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will posits the extreme theory that John is a vampire filling graveyards.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan explicitly states that this specific line of questioning is 'going too far', establishing his boundary for acceptable conversation.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "To what specific professional role does Will compare Dan's behavior?",
+        "option": [
+          "A. An overbearing police officer.",
+          "B. A hysterical parent.",
+          "C. A high school principal.",
+          "D. Their football coach.",
+          "E. A barroom bouncer."
+        ],
+        "answer": "D",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Now you give me that gun or I'm gonna break your goddamn arm.",
+            "dia_id": "D13:92"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "You sound like our football coach, Dan.",
+            "dia_id": "D13:95"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan makes an aggressive threat to disarm Will.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Will reacts to Dan's aggressive tone by explicitly comparing him to their football coach.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 6,
+        "question": "How many of Will's limbs does Dan explicitly threaten to fracture if the weapon is not surrendered?",
+        "option": [
+          "A. Zero, he threatens to shoot him instead.",
+          "B. One, specifically threatening to break his arm.",
+          "C. Two, threatening to break both of his legs.",
+          "D. Three, threatening his arms and a leg.",
+          "E. Four, threatening all of his major limbs."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Now you give me that gun or I'm gonna break your goddamn arm.",
+            "dia_id": "D13:92"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan's threat is singular, targeting exactly one specific limb ('your goddamn arm').",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 1,
+        "question": "What characteristic does Edith consistently display regarding John's lifestyle choices during the furniture removal?",
+        "option": [
+          "A. She is highly critical and demands he stop the donation.",
+          "B. She is politely curious about the minimal nature of his possessions.",
+          "C. She is visibly distressed about losing a place to sit.",
+          "D. She is indifferent and completely ignores the CharityNow workers.",
+          "E. She is enthusiastic and offers to help him pack the remaining items."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I'll get more.",
+            "dia_id": "D13:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Do you always travel this light?",
+            "dia_id": "D13:10"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John confirms he is getting rid of his possessions but will replace them.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith responds to this with a direct, probing question about his habitual tendency to travel light, indicating polite curiosity.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "What is Edith's immediate cognitive state following Will's exit?",
+        "option": [
+          "A. She is focused on understanding the logistical origin of the weapon Will possessed.",
+          "B. She is terrified that Will might return and shoot them through the window.",
+          "C. She is angry at John for provoking Will into such a dangerous state.",
+          "D. She is calmly trying to explain Will's psychological breakdown to the group.",
+          "E. She is desperately trying to call the police on her cell phone."
+        ],
+        "answer": "A",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(storms off)",
+            "dia_id": "D13:102"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Where'd he get a gun?",
+            "dia_id": "D13:104"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will exits the scene, leaving the remaining characters to process the event.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith's first vocalized thought is an attempt to solve the practical mystery of how Will acquired the firearm.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "What action does Edith take directly before John announces his decision to keep the couch?",
+        "option": [
+          "A. She asks John if he always travels this light.",
+          "B. She questions where Will got the gun.",
+          "C. She rises off the couch because the worker apologizes to her.",
+          "D. She tells Will that he has gone too far with his accusations.",
+          "E. She runs out the door after John."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Edith, Dan and Sandy rise off the couch.",
+            "dia_id": "D13:37"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Gentlemen, I'm- I'm gonna keep the couch.",
+            "dia_id": "D13:38"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith, along with Dan and Sandy, physically stands up from the couch.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Immediately following this action, John stops the workers and decides to keep the couch.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "What is Edith's evaluation of Will's behavior after the confrontation ends?",
+        "option": [
+          "A. She believes it was a completely rational response to John's absurd claims.",
+          "B. She concludes that John outsmarted Will during the debate.",
+          "C. She determines that Will's actions were uncharacteristic of his normal self.",
+          "D. She assumes Will was simply making a dramatic philosophical point.",
+          "E. She thinks Will was justified because John is stealing their lives."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "He had you on the ropes, John. Are you really so damn smart?",
+            "dia_id": "D13:105"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "It's not like Will.",
+            "dia_id": "D13:106"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art comments on Will's performance during the confrontation.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith observes the entirety of Will's bizarre behavior and summarizes it as being a deviation from his typical character.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "With whom does Edith share the physical space of the couch right before the charity workers attempt to take it?",
+        "option": [
+          "A. Only with John.",
+          "B. With Dan and Sandy.",
+          "C. With Will and Harry.",
+          "D. With Art and Linda.",
+          "E. She was sitting alone in a corner chair."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Edith, Dan and Sandy rise off the couch.",
+            "dia_id": "D13:37"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The text explicitly groups Edith, Dan, and Sandy together as rising off the same piece of furniture.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 6,
+        "question": "According to the stage directions, how many total people, including Edith, physically stand up from the couch when addressed by the worker?",
+        "option": [
+          "A. One.",
+          "B. Two.",
+          "C. Three.",
+          "D. Four.",
+          "E. Five."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Edith, Dan and Sandy rise off the couch.",
+            "dia_id": "D13:37"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The stage direction lists exactly three individuals: Edith (1), Dan (2), and Sandy (3).",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 1,
+        "question": "What recurring conversational tactic does Will employ to challenge John's narrative about his extreme longevity?",
+        "option": [
+          "A. He demands physical proof such as historical documents or photographs.",
+          "B. He violently threatens John's life at every possible opportunity.",
+          "C. He attempts to induce psychological guilt by emphasizing John's survival over his loved ones.",
+          "D. He constantly interrupts John with loud, dismissive laughter to undermine his credibility.",
+          "E. He ignores John entirely and focuses only on analyzing primitive history."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Are you comfortable knowing that you have lived while everyone you knew- Everyone you knew, John!- Has died?",
+            "dia_id": "D13:30"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Have you ever felt guilt about that- Something akin to survivor's guilt?",
+            "dia_id": "D13:32"
+          },
+          {
+            "id": "E3",
+            "speaker": "Will",
+            "utterance": "Bored, perhaps lonely, because your heart cannot keep its treasures. Is that what you're doing?",
+            "dia_id": "D13:85"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will repeatedly frames John's prolonged life as a source of inescapable emotional loss.",
+            "based_on": [
+              "E1",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Will directly names and presses John to admit to 'survivor's guilt', showing a pattern of weaponizing John's supposed emotional trauma.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 2,
+        "question": "What temporary emotional shift causes Will to abandon his armed interrogation of John?",
+        "option": [
+          "A. He realizes John is telling the truth and becomes paralyzed with fear.",
+          "B. He is intimidated by Dan's physical threat and decides to back down.",
+          "C. He experiences a wave of weary resignation regarding his professional grading duties over the current conflict.",
+          "D. He suddenly remembers his wife's death and is overcome with debilitating grief.",
+          "E. He recognizes that John's healing abilities make shooting him pointless."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(putting down the gun with a sigh)",
+            "dia_id": "D13:100"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "I have papers to correct. As much as I dislike that job, it'll be preferable to this. I leave you with it.",
+            "dia_id": "D13:101"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will physically de-escalates by putting the gun down and sighing.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He states his motivation for leaving is the mundane chore of grading papers, explicitly declaring that despite disliking the task, he finds it preferable to continuing the current situation.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 3,
+        "question": "In Will's sequential escalation of accusations, what theory does he propose immediately after the suggestion that John unconsciously steals the life force of his peers?",
+        "option": [
+          "A. That John deliberately murdered his past wives to keep his secret.",
+          "B. That John is an unknowing vampire filling graveyards with his companions.",
+          "C. That John invented the entire story to cover up a criminal past.",
+          "D. That John has led a wrongful life by abandoning his children.",
+          "E. That John is secretly suffering from severe survivor's guilt."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "Perhaps you are! There have always been legends of such a thing, a creature, not quite human taking not the blood, but the life force itself?",
+            "dia_id": "D13:65"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Or are you a vampire, John? Even an unknowing one? Do you stand alive and tall in a graveyard that you helped to fill?",
+            "dia_id": "D13:82"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will first floats the idea of John taking the 'life force' of his peers.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Later in the sequence of accusations, Will graduates this theory to explicitly calling John a vampire, even an 'unknowing one'.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 4,
+        "question": "What specific physical demonstration does Will propose to test the reality of John's biological claims?",
+        "option": [
+          "A. Having John drink a lethal poison to observe his immunity.",
+          "B. Cutting John's hand with a knife to see how fast the tissue regenerates.",
+          "C. Inflicting a gunshot wound to the arm to watch the healing process.",
+          "D. Forcing John to hold his breath underwater for an extended period.",
+          "E. Exposing John to a severe infection to monitor his immune response."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "What do you think, John? A shot to the arm?",
+            "dia_id": "D13:96"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Perhaps we could watch it heal.",
+            "dia_id": "D13:97"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will suggests firing his weapon into John's arm.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The stated purpose of this violent act is strictly observational: to watch the subsequent healing process of the immortal body.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 5,
+        "question": "What familial bond serves as the unstated catalyst for Will's intense focus on the cruelty of death and loss during his interrogation?",
+        "option": [
+          "A. His relationship with his recently deceased father.",
+          "B. His impending divorce from his estranged wife.",
+          "C. His grief over the death of his wife, Mary.",
+          "D. His estrangement from his older brother.",
+          "E. His anxiety over his child's terminal illness."
+        ],
+        "answer": "C",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "...wife. Certainly you've had wives and children?",
+            "dia_id": "D13:58"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Mary passed away yesterday.",
+            "dia_id": "D13:108"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "His wife. She had, uh, pancreatic cancer.",
+            "dia_id": "D13:111"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will displays extreme emotion when questioning John specifically about wives.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "It is later explicitly confirmed by Harry that Mary was Will's wife and that she had died the day before.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 6,
+        "question": "During his final threat, how many distinct bodily locations does Will specifically suggest targeting with his weapon?",
+        "option": [
+          "A. One, just the chest.",
+          "B. Two, specifically the arm and the head.",
+          "C. Three, the arm, the leg, and the head.",
+          "D. None, he only threatens to shoot without specifying a location.",
+          "E. Four, referencing both arms and both legs."
+        ],
+        "answer": "B",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "What do you think, John? A shot to the arm?",
+            "dia_id": "D13:96"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "A bullet in the head- What exactly will happen?",
+            "dia_id": "D13:98"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will first proposes shooting John in the arm.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Will then escalates and proposes a second specific target location: the head.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      }
+    ],
+    "conversation": {
+      "speakers": [
+        "Sandy",
+        "Harry",
+        "John",
+        "Linda",
+        "Dan",
+        "Edith",
+        "Art",
+        "Will"
+      ],
+      "session_1": [
+        {
+          "type": "meta",
+          "speaker": null,
+          "dia_id": "D13:0",
+          "text": "Scene 9b: CharityNow and Death"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:1",
+          "text": "Come in."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:2",
+          "text": "CHARITYNOW GUY #1 John Oldman?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:3",
+          "text": "Yes."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:4",
+          "text": "CHARITYNOW GUY #1 CharityNow. We're here to pick up the furniture."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:5",
+          "text": "It's all yours."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:6",
+          "text": "Here, take this chair. I'm gonna go drink in the corner."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:7",
+          "text": "CharityNow guys start removing the furniture."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:8",
+          "text": "You're, uh... you're donating it? Everything?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:9",
+          "text": "I'll get more."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D13:10",
+          "text": "Do you always travel this light?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:11",
+          "text": "It's the only way to move."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:12",
+          "text": "Oh, you- You've talked a good deal about your extraordinary amount of living. What do you think of dying, John? Do you fear death?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:13",
+          "text": "Who wouldn't?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:14",
+          "text": "How did primitive man regard death?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:15",
+          "text": "Well, we had the practical concept. You know, we stopped, fell down, didn't get up, started to smell bad, come apart."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:16",
+          "text": "Injuries we could understand- If someone's insides were all over the ground."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:17",
+          "text": "Infections... They were, uh, mysterious."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:18",
+          "text": "Aging... The biggest mystery of all."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:19",
+          "text": "You realized you were different."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:20",
+          "text": "Uh, longer to realize how I was different, to find a way to synthesize my experience into a view of myself. At first, I thought everybody had something wrong with them. They got old and they died, animals, too... but not me."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:21",
+          "text": "You live simply."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:22",
+          "text": "I've owned castles, but why leave a lot if you're always leaving? I have money."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:23",
+          "text": "As one grows older, the days, weeks, months go by more quickly. What does a day or a year or a century mean to you? The birth-death cycle?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:24",
+          "text": "Turbulence. I meet someone, learn their name, say a word, they're gone. Others come like waves. Rise, fall. Ripples in a wheat field, blown by the wind."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:25",
+          "text": "Do you ever get tired of it all?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:26",
+          "text": "I get bored now and then. They keep making the same stupid mistakes over and over."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:27",
+          "text": "Hey! Then you see yourself as separate from the rest of humanity."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:28",
+          "text": "I didn't mean it that way. But of course...I am."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:29",
+          "text": "(Chuckling darkly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:30",
+          "text": "Are you comfortable knowing that you have lived while everyone you knew- Everyone you knew, John!- Has died?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:31",
+          "text": "I've regretted losing people...often."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:32",
+          "text": "Have you ever felt guilt about that- Something akin to survivor's guilt?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:33",
+          "text": "In the strict psychological sense? I suppose I have. Yeah. …But what can I do about it?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:34",
+          "text": "Indeed."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:35",
+          "text": "CHARITYNOW GUY #2 (To Edith on the couch)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:36",
+          "text": "I'm sorry, ma'am."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:37",
+          "text": "Edith, Dan and Sandy rise off the couch."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:38",
+          "text": "Gentlemen, I'm- I'm gonna keep the couch."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:39",
+          "text": "Thanks."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:40",
+          "text": "Ladies? Will?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:41",
+          "text": "Oh, no..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:42",
+          "text": "You've got a heart condition. Don't grump about it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:43",
+          "text": "(scoffs, defeatedly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:44",
+          "text": "Hey, how about changing the subject, Will?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:45",
+          "text": "Enough with the, uh- With the dying."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:46",
+          "text": "But this is the flip side of this coin, Harry."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:47",
+          "text": "I'm very curious to know his feelings. Would you prefer I asked him about his father?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:48",
+          "text": "I thought you always started with \"tell me about your mother.\""
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:49",
+          "text": "Yes, but prehistory was strongly patriarchal."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:50",
+          "text": "Surely you remember your father?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:51",
+          "text": "I seem to remember a figure, perhaps an older brother, a social father, maybe."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:52",
+          "text": "Well, no matter. I can scarcely remember mine."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:53",
+          "text": "Do you feel a vacancy in your life about that, John, something you wish could be filled by a face, a voice, an image?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:54",
+          "text": "Not at this late date."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:55",
+          "text": "There must be someone- Probably many- That you valued intensely?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:56",
+          "text": "(wearily)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:57",
+          "text": "Loved. You saw them age and die- A friend, a colleague, a- (hesitates, lump in throat)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:58",
+          "text": "...wife. Certainly you've had wives and children?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:59",
+          "text": "I'd move on. I had to move on."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:60",
+          "text": "Making him history's biggest bigamist."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:61",
+          "text": "(Chuckles softly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:62",
+          "text": "Have you ever in your life thought, \"It should have been me\"?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:63",
+          "text": "Maybe."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:64",
+          "text": "Yeah, Art has told me that some of your early fellows feared you were stealing their lives? Have you thought that perhaps you were?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:65",
+          "text": "Perhaps you are! There have always been legends of such a thing, a creature, not quite human taking not the blood, but the life force itself?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:66",
+          "text": "My god, Will."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:67",
+          "text": "(continuing)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:68",
+          "text": "...Unconsciously, perhaps, by some biological or psychic mechanism that we can only guess at? I'm not saying you would do such a thing deliberately. I'm not saying that you would even know how to..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:69",
+          "text": "...Would you?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:70",
+          "text": "...But would such a thing be fair?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:71",
+          "text": "So you believe me now?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:72",
+          "text": "I'm only exploring what you have said. Whether I believe it or not is of no importance. We will die... You will live. Will you come to my funeral, John?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:73",
+          "text": "Hey, Will..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Sandy",
+          "dia_id": "D13:74",
+          "text": "You've gone too far. John didn't ask to be what he is."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:75",
+          "text": "And we did not ask to hear about it. But if it were true, is there one among us who would not feel envy, even perhaps a touch of hatred? You told us of yourself, John. Can you imagine how we feel?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:76",
+          "text": "I never thought of that."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:77",
+          "text": "Since you may not die, while we most assuredly will... there must be a reason for that, no?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:78",
+          "text": "Perhaps you are an expert."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:79",
+          "text": "CHARITYNOW GUY #1 Uh, that's it, Mr. Oldman. Have a good one."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:80",
+          "text": "Thank you. You too."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "John",
+          "dia_id": "D13:81",
+          "text": "Music gets dark"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:82",
+          "text": "Or are you a vampire, John? Even an unknowing one? Do you stand alive and tall in a graveyard that you helped to fill?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:83",
+          "text": "That's going too far."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:84",
+          "text": "(dismissing Dan and continuing with gusto)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:85",
+          "text": "Bored, perhaps lonely, because your heart cannot keep its treasures. Is that what you're doing?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:86",
+          "text": "Have you led a wrongful life?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:87",
+          "text": "Well, then, perhaps..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:88",
+          "text": "(reaching into coat pocket)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:89",
+          "text": "…it is time to die."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:90",
+          "text": "(pulls out a gun)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:91",
+          "text": "Wait a minute, now. Look, I don't know what John is doing, but I sure as hell don't like what you're doing."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:92",
+          "text": "Now you give me that gun or I'm gonna break your goddamn arm."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:93",
+          "text": "(John reaches out an arm holding Dan back)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:94",
+          "text": "(scornfully)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:95",
+          "text": "You sound like our football coach, Dan."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:96",
+          "text": "What do you think, John? A shot to the arm?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:97",
+          "text": "Perhaps we could watch it heal."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:98",
+          "text": "A bullet in the head- What exactly will happen?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:99",
+          "text": "Dramatic pause..."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:100",
+          "text": "(putting down the gun with a sigh)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:101",
+          "text": "I have papers to correct. As much as I dislike that job, it'll be preferable to this. I leave you with it."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Will",
+          "dia_id": "D13:102",
+          "text": "(storms off)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Dan",
+          "dia_id": "D13:103",
+          "text": "Jesus Christ. What the hell was that all about?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D13:104",
+          "text": "Where'd he get a gun?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Art",
+          "dia_id": "D13:105",
+          "text": "He had you on the ropes, John. Are you really so damn smart?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Edith",
+          "dia_id": "D13:106",
+          "text": "It's not like Will."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:107",
+          "text": "(quietly)"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:108",
+          "text": "Mary passed away yesterday."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:109",
+          "text": "John glances up and dashes out of the door after Will."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Linda",
+          "dia_id": "D13:110",
+          "text": "Who?"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "Harry",
+          "dia_id": "D13:111",
+          "text": "His wife. She had, uh, pancreatic cancer."
+        }
+      ]
+    }
+  }
+]

@@ -16,6 +16,7 @@ from jinja2 import Template
 from openai import OpenAI
 from tqdm import tqdm
 
+from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
 from src.utils import normalize_dataset_records
 
 
@@ -33,14 +34,6 @@ def clean_json_response(response: str) -> str:
         cleaned = cleaned[start_idx:end_idx + 1]
 
     return cleaned.strip()
-
-
-def extract_option_letter(text: Any) -> Optional[str]:
-    """从答案文本中提取 A-F 选项字母。"""
-    if not isinstance(text, str):
-        return None
-    match = re.match(r"\s*([A-F])", text)
-    return match.group(1) if match else None
 
 
 def build_provider_config(
@@ -105,7 +98,7 @@ Do NOT include explanations, comments, or extra fields.
 
 {
     "question": "[Direct, natural, focused on the character]",
-    "answer": "C. the full option text content",
+    "answer": "(A)",
     "evidence_dialogues": [
         {
             "id": "E1",
@@ -139,14 +132,6 @@ You will receive a set of evidence fragments extracted from the original materia
 2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.
 3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).
 
-# OUTPUT
-You are required to answer in JSON format only.
-Return the answer strictly in the following structure:
-{
-    "question": "[Direct, natural, focused on the character]",
-    "answer": "Letter. Full option text",
-}
-
 --- EVIDENCE ---
 {{evidence}}
 --- END OF EVIDENCE ---
@@ -157,6 +142,22 @@ Question: {{question}}
 
 DEFAULT_LLM_MODEL = os.getenv("BASE_MODEL", "Qwen/Qwen3-14B")
 DEFAULT_BASE_URL = "https://api.siliconflow.cn/v1"
+
+
+def derive_v1_stage_paths(output_file_path: str) -> Tuple[str, str]:
+    """根据输出路径推导 v1a / v1b 路径。"""
+    base, ext = os.path.splitext(output_file_path)
+
+    if base.endswith("_v1a"):
+        prefix = base[:-4]
+    elif base.endswith("_v1b"):
+        prefix = base[:-4]
+    elif base.endswith("_v1"):
+        prefix = base[:-3]
+    else:
+        prefix = base
+
+    return f"{prefix}_v1a{ext}", f"{prefix}_v1b{ext}"
 
 
 class FullContextManager:
@@ -257,6 +258,111 @@ class FullContextManager:
 
         evidence_dia_ids = set()
         evidence_sessions_no_time = set()
+        evidence_targets: List[Dict[str, Any]] = []
+
+        def _normalize_match_text(text: Any) -> str:
+            normalized = str(text or "")
+            normalized = (
+                normalized.replace("\u2019", "'")
+                .replace("\u2018", "'")
+                .replace("\u201c", '"')
+                .replace("\u201d", '"')
+                .replace("\u2026", "...")
+            )
+            normalized = re.sub(r"\s+", " ", normalized).strip().lower()
+            return normalized
+
+        def _compact_text(text: str) -> str:
+            return re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "", text or "")
+
+        def _cleanup_remaining(text: str) -> str:
+            cleaned = re.sub(r"\s+", " ", str(text or "")).strip()
+            # 清理仅剩说话人前缀（如 "Harry:" / "John: John:"）的伪残留
+            cleaned = re.sub(r"^(?:[a-z][a-z0-9_\-']*:\s*)+", "", cleaned, flags=re.IGNORECASE).strip()
+            if not re.search(r"[a-z0-9\u4e00-\u9fff]", cleaned, flags=re.IGNORECASE):
+                return ""
+            return cleaned
+
+        def _subtract_fragment(remaining: str, fragment: str) -> str:
+            if not remaining or not fragment:
+                return remaining
+
+            remaining = _cleanup_remaining(remaining)
+            fragment = _cleanup_remaining(fragment)
+            if not remaining or not fragment:
+                return remaining
+
+            # 1) 完全一致直接删空
+            if remaining == fragment:
+                return ""
+
+            # 2) 双向包含（AB 证据、A 对话 或证据是对话的子句）
+            if fragment in remaining and len(fragment) >= 8:
+                return _cleanup_remaining(re.sub(re.escape(fragment), " ", remaining))
+            if remaining in fragment and len(remaining) >= 8:
+                return ""
+
+            # 3) 去标点后的包含匹配（处理 ... / 标点差异）
+            remaining_compact = _compact_text(remaining)
+            fragment_compact = _compact_text(fragment)
+            if remaining_compact and fragment_compact:
+                if remaining_compact == fragment_compact:
+                    return ""
+                if fragment_compact in remaining_compact and len(fragment_compact) >= 8:
+                    remaining_compact = remaining_compact.replace(fragment_compact, "")
+                    return _cleanup_remaining(remaining_compact)
+                if remaining_compact in fragment_compact and len(remaining_compact) >= 8:
+                    return ""
+
+            # 4) 高相似度兜底（处理轻微字符差异）
+            if remaining_compact and fragment_compact and min(len(remaining_compact), len(fragment_compact)) >= 20:
+                import difflib
+
+                ratio = difflib.SequenceMatcher(None, remaining_compact, fragment_compact).ratio()
+                if ratio >= 0.92:
+                    return ""
+
+            return remaining
+
+        def _is_low_information_residual(
+            remaining: str,
+            original_utterance: str,
+            matched_fragments: List[str],
+        ) -> bool:
+            remaining_clean = _cleanup_remaining(remaining)
+            if not remaining_clean:
+                return True
+
+            remaining_compact = _compact_text(remaining_clean)
+            if not remaining_compact:
+                return True
+
+            # 非常短的残留通常是噪声。
+            if len(remaining_compact) <= 5:
+                return True
+
+            original_compact = _compact_text(_normalize_match_text(original_utterance))
+            if original_compact:
+                ratio = len(remaining_compact) / max(len(original_compact), 1)
+                # 若残留只占原证据很小比例，通常是被省略号/标点切分导致的尾部噪声。
+                if len(remaining_compact) <= 12 and ratio <= 0.15:
+                    return True
+
+            # 若残留本身已包含在已命中的对话片段里，多半是文本清洗导致的伪残留。
+            for fragment in matched_fragments or []:
+                fragment_compact = _compact_text(_normalize_match_text(fragment))
+                if fragment_compact and remaining_compact in fragment_compact and len(remaining_compact) <= 24:
+                    return True
+
+            filler_tokens = {
+                "uh", "um", "hmm", "oh", "ah", "yeah", "yes", "no", "ok", "okay", "well", "hey",
+                "to", "the", "a", "an", "and", "or", "but", "i", "you", "he", "she", "it", "we", "they",
+            }
+            tokens = re.findall(r"[a-z0-9\u4e00-\u9fff]+", remaining_clean.lower())
+            if tokens and all(token in filler_tokens for token in tokens):
+                return True
+
+            return False
 
         for evidence in evidence_dialogues or []:
             if not isinstance(evidence, dict):
@@ -264,6 +370,18 @@ class FullContextManager:
 
             dia_id = evidence.get("dia_id")
             utterance = evidence.get("utterance", "")
+            utterance_norm = _normalize_match_text(utterance)
+
+            if utterance_norm:
+                evidence_targets.append(
+                    {
+                        "evidence": evidence,
+                        "utterance_norm": utterance_norm,
+                        "remaining_norm": utterance_norm,
+                        "matched_fragments": [],
+                        "dia_id": str(dia_id) if dia_id and dia_id != "N/A" else None,
+                    }
+                )
 
             if dia_id and dia_id != "N/A":
                 evidence_dia_ids.add(dia_id)
@@ -287,11 +405,73 @@ class FullContextManager:
                 if not isinstance(chat, dict):
                     filtered_chats.append(chat)
                     continue
-                if chat.get("dia_id") in evidence_dia_ids:
+
+                chat_text_norm = _normalize_match_text(chat.get("text", ""))
+                chat_text_raw = str(chat.get("text", "")).strip()
+                match_by_dia = chat.get("dia_id") in evidence_dia_ids
+                match_by_text = False
+                chat_dia_id = str(chat.get("dia_id")) if chat.get("dia_id") else None
+
+                # 若按 dia_id 删除，也同步扣减对应证据剩余文本，避免“已删对话但残留仍显示完整”
+                if match_by_dia and chat_text_norm and chat_dia_id:
+                    for target in evidence_targets:
+                        if target.get("dia_id") != chat_dia_id:
+                            continue
+                        before_remaining = str(target.get("remaining_norm", ""))
+                        after_remaining = _subtract_fragment(before_remaining, chat_text_norm)
+                        if after_remaining != before_remaining:
+                            target["remaining_norm"] = after_remaining
+                            if chat_text_raw:
+                                target["matched_fragments"].append(chat_text_raw)
+
+                if chat_text_norm:
+                    for target in evidence_targets:
+                        before_remaining = str(target.get("remaining_norm", ""))
+                        after_remaining = _subtract_fragment(before_remaining, chat_text_norm)
+                        if after_remaining != before_remaining:
+                            match_by_text = True
+                            target["remaining_norm"] = after_remaining
+                            if chat_text_raw:
+                                target["matched_fragments"].append(chat_text_raw)
+
+                if match_by_dia or match_by_text:
                     continue
                 filtered_chats.append(chat)
 
             conv[key] = filtered_chats
+
+        remaining_evidence_fragments = []
+        for target in evidence_targets:
+            remaining_norm = _cleanup_remaining(str(target.get("remaining_norm", "")))
+            if not remaining_norm:
+                continue
+            evidence_obj = target.get("evidence", {}) if isinstance(target.get("evidence"), dict) else {}
+            matched_fragments = target.get("matched_fragments", [])
+            if not isinstance(matched_fragments, list):
+                matched_fragments = []
+
+            if _is_low_information_residual(
+                remaining=remaining_norm,
+                original_utterance=str(evidence_obj.get("utterance", "")),
+                matched_fragments=matched_fragments,
+            ):
+                continue
+
+            remaining_evidence_fragments.append(
+                {
+                    "evidence_id": evidence_obj.get("id", ""),
+                    "original_utterance": evidence_obj.get("utterance", ""),
+                    "remaining_after_deletion": remaining_norm,
+                    "matched_dialogue_fragments": matched_fragments,
+                }
+            )
+
+        if remaining_evidence_fragments:
+            self.logger.warning(
+                "以下证据文本未能完全从对话中删除，残留片段如下（共 %d 条）:\n%s",
+                len(remaining_evidence_fragments),
+                json.dumps(remaining_evidence_fragments, ensure_ascii=False, indent=2),
+            )
 
         return conv
 
@@ -419,6 +599,27 @@ class FullContextManager:
         self.logger.error("JSON parse failed after %d retries", max_json_retries)
         return {}, last_response, total_response_time, last_prompt, max_context_exceeded
 
+    def _request_text_answer(
+        self,
+        conversation_item: Dict[str, Any],
+        question: str,
+        evidence_blocks: List[Dict[str, Any]],
+        only_evidence: int,
+        except_evidence: int,
+        evidence_dialogues: List[Dict[str, Any]],
+    ) -> Tuple[str, float, str, int]:
+        """获取自由格式文本响应，不做 JSON 解析。"""
+        prompt = self._build_prompt(
+            conversation_item=conversation_item,
+            question=question,
+            evidence_blocks=evidence_blocks,
+            only_evidence=only_evidence,
+            except_evidence=except_evidence,
+            evidence_dialogues=evidence_dialogues,
+        )
+        response, response_time, max_context_exceeded = self._call_llm(prompt)
+        return response, response_time, prompt, max_context_exceeded
+
     def _get_evidence_blocks(
         self,
         question_item: Dict[str, Any],
@@ -442,9 +643,9 @@ class FullContextManager:
         """兼容保留：排除证据模式下的迭代记录。"""
         iterative_records: List[Dict[str, Any]] = []
         remaining_evidence = list(base_evidence_dialogues)
-        standard_option = extract_option_letter(answer)
+        answer_candidates = normalize_answer_candidates(None, answer)
 
-        for round_id in range(1, 6):
+        for round_id in range(1, 4):
             data, _, _, _, _ = self._request_json_answer(
                 conversation_item=conversation_item,
                 question=question,
@@ -458,8 +659,8 @@ class FullContextManager:
             if not data:
                 break
 
-            response_option = extract_option_letter(data.get("answer", ""))
-            is_right = bool(standard_option and response_option == standard_option)
+            score_result = score_mcq_prediction(data.get("answer", ""), answer_candidates)
+            is_right = bool(score_result.get("is_correct", False))
             used_evidence = data.get("evidence_dialogues", [])
 
             iterative_records.append(
@@ -492,22 +693,33 @@ class FullContextManager:
     ) -> Dict[str, Any]:
         question = question_item.get("question", "")
         answer = question_item.get("answer", "")
-        answer_option = extract_option_letter(answer)
+        answer_candidates = normalize_answer_candidates(question_item.get("answer_fixed"), answer)
 
         evidence_blocks, evidence_dialogues = self._get_evidence_blocks(question_item)
 
-        data, response, response_time, answer_prompt, max_context_flag = self._request_json_answer(
-            conversation_item=conversation_item.get("conversation", {}),
-            question=question,
-            evidence_blocks=evidence_blocks,
-            only_evidence=only_evidence,
-            except_evidence=except_evidence,
-            evidence_dialogues=evidence_dialogues,
-            max_json_retries=10,
-        )
+        data: Dict[str, Any] = {}
+        if only_evidence == 1:
+            response, response_time, answer_prompt, max_context_flag = self._request_text_answer(
+                conversation_item=conversation_item.get("conversation", {}),
+                question=question,
+                evidence_blocks=evidence_blocks,
+                only_evidence=only_evidence,
+                except_evidence=except_evidence,
+                evidence_dialogues=evidence_dialogues,
+            )
+        else:
+            data, response, response_time, answer_prompt, max_context_flag = self._request_json_answer(
+                conversation_item=conversation_item.get("conversation", {}),
+                question=question,
+                evidence_blocks=evidence_blocks,
+                only_evidence=only_evidence,
+                except_evidence=except_evidence,
+                evidence_dialogues=evidence_dialogues,
+                max_json_retries=10,
+            )
 
-        response_option = extract_option_letter(data.get("answer", "")) if data else extract_option_letter(response)
-        check_result = "right" if (answer_option and response_option == answer_option) else "maybe_wrong"
+        score_result = score_mcq_prediction(response, answer_candidates)
+        check_result = "right" if score_result.get("is_correct", False) else "maybe_wrong"
 
         result = copy.deepcopy(question_item)
         context_data = {
@@ -516,6 +728,9 @@ class FullContextManager:
             "answer_prompt": answer_prompt,
             "response_time": response_time,
             "max_context_exceeded": max_context_flag,
+            "prediction_malformed": score_result.get("prediction_malformed", False),
+            "predicted_options": score_result.get("predicted_options", []),
+            "ground_truth_options": score_result.get("ground_truth_options", []),
         }
 
         if only_evidence == 1:
@@ -619,10 +834,15 @@ def evidence_check_main(
     """
     步骤 1: 题目合理性检测。
 
-    默认模式会执行 v1 的 only_evidence 检测。
+    默认模式会执行两阶段检测：v1a(only_evidence) -> v1b(iterative ablation)。
     """
     default_mode = only_evidence == 0 and except_evidence == 0
-    mode_desc = "只使用证据" if (only_evidence == 1 or default_mode) else "排除证据"
+    if default_mode:
+        mode_desc = "两阶段筛选（v1a -> v1b）"
+    elif only_evidence == 1:
+        mode_desc = "只使用证据"
+    else:
+        mode_desc = "排除证据"
 
     print("\n" + "=" * 60)
     print(f"🔄 题目合理性检测 - {mode_desc}")
@@ -639,21 +859,43 @@ def evidence_check_main(
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
 
-    manager = FullContextManager(
-        output_path=output_file_path,
-        llm_config=answer_llm_config,
-        figure_view=False,
-    )
-
     if default_mode:
-        print("\n📝 执行合理性检测 (v1)")
-        kept_count = manager.process_data_file(
+        v1a_path, v1b_path = derive_v1_stage_paths(output_file_path)
+
+        print("\n📝 第一阶段：只使用证据 (v1a)")
+        manager_v1a = FullContextManager(
+            output_path=v1a_path,
+            llm_config=answer_llm_config,
+            figure_view=False,
+        )
+        kept_count_v1a = manager_v1a.process_data_file(
             file_path=input_file_path,
             only_evidence=1,
             except_evidence=0,
             max_workers=args.max_workers,
         )
-        return output_file_path, kept_count
+
+        print("\n📝 第二阶段：迭代删除证据 (v1b)")
+        manager_v1b = FullContextManager(
+            output_path=v1b_path,
+            llm_config=answer_llm_config,
+            figure_view=False,
+        )
+        kept_count_v1b = manager_v1b.process_data_file(
+            file_path=v1a_path,
+            only_evidence=0,
+            except_evidence=1,
+            max_workers=args.max_workers,
+        )
+
+        print(f" 验证统计：v1a {kept_count_v1a} -> v1b {kept_count_v1b}")
+        return v1b_path, kept_count_v1b
+
+    manager = FullContextManager(
+        output_path=output_file_path,
+        llm_config=answer_llm_config,
+        figure_view=False,
+    )
 
     kept_count = manager.process_data_file(
         file_path=input_file_path,

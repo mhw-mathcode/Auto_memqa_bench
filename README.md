@@ -40,11 +40,13 @@ python main.py --run An-Enemy-of-the-People --config my_config.json
 
 **步骤配置（steps）**
 - step_0_generate_qa: 生成原始问答对
-- step_1_evidence_context: 题目合理性检测 (v0 → v1)
-- step_2_label: 题目标注 (v1 → v2)
+- step_1_evidence_check: 题目合理性检测 (v0 → v1a → v1b)
+- step_2_label: 题目标注 (v1b → v2)
 - step_3_new_qa: 问答精炼重构 (v2 → v3)
 - step_4_pollution_check: 题目乱序 (v3 → v4)
 - step_5_finalize: 生成最终版本 (v4 → final)
+
+说明：步骤 1 会生成两个过程文件（v1a 与 v1b），步骤 2 默认以 v1b 作为输入。
 
 **工具配置（tools）**
 - option_perturbation: 选项扰动生成与评分

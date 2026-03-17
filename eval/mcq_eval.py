@@ -1,7 +1,6 @@
 import argparse
 import json
 import logging
-import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -15,6 +14,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from full_context import FullContextRunner, resolve_output_path
+from src import mcq_scoring
 from src.utils import normalize_dataset_records
 
 
@@ -33,116 +33,34 @@ def _sort_key(value: Any) -> Tuple[int, Any]:
 
 
 def _normalize_answer_candidates(raw_candidates: Any, fallback: Any) -> List[str]:
-    candidates: List[str] = []
-    if isinstance(raw_candidates, list):
-        candidates.extend(str(candidate) for candidate in raw_candidates if candidate not in (None, ""))
-    elif raw_candidates not in (None, ""):
-        candidates.append(str(raw_candidates))
-
-    if not candidates and fallback not in (None, ""):
-        candidates.append(str(fallback))
-
-    if not candidates:
-        candidates.append("")
-    return candidates
+    return mcq_scoring.normalize_answer_candidates(raw_candidates, fallback)
 
 
 def _strip_prediction_text(text: Any) -> str:
-    cleaned = str(text or "").strip()
-    if "</think>" in cleaned:
-        cleaned = cleaned.split("</think>", 1)[1].strip()
-    if "Final Answer:" in cleaned:
-        cleaned = cleaned.split("Final Answer:", 1)[1].strip()
-
-    try:
-        parsed_json = json.loads(cleaned)
-    except json.JSONDecodeError:
-        return cleaned
-
-    if isinstance(parsed_json, dict):
-        for key in ("answer", "final_answer", "response"):
-            value = parsed_json.get(key)
-            if isinstance(value, str) and value.strip():
-                return value.strip()
-
-    return cleaned
+    return mcq_scoring.strip_prediction_text(text)
 
 
 def _parse_mcq_pred_answers(text: Any) -> Tuple[Set[str], bool]:
-    raw = _strip_prediction_text(text)
-    if not raw:
-        return set(), False
-
-    compact = raw.strip()
-    if re.fullmatch(r"[A-Fa-f]{1,5}", compact):
-        return {char.upper() for char in compact}, False
-
-    if re.fullmatch(r"[\[(]?\s*[A-Fa-f]\s*[\])]?", compact):
-        letter = re.search(r"([A-Fa-f])", compact)
-        return ({letter.group(1).upper()} if letter else set()), False
-
-    if re.search(r"\([A-Fa-f]\)\([A-Fa-f]\)", compact) or re.search(r"\[[A-Fa-f]\]\[[A-Fa-f]\]", compact):
-        return set(), True
-
-    leading_letter = re.match(r"^(?:option\s*)?([A-Fa-f])(?:[\s\)\]\.:,-]|$)", compact, flags=re.IGNORECASE)
-    if leading_letter:
-        return {leading_letter.group(1).upper()}, False
-
-    phrase_letter = re.search(
-        r"(?:answer|final answer|correct answer|choose|pick|option)\s*(?:is|:)?\s*[\[(]?([A-Fa-f])[\])]?",
-        compact,
-        flags=re.IGNORECASE,
-    )
-    if phrase_letter:
-        return {phrase_letter.group(1).upper()}, False
-
-    token_re = re.compile(r"\(([A-Fa-f])\)|\[([A-Fa-f])\]|(?:option\s+)([A-Fa-f])\b", flags=re.IGNORECASE)
-    options: Set[str] = set()
-    for match in token_re.finditer(compact):
-        letter = next(group for group in match.groups() if group)
-        options.add(letter.upper())
-
-    return options, False
+    return mcq_scoring.parse_mcq_pred_answers(text)
 
 
 def _parse_mcq_gt_answers(text: Any) -> Set[str]:
-    raw = str(text or "").strip()
-    if not raw:
-        return set()
-
-    leading_letter = re.match(r"^([A-Fa-f])(?:[\s\)\]\.:,-]|$)", raw, flags=re.IGNORECASE)
-    if leading_letter:
-        return {leading_letter.group(1).upper()}
-
-    extracted, _ = _parse_mcq_pred_answers(raw)
-    return extracted
+    return mcq_scoring.parse_mcq_gt_answers(text)
 
 
 def _score_mcq_result(raw_result: Dict[str, Any]) -> Dict[str, Any]:
     answer_candidates = _normalize_answer_candidates(raw_result.get("answer_fixed"), raw_result.get("answer"))
-    pred_options, pred_malformed = _parse_mcq_pred_answers(raw_result.get("response", ""))
-
-    matched_answer = ""
-    matched_gt_options: Set[str] = set()
-    candidate_gt_options: List[List[str]] = []
-
-    for candidate in answer_candidates:
-        gt_options = _parse_mcq_gt_answers(candidate)
-        if gt_options:
-            candidate_gt_options.append(sorted(gt_options))
-        if not pred_malformed and pred_options == gt_options and gt_options:
-            matched_answer = str(candidate)
-            matched_gt_options = gt_options
-            break
+    score_result = mcq_scoring.score_mcq_prediction(raw_result.get("response", ""), answer_candidates)
 
     scored_result = dict(raw_result)
-    scored_result["mcq_score"] = 1.0 if matched_answer else 0.0
-    scored_result["prediction_malformed"] = pred_malformed
-    scored_result["predicted_options"] = sorted(pred_options)
-    scored_result["ground_truth_options"] = candidate_gt_options
-    if matched_answer:
-        scored_result["matched_answer"] = matched_answer
-        scored_result["matched_ground_truth"] = sorted(matched_gt_options)
+    scored_result["mcq_score"] = score_result.get("score", 0.0)
+    scored_result["prediction_malformed"] = score_result.get("prediction_malformed", False)
+    scored_result["predicted_options"] = score_result.get("predicted_options", [])
+    scored_result["ground_truth_options"] = score_result.get("ground_truth_options", [])
+    if score_result.get("matched_answer"):
+        scored_result["matched_answer"] = score_result.get("matched_answer")
+    if score_result.get("matched_ground_truth"):
+        scored_result["matched_ground_truth"] = score_result.get("matched_ground_truth")
 
     return scored_result
 
@@ -301,4 +219,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# python mcq_eval.py --run_full_context --input_file ../result/12_Angry_Men_final.json --max_workers 2 --model Qwen/Qwen3-14B --base_url https://api.siliconflow.cn/v1 --api_key 你的APIKey
+# python mcq_eval.py --run_full_context --input_file ../result/12_Angry_Men_final.json --max_workers 2 --model qwen3-14b --base_url https://api.vveai.com/v1 --api_key 你的APIKey

@@ -1,6 +1,7 @@
 import json
 import time
 import os
+import re
 from openai import OpenAI
 import random
 
@@ -9,47 +10,96 @@ DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
 DEFAULT_MODEL = os.getenv("LABEL_MODEL", "qwen3-14b")
 
 LABELS = [
-    "事实提取（单对话）",
-    "事实提取（多对话）",
-    "记忆更新（失效的记忆，更新的记忆）",
-    "多跳",
-    "弃权"
+    "Fact Extraction (Single Dialogue)",
+    "Fact Extraction (Multiple Dialogues)",
+    "Memory Update",
+    "Multi-hop",
 ]
 
 PROMPT_TEMPLATE = """
-你是一个问题类型标注器，不需要回答问题内容。
+You are a strict question type classifier and do not need to answer the question content.
 
-给定：
-1. 一段对话（conversation）
-2. 一个问题（question）
+Given:
+1. A conversation
+2. A question
+3. A reference answer
 
-请判断：回答这个问题需要哪一种认知类型。
+Please determine which cognitive ability is required to answer the question.
 
-【可选标签（只能选一个，原样输出，不要解释）】
-- 事实提取（单对话）
-- 事实提取（多对话）
-- 记忆更新（失效的记忆，更新的记忆）
-- 多跳
+[Allowed labels (choose exactly one, copy exactly)]
+Fact Extraction (Single Dialogue)
+Fact Extraction (Multiple Dialogues)
+Memory Update
+Multi-hop
 
-【判定标准】
-- 单一场景、单一对话即可回答 → 事实提取（单对话）
-- 需要整合多段对话中的事实 → 事实提取（多对话）
-- 涉及错误记忆被纠正、后来才发现真相 → 记忆更新（失效的记忆，更新的记忆）
-- 需要总结人物性格、动机、价值观、长期一致性 → 多跳
+[Critical output constraints]
+- Output MUST be exactly one label from the allowed list above.
+- Do NOT output explanations, punctuation, extra words, or multiple lines.
+- If uncertain, still output the single most appropriate label from the allowed list.
 
-【对话】
+【Judgment Criteria】
+- If the answer can be provided based on a single scene and a single dialogue → Fact Extraction (Single Dialogue)
+- If it is necessary to integrate facts from multiple dialogues → Fact Extraction (Multiple Dialogues)
+- If it involves the correction of false memories and the discovery of the truth later → Memory Update
+- If it is necessary to summarize the character's personality, motives, values, and long-term consistency → Multi-hop
+
+【Dialogue】 
 {conversation}
 
-【问题】
+【Question】 
 {question}
 
-请直接输出标签：
+【Reference Answer】
+{answer}
+
+Output exactly one label:
 """
 
-def classify_question(conversation, question, client, model):
+
+def _normalize_label(raw_label: str):
+    """将模型输出归一化到四个合法标签之一。"""
+    if not raw_label:
+        return None
+
+    first_line = next((line.strip() for line in raw_label.splitlines() if line.strip()), "")
+    cleaned = first_line.strip().strip("`\"'").lstrip("-*•").strip()
+    if cleaned in LABELS:
+        return cleaned
+
+    alias_map = {
+        "fact extraction (single dialogue)": "Fact Extraction (Single Dialogue)",
+        "fact extraction (single dialogues)": "Fact Extraction (Single Dialogue)",
+        "fact extraction (single conversation)": "Fact Extraction (Single Dialogue)",
+        "fact extraction (multiple dialogue)": "Fact Extraction (Multiple Dialogues)",
+        "fact extraction (multiple dialogues)": "Fact Extraction (Multiple Dialogues)",
+        "fact extraction (multiple conversations)": "Fact Extraction (Multiple Dialogues)",
+        "memory update": "Memory Update",
+        "multi hop": "Multi-hop",
+        "multi-hop": "Multi-hop",
+        "multihop": "Multi-hop",
+    }
+
+    normalized_key = re.sub(r"\s+", " ", cleaned.lower()).strip()
+    if normalized_key in alias_map:
+        return alias_map[normalized_key]
+
+    if "memory" in normalized_key:
+        return "Memory Update"
+    if "multi" in normalized_key and "hop" in normalized_key:
+        return "Multi-hop"
+    if "fact" in normalized_key and "single" in normalized_key:
+        return "Fact Extraction (Single Dialogue)"
+    if "fact" in normalized_key and "multiple" in normalized_key:
+        return "Fact Extraction (Multiple Dialogues)"
+
+    return None
+
+
+def classify_question(conversation, question, answer, client, model):
     prompt = PROMPT_TEMPLATE.format(
         conversation=conversation,
-        question=question
+        question=question,
+        answer=answer,
     )
 
     messages = [
@@ -63,6 +113,7 @@ def classify_question(conversation, question, client, model):
                 model=model,
                 messages=messages,
                 temperature=0.0,
+                max_tokens=32,
                 extra_body={"enable_thinking": False},
             )
 
@@ -73,8 +124,12 @@ def classify_question(conversation, question, client, model):
                 and resp.choices[0].message
                 and resp.choices[0].message.content
             ):
-                label = resp.choices[0].message.content.strip()
-                return label
+                raw_label = resp.choices[0].message.content.strip()
+                normalized_label = _normalize_label(raw_label)
+                if normalized_label:
+                    return normalized_label
+
+                raise ValueError(f"Invalid label output: {raw_label}")
 
             raise ValueError("Empty response")
 
@@ -93,7 +148,7 @@ def label_main(input_file_path: str, output_file_path: str,
     步骤 2: 题目标注
     
     Args:
-        input_file_path: 输入文件路径（v1版本）
+        input_file_path: 输入文件路径（v1b 版本）
         output_file_path: 输出文件路径（v2版本）
         api_key: API密钥
         base_url: API基础URL
@@ -136,18 +191,20 @@ def label_main(input_file_path: str, output_file_path: str,
         # 为每个问题添加标签
         labeled_questions = []
         for q in questions:
-            # 筛选逻辑：检查 iterative_evidence_ablation 中是否有 round=5 且 result="right"
+            # 筛选逻辑：
+            # 1) only_evidence_check.result 必须为 right
+            # 2) 若 iterative_evidence_ablation 第 3 轮仍非 wrong，则跳过
             should_skip = False
 
-            only_evidence_check = q.get("only_evidence_check", "")
-            result = only_evidence_check.get("result", "")
-            if (result != "right"):
+            only_evidence_check = q.get("only_evidence_check", {})
+            only_result = only_evidence_check.get("result", "") if isinstance(only_evidence_check, dict) else ""
+            if only_result != "right":
                 should_skip = True
 
             iterative_ablation = q.get("iterative_evidence_ablation", [])
-            if iterative_ablation:
+            if isinstance(iterative_ablation, list):
                 for record in iterative_ablation:
-                    if record.get("round") == 5 and record.get("result") == "right":
+                    if record.get("round") == 3 and record.get("result") != "wrong":
                         should_skip = True
                         break
                     
@@ -158,9 +215,10 @@ def label_main(input_file_path: str, output_file_path: str,
             else:
                 # 正常标注
                 question_text = q.get("question", "")
+                answer_text = q.get("answer", "")
                 print(f"正在标注: {question_text[:50]}...")
                 
-                label = classify_question(conversation, question_text, client, model_name)
+                label = classify_question(conversation, question_text, answer_text, client, model_name)
                 q["label"] = label
                 labeled_questions.append(q)
                 

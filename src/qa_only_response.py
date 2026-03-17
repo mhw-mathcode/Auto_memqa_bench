@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from tqdm import tqdm
 
+from src.mcq_scoring import strip_prediction_text
 from src.utils import compute_dataset_stats, stream_normalized_dataset
 
 load_dotenv()
@@ -22,83 +23,14 @@ DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.siliconflow.cn/v1")
 DEFAULT_API_KEY = os.getenv("OPENAI_API_KEY")
 
 ANSWER_PROMPT_QA_ONLY = """
-You are an intelligent memory assistant tasked with retrieving accurate information from conversation memories.
-
-# CONTEXT:
-You have access to memories from multiple speakers in a conversation. These memories contain timestamped information that may be relevant to answering the question. You also have access to knowledge graph relations for each user, showing connections between entities, concepts, and events relevant to that user.
+You are an expert knowledge retrieval and logical deduction system tasked with testing the limits of your internal parametric memory and analytical reasoning.
 
 # INSTRUCTIONS:
-1. Carefully analyze all provided memories from all speakers
-2. Pay special attention to the timestamps to determine the answer
-3. If the question asks about a specific event or fact, look for direct evidence in the memories
-4. If the memories contain contradictory information, prioritize the most recent memory
-5. If there is a question about time references (like "last year", "two months ago", etc.), calculate the actual date based on the memory timestamp. For example, if a memory from 4 May 2022 mentions "went to India last year," then the trip occurred in 2021.
-6. Always convert relative time references to specific dates, months, or years. For example, convert "last year" to "2022" or "two months ago" to "March 2023" based on the memory timestamp. Ignore the reference while answering the question.
-7. Focus only on the content of the memories from all speakers. Do not confuse character names mentioned in memories with the actual users who created those memories.
-8. The answer should be less than 5-6 words.
-9. Use the knowledge graph relations to understand the user's knowledge network and identify important relationships between entities in the user's world.
-
-# APPROACH (Think step by step):
-1. First, examine all memories that contain information related to the question
-2. Examine the timestamps and content of these memories carefully
-3. Look for explicit mentions of dates, times, locations, or events that answer the question
-4. If the answer requires calculation (e.g., converting relative time references), show your work
-5. Analyze the knowledge graph relations to understand the user's knowledge context
-6. Formulate a precise, concise answer based solely on the evidence in the memories
-7. Double-check that your answer directly addresses the question asked
-8. Ensure your final answer is specific and avoids vague time references
-
-# OUTPUT
-You are required to answer in JSON format only.
-Return the answer strictly in the following structure:
-
-{
-    "option": "",
-    "option_w_content": ""
-}
-
-# Rules you must follow:
-1. The value of "option" must be exactly one single uppercase letter from this set only: A, B, C, D, E, F
-2. The value of "option_w_content" must contain: the option letter + a dot + a space + the full option text content (for example: "C. Deep learning is a type of machine learning")
-3. Do NOT output anything except the JSON. No explanations, No extra text, No markdown, No comments
-
-Question: {{question}}
-"""
-
-ANSWER_PROMPT_QA_ONLY_V1 = """
-# ROLE:
-You are a High-Precision Logic and Universal Knowledge Engine. Your objective is to solve complex multiple-choice questions by synthesizing linguistic nuances, world facts, and logical consistency without relying on external data.
-
-# CORE REASONING PRINCIPLES:
-1. **Semantic Deconstruction**: Break down the question into its core intent, identifying hidden assumptions and key constraints.
-2. **Internal Fact-Mapping**: Search your vast internal database for historical, scientific, cultural, and logical truths related to the query.
-3. **Plausibility Assessment**: For each option, simulate a "world state" where it is true. If that state violates common sense or physical laws, discard it.
-4. **Linguistic Cues**: Analyze the wording of options. Extreme qualifiers (e.g., "always", "never", "only") often indicate incorrect answers, while nuanced language often points to the truth.
-5. **Relational Logic**: Compare options against each other. If two options are mutually exclusive, the answer is likely one of them. If two options imply each other, both may be incorrect.
-
-# EXECUTION STEPS (Chain of Thought):
-1. **Targeting**: Precisely define what the question is asking for (e.g., a date, a cause, a location, or a concept).
-2. **Context Recovery**: Reconstruct the most likely context or "missing memory" based on the entities mentioned in the question using general knowledge.
-3. **Option Filtering**: 
-    - Eliminate options that are factually impossible.
-    - Eliminate options that are logically inconsistent with the question's premise.
-4. **Probabilistic Selection**: From the remaining candidates, select the option with the highest statistical probability of being correct in a real-world scenario.
-5. **Conciseness Check**: Ensure the final answer content is distilled to its most essential 5-6 words.
-
-# OUTPUT PROTOCOL:
-- You must respond ONLY with a JSON object.
-- No preamble, no postscript, no explanation.
-- Adhere strictly to the A-F option range.
-
-{
-    "option": "[Letter]",
-    "option_w_content": "[Letter]. [Brief Content]"
-}
-
-# CONSTRAINTS:
-- The content in "option_w_content" must be a direct answer, not a sentence explaining why.
-- If the question contains relative time, use 2026 as the "Current Year" for reference if needed.
-- Trust your internal logic above all else.
+1. Answer the provided choice question using ONLY your pre-trained world knowledge, common sense, and logical deduction. Do not expect any external context or memory banks to be provided.
+2. You MUST select the single most likely correct option. Under no circumstances should you refuse to answer, state that there is insufficient context, or choose/output "F" (Insufficient evidence/Refusal).
+3. **Evaluate Option Plausibility:** Carefully analyze the provided options. Eliminate options that are logically absurd, contradict common sense, or feel out of place for natural human dialogue/behavior. Select the option that makes the most logical or real-world sense, even if you do not know the exact source material.
+4. If the question contains specific character names or recognizable scenarios, leverage your broad knowledge of popular culture and human interaction to deduce the most likely answer.
+5. The final answer must be strictly the selected option letter or the exact text of the chosen option (under 5-6 words).
 
 Question: {{question}}
 """
@@ -290,28 +222,15 @@ class QAOnlyRunner:
         category = val.get("category", -1)
         evidence = val.get("evidence", [])
 
-        MAX_RETRY = 5 
-        for _ in range(MAX_RETRY):
-            response, response_time, pollution_check_prompt = self.answer_question(question)
-            try:
-                # 检查是不是合法 JSON
-                data = json.loads(response)
-                # 若必须包含字段，也可以继续判断
-                if "option" in data and "option_w_content" in data:
-                    option = data.get("option")
-                    option_w_content = data.get("option_w_content")
-
-            except json.JSONDecodeError:
-                # 不是 JSON，继续重试
-                pass
+        response, response_time, pollution_check_prompt = self.answer_question(question)
+        response_option = strip_prediction_text(response)
 
         result = {
             "question": question,
             "answer": answer,
             "category": category,
             "evidence": evidence,
-            "response_option": option,
-            "response_option_w_content": option_w_content,
+            "response": response_option,
             "response_time": response_time,
             "pollution_check_prompt": pollution_check_prompt,
         }

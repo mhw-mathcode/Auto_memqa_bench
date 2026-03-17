@@ -6,8 +6,8 @@ Personal Memory Dataset 处理流水线主入口
 
 流程说明:
   步骤 0: v0 生成原始问答对
-  步骤 1: v0 → v1 题目合理性检测
-  步骤 2: v1 → v2 题目标注
+    步骤 1: v0 → v1a → v1b 题目合理性检测
+    步骤 2: v1b → v2 题目标注
   步骤 3: v2 → v3 new_qa (问答精炼重构)
   步骤 4: v3 → v4 题目乱序 (污染检查)
   步骤 5: v4 → final 生成最终版本
@@ -61,8 +61,8 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     print("="*60)
     print("\n流程说明:")
     print("  步骤 0: v0 生成原始问答对")
-    print("  步骤 1: v0 → v1 题目合理性检测")
-    print("  步骤 2: v1 → v2 题目标注")
+    print("  步骤 1: v0 → v1a → v1b 题目合理性检测")
+    print("  步骤 2: v1b → v2 题目标注")
     print("  步骤 3: v2 → v3 new_qa (问答精炼重构)")
     print("  步骤 4: v3 → v4 题目乱序 (污染检查)")
     print("  步骤 5: v4 → final 生成最终版本")
@@ -89,13 +89,16 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     
     # 构建文件路径（新流程）
     # v0: 原始问答对（步骤 0）
-    # v1: 题目合理性检测（步骤 1: evidence_check）
-    # v2: 题目标注（步骤 2: label）
+    # v1a: 只使用证据检查（步骤 1a）
+    # v1b: 迭代删除证据检查（步骤 1b）
+    # v2: 题目标注（步骤 2，输入 v1b）
     # v3: new_qa（步骤 3: new_qa）
     # v4: 题目乱序（步骤 4: pollution_check）
     # final: 最终版本（步骤 5）
     v0_path = os.path.join(temp_dir, f"{dataset_name}_v0.json")
-    v1_path = os.path.join(temp_dir, f"{dataset_name}_v1.json")  # 合理性检测
+    v1a_path = os.path.join(temp_dir, f"{dataset_name}_v1a.json")  # 合理性检测阶段A
+    v1b_path = os.path.join(temp_dir, f"{dataset_name}_v1b.json")  # 合理性检测阶段B
+    legacy_v1_path = os.path.join(temp_dir, f"{dataset_name}_v1.json")  # 兼容旧版
     v2_path = os.path.join(temp_dir, f"{dataset_name}_v2.json")  # 题目标注
     v3_path = os.path.join(temp_dir, f"{dataset_name}_v3.json")  # new_qa
     v4_path = os.path.join(temp_dir, f"{dataset_name}_v4.json")  # 题目乱序
@@ -108,7 +111,18 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         from src.qa_generate import generate_v0
         
         step0_llm = config_loader.get_step_llm("step_0_generate_qa")
-        v0_path = generate_v0(dataset_name, input_dir, v0_path, step0_llm)
+        step0_force_generate_new_qa = config_loader.get_step_flag(
+            "step_0_generate_qa",
+            "force_generate_new_qa",
+            False,
+        )
+        v0_path = generate_v0(
+            dataset_name,
+            input_dir,
+            v0_path,
+            step0_llm,
+            force_generate_new_qa=bool(step0_force_generate_new_qa),
+        )
         if not v0_path:
             return
         step_times['步骤 0: 生成原始问答对'] = time.time() - step_start
@@ -167,9 +181,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
             max_workers=pipeline_cfg.get('max_workers', 4)
         )
         
-        output_path, kept = evidence_check_main(args, v0_path, v1_path)
-        # 更新 v2 的输入路径：使用步骤 1 的输出（v1）
-        v2_path = output_path.replace("_v1.json", "_v2.json")
+        output_path, kept = evidence_check_main(args, v0_path, v1b_path)
         step_times['步骤 1: 题目合理性检测'] = time.time() - step_start
         print(f"✓ 步骤 1 完成: {output_path}，耗时: {step_times['步骤 1: 题目合理性检测']:.2f} 秒")
     
@@ -179,8 +191,13 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         print("\n[步骤 2] 题目标注...")
         from src.label import label_main
         
-        # 步骤 2 的输入是步骤 1 的输出
-        step1_output_path = output_path if 'output_path' in locals() else v1_path
+        # 步骤 2 的输入是步骤 1 的输出（优先 v1b，兼容 legacy v1）
+        if 'output_path' in locals():
+            step1_output_path = output_path
+        elif os.path.exists(v1b_path):
+            step1_output_path = v1b_path
+        else:
+            step1_output_path = legacy_v1_path
         
         if not os.path.exists(step1_output_path):
             print(f"❌ 错误: 输入文件不存在 {step1_output_path}")
@@ -223,7 +240,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     # 步骤 4: 题目乱序 (污染检查)
     if start_step <= 4 <= end_step:
         step_start = time.time()
-        print("\n[步骤 4] 题目乱序 (污染检查)...")
+        print("\n[步骤 4] 题目乱序 (污染性检查)...")
         from src.pollution_check import pollution_check_main
         from argparse import Namespace
 
@@ -254,20 +271,44 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
             enable_contamination_check=enable_contamination_check,
             cleanup_temp_files=cleanup_temp_files
         )
-        step_times['步骤 4: 题目乱序'] = time.time() - step_start
+        step_times['步骤 4: 题目乱序 (污染性检查)'] = time.time() - step_start
         print(f"✓ 步骤 4 完成: {v4_path}，耗时: {step_times['步骤 4: 题目乱序']:.2f} 秒")
     
     # 步骤 5: 生成最终版本
     if start_step <= 5 <= end_step:
         step_start = time.time()
-        print("\n[步骤 5] 生成最终版本...")
-        import shutil
-        
+        print("\n[步骤 5] 生成最终版本（过滤污染题目）...")
+
         if not os.path.exists(v4_path):
             print(f"❌ 错误: 输入文件不存在 {v4_path}")
             return
-        
-        shutil.copy(v4_path, final_path)
+
+        with open(v4_path, "r", encoding="utf-8") as f:
+            v4_data = json.load(f)
+
+        if isinstance(v4_data, dict):
+            v4_data = [v4_data]
+
+        total_before = 0
+        total_after = 0
+        for section in v4_data:
+            qa_list = section.get("qa", [])
+            if not isinstance(qa_list, list):
+                continue
+            total_before += len(qa_list)
+            filtered = [
+                item for item in qa_list
+                if item.get("pollution_check", {}).get("result", "good") == "good"
+            ]
+            total_after += len(filtered)
+            section["qa"] = filtered
+
+        removed = total_before - total_after
+        print(f"  过滤前: {total_before} 题，过滤后: {total_after} 题，移除污染题: {removed} 题")
+
+        with open(final_path, "w", encoding="utf-8") as f:
+            json.dump(v4_data, f, indent=4, ensure_ascii=False)
+
         step_times['步骤 5: 生成最终版本'] = time.time() - step_start
         print(f"✓ 步骤 5 完成: {final_path}，耗时: {step_times['步骤 5: 生成最终版本']:.2f} 秒")
     
@@ -382,6 +423,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python main.py --run An-Enemy-of-the-People > pipeline2.log 2>&1
-# python main.py --run the-man-from-earth-script > pipeline.log 2>&1
-# python main.py --run 12_Angry_Men > pipeline3.log 2>&1
+# python main.py --run An-Enemy-of-the-People > pipeline_AnEnemy.log 2>&1
+# python main.py --run the-man-from-earth-script --start 1 > pipeline_themanfromearth.log 2>&1
+# python main.py --run 12_Angry_Men > pipeline_12Angrymen.log 2>&1

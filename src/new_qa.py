@@ -3,7 +3,11 @@ import os
 import re
 import tiktoken
 from collections import defaultdict, OrderedDict
+from typing import Any, Dict, List, Optional
+
 from openai import OpenAI
+
+from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
 
 DEFAULT_API_KEY = os.getenv("OPENAI_API_KEY", "")
 DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
@@ -24,6 +28,42 @@ except Exception as e:
     print(f"!!! Tokenizer 加载失败: {e}")
     tokenizer = None
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+
+ABSTAIN_OPTION_TEXT = "F. Cannot infer the answer based on the given information."
+ABSTAIN_QUESTIONS_PER_CATEGORY = 2
+ABSTAIN_GENERATION_RETRIES = 6
+ABSTAIN_VALIDATION_RETRIES = 3
+
+CATEGORY_DESCRIPTIONS = {
+    1: "Long-term Persona: stable identity, values, long-term preferences, or recurring behavioral patterns.",
+    2: "Short-term State: immediate emotions, short-term needs, temporary goals, or situational mental states.",
+    3: "Temporal: time order, sequence changes, timing relations, or replacement of old and new information.",
+    4: "Plot-driven Event: specific events, experiences, actions, decisions, outcomes, and participant evaluations.",
+    5: "Interpersonal Relationship: explicit concrete relationships between people such as family, colleagues, classmates, roommates, and similar roles.",
+    6: "Fine-Grained Data: explicit numerical information such as counts, dates, ages, durations, quantities, or comparisons/calculations.",
+}
+
+ABSTAIN_VALIDATE_PROMPT = """
+You are an intelligent assistant. Your task is to answer a multiple-choice question based only on the provided conversation history.
+
+# RULES
+1. Use only the conversation history. Do not use outside knowledge.
+2. Choose exactly one option.
+3. If the answer cannot be determined from the history, choose the dedicated Cannot infer option.
+4. Do not explain your reasoning.
+5. Your final output must be only the option letter in parentheses, for example: (B)
+
+--- CONVERSATION HISTORY ---
+{conversation_history}
+--- END OF HISTORY ---
+
+Question: {question}
+
+Options:
+{options_text}
+
+Final answer:
+"""
 
 def gen_chat(prompt: str, temp=0.7) -> str:
     try:
@@ -112,6 +152,441 @@ class UltimateMemoryRefiner:
                 counts[category] += 1
         return " ".join(f"{i}:{counts[i]}" for i in range(1, 7))
 
+    def _resolve_speaker_name(self, raw_speaker: Any, speaker_map: Dict[str, str]) -> str:
+        if isinstance(raw_speaker, str):
+            if raw_speaker in speaker_map:
+                return speaker_map[raw_speaker]
+            return raw_speaker
+
+        if isinstance(raw_speaker, int):
+            key = f"speaker_{raw_speaker}"
+            return speaker_map.get(key, str(raw_speaker))
+
+        return str(raw_speaker)
+
+    def _format_conversation_for_prompt(self, conversation_item: Dict[str, Any]) -> str:
+        if not isinstance(conversation_item, dict):
+            return ""
+
+        history: List[str] = []
+        speaker_map: Dict[str, str] = {}
+
+        raw_speakers = conversation_item.get("speakers")
+        if isinstance(raw_speakers, list):
+            for idx, speaker_name in enumerate(raw_speakers, start=1):
+                if isinstance(speaker_name, str) and speaker_name.strip():
+                    speaker_map[f"speaker_{idx}"] = speaker_name.strip()
+
+        for key, value in conversation_item.items():
+            if re.fullmatch(r"speaker_\d+", str(key)) and isinstance(value, str):
+                speaker_map[str(key)] = value
+
+        for alias in ("speaker_a", "speaker_b"):
+            alias_value = conversation_item.get(alias)
+            if isinstance(alias_value, str):
+                speaker_map[alias] = alias_value
+
+        session_keys = [
+            str(key)
+            for key in conversation_item.keys()
+            if re.fullmatch(r"session_\d+", str(key))
+        ]
+        session_keys.sort(key=lambda key: int(re.match(r"session_(\d+)", key).group(1)))
+
+        for session_key in session_keys:
+            timestamp = conversation_item.get(f"{session_key}_date_time") or conversation_item.get(
+                f"{session_key}_time",
+                "Unknown time",
+            )
+            history.append(f"\n--- Turn started at {timestamp} ---")
+
+            chats = conversation_item.get(session_key, [])
+            if not isinstance(chats, list):
+                continue
+
+            for chat in chats:
+                if not isinstance(chat, dict):
+                    continue
+                if "speaker" not in chat or "text" not in chat:
+                    continue
+
+                speaker_name = self._resolve_speaker_name(chat.get("speaker"), speaker_map)
+                history.append(f"{speaker_name}: {chat.get('text', '')}")
+
+        return "\n".join(history).strip()
+
+    def _normalize_option_lines(self, options: List[Any]) -> List[str]:
+        normalized: List[str] = []
+        for index, option in enumerate(options or []):
+            letter = chr(ord("A") + index)
+            option_text = str(option).strip()
+            if option_text[:3].startswith(f"{letter}.") or (len(option_text) >= 3 and option_text[1:3] == ". "):
+                normalized.append(option_text)
+            else:
+                normalized.append(f"{letter}. {option_text}")
+        return normalized
+
+    def _extract_question_stem(self, question: str, option_lines: List[str]) -> str:
+        question_text = str(question or "").strip()
+        if not question_text:
+            return ""
+
+        for marker in (
+            "Please provide the option corresponding to the only correct answer",
+            "You need to select the correct answer from the following options:",
+        ):
+            if marker in question_text:
+                question_text = question_text.split(marker, 1)[0].strip()
+
+        if option_lines:
+            first_option = option_lines[0]
+            option_index = question_text.find(f"\n{first_option}")
+            if option_index >= 0:
+                question_text = question_text[:option_index].strip()
+
+        return question_text
+
+    def _build_abstain_generation_prompt(
+        self,
+        conversation_item: Dict[str, Any],
+        source_questions: List[Dict[str, Any]],
+    ) -> str:
+        category_text = "\n".join(
+            f"- Category {category}: {description}"
+            for category, description in CATEGORY_DESCRIPTIONS.items()
+        )
+        conversation_history = self._format_conversation_for_prompt(conversation_item)
+
+        return f"""
+You are an expert dataset construction system generating adversarial "abstain" (unanswerable) questions for long-context LLM memory evaluation.
+
+You will be given a standalone conversation transcript and a list of existing positive QA items derived from that same text.
+
+Your task is to generate exactly {ABSTAIN_QUESTIONS_PER_CATEGORY * 6} new multiple-choice questions that are highly plausible but intentionally unanswerable based strictly on the provided conversation.
+
+### Perturbation Strategies for Abstain Questions:
+To make the questions challenging and deceptive, use a diverse mix of the following strategies, heavily drawing inspiration from the `source_questions`:
+1. **Entity Swapping**: Take a real event from the text/source_questions, but swap the character/subject. (e.g., If Person A did X, ask why Person B did X).
+2. **Out-of-Scope Detail**: Take a real event, but ask for a hyper-specific detail not mentioned. (e.g., They drove a car -> What was the license plate?).
+3. **False Premise**: Embed a fabricated assumption into the question stem. (e.g., "Why was Person A crying when they left?" - when they actually left calmly).
+4. **The Phantom Entity**: Introduce a plausible person, object, or concept that fits the conversational universe but is completely absent from this specific text chunk.
+5. **Temporal/Causal Extension**: Ask about the aftermath, preceding events, or deeper motivations that are not explicitly stated in this exact transcript.
+
+### Strict Requirements:
+1. Generate exactly {ABSTAIN_QUESTIONS_PER_CATEGORY} questions for each category 1-6.
+2. The questions MUST sound highly realistic and native to the conversation's context. Do not ask absurd or obviously random questions.
+3. Every question must remain genuinely unanswerable using ONLY the provided conversation. The correct answer must always be the abstain option.
+4. Options A-E must be plausible distractor answers. They should sound like things that *could* be true in this context, making it tempting for a hallucinating LLM to choose them.
+5. Option F must be exactly: {ABSTAIN_OPTION_TEXT}
+6. The answer field must be exactly: {ABSTAIN_OPTION_TEXT}
+7. The label field must be exactly: abstain
+8. Keep the question stem completely separate from the option list.
+9. Return ONLY a valid JSON array. Do not wrap it in Markdown formatting (no ```json).
+
+Category definitions:
+{category_text}
+
+Reference QA (Mutate these using the Perturbation Strategies to create paired abstain questions):
+{json.dumps(source_questions, ensure_ascii=False, indent=2)}
+
+Conversation Context:
+{conversation_history}
+
+Output JSON array schema:
+[
+  {{
+    "question": "Question stem only, containing a deceptive premise or swapped entity",
+    "option": [
+      "A. [Plausible but unsupported distractor]",
+      "B. [Plausible but unsupported distractor]",
+      "C. [Plausible but unsupported distractor]",
+      "D. [Plausible but unsupported distractor]",
+      "E. [Plausible but unsupported distractor]",
+      "F. Cannot infer the answer based on the given information."
+    ],
+    "answer": "F",
+    "reasoning": "Identify which Perturbation Strategy was used, and explicitly explain why the conversation lacks the required evidence.",
+    "label": "abstain",
+    "category": 1
+  }}
+]
+"""
+    
+    def _normalize_generated_abstain_questions(
+        self,
+        generated_questions: Any,
+        source_index: int,
+    ) -> List[Dict[str, Any]]:
+        if not isinstance(generated_questions, list):
+            return []
+
+        normalized_questions: List[Dict[str, Any]] = []
+        category_counts = {category: 0 for category in range(1, 7)}
+
+        for item in generated_questions:
+            if not isinstance(item, dict):
+                continue
+
+            try:
+                category = int(item.get("category", 0))
+            except (TypeError, ValueError):
+                continue
+
+            if category not in category_counts:
+                continue
+            if category_counts[category] >= ABSTAIN_QUESTIONS_PER_CATEGORY:
+                continue
+
+            question_text = str(item.get("question", "")).strip()
+            if not question_text:
+                continue
+
+            raw_options = item.get("option", [])
+            if not isinstance(raw_options, list):
+                continue
+
+            non_abstain_options: List[str] = []
+            for option in raw_options:
+                option_text = str(option or "").strip()
+                if not option_text:
+                    continue
+                if option_text.startswith("F."):
+                    continue
+                non_abstain_options.append(option_text)
+
+            if len(non_abstain_options) < 5:
+                continue
+
+            normalized_questions.append(
+                {
+                    "question": question_text,
+                    "option": non_abstain_options[:5] + [ABSTAIN_OPTION_TEXT],
+                    "answer": ABSTAIN_OPTION_TEXT,
+                    "reasoning": str(item.get("reasoning", "")).strip(),
+                    "label": "abstain",
+                    "category": category,
+                    "character": str(item.get("character", "Unspecified") or "Unspecified"),
+                    "original_qa": item.get("original_qa", []) if isinstance(item.get("original_qa"), list) else [],
+                    "source_index": source_index,
+                }
+            )
+            category_counts[category] += 1
+
+        return normalized_questions
+
+    def _build_abstain_validation_prompt(
+        self,
+        conversation_item: Dict[str, Any],
+        question_item: Dict[str, Any],
+    ) -> str:
+        option_lines = self._normalize_option_lines(question_item.get("option", []))
+        question_stem = self._extract_question_stem(question_item.get("question", ""), option_lines)
+        conversation_history = self._format_conversation_for_prompt(conversation_item)
+        return ABSTAIN_VALIDATE_PROMPT.format(
+            conversation_history=conversation_history,
+            question=question_stem or str(question_item.get("question", "")).strip(),
+            options_text="\n".join(option_lines),
+        )
+
+    def _validate_abstain_question_on_conversation(
+        self,
+        question_item: Dict[str, Any],
+        conversation_item: Dict[str, Any],
+        target_name: str,
+    ) -> bool:
+        prompt = self._build_abstain_validation_prompt(conversation_item, question_item)
+        response = ""
+        for _ in range(ABSTAIN_VALIDATION_RETRIES):
+            response = gen_chat(prompt, temp=0.0)
+            if response:
+                break
+
+        score_result = score_mcq_prediction(
+            response,
+            normalize_answer_candidates(None, question_item.get("answer", ABSTAIN_OPTION_TEXT)),
+        )
+
+        if not score_result.get("is_correct", False):
+            print(
+                f"      × 弃权题验证失败 [{target_name}]: {question_item.get('question', '')[:60]}... -> {response[:120]}"
+            )
+            return False
+        return True
+
+    def _build_merged_conversation(self):
+        merged_conversation = OrderedDict()
+        global_session_idx = 1
+
+        speaker_list = []
+        speaker_seen = set()
+        sessions = []
+
+        speaker_key_pattern = re.compile(r"^speaker_(\d+)$")
+        speaker_value_pattern = re.compile(r"^speaker_(\d+)$")
+        session_key_pattern = re.compile(r"^session_(\d+)$")
+        session_time_pattern = re.compile(r"^session_(\d+)_(date_time|time)$")
+
+        def add_speaker(name):
+            if not isinstance(name, str):
+                return
+            clean_name = name.strip()
+            if not clean_name or clean_name in speaker_seen:
+                return
+            speaker_seen.add(clean_name)
+            speaker_list.append(clean_name)
+
+        for item in self.original_data:
+            conversation = item.get("conversation", {})
+            if not isinstance(conversation, dict):
+                continue
+
+            indexed_speakers = []
+            session_contents = {}
+            session_meta = defaultdict(dict)
+
+            raw_speakers = conversation.get("speakers")
+            if isinstance(raw_speakers, list):
+                for idx, speaker_name in enumerate(raw_speakers, start=1):
+                    if isinstance(speaker_name, str) and speaker_name.strip():
+                        indexed_speakers.append((idx, speaker_name.strip()))
+
+            for key, content in conversation.items():
+                key_str = str(key)
+
+                key_match = speaker_key_pattern.fullmatch(key_str)
+                if key_match:
+                    if isinstance(content, str) and content.strip():
+                        indexed_speakers.append((int(key_match.group(1)), content.strip()))
+                    continue
+
+                if isinstance(content, str):
+                    value_match = speaker_value_pattern.fullmatch(content)
+                    if value_match and isinstance(key, str) and key.strip():
+                        indexed_speakers.append((int(value_match.group(1)), key.strip()))
+                        continue
+
+                session_match = session_key_pattern.fullmatch(key_str)
+                if session_match:
+                    session_idx = int(session_match.group(1))
+                    session_contents[session_idx] = content
+                    continue
+
+                session_time_match = session_time_pattern.fullmatch(key_str)
+                if session_time_match:
+                    session_idx = int(session_time_match.group(1))
+                    time_suffix = session_time_match.group(2)
+                    session_meta[session_idx][time_suffix] = content
+
+            for _, speaker_name in sorted(indexed_speakers, key=lambda x: x[0]):
+                add_speaker(speaker_name)
+
+            for session_idx in sorted(session_contents.keys()):
+                sessions.append(
+                    {
+                        "content": session_contents[session_idx],
+                        "meta": session_meta.get(session_idx, {}),
+                    }
+                )
+
+        if speaker_list:
+            merged_conversation["speakers"] = speaker_list
+
+        for session_item in sessions:
+            new_session_key = f"session_{global_session_idx}"
+            meta = session_item.get("meta", {})
+
+            if "date_time" in meta:
+                merged_conversation[f"{new_session_key}_date_time"] = meta["date_time"]
+            if "time" in meta:
+                merged_conversation[f"{new_session_key}_time"] = meta["time"]
+
+            merged_conversation[new_session_key] = session_item.get("content", [])
+            global_session_idx += 1
+
+        return merged_conversation
+
+    def _generate_validated_abstain_questions(self) -> List[Dict[str, Any]]:
+        print(f"\n>>> 开始生成弃权问题并进行跨对话验证")
+        valid_questions: List[Dict[str, Any]] = []
+        merged_conversation = self._build_merged_conversation()
+
+        for source_index, item in enumerate(self.original_data):
+            conversation = item.get("conversation", {})
+            if not isinstance(conversation, dict) or not conversation:
+                continue
+
+            source_questions = []
+            for qa in item.get("qa", []):
+                if not isinstance(qa, dict):
+                    continue
+                source_questions.append(
+                    {
+                        "question": qa.get("question"),
+                        "category": qa.get("category"),
+                        "character": qa.get("character"),
+                    }
+                )
+
+            print(
+                f"\n>>> 正在为原始对话 {source_index + 1}/{len(self.original_data)} 生成弃权题..."
+            )
+
+            candidates: Optional[List[Dict[str, Any]]] = None
+            for attempt in range(ABSTAIN_GENERATION_RETRIES):
+                prompt = self._build_abstain_generation_prompt(conversation, source_questions)
+                if attempt > 0:
+                    prompt += "\n\nReturn JSON array only. Do not include markdown fences or any extra commentary."
+                response = gen_chat(prompt, temp=0.4)
+                parsed = self.extract_json(response)
+                normalized = self._normalize_generated_abstain_questions(parsed, source_index)
+                if normalized:
+                    candidates = normalized
+                    break
+
+            if not candidates:
+                print(f"      × 原始对话 {source_index + 1} 的弃权题生成失败，跳过")
+                continue
+
+            print(f"      - 初始生成 {len(candidates)} 道弃权题候选")
+
+            for candidate in candidates:
+                is_valid = True
+
+                if not self._validate_abstain_question_on_conversation(
+                    candidate,
+                    conversation,
+                    f"source_{source_index + 1}",
+                ):
+                    continue
+
+                for target_index, target_item in enumerate(self.original_data):
+                    if target_index == source_index:
+                        continue
+                    target_conversation = target_item.get("conversation", {})
+                    if not isinstance(target_conversation, dict) or not target_conversation:
+                        continue
+                    if not self._validate_abstain_question_on_conversation(
+                        candidate,
+                        target_conversation,
+                        f"other_{target_index + 1}",
+                    ):
+                        is_valid = False
+                        break
+
+                if is_valid and not self._validate_abstain_question_on_conversation(
+                    candidate,
+                    merged_conversation,
+                    "merged_all",
+                ):
+                    is_valid = False
+
+                if is_valid:
+                    valid_questions.append(candidate)
+                    print(f"      √ 弃权题通过验证: {candidate.get('question', '')[:60]}...")
+
+        print(f"\n>>> 弃权题验证完成，保留 {len(valid_questions)} 道题")
+        return valid_questions
+
     def build_refine_prompt(self, subject, final_chunk):
         """最终生成 Prompt"""
         compact_chunk = self.compact_cluster(final_chunk)
@@ -149,7 +624,7 @@ When an entity’s state S is A at time t1 and is later explicitly or implicitly
 For each subtype above:
 If multiple updates, reversals, or influencing factors exist in the data, you should generate multiple questions from different analytical perspectives, not just a single question.
 
-# Dimension 2: Integrated Logic Across Chunks
+# Dimension 2: Fact Extraction (Multiple Conversations)
 
 You must actively identify related facts or patterns distributed across multiple non-adjacent semantic chunks and construct questions that require joint reasoning across them, including but not limited to:
 
@@ -236,9 +711,8 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
         "option": ["A ...", "B ...", "C ...", "D ...", "E ..."],
         "answer": "Final conclusion or correct option label",
         "reasoning": "Detailed explanation of how the answer follows from the full data",
-        "label": "memory_update / integrated_logic",
+        "label": "It must be filled in with either 'Memory Update' or 'Fact Extraction (Multiple Conversations)', and absolutely not any other value.",
         "category": 1,
-        "evidence_chunks": [0, 2, 5],
         "is_conflict": true / false,
         "original_qa": ["Based on her interactions...", "What is Sandy's immediate reaction..."]
     }}
@@ -305,7 +779,11 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             if not refined:
                 print(f"      × 角色 {subject} 在 {max_retries} 次尝试后全数失败，跳过")
         
-        self.save(all_refined_qa)
+        abstain_questions = self._generate_validated_abstain_questions()
+        all_generated_qa = list(all_refined_qa)
+        all_generated_qa.extend(abstain_questions)
+
+        self.save(all_generated_qa)
 
     def extract_json(self, text):
         try:
@@ -327,15 +805,15 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             if "session" in new_q.get("question", ""):
                 continue
             
-            if new_q.get("label") == "memory_update":
-                new_q["label"] = "记忆更新"
+            if new_q.get("label") == "Memory Update":
                 print(f"  [记忆更新] {new_q.get('question', '')[:50]}...")
                 for q_text in new_q.get("original_qa", []):
                     if isinstance(q_text, str) and q_text:
                         remove_questions.add(q_text)
-            elif new_q.get("label") == "integrated_logic":
-                new_q["label"] = "事实提取（多对话）"
+            elif new_q.get("label") == "Fact Extraction (Multiple Conversations)":
                 print(f"  [事实提取（多对话）] {new_q.get('question', '')[:50]}...")
+            elif new_q.get("label") == "abstain":
+                print(f"  [弃权题] {new_q.get('question', '')[:50]}...")
             
             processed_new_qa.append(new_q)
         
@@ -364,97 +842,7 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             q["qid"] = idx
         
         # 5. 合并所有 conversation
-        merged_conversation = OrderedDict()
-        global_session_idx = 1
-        
-        speaker_list = []
-        speaker_seen = set()
-        sessions = []
-
-        speaker_key_pattern = re.compile(r"^speaker_(\d+)$")
-        speaker_value_pattern = re.compile(r"^speaker_(\d+)$")
-        session_key_pattern = re.compile(r"^session_(\d+)$")
-        session_time_pattern = re.compile(r"^session_(\d+)_(date_time|time)$")
-
-        def add_speaker(name):
-            if not isinstance(name, str):
-                return
-            clean_name = name.strip()
-            if not clean_name or clean_name in speaker_seen:
-                return
-            speaker_seen.add(clean_name)
-            speaker_list.append(clean_name)
-        
-        for item in self.original_data:
-            conversation = item.get("conversation", {})
-            if not isinstance(conversation, dict):
-                continue
-
-            indexed_speakers = []
-            session_contents = {}
-            session_meta = defaultdict(dict)
-
-            # 兼容 speakers 列表格式
-            raw_speakers = conversation.get("speakers")
-            if isinstance(raw_speakers, list):
-                for idx, speaker_name in enumerate(raw_speakers, start=1):
-                    if isinstance(speaker_name, str) and speaker_name.strip():
-                        indexed_speakers.append((idx, speaker_name.strip()))
-
-            for key, content in conversation.items():
-                key_str = str(key)
-
-                # 形式1: speaker_1 -> "Name"
-                key_match = speaker_key_pattern.fullmatch(key_str)
-                if key_match:
-                    if isinstance(content, str) and content.strip():
-                        indexed_speakers.append((int(key_match.group(1)), content.strip()))
-                    continue
-
-                # 形式2: "Name" -> speaker_1
-                if isinstance(content, str):
-                    value_match = speaker_value_pattern.fullmatch(content)
-                    if value_match and isinstance(key, str) and key.strip():
-                        indexed_speakers.append((int(value_match.group(1)), key.strip()))
-                        continue
-
-                # 严格匹配 session_数字，避免把 session_time/session_1_date_time 误判为 session
-                session_match = session_key_pattern.fullmatch(key_str)
-                if session_match:
-                    session_idx = int(session_match.group(1))
-                    session_contents[session_idx] = content
-                    continue
-
-                # 保留每段 session 的时间元信息（如 session_1_date_time / session_1_time）
-                session_time_match = session_time_pattern.fullmatch(key_str)
-                if session_time_match:
-                    session_idx = int(session_time_match.group(1))
-                    time_suffix = session_time_match.group(2)
-                    session_meta[session_idx][time_suffix] = content
-
-            for _, speaker_name in sorted(indexed_speakers, key=lambda x: x[0]):
-                add_speaker(speaker_name)
-
-            for session_idx in sorted(session_contents.keys()):
-                sessions.append({
-                    "content": session_contents[session_idx],
-                    "meta": session_meta.get(session_idx, {})
-                })
-
-        if speaker_list:
-            merged_conversation["speakers"] = speaker_list
-
-        for session_item in sessions:
-            new_session_key = f"session_{global_session_idx}"
-            meta = session_item.get("meta", {})
-
-            if "date_time" in meta:
-                merged_conversation[f"{new_session_key}_date_time"] = meta["date_time"]
-            if "time" in meta:
-                merged_conversation[f"{new_session_key}_time"] = meta["time"]
-
-            merged_conversation[new_session_key] = session_item.get("content", [])
-            global_session_idx += 1
+        merged_conversation = self._build_merged_conversation()
         
         # 6. 构建最终输出结构
         final_data = [

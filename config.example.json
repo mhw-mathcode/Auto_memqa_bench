@@ -11,6 +11,7 @@
       "function": "generate_qa_v0",
       "api_required": true,
       "description": "步骤 0: 生成原始问答对",
+      "force_generate_new_qa": false,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -20,7 +21,7 @@
     "step_1_full_context": {
       "function": "evidence_check_main",
       "api_required": true,
-      "description": "步骤 1: 题目合理性检测 (v0 -> v1)",
+      "description": "步骤 1: 题目合理性检测 (v0 -> v1a -> v1b)",
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -30,7 +31,7 @@
     "step_2_label": {
       "function": "label_main",
       "api_required": true,
-      "description": "步骤 2: 题目标注 (v1 -> v2)",
+      "description": "步骤 2: 题目标注 (v1b -> v2)",
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",

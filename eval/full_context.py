@@ -28,7 +28,7 @@ ANSWER_PROMPT_FULL_CONTEXT = """
 You are an intelligent assistant. Your task is to answer a multiple-choice question based only on the provided conversation history.
 
 # CONTEXT
-You have access to the complete conversation history between two speakers. This history contains all the information needed to answer the question.
+You have access to the complete conversation history between these speakers. This history contains all the information needed to answer the question.
 
 # RULES
 1. Use only the conversation history. Do not use outside knowledge.

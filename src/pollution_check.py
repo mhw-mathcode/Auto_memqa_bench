@@ -8,9 +8,56 @@ import numpy as np
 from typing import Any, Dict, List, Tuple, Optional
 from openai import OpenAI
 import math
+from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
 from src.qa_only_response import QAOnlyRunner
 
 # --- 1. 打乱顺序 ---
+
+def _extract_core_question_text(question_text: str, unknown_placeholder: str = "") -> str:
+    """
+    兼容不同题目模板，稳定提取纯题干（不包含选项与作答提示）。
+
+    提取策略：
+    1. 优先截取首个选项行（A-F）之前的内容。
+    2. 若未命中选项行，则尝试按常见提示语截断。
+    3. 最后回退为首个非空行。
+    """
+    text = (question_text or "").replace("\r\n", "\n").replace("\r", "\n").strip()
+    if not text:
+        return unknown_placeholder
+
+    lines = [line.strip() for line in text.split("\n") if line.strip()]
+    if not lines:
+        return unknown_placeholder
+
+    option_line_pattern = re.compile(r"^[A-Fa-f][\.．\)]\s+")
+
+    first_option_idx = None
+    for idx, line in enumerate(lines):
+        if option_line_pattern.match(line):
+            first_option_idx = idx
+            break
+
+    if first_option_idx is not None:
+        stem = "\n".join(lines[:first_option_idx]).strip()
+        if stem:
+            # 兼容旧格式前缀："Please answer the question: ..."
+            stem = re.sub(r"^Please\s+answer\s+the\s+question:\s*", "", stem, flags=re.IGNORECASE)
+            return stem or unknown_placeholder
+
+    for pattern in (
+        r"\n\s*\n\s*You need to select",
+        r"\n\s*Please provide the option corresponding to the only correct answer",
+    ):
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            stem = text[:match.start()].strip()
+            stem = re.sub(r"^Please\s+answer\s+the\s+question:\s*", "", stem, flags=re.IGNORECASE)
+            return stem or unknown_placeholder
+
+    fallback = lines[0]
+    fallback = re.sub(r"^Please\s+answer\s+the\s+question:\s*", "", fallback, flags=re.IGNORECASE)
+    return fallback or unknown_placeholder
 
 def rename_and_shuffle_options(input_file_path: str, output_file_path: str) -> None:
     """
@@ -36,7 +83,7 @@ def rename_and_shuffle_options(input_file_path: str, output_file_path: str) -> N
 
     # 2. 遍历数据结构进行处理 (选项打乱)
     new_data = []
-    
+
     # 外层结构通常是 List[Dict[str, List[Dict]]]
     if isinstance(data, dict):
         data = [data]
@@ -78,10 +125,7 @@ def rename_and_shuffle_options(input_file_path: str, output_file_path: str) -> N
                 # 提取核心问题
                 # ===============================
                 question = new_item.get("question", "")
-                pattern = r"(.*?)(?:\n\s*\n\s*You need to select)"
-                match = re.search(pattern, question, re.DOTALL)
-
-                core_question = match.group(1).strip() if match else question
+                core_question = _extract_core_question_text(question)
 
                 # ===============================
                 # 工具函数：去掉 "A. "
@@ -188,23 +232,21 @@ def run_eval(idx, file, output_file=None):
         file: 输入文件路径
         output_file: 输出文件路径，如果为 None 则使用默认的 temp/result_{idx}.json
     """
-    def extract_option(s):
-        if not isinstance(s, str):
-            return None
-        m = re.match(r"\s*([A-F])", s)
-        return m.group(1) if m else None
-
     with open(file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     for key, items in data.items():
         for item in items:
-            ans = extract_option(item.get("answer", ""))
-            resp = item.get("response_option", "")
-            if ans and resp and ans == resp:
-                item["score"] = 1
-            else:
-                item["score"] = 0
+            answer_candidates = normalize_answer_candidates(item.get("answer_fixed"), item.get("answer", ""))
+
+            # Prefer richer text when available, then fallback to option letter.
+            prediction_text = item.get("response") or item.get("response_option") or item.get("response", "")
+            score_result = score_mcq_prediction(prediction_text, answer_candidates)
+
+            item["score"] = 1 if score_result.get("is_correct", False) else 0
+            item["prediction_malformed"] = score_result.get("prediction_malformed", False)
+            item["predicted_options"] = score_result.get("predicted_options", [])
+            item["ground_truth_options"] = score_result.get("ground_truth_options", [])
 
     # 使用指定的输出文件或默认路径
     if output_file is None:
@@ -222,29 +264,6 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
     # Key: 提取出的核心问题文本 (e.g., "Regarding money, who did Ariel most habitually rely on?")
     # Value: { "correct_count": int, "total_count": int, "details": original_data, "responses": [str] }
 
-    def extract_core_question(full_question_text: str) -> str:
-        """
-        从完整的 'question' 字段中提取问题的核心文本。
-        例如：从 'Please answer the question: ...\n\nYou need to select...' 中提取核心问题。
-        """
-        # 查找 "Please answer the question: " 和 "\n\nYou need to select" 之间的内容
-        match = re.search(
-            r"\s*(.*?)\s*\n\s*\n\s*You need to select",
-            full_question_text,
-            re.DOTALL
-        )
-        if match:
-            # 提取核心问题，并移除首尾的空白和换行符
-            core_text = match.group(1).split('\n\n')[0].strip()
-            question_line = core_text.split('\n')[0].strip()
-            return question_line
-        
-        # 如果正则匹配失败，返回首个非空行作为回退
-        if not full_question_text:
-            return "UNKNOWN_QUESTION"
-        lines = [line.strip() for line in full_question_text.split("\n") if line.strip()]
-        return lines[0] if lines else "UNKNOWN_QUESTION"
-    
     question_stats: Dict[str, Dict[str, Any]] = {}
     
     print(f"--- 开始聚合来自 {num_files} 个文件的实验结果 ---")
@@ -272,11 +291,11 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
         for item in results_list:
             full_question_text = item.get("question", "")
             score = item.get("score", 0.0)
-            response_option_w_content = item.get("response_option_w_content", "NO_RESPONSE")
+            response = item.get("response") or item.get("response_option") or item.get("response", "NO_RESPONSE")
             response_time = item.get("response_time", 0.0)
             
             # 提取核心问题文本作为唯一键
-            core_question_text = extract_core_question(full_question_text)
+            core_question_text = _extract_core_question_text(full_question_text, unknown_placeholder="UNKNOWN_QUESTION")
 
             if not core_question_text or core_question_text == "UNKNOWN_QUESTION":
                 continue
@@ -298,7 +317,7 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
 
             # 记录本次实验的 response 和 score
             question_stats[core_question_text]["responses_and_scores"].append({
-                "response_option_w_content": response_option_w_content,
+                "response": response,
                 "score": score,
                 "response_time": response_time,
                 "file_id": i
@@ -339,9 +358,12 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
         qa_list = section.get("qa", [])
         if not isinstance(qa_list, list):
             continue
-
+        
         for qa_item in qa_list:
-            core_question_text = extract_core_question(qa_item.get("question", ""))
+            core_question_text = _extract_core_question_text(
+                qa_item.get("question", ""),
+                unknown_placeholder="UNKNOWN_QUESTION"
+            )
             pollution_result = pollution_by_core_question.get(core_question_text)
             if pollution_result:
                 qa_item["pollution_check"] = pollution_result

@@ -218,7 +218,13 @@ def call_openai_json(
         f"Last output:\n{last_content}"
     )
 
-def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> str:
+def generate_v0(
+  dataset_name: str,
+  input_dir: str,
+  v0_path: str,
+  llm_config,
+  force_generate_new_qa: bool = False,
+) -> str:
     """
     生成 v0 原始问答对
     """
@@ -242,6 +248,7 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
     generated_count = 0
 
     print(f"--- 步骤 0 开始处理：共 {len(json_files)} 个文件 ---")
+    print(f"  生成模式: {'强制重建题目（忽略已有 qa）' if force_generate_new_qa else '复用已有 qa（默认）'}")
     
     for filename in tqdm(json_files, desc=f"处理 {dataset_name}"):
       file_path = os.path.join(dataset_dir, filename)
@@ -281,14 +288,19 @@ def generate_v0(dataset_name: str, input_dir: str, v0_path: str, llm_config) -> 
               speakers = extracted_speakers
 
       # 检查是否已有问答对
-      if existing_qa and isinstance(existing_qa, list) and len(existing_qa) > 0:
+      has_existing_qa = bool(existing_qa and isinstance(existing_qa, list) and len(existing_qa) > 0)
+      if has_existing_qa and not force_generate_new_qa:
         # 已有问答对，直接使用
         print(f"\n✓ {filename} 已存在 {len(existing_qa)} 个问答对，跳过生成")
         current_qa = existing_qa
         skipped_count += 1
       else:
-        # 没有问答对，调用 LLM 生成
-        print(f"\n⚙ {filename} 未找到问答对，开始生成 (说话者: {speakers})")
+        if has_existing_qa and force_generate_new_qa:
+          print(f"\n⚙ {filename} 检测到已有 {len(existing_qa)} 个问答对，但配置要求强制重建")
+          print(f"\n⚙ {filename} 开始重新生成问答对 (说话者: {speakers})")
+        else:
+          # 没有问答对，调用 LLM 生成
+          print(f"\n⚙ {filename} 未找到问答对，开始生成 (说话者: {speakers})")
         
         current_qa = []
         

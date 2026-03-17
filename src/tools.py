@@ -97,14 +97,14 @@ def should_include_qa(qa: Dict[str, Any], file_name: str) -> bool:
         if isinstance(only_check, dict) and only_check.get("result") != "right":
             return False
 
-    # v2 and later: additionally discard if round==5 and result=="right" in ablation
+    # v2 and later: additionally discard if round==5 and result!="wrong" in ablation
     if any(v in lower_name for v in ["v2", "v3", "v4"]):
         ablation = qa.get("iterative_evidence_ablation", [])
         if isinstance(ablation, list):
             for item in ablation:
                 if not isinstance(item, dict):
                     continue
-                if item.get("round") == 5 and item.get("result") == "right":
+                if item.get("round") == 5 and item.get("result") != "wrong":
                     return False
 
     return True
@@ -158,8 +158,8 @@ def collect_excluded_questions(script_obj: Dict[str, Any], file_name: str) -> Li
                 for item in ablation:
                     if not isinstance(item, dict):
                         continue
-                    if item.get("round") == 5 and item.get("result") == "right":
-                        reason = "iterative_evidence_ablation round=5 result=right"
+                    if item.get("round") == 5 and item.get("result") != "wrong":
+                        reason = "iterative_evidence_ablation round=5 result!=wrong"
                         break
         
         # Keep most fields from original QA

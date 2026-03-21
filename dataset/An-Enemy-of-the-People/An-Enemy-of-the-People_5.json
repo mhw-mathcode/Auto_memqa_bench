@@ -3,1089 +3,1461 @@
     {
       "character": "Dr. Stockmann",
       "category": 1,
-      "question": "Which statement best describes Dr. Stockmann's consistent reaction to the townspeople's opposition and attempts to control him across different interactions?",
+      "question": "Which statement best captures Dr. Stockmann's underlying philosophy regarding personal resilience and societal opposition?",
       "option": [
-        "A. He is easily intimidated and immediately seeks ways to apologize and regain his former position.",
-        "B. He becomes defensive but ultimately agrees to compromise if it benefits his family financially.",
-        "C. He views the opposition as a validation of his own moral superiority and stubbornly refuses to yield.",
-        "D. He ignores the opposition entirely and focuses solely on his scientific research without engaging them in any way.",
-        "E. He attempts to reason calmly with his opponents to reach a mutually beneficial understanding that satisfies the town."
+        "A. He believes that true strength is found by migrating to regions where liberal public opinion and majority rule are less oppressive to free thinkers.",
+        "B. He believes that a free man's most critical trait is the ability to align his personal truth with the political parties that secretly support him.",
+        "C. He concludes that ultimate strength belongs to the individual who stands completely independent and isolated from the crowd.",
+        "D. He asserts that a man with a family must learn to compromise his ideals slightly to maintain a roof over their heads.",
+        "E. He feels that the greatest strength is derived from educating street urchins to physically fight the town's political leaders."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "If we went to another town, do you suppose we should not find the common people just as insolent as they are here? Depend upon it, there is not much to choose between them.", "dia_id": "D5:20" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes, and now I feel I have the whole town ON my back— I would not do it if I had the devil and his dam on my back—! Never—never, I tell you!", "dia_id": "D5:115" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And, if need be, one can live in solitude.",
+          "dia_id": "D5:20"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Yes. It is this, let me tell you—that the strongest man in the world is he who stands most alone.",
+          "dia_id": "D5:307"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann believes the opposition from the common people is widespread and insolent everywhere, showing his disdain for their control.",
-          "based_on": ["E1"]
+          "inference": "Dr. Stockmann suggests earlier in the morning that living in solitude is a viable option for a free man.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "When pressed by Peter to conform to the town's wishes, he fiercely refuses, demonstrating his stubbornness and sense of moral superiority against the majority.",
-          "based_on": ["E1", "E2"]
+          "inference": "He explicitly finalizes his philosophy by stating that standing alone makes one the strongest man in the world.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 2,
-      "question": "What was Dr. Stockmann's immediate reaction upon learning that his family was financially provided for by a relative's will?",
+      "question": "For what specific purpose did Dr. Stockmann suggest the use of rat's-bane?",
       "option": [
-        "A. He was highly suspicious of the motives and demanded to see the legal documents immediately.",
-        "B. He felt immense relief and joy, eagerly calling for his wife to share the blessed feeling of security.",
-        "C. He felt insulted that he would need to rely on charity and rejected the inheritance out of hand.",
-        "D. He was indifferent, stating that money was less important than maintaining his scientific integrity and public standing.",
-        "E. He panicked, realizing that this wealth would make him a much bigger target for the town's growing anger."
+        "A. He wanted to use it to poison the town's water supply to prove his scientific point to the Baths Committee.",
+        "B. He suggested it as a method to exterminate the political leaders he likened to voracious wolves.",
+        "C. He proposed it as a potential scientific antidote to kill the polluting organisms coming from the tannery.",
+        "D. He sarcastically suggested it to Morten Kiil as a way to deal with the stray dogs in the neighborhood.",
+        "E. He considered using it to clear out the rats from the new house Captain Horster offered him."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Hm!—hadn't you really? Then I suppose you had no notion, either, that a considerable portion of his wealth will come to your children, you and your wife having a life-rent of the capital. Has he never told you so?", "dia_id": "D5:128" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Oh, nothing, nothing; you can go back. Provided for!—Just think of it, we are all provided for! And for life! What a blessed feeling it is to know one is provided for!", "dia_id": "D5:134" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "But, hang it all! It might be possible for science to discover some prophylactic, I should think—or some antidote of some kind—",
+          "dia_id": "D5:177"
+        },
+        {
+          "id": "E2",
+          "speaker": "Morten Kiil",
+          "utterance": "To kill these animals, do you mean?",
+          "dia_id": "D5:178"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Yes, or to make them innocuous.",
+          "dia_id": "D5:179"
+        },
+        {
+          "id": "E4",
+          "speaker": "Morten Kiil",
+          "utterance": "Couldn't you try some rat's-bane?",
+          "dia_id": "D5:180"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter informs Dr. Stockmann that his family will inherit a considerable portion of Mr. Kiil's wealth.",
-          "based_on": ["E1"]
+          "inference": "Dr. Stockmann is discussing a scientific prophylactic or antidote for the pollution (animals).",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         },
         {
           "step": 2,
-          "inference": "Dr. Stockmann reacts with extreme joy and relief, exclaiming what a 'blessed feeling' it is to be provided for.",
-          "based_on": ["E1", "E2"]
+          "inference": "Morten Kiil suggests rat's bane as that specific solution, which the Doctor dismisses as nonsense.",
+          "based_on": [
+            "E4"
+          ]
         }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 3,
-      "question": "What sequence of events led Dr. Stockmann to change his mind from wanting to leave the town to deciding to stay and fight?",
+      "question": "What is Dr. Stockmann's definitive plan for his family's residence by the end of the morning?",
       "option": [
-        "A. He first received the eviction notice, then was dismissed from the Baths, and finally received Horster's offer of housing.",
-        "B. He first planned to leave due to the town's hostility, but after rejecting Kiil's blackmail and Hovstad's corrupt offer, he resolved to stay.",
-        "C. He first planned to stay and fight, but after Petra was fired, he briefly decided to leave before Horster offered his house.",
-        "D. He first learned of his dismissal, then was threatened by Morten Kiil, and finally realized Hovstad and Aslaksen were corrupt.",
-        "E. He first decided to leave, but changed his mind when Morten Kiil offered him a large sum of money to stay and rebuild the Baths."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "We won't live in such a disgusting hole any longer. Pack up as quickly as you can, Katherine; the sooner we can get away, the better.", "dia_id": "D5:45" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!", "dia_id": "D5:261" },
-        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Yes, here. This is the field of battle—this is where the fight will be. This is where I shall triumph! As soon as I have had my trousers sewn up I shall go out and look for another house. We must have a roof over our heads for the winter.", "dia_id": "D5:264" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Early in the morning, after Petra is fired, Dr. Stockmann explicitly tells his wife to pack up so they can leave.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "After dealing with Morten Kiil's threats and driving out Hovstad/Aslaksen, he completely reverses his decision and declares they are staying.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "He defines the town as his field of battle where he will fight, showing a sequence from fleeing to making a stand.",
-          "based_on": ["E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Dr. Stockmann",
-      "category": 4,
-      "question": "How did Dr. Stockmann physically react to the proposal from the men representing the 'People's Messenger'?",
-      "option": [
-        "A. He calmly escorted them to the door and politely asked them never to return to his home.",
-        "B. He accepted their offer enthusiastically and immediately began drafting an article with them.",
-        "C. He became enraged, grabbed an umbrella, and forcefully drove them toward the window.",
-        "D. He threw his inkpot at their heads and ordered his daughter to scrub the floor after they left.",
-        "E. He ignored their presence entirely and continued searching for stones under his cabinet."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Quite so; that would be a great trial to such a friend of the people as you are. But I am an enemy of the people, remember! Where have I put my stick? Where the devil is my stick?", "dia_id": "D5:230" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "Take care what you are doing with that umbrella.", "dia_id": "D5:240" },
-        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "When Hovstad and Aslaksen offer to support him for a return, Dr. Stockmann searches for his stick to attack them.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "He grabs an umbrella and threatens them with it, ultimately shouting for them to jump out the window.",
-          "based_on": ["E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Dr. Stockmann",
-      "category": 5,
-      "question": "What is the explicit familial relationship between Dr. Stockmann and Peter Stockmann?",
-      "option": [
-        "A. They are cousins who have been engaged in a long-standing property dispute over the Baths.",
-        "B. They are father and son, with Peter demanding obedience from the younger doctor.",
-        "C. They are brothers, a fact Peter uses to advise the doctor to be more discreet.",
-        "D. They are uncle and nephew, representing different generations of the town's leadership.",
-        "E. They are unrelated men who happen to share the same surname due to the town's history."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "You understand, very well what I mean. But, as your brother and as a man of discretion, I advise you not to build too much upon expectations and prospects that may so very easily fail you.", "dia_id": "D5:122" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Peter Stockmann explicitly refers to himself as Dr. Stockmann's brother while giving him advice.",
-          "based_on": ["E1"]
-        }
-      ]
-    },
-    {
-      "character": "Dr. Stockmann",
-      "category": 6,
-      "question": "To start his new educational endeavor, how many boys does Dr. Stockmann state he must have at a minimum?",
-      "option": [
-        "A. 3",
-        "B. 6",
-        "C. 10",
-        "D. 12",
-        "E. 15"
+        "A. They will sail away to the New World where things are done on a larger scale.",
+        "B. They will rent a small South Sea island where they can live cheaply in a virgin forest.",
+        "C. They will temporarily stay in their current house since the landlord secretly supports them.",
+        "D. They will remain in the town and take up residence in a house provided by Captain Horster.",
+        "E. They will move into the local schoolhouse after he takes over the educational program."
       ],
       "answer": "D",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "And my school shall be in the room where they insulted me and called me an enemy of the people. But we are too few as we are; I must have at least twelve boys to begin with.", "dia_id": "D5:292" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "We are going to sail away to the New World,",
+          "dia_id": "D5:14"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!",
+          "dia_id": "D5:261"
+        },
+        {
+          "id": "E3",
+          "speaker": "Horster",
+          "utterance": "That you shall have in my house.",
+          "dia_id": "D5:265"
+        },
+        {
+          "id": "E4",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Thank you, thank you! That is one trouble over!",
+          "dia_id": "D5:270"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann clearly states the specific number of boys required to start his school.",
-          "based_on": ["E1"]
+          "inference": "The doctor initially states they will sail to the New World.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He later updates this decision, choosing to stay and accepting Horster's offer of housing.",
+          "based_on": [
+            "E2",
+            "E3",
+            "E4"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 4,
+      "question": "Which of the following describes the secret financial agreement Dr. Stockmann made with Mr. Vik to secure the Baths?",
+      "option": [
+        "A. Dr. Stockmann agreed to provide Mr. Vik with a list of loyal householders in exchange for a loan.",
+        "B. Mr. Vik offered to buy the shares under an assumed name if Dr. Stockmann retracted his scientific claims.",
+        "C. Dr. Stockmann promised to use the \"People's Messenger\" to promote Mr. Vik's shipping business.",
+        "D. Mr. Vik agreed to finance Dr. Stockmann's new school in exchange for control of the conduit-pipes.",
+        "E. Dr. Stockmann agreed to sell his own shares to Mr. Vik at a heavily discounted rate."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "No; but what has happened is that I am not to sail in it.",
+          "dia_id": "D5:64"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And that is this man Vik—a wealthy man, independent of everyone and everything—! Shame on him!",
+          "dia_id": "D5:71"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "The text only mentions Mr. Vik in the context of him dismissing Horster from his ship due to party pressure.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "There is no mention of any secret financial agreement between Dr. Stockmann and Mr. Vik.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Dr. Stockmann",
+      "category": 5,
+      "question": "Which specific item of clothing does Dr. Stockmann mention was damaged by the crowd?",
+      "option": [
+        "A. His favorite smoking-cap.",
+        "B. His new dressing-gown.",
+        "C. His black trousers.",
+        "D. His grey winter coat.",
+        "E. His finest silk scarf."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Are you suggesting that I should stay here, where they have pilloried me as an enemy of the people—branded me—broken my windows! And just look here, Katherine—they have torn a great rent in my black trousers too!",
+          "dia_id": "D5:16"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann explicitly names the item of clothing that was torn.",
+          "based_on": [
+            "E1"
+          ]
         }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 1,
-      "question": "Which statement best characterizes Mrs. Stockmann's continuous approach to her husband's escalating conflicts?",
+      "question": "How does Mrs. Stockmann's general approach to her husband's actions manifest during the morning's events?",
       "option": [
-        "A. She blindly encourages his aggressive actions, urging him to fight harder against the townspeople.",
-        "B. She secretly plots with Peter Stockmann to have her husband removed from his position at the Baths.",
-        "C. She remains cautious and frequently urges him to control himself and consider the practical consequences.",
-        "D. She completely ignores the political situation, focusing entirely on the daily chores of the household.",
-        "E. She constantly threatens to leave him and take the children back to her father's house in the country."
+        "A. She consistently encourages his most aggressive instincts, demanding he fight back against the townspeople.",
+        "B. She attempts to introduce practical concerns and urge caution regarding the consequences of his outspokenness.",
+        "C. She fully ignores the political situation, focusing exclusively on securing an inheritance for her children.",
+        "D. She sides with Peter Stockmann, believing her husband should sign the retraction to save their social standing.",
+        "E. She acts indifferently to the public backlash, claiming the townspeople's opinions are completely irrelevant."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "But, Thomas, are you sure we are well advised to take this step?", "dia_id": "D5:15" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Control yourself, Thomas!", "dia_id": "D5:250" },
-        { "id": "E3", "speaker": "Mrs. Stockmann", "utterance": "But, dear Thomas, I should have thought events had showed you what use it is to preach.", "dia_id": "D5:273" }
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "But, Thomas, are you sure we are well advised to take this step?",
+          "dia_id": "D5:15"
+        },
+        {
+          "id": "E2",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "But, Thomas dear, the imprudent things you said had something to do with it, you know.",
+          "dia_id": "D5:23"
+        },
+        {
+          "id": "E3",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "But, dear Thomas, I should have thought events had showed you what use it is to preach.",
+          "dia_id": "D5:273"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann constantly questions the wisdom of her husband's extreme actions, such as leaving town or physically fighting.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "She points out the practical failures of his previous preaching, demonstrating her cautious, consequence-focused mindset.",
-          "based_on": ["E1", "E2", "E3"]
+          "inference": "Mrs. Stockmann repeatedly questions the wisdom of his actions and reminds him of the consequences.",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 2,
-      "question": "How did Mrs. Stockmann initially react when she observed her husband attacking the newspapermen?",
+      "question": "How exactly did the Stockmann family receive the notice to quit from their landlord?",
       "option": [
-        "A. She cheered him on and helped him push them out the window.",
-        "B. She was alarmed and pleaded with him to regain his composure.",
-        "C. She immediately fainted from the shock of the sudden violence.",
-        "D. She ran out of the room to call the police to arrest the intruders.",
-        "E. She ignored the fight and calmly asked Petra to lock the front door."
+        "A. The landlord delivered it personally while apologizing for bowing to public pressure.",
+        "B. Peter Stockmann brought it as part of the document packet from the Baths Committee.",
+        "C. It was handed to Mrs. Stockmann by Randine, who then passed it to Thomas.",
+        "D. It arrived via an anonymous messenger alongside the threatening letters sent to Petra.",
+        "E. It was thrown through the broken window tied to one of the large stones."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "Good gracious, Thomas! What is happening?", "dia_id": "D5:246" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Control yourself, Thomas!", "dia_id": "D5:250" }
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Well, that is just what Randine thought—that he didn't dare to, on account of the neighbours. What is it you want, Randine? Give it to me. Here is a letter for you, Thomas.",
+          "dia_id": "D5:7"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Let me see it. Ah!—of course.",
+          "dia_id": "D5:8"
+        },
+        {
+          "id": "E3",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Who is it from?",
+          "dia_id": "D5:9"
+        },
+        {
+          "id": "E4",
+          "speaker": "Dr. Stockmann",
+          "utterance": "From the landlord. Notice to quit.",
+          "dia_id": "D5:10"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann enters the room in a state of shock, asking what is happening during the assault.",
-          "based_on": ["E1"]
+          "inference": "Mrs. Stockmann takes a letter from Randine and hands it to Thomas.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "She immediately tells her husband to control himself, showing her alarm and desire to stop the violence.",
-          "based_on": ["E1", "E2"]
+          "inference": "Thomas opens it and confirms it is the notice to quit from the landlord.",
+          "based_on": [
+            "E2",
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 3,
-      "question": "Over the course of the morning, how did Mrs. Stockmann's understanding of their residential future evolve?",
+      "question": "How does Mrs. Stockmann's belief regarding their financial security shift during the conversation?",
       "option": [
-        "A. She began by insisting they stay, then agreed to leave, and finally decided to move in with Peter.",
-        "B. She first questioned if leaving for good was necessary, then accepted they were packing to leave, and was ultimately shocked when her husband declared they were staying.",
-        "C. She initially wanted to move to the New World, but after Horster's offer, she decided the town was safer.",
-        "D. She first planned to move to her father's house, then packed her bags for America, and finally unpacked them.",
-        "E. She was always determined to stay in their current house and never wavered in her resistance to moving."
+        "A. She starts out believing they are destitute but later learns Horster will pay their bills.",
+        "B. She initially thinks they are ruined, but after Peter's visit, she briefly believes they are provided for for life, until Morten Kiil arrives.",
+        "C. She knows about Morten Kiil's wealth from the beginning and uses it to leverage Peter Stockmann.",
+        "D. She believes the Baths Committee will provide a severance package until Hovstad threatens them.",
+        "E. She thinks her husband's practice will sustain them until the Householders' Association boycotts him."
       ],
       "answer": "B",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "There is no doubt they have behaved very ill toward you, Thomas; but is that sufficient reason for our leaving our native country for good and all?", "dia_id": "D5:19" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Yes, but we are going away, you know, Thomas.", "dia_id": "D5:257" },
-        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!", "dia_id": "D5:261" },
-        { "id": "E4", "speaker": "Mrs. Stockmann", "utterance": "Here, in the town?", "dia_id": "D5:263" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Oh, nothing, nothing; you can go back. Provided for!—Just think of it, we are all provided for! And for life! What a blessed feeling it is to know one is provided for!",
+          "dia_id": "D5:134"
+        },
+        {
+          "id": "E2",
+          "speaker": "Morten Kiil",
+          "utterance": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas!",
+          "dia_id": "D5:170"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And what does Katherine get?",
+          "dia_id": "D5:187"
+        },
+        {
+          "id": "E4",
+          "speaker": "Morten Kiil",
+          "utterance": "Not a halfpenny. Look at those two!",
+          "dia_id": "D5:188"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann starts the morning questioning whether they really need to leave the country permanently.",
-          "based_on": ["E1"]
+          "inference": "Dr. Stockmann tells Katherine they are provided for for life after speaking with Peter.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "Later, she has accepted the plan to leave, reminding Thomas that they are going away.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "When Thomas suddenly declares they are staying, she is taken aback and seeks clarification.",
-          "based_on": ["E3", "E4"]
+          "inference": "Morten Kiil later reveals he invested all that money in the Baths and will leave Katherine nothing if Thomas doesn't retract.",
+          "based_on": [
+            "E2",
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 4,
-      "question": "What specific action did Mrs. Stockmann take immediately following Peter Stockmann's harsh dismissal of her husband?",
+      "question": "Which of the following describes Mrs. Stockmann's physical confrontation with Mrs. Busk regarding Petra's dismissal?",
       "option": [
-        "A. She physically pushed Peter out the door and locked it behind him.",
-        "B. She tried to calm her husband down and hushed his demands for the maid to clean up.",
-        "C. She tore up the dismissal document and threw it directly into the fireplace.",
-        "D. She demanded that Peter apologize to her children before he left the house.",
-        "E. She went to the sitting room and refused to speak to either of them for an hour."
+        "A. Mrs. Stockmann marched to the school and demanded Mrs. Busk read the anonymous letters aloud.",
+        "B. Mrs. Stockmann threatened to pull the boys out of school unless Mrs. Busk reinstated Petra immediately.",
+        "C. Mrs. Stockmann accused Mrs. Busk of being a coward in front of the Householders' Association.",
+        "D. Mrs. Stockmann threw the broken stones from her window at Mrs. Busk's carriage.",
+        "E. Mrs. Stockmann demanded that Mrs. Busk write a formal letter of apology to the family."
       ],
-      "answer": "B",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "All is over between us. Your dismissal is irrevocable—we have a weapon against you now.", "dia_id": "D5:143" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "For shame! For shame! Katherine, you must have the floor scrubbed after him! Let—what's her name—devil take it, the girl who has always got soot on her nose—", "dia_id": "D5:144" },
-        { "id": "E3", "speaker": "Mrs. Stockmann", "utterance": "Hush, Thomas, be quiet!", "dia_id": "D5:145" }
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Mrs. Busk gave me my notice; so I thought it was best to go at once.",
+          "dia_id": "D5:29"
+        },
+        {
+          "id": "E2",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Who would have thought Mrs. Busk was a woman like that!",
+          "dia_id": "D5:31"
+        },
+        {
+          "id": "E3",
+          "speaker": "Petra",
+          "utterance": "Mrs. Busk isn't a bit like that, mother; I saw quite plainly how it hurt her to do it.",
+          "dia_id": "D5:32"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "After Peter formally severs ties and leaves, Dr. Stockmann angrily demands that Katherine have the floor scrubbed.",
-          "based_on": ["E1", "E2"]
+          "inference": "Mrs. Stockmann expresses surprise at Mrs. Busk's actions.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "Instead of complying with the angry request, Mrs. Stockmann hushes her husband and tells him to be quiet.",
-          "based_on": ["E2", "E3"]
+          "inference": "There is no evidence of any physical confrontation or direct interaction between Mrs. Stockmann and Mrs. Busk in the text.",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 5,
-      "question": "What is the specific familial relationship between Mrs. Stockmann (Katherine) and Morten Kiil?",
+      "question": "According to Mrs. Stockmann, who originally thought that the glazier wouldn't dare to come fix the windows?",
       "option": [
-        "A. She is his niece, who inherited the house from him.",
-        "B. She is his daughter, as indicated by him being the children's grandfather.",
-        "C. She is his much younger sister, whom he has financially supported.",
-        "D. She is his former employee who married into the Stockmann family.",
-        "E. She is his distant cousin who manages his tannery business affairs."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Father, grandfather is here, asking if he may speak to you alone.", "dia_id": "D5:146" },
-        { "id": "E2", "speaker": "Morten Kiil", "utterance": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas! If you still make out that these animals and other nasty things of that sort come from my tannery, it will be exactly as if you were to flay broad strips of skin from Katherine's body, and Petra's, and the boys'; and no decent man would do that—unless he were mad.", "dia_id": "D5:170" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra tells her father that her 'grandfather' is here, and Morten Kiil enters immediately after.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "Morten Kiil refers to Katherine's body alongside Petra's and the boys', identifying Katherine (Mrs. Stockmann) as the direct familial link (his daughter) connecting him to the grandchildren.",
-          "based_on": ["E1", "E2"]
-        }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 6,
-      "question": "How many 'Noes' did Mrs. Stockmann observe written on the document her husband showed her?",
-      "option": [
-        "A. One",
-        "B. Two",
-        "C. Three",
-        "D. Four",
-        "E. Five"
+        "A. The landlord.",
+        "B. Captain Horster.",
+        "C. Randine.",
+        "D. Mr. Aslaksen.",
+        "E. Morten Kiil."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I will tell you later on; I have something else to think about now. Look there, Katherine; what is written there?", "dia_id": "D5:253" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Three big Noes; what does that mean", "dia_id": "D5:254" }
-      ],
-      "reasoning_steps": [
         {
-          "step": 1,
-          "inference": "When prompted by her husband to read the document, Mrs. Stockmann explicitly counts the negative responses.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "She states aloud that she sees 'Three big Noes' written there.",
-          "based_on": ["E1", "E2"]
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Well, that is just what Randine thought—that he didn't dare to, on account of the neighbours.",
+          "dia_id": "D5:7"
         }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 1,
-      "question": "Which statement best captures Petra's consistent values and attitude toward her father's societal struggles?",
-      "option": [
-        "A. She is resentful of her father because his political views caused her to lose her teaching position.",
-        "B. She remains a fiercely loyal ally who supports his defiance and willingly joins his new educational cause.",
-        "C. She constantly advises him to compromise with the mayor in order to protect the family's income.",
-        "D. She is entirely indifferent to the town's politics and only cares about finding a new husband.",
-        "E. She acts as a spy for the 'People's Messenger', secretly hoping her father will be defeated."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Bah!—you should only laugh at them, father,", "dia_id": "D5:58" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "but I will make liberal-minded and high-minded men of you. You must help me with that, Petra.", "dia_id": "D5:290" },
-        { "id": "E3", "speaker": "Petra", "utterance": "Yes, father, you may be sure I will.", "dia_id": "D5:291" }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "When Dr. Stockmann is distressed by being called an enemy of the people, Petra encourages him to defy them by laughing at them.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "When he decides to start his own school to educate the boys to be high-minded, she eagerly agrees to help him, proving her ongoing loyalty and alignment with his ideals.",
-          "based_on": ["E1", "E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 2,
-      "question": "How did Petra feel about her employer's decision to dismiss her from her job?",
-      "option": [
-        "A. She was furious at Mrs. Busk and verbally attacked her before storming out of the school.",
-        "B. She was completely devastated and cried uncontrollably on her way back to her family's house.",
-        "C. She recognized that Mrs. Busk was personally pained to do it but was forced by public pressure.",
-        "D. She felt relieved because she had always hated the restrictive environment of the school.",
-        "E. She blamed her father entirely and demanded that he compensate her for the lost wages."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "Who would have thought Mrs. Busk was a woman like that!", "dia_id": "D5:31" },
-        { "id": "E2", "speaker": "Petra", "utterance": "Mrs. Busk isn't a bit like that, mother; I saw quite plainly how it hurt her to do it. But she didn't dare do otherwise, she said; and so I got my notice.", "dia_id": "D5:32" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "When her mother criticizes Mrs. Busk's character, Petra immediately defends her.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "Petra explains that she saw it hurt Mrs. Busk to fire her, showing understanding that the dismissal was driven by fear of the community, not malice.",
-          "based_on": ["E2"]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 3,
-      "question": "What sequence of interactions defines Petra's involvement with the written communications on this morning?",
-      "option": [
-        "A. She first delivered a letter from the landlord, then read a notice from the mayor, and finally wrote a response to Mrs. Busk.",
-        "B. She first revealed the anonymous letters sent to her boss, and later was tasked with delivering her father's written response to Morten Kiil.",
-        "C. She first received a letter of support from Captain Horster, then read the eviction notice, and finally sent a telegram.",
-        "D. She first wrote an anonymous letter to the newspaper, then received her dismissal, and finally delivered the 'Three Noes'.",
-        "E. She first delivered the eviction notice to her father, then threw the 'Three Noes' out the window, and finally left."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk showed me no less than three letters she received this morning—", "dia_id": "D5:37" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "I will tell you that too, later on. There, Petra; tell sooty-face to run over to the \"Badger's\" with that, as quick as she can. Hurry up!", "dia_id": "D5:255" },
-        { "id": "E3", "speaker": "Petra", "utterance": "She has gone with it.", "dia_id": "D5:260" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Early in the conversation, Petra brings up the three anonymous letters that led to her dismissal.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "Much later, after the fight with the journalists, Dr. Stockmann hands her the paper with 'Three big Noes' and instructs her to have it sent to Morten Kiil.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "Petra executes this task, confirming the sequence of her involvement with the letters.",
-          "based_on": ["E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 4,
-      "question": "What specific action did Petra take after her employer showed her the anonymous letters?",
-      "option": [
-        "A. She begged Mrs. Busk to reconsider and offered to publicly renounce her father's views.",
-        "B. She identified the guest who had spread the rumors and went to his house to confront him.",
-        "C. She decided it was best to leave the school at once after receiving her notice of dismissal.",
-        "D. She stole the letters from Mrs. Busk's desk to show them as proof to her father.",
-        "E. She demanded a formal hearing with the school board to contest the unfair dismissal."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk gave me my notice; so I thought it was best to go at once.", "dia_id": "D5:29" },
-        { "id": "E2", "speaker": "Petra", "utterance": "And two of them were to the effect that a man, who has been our guest here, was declaring last night at the Club that my views on various subjects are extremely emancipated—", "dia_id": "D5:41" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra explains that she received her notice because of the letters complaining about her emancipated views.",
-          "based_on": ["E2"]
-        },
-        {
-          "step": 2,
-          "inference": "Following this notice, she explicitly states that her response was to leave the premises immediately.",
-          "based_on": ["E1", "E2"]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 5,
-      "question": "What is the professional relationship between Petra and Mrs. Busk?",
-      "option": [
-        "A. Mrs. Busk is Petra's wealthy patron who funds her private tutoring business.",
-        "B. Mrs. Busk is Petra's former student who has now become a rival teacher.",
-        "C. Mrs. Busk is Petra's employer who ultimately gives her notice of dismissal.",
-        "D. Mrs. Busk is Petra's teaching assistant who betrayed her to the school board.",
-        "E. Mrs. Busk is Petra's landlady who evicted her from the schoolhouse."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk gave me my notice; so I thought it was best to go at once.", "dia_id": "D5:29" },
-        { "id": "E2", "speaker": "Petra", "utterance": "No, you know I wouldn't. Mrs. Busk's own views are tolerably emancipated, when we are alone together; but now that this report about me is being spread, she dare not keep me on any longer.", "dia_id": "D5:43" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra states that Mrs. Busk gave her notice and that she 'dare not keep me on any longer'.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "The ability to keep someone on and give them a dismissal notice firmly establishes Mrs. Busk as Petra's employer.",
-          "based_on": ["E1", "E2"]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 6,
-      "question": "How many letters did Petra say her employer received regarding her views?",
-      "option": [
-        "A. One",
-        "B. Two",
-        "C. Three",
-        "D. Four",
-        "E. Five"
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Mrs. Busk showed me no less than three letters she received this morning—", "dia_id": "D5:37" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra explicitly quantifies the number of letters shown to her by Mrs. Busk.",
-          "based_on": ["E1"]
+          "inference": "Mrs. Stockmann explicitly names Randine as the person who had this thought.",
+          "based_on": [
+            "E1"
+          ]
         }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 1,
-      "question": "Which statement best describes Peter Stockmann's consistent strategy when dealing with his brother's rebellion?",
+      "question": "Which statement accurately reflects Peter Stockmann's core priority regarding individual behavior?",
       "option": [
-        "A. He relies entirely on physical violence and police intervention to enforce his rules.",
-        "B. He constantly offers his brother significant financial bribes out of his own pocket to maintain the peace.",
-        "C. He uses societal pressure, professional threats, and manipulation of public opinion to force compliance.",
-        "D. He breaks down emotionally, crying and begging his brother to think of their shared childhood.",
-        "E. He ignores the rebellion entirely, assuming the townspeople will naturally support the scientific truth."
+        "A. He believes individuals should prioritize scientific truth over the mutable whims of public opinion.",
+        "B. He insists that a man must align his actions with the expectations of society and his familial duties, avoiding behaviors that disrupt public order.",
+        "C. He feels that a true patriot must be willing to endure anonymous letters and broken windows for his cause.",
+        "D. He values loyalty to independent wealth, like that of Mr. Vik, over loyalty to the political party machine.",
+        "E. He believes that a man's primary duty is to ensure the educational enlightenment of the next generation."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "The Householders' Association is circulating a list from house to house. All right-minded citizens are being called upon to give up employing you; and I can assure you that not a single head of a family will risk refusing his signature. They simply dare not.", "dia_id": "D5:104" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" },
-        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "I see that they were nothing else than the stipulated price for that vindictive old man's will.", "dia_id": "D5:141" }
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "I must beg you to understand your position clearly. For the future you must not count on any practice whatever in the town.",
+          "dia_id": "D5:102"
+        },
+        {
+          "id": "E2",
+          "speaker": "Peter Stockmann",
+          "utterance": "A man with a family has no right to behave as you do.",
+          "dia_id": "D5:116"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter informs Dr. Stockmann of the organized boycott, showing his reliance on coordinated societal pressure.",
-          "based_on": ["E1"]
+          "inference": "Peter pressures Thomas to conform by threatening his livelihood based on public opinion.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "He dangles the possibility of reinstating his brother's position if he writes a public apology, demonstrating coercive professional threats.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "He later attempts to invalidate Dr. Stockmann's moral standing by framing the rebellion as a greedy plot to secure an inheritance.",
-          "based_on": ["E3"]
+          "inference": "He explicitly states that a family man has no right to behave disruptively.",
+          "based_on": [
+            "E2"
+          ]
         }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 2,
-      "question": "What was Peter Stockmann's immediate physical sensation upon entering his brother's disordered house?",
+      "question": "What is the exact sequence of conditions Peter Stockmann presents for Dr. Stockmann to potentially regain his appointment?",
       "option": [
-        "A. He felt overwhelmingly hot and asked to open all the remaining windows.",
-        "B. He felt a sharp pain in his chest from the stress of the previous night.",
-        "C. He felt a draft and complained that he was shivering and had caught a cold.",
-        "D. He felt nauseous from the lingering smell of the town's polluted water.",
-        "E. He felt exhausted and immediately demanded to sit down on the nearest chair."
+        "A. He must sell his shares in the Baths to Mr. Vik and publicly apologize to the Householders' Association.",
+        "B. He must leave the place for a little while, take six months to think, and write a few words of regret acknowledging his error.",
+        "C. He must surrender his practice, pay for the broken windows himself, and write a letter of resignation.",
+        "D. He must convince Morten Kiil to donate his wealth to the Baths Committee and leave for the New World.",
+        "E. He must stop associating with Hovstad and Aslaksen and publicly denounce the \"People's Messenger\"."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I daresay you find it rather draughty here today. Put your hat on.", "dia_id": "D5:93" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Thank you, if I may. I think I caught cold last night; I stood and shivered—", "dia_id": "D5:94" }
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "If I might advise you, it would be best to leave the place for a little while—",
+          "dia_id": "D5:106"
+        },
+        {
+          "id": "E2",
+          "speaker": "Peter Stockmann",
+          "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—",
+          "dia_id": "D5:108"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "I might have my appointment restored to me, do you mean?",
+          "dia_id": "D5:109"
+        },
+        {
+          "id": "E4",
+          "speaker": "Peter Stockmann",
+          "utterance": "Perhaps. It is not at all impossible.",
+          "dia_id": "D5:110"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann notes the room is drafty (due to broken windows) and tells Peter to put his hat on.",
-          "based_on": ["E1"]
+          "inference": "Peter outlines steps: leave for a while, wait six months, write words of regret.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "Peter agrees, stating he feels he caught a cold and was shivering.",
-          "based_on": ["E1", "E2"]
+          "inference": "These are the conditions that might make restoring the appointment possible.",
+          "based_on": [
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 3,
-      "question": "In what order did Peter Stockmann deploy his arguments to force his brother into submission during their meeting?",
+      "question": "How does Peter Stockmann's assessment of Thomas's motives for attacking the town leaders change during their conversation?",
       "option": [
-        "A. He first brought up Mr. Kiil's will, then asked for a written apology, and finally delivered the formal dismissal from the Baths.",
-        "B. He first suggested Dr. Stockmann leave town, then accused him of conspiring with Hovstad, and finally threatened his children.",
-        "C. He first presented the formal dismissal, then demanded a written apology, and finally accused him of plotting to secure Mr. Kiil's inheritance.",
-        "D. He first warned of the Householders' boycott, then delivered the dismissal, and finally begged him to think of their family name.",
-        "E. He first accused him of conspiring with Mr. Kiil, then threatened a boycott, and finally offered him a promotion if he stayed silent."
+        "A. He initially believes Thomas is acting out of pure malice, but later realizes Thomas is just scientifically misguided.",
+        "B. He first believes Thomas is acting on the belief he has the whole town's backing, but upon hearing about Kiil's actions, concludes it was a calculated maneuver for inheritance.",
+        "C. He starts out thinking Thomas wants to destroy the Baths entirely, but later thinks Thomas wants to become the new Mayor.",
+        "D. He believes Thomas is acting alone at first, but later thinks Hovstad and Aslaksen paid him to do it.",
+        "E. He assumes Thomas is doing it for fame, but changes his mind when Thomas refuses to write a letter of regret."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I have this document for you, from the Baths Committee.", "dia_id": "D5:98" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" },
-        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "Do you really ask me to believe that you are ignorant of the terms of Mr. Kiil's will?", "dia_id": "D5:124" },
-        { "id": "E4", "speaker": "Peter Stockmann", "utterance": "I see that the whole thing was a combined manoeuvre on your part and his. These violent, reckless attacks that you have made against the leading men of the town, under the pretence that it was in the name of truth—", "dia_id": "D5:139" }
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "Your position was quite different then. At that time you had reason to suppose you had the whole town at your back—",
+          "dia_id": "D5:114"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "But he won't do that, my dear Peter. The \"Badger\" is much too delighted at my attack on you and your wise friends.",
+          "dia_id": "D5:136"
+        },
+        {
+          "id": "E3",
+          "speaker": "Peter Stockmann",
+          "utterance": "I see that the whole thing was a combined manoeuvre on your part and his. These violent, reckless attacks that you have made against the leading men of the town... I see that they were nothing else than the stipulated price for that vindictive old man's will.",
+          "dia_id": "D5:139"
+        },
+        {
+          "id": "E4",
+          "speaker": "Peter Stockmann",
+          "utterance": "I see that they were nothing else than the stipulated price for that vindictive old man's will.",
+          "dia_id": "D5:141"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter begins the confrontation by handing over the formal dismissal document.",
-          "based_on": ["E1"]
+          "inference": "Peter initially notes Thomas thought he had the town's backing when he started.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "He then transitions to advising a six-month exile followed by a written apology to regain the appointment.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "When Dr. Stockmann refuses, Peter shifts tactics and brings up the terms of Mr. Kiil's will, ultimately accusing his brother of a manipulative plot.",
-          "based_on": ["E2", "E3", "E4"]
+          "inference": "After Thomas mentions Kiil's delight, Peter updates his theory to believe it was a pre-arranged plot for Kiil's inheritance.",
+          "based_on": [
+            "E2",
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 4,
-      "question": "What specific conclusion did Peter Stockmann draw when he observed his brother's joy over the news of Mr. Kiil's will?",
+      "question": "Which of the following describes the specific threat Peter Stockmann made to Captain Horster before leaving the house?",
       "option": [
-        "A. He concluded that his brother had finally lost his mind due to the stress of the broken windows.",
-        "B. He concluded that his brother was genuinely surprised and innocent of any financial scheming.",
-        "C. He concluded that the attacks on the town were actually a coordinated plot to earn the inheritance.",
-        "D. He concluded that he needed to immediately contest the will in court to protect the town's funds.",
-        "E. He concluded that Morten Kiil was secretly funding the 'People's Messenger' newspaper."
+        "A. He threatened to have Horster's captain's license permanently revoked by the maritime board.",
+        "B. He told Horster that harboring an enemy of the people would result in the immediate seizure of his property.",
+        "C. He warned Horster that Mr. Vik would blacklist him from every shipping company in the country.",
+        "D. He threatened to have the local police arrest Horster for his involvement in the crowd disturbance.",
+        "E. He declared that Horster would be entirely barred from the Householders' Association."
       ],
-      "answer": "C",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "But he won't do that, my dear Peter. The \"Badger\" is much too delighted at my attack on you and your wise friends.", "dia_id": "D5:136" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Ah, that throws a light on various things.", "dia_id": "D5:137" },
-        { "id": "E3", "speaker": "Peter Stockmann", "utterance": "I see that they were nothing else than the stipulated price for that vindictive old man's will.", "dia_id": "D5:141" }
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "Oh, you are engaged. In that case, I will—",
+          "dia_id": "D5:86"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "No, go in there with them, Captain Horster; I want to hear more about—.",
+          "dia_id": "D5:91"
+        },
+        {
+          "id": "E3",
+          "speaker": "Peter Stockmann",
+          "utterance": "All is over between us. Your dismissal is irrevocable—we have a weapon against you now.",
+          "dia_id": "D5:143"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann mentions that Kiil is delighted by the attacks on Peter and his friends.",
-          "based_on": ["E1"]
+          "inference": "Peter interacts briefly upon arriving while Horster is there, and Horster leaves for the sitting room.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "Hearing this, Peter explicitly states this 'throws a light' and declares the attacks were the 'stipulated price' to secure the will.",
-          "based_on": ["E1", "E2", "E3"]
+          "inference": "Peter directs his final threats solely at Thomas before leaving; he makes no threats to Horster.",
+          "based_on": [
+            "E3"
+          ]
         }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 5,
-      "question": "What is the professional connection between Peter Stockmann and the entity issuing Dr. Stockmann's dismissal?",
+      "question": "What specific reason does Peter Stockmann provide for keeping his hat on in Dr. Stockmann's study?",
       "option": [
-        "A. He is merely a messenger for the Householders' Association, having no real power himself.",
-        "B. He acts as the representative and deliverer of the document for the Baths Committee.",
-        "C. He is the landlord of the building where the Baths Committee meets.",
-        "D. He is the independent lawyer hired by Mr. Kiil to audit the Baths.",
-        "E. He is the editor of the 'People's Messenger' who published the dismissal notice."
+        "A. He claims he cannot stay long because he has a meeting with the Baths Committee.",
+        "B. He states he thinks he caught cold the previous night from standing and shivering.",
+        "C. He says the draught from the broken windows is too severe for his delicate health.",
+        "D. He explains that keeping it on is a sign of his official capacity as Mayor.",
+        "E. He notes that the soot and dirt in the room might ruin his hair."
       ],
       "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I have this document for you, from the Baths Committee.", "dia_id": "D5:98" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Yes, dating from today. It gives us pain to do it; but, to speak frankly, we dared not do otherwise on account of public opinion.", "dia_id": "D5:100" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "I daresay you find it rather draughty here today. Put your hat on.",
+          "dia_id": "D5:93"
+        },
+        {
+          "id": "E2",
+          "speaker": "Peter Stockmann",
+          "utterance": "Thank you, if I may. I think I caught cold last night; I stood and shivered—",
+          "dia_id": "D5:94"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter Stockmann personally delivers the dismissal document.",
-          "based_on": ["E1"]
+          "inference": "Peter directly states his reason for wearing the hat is a suspected cold from the previous night.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 1,
+      "question": "How does Petra's attitude toward societal norms and her father's crusade remain consistent throughout the dialogue?",
+      "option": [
+        "A. She consistently begs her father to compromise so she can regain her teaching position.",
+        "B. She maintains emancipated views and actively supports her father's defiance against the town.",
+        "C. She shows a passive acceptance of public opinion, preferring to stay out of the conflict entirely.",
+        "D. She acts solely as a mediator between her father and the \"People's Messenger.\"",
+        "E. She repeatedly expresses a desire to move to the free West to escape the town's oversight."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "No, you know I wouldn't. Mrs. Busk's own views are tolerably emancipated, when we are alone together; but now that this report about me is being spread, she dare not keep me on any longer.",
+          "dia_id": "D5:43"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "Yes, father, you may be sure I will.",
+          "dia_id": "D5:291"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra confirms she holds emancipated views and refused to deny them.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "He states it is from the Baths Committee and uses 'us' and 'we' to describe the decision-makers, establishing him as a representative of that committee.",
-          "based_on": ["E1", "E2"]
+          "inference": "She eagerly agrees to help her father educate boys to be liberal-minded and high-minded.",
+          "based_on": [
+            "E2"
+          ]
         }
       ]
     },
     {
-      "character": "Peter Stockmann",
-      "category": 6,
-      "question": "How long of a period did Peter Stockmann advise his brother to take to 'think things over' before writing an apology?",
+      "character": "Petra",
+      "category": 2,
+      "question": "What sequence of events led directly to Petra's dismissal by Mrs. Busk?",
       "option": [
-        "A. One month",
-        "B. Three months",
-        "C. Six months",
-        "D. One year",
-        "E. Two years"
+        "A. Petra wrote a controversial article for the \"People's Messenger,\" which was forwarded to Mrs. Busk by Aslaksen.",
+        "B. A guest at the Stockmanns' house gossiped at the Club about Petra's emancipated views, which led to Mrs. Busk receiving anonymous letters about her.",
+        "C. Peter Stockmann ordered the school board to terminate her contract because of her father's attack on the Baths.",
+        "D. Petra publicly insulted the townspeople during the meeting, causing parents to withdraw their children from her class.",
+        "E. Morten Kiil demanded she be fired so she would be free to help Thomas run the Baths."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "Good. And then, when you have had six months to think things over, if, after mature consideration, you can persuade yourself to write a few words of regret, acknowledging your error—", "dia_id": "D5:108" }
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Mrs. Busk showed me no less than three letters she received this morning—",
+          "dia_id": "D5:37"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "And two of them were to the effect that a man, who has been our guest here, was declaring last night at the Club that my views on various subjects are extremely emancipated—",
+          "dia_id": "D5:41"
+        },
+        {
+          "id": "E3",
+          "speaker": "Petra",
+          "utterance": "...but now that this report about me is being spread, she dare not keep me on any longer.",
+          "dia_id": "D5:43"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter Stockmann specifies the exact duration of time Dr. Stockmann should take to reconsider his stance.",
-          "based_on": ["E1"]
+          "inference": "A guest gossiped about Petra's views at the Club.",
+          "based_on": [
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "This led to anonymous letters being sent to Mrs. Busk, resulting in Petra's dismissal because Mrs. Busk didn't dare keep her.",
+          "based_on": [
+            "E1",
+            "E3"
+          ]
         }
       ]
     },
     {
-      "character": "Hovstad",
-      "category": 1,
-      "question": "Which statement best identifies Hovstad's underlying operational mindset regarding the newspaper and town politics?",
+      "character": "Petra",
+      "category": 3,
+      "question": "How does Petra's occupational outlook change from the beginning of the scene to the end?",
       "option": [
-        "A. He is a steadfast idealist who will always publish the absolute truth regardless of the financial cost to himself.",
-        "B. He is a deeply religious man who bases all his editorial decisions on strict moral theology.",
-        "C. He is an aggressive anarchist who wants to destroy all institutions simply for the sake of chaos.",
-        "D. He is a pragmatic opportunist who views politics as a struggle for survival where one must adapt to secure resources.",
-        "E. He is a completely submissive follower who never takes any initiative without Peter Stockmann's direct orders."
+        "A. She starts out expecting to teach at the public school but decides to become a journalist for Hovstad.",
+        "B. She begins unemployed due to dismissal but ends up agreeing to help her father teach a new private school.",
+        "C. She is dismissed from her job and plans to find a position on Horster's new ship by the end.",
+        "D. She begins the day as her father's secretary and ends up taking over the tannery business.",
+        "E. She starts out hopeful to keep her job but ends up deciding to move to the New World alone."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Yes. I have been given notice of dismissal.",
+          "dia_id": "D5:26"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "but I will make liberal-minded and high-minded men of you. You must help me with that, Petra.",
+          "dia_id": "D5:290"
+        },
+        {
+          "id": "E3",
+          "speaker": "Petra",
+          "utterance": "Yes, father, you may be sure I will.",
+          "dia_id": "D5:291"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra reveals she was dismissed from her current job.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Later, she commits to helping her father educate boys in his new school setup.",
+          "based_on": [
+            "E2",
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 4,
+      "question": "Which of the following describes Petra's romantic confrontation with Hovstad regarding his betrayal?",
+      "option": [
+        "A. Petra threw the anonymous letters in Hovstad's face and accused him of being the guest who gossiped at the Club.",
+        "B. Petra demanded Hovstad return her engagement ring before helping her father throw him out the window.",
+        "C. Petra told Hovstad she would only marry him if he published her father's article without alterations.",
+        "D. Petra cried and begged Hovstad to use the \"People's Messenger\" to clear her name with Mrs. Busk.",
+        "E. Petra slapped Hovstad after he admitted he only courted her to get closer to Morten Kiil's inheritance."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Are you quite mad!",
+          "dia_id": "D5:242"
+        },
+        {
+          "id": "E2",
+          "speaker": "STAGE",
+          "utterance": "(MRS. STOCKMANN, PETRA and HORSTER come in from the sitting-room.)",
+          "dia_id": "D5:245"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Jump out, I tell you! Out into the gutter!",
+          "dia_id": "D5:247"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra only enters the room from the sitting room as Hovstad and Aslaksen are being chased out by her father.",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Petra has no dialogue with Hovstad in this scene, nor is a romantic confrontation depicted.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 5,
+      "question": "Exactly how many anonymous letters did Mrs. Busk show Petra regarding the gossip?",
+      "option": [
+        "A. Two.",
+        "B. Three.",
+        "C. Four.",
+        "D. None; she only heard the rumors verbally.",
+        "E. A whole stack of them."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Mrs. Busk showed me no less than three letters she received this morning—",
+          "dia_id": "D5:37"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra explicitly states the exact number of letters.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 1,
+      "question": "How does Horster display a consistent disregard for the town's political pressure throughout the text?",
+      "option": [
+        "A. He actively writes articles for the \"People's Messenger\" defending Dr. Stockmann's scientific findings.",
+        "B. He buys shares in the Baths to financially support Morten Kiil against the Mayor.",
+        "C. He physically fights the townspeople, throwing the broken stones back out the window.",
+        "D. He shrugs off the crowd's fury and explicitly states he does not regret helping the Stockmanns, even after losing his job.",
+        "E. He demands that Mr. Vik reinstate him, threatening a strike among the sailors."
       ],
       "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition; it doesn't go really well; and I should be very unwilling to suspend the paper now, when there is so much work to do here in the political way.", "dia_id": "D5:229" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "It is a natural law; every animal must fight for its own livelihood.", "dia_id": "D5:236" }
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "Oh, somehow or other. I am fairly strong, and there is more sound than fury about these folk.",
+          "dia_id": "D5:52"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "If only you had not come home with us, things might not have come to this pass.",
+          "dia_id": "D5:77"
+        },
+        {
+          "id": "E3",
+          "speaker": "Horster",
+          "utterance": "I do not regret it.",
+          "dia_id": "D5:78"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Hovstad attempts to leverage Dr. Stockmann's presumed newfound wealth to prop up his failing newspaper under the guise of political work.",
-          "based_on": ["E1"]
+          "inference": "Horster dismisses the crowd as being more sound than fury.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "When threatened, he justifies his exploitative actions as a 'natural law' of animals fighting for livelihood, confirming his survivalist, opportunistic ideology.",
-          "based_on": ["E1", "E2"]
+          "inference": "Despite losing his ship command for helping them, he firmly states he does not regret it.",
+          "based_on": [
+            "E2",
+            "E3"
+          ]
         }
       ]
     },
     {
-      "character": "Hovstad",
+      "character": "Horster",
       "category": 2,
-      "question": "What was Hovstad's immediate reaction when Dr. Stockmann suddenly grabbed his umbrella and ordered him out the window?",
+      "question": "What chain of events led to Captain Horster seeking a new job elsewhere?",
       "option": [
-        "A. He burst into laughter, assuming it was a joke.",
-        "B. He drew a weapon to defend himself against the assault.",
-        "C. He calmly sat down and refused to be intimidated.",
-        "D. He questioned Dr. Stockmann's sanity and appealed to a witness about the assault.",
-        "E. He immediately jumped out the window to avoid being hit."
+        "A. Horster refused to sail with Morten Kiil's polluted cargo, so Mr. Vik fired him.",
+        "B. Horster helped the Stockmanns through the crowd, causing party men to pressure Mr. Vik, who then removed Horster from his command.",
+        "C. Horster decided to leave town with Dr. Stockmann for the New World and resigned his commission voluntarily.",
+        "D. Peter Stockmann ordered the Householders' Association to boycott Horster's ship, bankrupting Mr. Vik.",
+        "E. Horster's ship was damaged by the mob throwing stones, rendering it unable to sail."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "No; but what has happened is that I am not to sail in it.",
+          "dia_id": "D5:64"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And that is this man Vik—a wealthy man, independent of everyone and everything—! Shame on him!",
+          "dia_id": "D5:71"
+        },
+        {
+          "id": "E3",
+          "speaker": "Horster",
+          "utterance": "He is quite an excellent fellow otherwise; he told me himself he would willingly have kept me on, if only he had dared—",
+          "dia_id": "D5:72"
+        },
+        {
+          "id": "E4",
+          "speaker": "Horster",
+          "utterance": "It is not such an easy matter, he said, for a party man—",
+          "dia_id": "D5:74"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster was removed from command of Mr. Vik's ship.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Vik did this because he didn't dare do otherwise due to pressure as a \"party man.\"",
+          "based_on": [
+            "E3",
+            "E4"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 3,
+      "question": "How does Captain Horster's plan regarding the Stockmann family evolve over the course of the morning?",
+      "option": [
+        "A. He initially plans to convince them to apologize, but later decides to fight the Mayor himself.",
+        "B. He first intends to buy the Baths shares for them, but later decides to offer his ship instead.",
+        "C. He arrives with a plan for them to leave on his ship, but after Dr. Stockmann decides to stay, Horster offers them his house.",
+        "D. He plans to evict them from his rental property, but changes his mind when he sees their broken windows.",
+        "E. He intends to sever ties with them to save his job, but changes his mind when he hears about Kiil's money."
+      ],
+      "answer": "C",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "And so what I came to say was that if you are determined to go away, I have thought of another plan—",
+          "dia_id": "D5:80"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Good.—Going away, did you say? No, I'll be hanged if we are going away! We are going to stay where we are, Katherine!",
+          "dia_id": "D5:261"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "As soon as I have had my trousers sewn up I shall go out and look for another house. We must have a roof over our heads for the winter.",
+          "dia_id": "D5:264"
+        },
+        {
+          "id": "E4",
+          "speaker": "Horster",
+          "utterance": "That you shall have in my house.",
+          "dia_id": "D5:265"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster arrives with an alternative plan assuming they are determined to leave.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "When Dr. Stockmann changes his mind and decides to stay but needs a house, Horster adapts and offers his own house.",
+          "based_on": [
+            "E2",
+            "E3",
+            "E4"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 4,
+      "question": "How does Horster express his deep hatred and desire for revenge against Mr. Vik?",
+      "option": [
+        "A. He vows to sink Mr. Vik's ship before it leaves the harbor.",
+        "B. He promises to tell the entire Householders' Association about Mr. Vik's cowardice.",
+        "C. He declares that he will start a rival shipping company to ruin Mr. Vik financially.",
+        "D. He physically attacks Peter Stockmann for forcing Mr. Vik's hand.",
+        "E. He demands Dr. Stockmann expose Mr. Vik's corruption in his next article."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "You mustn't take it to heart; I shall be sure to find a job with some ship-owner or other, elsewhere.",
+          "dia_id": "D5:70"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And that is this man Vik—a wealthy man, independent of everyone and everything—! Shame on him!",
+          "dia_id": "D5:71"
+        },
+        {
+          "id": "E3",
+          "speaker": "Horster",
+          "utterance": "He is quite an excellent fellow otherwise; he told me himself he would willingly have kept me on, if only he had dared—",
+          "dia_id": "D5:72"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster does not express hatred or a desire for revenge against Mr. Vik.",
+          "based_on": [
+            "E1",
+            "E3"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Instead, he defends Vik, calling him an excellent fellow and explaining he will easily find another job.",
+          "based_on": [
+            "E1",
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 5,
+      "question": "What specific characteristic does Horster cite as the reason he was able to get home through the hostile crowd?",
+      "option": [
+        "A. He knew the back alleys of the town.",
+        "B. He used his umbrella as a weapon.",
+        "C. He threatened them with the police.",
+        "D. He is fairly strong.",
+        "E. He disguised himself in the dark."
       ],
       "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "Are you quite mad!", "dia_id": "D5:242" },
-        { "id": "E3", "speaker": "Hovstad", "utterance": "An assault on an unoffending man! I call you to witness, Captain Horster.", "dia_id": "D5:248" }
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "Oh, somehow or other. I am fairly strong, and there is more sound than fury about these folk.",
+          "dia_id": "D5:52"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "When ordered out the window, Hovstad's first verbal response is to ask if the doctor is mad.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "As the situation escalates, Hovstad formally calls Captain Horster to witness the assault, showing his defensive, legalistic panic.",
-          "based_on": ["E2", "E3"]
+          "inference": "Horster explicitly mentions his physical strength as the factor.",
+          "based_on": [
+            "E1"
+          ]
         }
       ]
     },
     {
       "character": "Hovstad",
-      "category": 3,
-      "question": "What sequence reveals Hovstad's changing stance toward Dr. Stockmann during their meeting?",
-      "option": [
-        "A. He first offered his paper's support, then demanded money, and finally admitted he had betrayed the doctor the night before.",
-        "B. He first defended his actions at the meeting as necessary, then deduced a stock plot, and finally offered the paper's support in exchange for financial rescue.",
-        "C. He first begged for forgiveness, then offered to buy the Baths shares, and finally threatened physical violence.",
-        "D. He first accused the doctor of madness, then offered the Householders' Association's backing, and finally fled.",
-        "E. He first threatened to publish a bad review, then discovered Kiil's involvement, and finally offered to split the profits."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "Call it what you like, we could not do otherwise.", "dia_id": "D5:197" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "And you should not have let your name appear in the affair. There was no need for anyone to know that the attack on the Baths came from you. You ought to have consulted me, Dr. Stockmann.", "dia_id": "D5:210" },
-        { "id": "E3", "speaker": "Aslaksen", "utterance": "Perhaps Mr. Hovstad had better—", "dia_id": "D5:215" },
-        { "id": "E4", "speaker": "Aslaksen", "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.", "dia_id": "D5:217" },
-        { "id": "E5", "speaker": "Hovstad", "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition...", "dia_id": "D5:229" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad begins by defending their betrayal the previous night, stating they couldn't do otherwise.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "Once they mention Kiil buying shares, Hovstad criticizes Dr. Stockmann's lack of finesse in hiding his involvement in the 'scheme'.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "Finally, having assumed it is a profitable scheme, Hovstad (with Aslaksen) offers the paper's support while heavily implying he needs financial rescue in return.",
-          "based_on": ["E2", "E3", "E4", "E5"]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 4,
-      "question": "What specifically did Hovstad threaten to do if Dr. Stockmann refused to financially rescue his newspaper?",
-      "option": [
-        "A. He threatened to burn down the Stockmann house.",
-        "B. He threatened to go to the police and have Dr. Stockmann arrested for assault.",
-        "C. He threatened to take an evil view of the affair and relentlessly hunt the doctor down in the press.",
-        "D. He threatened to tell Mr. Kiil that the doctor was planning to steal the inheritance.",
-        "E. He threatened to permanently shut down the newspaper and blame the doctor for the job losses."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "And suppose I don't give you a single penny of all I get out of it? Money is not very easy to get out of us rich folk, please to remember!", "dia_id": "D5:233" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "And you please to remember that this affair of the shares can be represented in two ways!", "dia_id": "D5:234" },
-        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "Yes, and you are just the man to do it. If I don't come to the rescue of the \"People's Messenger,\" you will certainly take an evil view of the affair; you will hunt me down, I can well imagine—pursue me—try to throttle me as a dog does a hare.", "dia_id": "D5:235" },
-        { "id": "E4", "speaker": "Hovstad", "utterance": "It is a natural law; every animal must fight for its own livelihood.", "dia_id": "D5:236" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann asks what happens if he gives no money, and Hovstad warns that the affair can be represented in two ways in the press.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "Dr. Stockmann outlines the threat (taking an evil view, hunting him down), and Hovstad confirms this vicious intent by citing 'natural law'.",
-          "based_on": ["E2", "E3", "E4"]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 5,
-      "question": "What is the professional relationship between Hovstad and Aslaksen?",
-      "option": [
-        "A. They are fierce competitors running rival newspapers in the town.",
-        "B. They are collaborators and representatives of the 'People's Messenger' newspaper.",
-        "C. Hovstad is the mayor, and Aslaksen is his appointed chief of police.",
-        "D. Hovstad is the landlord of the building where Aslaksen operates his printing press.",
-        "E. They are a doctor and patient, meeting by chance at the Stockmann house."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "Perhaps Mr. Hovstad had better—", "dia_id": "D5:215" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "No, you tell him, Aslaksen.", "dia_id": "D5:216" },
-        { "id": "E3", "speaker": "Aslaksen", "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.", "dia_id": "D5:217" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad and Aslaksen arrive together and coordinate who should speak.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "They act as a unified front offering the 'People's Messenger' to the doctor, showing they are collaborative partners in running/managing the paper.",
-          "based_on": ["E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 6,
-      "question": "How many individuals did Dr. Stockmann explicitly order out of the window?",
-      "option": [
-        "A. One",
-        "B. Two",
-        "C. Three",
-        "D. Four",
-        "E. Five"
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Out of the window with you, Mr. Hovstad!", "dia_id": "D5:241" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Out of the window, Mr. Aslaksen! Jump, I tell you! You will have to do it, sooner or later.", "dia_id": "D5:243" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann specifically targets Mr. Hovstad to go out the window.",
-          "based_on": ["E1"]
-        },
-        {
-          "step": 2,
-          "inference": "Dr. Stockmann then specifically targets a second person, Mr. Aslaksen, to jump out the window, making the total two.",
-          "based_on": ["E1", "E2"]
-        }
-      ]
-    },
-    {
-      "character": "Morten Kiil",
       "category": 1,
-      "question": "Which statement best defines Morten Kiil's primary motivation for his actions regarding the Baths?",
+      "question": "How does Hovstad consistently justify the opportunism and shifting loyalties shown by himself and Aslaksen?",
       "option": [
-        "A. He is deeply concerned about public health and wants to ensure the town's water is thoroughly cleaned.",
-        "B. He wants to help his son-in-law become the most powerful political figure in the entire country.",
-        "C. He is fiercely protective of his own reputation and wants to clear his name from accusations of pollution.",
-        "D. He is a greedy capitalist who only bought the shares to sell them at a massive profit the next day.",
-        "E. He feels guilty for polluting the water and wants to donate his entire fortune to the poor to make amends."
+        "A. He claims that a journalist's duty is strictly to the absolute scientific truth.",
+        "B. He argues that they are forced to act this way because Morten Kiil has blackmailed them.",
+        "C. He justifies it as a natural law where every animal must fight for its own livelihood.",
+        "D. He states that the Mayor legally forces them to change their editorial stances.",
+        "E. He believes that true patriots must always side with the wealthiest men in town."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten Kiil", "utterance": "You said yesterday that the worst of this pollution came from my tannery. If that is true, then my grandfather and my father before me, and I myself, for many years past, have been poisoning the town like three destroying angels. Do you think I am going to sit quiet under that reproach?", "dia_id": "D5:162" },
-        { "id": "E2", "speaker": "Morten Kiil", "utterance": "No, thank you. I am jealous of my name and reputation. They call me \"the Badger,\" I am told. A badger is a kind of pig, I believe; but I am not going to give them the right to call me that. I mean to live and die a clean man.", "dia_id": "D5:164" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Call it what you like, we could not do otherwise.",
+          "dia_id": "D5:197"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "It is a natural law; every animal must fight for its own livelihood.",
+          "dia_id": "D5:236"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Kiil expresses outrage that Dr. Stockmann blamed his family's tannery for the pollution.",
-          "based_on": ["E1"]
+          "inference": "Hovstad first deflects blame by saying they had no choice.",
+          "based_on": [
+            "E1"
+          ]
         },
         {
           "step": 2,
-          "inference": "He explicitly states he is jealous of his name and reputation and refuses to die with the stigma of being a polluter, which drives his blackmail attempt.",
-          "based_on": ["E1", "E2"]
+          "inference": "He fully justifies their aggressive shifting of sides as a natural law of animals fighting for livelihood.",
+          "based_on": [
+            "E2"
+          ]
         }
       ]
     },
     {
-      "character": "Morten Kiil",
+      "character": "Hovstad",
       "category": 2,
-      "question": "What was Morten Kiil's immediate emotional tone when he first confronted Dr. Stockmann about the condition of his house?",
+      "question": "What is the logical chain that leads Hovstad to offer the \"People's Messenger\" to Dr. Stockmann?",
       "option": [
-        "A. He was profoundly sad and offered sympathy for the broken windows.",
-        "B. He was terrified of the mob and begged Dr. Stockmann to protect him.",
-        "C. He was highly amused and sarcastic, mocking the doctor's 'comfortable' situation.",
-        "D. He was apologetic and confessed he had accidentally caused the riot.",
-        "E. He was deeply confused and repeatedly asked who had damaged the property."
+        "A. Hovstad realizes Thomas was right about the pollution, feels guilty, and offers the paper as an apology.",
+        "B. Hovstad discovers Peter Stockmann is bankrupt, assumes Thomas will be the new Mayor, and wants to align with power.",
+        "C. Hovstad deduces that Thomas and Kiil are buying up the depreciated Bath shares and offers the paper's support so he can get a cut of the profits.",
+        "D. Hovstad is threatened by Captain Horster and offers the paper to avoid physical violence.",
+        "E. Hovstad wants to impress Petra and offers the paper to prove he supports her father's liberal views."
       ],
       "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten Kiil", "utterance": "I won't sit. You look very comfortable here today, Thomas.", "dia_id": "D5:148" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Yes, don't we!", "dia_id": "D5:149" },
-        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Very comfortable—plenty of fresh air. I should think you have got enough to-day of that oxygen you were talking about yesterday. Your conscience must be in splendid order to-day, I should think.", "dia_id": "D5:150" }
+        {
+          "id": "E1",
+          "speaker": "Aslaksen",
+          "utterance": "May I ask if your father-in-law is not going round the town buying up all the shares in the Baths?",
+          "dia_id": "D5:207"
+        },
+        {
+          "id": "E2",
+          "speaker": "Aslaksen",
+          "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.",
+          "dia_id": "D5:217"
+        },
+        {
+          "id": "E3",
+          "speaker": "Hovstad",
+          "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition... And you please to remember that this affair of the shares can be represented in two ways!",
+          "dia_id": "D5:229"
+        },
+        {
+          "id": "E4",
+          "speaker": "Hovstad",
+          "utterance": "And you please to remember that this affair of the shares can be represented in two ways!",
+          "dia_id": "D5:234"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Despite the room having broken windows and being in disorder, Kiil calls it 'very comfortable'.",
-          "based_on": ["E1"]
+          "inference": "Hovstad and Aslaksen have figured out that Kiil (and presumably Thomas) are buying the Bath shares.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "He continues his sarcasm by calling the draft from the broken panes 'plenty of fresh air' and mocking the doctor's previous talks about oxygen and conscience.",
-          "based_on": ["E1", "E2", "E3"]
+          "inference": "They offer the paper because they want financial help for the paper in return, threatening to misrepresent the affair if he refuses.",
+          "based_on": [
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
-      "character": "Morten Kiil",
+      "character": "Hovstad",
       "category": 3,
-      "question": "What sequence of actions defines Morten Kiil's blackmail attempt against Dr. Stockmann?",
+      "question": "How does Hovstad's approach toward Dr. Stockmann change during their direct confrontation in the study?",
       "option": [
-        "A. He first threatened Katherine, then bought the shares, and finally demanded an apology to the mayor.",
-        "B. He first bought all the cheap Baths shares using Katherine's inheritance, then demanded the doctor clear his tannery's name, and finally gave him a strict deadline.",
-        "C. He first gave a strict deadline, then asked for a scientific antidote, and finally bought the shares.",
-        "D. He first offered the shares as a gift, then withdrew the offer when insulted, and finally donated them to charity.",
-        "E. He first brought Hovstad as a witness, then demanded the doctor buy the shares from him, and finally left in anger."
+        "A. He enters begging for forgiveness but leaves screaming threats of legal action.",
+        "B. He begins confident and conspiratorial, attempting to extort Dr. Stockmann, but ends up fleeing in terror when physically threatened.",
+        "C. He starts out hostile and aggressive but slowly becomes convinced by Dr. Stockmann's scientific arguments.",
+        "D. He enters pretending to represent the Mayor but eventually admits he works for Morten Kiil.",
+        "E. He begins by offering genuine friendship but becomes enraged when Dr. Stockmann insults Petra."
       ],
       "answer": "B",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Yes, the whole of the money is invested in the Baths now. And now I just want to see whether you are quite stark, staring mad, Thomas!", "dia_id": "D5:170" },
-        { "id": "E2", "speaker": "Morten Kiil", "utterance": "You shall cleanse me, Thomas.", "dia_id": "D5:166" },
-        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "It is no good making a mystery of it any longer.",
+          "dia_id": "D5:205"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "And you please to remember that this affair of the shares can be represented in two ways!",
+          "dia_id": "D5:234"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Out of the window with you, Mr. Hovstad!",
+          "dia_id": "D5:241"
+        },
+        {
+          "id": "E4",
+          "speaker": "Hovstad",
+          "utterance": "Are you quite mad!",
+          "dia_id": "D5:242"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Kiil begins by revealing he has already bought the shares with the money meant for Katherine and the children.",
-          "based_on": ["E1"]
+          "inference": "Hovstad enters acting conspiratorial and uses a veiled threat regarding the shares.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "He then makes his demand: the doctor must publicly 'cleanse' his reputation regarding the tannery.",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 3,
-          "inference": "Finally, he sets a strict temporal deadline, giving the doctor until two o'clock to decide before the shares are given away.",
-          "based_on": ["E2", "E3"]
+          "inference": "When Dr. Stockmann threatens him with the umbrella, Hovstad panics and flees.",
+          "based_on": [
+            "E3",
+            "E4"
+          ]
         }
       ]
     },
     {
-      "character": "Morten Kiil",
+      "character": "Hovstad",
       "category": 4,
-      "question": "What specifically did Morten Kiil threaten to do if Dr. Stockmann refused his terms?",
+      "question": "Which of these details the secret financial bribe Hovstad handed to Aslaksen in the study?",
       "option": [
-        "A. He threatened to have Dr. Stockmann thrown into prison for defamation.",
-        "B. He threatened to immediately donate the shares (and thus the family's inheritance) to charity.",
-        "C. He threatened to physically assault the doctor with his own umbrella.",
-        "D. He threatened to burn down the remaining structures of the Baths.",
-        "E. He threatened to permanently disown Katherine and never speak to his grandchildren again."
+        "A. Hovstad gave Aslaksen fifty crowns to keep quiet about the Baths.",
+        "B. Hovstad slipped Aslaksen a promissory note from Morten Kiil.",
+        "C. Hovstad handed Aslaksen the deed to the \"People's Messenger\" to secure his loyalty.",
+        "D. Hovstad gave Aslaksen a share certificate stolen from Dr. Stockmann's desk.",
+        "E. Hovstad promised Aslaksen half of whatever money they extorted from the Mayor."
       ],
-      "answer": "B",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "And what does Katherine get?", "dia_id": "D5:187" },
-        { "id": "E3", "speaker": "Morten Kiil", "utterance": "Not a halfpenny. Look at those two!", "dia_id": "D5:188" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "No, you tell him, Aslaksen.",
+          "dia_id": "D5:216"
+        },
+        {
+          "id": "E2",
+          "speaker": "Aslaksen",
+          "utterance": "Well, the fact is that, now we know the bearings of the whole affair, we think we might venture to put the \"People's Messenger\" at your disposal.",
+          "dia_id": "D5:217"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Kiil gives an ultimatum with a specific consequence if the answer is no.",
-          "based_on": ["E1"]
+          "inference": "Hovstad and Aslaksen operate as partners in trying to extort Dr. Stockmann.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         },
         {
           "step": 2,
-          "inference": "He explicitly states that if refused, the shares will go to a charity that very day, leaving Katherine with 'not a halfpenny'.",
-          "based_on": ["E1", "E2", "E3"]
+          "inference": "There is zero mention or evidence of any financial bribe being passed between Hovstad and Aslaksen.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
         }
       ]
     },
     {
-      "character": "Morten Kiil",
+      "character": "Hovstad",
       "category": 5,
-      "question": "What is the relationship between Morten Kiil and Dr. Stockmann?",
+      "question": "What specific phrase does Hovstad use to describe the current financial status of the \"People's Messenger\"?",
       "option": [
-        "A. Morten Kiil is Dr. Stockmann's landlord who is evicting him from his current house.",
-        "B. Morten Kiil is Dr. Stockmann's father-in-law, whose money is intended for the doctor's wife.",
-        "C. Morten Kiil is Dr. Stockmann's medical patient who suffers from delusions.",
-        "D. Morten Kiil is Dr. Stockmann's younger brother who runs a rival medical practice.",
-        "E. Morten Kiil is Dr. Stockmann's former schoolteacher who taught him science."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Father, grandfather is here, asking if he may speak to you alone.", "dia_id": "D5:146" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "Certainly he may. Come in, Mr. Kiil. What can I do for you? Won't you sit down?", "dia_id": "D5:147" },
-        { "id": "E3", "speaker": "Dr. Stockmann", "utterance": "And you have gone and taken Katherine's money for this!", "dia_id": "D5:169" }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra refers to Morten Kiil as her grandfather when speaking to her father (Dr. Stockmann).",
-          "based_on": ["E1", "E2"]
-        },
-        {
-          "step": 2,
-          "inference": "This makes Morten Kiil the father of Dr. Stockmann's wife, Katherine, confirming he is Dr. Stockmann's father-in-law.",
-          "based_on": ["E1", "E2", "E3"]
-        }
-      ]
-    },
-    {
-      "character": "Morten Kiil",
-      "category": 6,
-      "question": "By what precise hour did Morten Kiil demand an answer from Dr. Stockmann?",
-      "option": [
-        "A. Twelve o'clock",
-        "B. One o'clock",
-        "C. Two o'clock",
-        "D. Three o'clock",
-        "E. Four o'clock"
+        "A. A thriving enterprise.",
+        "B. On the verge of bankruptcy.",
+        "C. In rather a shaky condition.",
+        "D. Mortgaged to the hilt.",
+        "E. Flush with subscriber cash."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten Kiil", "utterance": "Then I had better go. But I must have an answer from you before two o'clock—yes or no. If it is no, the shares go to a charity, and that this very day.", "dia_id": "D5:186" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "We should prefer to help you without any return whatever, believe me. But the \"People's Messenger\" is in rather a shaky condition; it doesn't go really well...",
+          "dia_id": "D5:229"
+        }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Morten Kiil sets a strict numerical deadline for when he must receive his answer.",
-          "based_on": ["E1"]
+          "inference": "Hovstad explicitly states the condition of the paper to justify wanting money.",
+          "based_on": [
+            "E1"
+          ]
         }
       ]
     }
   ],
   "conversation": {
-    "Dr. Stockmann": "speaker_1",
-    "Mrs. Stockmann": "speaker_2",
-    "Petra": "speaker_3",
-    "Horster": "speaker_4",
-    "Peter Stockmann": "speaker_5",
-    "Morten Kiil": "speaker_6",
-    "Hovstad": "speaker_7",
-    "Aslaksen": "speaker_8",
-    "Horsier": "speaker_9",
-    "Morten": "speaker_10",
-    "Ejlif": "speaker_11",
-    "The Boys": "speaker_12",
+    "speakers": [
+      "Dr. Stockmann",
+      "Mrs. Stockmann",
+      "Peter Stockmann",
+      "Petra",
+      "Horster",
+      "Hovstad"
+    ],
     "session_5": [
       {
         "speaker": "NARRATION",

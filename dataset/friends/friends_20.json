@@ -1,0 +1,2219 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "How would Ariel describe her feelings if she reconnected with her former fiancé Barry during their last interactions?\n\nYou must choose the correct answer from the following options:\n['A. She felt trapped and immediately regretted seeing him again, knowing it was a big mistake from the past.', 'B. She felt angry and hurt by his continued presence and gifts, which she considered manipulative.', 'C. She was completely indifferent and saw him as another part of her past, which exerted no emotional attraction.', 'D. She appreciated the comfort and familiarity created by his presence, while knowing that this was problematic.', 'E. She found it purely nostalgic and it confirmed why she had left him at the altar.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She felt trapped and immediately regretted seeing him again, knowing it was a major mistake from the past.",
+                "B. She felt angry and violated by his continued presence and gifts, seeing them as manipulative.",
+                "C. She was completely indifferent, viewing him as just another guy from her past with no emotional pull.",
+                "D. She appreciated the comfort and familiarity of being with him, despite knowing it was problematic.",
+                "E. She found it to be a purely nostalgic experience that confirmed why she left him at the altar.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She appreciated the comfort and familiarity of being with him, despite knowing it was problematic.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Y'know, it was, uh.. it was actually really great. He took me to lunch at the Russian Tea Room, and I had that chicken, where y'know you poke it and all the butter squirts out...",
+                    "dia_id": "2:22"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Right,.. well,.. we never actually got to that... Oh, it was just so nice to see him again, y'know? It was comfortable, it was familiar... it was just nice!",
+                    "dia_id": "2:26"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Yeah, but it was different with him today! And he wasn't, like, Orthodontist Guy, y'know? I mean, we had fun! Is there anything wrong with that?",
+                    "dia_id": "2:30"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 2, after meeting Barry, Ariel describes the lunch as \"really great\" and specifically mentions a positive, sensory detail about the food.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She further explains her feelings, stating that seeing him again was \"comfortable\" and \"familiar,\" and emphasizes it was \"nice\" (even saying it twice).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When challenged, she defends the interaction, saying it was \"different\" and \"fun,\" contrasting it with a less appealing date (\"Orthodontist Guy\").",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Across these three utterances in the same session, Ariel consistently frames her experience with Barry in positive, comforting, and enjoyable terms, which directly matches option C.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 484,
+            "label": "多跳"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "On April 6, the local community center hosted a unique pottery class where participants could create their own decorative plates using only their hands and no tools. Many attendees found the experience both meditative and oddly satisfying, especially those who had never tried sculpting before.  \n\nWhich of the following best describes the sequence of key events involving Ariel and Barry on April 6?",
+            "option": [
+                "A. She had lunch with him, then had sex in his chair, then later took a call from his fiancée Mindy.",
+                "B. She took a walk with him, then argued with Bennett, then got a call from Mindy.",
+                "C. She received flowers from him, then had lunch, then told her friends she would end it.",
+                "D. She had sex in his chair, then had lunch with him, then talked to her friends about it.",
+                "E. She told him to leave her alone, then he bought her Chanel, then they had lunch.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She had lunch with him, then had sex in his chair, then later took a call from his fiancée Mindy.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "He took me to lunch at the Russian Tea Room... Then we took a walk down to Bendall's, and I told him not to, but he got me a little bottle of Chanel...",
+                    "dia_id": "2:22-2:24"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "All right. All right, all right, all right, all right, I know it's stupid! I will go see him this afternoon, and I will just put an end to it!",
+                    "dia_id": "2:35"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "We ended up having sex in his chair.",
+                    "dia_id": "6:19"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, she wants to see me tomorrow...",
+                    "dia_id": "6:34"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Session Marker",
+                    "utterance": "All sessions on April 6 (1, 2, 4, 6) occur on the same day, as per their date_time tags.",
+                    "dia_id": "N/A (Metadata)"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In the afternoon of April 6 (session 2), Ariel reports on a lunch date with Barry that just happened, where she received Chanel.",
+                    "based_on": [
+                        "E1",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "At the end of that same conversation in session 2, she resolves to go see him \"this afternoon\" to end things.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In a later session on the same day (session 6), Ariel reveals that when she went to see him that afternoon, they \"ended up having sex in his chair.\"",
+                    "based_on": [
+                        "E3",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Still in session 6, after the chair incident, Ariel receives a phone call from Mindy, Barry's fiancée.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The temporal sequence is: Lunch date (reported in session 2) -> Afternoon meeting/sex in chair (happens between session 2 and 6, reported in session 6) -> Call from Mindy (session 6).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 485,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "Ariel had always been fascinated by the idea of starting a new career in graphic design, often spending hours sketching ideas in her notebook during her free time. She believed that sometimes the most difficult decisions in life could lead to the greatest growth, even if they were painful in the moment.  \n\nWhat specific event occurred when Ariel went to Barry's office to end their relationship, and what was a direct physical consequence?",
+            "option": [
+                "A. They had sex in his dental chair, resulting in dental floss getting caught in her hair.",
+                "B. They argued loudly, and she accidentally knocked over a bottle of Chanel.",
+                "C. She met his fiancée Mindy there, leading to an awkward confrontation and a hurried exit.",
+                "D. She firmly told him to stop contacting her, and he gave her a final gift of flowers.",
+                "E. They had a heartfelt conversation, and she left with a renewed sense of closure.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. They had sex in his dental chair, resulting in dental floss getting caught in her hair.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "All right. All right, all right, all right, all right, I know it's stupid! I will go see him this afternoon, and I will just put an end to it!",
+                    "dia_id": "2:35"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Uh, Rach... how come you have dental floss in your hair?",
+                    "dia_id": "6:16"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, do I?",
+                    "dia_id": "6:17"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "We ended up having sex in his chair.",
+                    "dia_id": "6:19"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Fiona",
+                    "utterance": "Sex in his chair.",
+                    "dia_id": "6:22"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel stated her intent was to go see Barry to \"put an end to it,\" meaning their renewed relationship.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Upon returning from that visit, Chloe notices a physical detail: Ariel has dental floss in her hair.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When asked about it, Ariel confirms the floss is there and then reveals what happened: \"We ended up having sex in his chair.\"",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The event (sex in his chair) and the direct physical consequence (dental floss in her hair) are explicitly linked in the dialogue. Fiona's repetition confirms the event.",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 486,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "During their weekly book club meeting, the group discussed the challenges of balancing personal interests with social obligations, and how sometimes the most unexpected moments lead to the greatest insights. Regarding the crossword clue \"Heating device,\" when was it finally solved, and who solved it?",
+            "option": [
+                "A. It was solved by Ethan in session 12, during the debate about Mr. Peanut.",
+                "B. It was solved by Dexter in session 4, while they were discussing the creepy telescope guy.",
+                "C. It remained unsolved by the end of the provided conversations.",
+                "D. It was solved by Bennett himself, right after he read the clue aloud in session 9.",
+                "E. It was solved by Fiona in session 9, shortly after Ethan made a phone call.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. It was solved by Fiona in session 9, shortly after Ethan made a phone call.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "\"Heating device.\"",
+                    "dia_id": "9:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Radiator.",
+                    "dia_id": "9:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Five letters.",
+                    "dia_id": "9:14"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Rdtor.",
+                    "dia_id": "9:15"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, my neighbor...  Yeah, the brunette...  She says you looked very pretty the other day in the green dress.",
+                    "dia_id": "9:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 9, Bennett reads the clue \"Heating device.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona immediately suggests \"Radiator.\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett notes the word length constraint: \"Five letters.\"",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Fiona then provides a five-letter version: \"Rdtor.\" This is presented as the solution, as the conversation then moves to Ethan's phone call about the neighbor.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The solving of this clue occurs in session 9, specifically while Ethan is on the phone with Sidney (his dialogue about the green dress happens after Fiona's answer).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 487,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "How did Bennett react upon realizing that an individual on the opposite street was utilizing a telescope?  \n\nYou need to select the correct answer from the following options:  \n['A. He expressed disbelief and made a joke about feeling violated.', 'B. He suggested they all close their blinds and ignore the problem entirely.', 'C. He mostly observed and commented, leaving the active investigation to Ethan.', 'D. He volunteered to go across the street and confront the person directly.', 'E. He called the police immediately to report a peeping tom.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. He expressed disbelief and made a joke about feeling violated.",
+                "B. He suggested they all close their blinds and ignore the problem entirely.",
+                "C. He mostly observed and commented, leaving the active investigation to Ethan.",
+                "D. He volunteered to go across the street and confront the person directly.",
+                "E. He called the police immediately to report a peeping tom.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He mostly observed and commented, leaving the active investigation to Ethan.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I can't believe it! He's looking right at us!",
+                    "dia_id": "1:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Man, we gotta do something about that guy. This morning, I caught him looking into our apartment. It creeps me out! I feel like I can't do stuff!",
+                    "dia_id": "4:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, so listen, I went across the street and talked to the doorman- I got the peeper's name! Can I use the phone?",
+                    "dia_id": "9:9"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Can I use your phone?  Yeah, the number for a Sidney Marks, please.",
+                    "dia_id": "9:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In the initial discovery (session 1), Bennett's role is to observe and express shock (\"He's looking right at us!\").",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later (session 4), when the group discusses the creep, it is Ethan who vocalizes the need to \"do something\" and shares his personal experience.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In session 9, Ethan reports taking concrete action: he went to the building, talked to the doorman, and obtained the name \"Sidney Marks.\"",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Ethan then proceeds to use the phone to call Sidney. There is no record in any session of Bennett taking similar investigative or confrontational steps.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "Bennett's involvement is limited to initial reaction and later commentary (e.g., doing crosswords while Ethan acts). The active response was led by Ethan.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 488,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "How does Chloe typically react to attention or comments about her appearance from other people?\n\nYou must choose the correct answer from the following options:\n['A. She becomes embarrassed and immediately changes the subject to something practical.', \"B. She responds with mutual compliments and focuses on the person's qualities.\", 'C. She becomes visibly angry and disdainful, as she considers these comments superficial and insulting.', 'D. She reacts with obvious joy and positive surprise, and appreciates the compliment.', 'E. She behaves in an indifferent or mocking manner and diverts attention to avoid embarrassment.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She gets flustered and changes the subject immediately to something practical.",
+                "B. She responds with reciprocal compliments, focusing on the other person's qualities.",
+                "C. She becomes visibly angry and dismissive, seeing such comments as shallow and offensive.",
+                "D. She reacts with clear pleasure and positive surprise, appreciating the compliment.",
+                "E. She acts indifferent or sarcastic, deflecting the attention to avoid embarrassment.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She reacts with clear pleasure and positive surprise, appreciating the compliment.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "She says you looked very pretty the other day in the green dress.",
+                    "dia_id": "9:20"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "The green dress? Really?",
+                    "dia_id": "9:21"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, she said you looked like Ingrid Bergman that day.",
+                    "dia_id": "9:22"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "Nooo!",
+                    "dia_id": "9:23"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When Ethan relays a compliment from Sidney (the telescope neighbor) about Chloe looking pretty in a green dress, Chloe's first response is to seek confirmation (\"Really?\") with interest.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan then upgrades the compliment, comparing her to the classic film star Ingrid Bergman.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe's reaction to this enhanced compliment is an exclaimed \"Nooo!\" which, in context, is a common expression of delighted disbelief or pleasant surprise, not a rejection.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Her sequence of reactions—interested verification followed by exclaimed surprise—indicates she receives the attention with clear pleasure.",
+                    "based_on": [
+                        "E2",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 489,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "In what order was Chloe involved in the situation with the peeping tom?\n\nYou must choose the correct answer from the following options:\n['A. She was the first in the group to know about the peeping tom, then she made a hand signal to him, and later received a compliment brought by Ethan.', 'B. She first saw the ugly man naked, then spoke to the concierge, and later solved the crossword clue regarding the heating.', 'C. She first spoke on the phone to Sidney, then pointed out the peeping tom to the group, and later discussed it with Ethan.', 'D. She first called the police, then made jokes about the peeping tom with Dexter, and later asked Ethan about his training routine.', 'E. She first expressed that she felt offended, then made a hand signal to the peeping tom, and received a compliment on her dress.', 'F. The answer cannot be deduced based on the information provided.']",
+            "option": [
+                "A. She first alerted the group to the peeper, then later waved back at him, then later was the subject of a compliment relayed by Ethan.",
+                "B. She first saw Ugly Naked Guy, then talked to the doorman, then solved the crossword clue about the heating device.",
+                "C. She first spoke to Sidney on the phone, then pointed out the flasher to the group, then discussed it with Ethan.",
+                "D. She first called the police, then joked about the peeper with Dexter, then asked Ethan about his workout routine.",
+                "E. She first expressed feeling violated, then later waved back at the peeper, then received a compliment about her dress.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She first alerted the group to the peeper, then later waved back at him, then later was the subject of a compliment relayed by Ethan.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Oh my God. You guys! You gotta come see this! There's some creep out there with a telescope!",
+                    "dia_id": "1:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Great, now he's waving back.",
+                    "dia_id": "4:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, my neighbor...  Yeah, the brunette...  She says you looked very pretty the other day in the green dress.",
+                    "dia_id": "9:20"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "The green dress? Really?",
+                    "dia_id": "9:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In the first session, Chloe is the one who initially discovers and alerts everyone to the \"creep\" with the telescope.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In a later session on the same day (session 4), when the group is again bothered by the peeper, Chloe reports that the peeper is now waving back at them.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "On the next day (session 9), after Ethan contacts the peeper (Sidney), he relays a compliment from Sidney to Chloe about her appearance in a green dress.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Chloe engages with this compliment, confirming her involvement in the final stage of this storyline.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The chronological order is: initial alert (session 1), later interaction observation (session 4), receiving a related compliment (session 9).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 490,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "While visiting her grandmother over the weekend, Chloe spent the afternoon reminiscing about old childhood memories and debating whether to take up painting again, a hobby she had long abandoned. What did Chloe do when Ethan was on the phone with Sidney, the telescope neighbor?",
+            "option": [
+                "A. She continued working on the crossword puzzle with Bennett, ignoring the call entirely.",
+                "B. She took the phone from him to personally tell Sidney to stop spying.",
+                "C. She went to the window to make faces at the neighbor across the street.",
+                "D. She left the room in disgust, not wanting to be involved in the confrontation.",
+                "E. She listened to the conversation and interjected when Ethan started discussing his workouts.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. She listened to the conversation and interjected when Ethan started discussing his workouts.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Mostly free weights, but occasionally..",
+                    "dia_id": "9:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Ethan!!",
+                    "dia_id": "9:19"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, my neighbor...  Yeah, the brunette...  She says you looked very pretty the other day in the green dress.",
+                    "dia_id": "9:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "During Ethan's phone call with Sidney, the conversation shifts from confrontation to Sidney asking about Ethan's workout routine.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe, who is listening, interjects with a sharp \"Ethan!!\" This is a clear interruption expressing disbelief or admonishment that he is engaging in this personal chat.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Immediately after Chloe's interjection, Ethan's side of the conversation changes topic to relay a compliment about Chloe to Sidney.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "This shows Chloe was actively listening and reacted to the content of Ethan's conversation in real-time.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 491,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "In a small coastal town, the local bakery had recently introduced a new line of artisanal sourdough loaves, which sparked a lively debate among residents about the merits of traditional versus modern baking techniques. Meanwhile, the community was also discussing the importance of social norms in various aspects of life.\n\nWhat is a core belief Dexter holds about dating and communication, as revealed across multiple conversations?",
+            "option": [
+                "A. That leaving detailed messages on answering machines is the best way to connect.",
+                "B. That women are always more interested in men who play hard to get.",
+                "C. That appearing overly eager or \"needy\" is a major social fault to be avoided.",
+                "D. That you should wait at least a week after a date to call, to build anticipation.",
+                "E. That honesty and spontaneity are the most attractive qualities in early dating.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. That appearing overly eager or \"needy\" is a major social fault to be avoided.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Let her know I like her? What are you, insane?  It's the next day! How needy do I want to seem?  I'm right, right?",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I'm not gonna talk to her, she obviously got my message and is choosing not to call me. Now I'm needy and snubbed. God, I miss just being needy.",
+                    "dia_id": "6:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Well, she seems very nice and everything, but that whole thing about her coming all the way down here, just to see if I was okay? I mean,... how needy is that?",
+                    "dia_id": "12:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 2, Dexter fears calling Danielle the next day because it might make him seem \"needy.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In session 6, he laments his status as both \"needy and snubbed,\" showing his preoccupation with the label.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In session 12, after Danielle visits him, he applies the same label to *her* action, judging her visit as potentially \"needy.\"",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Across three separate sessions, Dexter consistently uses \"needy\" as a negative benchmark for behavior in dating contexts, both for himself and others, indicating it's a core concept in his approach.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 492,
+            "label": "多跳"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "Distractor Context:  \nAfter a long day at the office, Marcus decided to take a scenic hike through the mountains, where he enjoyed the quiet and the breathtaking views of the sunset. The trail was less crowded than he expected, allowing him to reflect on his recent career decisions without any interruptions.\n\nWhich sequence accurately describes the timeline of Dexter's attempts to contact or be contacted by Danielle?\n\nYou need to select the correct answer from the following options:  \n['A. He called and spoke to her leaf blower, then she called back, then they went to lunch.', 'B. She called him first, then he honed a message for hours, then he called her back.', 'C. She visited him, then he called her machine, then they discussed being needy.', 'D. He left a message, then turned his phone off, then she visited him in person.', 'E. They had a second date, then he avoided her calls, then she left him a message.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. He called and spoke to her leaf blower, then she called back, then they went to lunch.",
+                "B. She called him first, then he honed a message for hours, then he called her back.",
+                "C. She visited him, then he called her machine, then they discussed being needy.",
+                "D. He left a message, then turned his phone off, then she visited him in person.",
+                "E. They had a second date, then he avoided her calls, then she left him a message.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He left a message, then turned his phone off, then she visited him in person.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I got her machine.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, Danielle! I wasn't expecting the machine... Give me a call when you get a chance.  Bye-bye.",
+                    "dia_id": "4:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "I turned it off. Mother of God, I turned it off!",
+                    "dia_id": "9:7"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Danielle",
+                    "utterance": "Well, I've been calling you, but it turns out I had your number wrong. And when I finally got the right one from Information, there was no answer. So I thought I'd just come down here, and make sure you were okay.",
+                    "dia_id": "12:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 2, Dexter mentions he got Danielle's answering machine (presumably after their date).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In session 4, he is shown leaving a carefully honed message on her machine.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In session 9 (the next day), he realizes he turned his phone off, which explains why calls didn't go through.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "In session 12, Danielle explains she tried calling but got no answer (because his phone was off), so she came to visit him in person.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The sequence is: He left a message(s) (sessions 2/4) -> He turned his phone off (session 9) -> She tried calling, got no answer -> She visited in person (session 12).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 493,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "Based on his interactions, how does Ethan typically handle a problem or irritation that involves another person?\n\nYou must choose the correct answer from the following options:\n['A. He immediately involves the authorities or the building management service to handle it officially.', 'B. He takes proactive and more investigative measures to gather information, and then intervenes directly afterwards.', 'C. He uses sarcasm and jokes to divert his own discomfort in the situation.', 'D. He complains privately, but takes no direct action, hoping the problem will resolve itself.', 'E. He discusses it in detail with the group to reach a consensus before taking action.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. He immediately involves authorities or building management to handle it formally.",
+                "B. He takes proactive, investigative steps to gather information and then directly engages.",
+                "C. He uses sarcasm and jokes to deflect his own discomfort about the situation.",
+                "D. He complains about it privately but takes no direct action, hoping it resolves itself.",
+                "E. He discusses it extensively with the group to build consensus before doing anything.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He takes proactive, investigative steps to gather information and then directly engages.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Man, we gotta do something about that guy. This morning, I caught him looking into our apartment. It creeps me out! I feel like I can't do stuff!",
+                    "dia_id": "4:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, so listen, I went across the street and talked to the doorman- I got the peeper's name! Can I use the phone?",
+                    "dia_id": "9:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Can I use your phone?  Yeah, the number for a Sidney Marks, please.",
+                    "dia_id": "9:11"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah. Yeah, so what?  Look, I live across the street,  and I know all about you and your little telescope, and I don't appreciate it, okay?",
+                    "dia_id": "9:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan expresses strong personal motivation to act on the telescope peeper issue, citing specific invasions of privacy.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He later reports taking concrete investigative action: he went to the building, spoke to the doorman, and obtained the peeper's name (Sidney Marks).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He then immediately seeks to use the phone to call the number he obtained.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "During the call, he directly confronts Sidney about the behavior.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "His approach is a clear sequence: feel affected -> investigate (get info) -> directly engage. No other character takes these steps.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 494,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "On April 6, Ethan spent the morning gardening and planting a small vegetable patch in his backyard, a quiet activity that contrasted with the lively discussions he had later in the day. He also took the time to write a heartfelt letter to an old friend, reflecting on the passage of time and the choices that had shaped his life.\n\nBetween the snack debate and the telescope issue, which did Ethan bring up for discussion first on April 6?",
+            "option": [
+                "A. The timeline is unclear because both were mentioned in the same session.",
+                "B. The telescope issue was first.",
+                "C. The snack debate (Mr. Peanut vs. Mr. Salty) was first.",
+                "D. He introduced both topics simultaneously in the same sentence.",
+                "E. He did not participate in the initial snack debate at all.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. The snack debate (Mr. Peanut vs. Mr. Salty) was first.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "No way! Mr.Salty is a sailor, all right, he's got to be, like, thetoughest snack there is.",
+                    "dia_id": "1:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Oh my God. You guys! You gotta come see this! There's some creep out there with a telescope!",
+                    "dia_id": "1:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Session Marker",
+                    "utterance": "Both utterances are part of session_1, which has sequential dialogue IDs.",
+                    "dia_id": "N/A (Metadata)"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 1, Ethan's first line (dia_id: 1:2) is part of the ongoing debate about Mr. Peanut vs. Mr. Salty.",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later in the same session, Chloe (not Ethan) is the one who first alerts the group to the telescope peeper (dia_id: 1:4).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Therefore, Ethan's involvement in the snack debate (1:2) chronologically precedes anyone's mention of the telescope issue (1:4).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 495,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "After spending the evening discussing the pressures of modern relationships and the expectations placed on individuals by society, the group found themselves contemplating the fine line between privacy and curiosity. It was during this reflective conversation that the question arose: What did Ethan do after obtaining the name \"Sidney Marks\" from the doorman?",
+            "option": [
+                "A. He called the number, confronted Sidney about the telescope, and ended up discussing his workout routine.",
+                "B. He looked up the name in a phone book and then went directly to Sidney's apartment to talk.",
+                "C. He gave the name to Bennett and asked him to call, since Bennett was better at confrontations.",
+                "D. He told the group but decided not to call, fearing it might escalate the situation dangerously.",
+                "E. He reported the name and address to the police as part of a formal complaint for voyeurism.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He called the number, confronted Sidney about the telescope, and ended up discussing his workout routine.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, so listen, I went across the street and talked to the doorman- I got the peeper's name! Can I use the phone?",
+                    "dia_id": "9:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Can I use your phone?  Yeah, the number for a Sidney Marks, please.",
+                    "dia_id": "9:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah. Yeah, so what?  Look, I live across the street,  and I know all about you and your little telescope, and I don't appreciate it, okay?",
+                    "dia_id": "9:18"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Mostly free weights, but occasionally..",
+                    "dia_id": "9:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan announces he got the name and immediately asks to use the phone.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He is then shown getting the number and presumably dialing it.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "His side of the phone conversation includes a direct confrontation: \"I know all about you and your little telescope, and I don't appreciate it.\"",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The conversation then shifts, as evidenced by him answering a question about his workout routine (\"Mostly free weights...\").",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The sequence of actions is clear: get name -> call number -> confront -> conversation diverges.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 496,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "In her free time, Fiona enjoys collecting vintage stamps and debating the merits of different 19th-century literature movements with her book club. She finds comfort in structured routines and often spends weekends baking elaborate pastries for her coworkers.\n\nWhat is Fiona's typical style of advice when friends are hesitant about romantic communication?",
+            "option": [
+                "A. She encourages direct and immediate action, dismissing overthinking as a male trait.",
+                "B. She suggests writing a letter instead of calling, to better organize one's thoughts.",
+                "C. She recommends consulting with all friends as a group before making a decision.",
+                "D. She advises caution and waiting for clearer signals from the other person.",
+                "E. She believes in playing games and being indirect to maintain the upper hand.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She encourages direct and immediate action, dismissing overthinking as a male trait.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, God, just do it!  Call her! Stop being so testosteroney!",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Y'know, if you want, you can call her machine, and if she has a lot of beeps, that means she probably didn't get her messages yet.",
+                    "dia_id": "6:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "How many beeps?",
+                    "dia_id": "6:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 2, when Dexter hesitates to call Danielle, Fiona's advice is emphatic and direct: \"just do it! Call her!\" She attributes his hesitation to \"testosteroney\" behavior, a critique of overthinking.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In session 6, she offers Dexter a practical, proactive tip for checking if Danielle got his message without technically leaving a new one.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She immediately follows up by asking for the result (\"How many beeps?\"), showing her engagement in facilitating the direct action.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Across both sessions, her advice consistently pushes toward immediate, direct communication and circumventing hesitation.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 497,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "During her weekend getaway, Fiona enjoyed long walks by the lake and tried her hand at painting the local scenery, finding solace in the quiet moments of creativity. She also spent time reflecting on her personal goals and the pressures of modern life. In which order did Fiona participate in these group discussions?",
+            "option": [
+                "A. First the telescope issue, then Ariel's news, then the snack debate, then the crossword puzzle.",
+                "B. First the snack debate, then Dexter's dating dilemma, then the telescope issue, then Ariel's news.",
+                "C. First Ariel's news, then the snack debate, then the telescope issue, then Dexter's dilemma.",
+                "D. First Dexter's dilemma, then the snack debate, then the crossword puzzle, then the telescope issue.",
+                "E. First the crossword puzzle, then the telescope issue, then the snack debate, then Ariel's news.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. First the snack debate, then Dexter's dating dilemma, then the telescope issue, then Ariel's news.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "You know he's gay?",
+                    "dia_id": "12:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, God, just do it!  Call her! Stop being so testosteroney!",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Oh my God!  Go away!  Stop looking in here!",
+                    "dia_id": "4:7"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Okay, they're just talking...",
+                    "dia_id": "2:13"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Session Marker",
+                    "utterance": "Session order in the data: 1, 2, 4, 6, 9, 12.",
+                    "dia_id": "N/A (Metadata)"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The snack debate (where Fiona outs Mr. Peanut) occurs in session 12, the last session.",
+                    "based_on": [
+                        "E1",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona gives advice on Dexter's dating dilemma in session 2.",
+                    "based_on": [
+                        "E2",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She reacts to the telescope peeper in session 4.",
+                    "based_on": [
+                        "E3",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "She comments on watching Ariel and Barry in session 2 as well (which is about Ariel's news).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "Based on session chronology, her participation order is: Session 2 (Dexter's dilemma & Ariel's news) -> Session 4 (telescope) -> Session 12 (snack debate). The snack debate is last.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 498,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "Fiona and Dexter were discussing the challenges of modern communication, particularly how people often misinterpret messages due to the lack of nonverbal cues in digital formats. They both agreed that it was sometimes difficult to gauge someone's interest without face-to-face interaction. What specific suggestion did Fiona offer to help Dexter determine if Danielle had listened to his message?",
+            "option": [
+                "A. Wait by the phone for exactly 24 hours, and if she doesn't call, she's not interested.",
+                "B. Ask a mutual friend to casually bring up the message in conversation.",
+                "C. Go to her apartment and casually mention the message in person.",
+                "D. Send a follow-up text message asking if she got the first one.",
+                "E. Call her machine and listen to how many beeps it has before the greeting.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Call her machine and listen to how many beeps it has before the greeting.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Y'know, if you want, you can call her machine, and if she has a lot of beeps, that means she probably didn't get her messages yet.",
+                    "dia_id": "6:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona's utterance is a complete and specific suggestion. She advises Dexter to call Danielle's answering machine.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She specifies the method of inference: listen for \"a lot of beeps,\" which would indicate many unheard messages, implying his might still be unplayed.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "This is a direct description of the action and its purpose, matching option B.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "qid": 499,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "Which statement accurately reflects Ariel's reasoning for engaging with Barry despite the risks?",
+            "option": [
+                "A. She believed that social norms dictate people should always try to reconcile past relationships.",
+                "B. She thought that because Barry once took her to lunch, they could work things out easily.",
+                "C. She admitted that they still care about each other and had a history that made it familiar.",
+                "D. She believed that since Barry was no longer Orthodontist Guy, there was no risk.",
+                "E. She told her friends it was not worth the trouble of breaking things off."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I mean, we still care about each other. There's a history there. 'S'like you and Carol.",
+                    "dia_id": "2:24"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Okay, I know it's stupid! I will go see him this afternoon, and I will just put an end to it!",
+                    "dia_id": "2:35"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel acknowledges a continued emotional connection and shared history with Barry, which implies a rationale for re-engaging.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Despite knowing the potential complications, Ariel decides to go see Barry, indicating that the shared emotional history and familiarity were central to her reasoning.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "事实提取（多对话）",
+            "qid": 627
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "Which of the following indicates Dexter's unspoken intention regarding his relationship with Danielle?",
+            "option": [
+                "A. He placed a call to her machine twice and became increasingly aggressive in tone.",
+                "B. He hesitated before agreeing to a second date, questioning the meaning behind her visit.",
+                "C. He admitted that he felt she was being needier than he was comfortable with.",
+                "D. He used a phrase from an earlier failed relationship while speaking to her.",
+                "E. He told his friends he intended to ask for her number at some point."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Okay.",
+                    "dia_id": "12:19"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Well, she seems very nice and everything, but that whole thing about her coming all the way down here, just to see if I was okay? I mean,... how needy is that?",
+                    "dia_id": "12:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter expresses uncertainty after Danielle visits to check on him, indicating hesitation in moving forward with their interaction.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He appears to question the intent behind her visit, which demonstrates an unspoken concern about the nature of their connection.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "事实提取（单对话）",
+            "qid": 628
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "What was Ethan’s motivation for confronting Sidney Marks?",
+            "option": [
+                "A. He wanted to confirm whether she was an orthodontist.",
+                "B. He wanted to stop her from looking through his window.",
+                "C. He was trying to build a romantic connection with her.",
+                "D. He wanted to prevent her from spreading rumors among his neighbors.",
+                "E. He wanted to collect information about telescope users in the area."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I live across the street, and I know all about you and your little telescope, and I don't appreciate it, okay?",
+                    "dia_id": "9:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, my neighbor...  Yeah, the brunette...  She says you looked very pretty the other day in the green dress.",
+                    "dia_id": "9:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan expresses discomfort with the telescope peeper, indicating that the act of peering is a significant issue for him.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan went to confront Sidney Marks about the telescope, which shows that a neighbor’s behavior of observing others from a distance was his motivation.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "多跳",
+            "qid": 629
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "What did Chloe imply about the peeper’s behavior in the context of a past event?",
+            "option": [
+                "A. She suggested the peeper would reconsider his behavior after seeing her in a dress.",
+                "B. She indicated the peeper might eventually leave them alone once they started acting differently.",
+                "C. She wanted to reassure Dexter that the peeper’s behavior was routine and harmless.",
+                "D. She pointed out the irony of Dexter being needier than the peeper.",
+                "E. She questioned why the peeper was now focused on her."
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Nooo!",
+                    "dia_id": "9:23"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I mean,... how needy is that?",
+                    "dia_id": "12:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe reacts strongly to Ethan’s comment about the brunette neighbor’s positive evaluation, which points to a higher level of evaluation by the peeper.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter himself criticizes the peeper’s neediness, implying that Chloe and others might be seeing this behavior as ironic or comparable to their own.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "事实提取（多对话）",
+            "qid": 630
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which choice best aligns with Bennett’s attitude toward the peeper?",
+            "option": [
+                "A. Bennett was indifferent and wanted the group to deal with it themselves.",
+                "B. Bennett believed there was no connection between the peeper and his past.",
+                "C. Bennett viewed the peeper as a possible romantic interest.",
+                "D. Bennett expressed concern about privacy and felt impacted by the peeper.",
+                "E. Bennett encouraged others to confront the peeper directly."
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I can't believe it! He's looking right at us!",
+                    "dia_id": "1:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "It's, it's, it's, uh, a totally different situation! It's, it's apples and oranges, it's, it's orthodontists and lesbi-",
+                    "dia_id": "6:28"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett reacted strongly to the idea of being observed, which reflects a concern over privacy and being watched.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He attempted to contrast his own situation with Ariel’s for clarity, showing he was deeply affected by the peeper’s behavior.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "事实提取（单对话）",
+            "qid": 631
+        },
+        {
+            "character": "All",
+            "category": 5,
+            "question": "Which of the following best describes how the group collectively responded to the peeper’s privacy violation?",
+            "option": [
+                "A. They all felt secure and confident in their social privacy.",
+                "B. They focused on what they were eating while ignoring the peeper.",
+                "C. They expressed shock and concern, pointing out the act as disrespectful.",
+                "D. They thought it was normal and a part of living in the city.",
+                "E. They immediately took steps to defeat the peeper."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "All",
+                    "utterance": "Oh!... Right!",
+                    "dia_id": "2:19"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Go away!  Stop looking in here!",
+                    "dia_id": "4:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The group’s reaction is one of surprise and alignment that the peeper’s actions are invasive, as shown by their collective exclamation.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona's specific emotional response underscores that the group collectively viewed the peeper’s actions as a privacy violation.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 20,
+            "label": "事实提取（多对话）",
+            "qid": 632
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Dexter",
+        "speaker_1": "Ethan",
+        "speaker_2": "Bennett",
+        "speaker_3": "Chloe",
+        "speaker_4": "Ariel",
+        "speaker_5": "Fiona",
+        "session_1_date_time": "April 6, 1995",
+        "session_1": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:1",
+                "text": "I can't believe you would actually say that. I would much rather be Mr.Peanut than Mr.Salty."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:2",
+                "text": "No way! Mr.Salty is a sailor, all right, he's got to be, like, thetoughest snack there is."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:3",
+                "text": "I don't know, you don't wanna mess with corn nuts. They're craaazy."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:4",
+                "text": "Oh my God. You guys! You gotta come see this! There's some creep out there with a telescope!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:5",
+                "text": "I can't believe it! He's looking right at us!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:6",
+                "text": "Oh, that is so sick."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:7",
+                "text": "I feel violated. And not in a good way."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:8",
+                "text": "How can people do that?...  Oh, you guys, look! Ugly Naked Guy got gravity boots!"
+            }
+        ],
+        "speaker_6": "All",
+        "session_2_date_time": "April 6, 1995",
+        "session_2": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:1",
+                "text": "I am telling you, years from now, schoolchildren will study it as one of the greatest first dates of all time. It was unbelievable! We could totally be ourselves, we didn't have to play any games..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:2",
+                "text": "So have you called her yet?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:3",
+                "text": "Let her know I like her? What are you, insane?  It's the next day! How needy do I want to seem?  I'm right, right?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:4",
+                "text": "I can't believe my parents are actually pressuring me to find one of you people."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:5",
+                "text": "Oh, God, just do it!  Call her! Stop being so testosteroney!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:6",
+                "text": "Which, by the way, is the real San Francisco treat.  I got her machine."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:7",
+                "text": "Her answer machine?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:8",
+                "text": "No, interestingly enough her leaf blower picked up."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:9",
+                "text": "So, uh, why didn't you say anything?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:10",
+                "text": "Oh, no-no-no-no. Last time I left a spontaneous message I ended up using the phrase \"Yes indeedy-o.\""
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:11",
+                "text": "Look look! It's Ariel and Barry. No, don't everybody look at once!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:12",
+                "text": "Okay, okay, what's going on?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:13",
+                "text": "Okay, they're just talking..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:14",
+                "text": "Yeah, well, does he look upset? Does he look like he was just told to shove anything?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:15",
+                "text": "No, no actually, he's smiling.. and... Oh my God, don't do that!!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:16",
+                "text": "What? What? What?!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:17",
+                "text": "That man across the street just kicked that pigeon!  Oh!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:18",
+                "text": "And basically, that's how a bill becomes a law."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:19",
+                "text": "Oh!... Right!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:20",
+                "text": "Hey Rach!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:21",
+                "text": "How'd it go?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:22",
+                "text": "Y'know, it was, uh.. it was actually really great. He took me to lunch at the Russian Tea Room, and I had that chicken, where y'know you poke it and all the butter squirts out..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:23",
+                "text": "Not a good day for birds..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:24",
+                "text": "Then we took a walk down to Bendall's, and I told him not to, but he got me a little bottle of Chanel..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:25",
+                "text": "That's nice... now, was that before or after you told him to stop calling, stop sending you flowers and to generally leave you alone, hmm?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:26",
+                "text": "Right,.. well,.. we never actually got to that... Oh, it was just so nice to see him again, y'know? It was comfortable, it was familiar... it was just nice!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:27",
+                "text": "That's, that's nice twice!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:28",
+                "text": "Ariel, what's going on? I mean isn't this the same Barry who you left at the altar?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:29",
+                "text": "Duh, where've you been?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:30",
+                "text": "Yeah, but it was different with him today! And he wasn't, like, Orthodontist Guy, y'know? I mean, we had fun! Is there anything wrong with that?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:31",
+                "text": "Yes!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:32",
+                "text": "Why?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:33",
+                "text": "I have my reasons."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:34",
+                "text": "Okay, how about the fact that he's engaged to another woman, who just happens to be your ex-best friend?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:35",
+                "text": "All right. All right, all right, all right, all right, I know it's stupid! I will go see him this afternoon, and I will just put an end to it!"
+            }
+        ],
+        "session_4_date_time": "April 6, 1995",
+        "session_4": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:1",
+                "text": "Oh, Danielle! I wasn't expecting the machine... Give me a call when you get a chance.  Bye-bye.  Oh God!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:2",
+                "text": "That's what you've been working on for the past two hours?!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:3",
+                "text": "Hey, I've been honing!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:4",
+                "text": "What was with the dishes?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:5",
+                "text": "Oh, uh.. I want her to think I might be in a restaurant.. y'know? I might have some kind of life, like I haven't been sitting around here honing for the past few hours."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:6",
+                "text": "Look look! He's doing it again, the guy with the telescope!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:7",
+                "text": "Oh my God!  Go away!  Stop looking in here!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:8",
+                "text": "Great, now he's waving back."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:9",
+                "text": "Man, we gotta do something about that guy. This morning, I caught him looking into our apartment. It creeps me out! I feel like I can't do stuff!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:10",
+                "text": "What kinda stuff?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:11",
+                "text": "Will you grow up? I'm not talking about sexy stuff, but, like, when I'm cooking naked."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:12",
+                "text": "You cook naked?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:13",
+                "text": "Yeah, toast, oatmeal... nothing that spatters."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:14",
+                "text": "What are you looking at me for? I didn't know that."
+            }
+        ],
+        "session_6_date_time": "April 6, 1995",
+        "session_6": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:1",
+                "text": "Can I use your phone?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:2",
+                "text": "Yeah.. uh, but for future reference, that thing in your hand can also be used as a phone."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:3",
+                "text": "Yes, it's working! Why isn't she calling me back?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "6:4",
+                "text": "Maybe she never got your message."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "6:5",
+                "text": "Y'know, if you want, you can call her machine, and if she has a lot of beeps, that means she probably didn't get her messages yet."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:6",
+                "text": "Y'don't think that makes me seem a little..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:7",
+                "text": "...desperate, needy, pathetic?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:8",
+                "text": "Ah, you obviously saw my personal ad."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "6:9",
+                "text": "How many beeps?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:10",
+                "text": "She answered."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:11",
+                "text": "Y'see, this is where you'd use that 'hello' word we talked about."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:12",
+                "text": "I'm not gonna talk to her, she obviously got my message and is choosing not to call me. Now I'm needy and snubbed. God, I miss just being needy."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "6:13",
+                "text": "Hey! Hi!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "6:14",
+                "text": "How'd he take it?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:15",
+                "text": "Pretty well, actually..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:16",
+                "text": "Uh, Rach... how come you have dental floss in your hair?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:17",
+                "text": "Oh, do I?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:18",
+                "text": "Uh huh."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:19",
+                "text": "We ended up having sex in his chair."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:20",
+                "text": "You had sex in his chair?!... I said that a little too loudly, didn't I?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:21",
+                "text": "You-you had what?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "6:22",
+                "text": "Sex in his chair."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:23",
+                "text": "What, uh... what were you thinking?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:24",
+                "text": "I don't know! I mean, we still care about each other. There's a history there. 'S'like you and Carol."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:25",
+                "text": "No! No no, it is nothing like me and Carol!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:26",
+                "text": "Please. If she said to you, \"Bennett, I want you on this couch, right here, right now,\" what would you say?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:27",
+                "text": "If it helps, I could slide over."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:28",
+                "text": "It's, it's, it's, uh, a totally diferent situation! It's, it's apples and oranges, it's, it's orthodontists and lesbi- I gotta go."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "6:29",
+                "text": "Where are you going?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:30",
+                "text": "I just have to go, all right? Do I need a reason? Huh? I mean I have things to do with my life, I have a jam packed schedule, and I am late- for keeping up with it. Okay?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:31",
+                "text": "Hello? Hello?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:32",
+                "text": "Hello? Mindy! Hi! Hey, how are you?  Yes, yes, I've heard, congratulations, that is so great.  Really?  Oh.  Okay. Okay, well I'm working tomorrow, but if you want you can, you can, you can come by and...  Okay...  Great...  Great...  All right, so I'll, so I'll see you tomorrow!  Okay..  Okay...  Bye.  Oh God. Oh God. Oh God."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:33",
+                "text": "So how's Mindy?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:34",
+                "text": "Oh, she wants to see me tomorrow...Oh, she sounded really weird, I gotta call Barry...  Hi, it's me, I just.. Mindy!! Mindy! Hi! No, I figured that's where you'd be!"
+            }
+        ],
+        "session_9_date_time": "April 7, 1995",
+        "session_9": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:1",
+                "text": "Four letters: \"Circle or hoop\"."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "9:2",
+                "text": "Ring dammit, ring!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:3",
+                "text": "Thanks."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:4",
+                "text": "Hey, you know our phone's not working?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "9:5",
+                "text": "What?!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:6",
+                "text": "I tried to call you from the coffee shop, and there was no answer."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "9:7",
+                "text": "I turned it off. Mother of God, I turned it off!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "9:8",
+                "text": "Just like you told her you did!  ... Just pointing out the irony."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:9",
+                "text": "Hey, so listen, I went across the street and talked to the doorman- I got the peeper's name! Can I use the phone?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "9:10",
+                "text": "Nngghhh!!!!!!!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:11",
+                "text": "Can I use your phone?  Yeah, the number for a Sidney Marks, please."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:12",
+                "text": "\"Heating device.\""
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "9:13",
+                "text": "Radiator."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:14",
+                "text": "Five letters."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "9:15",
+                "text": "Rdtor."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:16",
+                "text": "Yeah, is Sidney there?  Oh, this is?  Sidney's a woman."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "9:17",
+                "text": "So she's a woman! So what?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:18",
+                "text": "Yeah. Yeah, so what?  Look, I live across the street,  and I know all about you and your little telescope, and I don't appreciate it, okay?  Yeah, I can see you right now!  Hello!  If I wanna walk around my apartment in my underwear, I shouldn't have to feel like——Thank you, but... that's not really the point...  The point is that...  Mostly free weights, but occasionally.."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "9:19",
+                "text": "Ethan!!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:20",
+                "text": "Yeah, my neighbor...  Yeah, the brunette...  She says you looked very pretty the other day in the green dress."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "9:21",
+                "text": "The green dress? Really?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "9:22",
+                "text": "Yeah, she said you looked like Ingrid Bergman that day."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "9:23",
+                "text": "Nooo!"
+            }
+        ],
+        "speaker_7": "Danielle",
+        "session_12_date_time": "April 7, 1995",
+        "session_12": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:1",
+                "text": "All right, I'll give you this, Mr. Peanut is a better dresser. I mean he's got the monocle, he's got the top hat..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:2",
+                "text": "You know he's gay?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:3",
+                "text": "I just wanna clarify this: are you outing Mr. Peanut?"
+            },
+            {
+                "speaker": "Danielle",
+                "dia_id": "12:4",
+                "text": "Dexter?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:5",
+                "text": "Danielle! Hi! Uh- everybody, this is Danielle, Danielle, everybody."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "12:6",
+                "text": "Hi. Hi."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:7",
+                "text": "What are you doing here?"
+            },
+            {
+                "speaker": "Danielle",
+                "dia_id": "12:8",
+                "text": "Well, I've been calling you, but it turns out I had your number wrong. And when I finally got the right one from Information, there was no answer. So I thought I'd just come down here, and make sure you were okay."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:9",
+                "text": "...I'm, I'm okay."
+            },
+            {
+                "speaker": "Danielle",
+                "dia_id": "12:10",
+                "text": "Listen uh, maybe we could get together later?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:11",
+                "text": "That sounds good. I'll call you- or you call me, whatever..."
+            },
+            {
+                "speaker": "Danielle",
+                "dia_id": "12:12",
+                "text": "You got it."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:13",
+                "text": "Okay."
+            },
+            {
+                "speaker": "Danielle",
+                "dia_id": "12:14",
+                "text": "G'bye, everybody."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "12:15",
+                "text": "Bye."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:16",
+                "text": "Whoo-hoo!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:17",
+                "text": "Yeah, there you go!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:18",
+                "text": "Second date!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:19",
+                "text": "...I dunno."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:20",
+                "text": "You don't know?!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:21",
+                "text": "Well, she seems very nice and everything, but that whole thing about her coming all the way down here, just to see if I was okay? I mean,... how needy is that?"
+            }
+        ]
+    }
+}

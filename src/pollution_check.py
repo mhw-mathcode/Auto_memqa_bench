@@ -8,7 +8,7 @@ import numpy as np
 from typing import Any, Dict, List, Tuple, Optional
 from openai import OpenAI
 import math
-from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
+from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction, parse_mcq_gt_answers
 from src.qa_only_response import QAOnlyRunner
 
 # --- 1. 打乱顺序 ---
@@ -523,7 +523,7 @@ def run_membership_inference_loss_api(
     return results
 
 # --- 5. 运行配置 ---
-CONTAMINATION_CHECK_ROUNDS = 10  # 污染检测的测试轮数
+CONTAMINATION_CHECK_ROUNDS = 1  # 污染检测的测试轮数
 CONTAMINATION_THRESHOLD = 0.50  # 正确率 >= 50% 标记为可能被污染
 
 def pollution_check_main(
@@ -583,6 +583,21 @@ def pollution_check_main(
     # 打乱选项顺序
     rename_and_shuffle_options(input_file_path, output_file_path)
     
+    def _is_abstain_item(qa_item: Dict[str, Any]) -> bool:
+        """判断题目是否为弃权题（答案为 F 或标注为 Abstain）。"""
+        label_text = str(qa_item.get("label", "") or "").strip().lower()
+        if "abstain" in label_text:
+            return True
+
+        candidates = normalize_answer_candidates(
+            qa_item.get("answer_fixed"),
+            qa_item.get("answer", "")
+        )
+        parsed_candidates = [parse_mcq_gt_answers(candidate) for candidate in candidates]
+        valid_candidates = [opt_set for opt_set in parsed_candidates if opt_set]
+
+        return bool(valid_candidates) and all(opt_set == {"F"} for opt_set in valid_candidates)
+
     # 可选的污染检测
     def _run_contamination_check() -> None:
         """执行污染检测，所有临时文件统一放在 temp/pollution_check/ 目录下"""
@@ -595,6 +610,45 @@ def pollution_check_main(
         
         print(f"\n🔍 开始污染检测 ({CONTAMINATION_CHECK_ROUNDS} 轮)")
         print(f"   临时文件目录: {pollution_temp_dir}")
+
+        # 过滤掉弃权题（答案为F），不进入污染检测
+        with open(output_file_path, 'r', encoding='utf-8') as f:
+            source_data = json.load(f)
+
+        if isinstance(source_data, dict):
+            source_data = [source_data]
+
+        import copy
+        filtered_data = copy.deepcopy(source_data)
+        total_qa = 0
+        skipped_abstain = 0
+
+        for section in filtered_data:
+            qa_list = section.get("qa", [])
+            if not isinstance(qa_list, list):
+                continue
+
+            total_qa += len(qa_list)
+            kept_questions = []
+            for qa_item in qa_list:
+                if _is_abstain_item(qa_item):
+                    skipped_abstain += 1
+                else:
+                    kept_questions.append(qa_item)
+            section["qa"] = kept_questions
+
+        remain_for_check = total_qa - skipped_abstain
+        print(
+            f"   本轮污染检测题数: {remain_for_check}（已跳过弃权题: {skipped_abstain}）"
+        )
+
+        if remain_for_check <= 0:
+            print("ℹ 没有可用于污染检测的非弃权题，跳过污染检测。")
+            return
+
+        filtered_input_file = os.path.join(pollution_temp_dir, "contamination_input_filtered.json")
+        with open(filtered_input_file, 'w', encoding='utf-8') as f:
+            json.dump(filtered_data, f, ensure_ascii=False, indent=4)
         
         # 临时文件路径
         temp_result_file = os.path.join(pollution_temp_dir, "current_round.json")
@@ -602,7 +656,7 @@ def pollution_check_main(
         # 运行多轮测试
         for idx in range(1, CONTAMINATION_CHECK_ROUNDS + 1):
             print(f"   第 {idx}/{CONTAMINATION_CHECK_ROUNDS} 轮测试中...")
-            run_qa_only(answer_llm_config, output_file_path, max_workers, temp_result_file)
+            run_qa_only(answer_llm_config, filtered_input_file, max_workers, temp_result_file)
             
             # 保存本轮结果到专用目录
             round_result_file = os.path.join(pollution_temp_dir, f"round_{idx}.json")

@@ -4,15 +4,16 @@
       {
         "character": "Sandy",
         "category": 1,
-        "question": "Which of the following best reflects Sandy's typical engagement with the group's deeper philosophical discussions based on her actions?",
+        "question": "Which action best demonstrates Sandy's role as a caretaker or host during the gathering?",
         "option": [
-          "A. She consistently drives the intellectual debate forward.",
-          "B. She actively attempts to disprove John's claims using biology.",
-          "C. She tends to focus on practical hosting duties and lighthearted interjections.",
-          "D. She acts as the primary skeptic, questioning the timeline.",
-          "E. She avoids the room entirely whenever the topic becomes serious."
+          "A. She cleans the flint burin for Dan.",
+          "B. She offers to fetch the archaeological periodicals.",
+          "C. She asks the group if anyone is hungry.",
+          "D. She tells John to stop drinking the whiskey.",
+          "E. She grades Ellie's pre-Med history midterm."
         ],
         "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -25,37 +26,15 @@
             "speaker": "Sandy",
             "utterance": "(Heads off-stage to the kitchen)",
             "dia_id": "D5:63"
-          },
-          {
-            "id": "E3",
-            "speaker": "Sandy",
-            "utterance": "Oh, John, you don't look a day over nine hundred!",
-            "dia_id": "D7:4"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy interrupts a deep conversation to ask about food and leaves for the kitchen.",
+            "inference": "Sandy explicitly asks the group about their hunger and heads to the kitchen, indicating a hosting role.",
             "based_on": [
               "E1",
               "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "When John reveals his age, Sandy responds with a joke rather than scientific inquiry.",
-            "based_on": [
-              "E3"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "These behaviors establish a pattern of practical hosting and lightheartedness.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
             ]
           }
         ]
@@ -63,66 +42,16 @@
       {
         "character": "Sandy",
         "category": 2,
-        "question": "What immediate need drives Sandy's action right after Linda comments on the chance to learn?",
+        "question": "What did Sandy bring back to the room when she returned from her trip?",
         "option": [
-          "A. The need to answer the ringing telephone.",
-          "B. The need to fetch Ellie's midterm.",
-          "C. The desire to examine the parrot beak burin.",
-          "D. The intention to provide food for the group.",
-          "E. The urge to confront John about his age."
+          "A. A plate of hot food from the kitchen.",
+          "B. Ellie's midterm along with the periodicals.",
+          "C. A bottle of whiskey for John.",
+          "D. The carved flint tool from the box.",
+          "E. The ringing telephone."
         ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Yeah. What a chance to learn.",
-            "dia_id": "D5:61"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Is anyone hungry?",
-            "dia_id": "D5:62"
-          },
-          {
-            "id": "E3",
-            "speaker": "Sandy",
-            "utterance": "(Heads off-stage to the kitchen)",
-            "dia_id": "D5:63"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Right after Linda speaks, Sandy asks about hunger.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Sandy then moves to the kitchen, indicating her goal is to get food.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 3,
-        "question": "Regarding the handling of the midterm paper, what is the correct sequence of events involving Sandy?",
-        "option": [
-          "A. Sandy graded the paper, placed it with periodicals, then gave it to John.",
-          "B. Sandy answered the phone, took the paper from John, and placed it with periodicals.",
-          "C. Sandy picked the paper up with periodicals, John asked for it, and then John changed the grade.",
-          "D. John asked for the paper, Sandy went to the kitchen to find it, and John graded it.",
-          "E. Sandy called Ellie, picked up the paper, and gave it to John to grade."
-        ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -135,27 +64,72 @@
             "speaker": "Sandy",
             "utterance": "Yeah, sorry. I picked it up with the periodicals.",
             "dia_id": "D8:10"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "(Changes grade on paper)",
-            "dia_id": "D8:13"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy's action of picking up the paper with periodicals happened in the past.",
+            "inference": "John asks for the midterm.",
             "based_on": [
-              "E2"
+              "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "John subsequently asks for it and then modifies the grade on it.",
+            "inference": "Sandy confirms she has it and picked it up alongside periodicals.",
             "based_on": [
               "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 3,
+        "question": "How does Sandy's understanding of the conversation's topic contrast with the actual ongoing discussion when she returns to the room?",
+        "option": [
+          "A. She left during a discussion about Neanderthals and returned believing John is actually 14,000 years old.",
+          "B. She left while Harry was counting and returned to ask about Christopher Columbus.",
+          "C. She left when they discussed vampires and returned to talk about oceans.",
+          "D. She left to get food and returned treating John's 14,000-year-old claim as a joke about his appearance.",
+          "E. She left discussing biology and returned to discuss geography."
+        ],
+        "answer": "D",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "(Heads off-stage to the kitchen)",
+            "dia_id": "D5:63"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "John just confided that he's fourteen thousand years old.",
+            "dia_id": "D7:3"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Oh, John, you don't look a day over nine hundred!",
+            "dia_id": "D7:4"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy misses the intervening conversation because she went to the kitchen.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Upon returning, she is updated by Art and responds with a joke about John's age, showing she doesn't take the premise seriously.",
+            "based_on": [
+              "E2",
               "E3"
             ]
           }
@@ -164,131 +138,16 @@
       {
         "character": "Sandy",
         "category": 4,
-        "question": "How did Sandy interact with the student's exam material?",
+        "question": "How does Sandy intervene in the interaction between Harry and John?",
         "option": [
-          "A. She intentionally hid it to prank John.",
-          "B. She accidentally grouped it with other reading materials.",
-          "C. She marked the grade as C+ before handing it over.",
-          "D. She read it to evaluate the history content.",
-          "E. She discarded it in the kitchen."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Do we have Ellie's midterm here?",
-            "dia_id": "D8:9"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Yeah, sorry. I picked it up with the periodicals.",
-            "dia_id": "D8:10"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy apologizes for having picked it up with the periodicals.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "This indicates an inadvertent grouping of the exam with magazines/journals.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 5,
-        "question": "Based on the interactions, what is the relationship between Sandy and John regarding their physical environment?",
-        "option": [
-          "A. They are competing academic rivals from different departments.",
-          "B. They share access to the same domestic items and space.",
-          "C. Sandy is an outsider visiting John's house for the first time.",
-          "D. Sandy is John's student inquiring about her grades.",
-          "E. They have no shared knowledge of the physical items in the location."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Do we have Ellie's midterm here?",
-            "dia_id": "D8:9"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Yeah, sorry. I picked it up with the periodicals.",
-            "dia_id": "D8:10"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John asks Sandy 'Do we have...' implying shared access/residence.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Sandy knows where household/shared items (periodicals) are.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 6,
-        "question": "What exact numerical age does Sandy hyperbolically assign to John?",
-        "option": [
-          "A. 14,000",
-          "B. 35",
-          "C. 190",
-          "D. 900",
-          "E. 2000"
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Sandy",
-            "utterance": "Oh, John, you don't look a day over nine hundred!",
-            "dia_id": "D7:4"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy explicitly states the number nine hundred.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 1,
-        "question": "Which statement describes Harry's established method of engaging with John's hypothetical scenarios?",
-        "option": [
-          "A. He immediately accepts the premise as absolute truth and defends it.",
-          "B. He refuses to participate and attempts to change the subject to biology.",
-          "C. He uses playful pressure and scientific rationalization to humor the premise.",
-          "D. He becomes visibly angry and leaves the room to avoid the discussion.",
-          "E. He quietly listens without offering any theories of his own."
+          "A. She joins Harry in counting backwards.",
+          "B. She ignores Harry completely.",
+          "C. She explicitly commands Harry to stop his countdown.",
+          "D. She laughs at Harry's joke about Arnold Schwarzenegger.",
+          "E. She elbows Harry in the ribs to silence him."
         ],
         "answer": "C",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -298,71 +157,66 @@
           },
           {
             "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Alright, alright, I'll play, I'll play.",
-            "dia_id": "D5:46"
-          },
-          {
-            "id": "E3",
-            "speaker": "Harry",
-            "utterance": "Alright, um, in science fiction terms, I would say... Perfect cellular regeneration...",
-            "dia_id": "D5:47"
+            "speaker": "Sandy",
+            "utterance": "Harry, stop.",
+            "dia_id": "D5:9"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry pressures John by counting down.",
+            "inference": "Harry attempts to pressure John by counting down.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Harry explicitly agrees to 'play' and offers a biological/sci-fi rationalization.",
+            "inference": "Sandy verbally updates the social dynamic by explicitly telling Harry to stop.",
             "based_on": [
-              "E2",
-              "E3"
+              "E1",
+              "E2"
             ]
           }
         ]
       },
       {
-        "character": "Harry",
-        "category": 2,
-        "question": "What immediate response does Harry have to John grunting like a caveman?",
+        "character": "Sandy",
+        "category": 5,
+        "question": "Which specific items did Sandy retrieve from the kitchen for the group to eat?",
         "option": [
-          "A. He asks Edith what she thinks about it.",
-          "B. He begins explaining perfect cellular regeneration.",
-          "C. He is initially startled and then finds it amusing.",
-          "D. He immediately pours himself a drink.",
-          "E. He questions the archaeological accuracy of the grunt."
+          "A. Sandwiches and chips.",
+          "B. Ice cream and cigarettes.",
+          "C. Pretzels and beer.",
+          "D. Coffee and cake.",
+          "E. Fruit and cheese."
         ],
-        "answer": "C",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "John",
-            "utterance": "(slowly leans forward and suddenly GRUNTS LOUDLY like a caveman)",
-            "dia_id": "D6:21"
+            "speaker": "Sandy",
+            "utterance": "Is anyone hungry?",
+            "dia_id": "D5:62"
           },
           {
             "id": "E2",
-            "speaker": "John",
-            "utterance": "Everyone jumps, startled, and then laughs.",
-            "dia_id": "D6:22"
+            "speaker": "Sandy",
+            "utterance": "(Heads off-stage to the kitchen)",
+            "dia_id": "D5:63"
           },
           {
             "id": "E3",
-            "speaker": "Harry",
-            "utterance": "(laughs)",
-            "dia_id": "D7:54"
+            "speaker": "Sandy",
+            "utterance": "What?",
+            "dia_id": "D7:2"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John grunts, causing everyone to jump and laugh.",
+            "inference": "Sandy asks about food and leaves.",
             "based_on": [
               "E1",
               "E2"
@@ -370,7 +224,231 @@
           },
           {
             "step": 2,
-            "inference": "Harry's later isolated laugh confirms his amused state following the continuous conversation.",
+            "inference": "Upon returning, there is no mention in the text of any specific food items she actually brought back.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 1,
+        "question": "Based on her questions throughout the afternoon, what type of information is Linda primarily seeking?",
+        "option": [
+          "A. Explanations of biological cellular regeneration processes.",
+          "B. Clarifications on historical tools, evolutionary advantages, and geography.",
+          "C. Details about John's specific personal relationships.",
+          "D. The exact price and thrift shop origin of the artifacts.",
+          "E. The underlying reasons behind John's departure."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's a...burin?",
+            "dia_id": "D4:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "What's the selective advantage of height?",
+            "dia_id": "D5:28"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "What about oceans?",
+            "dia_id": "D7:44"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda consistently asks clarifying questions about tools (burin), evolution (height), and geography (oceans).",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 2,
+        "question": "What physical action does Linda take in response to Art's comment about answering silly questions?",
+        "option": [
+          "A. She throws the flint burin at him.",
+          "B. She playfully pats him on the back.",
+          "C. She elbows him.",
+          "D. She hands him a glass of whiskey.",
+          "E. She covers her face in embarrassment."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "John we're teachers, we answer silly questions all the time.",
+            "dia_id": "D5:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Hey!",
+            "dia_id": "D5:13"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "(elbowing Art)",
+            "dia_id": "D5:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Following Art's comment, Linda exclaims and physically elbows him.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 3,
+        "question": "How did Linda's specific university major influence her view of John's story?",
+        "option": [
+          "A. Being a pre-Med student, she focused solely on the biological feasibility.",
+          "B. Being an anthropology major, she verified his Magdalenian timeline.",
+          "C. Being a history major, she questioned his Columbus narrative.",
+          "D. Being a geography major, she challenged his knowledge of the Pleistocene oceans.",
+          "E. Being an art major, she focused on his description of Paleolithic carvings."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's a...burin?",
+            "dia_id": "D4:14"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Good kid. What does a pre-Med need with history?",
+            "dia_id": "D8:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda's specific major is never stated in the text. Ellie is the pre-Med student taking history.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 4,
+        "question": "When Linda asks a question about the terrain, who does she direct it to, and who answers?",
+        "option": [
+          "A. She asks Art about the plains, but Harry answers.",
+          "B. She asks Dan about the Pleistocene, but Art answers.",
+          "C. She asks about oceans, and John answers.",
+          "D. She asks John about the selective advantage of height, and Dan answers.",
+          "E. She asks Edith about the burin, and John answers."
+        ],
+        "answer": "C",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What about oceans?",
+            "dia_id": "D7:44"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Didn't see them till much later.",
+            "dia_id": "D7:45"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda asks a geographical question about oceans.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John provides the direct answer to her question.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 5,
+        "question": "After Linda's initial question about an evolutionary advantage, how is the scientific understanding of the group updated?",
+        "option": [
+          "A. Art explains it is to see predators, and Dan agrees it is for mountain hunting.",
+          "B. Art explains it is to see predators in tall grass, but Dan updates this by stating it radiates heat more effectively in warmer climates.",
+          "C. Dan explains it is for heat radiation, and Harry updates it to perfect cellular renewal.",
+          "D. Dan explains it is to see predators, and Art updates it to survival during the Pleistocene.",
+          "E. Art claims it is for hunting, and John updates it by citing his personal experience in the mountains."
+        ],
+        "answer": "B",
+        "label": "Memory Update",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "What's the selective advantage of height?",
+            "dia_id": "D5:28"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "Better to see predators in tall grass, my dear.",
+            "dia_id": "D5:29"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "Actually, tall and skinny radiates heat more effectively in warmer climates.",
+            "dia_id": "D5:30"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art provides an initial explanation based on seeing predators.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan corrects/updates Art's explanation with the thermoregulation advantage.",
             "based_on": [
               "E2",
               "E3"
@@ -380,110 +458,61 @@
       },
       {
         "character": "Harry",
-        "category": 3,
-        "question": "According to Harry's biological explanation, what is the chronological order of cellular turnover?",
+        "category": 1,
+        "question": "Initially, Harry treats John's survival premise as a joke, citing Arnold Schwarzenegger. Which statement best represents his later, updated view on the feasibility of the concept?",
         "option": [
-          "A. Stomach lining, pancreas, entire body.",
-          "B. Pancreas, stomach lining, entire body.",
-          "C. Entire body, stomach lining, pancreas.",
-          "D. Mesenchymal stem cells, stomach lining, pancreas.",
-          "E. Pancreas, entire body, stomach lining."
+          "A. He believes it's purely a vampire myth.",
+          "B. He argues that magic and science are distinct and immortality is impossible.",
+          "C. He insists that the human body is designed to die at 80.",
+          "D. He suggests that a quirk in the immune system leading to perfect detox could make it possible.",
+          "E. He thinks reincarnation is the only logical explanation."
         ],
-        "answer": "B",
+        "answer": "D",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Harry",
-            "utterance": "The pancreas turns over cells every twenty-four hours, the stomach lining in three days, the entire body in seven years...",
+            "utterance": "Arnold Schwarzenegger.",
+            "dia_id": "D5:18"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Y'know, it could happen! Yeah! The pancreas turns over cells... Now if a quirk in his immune system led to perfect detox, perfect renewal, then yeah. He could, uh... duck decay.",
             "dia_id": "D5:57"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "24 hours is less than 3 days, which is less than 7 years.",
+            "inference": "Harry starts with a sarcastic pop-culture reference.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "The sequence from shortest to longest duration is pancreas, stomach lining, entire body.",
+            "inference": "He later updates his position, providing a biological mechanism that makes the premise hypothetically feasible.",
             "based_on": [
-              "E1"
+              "E2"
             ]
           }
         ]
       },
       {
         "character": "Harry",
-        "category": 4,
-        "question": "How did Harry physically interact with the Magdalenian artifact?",
+        "category": 2,
+        "question": "What items does Harry jokingly suggest would keep the hypothetical surviving man alive?",
         "option": [
-          "A. He picked it up from the box and handed it to Dan.",
-          "B. He took it from Art, examined it, and passed it to Edith.",
-          "C. He bought it at a thrift shop and showed it to the group.",
-          "D. He refused to touch it when Dan offered it to him.",
-          "E. He took it from Edith and returned it to the box."
+          "A. Whiskey and pristine water.",
+          "B. Cigarettes and ice-cream.",
+          "C. Bone marrow and stem cells.",
+          "D. Pristine air and food.",
+          "E. Magic and science."
         ],
         "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "(examines it carefully)",
-            "dia_id": "D4:12"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Can I, uh...?",
-            "dia_id": "D4:24"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "Yeah.",
-            "dia_id": "D4:25"
-          },
-          {
-            "id": "E4",
-            "speaker": "Harry",
-            "utterance": "(motioning to Edith then handing her the burin)",
-            "dia_id": "D4:27"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry asks to hold the artifact after Art examines it.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry then hands the artifact to Edith.",
-            "based_on": [
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 5,
-        "question": "Based on how others refer to his expertise, what is Harry's professional identity within the group?",
-        "option": [
-          "A. An anthropologist specializing in Cro-Magnon history.",
-          "B. A medical doctor treating the others.",
-          "C. A historian familiar with Columbus.",
-          "D. A biologist.",
-          "E. A pre-med student taking an exam."
-        ],
-        "answer": "D",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -501,15 +530,9 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith directs a question to 'the biologist'.",
+            "inference": "When asked biologically what would keep the man alive, Harry gives a humorous answer.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry immediately answers Edith's question, confirming he fills this role.",
-            "based_on": [
+              "E1",
               "E2"
             ]
           }
@@ -517,28 +540,131 @@
       },
       {
         "character": "Harry",
-        "category": 6,
-        "question": "According to Harry, what is the maximum natural lifespan the human body appears designed to achieve?",
+        "category": 3,
+        "question": "How does Harry's reaction to John's story logically progress through the scenes?",
         "option": [
-          "A. 14,000 years",
-          "B. 140 centuries",
-          "C. 190 years",
-          "D. 7 years",
-          "E. 900 years"
+          "A. He starts by counting down to force John to speak, and later threatens to call the cops.",
+          "B. He begins by jokingly suggesting cigarettes keep him alive, and later attempts to rationally explain cellular regeneration before dismissing it entirely.",
+          "C. He jokingly suggests Arnold Schwarzenegger, later theorizes about perfect cellular renewal, and finally laughs about bypassing reincarnation.",
+          "D. He starts by ignoring John, then becomes deeply offended by the vampire comparison.",
+          "E. He initially calls John 'Spock' and later refers to him as 'Columbus'."
         ],
         "answer": "C",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Harry",
-            "utterance": "...Actually, the human body appears designed to live about a hundred and ninety years...",
-            "dia_id": "D5:48"
+            "utterance": "Arnold Schwarzenegger.",
+            "dia_id": "D5:18"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Now if a quirk in his immune system led to perfect detox, perfect renewal, then yeah. He could, uh... duck decay.",
+            "dia_id": "D5:57"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "Wow! Maybe there is something to this reincarnation thing. You're supposed to come back again and again... and somehow, John, you just managed to bypass all the other bodies.",
+            "dia_id": "D7:42"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry explicitly states the number is a hundred and ninety.",
+            "inference": "Harry's first reaction is a joke (Arnold).",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He moves to a serious biological theory (perfect renewal).",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 3,
+            "inference": "He subsequently frames it conceptually around bypassing reincarnation.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "How does Harry attempt to coerce John into revealing his secret initially?",
+        "option": [
+          "A. He threatens to leave the gathering.",
+          "B. He hides the flint burin from him.",
+          "C. He audibly counts backwards from ten.",
+          "D. He calls him a nut-case.",
+          "E. He asks Edith to flirt with him."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "You are creating the mystery here. Obviously you have something you'd like to say. Say it!",
+            "dia_id": "D5:6"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Well, maybe I...",
+            "dia_id": "D5:7"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "10, 9, 8, 7, 6, 5...",
+            "dia_id": "D5:8"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry demands John speak and immediately begins a verbal countdown to force the issue.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "What specific brand of cigarettes did Harry suggest would keep the caveman alive?",
+        "option": [
+          "A. Marlboro Red.",
+          "B. Camel Crush.",
+          "C. Lucky Strike.",
+          "D. Newport Menthol.",
+          "E. Pall Mall."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Cigarettes. And ice-cream.",
+            "dia_id": "D5:44"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry mentions cigarettes generically, but no brand is specified in the text.",
             "based_on": [
               "E1"
             ]
@@ -548,15 +674,16 @@
       {
         "character": "John",
         "category": 1,
-        "question": "Which behavior represents John's long-term survival strategy when living among normal humans?",
+        "question": "What behavioral pattern does John claim to adopt to conceal his lack of aging, and how long does he maintain a single identity before executing it?",
         "option": [
-          "A. He isolates himself in the mountains to avoid contact.",
-          "B. He periodically relocates when his lack of aging becomes noticeable.",
-          "C. He relies on perfect cellular regeneration to fake his own death.",
-          "D. He continually assumes leadership of new groups.",
-          "E. He sells ancient artifacts to fund his travels."
+          "A. He fakes his death every hundred years.",
+          "B. He relocates every 14,000 years to avoid the vampire myth.",
+          "C. He moves on every ten years or so when people notice he doesn't age.",
+          "D. He changes his name every seven years when his body renews.",
+          "E. He avoids making friends and moves every thirty-five years."
         ],
-        "answer": "B",
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -568,14 +695,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John states his ongoing behavioral pattern regarding his lack of aging.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "This pattern is moving on every ten years.",
+            "inference": "John explicitly states his habit of moving every ten years to hide his immortality.",
             "based_on": [
               "E1"
             ]
@@ -585,49 +705,30 @@
       {
         "character": "John",
         "category": 2,
-        "question": "What emotional or mental state prompts John to propose his initial hypothetical question to the group?",
+        "question": "What score did John give Ellie on her midterm?",
         "option": [
-          "A. He is angry about Dan mocking his artifact.",
-          "B. He is tempted to test the waters with a secret but is uncertain of the outcome.",
-          "C. He is desperate for Harry to explain his biology.",
-          "D. He is frustrated by Ellie's poor midterm grade.",
-          "E. He is eager to prove his superiority over Art's knowledge."
+          "A. A+",
+          "B. B-",
+          "C. C+",
+          "D. D",
+          "E. F"
         ],
-        "answer": "B",
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "There is something I'm tempted to tell you, I think. I've never done this before and I wonder how it'll pan out.",
-            "dia_id": "D5:10"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "...I wonder if I could ask you a silly question.",
-            "dia_id": "D5:11"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "What if a man from the upper Paleolithic...survived until the present day?",
-            "dia_id": "D5:15"
+            "utterance": "No, you're worried about your parents? Don't- don't worry. You passed, C+.",
+            "dia_id": "D8:12"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John expresses temptation and uncertainty ('wonder how it'll pan out').",
+            "inference": "John tells Ellie her grade is a C+ over the phone.",
             "based_on": [
               "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He immediately follows this feeling by asking his hypothetical question.",
-            "based_on": [
-              "E2",
-              "E3"
             ]
           }
         ]
@@ -635,43 +736,37 @@
       {
         "character": "John",
         "category": 3,
-        "question": "According to John's narrative of his early life, what is the sequence of his changing perceptions of his own condition?",
+        "question": "How did John's perception of his own condition evolve over his lifetime according to his story?",
         "option": [
-          "A. He thought he was blessed, then cursed, then thought something was wrong with him.",
-          "B. He thought he had a mission, then thought he was a bad guy, then thought he was blessed.",
-          "C. He thought something was wrong with him, then wondered if he was cursed or blessed, then considered having a mission.",
-          "D. He realized he didn't age, learned to learn, then thought he was cursed.",
-          "E. He was chased away, became a leader, then thought he had a mission."
+          "A. He thought he was a vampire, then a god, then a regular human.",
+          "B. He thought he was sick, then realized he was immune, then decided to teach.",
+          "C. He thought something was wrong with him, then wondered if he was cursed/blessed, then thought he had a mission, and finally concluded he 'just happened'.",
+          "D. He thought he was magical, then feared the predators, then embraced modern science.",
+          "E. He thought he was cursed by the sky gods, then believed he was a time traveler, and finally accepted it as a joke."
         ],
         "answer": "C",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "At first I thought there was, uh, something wrong with me - maybe I was a bad guy for not dying.",
+            "utterance": "At first I thought there was, uh, something wrong with me - maybe I was a bad guy for not dying. Then I began to wonder if I was cursed, or perhaps blessed. Then I thought maybe I had a mission.",
             "dia_id": "D7:50"
           },
           {
             "id": "E2",
             "speaker": "John",
-            "utterance": "Then I began to wonder if I was cursed, or perhaps blessed.",
-            "dia_id": "D7:50"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "Then I thought maybe I had a mission.",
-            "dia_id": "D7:50"
+            "utterance": "I think I just happened.",
+            "dia_id": "D7:52"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John explicitly lists his thought process chronologically using 'At first', 'Then', and 'Then'.",
+            "inference": "John outlines a chronological progression of his self-understanding, ending with a passive acceptance that he just 'happened'.",
             "based_on": [
               "E1",
-              "E2",
-              "E3"
+              "E2"
             ]
           }
         ]
@@ -679,24 +774,70 @@
       {
         "character": "John",
         "category": 4,
-        "question": "How did John come into possession of the  burin being examined by the group?",
+        "question": "By combining his interactions, how does John engage with Edith's teasing compared to Ellie's concerns?",
         "option": [
-          "A. He crafted it himself during the Magdalenian period.",
-          "B. He excavated it during an archaeological dig with Art.",
-          "C. He bought it cheaply at a secondhand store.",
-          "D. He traded it for a history midterm.",
-          "E. He received it as a going-away gift from Dan."
+          "A. He ignores Edith completely but mentors Ellie carefully.",
+          "B. He responds playfully to Edith but reassures Ellie about passing her history midterm.",
+          "C. He is offended by Edith but indifferent to Ellie.",
+          "D. He threatens Edith with a club and tells Ellie she failed.",
+          "E. He changes the subject with Edith and refuses to talk to Ellie."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Dan",
-            "utterance": "So where'd you get that, John?",
-            "dia_id": "D4:21"
+            "speaker": "Edith",
+            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
+            "dia_id": "D7:35"
           },
           {
             "id": "E2",
+            "speaker": "John",
+            "utterance": "You'd be more fun conscious.",
+            "dia_id": "D7:36"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "No, you're worried about your parents? Don't- don't worry. You passed, C+.",
+            "dia_id": "D8:12"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John plays along with Edith's romantic joke.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He adopts a reassuring, mentor-like tone with the worried student, Ellie.",
+            "based_on": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "What was the exact name of the thrift shop where John purchased the burin?",
+        "option": [
+          "A. Goodwill",
+          "B. Salvation Army",
+          "C. The Antiquary",
+          "D. Value Village",
+          "E. St. Vincent's"
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
             "speaker": "John",
             "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
             "dia_id": "D4:22"
@@ -705,14 +846,89 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan asks John about the origin of the tool.",
+            "inference": "John specifies it was a thrift shop and cost $5, but never names the store.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "What does Dan's explanation of the burin suggest about his primary area of expertise?",
+        "option": [
+          "A. He is a medical doctor specializing in stem cells.",
+          "B. He is highly knowledgeable about Paleolithic tools and cultures like the Magdalenian.",
+          "C. He is a historian focused on the voyages of Columbus.",
+          "D. He is a biologist studying cellular regeneration.",
+          "E. He is a geography professor mapping ocean depths."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
+            "dia_id": "D4:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "It's the final culture of the upper-Paleolithic.",
+            "dia_id": "D4:19"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan fluently identifies the specific type, era, and culture of the artifact, pointing to anthropological expertise.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "Dan initially asks John if he is working on a science-fiction story. How does Dan later contextualize John's geographical memories?",
+        "option": [
+          "A. He dismisses them as hallucinations caused by whiskey.",
+          "B. He confirms that John's description of the sea levels matches the end of the Pleistocene.",
+          "C. He argues that John must have read about it in Art's book.",
+          "D. He claims the British Isles were always separated from the continent.",
+          "E. He insists the description proves John is a vampire."
+        ],
+        "answer": "B",
+        "label": "Memory Update",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "This is before they were separated from the continent by rising seas, as the glaciers melted.",
+            "dia_id": "D7:29"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Yes, the end of the Pleistocene. So far what he says fits.",
+            "dia_id": "D7:31"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John describes the rising seas melting from glaciers.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "John confirms he purchased it at a thrift shop for a low price.",
+            "inference": "Dan updates his skeptical 'sci-fi' stance by scientifically validating the timeline as the Pleistocene.",
             "based_on": [
               "E2"
             ]
@@ -720,17 +936,56 @@
         ]
       },
       {
-        "character": "John",
-        "category": 5,
-        "question": "What is John's formal relationship to the person on the phone named Ellie?",
+        "character": "Dan",
+        "category": 3,
+        "question": "What is Dan's view on the evolution of human living conditions?",
+        "option": [
+          "A. Early man had terrible air, but modern man has pristine water.",
+          "B. Early man was short and lived in a toxic environment, while modern man is tall and healthy.",
+          "C. Prior to modern times air and water were pristine, but now we extend lifespan in a world not fit to live in.",
+          "D. Modern man lives 190 years because the environment is perfect.",
+          "E. Early man lived to 14,000 years due to the cold, but modern man decays."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "...Prior to modern times, those were pristine.",
+            "dia_id": "D5:54"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "We've extended our lifespan in a world that's, uh... not fit to live in.",
+            "dia_id": "D5:55"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan contrasts the pristine past with a modern world unfit to live in, despite longer lifespans.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "Which of the following best describes Dan's relationship with the student Ellie?",
         "option": [
           "A. He is her pre-Med advisor.",
-          "B. He is her biological father.",
-          "C. He is her roommate.",
-          "D. He is her history instructor.",
-          "E. He is her colleague in the biology department."
+          "B. He graded her history midterm.",
+          "C. He warned her parents about her grades.",
+          "D. He tutored her in anthropology.",
+          "E. He recommended she drop the class."
         ],
-        "answer": "D",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -741,541 +996,14 @@
           {
             "id": "E2",
             "speaker": "John",
-            "utterance": "No, you're worried about your parents? Don't- don't worry. You passed, C+.",
-            "dia_id": "D8:12"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "Good kid. What does a pre-Med need with history?",
-            "dia_id": "D8:15"
+            "utterance": "Do we have Ellie's midterm here?",
+            "dia_id": "D8:9"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John informs Ellie of her passing grade.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He notes she is a pre-Med taking history, implying he teaches the history class she just passed.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 6,
-        "question": "According to John, at what specific age did his physical body stop noticeably aging?",
-        "option": [
-          "A. 14,000",
-          "B. 10",
-          "C. 35",
-          "D. 190",
-          "E. 2000"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "In what I call my first lifetime, I aged to about thirty-five. What you see.",
-            "dia_id": "D7:15"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John equates his current physical appearance to the age he reached in his first lifetime.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He specifies that age as thirty-five.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 1,
-        "question": "Based on Linda's questions, which of the following represents her consistent interaction style in the group?",
-        "option": [
-          "A. She relies on making academic corrections to Dan's statements.",
-          "B. She persistently asks requests for clarification and functional knowledge.",
-          "C. She frequently answers questions with biological facts.",
-          "D. She acts to shut down Harry's jokes.",
-          "E. She physically leaves the room during arguments."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "What's a...burin?",
-            "dia_id": "D4:14"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "What's the selective advantage of height?",
-            "dia_id": "D5:28"
-          },
-          {
-            "id": "E3",
-            "speaker": "Linda",
-            "utterance": "What would keep him alive?",
-            "dia_id": "D5:42"
-          },
-          {
-            "id": "E4",
-            "speaker": "Linda",
-            "utterance": "So how would you know an ocean from a lake?",
-            "dia_id": "D7:46"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda repeatedly asks direct 'what' and 'how' questions to gain understanding.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3",
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 2,
-        "question": "What prompts Linda to physically strike Art?",
-        "option": [
-          "A. Art refuses to let her see the burin.",
-          "B. Art gives a condescending answer to John about answering silly questions.",
-          "C. Art insults her understanding of the selective advantage of height.",
-          "D. Art laughs at John's Columbus story.",
-          "E. Art claims to be 14,000 years old."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "John we're teachers, we answer silly questions all the time.",
-            "dia_id": "D5:12"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Hey!",
-            "dia_id": "D5:13"
-          },
-          {
-            "id": "E3",
-            "speaker": "Linda",
-            "utterance": "(elbowing Art)",
-            "dia_id": "D5:14"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art makes a statement implying John's question will be silly.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda objects with 'Hey!' and elbows him immediately after.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 3,
-        "question": "In what order does Linda pursue lines of inquiry regarding John's survival and experience?",
-        "option": [
-          "A. She asks about oceans, then about biological survival, then about height.",
-          "B. She asks about height advantage, then survival mechanisms, then distinguishing oceans.",
-          "C. She asks about the burin, then oceans, then height advantage.",
-          "D. She asks about survival mechanisms, then height advantage, then oceans.",
-          "E. She asks about distinguishing oceans, then height advantage, then survival mechanisms."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "What's the selective advantage of height?",
-            "dia_id": "D5:28"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "What would keep him alive?",
-            "dia_id": "D5:42"
-          },
-          {
-            "id": "E3",
-            "speaker": "Linda",
-            "utterance": "So how would you know an ocean from a lake?",
-            "dia_id": "D7:46"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "The temporal progression of the scenes establishes the order: Height (Scene 5a), Survival (Scene 5a later), Oceans (Scene 6a).",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 4,
-        "question": "What specific action does Linda take when reacting to John's hypothetical about living without aging?",
-        "option": [
-          "A. She questions the validity of his history degree.",
-          "B. She enthusiastically frames it as an opportunity for continuous education.",
-          "C. She leaves to check on the midterm exam.",
-          "D. She physically recoils from him.",
-          "E. She demands to know his biological secret."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "Well, if I could stay healthy and I didn't age, I mean, why not?",
-            "dia_id": "D5:60"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Yeah. What a chance to learn.",
-            "dia_id": "D5:61"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda agrees with Art's positive reception.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She specifically identifies the benefit as a 'chance to learn'.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 5,
-        "question": "Which of the following describes the professional relationship status shared by Linda, Art, and John?",
-        "option": [
-          "A. They are all medical doctors.",
-          "B. They are all students taking a midterm.",
-          "C. They are all members of a teaching faculty.",
-          "D. They are an archaeologist, a biologist, and a historian.",
-          "E. They have no explicit professional relationship."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "John we're teachers, we answer silly questions all the time.",
-            "dia_id": "D5:12"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Hey!",
-            "dia_id": "D5:13"
-          },
-          {
-            "id": "E3",
-            "speaker": "Linda",
-            "utterance": "(elbowing Art)",
-            "dia_id": "D5:14"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art explicitly includes John and the group present as 'teachers'.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda reacts to this collective characterization, confirming her inclusion in the group identity.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 6,
-        "question": "Based on the text, what numerical value is directly associated with the item Linda explicitly seeks to understand?",
-        "option": [
-          "A. 14,000",
-          "B. 190",
-          "C. 5",
-          "D. 7",
-          "E. 900"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "What's a...burin?",
-            "dia_id": "D4:14"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
-            "dia_id": "D4:22"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda specifically asks what a burin is.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John reveals the burin cost 5 bucks.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 1,
-        "question": "Which of the following describes Dan's typical approach to analyzing the statements made by the group?",
-        "option": [
-          "A. He relies on referencing biology and stem cells.",
-          "B. He constantly corrects geological and anthropological terminology based on textbook knowledge.",
-          "C. He primarily focuses on making jokes about prehistoric vampires.",
-          "D. He defers all questions to Art.",
-          "E. He tries to quickly end conversations he finds boring."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
-            "dia_id": "D4:8"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "A later Cro-Magnon, without getting technical.",
-            "dia_id": "D4:18"
-          },
-          {
-            "id": "E3",
-            "speaker": "Dan",
-            "utterance": "West - something you learned in school.",
-            "dia_id": "D7:27"
-          },
-          {
-            "id": "E4",
-            "speaker": "Dan",
-            "utterance": "Yes, the end of the Pleistocene. So far what he says fits.",
-            "dia_id": "D7:31"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan identifies the tool with highly specific archaeological terms.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan critically assesses John's statements against academic standards (school, Pleistocene).",
-            "based_on": [
-              "E3",
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 2,
-        "question": "What is Dan's immediate emotional/mental state when John casually claims to have sailed with Columbus?",
-        "option": [
-          "A. He is completely convinced and supportive.",
-          "B. He is deeply offended and angry.",
-          "C. He is confused and assumes a joke is being told.",
-          "D. He is frightened and tries to leave.",
-          "E. He immediately starts calculating the dates."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I had a chance to sail with Columbus, only I'm not the adventurous type.",
-            "dia_id": "D6:4"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "What?",
-            "dia_id": "D6:5"
-          },
-          {
-            "id": "E3",
-            "speaker": "Dan",
-            "utterance": "I suppose there's a joke in there somewhere, but I don't get it.",
-            "dia_id": "D6:11"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan expresses immediate confusion ('What?').",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He follows up by stating he suspects it's a joke he doesn't understand.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 3,
-        "question": "In what order does Dan provide environmental and anthropological information to the group?",
-        "option": [
-          "A. He describes body heat radiation, then identifies the Magdalenian era, then confirms the Pleistocene end.",
-          "B. He identifies the Magdalenian era, then describes body heat radiation, then confirms the Pleistocene end.",
-          "C. He confirms the Pleistocene end, then describes body heat radiation, then identifies the Magdalenian era.",
-          "D. He identifies the Magdalenian era, then confirms the Pleistocene end, then describes body heat radiation.",
-          "E. He describes body heat radiation, then confirms the Pleistocene end, then identifies the Magdalenian era."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
-            "dia_id": "D4:8"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Actually, tall and skinny radiates heat more effectively in warmer climates.",
-            "dia_id": "D5:30"
-          },
-          {
-            "id": "E3",
-            "speaker": "Dan",
-            "utterance": "Yes, the end of the Pleistocene. So far what he says fits.",
-            "dia_id": "D7:31"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "The chronological sequence in the dialogue is Scene 4 (Magdalenian), Scene 5a (Heat radiation), Scene 6a (Pleistocene).",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 4,
-        "question": "What is Dan's explicit proposal to John if John writes a science-fiction story?",
-        "option": [
-          "A. Dan offers to publish it for him.",
-          "B. Dan offers to review it to correct anthropological errors.",
-          "C. Dan refuses to read it out of spite.",
-          "D. Dan asks to be a co-author.",
-          "E. Dan suggests selling it to Art."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "If you do write that, let me have a look at it.",
-            "dia_id": "D5:39"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "I'm sure you'll make some anthropological boners.",
-            "dia_id": "D5:40"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "It's a deal.",
-            "dia_id": "D5:41"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan asks to look at the story to catch 'anthropological boners' (mistakes).",
+            "inference": "Only John communicates with Ellie regarding her midterm; Dan has no stated relationship with her.",
             "based_on": [
               "E1",
               "E2"
@@ -1286,57 +1014,28 @@
       {
         "character": "Dan",
         "category": 5,
-        "question": "How is Dan's relationship to Art explicitly established through their shared knowledge?",
+        "question": "Exactly how does Dan describe the physical characteristics of the flint tool from the box before identifying its culture?",
         "option": [
-          "A. Dan is Art's student.",
-          "B. Dan references the title of a book written by Art.",
-          "C. Dan relies on Art to identify the burin.",
-          "D. Art corrects Dan's knowledge of body heat.",
-          "E. Dan and Art are romantic partners."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Well, seriously, as Art's book title suggests, he might be like any of us.",
-            "dia_id": "D5:24"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan directly names Art as the author of a book.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 6,
-        "question": "What exact numerical span of centuries does Dan state the hypothetical man would have lived through?",
-        "option": [
-          "A. 14,000",
-          "B. 190",
-          "C. 140",
-          "D. 200",
-          "E. 10"
+          "A. A flint tool for grooving wood, mostly used on antlers.",
+          "B. A late Pleistocene scraper with a rounded edge.",
+          "C. A burin of a parrot beak with an inclined chisel point.",
+          "D. An early Cro-Magnon spearhead made of bone.",
+          "E. A Neanderthal hunting knife with a sharp point."
         ],
         "answer": "C",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Dan",
-            "utterance": "No, he wouldn't. John's hypothetical man would've lived through a hundred and forty centuries...",
-            "dia_id": "D5:34"
+            "utterance": "It's a burin. Of a parrot beak. Inclined chisel point...probably early Magdalenian.",
+            "dia_id": "D4:8"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan says 'a hundred and forty centuries'.",
+            "inference": "Dan identifies the tool physically as a parrot beak with an inclined chisel point before classifying it as early Magdalenian.",
             "based_on": [
               "E1"
             ]
@@ -1346,48 +1045,36 @@
       {
         "character": "Edith",
         "category": 1,
-        "question": "Which of the following aligns with Edith's consistent mode of interpreting the unknown?",
+        "question": "How does Edith characterize the group's behavior when John hesitates to share his secret?",
         "option": [
-          "A. She relies strictly on biological data and stem cell research.",
-          "B. She defers to archaeological evidence and textbooks.",
-          "C. She frequently evokes stereotypes or religious explanations.",
-          "D. She acts purely out of a desire for scientific debate.",
-          "E. She prefers to ignore the conversation and read periodicals."
+          "A. She calls them supportive colleagues.",
+          "B. She calls them snoopy friends.",
+          "C. She calls them brilliant scientists.",
+          "D. She calls them impatient listeners.",
+          "E. She calls them gullible fools."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Edith",
-            "utterance": "But...he'd be a caveman.",
-            "dia_id": "D5:33"
+            "speaker": "Dan",
+            "utterance": "Yeah come on, out with it. You're among friends.",
+            "dia_id": "D5:3"
           },
           {
             "id": "E2",
             "speaker": "Edith",
-            "utterance": "Do you still think you do? God works in mysterious ways.",
-            "dia_id": "D7:51"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
-            "dia_id": "D7:35"
+            "utterance": "Snoopy friends.",
+            "dia_id": "D5:4"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith relies on the stereotypical 'caveman with a club' imagery.",
+            "inference": "Edith modifies Dan's statement by explicitly calling the group 'snoopy friends'.",
             "based_on": [
               "E1",
-              "E3"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She introduces a theological interpretation ('God works in mysterious ways') to John's survival.",
-            "based_on": [
               "E2"
             ]
           }
@@ -1396,128 +1083,66 @@
       {
         "character": "Edith",
         "category": 2,
-        "question": "What short-term feeling drives Edith's reaction immediately after John abruptly alters his behavior?",
+        "question": "Who handed the burin to Edith, and who did she eventually surrender it to?",
         "option": [
-          "A. Scientific curiosity.",
-          "B. Sudden fright.",
-          "C. Academic arrogance.",
-          "D. Romantic attraction.",
-          "E. Intense anger."
+          "A. Dan handed it to her, and Art took it.",
+          "B. Harry handed it to her, and John took it from her to put back in the box.",
+          "C. Sandy handed it to her, and Harry took it.",
+          "D. John handed it to her, and Dan took it.",
+          "E. Linda handed it to her, and John took it."
         ],
         "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "(slowly leans forward and suddenly GRUNTS LOUDLY like a caveman)",
-            "dia_id": "D6:21"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "Everyone jumps, startled, and then laughs.",
-            "dia_id": "D6:22"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Oh!",
-            "dia_id": "D6:23"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John grunts, causing the group to jump and be startled.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith's exclamation 'Oh!' is a direct reaction to being startled.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 3,
-        "question": "Identify the correct sequence of Edith's interactions regarding the hypothetical caveman.",
-        "option": [
-          "A. She questions the biologist, then assumes the man is a stereotype, then asks about a mission.",
-          "B. She assumes the man is a stereotype, then questions the biologist, then asks about a mission.",
-          "C. She asks about a mission, then assumes the man is a stereotype, then questions the biologist.",
-          "D. She questions the biologist, then asks about a mission, then assumes the man is a stereotype.",
-          "E. She assumes the man is a stereotype, then asks about a mission, then questions the biologist."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "But...he'd be a caveman.",
-            "dia_id": "D5:33"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "What does the biologist say?",
-            "dia_id": "D5:43"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Do you still think you do? God works in mysterious ways.",
-            "dia_id": "D7:51"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Chronological order of scenes puts the caveman assumption first.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The question directed to the biologist comes later in the same scene.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "The theological 'mission' question occurs in a later scene.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 4,
-        "question": "What is Edith's stated attitude towards the prospect of perfect physical renewal and immortality?",
-        "option": [
-          "A. She believes it is an affront to God's mysterious ways.",
-          "B. She explicitly refuses it, wanting to die naturally.",
-          "C. She characterizes it as a highly desirable secret.",
-          "D. She mocks it as an impossible science fiction trope.",
-          "E. She insists only a caveman would want it."
-        ],
-        "answer": "C",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Harry",
-            "utterance": "...Now if a quirk in his immune system led to perfect detox, perfect renewal, then yeah. He could, uh... duck decay.",
-            "dia_id": "D5:57"
+            "utterance": "(motioning to Edith then handing her the burin)",
+            "dia_id": "D4:27"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(taking the burin from Edith to put back into the box)",
+            "dia_id": "D4:38"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry physically hands the burin to Edith.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John takes the burin from Edith later.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "How did Edith's opinion on cellular regeneration evolve over the course of the afternoon?",
+        "option": [
+          "A. She was initially supportive but then laughed at the idea of stem cells.",
+          "B. She argued with Harry about the pancreas but agreed about the stomach.",
+          "C. She was confused by the timeline but accepted the 190-year lifespan theory.",
+          "D. She thought it was magic at first, then recognized it as a biological fact.",
+          "E. She suggested that detox was impossible but renewal was likely."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "What does the biologist say?",
+            "dia_id": "D5:43"
           },
           {
             "id": "E2",
@@ -1529,15 +1154,9 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry describes the biological mechanism of perfect renewal/immortality.",
+            "inference": "Edith asks for the biologist's opinion and later agrees it's a desirable secret, but expresses no complex evolution of thought on the scientific mechanics.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith responds to this by stating everyone would want that secret.",
-            "based_on": [
+              "E1",
               "E2"
             ]
           }
@@ -1545,16 +1164,48 @@
       },
       {
         "character": "Edith",
-        "category": 5,
-        "question": "Which group member does Edith directly rely on to provide scientific legitimacy to John's survival claim?",
+        "category": 4,
+        "question": "What playful remark does Edith make to John regarding his hypothetical identity?",
         "option": [
-          "A. Dan",
-          "B. Harry",
-          "C. Art",
-          "D. Linda",
-          "E. Sandy"
+          "A. She asks if he rode a dinosaur.",
+          "B. She asks if he is going to hit her over the head with a club and drag her into the bedroom.",
+          "C. She asks if he drank pristine water from a glacier.",
+          "D. She asks if he stole fire from the gods.",
+          "E. She asks if he knew Arnold Schwarzenegger."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
+            "dia_id": "D7:35"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith uses a romantic caveman trope to tease John.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "After asking for the biologist's opinion, how is Edith's inquiry answered?",
+        "option": [
+          "A. Dan tells her about thermoregulation.",
+          "B. Harry jokingly answers 'cigarettes and ice-cream' before detailing cellular renewal.",
+          "C. John grunts loudly to scare her.",
+          "D. Art explains the use of the flint burin.",
+          "E. Linda points out that oceans didn't exist."
+        ],
+        "answer": "B",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -1567,75 +1218,26 @@
             "speaker": "Harry",
             "utterance": "Cigarettes. And ice-cream.",
             "dia_id": "D5:44"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith explicitly defers to the authority of 'the biologist'.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry is the one who answers, identifying him as the biologist she relies on.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 6,
-        "question": "Based solely on the provided dialogue, how many times does Edith explicitly use the exact word 'caveman'?",
-        "option": [
-          "A. 0",
-          "B. 1",
-          "C. 2",
-          "D. 3",
-          "E. 4"
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Dan! A caveman?",
-            "dia_id": "D5:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "But...he'd be a caveman.",
-            "dia_id": "D5:33"
           },
           {
             "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Caveman, you gonna hit me over the head with a club and drag me into the bedroom?",
-            "dia_id": "D7:35"
+            "speaker": "Harry",
+            "utterance": "...Perfect cellular regeneration caused by circulating Mesenchymal stem cells...",
+            "dia_id": "D5:48"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith uses the word in D5:25.",
+            "inference": "Edith asks a question, and Harry initially provides a joke answer.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith uses the word in D5:33.",
-            "based_on": [
+              "E1",
               "E2"
             ]
           },
           {
-            "step": 3,
-            "inference": "Edith uses the word in D7:35. Total is 3.",
+            "step": 2,
+            "inference": "Harry subsequently updates the answer with real biological theory.",
             "based_on": [
               "E3"
             ]
@@ -1645,217 +1247,25 @@
       {
         "character": "Art",
         "category": 1,
-        "question": "What characterizes Art's typical contribution to the historical discussions?",
+        "question": "What do Art's comments reveal about his professional life and the methods he usually employs to acquire historical items?",
         "option": [
-          "A. He frequently contradicts textbook facts to support John.",
-          "B. He brings practical, functional knowledge of primitive tools and traits.",
-          "C. He primarily relies on biological arguments regarding stem cells.",
-          "D. He consistently ignores evidence that conflicts with his books.",
-          "E. He tries to quickly change the topic whenever John brings up the past."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "A burin's a flint tool for grooving wood and bone, antlers especially, to make spear and harpoon points...",
-            "dia_id": "D4:15"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Except that as a rule, we've grown taller.",
-            "dia_id": "D5:27"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "Better to see predators in tall grass, my dear.",
-            "dia_id": "D5:29"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art defines the practical use of a primitive tool.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art explains the practical evolutionary advantage of height.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 2,
-        "question": "What is Art's immediate reaction to the claim that John sailed with Columbus?",
-        "option": [
-          "A. He assumes John is entirely serious and asks for details.",
-          "B. He physically attacks John.",
-          "C. He expresses nervous bemusement and points out the obvious reality.",
-          "D. He immediately tries to explain the claim biologically.",
-          "E. He angrily walks out of the room."
+          "A. He buys them from thrift shops and grades history papers.",
+          "B. He sails to remote islands and conducts biological experiments.",
+          "C. He digs for artifacts and is accustomed to answering silly questions as a teacher.",
+          "D. He writes science fiction stories and studies immune systems.",
+          "E. He appraises items for museums and studies the Pleistocene epoch."
         ],
         "answer": "C",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "John",
-            "utterance": "I had a chance to sail with Columbus, only I'm not the adventurous type.",
-            "dia_id": "D6:4"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "(Bemused, laughing nervously)",
-            "dia_id": "D6:9"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "Look around, John. We just did.",
-            "dia_id": "D6:10"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John makes his Columbus statement.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art laughs nervously and points out they just 'fell off an edge'.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 3,
-        "question": "Regarding the burin, what is the sequence of Art's physical interactions and verbal evaluations?",
-        "option": [
-          "A. He evaluates its function, asks to see it, then confirms its identity.",
-          "B. He asks to see it, evaluates its function, then confirms its identity.",
-          "C. He asks to see it, confirms its identity, then evaluates its function.",
-          "D. He confirms its identity, asks to see it, then evaluates its function.",
-          "E. He evaluates its function, confirms its identity, then asks to see it."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "May I see that?",
-            "dia_id": "D4:9"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Yes indeed, that's what it is.",
-            "dia_id": "D4:13"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "A burin's a flint tool for grooving wood and bone...",
-            "dia_id": "D4:15"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art first asks to see the item.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He then confirms 'that's what it is' after examining.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "He then explains its function to Linda.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 4,
-        "question": "How does Art describe his own professional method for obtaining artifacts like the burin?",
-        "option": [
-          "A. He usually buys them at thrift shops for $5.",
-          "B. He has to go digging to find them.",
-          "C. He trades textbooks for them.",
-          "D. He inherited them from early Magdalenians.",
-          "E. He crafts them himself to teach his classes."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
-            "dia_id": "D4:22"
-          },
-          {
-            "id": "E2",
             "speaker": "Art",
             "utterance": "You lucky dog! Me, I gotta go digging for this kinda stuff.",
             "dia_id": "D4:23"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John obtained his from a thrift shop.",
-            "based_on": [
-              "E1"
-            ]
           },
           {
-            "step": 2,
-            "inference": "Art contrasts John's luck with his own method, which is 'digging'.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 5,
-        "question": "What explicit common professional status does Art claim he shares with John?",
-        "option": [
-          "A. They are both published authors.",
-          "B. They are both teachers.",
-          "C. They are both thrift shop owners.",
-          "D. They are both biologists.",
-          "E. They are both anthropologists."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
+            "id": "E2",
             "speaker": "Art",
             "utterance": "John we're teachers, we answer silly questions all the time.",
             "dia_id": "D5:12"
@@ -1864,7 +1274,39 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art explicitly pairs himself and John under the label 'we're teachers'.",
+            "inference": "Art explicitly states he has to dig for artifacts and refers to himself as a teacher.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 2,
+        "question": "What specific materials does Art say a burin is used for grooving?",
+        "option": [
+          "A. Stone and metal, to make jewelry.",
+          "B. Wood and bone, especially antlers, to make spear and harpoon points.",
+          "C. Leather and hides, to make clothing.",
+          "D. Ice and rock, to build shelters.",
+          "E. Flint and obsidian, to create fire."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "A burin's a flint tool for grooving wood and bone, antlers especially, to make spear and harpoon points.",
+            "dia_id": "D4:15"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art defines the exact materials the tool is used on.",
             "based_on": [
               "E1"
             ]
@@ -1873,41 +1315,125 @@
       },
       {
         "character": "Art",
-        "category": 6,
-        "question": "What is the specific price of the item Art envies John for finding?",
+        "category": 3,
+        "question": "Following John's caveman grunt and Sandy's joke, how does Art characterize John's explanation of moving every ten years?",
         "option": [
-          "A. 14,000 bucks",
-          "B. 10 bucks",
-          "C. 5 bucks",
-          "D. 190 bucks",
-          "E. 140 bucks"
+          "A. He calls it an anthropological boner.",
+          "B. He dismisses it as a vampire myth.",
+          "C. He praises it as 'very good' and 'very quick', treating it like a story he wants to read.",
+          "D. He says it perfectly fits into any textbook.",
+          "E. He questions the selective advantage of such behavior."
         ],
         "answer": "C",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "Believe it or not, from a thrift shop. 5 bucks.",
-            "dia_id": "D4:22"
+            "utterance": "Every ten years or so, when people start to notice I don't age, I move on.",
+            "dia_id": "D7:8"
           },
           {
             "id": "E2",
             "speaker": "Art",
-            "utterance": "You lucky dog! Me, I gotta go digging for this kinda stuff.",
-            "dia_id": "D4:23"
+            "utterance": "...That's very good, that's very quick John. I wanna read that story when you're done.",
+            "dia_id": "D7:10"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John states the price is 5 bucks.",
+            "inference": "John provides an explanation for his survival strategy.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Art expresses envy over this specific acquisition.",
+            "inference": "Art reacts by viewing it as an impressive creative writing exercise.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 4,
+        "question": "Which of the following statements best describes Art's interaction with the student Ellie?",
+        "option": [
+          "A. He changed her grade from a D to a C+.",
+          "B. He answered her silly questions about pre-Med requirements.",
+          "C. He advised her parents not to worry.",
+          "D. He brought her midterm in with the periodicals.",
+          "E. He recommended she study the Magdalenian culture."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Do we have Ellie's midterm here?",
+            "dia_id": "D8:9"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "No, you're worried about your parents? Don't- don't worry. You passed, C+.",
+            "dia_id": "D8:12"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art has zero interaction with Ellie in the text; only John and Sandy are involved with her or her paper.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 5,
+        "question": "How is Art's assertion regarding the environmental habits of humanity updated by Dan?",
+        "option": [
+          "A. Art suggests they ate meat, and Dan updates it to fish.",
+          "B. Art suggests they evolved height to see predators, and Dan updates it to reaching fruit.",
+          "C. Art questions if the caveman survived simply by eating the food, drinking the water and breathing the air, and Dan updates this by noting those elements were pristine prior to modern times.",
+          "D. Art states the air was toxic, and Dan corrects him that it was clean.",
+          "E. Art claims the water caused slow poisoning, and Dan says it was the food."
+        ],
+        "answer": "C",
+        "label": "Memory Update",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "What, like eat the food, drink the water and breathe the air?",
+            "dia_id": "D5:53"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "...Prior to modern times, those were pristine.",
+            "dia_id": "D5:54"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art mockingly reduces survival to basic consumption of elements.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan logically updates the premise by pointing out that historical environmental quality was vastly superior.",
             "based_on": [
               "E2"
             ]

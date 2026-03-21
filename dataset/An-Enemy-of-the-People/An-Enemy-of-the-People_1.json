@@ -3,40 +3,41 @@
     {
       "character": "Dr. Stockmann",
       "category": 1,
-      "question": "What primary reason justifies Dr. Stockmann's decision to maintain a lifestyle that includes entertaining guests, despite his past financial struggles?",
+      "question": "Which statement best characterizes Dr. Stockmann's underlying motivation for maintaining a hospitable and socially active household?",
       "option": [
-        "A. He wishes to display his new wealth to his brother, Peter, to prove his success.",
-        "B. He views social gatherings as an essential way to engage with ambitious and liberal-minded individuals.",
-        "C. He needs a constant audience to listen to his scientific discoveries and municipal theories.",
-        "D. He relies on his guests to help him consume the surplus of food his wife prepares.",
-        "E. He believes it is his duty as the Medical Officer to host the town's prominent figures."
+        "A. He believes it is his duty as the Medical Officer to host the town's key political figures regularly.",
+        "B. He uses these gatherings to subtly manipulate the editorial direction of the 'People's Messenger'.",
+        "C. He seeks to compensate for his previous years of isolation by surrounding himself with active, ambitious minds.",
+        "D. He is attempting to prove to his brother Peter that his financial status is equal to a civil servant's.",
+        "E. He wants to create a pagan, free-thinking environment to counteract the strict teachings of Mr. Rorlund's school."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Dr. Stockmann",
-          "utterance": "At all events I assure you I don't waste money unprofitably. But I can't find it in my heart to deny myself the pleasure of entertaining my friends.",
-          "dia_id": "D1:94"
+          "utterance": "Ah, naturally you can't appreciate it as keenly as I. You have lived all your life in these surroundings, and your impressions have been blunted. But I, who have been buried all these years in my little corner up north, almost without ever seeing a stranger who might bring new ideas with him—well, in my case it has just the same effect as if I had been transported into the middle of a crowded city.",
+          "dia_id": "D1:76"
         },
         {
           "id": "E2",
           "speaker": "Dr. Stockmann",
-          "utterance": "I have lived for so long shut out of it all, that it is a necessity of life to me to mix with young, eager, ambitious men, men of liberal and active minds; and that describes every one of those fellows who are enjoying their supper in there.",
+          "utterance": "At all events I assure you I don't waste money unprofitably. But I can't find it in my heart to deny myself the pleasure of entertaining my friends. I need that sort of thing, you know. I have lived for so long shut out of it all, that it is a necessity of life to me to mix with young, eager, ambitious men, men of liberal and active minds...",
           "dia_id": "D1:94"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann explicitly states he does not waste money unprofitably but entertains friends for a specific pleasure.",
+          "inference": "Dr. Stockmann was previously isolated in the north without strangers to bring new ideas.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "He defines this necessity as the need to mix with young, eager, and liberal-minded men, matching option B.",
+          "inference": "Because he was shut out for so long, he now considers it a necessity to entertain and mix with active, liberal minds.",
           "based_on": [
             "E1",
             "E2"
@@ -47,49 +48,30 @@
     {
       "character": "Dr. Stockmann",
       "category": 2,
-      "question": "Which action most accurately reflects Dr. Stockmann's immediate reaction upon confirming the contents of the long-awaited mail?",
+      "question": "What specifically did the chemist's analysis reveal about the water from the Baths?",
       "option": [
-        "A. He quietly informs his wife to avoid alarming his guests.",
-        "B. He instantly drafts a new article for the \"People's Messenger.\"",
-        "C. He loudly proclaims the town is a pest-house and orders his report sent to the Mayor.",
-        "D. He immediately visits the Mayor's office to confront him.",
-        "E. He asks Hovstad to delay his previous article indefinitely."
+        "A. The water has a slight mineral deficiency that makes it unsuited for invalids.",
+        "B. The conduit-pipes have rusted, causing heavy metal contamination in the reservoir.",
+        "C. The water contains decomposing organic matter and is full of infusoria.",
+        "D. The sea-water has mixed with the drinking-water, raising the salinity to dangerous levels.",
+        "E. The water is perfectly safe internally, but causes severe skin rashes when used externally."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Dr. Stockmann",
-          "utterance": "The whole place is a pest-house!",
-          "dia_id": "D1:238"
-        },
-        {
-          "id": "E2",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Of course I have prepared a report for the Baths Committee; I have had it ready for a week, and was only waiting for this to come. Now it shall go off at once.",
-          "dia_id": "D1:269"
-        },
-        {
-          "id": "E3",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Now give it to-to-(stamps his foot)—what the deuce is her name?—give it to the maid, and tell her to take it at once to the Mayor.",
-          "dia_id": "D1:269"
+          "utterance": "Here it is! It proves the presence of decomposing organic matter in the water—it is full of infusoria. The water is absolutely dangerous to use, either internally or externally.",
+          "dia_id": "D1:253"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann publicly announces the town's condition to the room.",
+          "inference": "The analysis explicitly proves the presence of decomposing organic matter and infusoria.",
           "based_on": [
             "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "He finalizes his reaction by ordering the maid to deliver his pre-written report to the Mayor.",
-          "based_on": [
-            "E2",
-            "E3"
           ]
         }
       ]
@@ -97,42 +79,57 @@
     {
       "character": "Dr. Stockmann",
       "category": 3,
-      "question": "Which sequence correctly details the timeline of Dr. Stockmann's writings regarding the Baths?",
+      "question": "How does Dr. Stockmann's directive regarding his written article on the Baths change over the course of the evening?",
       "option": [
-        "A. He wrote a critical report in the winter, delayed it, and then drafted a positive article.",
-        "B. He wrote a promotional article in the winter, delayed its publication, and prepared a critical report a week before receiving lab results.",
-        "C. He wrote a promotional article yesterday, stopped its publication today, and began a report.",
-        "D. He prepared a critical report in the winter, sent it to the Mayor, and is now writing an article.",
-        "E. He wrote an article and a report simultaneously last week and is publishing both tomorrow."
+        "A. He initially wants to rewrite it completely, but later decides to abandon it.",
+        "B. He first intends to submit it to his brother, but later decides to publish it in the 'Messenger' instead.",
+        "C. He initially agrees that spring is the right time to publish it, but later halts its publication entirely.",
+        "D. He first denies having written it, but later admits to Peter that it was ready for publication.",
+        "E. He initially demands it be printed immediately, but later asks Hovstad to wait until summer."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Memory Update",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "This is something he wrote in the winter; a recommendation of the Baths—an account of the excellent sanitary conditions here. But I held the article over, temporarily.",
-          "dia_id": "D1:40"
+          "speaker": "Peter Stockmann",
+          "utterance": "Why not? It seems to me that this would be the most opportune moment.",
+          "dia_id": "D1:99"
         },
         {
           "id": "E2",
           "speaker": "Dr. Stockmann",
-          "utterance": "Of course I have prepared a report for the Baths Committee; I have had it ready for a week, and was only waiting for this to come.",
-          "dia_id": "D1:269"
+          "utterance": "Yes, very likely—under normal conditions.",
+          "dia_id": "D1:100"
+        },
+        {
+          "id": "E3",
+          "speaker": "Hovstad",
+          "utterance": "Nothing about municipal affairs. But the day after tomorrow I was thinking of printing your article—",
+          "dia_id": "D1:148"
+        },
+        {
+          "id": "E4",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Ah, devil take it—my article! Look here, that must wait a bit.",
+          "dia_id": "D1:149"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "The promotional article was written in the winter and delayed.",
+          "inference": "Dr. Stockmann acknowledged that his previously written article about the excellent conditions was meant to be printed, though he was hesitant due to 'abnormal conditions'.",
           "based_on": [
-            "E1"
+            "E1",
+            "E2"
           ]
         },
         {
           "step": 2,
-          "inference": "A separate critical report was prepared a week ago, waiting for the lab results.",
+          "inference": "When Hovstad explicitly brings up printing it, Dr. Stockmann officially updates his stance and commands that it must wait.",
           "based_on": [
-            "E2"
+            "E3",
+            "E4"
           ]
         }
       ]
@@ -140,64 +137,28 @@
     {
       "character": "Dr. Stockmann",
       "category": 4,
-      "question": "What specific operational action does Dr. Stockmann conclude must be taken to fix the Baths?",
+      "question": "Which statement accurately describes how Dr. Stockmann manages the differing claims about who originated the idea for the Baths?",
       "option": [
-        "A. The town must shut down the bathing-place permanently.",
-        "B. The town must temporarily close the Baths until the winter.",
-        "C. All the conduit-pipes must be relaid because the intake is too low.",
-        "D. A new filtration system must be installed at Molledal.",
-        "E. The patients must be treated for gastric fever before using the water."
+        "A. He aggressively confronts Peter and demands full credit in front of Hovstad.",
+        "B. He agrees with Peter that the idea was a joint effort from the very beginning.",
+        "C. He avoids a direct confrontation with his brother and tries to de-escalate the tension.",
+        "D. He openly mocks Peter's lack of imagination and claims sole ownership.",
+        "E. He allows his wife to argue the point while he remains completely silent on the matter."
       ],
       "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "All the conduit-pipes will have to be relaid.",
-          "dia_id": "D1:265"
+          "speaker": "Hovstad",
+          "utterance": "But who denies it, Mr. Stockmann? You set the thing going and made a practical concern of it; we all know that. I only meant that the idea of it came first from the doctor.",
+          "dia_id": "D1:49"
         },
         {
           "id": "E2",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Yes, of course. The intake is too low down; it will have to be lifted to a position much higher up.",
-          "dia_id": "D1:267"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann identifies the required physical modification to the infrastructure.",
-          "based_on": [
-            "E1",
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Dr. Stockmann",
-      "category": 5,
-      "question": "Which statement correctly describes Dr. Stockmann's explicit familial connections mentioned in the gathering?",
-      "option": [
-        "A. He is Peter's father and Katherine's uncle.",
-        "B. He is Petra's father and Peter's brother.",
-        "C. He is Horster's brother and Morten's father.",
-        "D. He is Hovstad's uncle and Katherine's husband.",
-        "E. He is Billing's brother and Ejlif's grandfather."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Petra",
-          "utterance": "But I forgot, father—I have a letter for you.",
-          "dia_id": "D1:158"
-        },
-        {
-          "id": "E2",
-          "speaker": "Dr. Stockmann",
-          "utterance": "A letter? From whom?",
-          "dia_id": "D1:159"
+          "speaker": "Peter Stockmann",
+          "utterance": "Oh, ideas yes! My brother has had plenty of them in his time—unfortunately. But when it is a question of putting an idea into practical shape, you have to apply to a man of different mettle, Mr. Hovstad. And I certainly should have thought that in this house at least...",
+          "dia_id": "D1:50"
         },
         {
           "id": "E3",
@@ -207,27 +168,15 @@
         },
         {
           "id": "E4",
-          "speaker": "Peter Stockmann",
-          "utterance": "That is exactly what you never appear to be willing to learn, my dear Thomas.",
-          "dia_id": "D1:109"
-        },
-        {
-          "id": "E5",
-          "speaker": "Peter Stockmann",
-          "utterance": "I hear my brother has become a prolific contributor to the \"People's Messenger.\"",
-          "dia_id": "D1:24"
-        },
-        {
-          "id": "E6",
-          "speaker": "Hovstad",
-          "utterance": "Yes, he is good enough to write in the \"People's Messenger\" when he has any home truths to tell.",
-          "dia_id": "D1:25"
+          "speaker": "Dr. Stockmann",
+          "utterance": "And I should have imagined that I—. Oh, come, don't let us fly out at one another, Peter.",
+          "dia_id": "D1:104"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Petra addresses Dr. Stockmann as father.",
+          "inference": "Peter and Hovstad argue over whether Dr. Stockmann deserves the primary credit for the ideas.",
           "based_on": [
             "E1",
             "E2"
@@ -235,301 +184,41 @@
         },
         {
           "step": 2,
-          "inference": "Peter refers to the contributor (Dr. Stockmann/Thomas) as his brother.",
+          "inference": "When Dr. Stockmann is present and the conversation borders on conflict, he explicitly asks Peter not to 'fly out at one another', showing his avoidance of conflict.",
           "based_on": [
             "E3",
-            "E4",
-            "E5",
-            "E6"
+            "E4"
           ]
         }
       ]
     },
     {
       "character": "Dr. Stockmann",
-      "category": 6,
-      "question": "Exactly how many sheets of paper compose the report Dr. Stockmann prepared for the Baths Committee?",
-      "option": [
-        "A. Two",
-        "B. Three",
-        "C. Four",
-        "D. Five",
-        "E. Six"
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Look at that! Four closely written sheets!—and the letter shall go with them.",
-          "dia_id": "D1:269"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "The text provides a direct numerical count of the sheets.",
-          "based_on": [
-            "E1"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 1,
-      "question": "How does Hovstad approach the publication of Dr. Stockmann's writing regarding the Baths?",
-      "option": [
-        "A. He prints everything immediately to maximize public awareness.",
-        "B. He holds content until the timing strategically maximizes its relevance and impact on the audience.",
-        "C. He refuses to print anything that might upset the Mayor.",
-        "D. He only publishes translated English stories instead of local news.",
-        "E. He alters the content of the articles to align with pagan beliefs."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "This is something he wrote in the winter; a recommendation of the Baths—an account of the excellent sanitary conditions here. But I held the article over, temporarily.",
-          "dia_id": "D1:40"
-        },
-        {
-          "id": "E2",
-          "speaker": "Hovstad",
-          "utterance": "No, not at all; I thought it would be better to wait until the spring, because it is just at this time that people begin to think seriously about their summer quarters.",
-          "dia_id": "D1:42"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad deliberately delayed the winter article.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "He did so to align the publication with the season when people plan summer trips.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 2,
-      "question": "What is Hovstad's immediate intent upon learning the details of Dr. Stockmann's new discovery?",
-      "option": [
-        "A. He wants to help the doctor rewrite his report.",
-        "B. He wants to print a short note about the discovery to inform the public immediately.",
-        "C. He wants to confront Peter Stockmann about the conduit-pipes.",
-        "D. He wants to verify the university's lab results himself.",
-        "E. He wants to close the \"People's Messenger\" to avoid a scandal."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "Will you let me print a short note about your discovery in the Messenger?",
-          "dia_id": "D1:273"
-        },
-        {
-          "id": "E2",
-          "speaker": "Hovstad",
-          "utterance": "It is very desirable that the public should be informed of it without delay.",
-          "dia_id": "D1:275"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad directly asks permission to print a note about the discovery.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "He states his urgency to inform the public.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 3,
-      "question": "What caused Hovstad to arrive at the Stockmann household after Peter Stockmann?",
-      "option": [
-        "A. He was at the evening school teaching.",
-        "B. He was delayed by business at the printers.",
-        "C. He was waiting for the postman to deliver a letter.",
-        "D. He was eating cold meat in the dining room.",
-        "E. He was inspecting the intake pipes at the Baths."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "Come in! Oh, it is you, Mr. Hovstad!",
-          "dia_id": "D1:20"
-        },
-        {
-          "id": "E2",
-          "speaker": "Hovstad",
-          "utterance": "Yes, I hope you will forgive me, but I was delayed at the printers. Good evening, Mr. Mayor.",
-          "dia_id": "D1:21"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad arrives and is greeted by Mrs. Stockmann.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Hovstad explains his tardiness was due to being at the printers.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 4,
-      "question": "How does Hovstad respond to Billing's suggestion of giving Dr. Stockmann a testimonial?",
-      "option": [
-        "A. He dismisses the idea as pagan nonsense.",
-        "B. He agrees to suggest the idea.",
-        "C. He volunteers to pay for it himself.",
-        "D. He argues that the Mayor deserves the testimonial instead.",
-        "E. He insists they must wait until the pipes are fixed."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Billing",
-          "utterance": "Hovstad, don't you think the town ought to give Dr. Stockmann some sort of testimonial?",
-          "dia_id": "D1:280"
-        },
-        {
-          "id": "E2",
-          "speaker": "Hovstad",
-          "utterance": "I will suggest it, anyway.",
-          "dia_id": "D1:281"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Billing poses the question about the testimonial.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Hovstad affirms he will put the suggestion forward.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
       "category": 5,
-      "question": "Which option accurately reflects Hovstad's professional relationship based on the text?",
+      "question": "To which specific university did Dr. Stockmann send the water samples for chemical analysis?",
       "option": [
-        "A. He is Peter Stockmann's medical assistant.",
-        "B. He is the principal of the school where Petra teaches.",
-        "C. He works alongside Billing at the \"People's Messenger.\"",
-        "D. He is a sailor on Captain Horster's ship.",
-        "E. He is the chemist at the University."
+        "A. The University of Christiania.",
+        "B. The Royal Medical College.",
+        "C. The University of Copenhagen.",
+        "D. The Stockholm Institute of Science.",
+        "E. The Provincial Chemistry Laboratory."
       ],
-      "answer": "C",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "I rather think it was us two of the \"People's Messenger\" that couldn't digest.",
-          "dia_id": "D1:122"
-        },
-        {
-          "id": "E2",
-          "speaker": "Billing",
-          "utterance": "That is just what it is! That word sums up the situation.",
-          "dia_id": "D1:125"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad groups himself with another person as \"us two\" belonging to the \"People's Messenger.\"",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Billing immediately agrees, confirming they are the two individuals associated with the paper.",
-          "based_on": [
-            "E1",
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 6,
-      "question": "When was Hovstad originally planning to print Dr. Stockmann's pending article before the doctor stopped him?",
-      "option": [
-        "A. Tomorrow",
-        "B. The day after tomorrow",
-        "C. Next week",
-        "D. In the winter",
-        "E. In exactly four hours"
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "Nothing about municipal affairs. But the day after tomorrow I was thinking of printing your article—",
-          "dia_id": "D1:148"
-        },
-        {
-          "id": "E2",
           "speaker": "Dr. Stockmann",
-          "utterance": "Ah, devil take it—my article! Look here, that must wait a bit.",
-          "dia_id": "D1:149"
+          "utterance": "Indeed I have been busy, Katherine. But here I had none of the necessary scientific apparatus; so I sent samples, both of the drinking-water and of the sea-water, up to the University, to have an accurate analysis made by a chemist.",
+          "dia_id": "D1:251"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Hovstad states his timeline for printing the article.",
+          "inference": "The text only mentions 'the University' without specifying the name.",
           "based_on": [
             "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Dr. Stockmann halts the plan.",
-          "based_on": [
-            "E2"
           ]
         }
       ]
@@ -537,40 +226,92 @@
     {
       "character": "Mrs. Stockmann",
       "category": 1,
-      "question": "How does Mrs. Stockmann act toward her husband's interactions with his brother, Peter?",
+      "question": "How does Mrs. Stockmann approach her husband's spending and financial habits when discussing them with others?",
       "option": [
-        "A. She encourages Dr. Stockmann to insult Peter's digestion.",
-        "B. She attempts to mediate and emphasize their cooperative relationship.",
-        "C. She completely ignores Peter when he enters the house.",
-        "D. She sides with Peter and demands Dr. Stockmann resign from the Baths.",
-        "E. She secretly passes letters to Peter behind her husband's back."
+        "A. She fiercely complains about his extravagance to anyone who will listen.",
+        "B. She hides his purchases from Peter to avoid being lectured on economy.",
+        "C. She actively defends him against accusations of being a spendthrift, while ensuring savings are utilized for household comforts.",
+        "D. She encourages him to spend even more to match the lifestyle of the Mayor.",
+        "E. She silently resents his entertaining but serves the guests out of pure obligation."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Mrs. Stockmann",
-          "utterance": "Surely it is not worth bothering about! Cannot you and Thomas share the credit as brothers?",
-          "dia_id": "D1:56"
+          "utterance": "Now you mustn't think that Thomas and I are spendthrifts.",
+          "dia_id": "D1:16"
         },
         {
           "id": "E2",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "What nonsense! You and Thomas get on so capitally together.",
-          "dia_id": "D1:58"
+          "speaker": "Dr. Stockmann",
+          "utterance": "And we have got a lamp-shade too. Do you see? All out of Katherine's savings! It makes the room so cosy. Don't you think so? Just stand here for a moment—no, no, not there—just here, that's it! Look now, when you get the light on it altogether. I really think it looks very nice, doesn't it?",
+          "dia_id": "D1:86"
+        },
+        {
+          "id": "E3",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Yes, I can afford it now. Katherine tells me I earn almost as much as we spend.",
+          "dia_id": "D1:88"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann verbally attempts to defuse tension between the brothers.",
+          "inference": "She explicitly tells Peter they are not spendthrifts.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "She projects a positive image of their relationship to smooth over the disagreement.",
+          "inference": "She manages the finances closely enough to know their earnings versus spending, and uses savings for comforts like the lampshade.",
+          "based_on": [
+            "E2",
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 2,
+      "question": "Which item did Mrs. Stockmann serve to Mr. Billing because he arrived an hour late?",
+      "option": [
+        "A. A plate of warm fish and bread.",
+        "B. A large plate-full of cold roast beef.",
+        "C. A serving of hot stew kept by the stove.",
+        "D. Tea and bread and butter.",
+        "E. A slice of cold pork."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "NARRATION",
+          "utterance": "BILLING is seen sitting at the dining table, on which a lamp is burning. He has a napkin tucked under his chin, and MRS. STOCKMANN is standing by the table handing him a large plate-full of roast beef.",
+          "dia_id": "D1:1"
+        },
+        {
+          "id": "E2",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "You see, if you come an hour late, Mr. Billing, you have to put up with cold meat.",
+          "dia_id": "D1:2"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "The narration confirms she handed him roast beef.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "She explains that because he was an hour late, he must put up with cold meat.",
           "based_on": [
             "E2"
           ]
@@ -579,28 +320,29 @@
     },
     {
       "character": "Mrs. Stockmann",
-      "category": 2,
-      "question": "What is Mrs. Stockmann's attitude regarding the radical and pagan ideas discussed by Hovstad and Billing in front of the boys?",
+      "category": 3,
+      "question": "How does Mrs. Stockmann react to the philosophical discussion about paganism and lying that occurs in her sitting room?",
       "option": [
-        "A. She enthusiastically supports them and wishes to start a pagan school.",
-        "B. She is completely indifferent as long as the boys finish their food.",
-        "C. She expresses disapproval and removes the boys from the conversation.",
-        "D. She asks Captain Horster to take the boys to America to escape.",
-        "E. She encourages Morten to adopt the lifestyle of a Viking."
+        "A. She joins in the debate, arguing fiercely for traditional religious views.",
+        "B. She initially ignores it, but eventually asks her husband to intervene.",
+        "C. She expresses her dislike for such talk in her home and immediately dismisses her sons to their room.",
+        "D. She laughs it off as a joke but warns Mr. Billing not to speak so loudly.",
+        "E. She encourages Petra to continue exposing the falsehoods of the school system."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
         {
           "id": "E1",
+          "speaker": "Billing",
+          "utterance": "Yes, I swear it is! I am a pagan, and I am proud of it. Believe me, before long we shall all be pagans.",
+          "dia_id": "D1:196"
+        },
+        {
+          "id": "E2",
           "speaker": "Mrs. Stockmann",
           "utterance": "You must go to your room now, boys; I am sure you have some lessons to learn for tomorrow.",
           "dia_id": "D1:199"
-        },
-        {
-          "id": "E2",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "No, no; away you go, both of you,",
-          "dia_id": "D1:201"
         },
         {
           "id": "E3",
@@ -612,7 +354,7 @@
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann instructs the boys to leave the room right after the pagan discussion.",
+          "inference": "Following the talk about paganism, she tells the boys to go to their room.",
           "based_on": [
             "E1",
             "E2"
@@ -620,63 +362,7 @@
         },
         {
           "step": 2,
-          "inference": "She explicitly states her dislike for such talk in her home.",
-          "based_on": [
-            "E3"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 3,
-      "question": "At what point during the evening does Mrs. Stockmann reveal where Dr. Stockmann's lamp is located?",
-      "option": [
-        "A. Before Peter Stockmann arrives at the house.",
-        "B. While she is serving Billing cold meat at the dining table.",
-        "C. After Petra delivers the long-awaited letter to Dr. Stockmann.",
-        "D. While Hovstad and Billing are discussing paganism.",
-        "E. After the maid is sent to deliver the report to the Mayor."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Petra",
-          "utterance": "I really had not time to run up again. There it is!",
-          "dia_id": "D1:162"
-        },
-        {
-          "id": "E2",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Yes, it is. I must go to my room now and— Where shall I get a light, Katherine? Is there no lamp in my room again?",
-          "dia_id": "D1:165"
-        },
-        {
-          "id": "E3",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "Yes, your lamp is already lit on your desk.",
-          "dia_id": "D1:166"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra hands over the letter.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Dr. Stockmann asks his wife for a light to read the newly delivered letter.",
-          "based_on": [
-            "E2"
-          ]
-        },
-        {
-          "step": 3,
-          "inference": "Mrs. Stockmann then reveals the lamp's location.",
+          "inference": "She explicitly states she doesn't like that kind of talk in their home.",
           "based_on": [
             "E3"
           ]
@@ -686,49 +372,37 @@
     {
       "character": "Mrs. Stockmann",
       "category": 4,
-      "question": "What is Mrs. Stockmann's final physical action regarding her husband's report in this scene?",
+      "question": "What is the exact familial relationship between Mrs. Stockmann and Captain Horster?",
       "option": [
-        "A. She throws it into the stove in the sitting room.",
-        "B. She wraps it in paper and takes it out to give to the maid.",
-        "C. She hands it directly to Peter Stockmann before he leaves.",
-        "D. She gives it to Petra to deliver to the printers.",
-        "E. She places it on the desk under the lit lamp."
+        "A. Horster is her distant cousin from up north.",
+        "B. Horster is her brother-in-law by a previous marriage.",
+        "C. Horster is her nephew who has taken up sailing.",
+        "D. Horster is the godfather to her son Ejlif.",
+        "E. Horster is her childhood friend from the crowded city."
       ],
-      "answer": "B",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Dr. Stockmann",
-          "utterance": "Give me a bit of paper, Katherine—something to wrap them up in. That will do! Now give it to-to-(stamps his foot)—what the deuce is her name?—give it to the maid, and tell her to take it at once to the Mayor.",
-          "dia_id": "D1:269"
+          "utterance": "Look here—here is another guest for you, Katherine. Isn't that jolly! Come in, Captain Horster; hang your coat up on this peg...",
+          "dia_id": "D1:59"
         },
         {
           "id": "E2",
-          "speaker": "STAGE",
-          "utterance": "(Mrs. Stockmann takes the packet and goes out through the dining-room.)",
-          "dia_id": "D1:270"
-        },
-        {
-          "id": "E3",
           "speaker": "Mrs. Stockmann",
-          "utterance": "She has just gone with it.",
-          "dia_id": "D1:277"
+          "utterance": "Do you sail soon, Captain Horster?",
+          "dia_id": "D1:131"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann asks her to wrap the report and give it to the maid.",
+          "inference": "The text shows them interacting as host and guest, but never establishes any familial or precise historical relationship between them.",
           "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "She physically takes the packet and exits to fulfill the order.",
-          "based_on": [
-            "E2",
-            "E3"
+            "E1",
+            "E2"
           ]
         }
       ]
@@ -736,91 +410,28 @@
     {
       "character": "Mrs. Stockmann",
       "category": 5,
-      "question": "Which set of characters are identified as Mrs. Stockmann's sons?",
+      "question": "Which three specific types of alcohol does Mrs. Stockmann place on the table for the toddy?",
       "option": [
-        "A. Hovstad and Billing",
-        "B. Ejlif and Morten",
-        "C. Peter and Thomas",
-        "D. Horster and Aslaksen",
-        "E. Mr. Rorlund and the postman"
+        "A. Whiskey, gin, and brandy.",
+        "B. Arrack, rum, and brandy.",
+        "C. Rum, vodka, and arrack.",
+        "D. Brandy, port, and rum.",
+        "E. Arrack, sherry, and brandy."
       ],
       "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Mrs. Stockmann",
-          "utterance": "You must go to your room now, boys; I am sure you have some lessons to learn for tomorrow.",
-          "dia_id": "D1:199"
-        },
-        {
-          "id": "E2",
-          "speaker": "Ejlif",
-          "utterance": "I should like so much to stay a little longer—",
-          "dia_id": "D1:200"
-        },
-        {
-          "id": "E3",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "No, no; away you go, both of you,",
-          "dia_id": "D1:201"
-        },
-        {
-          "id": "E4",
-          "speaker": "Morten",
-          "utterance": "I should like best to be a Viking,",
-          "dia_id": "D1:191"
-        },
-        {
-          "id": "E5",
-          "speaker": "Ejlif",
-          "utterance": "You would have to be a pagan then.",
-          "dia_id": "D1:192"
+          "utterance": "There you are! This is arrack, and this is rum, and this one is the brandy. Now every one must help themselves.",
+          "dia_id": "D1:129"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Mrs. Stockmann addresses the 'boys' and tells them to go to their room.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Ejlif responds to her directive, and she replies to 'both of you'. The two boys present and speaking just prior are Ejlif and Morten.",
-          "based_on": [
-            "E2",
-            "E3",
-            "E4",
-            "E5"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 6,
-      "question": "How many times did the Stockmann household serve roast beef on the day this scene takes place?",
-      "option": [
-        "A. Zero",
-        "B. One",
-        "C. Two",
-        "D. Three",
-        "E. Four"
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Today, for instance, we had roast beef for dinner—and, what is more, for supper too.",
-          "dia_id": "D1:82"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann explicitly counts the meals containing roast beef: dinner and supper, totaling two.",
+          "inference": "Mrs. Stockmann explicitly names arrack, rum, and brandy.",
           "based_on": [
             "E1"
           ]
@@ -830,40 +441,41 @@
     {
       "character": "Peter Stockmann",
       "category": 1,
-      "question": "What core principle consistently governs Peter Stockmann's approach to municipal affairs and authority?",
+      "question": "Which statement best aligns with Peter Stockmann's dietary philosophy as expressed during his visit?",
       "option": [
-        "A. He believes individuals should freely operate outside the law if it benefits the town.",
-        "B. He believes the individual must subordinate to the legally constituted authorities.",
-        "C. He believes the press should have full control over the Baths' development.",
-        "D. He believes scientific men should live in high style and spend lavishly.",
-        "E. He believes sailors should be forced to vote in local elections."
+        "A. He believes that a robust, hot meal in the evening is essential for building strength.",
+        "B. He prefers to eat in complete isolation to avoid the stress of political debates.",
+        "C. He avoids hot meat at night, preferring tea and bread and butter for economical and digestive reasons.",
+        "D. He eats heartily only when someone else is paying for the food.",
+        "E. He drinks strong toddy to help ease the pains of his chronic gastric fever."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Peter Stockmann",
-          "utterance": "But I am entitled to request most emphatically that all arrangements shall be made in a businesslike manner, through the proper channels, and shall be dealt with by the legally constituted authorities.",
-          "dia_id": "D1:105"
+          "utterance": "I! No, thank you. Good gracious—hot meat at night! Not with my digestion.",
+          "dia_id": "D1:13"
         },
         {
           "id": "E2",
           "speaker": "Peter Stockmann",
-          "utterance": "The individual ought undoubtedly to acquiesce in subordinating himself to the community—or, to speak more accurately, to the authorities who have the care of the community's welfare.",
-          "dia_id": "D1:107"
+          "utterance": "No, no, my dear lady; I stick to my tea and bread and butter. It is much more wholesome in the long run—and a little more economical, too.",
+          "dia_id": "D1:15"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter demands strict adherence to formal channels.",
+          "inference": "Peter states he does not eat hot meat at night due to his digestion.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "He explicitly states his doctrine that individuals must yield to the established authorities.",
+          "inference": "He confirms his preference is tea and bread and butter for wholesome and economical reasons.",
           "based_on": [
             "E2"
           ]
@@ -873,97 +485,49 @@
     {
       "character": "Peter Stockmann",
       "category": 2,
-      "question": "How does Peter Stockmann react when Dr. Stockmann uses vague language about 'abnormal conditions' regarding the Baths?",
+      "question": "According to Peter Stockmann, what specific economic improvements has the town seen recently due to the Baths?",
       "option": [
-        "A. He becomes joyful at the prospect of a new scientific discovery.",
-        "B. He immediately offers to fund Dr. Stockmann's continued research.",
-        "C. He grows suspicious and offended that things are being kept from him.",
-        "D. He ignores the comment and asks for a glass of toddy.",
-        "E. He leaves the house to question the postman about the letter."
+        "A. A massive increase in shipping trade and lower taxes.",
+        "B. The construction of a new railway and a university.",
+        "C. Rising property values, diminishing unemployment, and a lighter burden on the poor rates.",
+        "D. Government subsidies that have completely eradicated local poverty.",
+        "E. The opening of three new hotels and a printing press."
       ],
       "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "There may be much that is very abnormal about the present conditions—and it is possible there may be nothing abnormal about them at all.",
-          "dia_id": "D1:102"
-        },
-        {
-          "id": "E2",
           "speaker": "Peter Stockmann",
-          "utterance": "I must say it all sounds most mysterious. Is there something going on that I am to be kept in ignorance of? I should have imagined that I, as Chairman of the governing body of the Baths—",
-          "dia_id": "D1:103"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann gives an evasive answer about the conditions.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Peter reacts with defensive suspicion, feeling he is being deliberately excluded from information despite his authority.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 3,
-      "question": "Which correctly describes Peter Stockmann's presence relative to the guests eating in the dining room?",
-      "option": [
-        "A. He arrives before anyone has eaten and eats with them.",
-        "B. He arrives after the meal is mostly finished and refuses to partake.",
-        "C. He arrives at the same time as Hovstad and shares a drink.",
-        "D. He arrives after Horster but before Petra.",
-        "E. He arrives after the letter is opened."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "NARRATION",
-          "utterance": "The other places at the table are empty, and the table somewhat in disorder, evidently a meal having recently been finished.",
-          "dia_id": "D1:1"
+          "utterance": "Think how extraordinarily the place has developed within the last year or two! Money has been flowing in, and there is some life and some business doing in the town. Houses and landed property are rising in value every day.",
+          "dia_id": "D1:33"
         },
         {
           "id": "E2",
-          "speaker": "STAGE",
-          "utterance": "(PETER STOCKMANN comes in. He wears an overcoat and his official hat, and carries a stick.)",
-          "dia_id": "D1:8"
+          "speaker": "Hovstad",
+          "utterance": "And unemployment is diminishing,",
+          "dia_id": "D1:34"
         },
         {
           "id": "E3",
           "speaker": "Peter Stockmann",
-          "utterance": "I! No, thank you. Good gracious—hot meat at night! Not with my digestion.",
-          "dia_id": "D1:13"
+          "utterance": "Yes, that is another thing. The burden on the poor rates has been lightened, to the great relief of the propertied classes; and that relief will be even greater if only we get a really good summer this year, and lots of visitors—plenty of invalids, who will make the Baths talked about.",
+          "dia_id": "D1:35"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "The scene begins with the meal evidently having recently been finished.",
+          "inference": "Peter mentions houses and landed property are rising in value.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "Peter arrives shortly after.",
+          "inference": "Hovstad adds unemployment is diminishing, which Peter agrees with and adds that the burden on the poor rates has been lightened.",
           "based_on": [
-            "E2"
-          ]
-        },
-        {
-          "step": 3,
-          "inference": "When offered food, he outright refuses it.",
-          "based_on": [
+            "E2",
             "E3"
           ]
         }
@@ -971,55 +535,50 @@
     },
     {
       "character": "Peter Stockmann",
-      "category": 4,
-      "question": "How does Peter handle Dr. Stockmann's invitation to view the new table-cover and lamp-shade?",
+      "category": 3,
+      "question": "What is the exact reason Peter Stockmann initially gives for leaving his brother's house, and what reason does he give just before his actual departure?",
       "option": [
-        "A. He flatly refuses to step closer to look at them.",
-        "B. He compliments them warmly and asks where they were bought.",
-        "C. He acknowledges them briefly but shifts the conversation to the cost of luxuries.",
-        "D. He asks Katherine how much she saved to buy them.",
-        "E. He accidentally knocks over the lamp while examining the shade."
+        "A. He says he is tired, and later claims he has a headache.",
+        "B. He says he has business at the printing press, and later says he must meet the Bath Committee.",
+        "C. He says he is offended by the boys' noise, and later claims Hovstad insulted him.",
+        "D. He says the smell of the food is making him ill, and later says he refuses to drink alcohol.",
+        "E. He first says he is late for a meeting, but ultimately leaves after receiving a letter."
       ],
-      "answer": "C",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Well, but just come here then. Do you see, we have got a table-cover?",
-          "dia_id": "D1:84"
+          "speaker": "Peter Stockmann",
+          "utterance": "Unfortunately I must go in a moment—",
+          "dia_id": "D1:62"
         },
         {
           "id": "E2",
-          "speaker": "Peter Stockmann",
-          "utterance": "Yes, I noticed it.",
-          "dia_id": "D1:85"
+          "speaker": "Dr. Stockmann",
+          "utterance": "Rubbish! There is some toddy just coming in. You haven't forgotten the toddy, Katherine?",
+          "dia_id": "D1:63"
         },
         {
           "id": "E3",
-          "speaker": "Dr. Stockmann",
-          "utterance": "And we have got a lamp-shade too. Do you see? All out of Katherine's savings! [...] I really think it looks very nice, doesn't it?",
-          "dia_id": "D1:86"
+          "speaker": "Peter Stockmann",
+          "utterance": "You have an ingrained tendency to take your own way, at all events; and, that is almost equally inadmissible in a well ordered community. The individual ought undoubtedly to acquiesce in subordinating himself to the community—or, to speak more accurately, to the authorities who have the care of the community's welfare.",
+          "dia_id": "D1:107"
         },
         {
           "id": "E4",
           "speaker": "Peter Stockmann",
-          "utterance": "Oh, if you can afford luxuries of this kind—",
-          "dia_id": "D1:87"
+          "utterance": "That is exactly what you never appear to be willing to learn, my dear Thomas. But, mark my words, some day you will have to suffer for it—sooner or later. Now I have told you. Good-bye.",
+          "dia_id": "D1:109"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter acknowledges the items briefly without moving closer.",
+          "inference": "Peter says 'I must go in a moment' without giving an initial specific reason. When he finally leaves, it is after a political/ideological argument with Thomas, not because of any of the reasons listed in the options.",
           "based_on": [
             "E1",
-            "E2"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Rather than praising them, he pivots to a subtle criticism regarding the affordability of 'luxuries'.",
-          "based_on": [
+            "E2",
             "E3",
             "E4"
           ]
@@ -1028,16 +587,48 @@
     },
     {
       "character": "Peter Stockmann",
-      "category": 5,
-      "question": "What official role does Peter Stockmann hold over the newly built Baths?",
+      "category": 4,
+      "question": "How does Peter interpret his brother's interactions and tendencies within the community structure?",
       "option": [
-        "A. He is the Medical Officer.",
-        "B. He is the principal investor.",
-        "C. He is the Chairman of the governing body.",
-        "D. He is the chief engineer of the conduit-pipes.",
-        "E. He is the public relations director."
+        "A. He believes Thomas is entirely submissive and easily manipulated by Hovstad and Billing.",
+        "B. He views Thomas as having an ingrained tendency to take his own way, which is inadmissible in a well-ordered community.",
+        "C. He thinks Thomas is highly cooperative but lacks the scientific rigor needed for the Baths.",
+        "D. He sees Thomas as a financial drain on the community's poor rates.",
+        "E. He considers Thomas to be the ultimate authority who should dictate municipal policy."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "You have an ingrained tendency to take your own way, at all events; and, that is almost equally inadmissible in a well ordered community. The individual ought undoubtedly to acquiesce in subordinating himself to the community—or, to speak more accurately, to the authorities who have the care of the community's welfare.",
+          "dia_id": "D1:107"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter explicitly states his brother has an ingrained tendency to take his own way, which he deems inadmissible.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 5,
+      "question": "What precise title does Peter Stockmann use to describe his own authority regarding the Baths?",
+      "option": [
+        "A. Chief Medical Officer of the Municipal Council.",
+        "B. Chairman of the governing body of the Baths.",
+        "C. Director of the Municipal Health and Safety Board.",
+        "D. Head Treasurer of the Propertied Classes.",
+        "E. General Manager of the Bath Establishment."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
         {
           "id": "E1",
@@ -1049,37 +640,7 @@
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Peter Stockmann explicitly states his title regarding the Baths.",
-          "based_on": [
-            "E1"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 6,
-      "question": "According to the debate over spending between the brothers, what multiplier is used to describe how much more an ordinary merchant spends compared to Dr. Stockmann?",
-      "option": [
-        "A. One or two times as much",
-        "B. Two or three times as much",
-        "C. Three or four times as much",
-        "D. Four or five times as much",
-        "E. Ten times as much"
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Well, any ordinary merchant, then! A man in that position spends two or three times as much as—",
-          "dia_id": "D1:92"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann introduces the exact multiplier during his argument with Peter about expenses.",
+          "inference": "Peter refers to himself as 'Chairman of the governing body of the Baths'.",
           "based_on": [
             "E1"
           ]
@@ -1089,15 +650,16 @@
     {
       "character": "Petra",
       "category": 1,
-      "question": "What fundamental complaint does Petra hold against the current educational system she works in?",
+      "question": "Which statement reflects Petra's core perspective on the educational system she works within?",
       "option": [
-        "A. She believes the pay is far too low for five hours of morning work.",
-        "B. She believes it forces teachers to teach falsehoods they do not believe.",
-        "C. She thinks Mr. Rorlund's curriculum is too focused on pagan history.",
-        "D. She feels the physical building is too small for the children.",
-        "E. She resents having to correct exercises late at night."
+        "A. She believes the system effectively builds the children's resilience through hard labor.",
+        "B. She thinks the system is perfectly fine, but she resents the long hours.",
+        "C. She feels the system requires teachers to spread falsehoods and teach things they do not believe.",
+        "D. She admires Mr. Rorlund's curriculum and hopes to emulate it in her own school.",
+        "E. She views the school as the only place free from the falsehoods found at home."
       ],
-      "answer": "B",
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
         {
           "id": "E1",
@@ -1107,6 +669,12 @@
         },
         {
           "id": "E2",
+          "speaker": "Horster",
+          "utterance": "Tell lies?",
+          "dia_id": "D1:207"
+        },
+        {
+          "id": "E3",
           "speaker": "Petra",
           "utterance": "Yes, don't you suppose we have to teach them all sorts of things that we don't believe?",
           "dia_id": "D1:208"
@@ -1115,16 +683,17 @@
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Petra explicitly states that teachers have to tell lies to the children.",
+          "inference": "Petra states that at school, teachers have to stand and tell lies to the children.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "She clarifies that this means teaching things the educators themselves do not believe.",
+          "inference": "She clarifies this means teaching things they themselves don't believe.",
           "based_on": [
-            "E2"
+            "E2",
+            "E3"
           ]
         }
       ]
@@ -1132,187 +701,16 @@
     {
       "character": "Petra",
       "category": 2,
-      "question": "How does Petra feel about the heavy workload she completed today?",
+      "question": "How many total hours did Petra spend teaching in school on the day depicted?",
       "option": [
-        "A. She is resentful and plans to quit teaching for journalism.",
-        "B. She feels delightfully tired because it helps her sleep well.",
-        "C. She feels it is a punishment for her sins, as Mr. Rorlund says.",
-        "D. She is angry because she missed dinner.",
-        "E. She is anxious because she lost the translation she promised Hovstad."
+        "A. Two hours.",
+        "B. Four hours.",
+        "C. Five hours.",
+        "D. Seven hours.",
+        "E. Nine hours."
       ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Petra",
-          "utterance": "Yes—but that is good. One is so delightfully tired after it.",
-          "dia_id": "D1:179"
-        },
-        {
-          "id": "E2",
-          "speaker": "Petra",
-          "utterance": "Yes, because one sleeps so well then.",
-          "dia_id": "D1:181"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra states that the heavy work makes her delightfully tired.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "She explains the benefit is sleeping well.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "category": 3,
-      "character": "Petra",
-      "question": "Which event occurred immediately before Petra handed the letter to Dr. Stockmann?",
-      "option": [
-        "A. She was offered a glass of mixed drink by Billing.",
-        "B. She translated an English story for the Messenger.",
-        "C. She discussed paganism with Morten.",
-        "D. She was offered the use of Horster's dining room.",
-        "E. She corrected a whole heap of school exercises."
-      ],
-      "answer": "A",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Billing",
-          "utterance": "May I mix a glass for you?",
-          "dia_id": "D1:157"
-        },
-        {
-          "id": "E2",
-          "speaker": "Petra",
-          "utterance": "Thanks, I would rather do it; you always mix it too strong. But I forgot, father—I have a letter for you.",
-          "dia_id": "D1:158"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Billing offers to mix a drink for her.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "While declining his offer, she remembers and hands over the letter.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 4,
-      "question": "How does Petra acquire the letter that she gives to Dr. Stockmann?",
-      "option": [
-        "A. She picked it up from the printers while walking home.",
-        "B. The postman gave it to her just as she was going out.",
-        "C. She found it on the desk next to his lit lamp.",
-        "D. Peter Stockmann dropped it on his way out.",
-        "E. The maid handed it to her at the door."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "A letter? From whom?",
-          "dia_id": "D1:159"
-        },
-        {
-          "id": "E2",
-          "speaker": "Petra",
-          "utterance": "The postman gave it to me just as I was going out.",
-          "dia_id": "D1:160"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Dr. Stockmann asks where the letter came from.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Petra explains the direct source and timing of acquiring it.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 5,
-      "question": "What is Petra's relationship to Mrs. Stockmann based on the text?",
-      "option": [
-        "A. She is Mrs. Stockmann's sister.",
-        "B. She is Mrs. Stockmann's niece.",
-        "C. She is Mrs. Stockmann's daughter.",
-        "D. She is Mrs. Stockmann's pupil.",
-        "E. She is Mrs. Stockmann's employer."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Petra",
-          "utterance": "What do you suppose it is, mother?",
-          "dia_id": "D1:168"
-        },
-        {
-          "id": "E2",
-          "speaker": "Mrs. Stockmann",
-          "utterance": "I don't know; for the last day or two he has always been asking if the postman has not been.",
-          "dia_id": "D1:169"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra directly addresses Mrs. Stockmann as 'mother'.",
-          "based_on": [
-            "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "Mrs. Stockmann replies to the question naturally, confirming the parental relationship.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 6,
-      "question": "What is the total number of hours Petra spent teaching at school today?",
-      "option": [
-        "A. Two hours",
-        "B. Four hours",
-        "C. Five hours",
-        "D. Six hours",
-        "E. Seven hours"
-      ],
-      "answer": "E",
+      "answer": "D",
+      "label": "Multi-hop",
       "evidence_dialogues": [
         {
           "id": "E1",
@@ -1342,7 +740,7 @@
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Petra taught two hours in the evening school.",
+          "inference": "Petra confirms she taught two hours in the evening school.",
           "based_on": [
             "E1",
             "E2"
@@ -1350,7 +748,7 @@
         },
         {
           "step": 2,
-          "inference": "She corrects Billing to state she taught five hours in the morning. Totaling 2 + 5 = 7.",
+          "inference": "She corrects Billing to confirm she taught five hours in the morning. Total: 2 + 5 = 7.",
           "based_on": [
             "E3",
             "E4"
@@ -1359,29 +757,548 @@
       ]
     },
     {
-      "character": "Billing",
-      "category": 1,
-      "question": "What ideological position does Billing proudly claim for himself during the conversation with the boys?",
+      "character": "Petra",
+      "category": 3,
+      "question": "At what specific time of day does Petra promise to deliver the completed English translation to Hovstad?",
       "option": [
-        "A. He is a devout follower of Mr. Rorlund.",
-        "B. He is a steadfast capitalist.",
-        "C. He is an anarcho-syndicalist.",
-        "D. He is a pagan.",
-        "E. He is a strict puritan."
+        "A. By tomorrow morning before her school hours begin.",
+        "B. Before Captain Horster sails next week.",
+        "C. Later that same evening.",
+        "D. On the day after tomorrow, in time for the next edition.",
+        "E. Before the end of the month."
       ],
-      "answer": "D",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Billing",
-          "utterance": "Yes, I swear it is! I am a pagan, and I am proud of it. Believe me, before long we shall all be pagans.",
-          "dia_id": "D1:196"
+          "speaker": "Hovstad",
+          "utterance": "No, Miss Petra is much more likely to take to journalism, I expect. By the way, have you had time to do anything with that English story you promised to translate for us?",
+          "dia_id": "D1:214"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "No, not yet, but you shall have it in good time.",
+          "dia_id": "D1:215"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Billing explicitly declares his identity as a pagan.",
+          "inference": "Petra only says 'you shall have it in good time', without committing to any specific time or day.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 4,
+      "question": "How does Petra respond to Horster's offer of his empty house for her potential school?",
+      "option": [
+        "A. She eagerly accepts and asks to see the dining room.",
+        "B. She politely declines, stating she prefers to take up journalism.",
+        "C. She thanks him but expresses doubt that her school idea will ever materialize.",
+        "D. She ignores the offer entirely and asks about his voyage to America.",
+        "E. She tells him it would be improper to accept such a large gift."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "Well if you are thinking of that, Miss Stockmann, I shall be delighted to provide you with a schoolroom. The great big old house my father left me is standing almost empty; there is an immense dining-room downstairs—",
+          "dia_id": "D1:212"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "Thank you very much; but I am afraid nothing will come of it.",
+          "dia_id": "D1:213"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra thanks Horster but says she is afraid nothing will come of her idea to start a school.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 5,
+      "question": "What reason does Petra give for not delivering the letter to her father immediately when she received it?",
+      "option": [
+        "A. She wanted to read the address first.",
+        "B. She forgot about it because she was exhausted from seven hours of teaching.",
+        "C. She was out slaving and did not have time to run up again.",
+        "D. She was waiting for Uncle Peter to leave the house.",
+        "E. She dropped it in the hallway and just found it."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "The postman gave it to me just as I was going out.",
+          "dia_id": "D1:160"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "And you only give to me now!",
+          "dia_id": "D1:161"
+        },
+        {
+          "id": "E3",
+          "speaker": "Petra",
+          "utterance": "I really had not time to run up again. There it is!",
+          "dia_id": "D1:162"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra received the letter as she was leaving.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "When confronted about the delay, she explicitly states she 'had not time to run up again'.",
+          "based_on": [
+            "E2",
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 1,
+      "question": "Which of the following describes Horster's stance on participating in civic duties like voting?",
+      "option": [
+        "A. He believes every citizen must vote to steer the community ship.",
+        "B. He plans to vote in the upcoming election before sailing to America.",
+        "C. He thinks voting is pointless because the Mayor controls the results.",
+        "D. He avoids it entirely because he claims to know nothing about politics.",
+        "E. He restricts his civic involvement to donating his property for municipal use."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "No, I don't mix myself up with those things.",
+          "dia_id": "D1:138"
+        },
+        {
+          "id": "E2",
+          "speaker": "Billing",
+          "utterance": "But do you not take an interest in public affairs?",
+          "dia_id": "D1:139"
+        },
+        {
+          "id": "E3",
+          "speaker": "Horster",
+          "utterance": "No, I don't know anything about politics.",
+          "dia_id": "D1:140"
+        },
+        {
+          "id": "E4",
+          "speaker": "Billing",
+          "utterance": "All the same, one ought to vote, at any rate.",
+          "dia_id": "D1:141"
+        },
+        {
+          "id": "E5",
+          "speaker": "Horster",
+          "utterance": "Even if one doesn't know anything about what is going on?",
+          "dia_id": "D1:142"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster states he doesn't mix himself up with politics and knows nothing about it.",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He questions the logic of voting if one doesn't know what is going on, indicating he avoids it for that reason.",
+          "based_on": [
+            "E4",
+            "E5"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 2,
+      "question": "What is Horster's planned destination for his upcoming voyage?",
+      "option": [
+        "A. The crowded cities in the south.",
+        "B. The northern coast where Dr. Stockmann previously lived.",
+        "C. America.",
+        "D. England.",
+        "E. The capital city of Christiania."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "I suppose you are going to America?",
+          "dia_id": "D1:133"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "Yes, that is the plan.",
+          "dia_id": "D1:134"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann asks if he is going to America, and he confirms that is the plan.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 3,
+      "question": "At what exact point in the evening does Horster change his mind about going to America to instead stay and run the new school?",
+      "option": [
+        "A. Right after Dr. Stockmann announces his discovery.",
+        "B. When Petra laments the falsehoods taught in the current schools.",
+        "C. After Billing convinces him that he must take the helm of the community.",
+        "D. When Mrs. Stockmann offers him a glass of rum and arrack.",
+        "E. During the debate about whether the boys should learn about paganism."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "Well if you are thinking of that, Miss Stockmann, I shall be delighted to provide you with a schoolroom. The great big old house my father left me is standing almost empty; there is an immense dining-room downstairs—",
+          "dia_id": "D1:212"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster offers his empty house for a school, but never states he is changing his mind about sailing to America or that he will run the school himself.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 4,
+      "question": "How does Dr. Stockmann describe Horster's adaptability compared to the rest of the group?",
+      "option": [
+        "A. He describes him as a mole who is blind to the local politics.",
+        "B. He calls him a pagan who rejects all community norms.",
+        "C. He likens him to a bird of passage who feels equally at home in any latitude.",
+        "D. He refers to him as a sturdy ship that can weather any municipal storm.",
+        "E. He considers him a naive farmer's son who lacks social tact."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Sailors are like birds of passage; they feel equally at home in any latitude. And that is only an additional reason for our being all the more keen, Hovstad.",
+          "dia_id": "D1:147"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann directly compares sailors (specifically addressing Horster's profession) to birds of passage who feel at home anywhere.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 5,
+      "question": "According to Horster, who previously owned the house he offers to Petra?",
+      "option": [
+        "A. Dr. Stockmann.",
+        "B. Mr. Billing.",
+        "C. His uncle.",
+        "D. His father.",
+        "E. The town's Mayor."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "Well if you are thinking of that, Miss Stockmann, I shall be delighted to provide you with a schoolroom. The great big old house my father left me is standing almost empty; there is an immense dining-room downstairs—",
+          "dia_id": "D1:212"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster specifies the house was left to him by his father.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 1,
+      "question": "What justifies Hovstad's decision to delay publishing the Doctor's initial article about the excellent sanitary conditions of the Baths?",
+      "option": [
+        "A. He was ordered by the Mayor to suppress it until property values rose.",
+        "B. He felt the writing was too scientific for the 'Messenger' audience.",
+        "C. He wanted to wait until spring because that is when people begin thinking seriously about summer quarters.",
+        "D. He needed to make space for an English story translation first.",
+        "E. He suspected the water was poisoned and wanted to wait for proof."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "No, not at all; I thought it would be better to wait until the spring, because it is just at this time that people begin to think seriously about their summer quarters.",
+          "dia_id": "D1:42"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad explicitly states he waited until spring because people begin thinking about summer quarters then.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 2,
+      "question": "What specific task is Hovstad waiting for Petra to complete for the 'Messenger'?",
+      "option": [
+        "A. A review of the new school curriculum.",
+        "B. A translation of an English story.",
+        "C. An editorial on the necessity of voting.",
+        "D. A report on the diminishing unemployment rates.",
+        "E. Proofreading Dr. Stockmann's four-page report."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "No, Miss Petra is much more likely to take to journalism, I expect. By the way, have you had time to do anything with that English story you promised to translate for us?",
+          "dia_id": "D1:214"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad asks Petra about the English story she promised to translate.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 3,
+      "question": "How does Hovstad's assessment of his relationship with the Mayor evolve over the course of their interaction in the sitting room?",
+      "option": [
+        "A. He begins by openly insulting the Mayor and ends by apologizing.",
+        "B. He starts by agreeing with the Mayor about the Baths' success but later concludes their civility was merely a 'truce'.",
+        "C. He initially demands higher pay from the Mayor but later accepts a demotion.",
+        "D. He flatters the Mayor to get an article approved, then betrays him to the Doctor.",
+        "E. He starts off quiet and later shouts at the Mayor for having a weak stomach."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "Quite so, quite so. I don't blame him in the least, as a writer, for addressing himself to the quarters where he will find the readiest sympathy. And, besides that, I personally have no reason to bear any ill will to your paper, Mr. Hovstad.",
+          "dia_id": "D1:27"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "I quite agree with you.",
+          "dia_id": "D1:28"
+        },
+        {
+          "id": "E3",
+          "speaker": "Peter Stockmann",
+          "utterance": "Exactly—-our fine, new, handsome Baths. Mark my words, Mr. Hovstad—the Baths will become the focus of our municipal life! Not a doubt of it!",
+          "dia_id": "D1:31"
+        },
+        {
+          "id": "E4",
+          "speaker": "Hovstad",
+          "utterance": "Oh yes; but it isn't anything more than a sort of truce.",
+          "dia_id": "D1:124"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Initially, Hovstad agrees with Peter about having no ill will and the success of the Baths.",
+          "based_on": [
+            "E1",
+            "E2",
+            "E3"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "After Peter leaves, Hovstad characterizes their polite interaction as nothing more than a sort of truce.",
+          "based_on": [
+            "E4"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 4,
+      "question": "What is Hovstad's precise view on who deserves credit for the existence of the Baths?",
+      "option": [
+        "A. He credits the propertied classes for funding it.",
+        "B. He attributes it entirely to Peter Stockmann's practical management.",
+        "C. He states that the idea came first from the doctor, acknowledging Peter made it a practical concern.",
+        "D. He believes it was a joint municipal effort driven by the 'People's Messenger'.",
+        "E. He credits the previous mayor, whose plans the Stockmann brothers stole."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Yes, and what is more, they owe their existence to him.",
+          "dia_id": "D1:46"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "But who denies it, Mr. Stockmann? You set the thing going and made a practical concern of it; we all know that. I only meant that the idea of it came first from the doctor.",
+          "dia_id": "D1:49"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad initially says the Baths owe their existence to Dr. Stockmann.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "When pressed by Peter, Hovstad clarifies that while Peter made it a practical concern, the idea came first from the doctor.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Hovstad",
+      "category": 5,
+      "question": "What specific day did Hovstad originally intend to print Dr. Stockmann's older article about the Baths?",
+      "option": [
+        "A. Tomorrow.",
+        "B. The day after tomorrow.",
+        "C. In next week's Sunday edition.",
+        "D. On the first day of spring.",
+        "E. During the upcoming election week."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Nothing about municipal affairs. But the day after tomorrow I was thinking of printing your article—",
+          "dia_id": "D1:148"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad explicitly states he was thinking of printing the article 'the day after tomorrow'.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 1,
+      "question": "How does Billing feel about consuming meals in a group versus eating alone?",
+      "option": [
+        "A. He believes meals are the perfect time to stir up the fermenting forces of the future together.",
+        "B. He despises eating alone because he relies on conversation for journalistic inspiration.",
+        "C. He almost thinks he enjoys a meal all the better when he can sit down and eat entirely by himself, undisturbed.",
+        "D. He refuses to eat unless he is served punctually with the rest of the household.",
+        "E. He considers eating a communal ritual that proves they are all pagans."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Billing",
+          "utterance": "That doesn't affect me a bit. Indeed, I almost think I enjoy a meal all the better when I can sit down and eat all by myself, and undisturbed.",
+          "dia_id": "D1:5"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Billing directly states he enjoys a meal better when he can eat by himself and undisturbed.",
           "based_on": [
             "E1"
           ]
@@ -1391,42 +1308,30 @@
     {
       "character": "Billing",
       "category": 2,
-      "question": "What temporary physiological state is Billing experiencing at the beginning of the scene?",
+      "question": "What analogy does Billing use to explain why everyone should take an interest in public affairs and vote?",
       "option": [
-        "A. He is starving and waiting for dinner.",
-        "B. He is exhausted from correcting exercises.",
-        "C. He is suffering from wretched digestion like the Mayor.",
-        "D. He is highly satisfied after finishing a large meal.",
-        "E. He is shivering from walking in the cold winter air."
+        "A. A community is like a printing press; everyone must set the type.",
+        "B. A community is like a ship; everyone ought to be prepared to take the helm.",
+        "C. A community is like a school; everyone must learn to correct the falsehoods.",
+        "D. A community is like a bath; everyone must help keep the water clean.",
+        "E. A community is like a family dinner; everyone must bring a plate to the table."
       ],
-      "answer": "D",
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
         {
           "id": "E1",
           "speaker": "Billing",
-          "utterance": "It is uncommonly good, thank you—remarkably good.",
-          "dia_id": "D1:3"
-        },
-        {
-          "id": "E2",
-          "speaker": "Billing",
-          "utterance": "Ah!—one feels a new man after a meal like that.",
-          "dia_id": "D1:119"
+          "utterance": "Doesn't know! What do you mean by that? A community is like a ship; everyone ought to be prepared to take the helm.",
+          "dia_id": "D1:143"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Billing praises the meat he is eating.",
+          "inference": "Billing uses the exact analogy that 'A community is like a ship; everyone ought to be prepared to take the helm.'",
           "based_on": [
             "E1"
-          ]
-        },
-        {
-          "step": 2,
-          "inference": "He expresses a feeling of renewal after having eaten.",
-          "based_on": [
-            "E2"
           ]
         }
       ]
@@ -1434,42 +1339,64 @@
     {
       "character": "Billing",
       "category": 3,
-      "question": "When does Billing initially raise the idea of giving Dr. Stockmann a testimonial?",
+      "question": "At what specific moment during the evening does Billing declare his belief that they will all be pagans before long?",
       "option": [
-        "A. Immediately after Petra enters the room.",
-        "B. Right after Dr. Stockmann announces the report must go to the Mayor.",
-        "C. Before Hovstad asks to print a note about the discovery.",
-        "D. Immediately after learning the water is filled with infusoria.",
-        "E. After Dr. Stockmann says he has done nothing more than his duty."
+        "A. When Horster says he knows nothing about politics.",
+        "B. When Peter Stockmann refuses the hot meat.",
+        "C. When Dr. Stockmann reveals the water is poisoned.",
+        "D. After Ejlif says Morten would have to be a pagan to be a Viking.",
+        "E. Before Mrs. Stockmann brings out the rum and arrack."
       ],
-      "answer": "E",
+      "answer": "D",
+      "label": "Multi-hop",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Dr. Stockmann",
-          "utterance": "Nonsense! As a matter offact I have done nothing more than my duty. I have only made a lucky find—that's all. Still, all the same...",
-          "dia_id": "D1:279"
+          "speaker": "Ejlif",
+          "utterance": "You would have to be a pagan then.",
+          "dia_id": "D1:192"
         },
         {
           "id": "E2",
+          "speaker": "Morten",
+          "utterance": "Well, I could become a pagan, couldn't I?",
+          "dia_id": "D1:193"
+        },
+        {
+          "id": "E3",
           "speaker": "Billing",
-          "utterance": "Hovstad, don't you think the town ought to give Dr. Stockmann some sort of testimonial?",
-          "dia_id": "D1:280"
+          "utterance": "I agree with you, Morten! My sentiments, exactly.",
+          "dia_id": "D1:194"
+        },
+        {
+          "id": "E4",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "I am sure that is not true, Mr. Billing.",
+          "dia_id": "D1:195"
+        },
+        {
+          "id": "E5",
+          "speaker": "Billing",
+          "utterance": "Yes, I swear it is! I am a pagan, and I am proud of it. Believe me, before long we shall all be pagans.",
+          "dia_id": "D1:196"
         }
       ],
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Dr. Stockmann downplays his actions as just his duty.",
+          "inference": "Ejlif tells Morten he would have to be a pagan to be a Viking.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "Billing's immediate response to this humility is to suggest the testimonial.",
+          "inference": "Morten suggests he could become one, and Billing agrees, eventually declaring that before long they shall all be pagans.",
           "based_on": [
-            "E2"
+            "E2",
+            "E3",
+            "E4",
+            "E5"
           ]
         }
       ]
@@ -1477,61 +1404,31 @@
     {
       "character": "Billing",
       "category": 4,
-      "question": "What is Billing's reaction when Petra expresses a desire to start a school of her own if she had the means?",
+      "question": "What action does Billing propose taking regarding Dr. Stockmann, and who does he intend to speak to about it?",
       "option": [
-        "A. He offers her the use of his father's old house.",
-        "B. He dismisses the obstacle of money.",
-        "C. He tells her she should translate English stories instead.",
-        "D. He warns her that Mr. Rorlund would oppose it.",
-        "E. He suggests she ask the Mayor for funding."
+        "A. He proposes electing him Mayor, and wants to speak to Hovstad.",
+        "B. He proposes giving him a testimonial, and wants to speak to Aslaksen.",
+        "C. He proposes raising his salary, and wants to speak to the Baths Committee.",
+        "D. He proposes making him headmaster of the new school, and wants to speak to Horster.",
+        "E. He proposes firing Peter Stockmann, and wants to speak to the town council."
       ],
       "answer": "B",
+      "label": "Multi-hop",
       "evidence_dialogues": [
         {
           "id": "E1",
-          "speaker": "Petra",
-          "utterance": "If only I had the means, I would start a school of my own; and it would be conducted on very different lines.",
-          "dia_id": "D1:210"
+          "speaker": "Billing",
+          "utterance": "Hovstad, don't you think the town ought to give Dr. Stockmann some sort of testimonial?",
+          "dia_id": "D1:280"
         },
         {
           "id": "E2",
-          "speaker": "Billing",
-          "utterance": "Oh, bother the means—!",
-          "dia_id": "D1:211"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Petra cites a lack of means (money) as the barrier.",
-          "based_on": [
-            "E1"
-          ]
+          "speaker": "Hovstad",
+          "utterance": "I will suggest it, anyway.",
+          "dia_id": "D1:281"
         },
         {
-          "step": 2,
-          "inference": "Billing casually dismisses the importance of that obstacle.",
-          "based_on": [
-            "E2"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Billing",
-      "category": 5,
-      "question": "With whom does Billing explicitly state he will discuss the prospect of Dr. Stockmann's testimonial?",
-      "option": [
-        "A. Horster",
-        "B. Peter Stockmann",
-        "C. Aslaksen",
-        "D. Katherine",
-        "E. Mr. Rorlund"
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
+          "id": "E3",
           "speaker": "Billing",
           "utterance": "And I will speak to Aslaksen about it.",
           "dia_id": "D1:282"
@@ -1540,68 +1437,62 @@
       "reasoning_steps": [
         {
           "step": 1,
-          "inference": "Billing identifies the specific person he plans to speak to regarding the proposal.",
-          "based_on": [
-            "E1"
-          ]
-        }
-      ]
-    },
-    {
-      "character": "Billing",
-      "category": 6,
-      "question": "According to the dialogue between Hovstad and Billing, how many people associated with the \"People's Messenger\" were present at the dinner and allegedly suffered indigestion like the Mayor?",
-      "option": [
-        "A. One",
-        "B. Two",
-        "C. Three",
-        "D. Four",
-        "E. None"
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        {
-          "id": "E1",
-          "speaker": "Hovstad",
-          "utterance": "I rather think it was us two of the \"People's Messenger\" that couldn't digest.",
-          "dia_id": "D1:122"
-        },
-        {
-          "id": "E2",
-          "speaker": "Billing",
-          "utterance": "That is just what it is! That word sums up the situation.",
-          "dia_id": "D1:125"
-        }
-      ],
-      "reasoning_steps": [
-        {
-          "step": 1,
-          "inference": "Hovstad mentions \"us two\" from the paper.",
+          "inference": "Billing suggests giving the Doctor some sort of testimonial.",
           "based_on": [
             "E1"
           ]
         },
         {
           "step": 2,
-          "inference": "Billing confirms this statement applies to them.",
+          "inference": "He follows up by saying he will speak to Aslaksen about it.",
           "based_on": [
-            "E2"
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 5,
+      "question": "What was the specific phrase Billing once used on an important occasion to describe the Baths?",
+      "option": [
+        "A. The main artery of the town's life-blood.",
+        "B. The nerve-centre of our town.",
+        "C. The focus of our municipal life.",
+        "D. The town's pulsating heart.",
+        "E. A whited, poisoned sepulchre."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Billing",
+          "utterance": "\"The town's pulsating heart\" was the expression I once used on an important occasion.",
+          "dia_id": "D1:234"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Billing literally states the expression he used was 'The town's pulsating heart'.",
+          "based_on": [
+            "E1"
           ]
         }
       ]
     }
   ],
   "conversation": {
-    "Mrs. Stockmann": "speaker_1",
-    "Billing": "speaker_2",
-    "Peter Stockmann": "speaker_3",
-    "Hovstad": "speaker_4",
-    "Dr. Stockmann": "speaker_5",
-    "Horster": "speaker_6",
-    "Petra": "speaker_7",
-    "Morten": "speaker_8",
-    "Ejlif": "speaker_9",
-    "Hovstad and Billing": "speaker_10",
+    "speakers": [
+      "Dr. Stockmann",
+      "Mrs. Stockmann",
+      "Peter Stockmann",
+      "Petra",
+      "Horster",
+      "Hovstad",
+      "Billing"
+    ],
     "session_1": [
       {
         "speaker": "NARRATION",

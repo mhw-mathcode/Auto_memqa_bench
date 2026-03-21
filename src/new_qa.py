@@ -779,11 +779,8 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             if not refined:
                 print(f"      × 角色 {subject} 在 {max_retries} 次尝试后全数失败，跳过")
         
-        abstain_questions = self._generate_validated_abstain_questions()
-        all_generated_qa = list(all_refined_qa)
-        all_generated_qa.extend(abstain_questions)
-
-        self.save(all_generated_qa)
+        # 弃权题生成已移除：仅保留重构生成的新题。
+        self.save(list(all_refined_qa))
 
     def extract_json(self, text):
         try:
@@ -812,8 +809,6 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
                         remove_questions.add(q_text)
             elif new_q.get("label") == "Fact Extraction (Multiple Conversations)":
                 print(f"  [事实提取（多对话）] {new_q.get('question', '')[:50]}...")
-            elif new_q.get("label") == "abstain":
-                print(f"  [弃权题] {new_q.get('question', '')[:50]}...")
             
             processed_new_qa.append(new_q)
         
@@ -834,17 +829,21 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             q_copy.pop("source_index", None)
             all_qa.append(q_copy)
         
-        # 3. 合并新问题和原始问题
+        # 3. 标记所有新生成的题目，以便后续步骤识别
+        for new_q in processed_new_qa:
+            new_q["is_generated_qa"] = True
+        
+        # 4. 合并新问题和原始问题
         all_qa.extend(processed_new_qa)
         
-        # 4. 重新分配 qid
+        # 5. 重新分配 qid
         for idx, q in enumerate(all_qa, start=1):
             q["qid"] = idx
         
-        # 5. 合并所有 conversation
+        # 6. 合并所有 conversation
         merged_conversation = self._build_merged_conversation()
         
-        # 6. 构建最终输出结构
+        # 7. 构建最终输出结构
         final_data = [
             {
                 "qa": all_qa,
@@ -852,7 +851,7 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             }
         ]
         
-        # 7. 保存文件
+        # 8. 保存文件
         with open(self.output_file, 'w', encoding='utf-8') as f:
             json.dump(final_data, f, ensure_ascii=False, indent=2)
 

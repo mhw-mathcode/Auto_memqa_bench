@@ -237,8 +237,10 @@ class ConfigLoader:
             desc = cfg.get("description", "")
             api_required = cfg.get("api_required", False)
             model = cfg.get("llm", {}).get("model", "")
+            skip = cfg.get("skip", False)
             print(f"  {name}: {desc}")
             print(f"    api_required: {api_required}")
+            print(f"    skip: {skip}")
             if model:
                 print(f"    model: {model}")
 

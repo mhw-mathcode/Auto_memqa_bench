@@ -1,0 +1,2646 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "Ariel recently spent a weekend hiking through the mountains, where she enjoyed the solitude and the breathtaking views of the sunrise. She found herself contemplating the beauty of nature and how it reminded her of the unpredictability of life.  \n\nWhich of the following best summarizes Ariel's approach to romantic relationships based on her recent experiences and expressed feelings?",
+            "option": [
+                "A. She prioritizes physical attraction and spontaneity over emotional security in a partner.",
+                "B. After a negative experience, she is determined to take time for self-reflection before pursuing anyone.",
+                "C. She is cynical about all men and has decided to avoid dating indefinitely.",
+                "D. She believes in diving headfirst into serious commitments without overthinking.",
+                "E. She is actively seeking a replacement partner who is the complete opposite of her ex.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. After a negative experience, she is determined to take time for self-reflection before pursuing anyone.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I mean, we are way past the fling thing, I mean, I am feeling things that I've only read about in Danielle Steele books, you know? I mean, when I'm with him, I'm totally, totally...",
+                    "dia_id": "2:20"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "No. I just need to be by myself for a while, you know? I just got to figure out what I want",
+                    "dia_id": "14:31"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "I am so sick of guys. I don't want to look at another guy, I don't want to think about another guy, I don't even want to be near another guy.",
+                    "dia_id": "14:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel described having deep, storybook-like feelings for Paolo, indicating her capacity for serious emotional investment in a relationship.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After Paolo's betrayal, she explicitly states a need to be alone to figure out what she wants, framing it as a period of self-reflection.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "While her immediate post-breakup statement expresses disgust with men, her subsequent clarification (E2) refines this to a temporary, reflective pause rather than a permanent or cynical stance, contrasting with options A, C, D, and E.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 317,
+            "label": "多跳"
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "What was the immediate emotional state that Ariel reported after her conflict with Paolo on January 14th, and what was the specific reason in question?\n\nYou must choose the correct answer from the following options:\n['A. Overwhelmed by anger, caused by her refusal to admit any mistake.', \"B. Completely destroyed and inconsolable, which led her to reject the company of all her friends.\", 'C. A bit better, but not great, because she was ready to accept comforting meals.', 'D. Confused and indecisive, unsure if she made the right decision to end the relationship.', 'E. Eager, because she had succeeded in humiliating him publicly.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. Overwhelmed with anger, triggered by his refusal to admit any wrongdoing.",
+                "B. Completely devastated and inconsolable, leading her to reject all friends' company.",
+                "C. Feeling somewhat better but not great, as she was ready for comfort food.",
+                "D. Confused and indecisive, unsure if she had made the right choice to end things.",
+                "E. Elated, because she had successfully humiliated him in public.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. Feeling somewhat better but not great, as she was ready for comfort food.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Now she just finished throwing his clothes off the balcony...",
+                    "dia_id": "14:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Ooh, I've been better...",
+                    "dia_id": "14:17"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "...medium...hmm...any cookies left?",
+                    "dia_id": "14:28"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The confrontation involved a dramatic action (throwing clothes), indicating high emotional intensity during the event.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When asked how she is afterward, Ariel's response \"I've been better\" acknowledges she is not at her best but is not describing extreme devastation.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her immediate follow-up question about cookies shows a shift towards seeking simple comfort, directly supporting the \"medium\" feeling and the desire for comfort food, which uniquely matches option C.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 318,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "What was the order of Aerials' weekend plans with Paolo, from the first mention until their status after January 13th?\n\nYou must choose the correct answer from the following list:\n['A. A gift from her sister for the Poconos, celebrated as the first weekend away from home, but clearly canceled before it took place.', 'B. A vague idea for a future trip they discussed, but for which no concrete plans were ever made.', \"C. A planned trip to the Poconos that they took, but which they interrupted early after Fiona's revelation.\", 'D. A surprise trip planned by Paolo, which she discovered and was excited about, and then they went as planned.', 'E. Planned for the Poconos, enthusiastic and well-prepared, then canceled together after an argument.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. A gift from her sister for the Poconos, celebrated as a first weekend away, then definitively cancelled before it happened.",
+                "B. A vague idea for a future getaway they discussed, but no concrete plans were ever made.",
+                "C. A planned trip to the Poconos that they took, but returned early due to Fiona's revelation.",
+                "D. A surprise trip planned by Paolo, which she discovered and was thrilled about, then they went as planned.",
+                "E. Planned for the Poconos, excitedly prepared for it, then cancelled it mutually after a fight.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. A gift from her sister for the Poconos, celebrated as a first weekend away, then definitively cancelled before it happened.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Yes, my sister's giving us her place for the weekend.",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Woo-hoo, first weekend away together!",
+                    "dia_id": "2:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Well, he came in for a massage, and everything was fine until.",
+                    "dia_id": "8:2"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "You know Paolo's over there right now, so...",
+                    "dia_id": "13:1"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "On January 12th, Ariel confirms the Poconos plan is a gift from her sister, and Fiona identifies it as their 'first weekend away'.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On January 13th, Fiona reveals Paolo's betrayal during a massage, which is the cause of the breakup.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Also on January 13th, Ariel states Paolo is at her apartment *now* (for the breakup confrontation), meaning the weekend trip (presumably that weekend) did not and will not happen. The sequence is plan -> cause for cancellation -> cancellation.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 319,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "How did Ariel handle the end of her relationship with Paolo on January 14th?\n\nYou must choose the correct answer from the following options:\n['A. She physically threw her belongings out of the window during the confrontation.', 'B. She convinced him to stay a few more hours and talk about it.', 'C. She calmly asked him to leave and refused to discuss it further.', 'D. She secretly packed her belongings and left them in front of his door so he would find them.', 'E. She arranged for a mediator friend to organize a conversation in order to wrap things up before his departure.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She physically threw his belongings off her balcony during the confrontation.",
+                "B. She convinced him to stay and talk things over for several more hours.",
+                "C. She calmly asked him to leave and refused to discuss it further.",
+                "D. She secretly packed his things and left them outside her door for him to find.",
+                "E. She had a friend mediate a conversation to get closure before he left.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She physically threw his belongings off her balcony during the confrontation.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Now she just finished throwing his clothes off the balcony, now there's just a lot of gesturing and arm-waving...",
+                    "dia_id": "14:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Paolo",
+                    "utterance": "Uh, I am, uh, to say good-bye.",
+                    "dia_id": "14:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, ok bye-bye.",
+                    "dia_id": "14:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe, observing from across the street, reports the specific action of Ariel throwing Paolo's clothes off the balcony.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Paolo's subsequent appearance at the coffee shop to say a final \"good-bye\" confirms the relationship has ended immediately after that confrontation.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona's brief, cold dismissal of Paolo confirms the finality from Ariel's friends' perspective, consistent with a dramatic ending. The combination uniquely identifies the specific action described in option C.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 320,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "During his recent trip to the countryside, Bennett spent several days hiking through dense forests and reflecting on the importance of simplicity in modern life, often expressing admiration for the quiet and uncluttered existence of rural communities. He also mentioned enjoying the unpredictability of nature, where every path taken can lead to a new discovery.\n\nBased on his actions and statements across multiple conversations, how would you describe Bennett's stance on knowing the gender of his unborn child?",
+            "option": [
+                "A. He is adamantly against knowing beforehand and wants it to be a surprise at birth.",
+                "B. He pretends not to want to know but secretly tries to find out from other sources.",
+                "C. He is indifferent and has no opinion on whether to know or not.",
+                "D. He is eagerly awaiting any news and wants to know as soon as possible.",
+                "E. He is conflicted but ultimately lets the mothers make the decision without him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He is adamantly against knowing beforehand and wants it to be a surprise at birth.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "No, no, no, no, no, I don't want to know, absolutely not. I think, you know, I think you should know until you look down there, and say, oop, there it is!",
+                    "dia_id": "4:17"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, hey hey hey, ho ho ho, hello, guy who doesn't want to know, standing right here!",
+                    "dia_id": "4:24"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Ok, you know, I should probably, I should probably just go.",
+                    "dia_id": "4:28"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "Uh, never mind, I don't want to know.",
+                    "dia_id": "4:33"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett gives a clear, emphatic, and detailed reason for not wanting to know the baby's sex, framing the moment of birth as the ideal time for discovery.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He actively interjects to stop Carol from revealing the gender to Susan, physically identifying himself as the person who chose not to know.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When he feels the secret is about to be revealed, his solution is to remove himself from the situation entirely to avoid learning it.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Even after leaving, he calls back only to reaffirm his original stance, showing consistent determination. This pattern rules out conflict, pretense, eagerness, or indifference.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 321,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "During a recent team-building retreat, the group spent several hours discussing the importance of mindfulness and how it could improve decision-making in both personal and professional settings. Many participants shared stories about how small, thoughtful gestures can significantly impact emotional well-being, though none of these anecdotes relate directly to the events in question.  \n\nWhat was Bennett's immediate, short-term goal when he went over to comfort Ariel after her breakup, and what specific external advice prompted this action?",
+            "option": [
+                "A. To present himself as a reliable alternative to Paolo, following Dexter and Ethan's urging.",
+                "B. To invite her to a group activity to take her mind off things, as Chloe suggested.",
+                "C. To simply offer a shoulder to cry on without any ulterior motive, which was his instinct.",
+                "D. To confess his own long-held feelings for her, an idea he had contemplated privately.",
+                "E. To gather more details about the breakup for gossip, as Fiona implied he might.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. To present himself as a reliable alternative to Paolo, following Dexter and Ethan's urging.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "She's distraught. You're there for her. You pick up the pieces, and then you usher in the age of Bennett!",
+                    "dia_id": "13:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yes, now is when you swoop! You gotta make sure that when Paolo walks out of there, the first guy Ariel sees is you, She's gotta know that you're everything he's not! You're like, like the anti-Paolo!",
+                    "dia_id": "13:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "...and I really think it should be me.",
+                    "dia_id": "14:13"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "Listen, you deserve so much better than him...you know, I mean, you, you, you should be with a guy who knows what he has when he has you.",
+                    "dia_id": "14:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter and Ethan explicitly advise Bennett to go to Ariel immediately after Paolo leaves to position himself as the new romantic prospect (\"usher in the age of Bennett\", \"the anti-Paolo\").",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett agrees with this plan and insists he should be the one to go to her.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "His words to Ariel directly mirror this advice: he contrasts a better guy (implied to be himself) with Paolo, positioning himself as the superior alternative.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 322,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "Bennett had recently taken up a new hobby of birdwatching, spending most of his weekends in the quiet woods near his town, trying to identify rare species by their calls. He found himself increasingly fascinated by the behavior of certain birds during mating season, which made him reflect more deeply on the concept of identity and expectation in both nature and human relationships.\n\nWhen did Bennett finally learn the gender of his baby, and what was the specific chain of events that led to him finding out?",
+            "option": [
+                "A. He deduced it himself on January 13th after thinking about Carol and Susan's hints.",
+                "B. He was told by Chloe on January 13th after she found out from Carol.",
+                "C. He learned it on January 12th when Carol directly told him during his visit.",
+                "D. Susan called him on January 14th to formally share the news with him.",
+                "E. He accidentally overheard it from Ariel on January 14th after her breakup.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. He accidentally overheard it from Ariel on January 14th after her breakup.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Uh, never mind, I don't want to know.",
+                    "dia_id": "4:33"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Carol called me to thank me for the lasagna, I asked, she told me.",
+                    "dia_id": "7:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Oh great now he knows, and I don't know!",
+                    "dia_id": "7:6"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "No, I know, I know, and I'm sure your little boy is not going to grow up to be one.",
+                    "dia_id": "14:33"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "What? I-I'm, I'm having a boy?",
+                    "dia_id": "14:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "As of the end of January 12th (Session 4), Bennett successfully avoided learning the gender.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On January 13th (Session 7), Chloe reveals she knows, and Bennett is upset others know while he doesn't, confirming he still does not know.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "On January 14th (Session 14), during a conversation about Paolo, Ariel accidentally refers to Bennett's future child as a \"little boy\".",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Bennett's shocked, questioning reaction (\"I'm having a boy?\") proves this is the moment he learns the information, and it was unintentional (\"accidentally overheard\").",
+                    "based_on": [
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 323,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "What specific action did Bennett take on January 12th to prepare for the birth of his child, and how did he obtain the necessary items for this action?\n\nYou must choose the correct answer from the following options:\n['A. He bought a baby clothing set online after learning the sex of Susan's child.', 'B. He assembled a baby bed by hand using a manual that Dexter had given him.', \"C. He cooked a vegetarian lasagna portion for the mothers, following Chloe's recipe.\", 'D. He attended a pregnancy preparation class recommended by Ethan.', 'E. He borrowed a collection of baby-related books, read them afterward, and then gave them to the future mothers.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. He purchased a set of baby clothes online after learning the gender from Susan.",
+                "B. He assembled a crib by hand, using a manual Dexter gave him.",
+                "C. He cooked a batch of vegetarian lasagna for the mothers, following Chloe's recipe.",
+                "D. He attended a prenatal class, which was recommended to him by Ethan.",
+                "E. He borrowed and read a collection of baby books, which he then delivered to the expectant mothers.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. He borrowed and read a collection of baby books, which he then delivered to the expectant mothers.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Bennett, did you really read all these baby books?",
+                    "dia_id": "2:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Yup! You could plunk me down in the middle of any woman's uterus, no compass, and I can find my way out of there like that!",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "I brought all the books, and Chloe sends her love, along with this lasagna.",
+                    "dia_id": "4:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan's question confirms that Bennett possesses and has read multiple baby books.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett confirms he read them, boasting about the knowledge gained.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later on the same day, Bennett delivers these books to Carol and Susan, completing the action of obtaining (reading) and then delivering them.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 324,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "On a recent trip to the countryside, Chloe spent her mornings exploring the local trails and evenings reading by the fire, finding solace in the quiet beauty of nature. She often reflected on how the stillness of the forest contrasted with the noise of everyday life. Based on her interactions across several days, what is a consistent trait Chloe demonstrates when dealing with interpersonal conflict or criticism?",
+            "option": [
+                "A. She seeks mediation from a third party to resolve the dispute fairly.",
+                "B. She apologizes profusely and immediately tries to fix the problem herself.",
+                "C. She takes full responsibility even when it's not entirely her fault.",
+                "D. She deflects blame and responds with sarcasm or pointed remarks.",
+                "E. She becomes silent and withdraws from the conversation to avoid escalation.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She deflects blame and responds with sarcasm or pointed remarks.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Aunt Syl, stop yelling! All I'm saying is that if you had told me vegetarian lasagna, I would have made vegetarian lasagna. Well, the meat's only every third layer, maybe you could scrape.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Aunt Syl, I did this as a favor, I am not a caterer. What do you want me to do with a dozen lasagnas? Nice talk, Aunt Syl. You kiss Uncle Freddie with that mouth?",
+                    "dia_id": "2:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Paolo, I really hate you for what you did to Ariel, but I still have five of these, so heat it at 375 until the cheese bubbles.",
+                    "dia_id": "14:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When criticized about the lasagna, Chloe first deflects blame (\"if you had told me\"), then offers a flippant solution (\"maybe you could scrape\").",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She continues by reminding her aunt it was a favor, not a job, and ends with a sarcastic jab about her aunt's language.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When facing Paolo, the person who caused major conflict among her friends, she mixes condemnation with a practical, slightly dismissive instruction about leftover lasagna, maintaining a sharp tone.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 325,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "On the evening of January 12th, Chloe spent hours volunteering at a local animal shelter, helping to organize a donation drive for winter coats. She was particularly moved by the story of a stray dog that had been rescued after surviving a harsh storm. The next day, however, her focus shifted entirely when she heard about Fiona's encounter with Paolo.\n\nWhat was Chloe's primary concern and immediate request when she learned about Fiona's encounter with Paolo on January 13th?\n\nYou need to select the correct answer from the following options:\n['A. To know all the explicit details of the encounter for her own curiosity.', 'B. To confront Paolo herself before Ariel found out.', \"C. To check on Ariel's well-being as soon as possible.\", 'D. To comfort Fiona and assure her she did nothing wrong.', \"E. To report Paolo's behavior to the authorities or his employer.\", 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. To know all the explicit details of the encounter for her own curiosity.",
+                "B. To confront Paolo herself before Ariel found out.",
+                "C. To check on Ariel's well-being as soon as possible.",
+                "D. To comfort Fiona and assure her she did nothing wrong.",
+                "E. To report Paolo's behavior to the authorities or his employer.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. To check on Ariel's well-being as soon as possible.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Fiona, what is it?",
+                    "dia_id": "7:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Well, what happened?",
+                    "dia_id": "8:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "We should get over there and see if she's okay.",
+                    "dia_id": "13:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe initiates the conversation by asking Fiona what's wrong, showing concern.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She asks for details of the event, which is a preliminary step.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "After hearing the story and learning Ariel is confronting Paolo, Chloe's immediate, stated goal is to go to Ariel's place to check on her. This shifts the focus from Fiona's experience to Ariel's welfare.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 326,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "On a particularly sunny afternoon, the team decided to take a spontaneous trip to the park to enjoy a game of frisbee, which was a rare break from their usual routine of meetings and deadlines. The weather was perfect, and the laughter echoed through the trees as they played until the sky turned a soft shade of orange.\n\nRegarding the lasagnas, what was the sequence of events from their creation to their final distribution?",
+            "option": [
+                "A. Made for Carol and Susan, delivered by Bennett, and partially given to Paolo later.",
+                "B. Made for a party, partly vegetarian, and the rest was taken home by Chloe.",
+                "C. Made for Aunt Syl, rejected, then all given to Carol and Susan.",
+                "D. Made for Aunt Syl, rejected, then eaten by the friend group at the cafe.",
+                "E. Made for a catering order, partially delivered, and the leftovers were frozen.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Made for Carol and Susan, delivered by Bennett, and partially given to Paolo later.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "All I'm saying is that if you had told me vegetarian lasagna, I would have made vegetarian lasagna.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "What do you want me to do with a dozen lasagnas?",
+                    "dia_id": "2:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "I brought all the books, and Chloe sends her love, along with this lasagna.",
+                    "dia_id": "4:2"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "Paolo, I really hate you for what you did to Ariel, but I still have five of these, so heat it at 375 until the cheese bubbles.",
+                    "dia_id": "14:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe made lasagnas, apparently non-vegetarian, for Aunt Syl, who is unhappy with them.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She is left with many lasagnas (\"a dozen\") after the dispute.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "At least one lasagna was sent with Bennett to Carol and Susan on January 12th.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "On January 14th, Chloe states she still has five and gives one to Paolo, showing continued distribution from the original batch.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 327,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "What was Chloe's specific role in the events surrounding Ariel's breakup on January 14th?\n\nYou must choose the correct answer from the following options:\n['A. She made real-time comments about the breakup from her own perspective.', 'B. She gave Ariel her apartment as a safe space to avoid seeing Paolo.', 'C. She collected evidence against Paolo and presented it to Ariel in a file.', 'D. She facilitated a phone call between Ariel and Paolo to allow for a calmer discussion.', \"E. She physically prevented Paolo from entering Ariel's building.\", 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She provided real-time commentary on the breakup confrontation from her vantage point.",
+                "B. She lent Ariel her apartment as a safe space to avoid seeing Paolo.",
+                "C. She gathered evidence against Paolo and presented it to Ariel in a dossier.",
+                "D. She mediated a phone call between Ariel and Paolo to facilitate a calmer discussion.",
+                "E. She was the one who physically prevented Paolo from entering Ariel's building.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She provided real-time commentary on the breakup confrontation from her vantage point.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Now she just finished throwing his clothes off the balcony, now there's just a lot of gesturing and arm-waving, , Ok, that is either, \"How could you?\" or, \"Enormous breasts!\" Here he comes!",
+                    "dia_id": "14:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Paolo, I really hate you for what you did to Ariel, but I still have five of these, so heat it at 375 until the cheese bubbles.",
+                    "dia_id": "14:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Oh, you're right.",
+                    "dia_id": "14:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe narrates the actions and possible dialogue of the distant confrontation between Ariel and Paolo to the group at the cafe.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She is present and addresses Paolo directly when he arrives, confirming her role as an observer and commentator on the event.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She participates in the group decision about who should go comfort Ariel, further placing her as a central observer of the event's aftermath.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 328,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "On January 13th, the weather was unusually warm for that time of year, and many locals gathered at the park to enjoy the rare winter sunshine. A group of teenagers was seen playing frisbee while a street musician performed a lively tune nearby, creating a cheerful and relaxed atmosphere.\n\nWhat was Dexter's immediate priority and reason for urgency during the conversation at the cafe on January 13th (Session 7)?",
+            "option": [
+                "A. To console Fiona about her uncomfortable experience with Paolo.",
+                "B. To get Bennett to leave immediately so he could have private time with Ethan.",
+                "C. To find Ariel to warn her about Paolo before she heard from someone else.",
+                "D. To finish his coffee quickly because he had a job interview to attend.",
+                "E. To purchase a specific piece of furniture before the store closed for the day.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. To purchase a specific piece of furniture before the store closed for the day.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, Dexter, that table place closes at 7, come on.",
+                    "dia_id": "7:16"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Fine.",
+                    "dia_id": "7:17"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "So, what do you think?",
+                    "dia_id": "11:1"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "I know!",
+                    "dia_id": "11:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan prompts Dexter by noting a store (\"table place\") is closing, indicating a time-sensitive purchase.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter agrees to leave, confirming the urgency.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The next day (Session 11), Dexter is showing off a new table, asking for opinions.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "His enthusiastic \"I know!\" in response to Bennett's praise confirms the table is the item they urgently went to purchase before closing.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 329,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "Which sequence accurately reflects the chronological order of the events experienced by Dexter, based on the provided list?  \n1. Urgently leaving the cafe.  \n2. Playing a game on a new table.  \n3. Advising Bennett to comfort Ariel.  \n4. Asking for more coffee.  \n\nYou need to select the correct answer from the following options:  \n['A. 4, 1, 3, 2', 'B. 3, 4, 1, 2', 'C. 1, 4, 3, 2', 'D. 4, 1, 2, 3', 'E. 1, 2, 4, 3', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. 4, 1, 3, 2",
+                "B. 3, 4, 1, 2",
+                "C. 1, 4, 3, 2",
+                "D. 4, 1, 2, 3",
+                "E. 1, 2, 4, 3",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. 4, 1, 3, 2",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "More coffee over here, please!",
+                    "dia_id": "7:23"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, Dexter, that table place closes at 7, come on.",
+                    "dia_id": "7:16"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "What are you still doing here? She just broke up with the guy, it's time for you to swoop in!",
+                    "dia_id": "13:6"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "So, what do you think?",
+                    "dia_id": "11:1"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Chloe",
+                    "utterance": "So how does this work, you going to balance the plates on these little guys' heads?",
+                    "dia_id": "11:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "On Jan 13 (Session 7), Dexter asks for more coffee (Event 4). Immediately after, Ethan tells him the store is closing, prompting them to leave (Event 1).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later on Jan 13 (Session 13), after the breakup, Dexter advises Bennett to swoop in (Event 3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "On Jan 14 (Session 11), Dexter is showing off his new table, and they proceed to play a game on it (Event 2).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The chronological order is: Ask for coffee (7:23) -> Leave for table (7:16/17) -> Advise Bennett (13:6) -> Play game on table (11:1/4). This matches 4, 1, 3, 2.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 330,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "Dexter and his friends had recently been discussing the importance of making thoughtful investments in their shared living space, emphasizing how aesthetics can influence mood and productivity. They spent an evening exploring a local flea market, where they admired various antique items and modern decor pieces, though none of them seemed to fit their needs quite right. What specific object did Dexter acquire, and what was his and his friends' primary reaction to its practical functionality?",
+            "option": [
+                "A. A set of designer chairs; they found them beautiful but uncomfortable.",
+                "B. A neon sign for the cafe; they debated if it was too bright.",
+                "C. A vintage espresso machine; they were concerned it was too loud.",
+                "D. A large abstract painting; they argued over what it represented.",
+                "E. A sculptural table with figurines; they questioned how to use it for dining.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. A sculptural table with figurines; they questioned how to use it for dining.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "So, what do you think?",
+                    "dia_id": "11:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "I think It's the most beautiful table I've ever seen.",
+                    "dia_id": "11:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "So how does this work, you going to balance the plates on these little guys' heads?",
+                    "dia_id": "11:4"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Who cares, we'll eat at the sink! Come on, let's play!",
+                    "dia_id": "11:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter asks for an opinion on an object, and Bennett identifies it as a beautiful \"table\".",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe's question references \"little guys' heads,\" indicating the table has decorative figurines as part of its structure.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her question is specifically about its practicality for dining (\"balance the plates\"), and Ethan's dismissive response (\"eat at the sink\") confirms the functionality is in doubt, shifting the focus to playing a game on it instead.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 331,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "On a particularly rainy afternoon, Ethan spent hours painting abstract landscapes in his small studio, lost in the rhythm of color and brushstrokes. The sound of the rain tapping against the window seemed to inspire him, and he often found himself daydreaming about distant places he had never visited. \n\nBased on his interactions, what is a consistent feature of Ethan's communication style, especially when engaging with friends?",
+            "option": [
+                "A. He remains quiet and observant, only speaking to offer serious advice.",
+                "B. He offers lengthy, philosophical monologues on life and relationships.",
+                "C. He uses physical props and humorous role-playing to make a point or tease.",
+                "D. He frequently changes the subject to discuss his own problems and needs.",
+                "E. He speaks in a very literal and technical manner, avoiding all metaphor.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He uses physical props and humorous role-playing to make a point or tease.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hey Bennett, listen, you know that right now, your baby's only this big? This is your baby. Hi Daddy!",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "How come you don't live with Mommy? How come Mommy lives with that other lady? What's a lesbian?",
+                    "dia_id": "2:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "You could be on the Olympic standing-there team.",
+                    "dia_id": "13:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "He uses a physical gesture (\"this big\") to represent the baby's size and then role-plays as the baby talking to Bennett (\"Hi Daddy!\").",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He continues the role-play, voicing impertinent questions a child might ask, to humorously tease Bennett about his family situation.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He uses a humorous metaphor (\"Olympic standing-there team\") to tease Bennett about his poor performance in a game.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 332,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "Fiona had recently taken up painting as a way to cope with the pressures of her demanding job, often spending weekends in small cafes surrounded by the soft hum of conversation and the scent of freshly brewed coffee. Meanwhile, Ethan was trying to decide whether to pursue a long-term career in tech or follow his passion for music.\n\nWhat was Ethan's immediate reaction and suggested course of action upon hearing about Paolo's move on Fiona?",
+            "option": [
+                "A. He made a joking remark to lighten the mood and changed the subject to shopping.",
+                "B. He asked for explicit details to fully understand the severity of the situation.",
+                "C. He insisted Fiona file a formal complaint with the police right away.",
+                "D. He became visibly upset and wanted to leave the cafe immediately.",
+                "E. He suggested they all go to Ariel's together for a supportive confrontation.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He made a joking remark to lighten the mood and changed the subject to shopping.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Well, he made a move on me.",
+                    "dia_id": "7:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Whoa, store will be open tomorrow!",
+                    "dia_id": "7:22"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, Dexter, that table place closes at 7, come on.",
+                    "dia_id": "7:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona reveals the serious news about Paolo.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan's immediate response (\"Whoa, store will be open tomorrow!\") is a non-sequitur that deflects from the emotional gravity of the revelation.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "His follow-up line to Dexter about the store closing ties his remark back to their earlier plan to shop, confirming he is using humor/irreverence to change the subject rather than engage with the serious news.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 333,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "Regarding the baby's sex, order these events in the sequence in which Ethan experienced them: 1. He found out the sex of Chloe's baby. 2. He teased Bennett because of the size of his baby. 3. He heard Bennett finally find out the sex of Ariel's baby. 4. He was present when Bennett didn't want to find out the sex of Carol's baby.\n\nYou must choose the correct answer from the following options:\n['A. 1, 2, 4, 3', 'B. 2, 1, 4, 3', 'C. 4, 2, 1, 3', 'D. 4, 1, 2, 3', 'E. 2, 4, 1, 3', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. 1, 2, 4, 3",
+                "B. 2, 1, 4, 3",
+                "C. 4, 2, 1, 3",
+                "D. 4, 1, 2, 3",
+                "E. 2, 4, 1, 3",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. 2, 4, 1, 3",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hey Bennett, listen, you know that right now, your baby's only this big?",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, hey hey hey, ho ho ho, hello, guy who doesn't want to know, standing right here!",
+                    "dia_id": "4:24"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Carol called me to thank me for the lasagna, I asked, she told me.",
+                    "dia_id": "7:4"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "So what's it gonna be?",
+                    "dia_id": "7:5"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "Oh great now he knows, and I don't know!",
+                    "dia_id": "7:6"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "I'm having a boy!",
+                    "dia_id": "14:40"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Ethan",
+                    "utterance": "Hey!",
+                    "dia_id": "14:44"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Event 2 (teasing about size) occurs in Session 2 on Jan 12, before the amnio results were discussed.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Event 4 (Bennett refusing to know) occurs in Session 4, also on Jan 12. Ethan is not shown present in Session 4, but as a friend in the group, it's implied he would be aware of Bennett's stance, though not necessarily witnessing it live. The timeline places Session 2 and 4 on the same day, but the teasing (2) is a general comment, not related to the known gender.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Event 1 (Ethan learning) occurs in Session 7 on Jan 13, when Chloe reveals she knows and Ethan asks \"So what's it gonna be?\" Bennett's reaction confirms Ethan now knows.",
+                    "based_on": [
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Event 3 (hearing Bennett learn) occurs in Session 14 on Jan 14, when Bennett exclaims the news and Ethan cheers (\"Hey!\").",
+                    "based_on": [
+                        "E6",
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The clear order from the text is: General teasing (2) -> Bennett's refusal off-stage (4) -> Ethan learns from Chloe (1) -> Bennett learns from Ariel (3).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 334,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "What specific advice did Ethan Bennett give regarding their behavior after Paolo and Ariel's separation, and what analogy did he use?\n\nYou must choose the correct answer from the following options:\n['A. Act immediately and present yourself as the opposite of Paolo.', 'B. Organize a party to comfort her, as if it were a freedom festival.', 'C. Send her anonymous gifts, like a secret lover in a romance novel.', 'D. Write her a sincere letter, presenting it as a more honest form of communication.', 'E. Give her space and time to be alone, comparing it to how one treats a physical injury.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. To immediately swoop in and present himself as the opposite of Paolo.",
+                "B. To organize a party to cheer her up, treating it like a celebration of freedom.",
+                "C. To send her gifts anonymously, like a secret admirer in a romance novel.",
+                "D. To write her a heartfelt letter, framing it as a more sincere form of communication.",
+                "E. To give her space and time alone, comparing it to healing a physical wound.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. To immediately swoop in and present himself as the opposite of Paolo.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Yes, now is when you swoop! You gotta make sure that when Paolo walks out of there, the first guy Ariel sees is you, She's gotta know that you're everything he's not! You're like, like the anti-Paolo!",
+                    "dia_id": "13:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan's advice is direct and immediate: \"now is when you swoop.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The goal is explicit positioning: \"the first guy Ariel sees is you\" to show \"you're everything he's not.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He encapsulates the strategy with the analogy \"the anti-Paolo.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 335,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "In a small coastal town, the annual festival was always a mix of tradition and chaos, where the local baker would pull a new dessert out of his hat every year, much to the delight and confusion of the townspeople. Despite the unpredictability, everyone looked forward to the surprise with bated breath.\n\nBased on her behavior in the provided conversations, how does Fiona typically respond when she is the source of socially uncomfortable or disruptive news?\n\nYou need to select the correct answer from the following options:\n['A. She privately tells only one person and swears them to secrecy.', 'B. She deflects by making a joke to minimize the perceived impact.', 'C. She becomes defensive and argues that her actions were justified.', 'D. She shows clear signs of distress and apologizes for causing trouble.', 'E. She announces it loudly to the whole group to get it over with quickly.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. She privately tells only one person and swears them to secrecy.",
+                "B. She deflects by making a joke to minimize the perceived impact.",
+                "C. She becomes defensive and argues that her actions were justified.",
+                "D. She shows clear signs of distress and apologizes for causing trouble.",
+                "E. She announces it loudly to the whole group to get it over with quickly.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She shows clear signs of distress and apologizes for causing trouble.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Ooh, this is cool...it says in some parts of the world, people actually eat the placenta.",
+                    "dia_id": "2:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "And, we're done with the yogurt.",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Sorry.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Nothing, I'm sorry, I'm just, I'm out of sorts.",
+                    "dia_id": "7:13"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Fiona",
+                    "utterance": "She is gonna hate me.",
+                    "dia_id": "8:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "After making a gross-out comment that ruins Dexter's appetite, she immediately apologizes.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When upset about Paolo's advance, she prefaces her mood by saying \"I'm sorry.\"",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her main concern about revealing the news to Ariel is that Ariel will hate *her*, showing she internalizes the blame and distress for being the bearer of bad news.",
+                    "based_on": [
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 336,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "On her way to the cafe, Fiona had been admiring the vibrant colors of the winter sunrise, which reminded her of the time she painted a mural in her childhood home. She had always found solace in the quiet beauty of nature, especially during difficult times.\n\nWhat was the primary reason for Fiona's distressed and \"out of sorts\" mood when she arrived at the cafe on January 13th?\n\nYou need to select the correct answer from the following options:\n['A. She was stressed about a heavy workload at her massage therapy job.', 'B. She had just had a big fight with her family over the phone.', 'C. Paolo had made an unwanted sexual advance during a professional massage.', 'D. She was feeling guilty for not telling Ariel about Paolo sooner.', \"E. She was worried about Ariel and Paolo's upcoming weekend trip.\", 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. She was stressed about a heavy workload at her massage therapy job.",
+                "B. She had just had a big fight with her family over the phone.",
+                "C. Paolo had made an unwanted sexual advance during a professional massage.",
+                "D. She was feeling guilty for not telling Ariel about Paolo sooner.",
+                "E. She was worried about Ariel and Paolo's upcoming weekend trip.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. Paolo had made an unwanted sexual advance during a professional massage.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Nothing, I'm sorry, I'm just, I'm out of sorts.",
+                    "dia_id": "7:13"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Fiona, what is it?",
+                    "dia_id": "7:18"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "All right, you know Paolo? Well, he made a move on me.",
+                    "dia_id": "7:19-7:21"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Well, he came in for a massage, and everything was fine until.",
+                    "dia_id": "8:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona states she is \"out of sorts.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When prompted, she reveals the cause is related to Paolo.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She specifies that the incident occurred during a massage session, framing it as an unwanted advance (\"made a move\").",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 337,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "Fiona had always been passionate about painting, often spending weekends in her studio creating vibrant landscapes that captured the essence of nature. She found comfort in the quiet moments of creativity, which helped her navigate the pressures of her busy life. \n\nWhat was the sequence of Fiona's actions regarding the Paolo incident, from the event itself to its aftermath?",
+            "option": [
+                "A. Received advance, struggled with guilt for a day, then told her friends.",
+                "B. Received advance, reported it to the police first, then informed her friends.",
+                "C. Received advance, told Ariel immediately, then discussed it with friends.",
+                "D. Received advance, told her friends group for advice, then Ariel was told.",
+                "E. Received advance, confronted Paolo directly, then told everyone at once.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. Received advance, told her friends group for advice, then Ariel was told.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Well, he came in for a massage, and everything was fine until.",
+                    "dia_id": "8:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I think she took it pretty well. You know Paolo's over there right now, so...",
+                    "dia_id": "13:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "We should get over there and see if she's okay.",
+                    "dia_id": "13:2"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "Now she just finished throwing his clothes off the balcony...",
+                    "dia_id": "14:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona describes the advance occurring during a massage (the event).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She reveals this to her friend group in Sessions 7 & 8 on January 13th.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later on January 13th (Session 13), Fiona states that Ariel now knows (\"she took it pretty well\") and that Paolo is currently at Ariel's place facing consequences.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Chloe's subsequent observation on January 14th confirms the confrontation is happening, which is the aftermath of Ariel being told.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 338,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "Fiona had always been fascinated by the way people react to unexpected situations, often noting small but telling behaviors that others overlooked. She once described a particularly awkward encounter at a friend’s party where someone accidentally spilled wine on their shirt and then tried to hide it with a napkin.\n\nWhat was the specific, unusual detail Fiona shared about Paolo's physical state during the massage incident?",
+            "option": [
+                "A. He had an erection visible under the sheets.",
+                "B. He was sweating profusely and seemed very nervous.",
+                "C. He fell asleep and began snoring loudly during the session.",
+                "D. He was wearing a wedding ring, which she had never noticed before.",
+                "E. He had a large, distinctive tattoo on his back.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He had an erection visible under the sheets.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "And all of a sudden his hands weren't the problem anymore.",
+                    "dia_id": "8:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Was it...?",
+                    "dia_id": "8:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, boy scouts could have camped under there.",
+                    "dia_id": "8:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona's statement shifts the focus from Paolo's hands (the supposed reason for the massage) to another issue.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe's elliptical question (\"Was it...?\") implies understanding of a common implication in such contexts.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona confirms with a vivid metaphorical description (\"boy scouts could have camped\") that indicates a pronounced erection under the sheets.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "qid": 339,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "Which statement best matches how Ariel dealt with the aftermath of the breakup?",
+            "option": [
+                "A. She immediately started planning a new relationship with Bennett.",
+                "B. She emotionally distanced herself from all men for a while.",
+                "C. She confronted Paolo and told him to leave.",
+                "D. She cooked a vegetarian lasagna to distract herself.",
+                "E. She decided to move in with Carol and Susan."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I am so sick of guys. I don't want to look at another guy, I don't want to think about another guy, I don't even want to be near another guy.",
+                    "dia_id": "14:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I just need to be by myself for a while, you know? I just got to figure out what I want",
+                    "dia_id": "14:31"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel expressed frustration with men and a desire to distance herself from them.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She also said she needs to be by herself for a while to figure out what she wants, reinforcing the idea of emotional withdrawal from men.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "label": "事实提取（单对话）",
+            "qid": 579
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "What did Fiona’s behavior indicate about her perception of her relationship with Paolo?",
+            "option": [
+                "A. She wanted to keep it a secret from everyone.",
+                "B. She believed it was purely platonic.",
+                "C. She revealed it to her friends and family.",
+                "D. She had no intention of pursuing it further.",
+                "E. She felt more connected to him after the breakup."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Well, he made a move on me.",
+                    "dia_id": "7:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Fine!  ...medium...hmm...any cookies left?",
+                    "dia_id": "14:28"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona revealed the nature of her relationship with Paolo to her friends, indicating she was not concealing it.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She later remained socially engaged with her friends after the breakup, not withdrawing, suggesting the relationship had been openly discussed.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "label": "事实提取（单对话）",
+            "qid": 581
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "What did Chloe’s interaction with Aunt Syl and the mention of the lasagna imply about her relationship with her sister?",
+            "option": [
+                "A. She had a complicated relationship with her sister’s partner.",
+                "B. She was resented for being the caterer.",
+                "C. She was more invested in the baby’s health than her sister’s feelings.",
+                "D. She had a close, familial relationship with her sister.",
+                "E. She was annoyed with her sister’s lifestyle choices."
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Aunt Syl, stop yelling! All I'm saying is that if you had told me vegetarian lasagna, I would have made vegetarian lasagna.  Well, the meat's only every third layer, maybe you could scrape.",
+                    "dia_id": "2:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Paolo, I really hate you for what you did to Ariel, but I still have five of these, so heat it at 375 until the cheese bubbles.",
+                    "dia_id": "14:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe was communicating with Aunt Syl in a way that suggested their prior interactions involved discussion about food and possibly lifestyles.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe’s later response to Paolo, acknowledging his actions and offering assistance with food, implies she had a close, ongoing relationship with her sister, so she was engaged with both familial and situational context.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "label": "事实提取（单对话）",
+            "qid": 582
+        },
+        {
+            "character": "Bennett",
+            "category": 6,
+            "question": "How long after learning about the amnio results did it take for the gender to be revealed in the dialogue?",
+            "option": [
+                "A. 1 minute",
+                "B. 1 day",
+                "C. 1 session",
+                "D. 2 sessions",
+                "E. 3 days"
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Carol",
+                    "utterance": "I got the results of the amnio today.",
+                    "dia_id": "4:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I am so sick of guys. I don't want to look at another guy, I don't want to think about another guy, I don't even want to be near another guy.",
+                    "dia_id": "14:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Carol shared the amnio results during session_4 on January 12, 1995, and that is when the group first became aware of the baby's gender.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The gender was not revealed until session_14, also on January 14, 1995, implying it took two sessions across two days to get that information out.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 12,
+            "label": "事实提取（多对话）",
+            "qid": 583
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "What was the direct consequence for Ariel after Bennett drew on her face with the permanent pen?",
+            "option": [
+                "A. She was immediately kicked out of the Vegas hotel for disruptive behavior.",
+                "B. The drawing washed off easily with soap and water in her hotel room.",
+                "C. She was too angry to speak to Bennett for the rest of the trip.",
+                "D. She felt unable to leave the hotel room because of her appearance.",
+                "E. She won a large jackpot at a slot machine due to her new \"lucky\" look."
+            ],
+            "answer": "F",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "All right, it won't come off!",
+                    "dia_id": "14:32"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Bennett, no! There is no way I am leaving this room looking like this!",
+                    "dia_id": "17:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Okay, y'know what? There's only one way I'm leaving this hotel room.",
+                    "dia_id": "24:20"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "Hello!",
+                    "dia_id": "24:25"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ariel",
+                    "utterance": "Hello!",
+                    "dia_id": "24:26"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 14, Ariel discovers the pen marks on her face will not come off.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In Session 17, she explicitly states she refuses to leave the hotel room because of how she looks.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later in Session 24, she reiterates that she will only leave under one condition, implying she has been confined to the room.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The condition is met when she and Bennett drunkenly impersonate each other, finally leaving the room.",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "label": "弃权",
+            "qid": 636
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Chloe",
+        "speaker_1": "Ethan",
+        "speaker_2": "Bennett",
+        "speaker_3": "Fiona",
+        "speaker_4": "Dexter",
+        "speaker_5": "Ariel",
+        "speaker_6": "Paolo",
+        "session_2_date_time": "January 12, 1995",
+        "session_2": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:1",
+                "text": "Aunt Syl, stop yelling! All I'm saying is that if you had told me vegetarian lasagna, I would have made vegetarian lasagna.  Well, the meat's only every third layer, maybe you could scrape."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:2",
+                "text": "Bennett, did you really read all these baby books?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:3",
+                "text": "Yup! You could plunk me down in the middle of any woman's uterus, no compass, and I can find my way out of there like that!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:4",
+                "text": "Ooh, this is cool...it says in some parts of the world, people actually eat the placenta."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:5",
+                "text": "And, we're done with the yogurt."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:6",
+                "text": "Sorry."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:7",
+                "text": "Aunt Syl, I did this as a favor, I am not a caterer. What do you want me to do with a dozen lasagnas?  Nice talk, Aunt Syl.  You kiss Uncle Freddie with that mouth?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:8",
+                "text": "Hey Bennett, listen, you know that right now, your baby's only this big?  This is your baby.  Hi Daddy!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:9",
+                "text": "Hello!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:10",
+                "text": "How come you don't live with Mommy?  How come Mommy lives with that other lady?  What's a lesbian?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:11",
+                "text": "Honey, you can say it, Poconos, Poconos, it's like Poc-o-nos"
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "2:12",
+                "text": "Ah, poke  a  nose, mmm"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:13",
+                "text": "So, did I hear Poconos?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:14",
+                "text": "Yes, my sister's giving us her place for the weekend."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:15",
+                "text": "Woo-hoo, first weekend away together!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:16",
+                "text": "Yeah, that's a big step."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:17",
+                "text": "I know..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:18",
+                "text": "Ah, it's just a weekend, big deal!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:19",
+                "text": "Wasn't this supposed to be just a fling, huh? Shouldn't it be... flung by now?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:20",
+                "text": "I mean, we are way past the fling thing, I mean, I am feeling things that I've only read about in Danielle Steele books, you know? I mean, when I'm with him, I'm totally, totally..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:21",
+                "text": "...nauseous, I'm physically nauseous. What am I supposed to do, huh? Call immigration?  I could call immigration!"
+            }
+        ],
+        "session_4_date_time": "January 12, 1995",
+        "session_4": [
+            {
+                "speaker": "Carol",
+                "dia_id": "4:1",
+                "text": "Hey hey, come on in!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:2",
+                "text": "Hey, hello! mmwa!  I brought all the books, and Chloe sends her love, along with this lasagna."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:3",
+                "text": "Oh great! Is it vegetarian, 'cause Susan doesn't eat meat."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:4",
+                "text": "I'm pretty sure that it is..."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:5",
+                "text": "So, I got the results of the amnio today."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:6",
+                "text": "Oh, tell me, tell me, is everything, uhh....?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:7",
+                "text": "Totally and completely healthy!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:8",
+                "text": "Oh, that's great, that is great!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:9",
+                "text": "Hey, when did you and Susan meet Huey Lewis?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:10",
+                "text": "Uh, that's our friend Tanya."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:11",
+                "text": "Of course it's your friend Tanya."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:12",
+                "text": "Don't you want to know about the sex?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:13",
+                "text": "The sex?  Um, I'm having enough trouble with the image of you and Susan together, when you throw in Tanya , yaw..."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:14",
+                "text": "The sex of the baby, Bennett."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:15",
+                "text": "Oh, you know the sex of the baby? Oh, oh-oh-oh!"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:16",
+                "text": "Do you want to know?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:17",
+                "text": "No, no, no, no, no, I don't want to know, absolutely not. I think, you know, I think you should know until you look down there, and say, oop, there it is!  Or isn't..."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "4:18",
+                "text": "Oh, hello Bennett!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:19",
+                "text": "Susan..."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "4:20",
+                "text": "So, so, did you hear?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:21",
+                "text": "Yes, we did, everything's A-OK!"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "4:22",
+                "text": "Oh, that's so...  It really is...do we know...?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:23",
+                "text": "Yes, we certainly do, it's going to be..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:24",
+                "text": "Oh, hey hey hey, ho ho ho, hello, guy who doesn't want to know, standing right here!"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "4:25",
+                "text": "Oh, well, is it what we thought it would be?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:26",
+                "text": "Mm-hmmm"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:27",
+                "text": "Ok, what, what...ok, what did we think it was going to be?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:28",
+                "text": "No, no, no I don't want to know, don't want to know. Ok, you know, I should probably, I should probably just go."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:29",
+                "text": "Well, thanks for the books."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:30",
+                "text": "No problem, ok, mmmwa  oh, mmmwa  Susan..."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "4:31",
+                "text": "All right, who should we call first, your folks, or Deb and Rona?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "4:32",
+                "text": "Hello?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:33",
+                "text": "Uh, never mind, I don't want to know."
+            }
+        ],
+        "session_7_date_time": "January 13, 1995",
+        "session_7": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:1",
+                "text": "I can't believe you don't want to know. I mean, I couldn't not know, I mean, if, if the doctor knows, and Carol knows, and Susan knows...."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:2",
+                "text": "And Chloe knows..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:3",
+                "text": "Wha, heh, how could you know, I don't even know!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:4",
+                "text": "Carol called me to thank me for the lasagna, I asked, she told me."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:5",
+                "text": "So what's it gonna be?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:6",
+                "text": "Wait—oh—hey—huh, oh great now he knows, and I don't know!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:7",
+                "text": "I'm sorry, I'm just excited about being an aunt!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:8",
+                "text": "Or an uncle..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:9",
+                "text": "Hi Pheebs!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:10",
+                "text": "Pheebs!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:11",
+                "text": "Fine!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:12",
+                "text": "Fiona, what's the matter?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:13",
+                "text": "Nothing, I'm sorry, I'm just, I'm out of sorts."
+            },
+            {
+                "speaker": "Customer",
+                "dia_id": "7:14",
+                "text": "Hey, can we get some cappuccino over here?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:15",
+                "text": "Oh, right, that's me!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:16",
+                "text": "Hey, Dexter, that table place closes at 7, come on."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:17",
+                "text": "Fine."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:18",
+                "text": "Fiona, what is it?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:19",
+                "text": "All right, you know Paolo?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:20",
+                "text": "I'm familiar with his work, yes..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:21",
+                "text": "Well, he made a move on me."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:22",
+                "text": "Whoa, store will be open tomorrow!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:23",
+                "text": "More coffee over here, please!"
+            }
+        ],
+        "session_8_date_time": "January 13, 1995",
+        "session_8": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:1",
+                "text": "Well, what happened?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:2",
+                "text": "Well, he came in for a massage, and everything was fine until."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:3",
+                "text": "My God."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:4",
+                "text": "Are you sure?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:5",
+                "text": "Oh yeah, I'm sure.  And all of a sudden his hands weren't the problem anymore."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:6",
+                "text": "Was it...?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:7",
+                "text": "Oh, boy scouts could have camped under there."
+            },
+            {
+                "speaker": "Guys",
+                "dia_id": "8:8",
+                "text": "Oooooo...."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:9",
+                "text": "\"Ooo,\" what?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:10",
+                "text": "Uma Thurman."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:11",
+                "text": "Oh!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:12",
+                "text": "The actress!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:13",
+                "text": "Thanks Rach."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:14",
+                "text": "So what are you gonna do?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:15",
+                "text": "You have to tell her! You have to tell her! It's your moral obligation, as a friend, as a woman, I think it's a feminist issue! Guys? Guys?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:16",
+                "text": "Oh, yeah, you have to tell her."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:17",
+                "text": "Feminist issue. That's where I went!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:18",
+                "text": "She is gonna hate me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:19",
+                "text": "Yeah, well..."
+            }
+        ],
+        "session_11_date_time": "January 14, 1995",
+        "session_11": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "11:1",
+                "text": "So, what do you think?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:2",
+                "text": "I think It's the most beautiful table I've ever seen."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "11:3",
+                "text": "I know!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:4",
+                "text": "So how does this work, you going to balance the plates on these little guys' heads?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "11:5",
+                "text": "Who cares, we'll eat at the sink! Come on, let's play!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:6",
+                "text": "Heads up Bennett!  Score!  You suck!"
+            }
+        ],
+        "session_13_date_time": "January 14, 1995",
+        "session_13": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:1",
+                "text": "I think she took it pretty well. You know Paolo's over there right now, so..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:2",
+                "text": "We should get over there and see if she's okay.  Just one...second! Score!  Game! Come on."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:3",
+                "text": "Ah...ooh! Well, looks like, uh, we kicked your butts."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:4",
+                "text": "No-no, she kicked our butts. You could be on the Olympic standing-there team."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:5",
+                "text": "Come on, two on one."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:6",
+                "text": "What are you still doing here? She just broke up with the guy, it's time for you to swoop in!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:7",
+                "text": "What, now?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:8",
+                "text": "Yes, now is when you swoop! You gotta make sure that when Paolo walks out of there, the first guy Ariel sees is you, She's gotta know that you're everything he's not! You're like, like the anti-Paolo!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:9",
+                "text": "My Catholic friend is right. She's distraught. You're there for her. You pick up the pieces, and then you usher in the age of Bennett!"
+            }
+        ],
+        "speaker_7": "Carol",
+        "session_14_date_time": "January 14, 1995",
+        "session_14": [
+            {
+                "speaker": "Paolo",
+                "dia_id": "14:1",
+                "text": "No, that's cold, that's cold, that's..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:2",
+                "text": "How's it going?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:3",
+                "text": "Don't stare. Now she just finished throwing his clothes off the balcony, now there's just a lot of gesturing and arm-waving, , Ok, that is either, \"How could you?\" or, \"Enormous breasts!\" Here he comes!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:4",
+                "text": "Ooh!"
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "14:5",
+                "text": "Uh, I am, uh, to say good-bye."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:6",
+                "text": "Oh, ok bye-bye."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:7",
+                "text": "Paolo, I really hate you for what you did to Ariel,  but I still have five of these, so heat it at 375 until the cheese bubbles."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "14:8",
+                "text": "Grazie."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:9",
+                "text": "Paolo, I-I just want to tell you and I think I speak for everyone when I say..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:10",
+                "text": "Oh, just look at her..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:11",
+                "text": "Oh you guys, I-I really think just one of us should go out there so she's not overwhelmed..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:12",
+                "text": "Oh, you're right."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:13",
+                "text": "...and I really think it should be me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:14",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:15",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:16",
+                "text": "You all right?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:17",
+                "text": "Ooh, I've been better..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:18",
+                "text": "Come here.  Listen, you deserve so much better than him...you know, I mean, you, you, you should be with a guy who knows what he has when he has you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:19",
+                "text": "Oh, Bennett..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:20",
+                "text": "What?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:21",
+                "text": "I am so sick of guys. I don't want to look at another guy, I don't want to think about another guy, I don't even want to be near another guy."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:22",
+                "text": "Huh."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:23",
+                "text": "Oh Bennett, you're so great!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:24",
+                "text": "Ohhhh"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:25",
+                "text": "Ooh...hey honey, are you all right?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:26",
+                "text": "Oh..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:27",
+                "text": "You ok?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:28",
+                "text": "...medium...hmm...any cookies left?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:29",
+                "text": "Yep!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:30",
+                "text": "See, Rach, uh, see, I don't think that swearing off guys altogether is the answer. I really don't. I think that what you need is to develop a more sophisticated screening process."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:31",
+                "text": "No. I just need to be by myself for a while, you know? I just got to figure out what I want"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:32",
+                "text": "Uh, no, no, see, because not...not all guys are going to be a Paolo."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:33",
+                "text": "No, I know, I know, and I'm sure your little boy is not going to grow up to be one."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:34",
+                "text": "What?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:35",
+                "text": "What?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:36",
+                "text": "I-I'm, I'm having a boy?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:37",
+                "text": "Uh...no. No, no, in fact, you're not having a boy."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:38",
+                "text": "Wha-I'm having, I'm having a boy!  Huh, am I having a boy?"
+            },
+            {
+                "speaker": "Girls",
+                "dia_id": "14:39",
+                "text": "Yes, you're having a boy!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:40",
+                "text": "I'm having a boy! Oh, I'm having a boy!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "14:41",
+                "text": "Wha-"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "14:42",
+                "text": "Wha-"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:43",
+                "text": "I'm having a boy! I-I'm having a boy!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "14:44",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "14:45",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:46",
+                "text": "I'm having a son. Um..."
+            }
+        ],
+        "speaker_8": "Susan",
+        "speaker_9": "Customer",
+        "speaker_10": "Guys",
+        "speaker_11": "Girls"
+    }
+}

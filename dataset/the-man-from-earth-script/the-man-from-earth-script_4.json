@@ -4,43 +4,37 @@
       {
         "character": "Sandy",
         "category": 1,
-        "question": "Which statement best reflects Sandy's general approach to interpersonal conflict in the room?",
+        "question": "Which statement best describes Sandy's underlying motivation for her dietary habits according to her established history?",
         "option": [
-          "A. She aggressively defends John's scientific claims against Art's skepticism.",
-          "B. She believes the group should maintain politeness toward someone they previously trusted.",
-          "C. She completely ignores Edith's comments and focuses entirely on Will's arrival.",
-          "D. She demands that John provide medical tests to prove his identity to the group.",
-          "E. She immediately dismisses John's story as a complete fabrication and leaves."
+          "A. She is a strict vegan and refuses all animal products.",
+          "B. She only eats meat when she is extremely stressed.",
+          "C. She prefers a high-protein diet to support her athletic training regimen.",
+          "D. She avoids gluten strictly due to a diagnosed medical condition.",
+          "E. She eats only raw vegetables to maintain her physical health and longevity."
         ],
-        "answer": "B",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Surely you don't believe this nonsense?",
-            "dia_id": "D12:70"
-          },
-          {
-            "id": "E2",
             "speaker": "Sandy",
-            "utterance": "I think we should remain courteous to someone who we've known and trusted, Edith.",
-            "dia_id": "D12:71"
+            "utterance": "Hi. Are you hungry?",
+            "dia_id": "D12:20"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith questions if Sandy believes the nonsense.",
+            "inference": "Sandy asks Will if he is hungry, but reveals no information about her own dietary habits or persona.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Sandy responds by emphasizing courtesy based on past trust, showing her approach.",
+            "inference": "None of the options are supported by the text.",
             "based_on": [
-              "E1",
-              "E2"
+              "E1"
             ]
           }
         ]
@@ -48,40 +42,41 @@
       {
         "character": "Sandy",
         "category": 2,
-        "question": "How do Sandy's feelings toward John shift during the conversation?",
+        "question": "What specific item did Sandy physically offer to Will upon his arrival?",
         "option": [
-          "A. She states she has always disliked him, but is now warming up to his story.",
-          "B. She confirms her deep romantic love for him and ignores the group.",
-          "C. She indicates that her long-standing positive feelings for him are currently altering.",
-          "D. She expresses intense fear of John after Will pretends to have a gun.",
-          "E. She becomes furiously angry at John for lying to Dr. Gruber."
+          "A. A glass of Johnny Walker green.",
+          "B. A plate of sandwiches from the kitchen.",
+          "C. A chair to sit down on.",
+          "D. A paper dinosaur cutout.",
+          "E. A pipe to smoke."
         ],
-        "answer": "C",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Sandy",
-            "utterance": "I've always liked you.",
-            "dia_id": "D12:67"
+            "utterance": "Hi. Are you hungry?",
+            "dia_id": "D12:20"
           },
           {
             "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Now that's changing.",
-            "dia_id": "D12:69"
+            "speaker": "Will",
+            "utterance": "Uh, thank you, no.",
+            "dia_id": "D12:21"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy states she historically liked John.",
+            "inference": "Sandy asks if Will is hungry, but does not explicitly offer a specific physical item.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "She explicitly states that this feeling is currently changing.",
+            "inference": "Harry offers the whiskey, not Sandy.",
             "based_on": [
               "E1",
               "E2"
@@ -92,27 +87,28 @@
       {
         "character": "Sandy",
         "category": 3,
-        "question": "What is the sequence of Sandy's interactions regarding John's character?",
+        "question": "How does Sandy's attitude toward Edith evolve during the conversation?",
         "option": [
-          "A. She first tells Edith to be courteous, then offers John a drink, then says she likes him.",
-          "B. She first offers Will food, later states her positive feelings for John are changing, then advocates for courtesy.",
-          "C. She states she hates John, offers food to Harry, and then leaves.",
-          "D. She asks if John is hungry, states she likes him, and then agrees with Edith.",
-          "E. She advocates for courtesy, states her feelings are changing, and offers Will a drink."
+          "A. Sandy starts off agreeing with Edith but later angrily demands she leave the room.",
+          "B. Sandy continuously praises Edith's intelligence throughout the evening.",
+          "C. Sandy initially expresses fondness for Edith but then explicitly states that her positive feelings are currently changing due to Edith's behavior.",
+          "D. Sandy ignores Edith at first but eventually defends her against Harry's jokes.",
+          "E. Sandy's attitude toward Edith remains completely neutral and unchanged."
         ],
-        "answer": "B",
+        "answer": "C",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Sandy",
-            "utterance": "Hi. Are you hungry?",
-            "dia_id": "D12:20"
+            "utterance": "I've always liked you.",
+            "dia_id": "D12:67"
           },
           {
             "id": "E2",
-            "speaker": "Will",
-            "utterance": "Uh, thank you, no.",
-            "dia_id": "D12:21"
+            "speaker": "Edith",
+            "utterance": "Why, thank you, dear.",
+            "dia_id": "D12:68"
           },
           {
             "id": "E3",
@@ -130,7 +126,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy offers food early in the dialogue to Will.",
+            "inference": "Sandy states she has always liked Edith.",
             "based_on": [
               "E1",
               "E2"
@@ -138,7 +134,7 @@
           },
           {
             "step": 2,
-            "inference": "Later, she notes her feelings for John are changing, and subsequently tells Edith to be courteous.",
+            "inference": "Sandy immediately follows up by stating that this fondness is changing, citing Edith's lack of courtesy toward John.",
             "based_on": [
               "E3",
               "E4"
@@ -149,39 +145,72 @@
       {
         "character": "Sandy",
         "category": 4,
-        "question": "What action does Sandy take when Will first arrives at the gathering?",
+        "question": "What is the primary nature of Sandy's interaction with John in this scenario?",
         "option": [
-          "A. She introduces Linda Murphy to Will.",
-          "B. She asks Will if he would like something to eat.",
-          "C. She pours Will a glass of Johnny Walker green.",
-          "D. She tells Will that John claims to be a caveman.",
-          "E. She asks Will to examine John psychologically."
+          "A. She aggressively interrogates him about his medical history.",
+          "B. She attempts to psychoanalyze his claims using Freudian concepts.",
+          "C. She advocates for treating him with basic courtesy and trust based on their past acquaintance, despite the bizarre nature of his claims.",
+          "D. She openly mocks his claims of being a caveman.",
+          "E. She insists that he must undergo rigorous biological testing."
         ],
-        "answer": "B",
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Will",
-            "utterance": "Yes, so I hear.",
-            "dia_id": "D12:19"
-          },
-          {
-            "id": "E2",
             "speaker": "Sandy",
-            "utterance": "Hi. Are you hungry?",
-            "dia_id": "D12:20"
-          },
-          {
-            "id": "E3",
-            "speaker": "Will",
-            "utterance": "Uh, thank you, no.",
-            "dia_id": "D12:21"
+            "utterance": "I think we should remain courteous to someone who we've known and trusted, Edith.",
+            "dia_id": "D12:71"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Shortly after Will arrives and speaks, Sandy addresses someone with an offer.",
+            "inference": "Sandy publicly defends the need to treat John courteously.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "This reflects her supportive/protective social stance toward him in the group.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "What is Sandy's exact major or field of study as mentioned in the dialogue?",
+        "option": [
+          "A. She is studying Biology under Harry.",
+          "B. She is studying Psychology in Will's Tuesday Psych 1 class.",
+          "C. She is studying Anthropology.",
+          "D. She is a tenured professor of History.",
+          "E. She is studying Physics under Dan."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Hi. Are you hungry?",
+            "dia_id": "D12:20"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "I think we should remain courteous to someone who we've known and trusted, Edith.",
+            "dia_id": "D12:71"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy's field of study or profession is never explicitly mentioned.",
             "based_on": [
               "E1",
               "E2"
@@ -189,7 +218,165 @@
           },
           {
             "step": 2,
-            "inference": "Will responds to the offer, confirming she was offering him food.",
+            "inference": "Linda is the one in Psych 1, not Sandy.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 1,
+        "question": "Which statement best captures John's self-assessment regarding his own intellectual capacity relative to his extremely long lifespan?",
+        "option": [
+          "A. He believes his 14,000 years of life have naturally evolved him into a super-wise genius who is far ahead of modern science.",
+          "B. He believes he is biologically incapable of learning new information after the 19th century.",
+          "C. He asserts that his accumulation of ten doctorates is solely due to having an immense amount of time, rather than possessing innate genius or being inherently smarter than his peers.",
+          "D. He feels that he is intellectually inferior to modern humans because his brain is structurally that of a primitive caveman.",
+          "E. He considers himself an all-knowing immortal who has secretly guided the development of human scientific thought."
+        ],
+        "answer": "C",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Some. You might have all done the same. Living 14,000 years didn't make me a genius. I just had time.",
+            "dia_id": "D12:96"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "I have ten degrees, including all of yours...",
+            "dia_id": "D12:88"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John confirms he has ten degrees.",
+            "based_on": [
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He explicitly rejects the idea that this makes him a genius, attributing it entirely to having ample time.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "What specific creative or manual activity is John engaged in during this gathering?",
+        "option": [
+          "A. He is smoking a pipe while sitting on the couch.",
+          "B. He is cutting out paper dinosaurs.",
+          "C. He is drinking Johnny Walker green.",
+          "D. He is drawing a landscape of the Hopi time concept.",
+          "E. He is packing his doctorate degrees into boxes."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Yes, I'm cutting out paper dinosaurs.",
+            "dia_id": "D12:29"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explicitly states the physical action he is performing.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "How did John's acquisition of the knowledge that the world is round unfold over time?",
+        "option": [
+          "A. He realized it instantly through his own independent astronomical observations.",
+          "B. He learned it only after modern communications were established in the 20th century.",
+          "C. He learned it gradually, as the news traveled slowly and faced societal and religious resistance.",
+          "D. He was told by a shaman who knew about the gods in the sky.",
+          "E. He learned it while obtaining his biology degree at Oxford."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "It took some time. News traveled slowly before communications were fancy. There were social obstacles, preconceptions, screams from the church.",
+            "dia_id": "D12:94"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explains that his learning of the Earth being round was a slow process hindered by slow communication and social/religious obstacles.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "Why did John choose to reveal his true identity to this specific group of people?",
+        "option": [
+          "A. He wanted them to scientifically validate his immortality by running medical tests.",
+          "B. He wanted to say goodbye to them as his true self before leaving.",
+          "C. He wanted to convince them to publish a book about his 14,000-year lifespan.",
+          "D. He wanted to prove that their academic disciplines were inherently flawed and limited.",
+          "E. He was forced to confess after Will threatened him with a weapon."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Then why are you doing it?",
+            "dia_id": "D12:7"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "'Cause I wanted to say goodbye-",
+            "dia_id": "D12:8"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "...As yourself. I think you've done that, whoever that self is.",
+            "dia_id": "D12:9"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith asks why he is telling the story.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John replies it's to say goodbye, and Edith finishes the thought with 'as yourself', which John does not dispute and aligns with the narrative.",
             "based_on": [
               "E2",
               "E3"
@@ -198,17 +385,993 @@
         ]
       },
       {
-        "character": "Sandy",
+        "character": "John",
         "category": 5,
-        "question": "Based on the dialogue, what is Sandy's relationship dynamic with Edith regarding John?",
+        "question": "In what exact year and at which specific institution did John claim to receive a biology degree?",
         "option": [
-          "A. They are co-conspirators trying to disprove John's claims.",
-          "B. Sandy defers to Edith's medical expertise when judging John.",
-          "C. They share a romantic rivalry over John.",
-          "D. Sandy acts as a moral check on Edith's dismissive attitude toward John.",
-          "E. Edith acts as Sandy's professor, grading her behavior."
+          "A. 1840 at Cambridge.",
+          "B. 1940 at Oxford.",
+          "C. 1840 at Oxford.",
+          "D. 1740 at Oxford.",
+          "E. 1880 at Harvard."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "That's over the span of 170 years. I got my biology degree at Oxford in 1840, so I'm a little behind the times.",
+            "dia_id": "D12:91"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John explicitly states the year (1840) and the institution (Oxford) for his biology degree.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 1,
+        "question": "Which statement accurately describes Harry's professional background and approach to John's claims?",
+        "option": [
+          "A. He is a psychiatrist who wants to psychoanalyze John's caveman delusions.",
+          "B. He is an anthropologist who wants to measure John's skull to confirm his Cro-Magnon origins.",
+          "C. He is a biologist who offers to run medical tests on John in his lab to verify his physical anomalies.",
+          "D. He is a historian who attempts to verify John's claims about surviving the bubonic plague.",
+          "E. He is a physicist who tries to explain John's existence through relativity and quantum mechanics."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "John, would you please stop by my lab before you take off, suffer a few tests from your friendly neighborhood biologist?",
+            "dia_id": "D12:58"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry identifies himself as a biologist.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He requests John to visit his lab for tests.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "What specific beverage does Harry offer to the arriving guest?",
+        "option": [
+          "A. Johnny Walker red.",
+          "B. A cup of coffee.",
+          "C. Johnny Walker green.",
+          "D. A glass of wine.",
+          "E. Water."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Whiskey? Johnny Walker green!",
+            "dia_id": "D12:22"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry explicitly offers Johnny Walker green.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 3,
+        "question": "How does Harry's proposed method of dealing with John's claims change over the course of the evening?",
+        "option": [
+          "A. He initially suggests physical violence but later decides to ignore the claims entirely.",
+          "B. He first recommends a psychological evaluation and then suggests calling the authorities.",
+          "C. He consistently maintains that the only solution is to have John committed to a hospital.",
+          "D. He starts by offering him a drink and ends up demanding he leave the house.",
+          "E. He initially offers him a drink and later proposes conducting scientific tests in his laboratory."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "John, would you please stop by my lab before you take off, suffer a few tests from your friendly neighborhood biologist?",
+            "dia_id": "D12:58"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry proposes lab tests, but there is no evidence of a 'change' in his proposed method of dealing with the claims.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "None of the options accurately reflect a temporal evolution supported by the text.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "How does Edith characterize her interactions with Harry?",
+        "option": [
+          "A. She respects his biological expertise but questions his ethics.",
+          "B. She finds his jokes idiotic and views him as immature.",
+          "C. She relies on him for emotional support when dealing with John's revelations.",
+          "D. She considers him her closest confidant within the academic group.",
+          "E. She believes he is secretly conspiring with John to play a prank."
+        ],
+        "answer": "B",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
+            "dia_id": "D12:80"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
+            "dia_id": "D12:81"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "If you lived as long as John did, you still wouldn't grow up.",
+            "dia_id": "D12:82"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith explicitly complains about having to listen to Harry's 'idiotic jokes'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "When Harry responds sarcastically, Edith states he 'wouldn't grow up', indicating she views him as immature.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "At what specific age does Harry sarcastically suggest he might finally become as smart as Edith?",
+        "option": [
+          "A. 14,000",
+          "B. 100",
+          "C. 170",
+          "D. 110",
+          "E. 1840"
         ],
         "answer": "D",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
+            "dia_id": "D12:81"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry mentions the specific number 110.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 1,
+        "question": "What is Linda's primary role or status among the group gathered?",
+        "option": [
+          "A. She is a tenured professor of History.",
+          "B. She is a student enrolled in Dr. Gruber's Tuesday Psych 1 class.",
+          "C. She is John's biological daughter.",
+          "D. She is a visiting anthropologist examining John's claims.",
+          "E. She is a medical doctor who works with Will."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
+            "dia_id": "D12:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda explicitly introduces herself as a student in Dr. Gruber's class.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 2,
+        "question": "What object does Linda explicitly mention when discussing the measurement of time?",
+        "option": [
+          "A. Stars.",
+          "B. Clocks.",
+          "C. Calendars.",
+          "D. Carbon dating machines.",
+          "E. A stopwatch."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Clocks measure time.",
+            "dia_id": "D12:99"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda states 'Clocks measure time', identifying the specific object.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 3,
+        "question": "How does Linda's belief about the nature of time change after listening to Dan?",
+        "option": [
+          "A. She shifts from believing in clocks to believing in the Hopi landscape theory.",
+          "B. She decides that time is an illusion.",
+          "C. She rejects Dan's explanation and leaves the room.",
+          "D. She begins to view time as a subjective sense of becoming.",
+          "E. She demands mathematical proof of Dan's theories."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Clocks measure time.",
+            "dia_id": "D12:99"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "No, they measure themselves. The objective referent of a clock is another clock.",
+            "dia_id": "D12:100"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda makes a statement about clocks, and Dan replies.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The text does not record any subsequent response or shift in belief from Linda.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 4,
+        "question": "How does Linda frame the group's social dynamic in relation to their reaction to John's story?",
+        "option": [
+          "A. She points out that the group is unable to break John's story and is resorting to merely thumbing their noses at it.",
+          "B. She accuses the group of being intellectually lazy for not running medical tests.",
+          "C. She praises the group for their rigorous scientific skepticism.",
+          "D. She suggests that the group should physically restrain John until he confesses it is a lie.",
+          "E. She claims the group is secretly conspiring against Dr. Gruber."
+        ],
+        "answer": "A",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Here you sit- You can't break his story. All you can do is thumb your nose at it.",
+            "dia_id": "D12:72"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda observes that the group cannot disprove the story and is just mocking it.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 5,
+        "question": "What is Linda's exact last name as stated in the dialogue?",
+        "option": [
+          "A. Gruber",
+          "B. Smith",
+          "C. Murphy",
+          "D. Walker",
+          "E. Hopi"
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
+            "dia_id": "D12:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda explicitly states her last name is Murphy.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 1,
+        "question": "What professional background heavily influences Will's initial questions toward John?",
+        "option": [
+          "A. His background as a physicist makes him ask about relativity.",
+          "B. His background as a physician/psychiatrist leads him to ask about illnesses and have John lie on a couch.",
+          "C. His background as a historian makes him ask about the bubonic plague.",
+          "D. His background as an anthropologist makes him ask about the Hopi landscape.",
+          "E. His background as a biologist makes him request lab tests."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "As a physician, I'm curious. In this enormous lifetime you describe, have you ever been ill?",
+            "dia_id": "D12:46"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Would you like for me to lie on the couch, doctor?",
+            "dia_id": "D12:43"
+          },
+          {
+            "id": "E3",
+            "speaker": "Will",
+            "utterance": "As you wish.",
+            "dia_id": "D12:45"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will identifies himself as a physician.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John calls him doctor and asks to lie on the couch, a classic psychoanalytic posture, which Will accepts.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 2,
+        "question": "What object did Will use to simulate a weapon?",
+        "option": [
+          "A. A heavy textbook.",
+          "B. A paper dinosaur.",
+          "C. A glass of whiskey.",
+          "D. A pipe.",
+          "E. His bare hands."
+        ],
+        "answer": "D",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "(Pulls out a pipe)",
+            "dia_id": "D12:108"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "(Points at John with hand in jacket pocket, as if holding a gun)",
+            "dia_id": "D12:104"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will fakes having a gun in his pocket, but physically pulls out a pipe.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 3,
+        "question": "How does Will's line of inquiry shift towards the end of the provided dialogue?",
+        "option": [
+          "A. He moves from asking about medical history to aggressively threatening John with actual physical violence to test his immortality.",
+          "B. He transitions from questioning John about ancient illnesses to questioning whether John misses living as a primitive man in the backyard.",
+          "C. He starts by praising John's degrees and ends by accusing him of falsifying his credentials.",
+          "D. He initially asks about John's childhood and later demands to know his financial status.",
+          "E. He switches from offering psychological help to demanding John be arrested."
+        ],
+        "answer": "B",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "As a physician, I'm curious. In this enormous lifetime you describe, have you ever been ill?",
+            "dia_id": "D12:46"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Wouldn't you be more comfortable squatting in the backyard?",
+            "dia_id": "D12:114"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will's early questions focus on illnesses like pneumonia and the plague.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Later, looking at John's degrees, Will suggests that due to 'innate nature', John might prefer primitive behaviors like squatting in the backyard.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 4,
+        "question": "Why does Will apologize to John shortly after arriving?",
+        "option": [
+          "A. He apologizes for bringing a weapon into the house.",
+          "B. He regrets arriving late to the farewell party.",
+          "C. He regrets being obvious that the group is very concerned for John's mental state.",
+          "D. He is sorry that he did not believe John's story from the very beginning.",
+          "E. He apologizes for forgetting Linda Murphy's name."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Will",
+            "utterance": "I regret being so...obvious about this, John, but these people are all very concerned for you.",
+            "dia_id": "D12:28"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will explicitly states his regret for being obvious that the intervention-like gathering is because everyone is concerned for John.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Will",
+        "category": 5,
+        "question": "On what specific day of the week does Will teach his Psych 1 class?",
+        "option": [
+          "A. Monday",
+          "B. Tuesday",
+          "C. Wednesday",
+          "D. Thursday",
+          "E. Friday"
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Linda",
+            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
+            "dia_id": "D12:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda identifies the class as the Tuesday Psych 1 class.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 1,
+        "question": "Which option accurately reflects Dan's overarching intellectual approach to John's unbelievable story?",
+        "option": [
+          "A. He immediately seeks empirical, medical evidence to disprove the claim.",
+          "B. He angrily demands that John stop treating them like fools.",
+          "C. He argues that since the story cannot be proven or disproven, they should temporarily accept it and explore where it leads.",
+          "D. He attempts to diagnose John with a severe psychological breakdown.",
+          "E. He refuses to listen to the story unless John provides historical documents."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "There's absolutely no way in the whole world for John to prove this story to us, just like there's no way for us to disprove it... So while we're thinking about that, why don't we just go with it? I mean, hell, who knows, he might jolt us into believing him, or we might jolt him back to reality.",
+            "dia_id": "D12:33"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan explicitly states they cannot prove or disprove the story, so they should 'just go with it'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "What specific activity does Dan mention doing in his backyard?",
+        "option": [
+          "A. Measuring time with clocks.",
+          "B. Squatting to look up at the stars and wonder.",
+          "C. Digging for Cro-Magnon artifacts.",
+          "D. Conducting medical tests on animals.",
+          "E. Smoking a pipe."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Sometimes I do, will. Look up at the stars.",
+            "dia_id": "D12:115"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Wonder.",
+            "dia_id": "D12:116"
+          },
+          {
+            "id": "E3",
+            "speaker": "Will",
+            "utterance": "Wouldn't you be more comfortable squatting in the backyard?",
+            "dia_id": "D12:114"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Will asks John about squatting in the backyard.",
+            "based_on": [
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Dan interjects that he sometimes does exactly that, to look up at the stars and wonder.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 3,
+        "question": "How do Dan's academic views on his colleagues evolve?",
+        "option": [
+          "A. He begins by praising his colleagues but eventually admits he wants to strangle them all.",
+          "B. He transitions from respecting their opinions to calling them uneducated cavemen.",
+          "C. He starts off agreeing with Harry's biological views but later vehemently rejects them.",
+          "D. He initially claims to have ten doctorates but later confesses he only has one.",
+          "E. He shifts from being skeptical of Will to completely trusting him."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Ugh, strangle them all.",
+            "dia_id": "D12:79"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "But we know so little, Dan. We know so little. I mean how many of you know five geniuses in your field that you disagree with... One you would like to strangle?",
+            "dia_id": "D12:78"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan humorously agrees he wants to strangle his colleagues.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "However, there is no evidence of temporal evolution (a shift or change) in his views over the course of the text.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What specific conversational role does Art accuse Dan of playing in relation to John?",
+        "option": [
+          "A. The skeptic.",
+          "B. The friendly neighborhood biologist.",
+          "C. Dr. Freud.",
+          "D. The good cop.",
+          "E. The caveman."
+        ],
+        "answer": "D",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "I see what's going on. You're playing the good cop, Dan. That's fine. Just enjoy it.",
+            "dia_id": "D12:11"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art explicitly accuses Dan of playing 'the good cop'.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "Which specific cultural group does Dan reference to explain a non-linear concept of time?",
+        "option": [
+          "A. The Cro-Magnons.",
+          "B. The Aztecs.",
+          "C. The Hopis.",
+          "D. The Mayans.",
+          "E. The Lilliputians."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "The Hopis see time as a landscape, existing before and behind us, and we move- We move through it, slice by slice.",
+            "dia_id": "D12:98"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan references the Hopis regarding time as a landscape.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 1,
+        "question": "Which statement accurately portrays Edith's core intellectual disposition based on her reactions in the dialogue?",
+        "option": [
+          "A. She is highly receptive to paranormal theories and embraces John's story enthusiastically.",
+          "B. She maintains a rigorous, dismissive skepticism toward John's claims and finds humorous deflections irritating.",
+          "C. She is deeply spiritual and believes John's story aligns with the teachings of the church.",
+          "D. She is primarily concerned with analyzing John's subconscious motivations using Freudian psychology.",
+          "E. She acts as a mediator, constantly trying to calm Art's anger and support John's narrative."
+        ],
+        "answer": "B",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Surely you don't believe this nonsense?",
+            "dia_id": "D12:70"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
+            "dia_id": "D12:80"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Believing?!",
+            "dia_id": "D12:34"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith calls John's story 'nonsense' and is shocked at the concept of 'believing' it, indicating strict skepticism.",
+            "based_on": [
+              "E1",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She is irritated by Harry's jokes, showing intolerance for humorous deflections in serious matters.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "What specific action did Edith take when Harry offered the whiskey?",
+        "option": [
+          "A. She accepted a glass of Johnny Walker green.",
+          "B. She declined and asked for water instead.",
+          "C. She grabbed the bottle from Harry.",
+          "D. She spilled her drink in shock.",
+          "E. She demanded that John take a drink first to prove his immunity."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Whiskey? Johnny Walker green!",
+            "dia_id": "D12:22"
+          },
+          {
+            "id": "E2",
+            "speaker": "Will",
+            "utterance": "Ohhh, yes!",
+            "dia_id": "D12:23"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Harry offers whiskey, and Will accepts it.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "The text contains no information regarding Edith's specific physical action or response to the whiskey offer.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "How do Edith's inquiries about the underlying purpose of the gathering evolve?",
+        "option": [
+          "A. She begins by asking why Will arrived late and ends by questioning why Dan is playing the good cop.",
+          "B. She initially asks John why he is telling them the story, and later echoes Art in asking what the whole situation is really about.",
+          "C. She first demands to know if John is a psychopath, and later asks if he is merely a liar.",
+          "D. She starts by asking about the Hopi landscape and ends by questioning the mechanics of relativity.",
+          "E. She initially asks to see John's degrees and later questions their validity."
+        ],
+        "answer": "B",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Then why are you doing it?",
+            "dia_id": "D12:7"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "All right, I think this whole thing is just a crock! I should leave, but I'm gonna stay. You know why? 'Cause I wanna see what this is all about.",
+            "dia_id": "D12:12"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "So do I. What is this all about?",
+            "dia_id": "D12:13"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith first asks John directly why he is telling them the story.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Later, she echoes Art's frustration, asking a broader, more existential question about the true nature of the gathering.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "How does Edith interact with Dan when he attempts to de-escalate the tension?",
+        "option": [
+          "A. She agrees with him and suggests they all calm down and listen.",
+          "B. She warns him not to act like a psychiatrist because that is Will's job.",
+          "C. She ignores him completely and focuses her anger on Harry.",
+          "D. She mutters under her breath and dismissively states that meeting a caveman 'once is enough'.",
+          "E. She accuses him of being John's accomplice in the deception."
+        ],
+        "answer": "D",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Come on, guys. Take it easy. How often do we get to meet someone who says he's a stone-age man?",
+            "dia_id": "D12:83"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "(mutters)",
+            "dia_id": "D12:84"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Well, once is enough.",
+            "dia_id": "D12:85"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan tries to calm the group by highlighting the novelty of the situation.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith rejects this de-escalation by muttering and stating that experiencing this once is enough.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "What is the exact term Edith uses to describe John's story when speaking to Sandy?",
+        "option": [
+          "A. A crock",
+          "B. A pointless joke",
+          "C. Nonsense",
+          "D. The yarn of the century",
+          "E. A psychological breakdown"
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -219,155 +1382,33 @@
           {
             "id": "E2",
             "speaker": "Sandy",
-            "utterance": "I think we should remain courteous to someone who we've known and trusted, Edith.",
+            "utterance": "I think we should remain courteous...",
             "dia_id": "D12:71"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith dismisses the situation as nonsense.",
+            "inference": "Edith explicitly uses the word 'nonsense' when questioning Sandy's belief in the story.",
             "based_on": [
               "E1"
             ]
-          },
-          {
-            "step": 2,
-            "inference": "Sandy directly contradicts Edith's tone by insisting they maintain courtesy, establishing a corrective dynamic.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
           }
         ]
       },
       {
-        "character": "Sandy",
-        "category": 6,
-        "question": "How many individuals does Sandy directly address by name in the provided text?",
-        "option": [
-          "A. 0",
-          "B. 1",
-          "C. 2",
-          "D. 3",
-          "E. 4"
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Sandy",
-            "utterance": "Hi. Are you hungry?",
-            "dia_id": "D12:20"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "I've always liked you.",
-            "dia_id": "D12:67"
-          },
-          {
-            "id": "E3",
-            "speaker": "Sandy",
-            "utterance": "Now that's changing.",
-            "dia_id": "D12:69"
-          },
-          {
-            "id": "E4",
-            "speaker": "Sandy",
-            "utterance": "I think we should remain courteous to someone who we've known and trusted, Edith.",
-            "dia_id": "D12:71"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Review all utterances spoken by Sandy.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3",
-              "E4"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The only name explicitly spoken by Sandy is 'Edith'. Thus, the count is 1.",
-            "based_on": [
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
+        "character": "Art",
         "category": 1,
-        "question": "Which statement accurately describes John's attitude toward validating his extraordinary claims?",
+        "question": "Which of the following best characterizes Art's emotional and intellectual reaction to John's narrative?",
         "option": [
-          "A. He actively seeks to undergo medical testing to prove he does not scar.",
-          "B. He believes the group will eventually accept his story after reviewing his ten degrees.",
-          "C. He exhibits reluctance and outright refusal to provide empirical proof to the group.",
-          "D. He insists that Dan's philosophy of time is the only way to prove his existence.",
-          "E. He tries to convince them by explaining the specific details of the Hopi time landscape."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Medical tests might be a way of proving what you say.",
-            "dia_id": "D12:62"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "I don't wanna prove it.",
-            "dia_id": "D12:63"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "So you're telling us this, the yarn of the century, and you don't care if we believe it or not?",
-            "dia_id": "D12:64"
-          },
-          {
-            "id": "E4",
-            "speaker": "John",
-            "utterance": "I guess I shouldn't have expected you to. You're not as crazy as you think I am.",
-            "dia_id": "D12:65"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John explicitly states he does not want to prove his story through medical tests.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "When questioned about his apathy towards their belief, he accepts that they won't believe him.",
-            "based_on": [
-              "E3",
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 2,
-        "question": "What is John's immediate emotional assessment of his decision to share his story with the group?",
-        "option": [
-          "A. He feels vindicated because Dan supports his claims.",
-          "B. He expresses regret, feeling that bringing up the topic was a mistake.",
-          "C. He is furious that Art is calling him a liar and threatens to leave.",
-          "D. He is amused and admits to Art that he is laughing at them inside.",
-          "E. He feels superior because he possesses ten degrees while they do not."
+          "A. He is deeply curious and attempts to draw parallels between John's life and historical plagues.",
+          "B. He is visibly angry, views the story as highly offensive to common sense, and suspects John is mocking them.",
+          "C. He is completely apathetic and only stays because Will brought Johnny Walker green.",
+          "D. He plays the 'good cop,' calmly encouraging John to explain the mechanics of relativity.",
+          "E. He is frightened and repeatedly suggests that they should call the authorities."
         ],
         "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -377,1653 +1418,29 @@
           },
           {
             "id": "E2",
-            "speaker": "John",
-            "utterance": "This- This was a bad idea. Uh, I love you all, and I do not want to put you through anything.",
-            "dia_id": "D12:6"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art expresses anger at John's story.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John immediately states it was a bad idea and regrets putting them through it.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 3,
-        "question": "According to John, in what historical sequence did he learn that the world was round?",
-        "option": [
-          "A. He learned it immediately before the church raised objections.",
-          "B. He learned it only after he obtained his biology degree at Oxford in 1840.",
-          "C. He learned it simultaneously with the shamans who knew about the gods.",
-          "D. He learned it when the rest of the world did, though social and communication barriers slowed the process.",
-          "E. He learned it before the rest of the race knew, because he lived outside of time."
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "He can't know more than the best of the race knows, if that- I mean, when the world learned it was round, you learned it.",
-            "dia_id": "D12:93"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "It took some time. News traveled slowly before communications were fancy. There were social obstacles, preconceptions, screams from the church.",
-            "dia_id": "D12:94"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan posits that John learned the world was round when the rest of the world did.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John confirms this, adding that the process was slow due to communication delays and social obstacles.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 4,
-        "question": "How does John react to the proposition of undergoing scientific analysis?",
-        "option": [
-          "A. He agrees to stop by Harry's lab before he leaves.",
-          "B. He challenges Will to shoot him to prove he can survive.",
-          "C. He refuses, expressing fear of being indefinitely detained by authorities.",
-          "D. He accepts, but only if they promise not to betray him to cigarette-smoking men.",
-          "E. He dismisses it, claiming he already knows more biology than Harry."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "John, would you please stop by my lab before you take off, suffer a few tests from your friendly neighborhood biologist?",
-            "dia_id": "D12:58"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "I'm leery of labs. Afraid I might go in and stay for a thousand years while cigarette-smoking men try to figure me out.",
-            "dia_id": "D12:59"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry invites John to his lab for tests.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John declines, citing a fear of being trapped for a thousand years by investigators.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 5,
-        "question": "What is John's academic relationship compared to the rest of the group?",
-        "option": [
-          "A. He lacks any formal education and resents their degrees.",
-          "B. He holds the exact same degrees as everyone in the room.",
-          "C. He holds degrees matching everyone in the room except for Will.",
-          "D. He taught Linda Murphy in her Tuesday Psych 1 class.",
-          "E. He was Dan's professor when Dan studied anthropology."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I have ten degrees, including all of yours...",
-            "dia_id": "D12:88"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "Except yours, Will.",
-            "dia_id": "D12:89"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John claims to have ten degrees, which includes the fields of his peers.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He explicitly excludes Will's degree from his collection.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 6,
-        "question": "Based on John's claims, what is the mathematical difference between the total years he has lived and the span over which he earned his degrees?",
-        "option": [
-          "A. 13,830",
-          "B. 1,000",
-          "C. 14,000",
-          "D. 1840",
-          "E. 10"
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Living 14,000 years didn't make me a genius. I just had time.",
-            "dia_id": "D12:96"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "That's over the span of 170 years. I got my biology degree at Oxford in 1840, so I'm a little behind the times.",
-            "dia_id": "D12:91"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John states he has lived 14,000 years.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John states he earned his degrees over a span of 170 years.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "14,000 - 170 = 13,830.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 1,
-        "question": "Which of the following actions best aligns with Will's professional persona in the conversation?",
-        "option": [
-          "A. He immediately accepts John's story without asking any probing questions.",
-          "B. He approaches John's claims through inquiry about illness and invites him to lie on a couch.",
-          "C. He argues philosophical concepts like Hopi time landscapes to validate John.",
-          "D. He aggressively demands to know why John didn't tell him this earlier.",
-          "E. He insults Harry's intelligence to establish dominance in the room."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Would you like for me to lie on the couch, doctor?",
-            "dia_id": "D12:43"
-          },
-          {
-            "id": "E2",
-            "speaker": "Will",
-            "utterance": "As you wish.",
-            "dia_id": "D12:45"
-          },
-          {
-            "id": "E3",
-            "speaker": "Will",
-            "utterance": "As a physician, I'm curious. In this enormous lifetime you describe, have you ever been ill?",
-            "dia_id": "D12:46"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will accepts John's joke about lying on a couch (a typical psychiatric trope).",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He explicitly leverages his persona as a physician to ask probing medical history questions.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 2,
-        "question": "How does Will feel about his late arrival to the gathering?",
-        "option": [
-          "A. He is annoyed that Art did not call him sooner.",
-          "B. He is indifferent because he is busy looking at boxes.",
-          "C. He expresses a desire to have been present since the conversation started.",
-          "D. He is relieved he missed the argument between Dan and Edith.",
-          "E. He is angry that John called him to say he lost it."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "I really wish I'd been here from the beginning.",
-            "dia_id": "D12:30"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will explicitly states his regret about not being there from the start.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 3,
-        "question": "What is the sequence of Will's dramatic test of John's immortality?",
-        "option": [
-          "A. Will pulls out a pipe, asks what would happen if he shot John, and then puts his hand in his pocket.",
-          "B. Will puts his hand in his pocket as if holding a gun, asks if John would survive being shot, and then reveals a pipe.",
-          "C. Will points a real gun at John, everyone sighs, and then he asks if John would survive.",
-          "D. Will reveals a pipe, asks if John is immortal, and then John says he might die.",
-          "E. Will asks if John wants to end it, points a pipe at him, and then puts it in his pocket."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "(Points at John with hand in jacket pocket, as if holding a gun)",
-            "dia_id": "D12:104"
-          },
-          {
-            "id": "E2",
-            "speaker": "Will",
-            "utterance": "If I shot you, John- You're immortal? Would you survive this?",
-            "dia_id": "D12:105"
-          },
-          {
-            "id": "E3",
-            "speaker": "Will",
-            "utterance": "(Pulls out a pipe)",
-            "dia_id": "D12:108"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will first mimes holding a gun in his pocket.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He then questions John's survivability.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "He resolves the tension by pulling out a pipe.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 4,
-        "question": "What prompts Will to state that the current lesson is something he could not have imagined?",
-        "option": [
-          "A. Hearing Dan explain the Hopi concept of time.",
-          "B. John explaining how he survived the bubonic plague.",
-          "C. A student introducing herself as being in his Tuesday class.",
-          "D. Harry offering him Johnny Walker green.",
-          "E. Seeing John cutting out paper dinosaurs."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "You look very familiar, my dear.",
-            "dia_id": "D12:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
-            "dia_id": "D12:26"
-          },
-          {
-            "id": "E3",
-            "speaker": "Will",
-            "utterance": "Ah, well, this lesson may be something I could not have imagined.",
-            "dia_id": "D12:27"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will notices Linda looks familiar.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda introduces herself as his student.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Will reacts to this context by calling the current situation an unimaginable lesson.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 5,
-        "question": "Based on the dialogue, what is Will's explicit professional relationship to Linda?",
-        "option": [
-          "A. He is her psychotherapist.",
-          "B. He is her colleague in the anthropology department.",
-          "C. He is her professor for Psych 1.",
-          "D. He is her supervisor at Harry's biology lab.",
-          "E. They have no defined relationship."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
-            "dia_id": "D12:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda explicitly states she is in Dr. Gruber's (Will's) class.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Will",
-        "category": 6,
-        "question": "How many degrees does Will hold that John also holds?",
-        "option": [
-          "A. 1",
-          "B. 10",
-          "C. 0",
-          "D. 170",
-          "E. 14"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I have ten degrees, including all of yours...",
-            "dia_id": "D12:88"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "Except yours, Will.",
-            "dia_id": "D12:89"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John has ten degrees matching the others.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John explicitly states he does not hold Will's degree.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 1,
-        "question": "Which of the following describes Dan's typical intellectual approach when evaluating John's story?",
-        "option": [
-          "A. He aggressively demands empirical proof and threatens John.",
-          "B. He quickly becomes angry and accuses John of playing a pointless joke.",
-          "C. He entertains the premise philosophically and suggests they just go with it.",
-          "D. He immediately tries to diagnose John with a psychological disorder.",
-          "E. He remains completely silent and only observes the others arguing."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "There's absolutely no way in the whole world for John to prove this story to us, just like there's no way for us to disprove it... So while we're thinking about that, why don't we just go with it?",
-            "dia_id": "D12:33"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan logically assesses that the story can neither be proven nor disproven.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He advocates for open-minded exploration ('just go with it').",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 2,
-        "question": "How does Dan respond to Will's simulated gun threat towards John?",
-        "option": [
-          "A. He applauds Will for finally finding a way to test John's immortality.",
-          "B. He criticizes Will, indicating that the action was excessive.",
-          "C. He draws his own weapon to protect John.",
-          "D. He laughs and says it was a great joke.",
-          "E. He asks Will to actually shoot John to see the Hopi time landscape."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "(Pulls out a pipe)",
-            "dia_id": "D12:108"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Will, that was a bit much.",
-            "dia_id": "D12:111"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will executes the fake gun threat.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan explicitly rebukes Will, saying it was 'a bit much'.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 3,
-        "question": "Based on Dan's statements, what is the temporal relationship between a clock and what it measures?",
-        "option": [
-          "A. A clock measures the absolute progression of the universe.",
-          "B. A clock measures the Hopi landscape from beginning to end.",
-          "C. A clock solely measures another clock.",
-          "D. A clock measures the time it takes for a nanosecond to pass.",
-          "E. A clock measures John's 14,000-year lifespan."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Clocks measure time.",
-            "dia_id": "D12:99"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "No, they measure themselves. The objective referent of a clock is another clock.",
-            "dia_id": "D12:100"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda suggests clocks measure time.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan corrects her, establishing that a clock's referent is strictly another clock.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 4,
-        "question": "What behavior does Dan mention performing that connects him to primitive man?",
-        "option": [
-          "A. He creates paper dinosaurs.",
-          "B. He squats in the backyard and looks at the stars.",
-          "C. He visits shamans to learn about the gods.",
-          "D. He survives typhoid and yellow fever.",
-          "E. He cuts off communication with the church."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "Wouldn't you be more comfortable squatting in the backyard?",
-            "dia_id": "D12:114"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Sometimes I do, will. Look up at the stars.",
-            "dia_id": "D12:115"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will asks John about squatting in the backyard.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan interjects that he sometimes does this himself to look at the stars.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 5,
-        "question": "What interpersonal role does Art accuse Dan of playing in the conversation with John?",
-        "option": [
-          "A. The skeptic",
-          "B. The psychotherapist",
-          "C. The good cop",
-          "D. The bad cop",
-          "E. The shaman"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Easy, Edith. We're just grading his homework.",
-            "dia_id": "D12:10"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "I see what's going on. You're playing the good cop, Dan. That's fine. Just enjoy it.",
-            "dia_id": "D12:11"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan tries to de-escalate Edith's tension.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art immediately labels this behavior as Dan playing 'the good cop'.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 6,
-        "question": "According to John's hypothetical scenario directed at Dan, how many geniuses in their field does one typically disagree with?",
-        "option": [
-          "A. 1",
-          "B. 5",
-          "C. 10",
-          "D. 170",
-          "E. 14,000"
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I mean how many of you know five geniuses in your field that you disagree with... One you would like to strangle?",
-            "dia_id": "D12:78"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Ugh, strangle them all.",
-            "dia_id": "D12:79"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John poses a rhetorical question to the group, specifically prompting Dan, using a specific number.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The number stated is five.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 1,
-        "question": "What characteristic defines Linda's brief contribution to the group's debate about John?",
-        "option": [
-          "A. She uses emotional appeals to beg them to stop fighting.",
-          "B. She highlights the logical impasse the group is facing.",
-          "C. She frequently interrupts Dr. Gruber to show off her knowledge.",
-          "D. She actively tries to diagnose John with a mental illness.",
-          "E. She provides biological evidence to support John's lack of scars."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Here you sit- You can't break his story. All you can do is thumb your nose at it.",
-            "dia_id": "D12:72"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda points out that they cannot logically break the story.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She summarizes their reaction as merely thumbing their noses, highlighting the impasse.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 2,
-        "question": "What is Linda's state regarding Dan's philosophical definition of time?",
-        "option": [
-          "A. She agrees entirely and expands on the Hopi landscape.",
-          "B. She ignores him and asks Will for a drink.",
-          "C. She interjects with a conventional, literal counterpoint.",
-          "D. She becomes angry and threatens to leave the room.",
-          "E. She uses it as evidence to prove John is immortal."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "The Hopis see time as a landscape, existing before and behind us, and we move- We move through it, slice by slice.",
-            "dia_id": "D12:98"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Clocks measure time.",
-            "dia_id": "D12:99"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan presents a complex philosophical view of time.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda responds with a standard, literal statement about clocks.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 3,
-        "question": "In the sequence of events, what triggers Will's realization that the current situation is an 'unimaginable lesson'?",
-        "option": [
-          "A. Dan explains the objective referent of a clock.",
-          "B. Linda identifies herself and states when she attends his class.",
-          "C. John reveals he has a biology degree from Oxford.",
-          "D. Edith mutters that hearing the story once is enough.",
-          "E. Art asks Dr. Freud to analyze the situation."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
-            "dia_id": "D12:26"
-          },
-          {
-            "id": "E2",
-            "speaker": "Will",
-            "utterance": "Ah, well, this lesson may be something I could not have imagined.",
-            "dia_id": "D12:27"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda states her identity and class schedule.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Will immediately responds by comparing the current 'lesson' to her class.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 4,
-        "question": "What is Linda doing in the context of Dan's discourse on time?",
-        "option": [
-          "A. Offering an alternative theory involving shamans.",
-          "B. Challenging Dan's abstract concept with a concrete mechanism.",
-          "C. Taking notes for her Tuesday Psych 1 class.",
-          "D. Trying to distract Dan from questioning John.",
-          "E. Agreeing that time cannot be measured in a laboratory."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Time. We can't see it, we can't hear it, we can't weigh it, we can't measure it in a laboratory.",
-            "dia_id": "D12:97"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Clocks measure time.",
-            "dia_id": "D12:99"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan states time cannot be measured in a lab.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda challenges this by bringing up clocks as a concrete measuring device.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 5,
-        "question": "Who is Linda Murphy's instructor?",
-        "option": [
-          "A. John",
-          "B. Dan",
-          "C. Harry",
-          "D. Dr. Gruber",
-          "E. Art"
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
-            "dia_id": "D12:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda directly addresses Dr. Gruber, stating she is in his class.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 6,
-        "question": "What is the numeric identifier of the Psychology class Linda attends?",
-        "option": [
-          "A. 1",
-          "B. 5",
-          "C. 10",
-          "D. 110",
-          "E. 1840"
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Linda Murphy. I'm in your Tuesday Psych 1 class, Dr. Gruber.",
-            "dia_id": "D12:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda specifies the class name.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The number in the class name is 1.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 1,
-        "question": "Which of the following describes Edith's consistent approach to extraordinary or foolish statements in the room?",
-        "option": [
-          "A. She eagerly accepts them and asks for more details.",
-          "B. She meets them with sharp skepticism and open disdain.",
-          "C. She attempts to validate them using her medical background.",
-          "D. She silently observes without interrupting the speaker.",
-          "E. She gently redirects the conversation to avoid hurting feelings."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Surely you don't believe this nonsense?",
-            "dia_id": "D12:70"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
-            "dia_id": "D12:80"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith dismisses John's story as 'nonsense'.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She openly disdains Harry's humor, calling it 'idiotic'.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 2,
-        "question": "What is Edith's immediate reaction when Dan suggests they just 'go with' John's story?",
-        "option": [
-          "A. She expresses incredulity at the idea of believing it.",
-          "B. She agrees that it is a good philosophical exercise.",
-          "C. She mutters that once is enough and leaves the room.",
-          "D. She asks John if he has ever been seriously ill.",
-          "E. She tells Harry to stop making idiotic jokes."
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "So while we're thinking about that, why don't we just go with it? I mean, hell, who knows, he might jolt us into believing him, or we might jolt him back to reality.",
-            "dia_id": "D12:33"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "Believing?!",
-            "dia_id": "D12:34"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan proposes they go with the story to see if it leads to believing.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith reacts with sharp disbelief to the specific word 'believing'.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 3,
-        "question": "What prompts Edith to insult Harry's maturity level?",
-        "option": [
-          "A. Harry asking John to suffer a few tests in his lab.",
-          "B. Harry requesting a glass of Johnny Walker green.",
-          "C. Harry sarcastically thanking her and mentioning his future age.",
-          "D. Dan asking how many geniuses they would like to strangle.",
-          "E. Art threatening to leave the party."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
-            "dia_id": "D12:80"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
-            "dia_id": "D12:81"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "If you lived as long as John did, you still wouldn't grow up.",
-            "dia_id": "D12:82"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith attacks Harry's jokes.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry responds with a sarcastic comment about age and intelligence.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Edith retaliates by saying he would never grow up even if he lived as long as John.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 4,
-        "question": "How does Edith interact with Dan's philosophical explanation of clocks?",
-        "option": [
-          "A. She fully supports it and silences Linda.",
-          "B. She questions its relevance to John's situation.",
-          "C. She gets angry and calls it an idiotic joke.",
-          "D. She uses it to prove John cannot be a caveman.",
-          "E. She completely ignores it and talks to Sandy."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "No, they measure themselves. The objective referent of a clock is another clock.",
-            "dia_id": "D12:100"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "How very interesting. What has it got to do with John?",
-            "dia_id": "D12:101"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan explains that clocks measure themselves.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith sarcastically acknowledges it and directly questions its relevance to John.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 5,
-        "question": "Which relationship best describes Edith's interaction with Harry in the provided dialogue?",
-        "option": [
-          "A. They are mutually supportive colleagues defending John.",
-          "B. They engage in hostile, insulting banter with each other.",
-          "C. Harry is Edith's subordinate in the biology department.",
-          "D. Edith acts as a protective mentor to Harry against Dan's anger.",
-          "E. They have no direct interactions in the text."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
-            "dia_id": "D12:80"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
-            "dia_id": "D12:81"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "If you lived as long as John did, you still wouldn't grow up.",
-            "dia_id": "D12:82"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith insults Harry unprovoked.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry replies with sarcasm, and Edith insults him again, establishing a hostile banter dynamic.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 6,
-        "question": "What is the theoretical age limit Edith references when claiming Harry would never mature?",
-        "option": [
-          "A. 110",
-          "B. 170",
-          "C. 14,000",
-          "D. 1840",
-          "E. 10"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Living 14,000 years didn't make me a genius. I just had time.",
-            "dia_id": "D12:96"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "If you lived as long as John did, you still wouldn't grow up.",
-            "dia_id": "D12:82"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith references the length of time John lived as a benchmark for Harry.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The text establishes John's claimed lifespan is 14,000 years.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 1,
-        "question": "What aspect of Harry's profession influences his reaction to John's claim of not scarring?",
-        "option": [
-          "A. He is a psychiatrist and thinks John is delusional.",
-          "B. He is an anthropologist and compares it to Hopi legends.",
-          "C. He is a biologist and wants to conduct medical tests.",
-          "D. He is a philosopher and dismisses it as a theoretical impossibility.",
-          "E. He is a shaman and believes it is proof of divine intervention."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "No, John, that is not possible.",
-            "dia_id": "D12:56"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "John, would you please stop by my lab before you take off, suffer a few tests from your friendly neighborhood biologist?",
-            "dia_id": "D12:58"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry declares John's lack of scars impossible.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He explicitly identifies himself as a biologist and asks to run tests in his lab.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 2,
-        "question": "How does Harry feel about Will using a pipe instead of a gun during the demonstration?",
-        "option": [
-          "A. He is angry that Will ruined the Hopi time experiment.",
-          "B. He expresses relief that a real weapon was not used.",
-          "C. He feels Liliputian compared to Will's bravery.",
-          "D. He is disappointed because he wanted to test John's healing abilities.",
-          "E. He ignores the pipe and asks for more whiskey."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Will",
-            "utterance": "Everyone sighs with relief.",
-            "dia_id": "D12:109"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Preferable to a gun.",
-            "dia_id": "D12:110"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Will reveals a pipe instead of a gun, causing relief.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry explicitly states it is preferable to a gun, confirming his relieved state.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 3,
-        "question": "In what order does Harry participate in discussions regarding age and longevity?",
-        "option": [
-          "A. He first jokes about being 110, then questions John's lack of scars, then feels Lilliputian.",
-          "B. He first requests tests from John, then feels Lilliputian, then jokes about being 110.",
-          "C. He first questions the lack of scars, requests tests, jokes about being 110, then feels Lilliputian.",
-          "D. He first questions the scars, jokes about being 110, then asks John to visit his lab.",
-          "E. He first feels Lilliputian, jokes about being 110, then questions the scars."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "No, John, that is not possible.",
-            "dia_id": "D12:56"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "John, would you please stop by my lab before you take off, suffer a few tests from your friendly neighborhood biologist?",
-            "dia_id": "D12:58"
-          },
-          {
-            "id": "E3",
-            "speaker": "Harry",
-            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
-            "dia_id": "D12:81"
-          },
-          {
-            "id": "E4",
-            "speaker": "Harry",
-            "utterance": "That makes me feel a trifle Lilliputian.",
-            "dia_id": "D12:90"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry's dialogue flows chronologically from scars (56), to tests (58), to the 110 joke (81), to feeling Lilliputian (90).",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3",
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 4,
-        "question": "How does Harry attempt to reassure John about conducting medical tests?",
-        "option": [
-          "A. He promises to hide him from cigarette-smoking men.",
-          "B. He guarantees the tests will only take a nanosecond.",
-          "C. He asks if John thinks he would betray him.",
-          "D. He offers him Johnny Walker green as a bribe.",
-          "E. He suggests having Dan supervise the testing."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I'm leery of labs. Afraid I might go in and stay for a thousand years while cigarette-smoking men try to figure me out.",
-            "dia_id": "D12:59"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "You don't think that I would betray you in any way?",
-            "dia_id": "D12:60"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John expresses fear of being locked in a lab by men trying to figure him out.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry attempts to reassure him by questioning if John actually believes he would betray him.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 5,
-        "question": "Who does Harry verbally spar with regarding his maturity and intelligence?",
-        "option": [
-          "A. John",
-          "B. Art",
-          "C. Will",
-          "D. Edith",
-          "E. Linda"
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Damn it, Dan, it's bad enough we have to listen to Harry's idiotic jokes.",
-            "dia_id": "D12:80"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
-            "dia_id": "D12:81"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith insults Harry's jokes.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry responds specifically to Edith with a sarcastic comment about intelligence.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 6,
-        "question": "What hypothetical age does Harry suggest he might need to reach to equal Edith's intelligence?",
-        "option": [
-          "A. 14,000",
-          "B. 170",
-          "C. 110",
-          "D. 1840",
-          "E. 10"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Thank you very much, Edith. Maybe when I'm 110, I'll be as smart as you are.",
-            "dia_id": "D12:81"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry clearly states a specific number in his sarcastic reply to Edith.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The number stated is 110.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 1,
-        "question": "What is Art's core motivation for remaining at the gathering despite his intense skepticism?",
-        "option": [
-          "A. He wants to protect Sandy from John.",
-          "B. He is determined to see the situation through out of morbid curiosity.",
-          "C. He wants to wait for Harry to finish the medical tests.",
-          "D. He hopes Dr. Gruber will diagnose John with a mental illness.",
-          "E. He wants to drink the rest of the Johnny Walker green."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "All right, I think this whole thing is just a crock! I should leave, but I'm gonna stay. You know why? 'Cause I wanna see what this is all about.",
-            "dia_id": "D12:12"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art explicitly declares the story is a 'crock'.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He states his reason for staying is solely to 'see what this is all about'.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 2,
-        "question": "What immediate feeling does Art project onto John when the group cannot disprove the story?",
-        "option": [
-          "A. He assumes John is deeply depressed about outliving his friends.",
-          "B. He suspects John is secretly mocking and laughing at them.",
-          "C. He believes John is terrified of being locked in a lab.",
-          "D. He thinks John is grateful for Dan's philosophical support.",
-          "E. He feels John is worried about Edith's anger."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Here you sit- You can't break his story. All you can do is thumb your nose at it.",
-            "dia_id": "D12:72"
-          },
-          {
-            "id": "E2",
             "speaker": "Art",
             "utterance": "Is that what you're doing, John? Are you laughing at us inside?",
             "dia_id": "D12:73"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda points out they cannot break the story.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art immediately reacts by asking if John is secretly laughing at them, projecting mockery onto him.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 3,
-        "question": "In what sequence does Art shift his focus among the attendees?",
-        "option": [
-          "A. He addresses Dan's good cop routine, calls out to Will, and then accuses John of laughing at them.",
-          "B. He accuses John of laughing at them, calls out to Will, and then addresses Dan's good cop routine.",
-          "C. He calls out to Will, addresses Dan's good cop routine, and then accuses John of laughing.",
-          "D. He warns the group about telling everybody, accuses John of laughing, and then greets Will.",
-          "E. He addresses Dan's good cop routine, accuses John of laughing, and then calls out to Will."
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "I see what's going on. You're playing the good cop, Dan. That's fine. Just enjoy it.",
-            "dia_id": "D12:11"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Hey, Will! Will!",
-            "dia_id": "D12:15"
           },
           {
             "id": "E3",
             "speaker": "Art",
-            "utterance": "Is that what you're doing, John? Are you laughing at us inside?",
-            "dia_id": "D12:73"
+            "utterance": "What you're saying- It offends common sense!",
+            "dia_id": "D12:75"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art first addresses Dan about being the good cop.",
+            "inference": "Art explicitly states he is angry.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Shortly after, he calls out to Will who has just arrived.",
+            "inference": "He suspects John is laughing at them and states the story offends common sense.",
             "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Later in the conversation, he questions if John is laughing at them.",
-            "based_on": [
-              "E1",
               "E2",
               "E3"
             ]
@@ -2032,16 +1449,17 @@
       },
       {
         "character": "Art",
-        "category": 4,
-        "question": "How does Art characterize Will's role as he arrives at the house?",
+        "category": 2,
+        "question": "What specific nickname or title does Art use to announce Will's arrival?",
         "option": [
-          "A. As a cigarette-smoking man.",
-          "B. As the good cop.",
-          "C. As Dr. Freud.",
-          "D. As a Hopi shaman.",
-          "E. As a Lilliputian."
+          "A. Dr. Gruber.",
+          "B. Dr. Freud.",
+          "C. The good cop.",
+          "D. The caveman.",
+          "E. The Shaman."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -2059,17 +1477,72 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art announces the arrival of 'Dr. Freud'.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He immediately follows this by calling out to Will, linking the title to him.",
+            "inference": "Art refers to Will, who has just arrived, sarcastically as 'Dr. Freud'.",
             "based_on": [
               "E1",
               "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 3,
+        "question": "How does Art's intent regarding his physical presence at the gathering change?",
+        "option": [
+          "A. He initially wants to stay to hear the whole story but later storms out in anger.",
+          "B. He states that he should leave because the story is a 'crock', but immediately decides to stay out of sheer curiosity.",
+          "C. He arrives late with Will and decides to leave immediately after hearing about the paper dinosaurs.",
+          "D. He threatens to leave to call the police but is physically restrained by Dan.",
+          "E. He initially plans to leave to get food but decides to stay when Harry offers whiskey."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "All right, I think this whole thing is just a crock! I should leave, but I'm gonna stay. You know why? 'Cause I wanna see what this is all about.",
+            "dia_id": "D12:12"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art explicitly articulates a conflict in his intent: he feels he 'should leave' but decides he is 'gonna stay' to see what it's about.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Art",
+        "category": 4,
+        "question": "How does Art interact with John regarding the possibility of the story being true?",
+        "option": [
+          "A. Art reassures John that their friendship will endure regardless of the truth.",
+          "B. Art argues that if it were true, John wouldn't be telling them, because they would just spread the story to everyone.",
+          "C. Art demands that John provide a blood sample to Harry to prove the truth.",
+          "D. Art agrees with Dan that they should accept it as true for the sake of argument.",
+          "E. Art begs John to admit it is a lie so the group can go back to normal."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "Y-y-y-eah, if it was true, why are you telling us? I mean, we might leave here today, we'll go out there, tell everybody!",
+            "dia_id": "D12:2"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Art questions John's logic, stating that if it were true, telling them would be foolish because they would tell everyone else.",
+            "based_on": [
+              "E1"
             ]
           }
         ]
@@ -2077,101 +1550,30 @@
       {
         "character": "Art",
         "category": 5,
-        "question": "What is Art's explicit evaluation of Dan's conversational role towards John?",
+        "question": "What specific phrase does Art use to describe John's story when questioning whether John cares if they believe him?",
         "option": [
-          "A. He believes Dan is acting as John's therapist.",
-          "B. He believes Dan is acting as the bad cop to intimidate John.",
-          "C. He believes Dan is acting as the good cop.",
-          "D. He believes Dan is trying to get John fired.",
-          "E. He believes Dan and John are secretly brothers."
+          "A. This nonsense.",
+          "B. A pointless joke.",
+          "C. The yarn of the century.",
+          "D. A great mystery.",
+          "E. A crock."
         ],
         "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Easy, Edith. We're just grading his homework.",
-            "dia_id": "D12:10"
-          },
-          {
-            "id": "E2",
             "speaker": "Art",
-            "utterance": "I see what's going on. You're playing the good cop, Dan. That's fine. Just enjoy it.",
-            "dia_id": "D12:11"
+            "utterance": "So you're telling us this, the yarn of the century, and you don't care if we believe it or not?",
+            "dia_id": "D12:64"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art observes Dan trying to calm the situation.",
+            "inference": "Art explicitly uses the exact phrase 'the yarn of the century'.",
             "based_on": [
               "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art explicitly defines Dan's relationship to the interrogation as playing the 'good cop'.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 6,
-        "question": "According to Art, what specific number of degrees does John possess that fails to prove he is a super-wise immortal?",
-        "option": [
-          "A. 1",
-          "B. 5",
-          "C. 10",
-          "D. 110",
-          "E. 1840"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I have ten degrees, including all of yours...",
-            "dia_id": "D12:88"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Ten doctorates. That's impressive, John. Did you teach them?",
-            "dia_id": "D12:95"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "So much for the myth of the super-wise, all- knowing immortal.",
-            "dia_id": "D12:92"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John states he has ten degrees.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art acknowledges the number 'ten'.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Art uses this to dismiss the myth of him being super-wise.",
-            "based_on": [
-              "E2",
-              "E3"
             ]
           }
         ]

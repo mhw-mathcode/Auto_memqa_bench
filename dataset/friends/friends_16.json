@@ -1,0 +1,2689 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "Which of the following options best describes Aaron's typical reaction style when someone shares a problem involving socially awkward or embarrassing behavior?\n\nYou must choose the correct answer from the following options:\n['A. She immediately proposes a serious and practical solution.', 'B. She openly admits to having committed very similar acts herself.', 'C. She compares the situation to her own direct negative experiences.', 'D. She ignores the problem with a sarcastic or ironic comment.', 'E. She diverts the conversation to independent, everyday trivialities.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. She immediately offers a serious and practical solution.",
+                "B. She openly confesses to having engaged in very similar actions herself.",
+                "C. She compares the situation to her own direct negative experiences.",
+                "D. She dismisses the issue with a sarcastic or ironic remark.",
+                "E. She turns the conversation towards unrelated, mundane trivia.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She openly confesses to having engaged in very similar actions herself.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I don’t know whether he’s testing me, or just acting out, but my monkey is out of control. But, he keeps erasing the messages on my machine, \"supposedly\" by accident.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "No, yeah, I’ve done that.",
+                    "dia_id": "2:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "And then, like three days in a row he got to the newspaper before I did, and peed all over the crossword.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "I’ve never done that.",
+                    "dia_id": "2:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When Bennett shares a minor embarrassment (the monkey erasing messages), Ariel responds by saying \"No, yeah, I’ve done that.\" (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When Bennett shares a more extreme and absurd embarrassment (the monkey peeing on the crossword), Ariel clarifies her limits by stating, \"I’ve never done that.\" (E3, E4).",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her pattern is to establish common ground by confessing to similar, relatable faux pas, while also drawing a line at more extreme behaviors. This demonstrates a stable response style of self-deprecating humor and selective admission.",
+                    "based_on": [
+                        "E2",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 403,
+            "label": "多跳"
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "What is Ariel's main objective when she asks Fiona, during their conversation on February 23rd, about her relationship with her sister?\n\nYou must choose the correct answer from the following options:\n['A. To encourage Fiona to more openly file a complaint against Ursula.', 'B. To prepare a defense regarding Ethan's interest in Ursula.', 'C. To understand the personal relationships of a new friend.', 'D. To divert the conversation from Bennett's monkey.', 'E. To gather gossip for Dexter and Ethan.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. To encourage Fiona to complain more openly about Ursula.",
+                "B. To prepare a defense for Ethan’s interest in Ursula.",
+                "C. To understand the personal dynamics of a new friend.",
+                "D. To shift the conversation away from Bennett’s monkey.",
+                "E. To gather gossip for Dexter and Ethan.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. To understand the personal dynamics of a new friend.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I’m sayin’ I see a difference.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "They’re twins!",
+                    "dia_id": "2:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Ooh, ooh, fun! Okay... um, Liam Neeson.",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Dexter",
+                    "utterance": "Your sister Ursula.",
+                    "dia_id": "2:20"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, really.",
+                    "dia_id": "2:21"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, you do? Because she said you guys haven’t talked in like years.",
+                    "dia_id": "2:24"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Ariel",
+                    "utterance": "Um, Pheebs, so, you guys just don’t get along?",
+                    "dia_id": "2:28"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Prior to Ariel's question, Dexter and Ethan have been discussing seeing Ursula and comparing her to Fiona, revealing a personal topic about Fiona's sister (E1-E3).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This prompts a guessing game initiated by Ethan (E4), which leads to Dexter revealing they saw Ursula (E5). Fiona's reaction is subdued (\"Oh, really.\") (E6).",
+                    "based_on": [
+                        "E4",
+                        "E5",
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter then reveals a key piece of information he learned from Ursula: that she and Fiona haven't talked in years (E7). This is new and potentially surprising information to the group.",
+                    "based_on": [
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Immediately after this revelation, Ariel asks Fiona, \"Um, Pheebs, so, you guys just don’t get along?\" (E8). The question directly follows the new information about their lack of contact and Fiona's uncharacteristically quiet reaction.",
+                    "based_on": [
+                        "E7",
+                        "E8"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "Ariel's question is not gossipy or leading. It's a simple, empathetic follow-up to understand the reason behind the estrangement, indicating her immediate goal is to comprehend Fiona's personal family situation.",
+                    "based_on": [
+                        "E8"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 404,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "Ariel had always found herself torn between her love for tradition and her desire to embrace more modern holiday customs, often spending hours debating the best way to celebrate with her friends. She enjoyed the quiet moments of reflection that came with the end of the festive season, especially during the first week of February.\n\nBased on the conversations, when did Ariel become aware of the note on the refrigerator about taking down the Christmas lights?",
+            "option": [
+                "A. On the same day she made the comment about them being up.",
+                "B. Before the Christmas lights were put up.",
+                "C. After February 24th, when the note was pointed out.",
+                "D. She was the one who wrote the note as a reminder.",
+                "E. When she was tasked with taking them down in January.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. After February 24th, when the note was pointed out.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?",
+                    "dia_id": "5:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot.",
+                    "dia_id": "5:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Well, someone was supposed to write \"Rach, take down the lights\" and put it on the re... frigerate... How long has that been there?",
+                    "dia_id": "5:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "On February 24th (session_5), Dexter comments on the Christmas lights still being up (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe explains that someone forgot to take them down after New Year's (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel then mentions that \"someone was supposed to write 'Rach, take down the lights' and put it on the refrigerator,\" and her sentence trails off as she apparently sees it for the first time, asking \"How long has that been there?\" (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Her question proves she was not aware of the note's existence prior to this moment on February 24th. She learned about it in real-time during that conversation.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 405,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "Ariel had recently taken up painting as a way to express her emotions during a particularly challenging time in her personal life. She often found solace in the vibrant colors and the quiet moments they provided.  \n\nWhat did Ariel primarily do in response to Fiona’s distress over Ethan and Ursula’s relationship?",
+            "option": [
+                "A. She retrieved the Judy Jetson thermos to cheer Fiona up.",
+                "B. She shared a detailed story of her own sibling rivalry.",
+                "C. She downplayed the seriousness of the relationship to comfort Fiona.",
+                "D. She directly confronted Ursula when she arrived.",
+                "E. She encouraged Fiona to immediately end her friendship with Ethan.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She downplayed the seriousness of the relationship to comfort Fiona.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but...",
+                    "dia_id": "15:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Okay, Pheebs, can I ask? So, he’s going out with her. I mean, is it really so terrible?",
+                    "dia_id": "15:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "But he’s falling in love with her.",
+                    "dia_id": "15:19"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "Oh please, they’ve been going out a week. They haven’t even slept together yet, I mean, that’s not serious.",
+                    "dia_id": "15:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session_15, after hearing Fiona's history with Ursula, Ariel asks a probing but gentle question to gauge the severity of the current situation: \"So, he’s going out with her. I mean, is it really so terrible?\" (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona expresses her fear that Ethan is \"falling in love with her\" (Ursula) (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel directly counters this fear by minimizing the relationship's seriousness. She cites the short duration (\"a week\") and the fact they haven't slept together as evidence it's not a deep, committed relationship (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "This specific action—using concrete, temporal facts to downplay the threat of the relationship—is Ariel's primary, direct response to Fiona's stated distress.",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 406,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "On a quiet Tuesday morning, Bennett was enjoying his usual routine of sipping coffee while reading the latest issue of a parenting magazine. The article discussed the importance of mindfulness in daily life and how small moments can have a profound impact on personal growth. What is the most immediate cause of Bennett's sudden silence at the end of the Lamaze film on February 27th?",
+            "option": [
+                "A. He realized he had forgotten about Marcel's bath mat.",
+                "B. Carol’s sharp criticism of his attempts to comfort her.",
+                "C. Susan’s statement about parenthood lasting a lifetime.",
+                "D. The teacher announcing the final class was next week.",
+                "E. He was shocked by the graphic nature of the birth video.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. Susan’s statement about parenthood lasting a lifetime.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Carol",
+                    "utterance": "Oh, what do you know? No one's going up to you and saying, \"Hi, is that your nostril? Mind if we push this pot roast through it?\"",
+                    "dia_id": "12:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Susan",
+                    "utterance": "Carol, Carol, sweetie. Cleansing breath.",
+                    "dia_id": "12:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Susan",
+                    "utterance": "I know it’s frightening, but, big picture. The birth part is just one day, and when it’s over, we’re all gonna be parents for the rest of our lives.",
+                    "dia_id": "12:9"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Susan",
+                    "utterance": "I mean, that’s what this is all about, right? Bennett? Bennett?",
+                    "dia_id": "12:10"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "I’m gonna be a father.",
+                    "dia_id": "13:1"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session_12, Carol is panicking about birth and rebuffs Bennett's comfort with a graphic analogy (E1). Susan steps in to calm Carol (E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Susan then reframes the situation, saying the birth is one day, but \"we’re all gonna be parents for the rest of our lives.\" She then tries to get Bennett's agreement but finds him unresponsive (\"Bennett? Bennett?\") (E3, E4).",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The very next line in the timeline (session_13, same date) is Bennett's stunned realization: \"I’m gonna be a father.\" (E5).",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The sequence shows Susan's statement about lifelong parenthood (E3) is the direct trigger that causes Bennett to stop responding to her (E4) and leads to his epiphanic statement (E5). Carol's criticism occurred earlier and did not cause his silence; Susan's philosophical point did.",
+                    "based_on": [
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 407,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "Bennett had always been passionate about photography, often spending weekends capturing the beauty of nature and the intricacies of urban life through his lens. He found great comfort in the quiet moments of reflection that came with his hobby, which helped him navigate the ups and downs of everyday life.  \n\nRegarding his Lamaze class, which of the following sequences of events involving Bennett is correct?",
+            "option": [
+                "A. He skipped the breathing exercises, argued with Susan about coaching, then comforted Carol after the film.",
+                "B. He attended the first class with Carol, then missed the second, then had an epiphany after the final class.",
+                "C. He was late to a class, then introduced his family awkwardly, then lost a coin flip to be the \"mommy.\"",
+                "D. He correctly introduced everyone in the first class, then practiced coaching, then realized his role as a father.",
+                "E. He brought Marcel to class, was asked to leave, then returned for the final lecture.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He was late to a class, then introduced his family awkwardly, then lost a coin flip to be the \"mommy.\"",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Hi, um, I’m err, I’m Bennett Geller, and err ah... ..that’s, that’s my boy in there, and uh, this is Carol Willick, and this... is Susan Bunch. Susan is um Carol’s, just, com... ..who’s next?",
+                    "dia_id": "3:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Sorry. Hi. Sorry I’m late. Where’s, where’s Carol?",
+                    "dia_id": "6:1-2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Susan",
+                    "utterance": "I will flip you for it.",
+                    "dia_id": "6:11"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "Flip me for it? No, no, no... heads, heads, heads!",
+                    "dia_id": "6:12"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Susan",
+                    "utterance": "On your back... Mom.",
+                    "dia_id": "6:13"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "I’m gonna be a father.",
+                    "dia_id": "13:1"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Ariel",
+                    "utterance": "This is just occurring to you?",
+                    "dia_id": "13:2"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Bennett",
+                    "utterance": "I always knew I was havin’ a baby, I just never realised the baby was having me.",
+                    "dia_id": "13:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Session_3 (first class): Bennett awkwardly introduces Carol and Susan (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Session_6 (a later class): Bennett arrives late (E2). In that same session, he and Susan flip a coin for who plays the \"mommy,\" he calls \"heads,\" and loses, becoming the \"mom\" (E3-E5).",
+                    "based_on": [
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Session_12 & 13 (final class): After the final class film, Bennett has his \"I’m gonna be a father\" epiphany (E6-E8).",
+                    "based_on": [
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Therefore, the correct temporal sequence is: awkward introduction (E1), then being late and losing coin flip in a later class (E2-E5), then having an epiphany after the final class (E6-E8).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E5",
+                        "E6"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 408,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "In the quiet town of Maplewood, residents often debated whether community gardens should be open to all or restricted to homeowners, a discussion that rarely led to a definitive conclusion. Meanwhile, at a local parenting class, a different kind of disagreement was taking place.\n\nWhat was the outcome of the dispute between Bennett and Susan over their roles in the Lamaze breathing exercise?",
+            "option": [
+                "A. They flipped a coin, and Bennett ended up playing the role of the mother.",
+                "B. They both decided to skip the exercise and just observe.",
+                "C. Susan volunteered to be the mommy so Bennett could learn to coach.",
+                "D. Bennett insisted on being the coach because he was the biological father.",
+                "E. The teacher assigned Bennett as the coach and Susan as the mommy.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. They flipped a coin, and Bennett ended up playing the role of the mother.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Teacher",
+                    "utterance": "Alrighty. We’re gonna start with some basic third stage breathing exercises, so Mummies, why don’t you get on your back? And... coaches, you should be supporting Mummy’s head.",
+                    "dia_id": "6:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Susan",
+                    "utterance": "I am supposed to be the mommy?",
+                    "dia_id": "6:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Okay, I’m gonna play my sperm card one more time.",
+                    "dia_id": "6:8"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Susan",
+                    "utterance": "Look, I don’t see why I should have to miss out on the coaching training just because I’m a woman.",
+                    "dia_id": "6:9"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Susan",
+                    "utterance": "I will flip you for it.",
+                    "dia_id": "6:11"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "Flip me for it? No, no, no... heads, heads, heads!",
+                    "dia_id": "6:12"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Susan",
+                    "utterance": "On your back... Mom.",
+                    "dia_id": "6:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The teacher instructs \"Mummies\" to lie back and \"coaches\" to support them (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Susan questions if she has to be the mommy (E2). Bennett claims priority (\"sperm card\") (E3). Susan argues she shouldn't be excluded from coaching (E4).",
+                    "based_on": [
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Susan proposes a coin flip to decide (E5). Bennett reluctantly agrees, calling \"heads\" (E6).",
+                    "based_on": [
+                        "E5",
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Susan's final line, \"On your back... Mom,\" directed at Bennett, confirms he lost the flip and is therefore playing the role of the mother for the exercise (E7).",
+                    "based_on": [
+                        "E7"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 409,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "Chloe recently spent an afternoon volunteering at a community garden, where she enjoyed planting flowers and helping local children learn about sustainability. This experience, though pleasant, had little to do with her behavior at home. Based on her interactions, how does Chloe typically handle minor domestic issues or annoyances initiated by others?",
+            "option": [
+                "A. She uses the issue as a joke to lighten the group's mood.",
+                "B. She points out the problem clearly and expects the responsible person to address it.",
+                "C. She ignores the issue until someone else inevitably notices it.",
+                "D. She actively works to solve the problem herself immediately.",
+                "E. She makes a sarcastic comment but doesn’t expect any real action.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She points out the problem clearly and expects the responsible person to address it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Bennett, your little creature’s got the remote again.",
+                    "dia_id": "5:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Marcel, Marcel, give Rossie the remote. Marcel. Marcel, you give Rossie the remote right now... Marce... you give Rossie the remote...",
+                    "dia_id": "5:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Great.",
+                    "dia_id": "5:5"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot.",
+                    "dia_id": "5:10"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Chloe",
+                    "utterance": "Bennett, that’s my jacket.",
+                    "dia_id": "2:36"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When Marcel takes the remote, Chloe directly informs Bennett, the owner, of the problem (E1). She does not try to take it from Marcel herself.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After Bennett's ineffective attempt to get it back, she says \"Great\" with clear sarcasm, expressing her expectation that the problem should be resolved by him (E2, E3).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When Dexter mentions the Christmas lights, Chloe explains the situation (they were supposed to be taken down) and assigns blame (\"someone forgot\"), again pointing out a failure to meet a domestic responsibility (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "She also directly tells Bennett when he has taken her property (E5). Her pattern is to clearly identify the issue and the responsible party, not to fix it herself or dismiss it.",
+                    "based_on": [
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 410,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "In the quiet town of Willowbrook, where everyone knew each other's business but rarely shared their secrets, the local bakery was famous for its cinnamon rolls and the gossip that often filled the air alongside the scent of fresh bread. The townspeople spent more time discussing the latest drama than actually enjoying their pastries.\n\nWhat was Chloe's immediate emotional reaction when Bennett failed to quickly retrieve the remote control from Marcel?",
+            "option": [
+                "A. Frustrated disappointment.",
+                "B. Sympathetic encouragement.",
+                "C. Complete indifference.",
+                "D. Angry confrontation.",
+                "E. Amused resignation.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Frustrated disappointment.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Bennett, your little creature’s got the remote again.",
+                    "dia_id": "5:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Marcel, Marcel, give Rossie the remote. Marcel. Marcel, you give Rossie the remote right now... Marce... you give Rossie the remote...",
+                    "dia_id": "5:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Great.",
+                    "dia_id": "5:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe states the problem (Marcel has the remote) to Bennett (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett then engages in a repetitive and ineffective attempt to coax Marcel (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "After witnessing this failed attempt, Chloe's single-word response is \"Great.\" (E3). The context and tone (as a follow-up to an obvious failure) indicate sarcasm, conveying frustration and disappointment that the issue is not being resolved effectively.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 411,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "What was the order of events regarding the Christmas lights and the associated note?\n\nYou must choose the correct answer from the following list:\n['A. The lights were installed, a note was written as a reminder, the note was forgotten, and the lights remained installed.', 'B. The lights were never installed, because the note was lost.', 'C. The note was written after Dexter complained, then Ariel removed the lights.', 'D. Chloe removed the lights, but she forgot to throw away the note.', 'E. Bennett wrote the note to remind himself, then he removed all the lights alone.', 'F. The answer cannot be deduced based on the information provided.']",
+            "option": [
+                "A. The lights were put up, a note was written as a reminder, the note was forgotten, the lights remained up.",
+                "B. The lights were never put up because the note was lost.",
+                "C. The note was written after Dexter complained, then Ariel took down the lights.",
+                "D. Chloe took down the lights but forgot to throw away the note.",
+                "E. Bennett wrote the note to remind himself, then took the lights down alone.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. The lights were put up, a note was written as a reminder, the note was forgotten, the lights remained up.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?",
+                    "dia_id": "5:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot.",
+                    "dia_id": "5:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Well, someone was supposed to write \"Rach, take down the lights\" and put it on the re... frigerate... How long has that been there?",
+                    "dia_id": "5:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "On Feb 24, the lights are still up (implied by Dexter's question) (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe states the plan was to take them down around New Year's, but someone forgot (E2). This establishes the lights were put up (before New Year's) and not taken down (after).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel then states that someone was supposed to write a note as a reminder (\"Rach, take down the lights\"). Her discovery of the note on the fridge (\"How long has that been there?\") indicates the note was written but also forgotten/ignored (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The logical sequence is: Lights put up > Note written as reminder for taking them down > Note forgotten > Lights not taken down > Lights still up in late February.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 412,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "During her lunch break, Chloe reflected on the pressures of modern relationships and how societal expectations often complicate personal decisions. She also thought about how sometimes people choose to avoid difficult conversations rather than face them head-on. What specific action did Chloe take when Fiona was too distressed to watch the video of Ethan and Ursula?",
+            "option": [
+                "A. She asked Ariel to take Fiona out of the room.",
+                "B. She explained what was happening in the video to Fiona.",
+                "C. She turned off the television, making the image go away.",
+                "D. She paused the tape and offered to talk about something else.",
+                "E. She fast-forwarded the tape to a less intimate part.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She turned off the television, making the image go away.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Alright, so, can we turn this off? Can we just make it... make them go away? Because I can’t, I can’t watch.",
+                    "dia_id": "15:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "okay, Pheebs, they’re gone.",
+                    "dia_id": "15:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Okay.",
+                    "dia_id": "15:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona explicitly asks to \"turn this off\" and to \"make them go away\" because she can't watch (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe responds, \"okay, Pheebs, they’re gone.\" (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona's subsequent \"Okay\" confirms the action was taken (E3). The phrase \"they’re gone\" in response to \"make them go away\" and \"turn this off\" directly implies Chloe turned off the television, removing the image.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 413,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "Dexter and Ethan often found themselves discussing their mutual interest in classic literature, debating the moral complexities of characters in 19th-century novels. They would spend hours analyzing themes of love, duty, and societal norms in books like *Pride and Prejudice* and *Wuthering Heights*.  \n\nWhich behavior best characterizes Dexter's interactions with Ethan regarding women?",
+            "option": [
+                "A. He competes with Ethan for the attention of the same women.",
+                "B. He teases Ethan but ultimately encourages or enables his pursuits.",
+                "C. He shares detailed, serious advice about workplace dating etiquette.",
+                "D. He actively discourages Ethan from pursuing any romantic interests.",
+                "E. He remains neutral and refuses to get involved in Ethan's love life.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He teases Ethan but ultimately encourages or enables his pursuits.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "All right, now look at her and tell me she doesn’t look exactly like her sister.",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "You know that thing, when you and I talk to each other about things?... Let’s not do that any more.",
+                    "dia_id": "2:9-11"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.",
+                    "dia_id": "5:13"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Dexter",
+                    "utterance": "Score.",
+                    "dia_id": "5:14"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err...",
+                    "dia_id": "5:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter initiates teasing by pointing out Ursula's resemblance to Fiona (E1). When Ethan calls Ursula \"hot,\" Dexter jokingly suggests ending their conversational rapport (E2, E3). This is teasing, not discouragement.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, when Ethan reports back on his progress with Ursula, Dexter's response is an encouraging \"Score.\" (E4, E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter then gives practical, protective advice to check with Fiona before proceeding (E6), showing he is enabling the pursuit while trying to manage social fallout.",
+                    "based_on": [
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The pattern is consistent: he teases Ethan's interests but validates his successes and offers guidance, thereby encouraging the pursuit.",
+                    "based_on": [
+                        "E1",
+                        "E5",
+                        "E6"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 414,
+            "label": "多跳"
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "In Session 15, what was the reason that prompted Dexter to tell the story of suturing his hand?\n\nYou must choose the correct answer from the following options:\n['A. He warned the group about the dangers of office equipment.', 'B. He explained the consequences of announcing a workplace romance.', 'C. He boasted about his strength despite the pain.', 'D. He made a joke about his own forgetfulness.', \"E. He demonstrated the injustice of his superior.\", 'F. The answer cannot be deduced from the provided information.\"]",
+            "option": [
+                "A. He was warning the group about the dangers of office equipment.",
+                "B. He was explaining the consequences of confessing a workplace romance.",
+                "C. He was bragging about his toughness in the face of pain.",
+                "D. He was making a joke about his own forgetfulness.",
+                "E. He was demonstrating his supervisor's unfairness.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He was explaining the consequences of confessing a workplace romance.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Well, I ended up telling her everything.",
+                    "dia_id": "15:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, how’d she take it?",
+                    "dia_id": "15:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Pretty well. Except for the stapler thing. Little tip: if you’re ever in a similar situation, never ever leave your hand... ..on the desk.",
+                    "dia_id": "15:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter begins by stating he \"ended up telling her everything.\" The context from session 5 (his comment about not dipping the pen in company ink) implies \"her\" is a workplace romantic interest and \"everything\" is likely a confession of his feelings or a relationship (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel asks for the outcome (\"how’d she take it?\") (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter's answer includes the \"stapler thing\" as a negative consequence of his confession, offering it as a cautionary tip (E3). Therefore, the stapler story is shared specifically as an example of how the woman reacted poorly (\"Except for the stapler thing\") to his workplace romantic confession.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 415,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "In the bustling town of Fairview, many residents often found themselves making spontaneous decisions about their careers, relationships, and even their weekend plans. These quick choices, though seemingly random, were usually influenced by a mix of personal desires and community dynamics.\n\nWhat is the chronological order of Dexter's statements about Ursula?",
+            "option": [
+                "A. He revealed where she worked, then teased Ethan about her, then warned Ethan to talk to Fiona.",
+                "B. He asked about Fiona's relationship with her, then told Ethan to ask her out, then said \"Score.\"",
+                "C. He warned Ethan about dating sisters, then discovered where she worked, then said \"Score.\"",
+                "D. He told Fiona they saw Ursula, then got stapled, then joked about Christmas lights.",
+                "E. He compared her to Fiona, then told Ethan \"Score,\" then joked about not talking to Ethan.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He revealed where she worked, then teased Ethan about her, then warned Ethan to talk to Fiona.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Your sister Ursula.",
+                    "dia_id": "2:20"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, yeah, she works over at that place, uh...",
+                    "dia_id": "2:22"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "You know that thing, when you and I talk to each other about things?... Let’s not do that any more.",
+                    "dia_id": "2:9-11"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "Score.",
+                    "dia_id": "5:14"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err...",
+                    "dia_id": "5:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session_2, Dexter first reveals they saw Ursula (E1) and then reveals where she works (E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Also in session_2, after Ethan calls Ursula \"hot,\" Dexter teases him by saying \"Let's not [talk] any more\" (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In session_5, after Ethan reports progress, Dexter says \"Score\" (encouragement) (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Immediately after \"Score,\" in the same conversation, Dexter warns Ethan to check with Fiona (E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "The order is: 1. Reveal seeing her and where she works (E1,E2), 2. Tease Ethan about his interest (E3), 3. Later, encourage him with \"Score\" (E4), 4. Then warn him to talk to Fiona (E5).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 416,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "During his lunch break, Dexter often found himself reflecting on the pressures of modern work culture and how personal relationships could complicate professional environments. He admired the way some colleagues managed to keep their emotions in check, even during the most intense team meetings.\n\nWhat specific event did Dexter recount as happening when he confessed his feelings to a woman at work?\n\nYou need to select the correct answer from the following options:\n['A. She started dating his best friend.', 'B. She reported him to human resources.', 'C. She stapled his hand to the desk.', 'D. She transferred to a different department.', 'E. She gave him a promotion to avoid him.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. She started dating his best friend.",
+                "B. She reported him to human resources.",
+                "C. She stapled his hand to the desk.",
+                "D. She transferred to a different department.",
+                "E. She gave him a promotion to avoid him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She stapled his hand to the desk.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Well, I ended up telling her everything.",
+                    "dia_id": "15:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Pretty well. Except for the stapler thing. Little tip: if you’re ever in a similar situation, never ever leave your hand... ..on the desk.",
+                    "dia_id": "15:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter states he confessed \"everything\" to a woman at work (context from session 5 about office romance) (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He describes the negative consequence as \"the stapler thing\" and gives the tip to never leave your hand on the desk in such a situation (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The tip implies that leaving his hand on the desk during the confession allowed her to staple it. Therefore, the specific event was having his hand stapled to the desk.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 417,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "In the bustling city of New York, where skyscrapers touch the clouds and the pace of life never slows, many individuals face daily decisions about their careers, hobbies, and even the way they spend their evenings. Whether choosing between a Broadway show or a quiet dinner at a local bistro, these choices often reflect deeper personal values and priorities.\n\nWhich of the following best describes Ethan's approach to pursuing a romantic interest?",
+            "option": [
+                "A. He prioritizes his friends' comfort over his own interest.",
+                "B. He acts quickly and directly based on immediate attraction.",
+                "C. He seeks group approval before making any move.",
+                "D. He hides his feelings and observes from a distance.",
+                "E. He writes thoughtful notes and plans elaborate dates.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He acts quickly and directly based on immediate attraction.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.",
+                    "dia_id": "5:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "She is so hot!",
+                    "dia_id": "5:15"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "You think it would be okay if I asked out your sister?",
+                    "dia_id": "5:19"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ethan",
+                    "utterance": "So that if we went out on a date, she’d be there.",
+                    "dia_id": "5:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Upon first seeing/discussing Ursula, Ethan immediately declares her \"hot\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Soon after (session_5, likely the next day), he has already returned to her workplace to see her, interpreting her service as interest (E2), and reiterates \"She is so hot!\" (E3).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Immediately after this, he directly asks Fiona for permission to ask Ursula out (E4), giving a straightforward reason (E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The sequence shows a rapid, action-oriented pattern: see someone attractive, return to engage, declare interest, seek minimal permission, then act. He does not hesitate or seek broad group consensus first.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 418,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "In the interview on February 27th, what was Ethan's immediate priority when Fiona asked him a question just as he wanted to leave?\n\nYou must choose the correct answer from the following options:\n[\"A. Defend Ursula's character against the criticisms suggested by Fiona.\", 'B. Make a joke to avoid the sensitive subject.', \"C. Not answer the question directly to avoid being late.\", 'D. Reassure her by saying that her relationship with Ursula was not serious.', 'E. Precisely clarify what Fiona was referring to.', 'F. No answer can be deduced from the given information.']",
+            "option": [
+                "A. To defend Ursula's character against Fiona's implied criticism.",
+                "B. To make a joke to deflect from the uncomfortable topic.",
+                "C. To avoid answering the question directly so he wouldn't be late.",
+                "D. To reassure her that his relationship with Ursula was not serious.",
+                "E. To clarify exactly what Fiona was asking about.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. To clarify exactly what Fiona was asking about.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Have you two, you know... like... you know... you know... yet?",
+                    "dia_id": "13:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Well, not that it’s any of your business, but, no, we haven’t, okay?",
+                    "dia_id": "13:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "You meant sex, right?",
+                    "dia_id": "13:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona asks a vague, stumbling question using \"you know\" repeatedly (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan first answers what he assumes the question is (\"no, we haven't\") (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He then immediately follows up with a clarification check: \"You meant sex, right?\" (E3). This shows his immediate priority after giving an answer was to ensure he had correctly interpreted Fiona's ambiguous question.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 419,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "Arrange the following events in chronological order of Ethan's relationship with Ursula: 1. He confirmed that they had not had sexual relations. 2. He asked Fiona for permission to invite her out. 3. He said she was \"hot\" during their first conversation. 4. He reported that she brought him extra food.\n\nYou must choose the correct answer from the following options:\n['A. 3, 2, 4, 1', 'B. 1, 3, 4, 2', 'C. 2, 3, 1, 4', 'D. 4, 3, 2, 1', 'E. 3, 4, 2, 1', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. 3, 2, 4, 1",
+                "B. 1, 3, 4, 2",
+                "C. 2, 3, 1, 4",
+                "D. 4, 3, 2, 1",
+                "E. 3, 4, 2, 1",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. 3, 4, 2, 1",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.",
+                    "dia_id": "5:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "You think it would be okay if I asked out your sister?",
+                    "dia_id": "5:19"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Well, not that it’s any of your business, but, no, we haven’t, okay?... You meant sex, right?",
+                    "dia_id": "13:13-14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Event 3 (declared \"hot\") occurs in session_2, February 23rd (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Event 4 (reported extra food) occurs in session_5, February 24th (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Event 2 (asked permission) occurs in the same conversation as Event 4, on February 24th, after reporting the food (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Event 1 (confirmed no sex) occurs in session_13, February 27th (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "Thus, the order is: 3 (Feb 23), then 4 (Feb 24), then 2 (same day as 4), then 1 (Feb 27).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 420,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "What was the result of Ethen's experiment to recognize Ursula's interest in visiting Riff?\n\nYou must choose the correct answer from the following options:\n[\"A. She brought him a large amount of food that he had not ordered.\", 'B. She agreed to take a walk with him in the evening.', 'C. She asked him not to bother her while she was working.', 'D. She offered him a free coffee, but clearly seemed busy.', 'E. She ignored him, so he left without ordering anything.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. She brought him a large amount of food he didn't order.",
+                "B. She agreed to go on a date with him that evening.",
+                "C. She asked him to stop bothering her at work.",
+                "D. She gave him free coffee but was clearly busy.",
+                "E. She ignored him, so he left without ordering.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She brought him a large amount of food he didn't order.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.",
+                    "dia_id": "5:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan explicitly states the outcome of his visit: \"All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He interprets this as a sign she likes him, but the factual outcome was receiving un-ordered food in large quantity.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 421,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Fiona has always had a deep interest in the way people navigate public spaces, often observing how strangers interact and how personal boundaries are maintained or crossed. This fascination with human behavior has shaped her academic pursuits and influenced her choice of career path. \n\nWhich of the following is a persistent theme in Fiona's perception of her relationship with her twin sister?",
+            "option": [
+                "A. She thinks their estrangement is entirely Ursula's fault.",
+                "B. She believes they have a friendly, unspoken competition.",
+                "C. She is grateful that Ursula paved the way for her socially.",
+                "D. She feels consistently compared to and overshadowed by Ursula.",
+                "E. She feels she is the more responsible and successful one.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She feels consistently compared to and overshadowed by Ursula.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "It’s mostly just dumb sister stuff, you know, I mean, like, everyone always thought of her as the pretty one, you know... Oh, oh, she was the first one to start walking, even though I did it... later that same day. But, to my parents, by then it was like \"yeah, right, well what else is new?\"",
+                    "dia_id": "2:29"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Um, yeah. Look, I mean, I’m not saying she’s like evil or anything. She just, you know, she’s always breaking my stuff. When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus.",
+                    "dia_id": "15:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "And she you know, kind of stole him away, and then... broke his heart... and then he wouldn’t even talk to me any more. Because he said he didn’t wanna be around... anything that looked like either one of us.",
+                    "dia_id": "15:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In her initial explanation, Fiona says \"everyone always thought of her as the pretty one\" and gives an example from infancy where Ursula's achievement (walking first) diminished her own identical achievement later the same day (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, she recounts childhood (thermos) and teenage (boyfriend) incidents where Ursula's actions directly harmed her possessions and relationships (E2, E3).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The boyfriend story culminates with the boy not wanting to be around anyone who looked like either twin, showing how Fiona's identity was negatively conflated with Ursula's actions (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Across time (infancy, childhood, teens), the consistent theme is Fiona feeling overshadowed in perception (\"the pretty one\"), achievement, and suffering collateral damage from Ursula's behavior, leading to a sense of being in her shadow.",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 422,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "Fiona often reflected on how the people around her had different ways of expressing their frustrations, whether through music, sports, or even elaborate origami creations. She found it fascinating how these outlets shaped their personalities in unexpected ways.\n\nWhat specific childhood incident did Fiona describe as an example of Ursula's tendency to \"break her stuff\"?",
+            "option": [
+                "A. Ursula threw her Judy Jetson thermos under a bus.",
+                "B. Ursula drew on her homework with permanent marker.",
+                "C. Ursula broke the handle off her backpack.",
+                "D. Ursula lost her library book and got her fined.",
+                "E. Ursula hid her favorite sweater before a school photo.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Ursula threw her Judy Jetson thermos under a bus.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Um, yeah. Look, I mean, I’m not saying she’s like evil or anything. She just, you know, she’s always breaking my stuff. When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus.",
+                    "dia_id": "15:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona explicitly states the example: \"When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus.\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "qid": 423,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "What is Fiona’s stance on Ethan dating her sister, Ursula?",
+            "option": [
+                "A. She is indifferent and doesn’t care if Ethan dates her sister.",
+                "B. She is supportive of Ethan dating her sister and encourages him to do so.",
+                "C. She is concerned about Ethan dating her sister and fears losing him.",
+                "D. She is jealous of her sister and wants Ethan to date her instead.",
+                "E. She is upset but doesn’t believe Ethan would ever date her sister."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Have you ever had a boyfriend who was like your best friend?",
+                    "dia_id": "15:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but...",
+                    "dia_id": "15:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona raises a concern about Ethan potentially dating Ursula, referencing a past relationship with a boyfriend who was also her best friend, and how her sister Ursula may have a similar effect on Ethan.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona implies she feels threatened by the attention Ethan is giving Ursula, suggesting she is concerned that Ethan may become more attached to her sister than to her, thus fearing losing him.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "事实提取（多对话）",
+            "qid": 602
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which of the following best represents Bennett’s role in the group’s child-rearing plans?",
+            "option": [
+                "A. He is the primary caregiver who has never questioned the child-rearing group’s methods.",
+                "B. He is the parent who is trying to avoid emotional conflict in the group.",
+                "C. He is the parent who’s central to the group’s dynamics and is being challenged by others.",
+                "D. He is the least involved parent in the group and prefers to take the back seat.",
+                "E. He is an outsider who provides support but is not part of the parenting group."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I think I’m pretty comfortable with the whole situation.",
+                    "dia_id": "2:35"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Susan",
+                    "utterance": "I will flip you for it.",
+                    "dia_id": "6:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "No, come on, he doesn’t know this stuff. If he knew how you felt.",
+                    "dia_id": "15:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett admits to being uncomfortable with the parenting group’s situation, but claims to be at ease eventually.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett is involved in the decision-making process (e.g., participates in a coin flip with Susan about roles, and is being advised by Chloe and others about how to handle Fiona’s feelings).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett is a central figure in the parenting group and is being both supported and challenged, indicating a key role in the dynamics.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "事实提取（单对话）",
+            "qid": 603
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "What is Ethan’s most direct motivation for pursuing a relationship with Ursula?",
+            "option": [
+                "A. He wants to break up with Fiona and start a new relationship.",
+                "B. He wants to get to know her better and be friends.",
+                "C. He wants to date her and have her be present to support Fiona.",
+                "D. He is infatuated with her appearance and wants to impress her.",
+                "E. He wants to get close to her family and become friends with Fiona’s parents."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "She is so hot!",
+                    "dia_id": "5:15"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "So that if we went out on a date, she’d be there.",
+                    "dia_id": "5:19"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan is explicitly expressed attraction to Ursula, which could be interpreted as a motivation to pursue her.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan’s stated goal of dating Ursula is tied to the desire for her to be present for Fiona, indicating that his motivation is not just attraction, but also to have Ursula around for Fiona’s sake.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ethan’s motivation combines personal interest in Ursula and a secondary goal of having her support Fiona, making the correct answer the only one that includes both elements.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "事实提取（单对话）",
+            "qid": 604
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "What can be inferred about Dexter’s attitude toward the group’s parenting class from the conversation?",
+            "option": [
+                "A. He is indifferent and only attends when it suits him.",
+                "B. He is highly committed and helps coach other parents.",
+                "C. He is participating to stay informed but not personally invested.",
+                "D. He is helping to befriend other parents and avoid social isolation.",
+                "E. He is standing by as a peer but is not actively involved."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?",
+                    "dia_id": "5:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "You know that thing, when you and I talk to each other about things?",
+                    "dia_id": "2:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter is asking a question that suggests he is interested in the group’s approach to family life, indicating that he is paying attention and trying to understand the group’s patterns.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter acknowledges how he and Ethan can sometimes get into deeper discussions about personal issues, but also suggests they may avoid it, which hints at his participation not being emotionally driven.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter seems to participate in the group’s activities with awareness and curiosity but not with intense personal investment, making his involvement more about information rather than emotional commitment.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "事实提取（单对话）",
+            "qid": 605
+        },
+        {
+            "character": "Susan",
+            "category": 5,
+            "question": "What is Susan’s position in the parenting group with regard to the practice of having a 'coach' for the birth?",
+            "option": [
+                "A. She is committed to being the coach for all group members.",
+                "B. She believes that women should not be involved in coaching roles.",
+                "C. She is willing to be a coach if she can flip for it.",
+                "D. She is reluctant to take on any role and prefers not to be involved.",
+                "E. She insists that the coach should be someone who has had children."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Susan",
+                    "utterance": "I will flip you for it.",
+                    "dia_id": "6:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Susan",
+                    "utterance": "I know it’s frightening, but, big picture. The birth part is just one day, and when it’s over, we’re all gonna be parents for the rest of our lives.",
+                    "dia_id": "12:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Susan is willing to participate in the coaching role but only if she can flip Bennett for it, suggesting she sees the role as negotiable.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Susan finds the role frightening but sees it as part of becoming a parent, not as something beyond her comfort level, but rather something to be approached with a sense of humor or strategy.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Susan is not committed, but is willing to participate in the coaching role as a result of an informal challenge or agreement, which is only represented in option C.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "事实提取（多对话）",
+            "qid": 606
+        },
+        {
+            "character": "All",
+            "category": 5,
+            "question": "What does the impact of the group’s dynamic reveal about the nature of their collective child-rearing orientation?",
+            "option": [
+                "A. It is strictly formal with no personal investment from any participants.",
+                "B. It is driven by emotional conflict and interpersonal tension.",
+                "C. It is solely focused on the birthing process and not family life.",
+                "D. It is functional and cooperative, with participation driven by practical tasks.",
+                "E. It is rooted in jealousy and personal rivalry between group members."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "All",
+                    "utterance": "Hey guys! Hey!",
+                    "dia_id": "2:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "She is so hot!",
+                    "dia_id": "5:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but...",
+                    "dia_id": "15:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The group, as indicated in multiple sessions, often has interpersonal interactions that suggest emotional undercurrents, including teasing and conflict.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona's emotional response about Ethan dating her sister, combined with Ethan’s attraction to Ursula, suggests the group’s dynamics are influenced by personal relationships and jealousy.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "These interactions imply that the group's approach to child-rearing is not only functional but also interspersed with emotional and interpersonal complexity.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "多跳",
+            "qid": 607
+        },
+        {
+            "character": "None",
+            "category": 6,
+            "question": "On which day did the group have the most interaction about child-rearing and relational dynamics?",
+            "option": [
+                "A. February 23",
+                "B. February 24",
+                "C. February 25",
+                "D. February 26",
+                "E. February 27"
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "All",
+                    "utterance": "Hey guys! Hey!",
+                    "dia_id": "2:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but...",
+                    "dia_id": "15:14"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "She is so hot!",
+                    "dia_id": "5:15"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "No, come on, he doesn’t know this stuff. If he knew how you felt.",
+                    "dia_id": "15:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Multiple sessions from February 23 and February 27 directly reference the group’s interactions around child-rearing and personal conflict.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Among the mentioned dates, the February 27 session contains the most discussion about interpersonal tensions (Fiona’s concerns, Ethan’s interest in Ursula, and Bennett’s comments), confirming it as the peak interaction day.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 16,
+            "label": "多跳",
+            "qid": 608
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Bennett",
+        "speaker_1": "Ariel",
+        "speaker_2": "Dexter",
+        "speaker_3": "Ethan",
+        "speaker_4": "All",
+        "speaker_5": "Fiona",
+        "speaker_6": "Chloe",
+        "session_2_date_time": "February 23, 1995",
+        "session_2": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:1",
+                "text": "I don’t know whether he’s testing me, or just acting out, but my monkey is out of control. But, he keeps erasing the messages on my machine, \"supposedly\" by accident."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:2",
+                "text": "No, yeah, I’ve done that."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:3",
+                "text": "And then, like three days in a row he got to the newspaper before I did, and peed all over the crossword."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:4",
+                "text": "I’ve never done that."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:5",
+                "text": "All right, now look at her and tell me she doesn’t look exactly like her sister."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:6",
+                "text": "I’m sayin’ I see a difference."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:7",
+                "text": "They’re twins!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:8",
+                "text": "I don’t care. Fiona’s Fiona. Ursula’s... hot!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:9",
+                "text": "You know that thing, when you and I talk to each other about things?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:10",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Let’s not do that any more."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:12",
+                "text": "Hey guys! Hey!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:13",
+                "text": "Hey Pheebs, guess who we saw today."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:14",
+                "text": "Ooh, ooh, fun! Okay... um, Liam Neeson."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:15",
+                "text": "Nope."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:16",
+                "text": "Morly Safer."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:17",
+                "text": "Nope."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:18",
+                "text": "The woman who cuts my hair!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:19",
+                "text": "Okay, look, this could be a really long game."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:20",
+                "text": "Your sister Ursula."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:21",
+                "text": "Oh, really."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:22",
+                "text": "Yeah, yeah, she works over at that place, uh..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:23",
+                "text": "Rift’s. Yeah, I know."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:24",
+                "text": "Oh, you do? Because she said you guys haven’t talked in like years."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:25",
+                "text": "Hmmm? Yeah. So, um, is she fat?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:26",
+                "text": "Not from where I was standin’."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:27",
+                "text": "where were you standing?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:28",
+                "text": "Um, Pheebs, so, you guys just don’t get along?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:29",
+                "text": "It’s mostly just dumb sister stuff, you know, I mean, like, everyone always thought of her as the pretty one, you know... Oh, oh, she was the first one to start walking, even though I did it... later that same day. But, to my parents, by then it was like \"yeah, right, well what else is new?\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:30",
+                "text": "Oh, Pheebs, I’m sorry, I’ve got to go. I’ve got Lamaze class."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:31",
+                "text": "Oh, and I’ve got Earth Science, but I'll catch you in Gym."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:32",
+                "text": "So, is this just gonna be you and Carol?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:33",
+                "text": "No, Susan’s gonna be there too. We’ve got dads, we’ve got lesbians, the whole parenting team."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:34",
+                "text": "Well, isn’t, isn’t that gonna be weird?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:35",
+                "text": "No, no.  I mean, it mighta been at first, but by now I, I think I’m pretty comfortable with the whole situation."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:36",
+                "text": "Bennett, that’s my jacket."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:37",
+                "text": "I know."
+            }
+        ],
+        "session_3_date_time": "February 23, 1995",
+        "session_3": [
+            {
+                "speaker": "Woman",
+                "dia_id": "3:1",
+                "text": "Hi, we’re the Rostins. Err, I’m J.C., and he’s Michael, and we’re having a boy, and a girl."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "3:2",
+                "text": "Good for you. Alrighty, next?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:3",
+                "text": "Hi, um, I’m err,  I’m Bennett Geller, and err ah...  ..that’s, that’s my boy in there, and uh,  this is Carol Willick, and this... is Susan Bunch. Susan is um Carol’s, just, com...  ..who’s next?"
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "3:4",
+                "text": "I’m sorry, I didn’t get... Susan is?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:5",
+                "text": "Susan is Carol’s, Carol’s, Carol’s, friend..."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:6",
+                "text": "Life partner."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:7",
+                "text": "Like buddies."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:8",
+                "text": "Like lovers."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:9",
+                "text": "You know how close women can get."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:10",
+                "text": "Susan and I live together."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:11",
+                "text": "Although I was married to her."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:12",
+                "text": "Carol, not me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:13",
+                "text": "Err, right."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:14",
+                "text": "It’s a little complicated."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:15",
+                "text": "A little."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:16",
+                "text": "But we’re fine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:17",
+                "text": "Absolutely.  So, twins... hah! That’s like two births.  Ouch."
+            }
+        ],
+        "session_5_date_time": "February 24, 1995",
+        "session_5": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:1",
+                "text": "It’s not just that she’s cute, okay. It’s just that... she’s really really cute."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:2",
+                "text": "It doesn’t matter. You don’t dip your pen in the company ink."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:3",
+                "text": "Bennett, your little creature’s got the remote again."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:4",
+                "text": "Marcel, Marcel, give Rossie the remote. Marcel. Marcel, you give Rossie the remote right now... Marce... you give Rossie the remote..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:5",
+                "text": "Great."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:6",
+                "text": "Relax, I’ll fix it."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:7",
+                "text": "Cool... \"Urkel\" in Spanish is \"Urkel.\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:8",
+                "text": "How did he do this?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:9",
+                "text": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:10",
+                "text": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:11",
+                "text": "Well, someone was supposed to write \"Rach, take down the lights\" and put it on the re... frigerate...  How long has that been there?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:12",
+                "text": "Hey, where you been?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:13",
+                "text": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:14",
+                "text": "Score."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:15",
+                "text": "She is so hot!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:16",
+                "text": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:17",
+                "text": "Pheebs?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:18",
+                "text": "Yeah?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:19",
+                "text": "You think it would be okay if I asked out your sister?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:20",
+                "text": "Why? Why would you wanna... do that?  Why?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:21",
+                "text": "So that if we went out on a date, she’d be there."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:22",
+                "text": "Well, I mean, I’m not my sister’s, you know, whatever, and um... I mean, it’s true, we were one egg, once, but err, you know, we’ve grown apart, so, um... I don’t know, why not? Okay."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:23",
+                "text": "Cool, thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:24",
+                "text": "You okay?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:25",
+                "text": "Yeah I’m fine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:26",
+                "text": "You wanna watch Laverne y Shirley?"
+            }
+        ],
+        "session_6_date_time": "February 25, 1995",
+        "session_6": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:1",
+                "text": "Sorry."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:2",
+                "text": "Hi. Sorry I’m late. Where’s, where’s Carol?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:3",
+                "text": "Stuck at school. Some parent-teacher thing. You can go. I’ll get the information."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:4",
+                "text": "No... No... No. I think I should stay, I think we should both know what’s going on."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:5",
+                "text": "Oh, good. This’ll be fun."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:6",
+                "text": "Alrighty. We’re gonna start with some basic third stage breathing exercises, so Mummies, why don’t you get on your back? And... coaches, you should be supporting Mummy’s head."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:7",
+                "text": "I am supposed to be the mommy?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:8",
+                "text": "Okay, I’m gonna play my sperm card one more time."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:9",
+                "text": "Look, I don’t see why I should have to miss out on the coaching training just because I’m a woman."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:10",
+                "text": "I see. So what do you propose to do?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:11",
+                "text": "I will flip you for it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:12",
+                "text": "Flip me for it? No, no, no... heads, heads, heads!"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:13",
+                "text": "On your back... Mom."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:14",
+                "text": "Alright, Mommies, take a nice deep cleansing breath."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:15",
+                "text": "Good. Now imagine your vagina is opening like a flower."
+            }
+        ],
+        "session_12_date_time": "February 27, 1995",
+        "session_12": [
+            {
+                "speaker": "Teacher",
+                "dia_id": "12:1",
+                "text": "Lights please? And that’s having a baby. Next week is our final class."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:2",
+                "text": "Susan, go deep."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:3",
+                "text": "This is impossible. It’s just impossible."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:4",
+                "text": "What is, honey?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:5",
+                "text": "What that woman... did. I am not doin’ that. It’s just gonna have to stay in, that’s all, everything will be the same, it’ll just stay in."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:6",
+                "text": "Carol, honey, shhh, shhh, everything’s gonna be alright."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:7",
+                "text": "Oh, what do you know?  No one's going up to you and saying, \"Hi, is that your nostril?  Mind if we push this pot roast through it?\""
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:8",
+                "text": "Carol, Carol, sweetie. Cleansing breath."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:9",
+                "text": "I know it’s frightening, but, big picture. The birth part is just one day, and when it’s over, we’re all gonna be parents for the rest of our lives."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:10",
+                "text": "I mean, that’s what this is all about, right? Bennett? Bennett?"
+            }
+        ],
+        "session_13_date_time": "February 27, 1995",
+        "session_13": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:1",
+                "text": "I’m gonna be a father."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:2",
+                "text": "This is just occurring to you?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:3",
+                "text": "I always knew I was havin’ a baby, I just never realised the baby was having me."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:4",
+                "text": "Oh, you’re gonna be great!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:5",
+                "text": "Aw, how can you say that? I can’t even get Marcel to stop eating the bath mat. How am I gonna raise a kid?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:6",
+                "text": "You know, Bennett, some scientists are now saying that, that monkeys and babies are actually different."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:7",
+                "text": "Where’re you going?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:8",
+                "text": "Out."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:9",
+                "text": "With?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:10",
+                "text": "Yes."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:11",
+                "text": "Alright, could I just ask you one question?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:12",
+                "text": "Have you two, you know... like... you know... you know... yet?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:13",
+                "text": "Well, not that it’s any of your business, but, no, we haven’t, okay?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:14",
+                "text": "You meant sex, right?"
+            }
+        ],
+        "session_15_date_time": "February 28, 1995",
+        "session_15": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:1",
+                "text": "Well, I ended up telling her everything."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:2",
+                "text": "Oh, how’d she take it?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:3",
+                "text": "Pretty well. Except for the stapler thing.  Little tip: if you’re ever in a similar situation, never ever leave your hand...  ..on the desk."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:4",
+                "text": "Okay, I think I get how to do this."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:5",
+                "text": "Alright, so, can we turn this off? Can we just make it... make them go away? Because I can’t, I can’t watch."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:6",
+                "text": "okay, Pheebs, they’re gone."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:7",
+                "text": "Okay."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:8",
+                "text": "Are you alright?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:9",
+                "text": "Yeah. It’s just, you know, it’s this whole stupid Ursula thing, it’s..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:10",
+                "text": "Okay, Pheebs, can I ask? So, he’s going out with her. I mean, is it really so terrible?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:11",
+                "text": "Um, yeah. Look, I mean, I’m not saying she’s like evil or anything. She just, you know, she’s always breaking my stuff. When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus. And then, oh, and then there was Randy Brown, who was like... Have you ever had a boyfriend who was like your best friend?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:12",
+                "text": "Well, but that’s what he was for me. And she you know, kind of stole him away, and then... broke his heart... and then he wouldn’t even talk to me any more. Because he said he didn’t wanna be around... anything that looked like either one of us."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:13",
+                "text": "Oh... Oh, Pheebs."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:14",
+                "text": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:15",
+                "text": "You’re not gonna lose him."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:16",
+                "text": "Hon, you gotta talk to Ethan."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:17",
+                "text": "Yeah. Okay."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:18",
+                "text": "No, come on, he doesn’t know this stuff. If he knew how you felt."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:19",
+                "text": "But he’s falling in love with her."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:20",
+                "text": "Oh please, they’ve been going out a week. They haven’t even slept together yet, I mean, that’s not serious."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:21",
+                "text": "Okay... Okay."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:22",
+                "text": "Oh, okay, oh."
+            },
+            {
+                "speaker": "Ursula",
+                "dia_id": "15:23",
+                "text": "Oh."
+            },
+            {
+                "speaker": "Ursula",
+                "dia_id": "15:24",
+                "text": "Yeah, um, may we help you?"
+            }
+        ],
+        "speaker_7": "Woman",
+        "speaker_8": "Teacher",
+        "speaker_9": "Carol",
+        "speaker_10": "Susan",
+        "speaker_11": "Ursula"
+    }
+}

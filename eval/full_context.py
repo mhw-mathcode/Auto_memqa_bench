@@ -10,7 +10,7 @@ import uuid
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -312,43 +312,59 @@ class FullContextRunner:
         pbar.update(1)
         return result
 
-    def process_data_file(self, file_path: str, max_workers: int = 5) -> Dict[str, List[Dict[str, Any]]]:
+    def process_data_file(
+        self,
+        file_path: str,
+        max_workers: int = 5,
+        target_questions: Optional[Set[Tuple[int, int]]] = None,
+        persist_output: bool = True,
+    ) -> Dict[str, List[Dict[str, Any]]]:
         with open(file_path, "r", encoding="utf-8") as file:
             raw_data = json.load(file)
 
         data = normalize_dataset_records(raw_data)
-        total_questions = sum(len(item.get("qa", [])) for item in data)
+        tasks: List[Tuple[int, Dict[str, Any], int, Dict[str, Any]]] = []
+        for conv_idx, item in enumerate(data):
+            for question_idx, question_item in enumerate(item.get("qa", [])):
+                if target_questions is None or (conv_idx, question_idx) in target_questions:
+                    tasks.append((conv_idx, item, question_idx, question_item))
+
+        total_questions = len(tasks)
         if total_questions == 0:
-            raise ValueError("No questions found in the input dataset.")
+            if target_questions is None:
+                raise ValueError("No questions found in the input dataset.")
+            self.logger.warning("No matching questions found for the provided target_questions.")
+            return {}
 
         self.results = defaultdict(dict)
 
-        print(f"--- Starting Full Context Inference: {total_questions} total questions ---")
+        run_scope = "partial" if target_questions is not None else "full"
+        print(f"--- Starting Full Context Inference ({run_scope}): {total_questions} total questions ---")
         with tqdm(total=total_questions, desc="Full Context") as pbar:
             with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix="full-context") as executor:
                 futures = []
-                for conv_idx, item in enumerate(data):
-                    for question_idx, question_item in enumerate(item.get("qa", [])):
-                        futures.append(
-                            executor.submit(
-                                self._process_single_question,
-                                item,
-                                question_item,
-                                conv_idx,
-                                question_idx,
-                                pbar,
-                            )
+                for conv_idx, item, question_idx, question_item in tasks:
+                    futures.append(
+                        executor.submit(
+                            self._process_single_question,
+                            item,
+                            question_item,
+                            conv_idx,
+                            question_idx,
+                            pbar,
                         )
+                    )
 
                 for future in as_completed(futures):
                     future.result()
 
         results_dict = serialize_results(self.results)
-        self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        with self.output_path.open("w", encoding="utf-8") as file:
-            json.dump(results_dict, file, indent=4, ensure_ascii=False)
+        if persist_output:
+            self.output_path.parent.mkdir(parents=True, exist_ok=True)
+            with self.output_path.open("w", encoding="utf-8") as file:
+                json.dump(results_dict, file, indent=4, ensure_ascii=False)
 
-        print(f"Raw responses saved to: {self.output_path}")
+            print(f"Raw responses saved to: {self.output_path}")
         return results_dict
 
 

@@ -1,0 +1,2369 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "Ariel had just spent the afternoon volunteering at a local community garden, where she helped plant flowers and talked with elderly visitors about their favorite memories. She found the experience oddly calming, though she couldn't quite put her finger on why. Right after watching the play “Freud!”, what is the immediate reason for Ariel feeling the way she does?",
+            "option": [
+                "A. She feels a physical and emotional sense of intrusion or violation.",
+                "B. She feels intellectual satisfaction from understanding the complex themes.",
+                "C. She is excited about the possibility of getting a talent agency card.",
+                "D. She is envious of the beautiful woman who entered the theater lobby.",
+                "E. She is angry because Ethan gave a terrible performance.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She feels a physical and emotional sense of intrusion or violation.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "God. I feel violated.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Did anybody else feel they just wanted to peel the skin off their body, to have something else to do?",
+                    "dia_id": "2:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "The exclamation point in the title scares me.  Y'know, it's not just Freud, it's Freud!",
+                    "dia_id": "1:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Session 2 immediately follows the play, and Ariel's first utterance directly states her feeling: \"God. I feel violated.\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe's follow-up question about wanting to \"peel the skin off their body\" (E2) aligns with and elaborates on a physical and uncomfortable reaction, which is the shared context for Ariel's statement.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The nature of the play, as hinted by Fiona's pre-play comment about the exclamation point being scary (E3), suggests an intense or unsettling experience, providing context for Ariel's strong reaction.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Ariel's immediate, explicit statement of feeling \"violated\" (C) is the direct trigger. The excitement about the talent agency card (E) comes much later in the same session and is not the cause of her initial feeling.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 199,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "During her weekend getaway, Ariel enjoyed exploring the local art gallery, where she spent hours admiring abstract paintings and contemplating the meaning behind each piece. The quiet atmosphere and creative energy left her feeling inspired and reflective about her own life decisions. When Ariel cleaned the apartment, what did she do that was specifically related to an object she was unsure about?",
+            "option": [
+                "A. She used a vacuum attachment with bristles but regretted it afterwards.",
+                "B. She reorganized all the books on the shelf by color but couldn't decide on fiction vs. non-fiction.",
+                "C. She washed the windows but left streaks, which she later decided to fix.",
+                "D. She attempted to polish the silverware but ran out of cleaner halfway through.",
+                "E. She did not use a specific vacuum attachment because she didn't know its purpose.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. She did not use a specific vacuum attachment because she didn't know its purpose.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Look! I cleaned! I did the windows, I did the floors... I even used all the attachments on the vacuum, except that little round one with the bristles, I don't know what that's for.",
+                    "dia_id": "4:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Oh yeah, nobody knows. And we're not supposed to ask.",
+                    "dia_id": "4:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 4, Ariel lists her cleaning activities, stating she used all vacuum attachments \"except that little round one with the bristles.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She explicitly gives the reason for not using it: \"I don't know what that's for.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett's response confirms the group's shared ignorance about that specific attachment, reinforcing the detail.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "The specific action related to her uncertainty was not using a particular vacuum attachment due to not knowing its purpose.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 200,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "What was Arikels' experience with the green Othman and her immediate reaction after cleaning the apartment?\n\nYou must choose the correct answer from the following options:\n['A. She moved it for practical reasons to a new location, but was questioned because of this change.', \"B. She didn't touch it at all, because she knew it was a sensitive object for the group.\", 'C. She bought a new one to replace it and surprised everyone with her initiative.', 'D. She threw it away, because it was old and stained, which caused an argument.', 'E. She cleaned it carefully, but still decided it looked run-down and covered it with a cloth.', 'F. The answer cannot be deduced from the provided information.']",
+            "option": [
+                "A. She moved it to a new spot for practical reasons but was challenged on the change.",
+                "B. She didn't touch it at all, knowing it was a sensitive object for the group.",
+                "C. She bought a new one to replace it, surprising everyone with her initiative.",
+                "D. She threw it out because it was old and stained, which caused an argument.",
+                "E. She cleaned it thoroughly but decided it still looked shabby and covered it with a blanket.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She moved it to a new spot for practical reasons but was challenged on the change.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "...Oh! I-I see you moved the green ottoman.",
+                    "dia_id": "4:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I dunno.. I-I thought it looked better there. And I- and also, it's an extra seat around the coffee table.",
+                    "dia_id": "4:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Yeah, yeah, it's interesting.. but y'know what? Just for fun, let's see what it looked like in the old spot.",
+                    "dia_id": "4:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "After Ariel's cleaning, Chloe immediately notices a change: \"I see you moved the green ottoman.\" This identifies Ariel's action.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel explains her reasons: she thought it looked better and that it provided an extra seat (practical reason).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe then challenges this change by suggesting they move it back \"just for fun,\" putting Ariel's decision in question.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Ariel's experience involved moving the ottoman for stated practical/aesthetic reasons, which was then directly challenged by another character.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 201,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "During his time at the community center, Bennett often participated in group art projects and shared his thoughts on the cultural significance of different painting styles, which fascinated many of his peers. He also enjoyed long walks in the park and would frequently discuss the history of local landmarks with anyone willing to listen. Based on multiple conversations, what is a consistent characteristic of Bennett's way of engaging in discussions?",
+            "option": [
+                "A. He makes fun of his friends' aspirations and rarely offers support.",
+                "B. He tends to defer to others' opinions and rarely states his own views.",
+                "C. He attempts to provide intellectual or anthropological frameworks for topics.",
+                "D. He is the main decision-maker for all group activities and outings.",
+                "E. He is overly emotional and takes all conversations personally.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He attempts to provide intellectual or anthropological frameworks for topics.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Oh yeah, nobody knows. And we're not supposed to ask.",
+                    "dia_id": "4:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Well, y'know, monogamy can be a, uh, tricky concept. I mean, anthropologically speaking-",
+                    "dia_id": "3:39"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Alright. There's a theory, put forth by Richard Leakey-",
+                    "dia_id": "3:43"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 4, when Ariel doesn't know what a vacuum attachment is for, Bennett jokingly frames it as a universal mystery with a pseudo-rule (\"we're not supposed to ask\"), adding a layer of mock-intellectual play.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In Session 3, when the group debates monogamy, Bennett immediately introduces an intellectual perspective with the phrase \"anthropologically speaking.\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later in the same debate, he begins to cite a specific theory and author (Richard Leakey) to explain his point.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Across different contexts (household jokes, relationship debates), Bennett consistently responds by invoking intellectual, theoretical, or mock-serious frameworks for discussion.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 202,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "After a long day at work, Bennett had been contemplating the balance between personal ambition and family expectations, wondering whether to pursue a career that truly fulfilled him or stick with the path his parents had envisioned. He had always found it difficult to make decisions that didn't align perfectly with societal norms.  \n\nIn the theater lobby after the play, what is Bennett's immediate state when Dexter first points out the beautiful woman to him?",
+            "option": [
+                "A. He is sleepy and suggests they should all go home.",
+                "B. He is confused and thinks Dexter is asking for the time.",
+                "C. He is already looking at her and winks at Dexter knowingly.",
+                "D. He is fully alert and immediately understands Dexter's coded direction.",
+                "E. He is annoyed because he wants to discuss the play's flaws.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He is confused and thinks Dexter is asking for the time.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Bennett, ten o'clock.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Is it? Feels like two.",
+                    "dia_id": "2:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "No, ten o'clock.",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "What?",
+                    "dia_id": "2:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter uses a directional code (\"ten o'clock\") to alert Bennett to the woman's location.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett's response (\"Is it? Feels like two.\") shows he interprets \"ten o'clock\" literally as a time of day, not a direction.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Even after Dexter repeats the code, Bennett still doesn't understand, asking \"What?\"",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Bennett's immediate state is one of confusion, misinterpreting the social cue as a comment about the actual time.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 203,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "What did Bennett do during childhood that he later used as evidence of Chloe's personality during their argument?\n\nYou must choose the correct answer from the following list:\n['A. He helped her every weekend to organize her bookshelf alphabetically.', \"B. He borrowed her favorite toy without asking her permission and she didn't get angry.\", 'C. He noticed how she had trouble because of her messiness, unlike her brothers and sisters.', 'D. He remembers that she always won board games because she cheated strategically.', 'E. He noticed that her crushed doll, Ann-Doll, was particularly well-maintained and didn't seem crushed.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. He helped her organize her bookshelf alphabetically every weekend.",
+                "B. He borrowed her favorite toy without asking and she didn't get upset.",
+                "C. He saw her get into trouble for being messy, unlike her siblings.",
+                "D. He remembers her always winning board games because she cheated strategically.",
+                "E. He noticed her Raggedy Ann doll was uniquely well-kept and not ragged.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. He noticed her Raggedy Ann doll was uniquely well-kept and not ragged.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Oh c'mon! When we were kids, yours was the only Raggedy Ann doll that wasn't raggedy!",
+                    "dia_id": "4:17"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Okay, so I'm responsible, I'm organised.",
+                    "dia_id": "4:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett makes a specific claim about their childhood: \"yours was the only Raggedy Ann doll that wasn't raggedy!\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He uses this observation as evidence in an argument about Chloe's personality (being overly neat and organized).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe's response (\"Okay, so I'm responsible, I'm organised\") accepts this as valid evidence of her traits.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Bennett's childhood experience, which he recounts, was noticing the atypical pristine condition of Chloe's Raggedy Ann doll compared to others.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 204,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "Chloe had just finished reading a compelling novel about a group of friends navigating the complexities of modern relationships and personal ambition. The story left her contemplating how people often balance their own dreams with the emotions that arise from others' choices. After hearing about Dexter's date with Aurora, what is Chloe's primary emotional stance and concern?",
+            "option": [
+                "A. She is indifferent, as she is more focused on her own acting career.",
+                "B. She is confused and asks for Bennett to explain the anthropology of it.",
+                "C. She is excited for him and wants to hear all the salacious details.",
+                "D. She is morally opposed and views the situation as twisted and wrong.",
+                "E. She is jealous and wishes she could have a similar adventurous relationship.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She is morally opposed and views the situation as twisted and wrong.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Oh. I'm sorry it didn't work out.",
+                    "dia_id": "3:29"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Didn't you listen to the story? I mean, this is twisted! How could you get involved with a woman like this?",
+                    "dia_id": "3:31"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "What? So you guys don't mind going out with someone else who's going out with someone else?",
+                    "dia_id": "3:35"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Upon hearing Dexter's story, Chloe initially assumes it ended badly and offers sympathy (\"I'm sorry it didn't work out\"), indicating disapproval.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When she learns Dexter is continuing the relationship, she explicitly labels the situation \"twisted\" and questions his judgment.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She then generalizes her concern, asking the other men if they are okay with non-monogamous situations, highlighting her moral stance.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Chloe's immediate and sustained reaction is one of moral opposition and concern, viewing the arrangement as fundamentally wrong (\"twisted\").",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 205,
+            "label": "多跳"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "At the last meeting on October 30th, what does Chloe do, which shows a change compared to her established behavior before?\n\nYou must choose the correct answer from the following options:\n[\"A. She severely criticizes Ethan's theatrical performance in order to improve it.\", 'B. She pays a late bill on time, for the first time in her life.', \"C. She approves of Bennett's anthropological theory without questioning it.\", 'D. She impulsively decides to move to another city to pursue her career as an actress.', 'E. She leaves her shoes casually placed, instead of tidying them properly.', 'F. Cannot deduce the answer from the information provided.']",
+            "option": [
+                "A. She criticizes Ethan's play performance harshly to make him feel better.",
+                "B. She pays a late bill on time for the first time ever.",
+                "C. She agrees with Bennett's anthropological theory without questioning it.",
+                "D. She impulsively decides to move to another city to pursue acting.",
+                "E. She leaves her shoes out in a casual manner instead of putting them away neatly.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. She leaves her shoes out in a casual manner instead of putting them away neatly.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Uh, Mon, you-you gonna leave your shoes out here?",
+                    "dia_id": "8:22"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Uh-huh!",
+                    "dia_id": "8:23"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Really? Just casually strewn about in that reckless haphazard manner?",
+                    "dia_id": "8:24"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Chloe",
+                    "utterance": "Doesn't matter, I'll get 'em tomorrow. Or not. Whenever.",
+                    "dia_id": "8:25"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "She is a kook.",
+                    "dia_id": "8:26"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 8, Ariel points out that Chloe is leaving her shoes out, which is notable enough to comment on.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel describes the action in terms that contrast with Chloe's usual orderliness: \"casually strewn about,\" \"reckless haphazard manner.\"",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe's response (\"Doesn't matter... Or not. Whenever.\") shows a deliberate nonchalance about the mess.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Bennett's comment (\"She is a kook\") refers back to their earlier argument where being a \"kook\" meant being irresponsible, confirming this is a change in behavior.",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "Chloe's action of leaving her shoes out in a careless way and her dismissive attitude towards tidiness mark a temporary, deliberate deviation from her established, highly organized persona.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 206,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "What specific action did she take concerning the green osmanthus after Ariel moved it, and what reason did she give?\n\nYou must choose the correct answer from the following options:\n['A. She took it to a third new location in order to create a new start.', 'B. She suggested temporarily putting it back in its original place for comparison.', 'C. She brought it back to its original location and said it looked better there.', 'D. She sat on it to test the comfort at the new location and explained that it was correct.', 'E. She offered to help Ariel move it, but then changed her mind.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She moved it to a third, new location to create a fresh start.",
+                "B. She suggested moving it back to the old spot temporarily just to compare.",
+                "C. She moved it back to its original spot, saying it looked better there.",
+                "D. She sat on it in its new spot to test its comfort and declared it fine.",
+                "E. She offered to help Ariel move it but then changed her mind.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She suggested moving it back to the old spot temporarily just to compare.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Yeah, yeah, it's interesting.. but y'know what? Just for fun, let's see what it looked like in the old spot.  Alright, just to compare. Let's see. Well, it looks good there too. Let's just leave it there for a while.",
+                    "dia_id": "4:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe proposes a specific action: \"let's see what it looked like in the old spot.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She states the reason for this action: \"Just for fun... just to compare.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "After the comparison, she decides to leave it in the new spot \"for a while,\" but the initial action and reason are as stated.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Chloe's action was suggesting a temporary move back for comparison purposes, not a permanent reversal.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 207,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "As he stepped out of the crowded theater, Dexter found himself reflecting on the importance of making spontaneous decisions in life, often wondering if the right choice was always the one that felt the most natural. He had recently read an article about how people's emotions can be misinterpreted in social settings, which left him contemplating the complexities of human interaction.\n\nWhen Dexter first decides to approach Aurora in the theater lobby, what is his dominant feeling and specific physical concern?",
+            "option": [
+                "A. Fear and nervousness, and he is hyper-aware of his own tongue.",
+                "B. Confidence, but he is worried his clothes aren't stylish enough.",
+                "C. Indifference, as he is more focused on critiquing the play.",
+                "D. Curiosity, and he is concerned about saying the wrong name.",
+                "E. Annoyance at his friends for pushing him, and his hands are sweaty.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Fear and nervousness, and he is hyper-aware of his own tongue.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Oh yeah, and what would my opening line be? 'Excuse me. Blarrglarrghh.'",
+                    "dia_id": "2:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Oh please, could she be more out of my league?",
+                    "dia_id": "2:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Oh God, I can't believe I'm even considering this... I'm very very aware of my tongue...",
+                    "dia_id": "2:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter imagines his opening line as an incoherent sound (\"Blarrglarrghh\"), indicating fear of failure and nervousness.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He expresses a feeling of inferiority, saying she is \"out of my league.\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "As he prepares to go, he explicitly states his dominant feeling (\"I can't believe I'm even considering this\") and a specific physical symptom of anxiety (\"I'm very very aware of my tongue\").",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "His dominant state is fear/nervousness, with a hyper-awareness of a body part (his tongue) that might fail him during speech.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 208,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "What is the order of events regarding Dexter discovering Aurora's relationship status during their first date?\n\nYou must choose the correct answer from the following options:\n['A. He first learned that she was married, then realized that her husband was probably dead, and later discovered her friend.', 'B. She never explicitly told him this; he deduced it from the stories about \"Rick\" and \"Ethan\".', 'C. She first talked to him about her husband, and later about her friend.', 'D. He first discovered that she had a friend, then learned that she was also married.', 'E. He assumed she was a widow, but she corrected him by saying she was divorced.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. He learned she had a husband first, then clarified he was hopefully dead, then learned about the boyfriend.",
+                "B. She never explicitly told him; he pieced it together from stories about \"Rick\" and \"Ethan.\"",
+                "C. She told him upfront about her husband, then later mentioned her boyfriend.",
+                "D. He discovered she had a boyfriend first, then found out she was also married.",
+                "E. He guessed she was widowed, then she corrected him by saying she was divorced.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He learned she had a husband first, then clarified he was hopefully dead, then learned about the boyfriend.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, I'm sorry, so 'we' is?",
+                    "dia_id": "3:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Aurora",
+                    "utterance": "'We' would be me and Rick.",
+                    "dia_id": "3:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Who's Rick?",
+                    "dia_id": "3:14"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Aurora",
+                    "utterance": "My husband.",
+                    "dia_id": "3:15"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, so you're divorced?... Oh, I'm sorry, then you're widowed?...Hopefully?... No, I'm still married.",
+                    "dia_id": "3:17",
+                    "context_utterance": "Aurora: No. Dexter: Oh, I'm sorry, then you're widowed?...Hopefully? Aurora: No, I'm still married."
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Dexter",
+                    "utterance": "Ethan? There's, there's an Ethan?",
+                    "dia_id": "3:23"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Aurora",
+                    "utterance": "Mmmm... Ethan is my... boyfriend.",
+                    "dia_id": "3:24"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter first inquires about the pronoun \"we\" in her story, leading to the mention of \"Rick\" (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He asks who Rick is and is told \"My husband\" (E3, E4). This is the first discovery.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He then asks clarifying questions: if she's divorced or widowed (\"hopefully?\"), before she confirms she is \"still married\" (E5).",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Later in the conversation, she mentions the name \"Ethan,\" prompting Dexter's shocked question (E6).",
+                    "based_on": [
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "She then reveals Ethan is her boyfriend (E7).",
+                    "based_on": [
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "cross-session conclusion": "The temporal sequence is: 1. Discovers husband (Rick), 2. Confirms still married (not divorced/widowed), 3. Discovers boyfriend (Ethan).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 209,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "Dexter had always been fascinated by the way people's lives seemed to take unexpected turns, often shaped by decisions made in moments of spontaneity or hesitation. He found himself reflecting on how small choices could lead to big stories, especially when trying to connect with others.  \n\nWhat was the embarrassing incident Dexter recounted from his first date with Aurora when she asked him to tell a story about himself?",
+            "option": [
+                "A. He spilled red wine on her white dress and tried to clean it with water.",
+                "B. He talked for an hour about his stamp collection, boring her.",
+                "C. He once rode the subway to Brooklyn at night just for the hell of it.",
+                "D. He accidentally called her by his ex-girlfriend's name during dinner.",
+                "E. He got lost driving and had to ask a police officer for directions.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He once rode the subway to Brooklyn at night just for the hell of it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Aurora",
+                    "utterance": "...I've been talking about myself all night long, I'm sorry. What about you? Tell me one of your stories.",
+                    "dia_id": "3:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Alright. Once I got on the subway, right, and it was at night, and I rode it all the way to Brooklyn... just for the hell of it.",
+                    "dia_id": "3:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Aurora asks Dexter to tell her one of his stories after talking about herself.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter recounts a specific, mundane story about riding the subway to Brooklyn at night \"just for the hell of it.\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The context (his telling this to friends, the contrast with Aurora's dramatic stories) frames this as an embarrassing or underwhelming anecdote from the date.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The specific incident he shared was the uneventful subway ride to Brooklyn.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 210,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "Last weekend, Ethan spent several hours volunteering at a local animal shelter, where he helped clean cages and socialize with the dogs, finding the experience both rewarding and calming. He had always been passionate about helping animals and felt a deep sense of fulfillment from his time there.\n\nWhen Ethan first announces his acting job to the group, what is his immediate emotional state and the primary reason for it?\n\nYou need to select the correct answer from the following options:\n[\"A. He is confused because he doesn't understand the agent's instructions.\", 'B. He is resentful because the role requires him to be naked.', 'C. He is embarrassed because the role is very small and insignificant.', 'D. He is thrilled and proud because he will be working with his idol, Al Pacino.', 'E. He is anxious because he fears he is not qualified for such a big film.', 'F. Cannot infer the answer based on the given information.'].",
+            "option": [
+                "A. He is confused because he doesn't understand the agent's instructions.",
+                "B. He is resentful because the role requires him to be naked.",
+                "C. He is embarrassed because the role is very small and insignificant.",
+                "D. He is thrilled and proud because he will be working with his idol, Al Pacino.",
+                "E. He is anxious because he fears he is not qualified for such a big film.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He is thrilled and proud because he will be working with his idol, Al Pacino.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Uh huh.. uh huh... oh my God! Okay! Okay, I'll be there!  That was my agent.  My agent has just gotten me a job...in the new Al Pacino movie!",
+                    "dia_id": "4:29"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Can you believe this? Al Pacino! This guy's the reason I became an actor! \"I'm out of order? Pfeeeh. You're out of order! This whole courtroom's out of order!\"",
+                    "dia_id": "4:32"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "His initial announcement is excited and breathless (\"oh my God! Okay! Okay!\"), emphasizing \"the new Al Pacino movie!\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He immediately elaborates, stating \"Al Pacino! This guy's the reason I became an actor!\" and quoting one of Pacino's famous lines.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "His excitement is clearly tied to the specific actor (his idol) he will be working with, not the nature of the role itself.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Ethan's immediate state is thrilled pride, primarily because the job connects him to his acting idol, Al Pacino.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 211,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "In a small town nestled between the mountains, the local bakery recently introduced a new line of vegan pastries, much to the delight of health-conscious residents and the confusion of longtime customers. The community buzzed with excitement and skepticism alike, but no one could have predicted how this simple change would impact the town's annual festival.\n\nWhat is the correct sequence of events regarding Ethan's role in the Al Pacino movie?",
+            "option": [
+                "A. He was hired as an extra, promoted to butt double during filming, and then quit voluntarily.",
+                "B. He got the job, told his friends what the part was, later performed it, and then was fired for overacting.",
+                "C. He was offered the part, told his friends, got fired before filming, and then they recast it.",
+                "D. He heard about the audition from a friend, tried out, but didn't get the part in the end.",
+                "E. He auditioned, got the part of the butt double, performed it, and was praised for his subtlety.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He got the job, told his friends what the part was, later performed it, and then was fired for overacting.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Uh huh.. uh huh... oh my God! Okay! Okay, I'll be there!  That was my agent.  My agent has just gotten me a job...in the new Al Pacino movie!",
+                    "dia_id": "4:29"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "...I'm his butt double. 'Kay? I play Al Pacino's butt. Alright?",
+                    "dia_id": "4:38"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "I got fired.",
+                    "dia_id": "8:8"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, they said I acted too much with it.",
+                    "dia_id": "8:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 4, Ethan announces he has just gotten the job (E1) and then reveals the specific part is the butt double (E2). This is Event 1: Getting the job and revealing it.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In a later session (Session 8, Oct 30), Ethan states \"I got fired\" (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He gives the reason for being fired: \"they said I acted too much with it\" (E4), implying he had already performed the role.",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "The temporal sequence across sessions is: 1. Gets the job/announces part (Session 4), 2. (Implied: Performs the role), 3. Gets fired for overacting (Session 8).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 212,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "What was the specific reason given for Ethan's dismissal from his role as Al Pacino's double?\n\nYou must choose the correct answer from the following list:\n['A. He was often late on set due to subway disruptions.', 'B. Al Pacino felt personally uncomfortable with the use of a double.', 'C. He publicly criticized the nature of the role in a magazine.', \"D. His physique did not match Al Pacino's sufficiently for filming.\", 'E. The directors felt uncomfortable because he was too expressive with that body part.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. He was late to set multiple times due to subway delays.",
+                "B. Al Pacino personally felt uncomfortable with a double being used.",
+                "C. He complained publicly about the nature of the role to a magazine.",
+                "D. His physique did not match Al Pacino's closely enough for the camera.",
+                "E. The directors felt he was acting too expressively with that body part.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. The directors felt he was acting too expressively with that body part.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I got fired.",
+                    "dia_id": "8:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, they said I acted too much with it. I told everybody about this!",
+                    "dia_id": "8:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan states he was fired from the job.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He provides the direct reason: \"they said I acted too much with it,\" where \"it\" refers to the butt he was doubling.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "This means the criticism was about his performance being overly expressive or noticeable.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The specific, stated reason for being fired was overacting with the body part he was portraying.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 213,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Fiona has always been passionate about baking, often spending her weekends experimenting with new recipes and hosting small gatherings for friends and family. Her kitchen is filled with the aromas of cinnamon and vanilla, and she takes great pride in the way she decorates each cake with intricate designs. \n\nAcross the different conversations, how does Fiona typically express her opinions or judgments?",
+            "option": [
+                "A. She defers to the opinions of Bennett, whom she sees as an intellectual.",
+                "B. She uses sarcasm and witty observations to highlight absurdities.",
+                "C. She expresses them through long, emotional personal stories.",
+                "D. She remains neutral and only asks questions to draw others out.",
+                "E. She states them aggressively and refuses to listen to counterpoints.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She uses sarcasm and witty observations to highlight absurdities.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "The exclamation point in the title scares me.  Y'know, it's not just Freud, it's Freud!",
+                    "dia_id": "1:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, oh, but y'know, you always see these really beautiful women with these really nothing guys, you could be one of those guys.",
+                    "dia_id": "2:16"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Based on this play? ...Based on this play!",
+                    "dia_id": "2:36"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Yeah, you are, Chloe. Remember when I lived with you? You were like, a little, y'know,  Ree! Ree! Ree! Ree!",
+                    "dia_id": "4:15"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Before the play, she makes a witty, observant comment about the title's punctuation, highlighting its ominous tone (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When encouraging Dexter, she uses a backhanded compliment/observation about \"beautiful women with really nothing guys\" (E2), which is sarcastically encouraging.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When Ethan is excited about the agency card, she repeats \"Based on this play?\" with a sarcastic exclamation, casting doubt (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "In the argument about Chloe's neatness, she uses a mocking sound effect (\"Ree! Ree! Ree!\") to imitate Chloe's high-strung behavior (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "Fiona consistently employs sarcasm, witty observations, and humorous imitation to express her judgments and opinions, rather than direct aggression or emotional stories.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 214,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "What is Fiona's immediate emotional reaction to Ethen's play title, before it begins?\n\nYou must choose the correct answer from the following options:\n['A. She is bored and thinks it will be too academic.', \"B. She is confused, because she doesn't understand the connection.\", 'C. She is enthusiastic, because she is a fan of Freudian theory.', 'D. She is scared or cautious because of its intensity.', 'E. She is proud of her friend, because she got a leading role.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She is bored and thinks it will be too academic.",
+                "B. She is confused because she doesn't understand the reference.",
+                "C. She is excited because she is a fan of Freudian theory.",
+                "D. She is scared or apprehensive about its intensity.",
+                "E. She is proud of her friend for landing a leading role.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She is scared or apprehensive about its intensity.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "The exclamation point in the title scares me.  Y'know, it's not just Freud, it's Freud!",
+                    "dia_id": "1:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "You can always spot someone who's never seen one of his plays before. Notice, no fear, no sense of impending doom...",
+                    "dia_id": "1:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona directly states her feeling: \"The exclamation point in the title scares me.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She elaborates by emphasizing the exclamation, implying an amplified, intense version of Freud.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter's prior comment about new attendees having \"no fear, no sense of impending doom\" sets a context that Fiona's reaction (fear) is the expected, informed one.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Fiona's immediate, explicit reaction is one of apprehension or fear regarding the play's intense presentation, as signaled by the title's punctuation.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 215,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "During her recent trip to the countryside, Fiona spent several days hiking through the dense forest, where she encountered a variety of wildlife and reflected on her personal relationships. She found herself contemplating the balance between solitude and connection in a way she never had before.\n\nIn the debate about monogamy, what was the sequence of Fiona's actions regarding Bennett's opinion?",
+            "option": [
+                "A. She changed her own opinion after hearing Bennett's theory about Leakey.",
+                "B. She challenged Dexter's view, then directly polled Bennett to disprove it.",
+                "C. She asked him for his opinion, then agreed with his anthropological perspective.",
+                "D. She defended Bennett when others laughed at his initial denial.",
+                "E. She remained silent, then summarized what Bennett was trying to say.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She challenged Dexter's view, then directly polled Bennett to disprove it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Well, y'know, I had some trouble with it at first too, but the way I look at it is, I get all the good stuff: all the fun, all the talking, all the sex; and none of the responsibility. I mean, this is every guy's fantasy!",
+                    "dia_id": "3:32"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, yeah. That is not true. Bennett, is this your fantasy?",
+                    "dia_id": "3:33"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter makes a claim that his situation is \"every guy's fantasy.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona immediately challenges this generalization (\"Oh, yeah. That is not true.\").",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She then directly turns to Bennett and asks him a yes/no question (\"Bennett, is this your fantasy?\") to test and potentially disprove Dexter's claim.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The sequence is: 1. Challenge Dexter's statement, 2. Directly poll Bennett to gather evidence against it.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 216,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "What is the common past experience that Fiona uses as evidence against Chloe during their argument about order?\n\nYou must choose the correct answer from the following options:\n['A. They worked together on a play where Chloe was too strict as a director.', \"B. They were childhood friends and Fiona often had to clean up Chloe's mess.\", 'C. They went on a road trip where Chloe insisted on meticulous planning of the trip.', 'D. They shared an apartment where Fiona found Chloe too anxious and controlling.', 'E. They dated the same man and Chloe organized her life before he broke up with her.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. They worked together on a play where Chloe was an overly strict stage manager.",
+                "B. They were childhood friends and Fiona often had to clean up Chloe's messes.",
+                "C. They went on a road trip where Chloe insisted on a meticulous itinerary.",
+                "D. They shared an apartment where Fiona found Chloe to be high-strung and controlling.",
+                "E. They dated the same guy and Chloe organized his life before breaking up with him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. They shared an apartment where Fiona found Chloe to be high-strung and controlling.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Yeah, you are, Chloe. Remember when I lived with you? You were like, a little, y'know,  Ree! Ree! Ree! Ree!",
+                    "dia_id": "4:15"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona says, \"Remember when I lived with you?\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She uses this shared living experience as direct evidence to support the claim that Chloe is overly neat/controlling (\"you are\").",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She imitates Chloe's behavior during that time with a high-pitched, frantic sound (\"Ree! Ree! Ree! Ree!\"), characterizing her as high-strung.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The specific past experience Fiona references is cohabitation, during which she found Chloe to be annoyingly high-strung and controlling about order.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "qid": 217,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "Which of the following statements reflects the status of Dexter’s relationship with Aurora based on what was discussed?",
+            "option": [
+                "A. Aurora is married to Dexter and has no other relationships.",
+                "B. Aurora is dating Ethan, not Dexter.",
+                "C. Aurora is married to someone else and is also dating Dexter.",
+                "D. Aurora is divorced and considers Dexter her only romantic option.",
+                "E. Aurora is single and has no other romantic interests."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Aurora",
+                    "utterance": "My husband.",
+                    "dia_id": "3:15"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Aurora",
+                    "utterance": "Ethan is my... boyfriend.",
+                    "dia_id": "3:24"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "So explain something to me here, uh, what kind of a relationship do you imagine us having if you already have a husband and a boyfriend?",
+                    "dia_id": "3:26"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Aurora refers to 'Rick' as her husband in session 3.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Aurora also refers to Ethan as her boyfriend in session 3.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter questions the nature of his relationship with Aurora, acknowledging that she already has a husband and a boyfriend, suggesting the relationship is not exclusive or conventional.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "label": "事实提取（多对话）",
+            "qid": 535
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "According to the conversation, which of the following most accurately describes the nature of Ethan’s relationship with Aurora?",
+            "option": [
+                "A. Ethan is Aurora’s husband.",
+                "B. Ethan is Aurora’s ex-boyfriend.",
+                "C. Ethan is Aurora’s boyfriend and is aware of her other relationships.",
+                "D. Ethan is Aurora’s father.",
+                "E. Ethan is Aurora’s friend."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Aurora",
+                    "utterance": "Ethan is my... boyfriend.",
+                    "dia_id": "3:24"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "I've done nothing but crappy plays for six years. And I finally get my shot, and I blow it!",
+                    "dia_id": "8:14"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Aurora",
+                    "utterance": "I imagine he'd be okay with you because really, he's okay with Ethan.",
+                    "dia_id": "3:22"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Aurora identifies Ethan as her boyfriend.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan is in a relationship with Aurora, as he acknowledges during a conversation about his past failures.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ethan is aware of Aurora’s other relationships because Aurora says her husband is okay with Ethan, implying Ethan is not the only person in her life.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "label": "事实提取（多对话）",
+            "qid": 536
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which statement best describes Bennett’s perception of the relationship status of Dexter and Aurora?",
+            "option": [
+                "A. Bennett believes Dexter is Aurora's husband.",
+                "B. Bennett believes Dexter is Aurora’s ex-boyfriend.",
+                "C. Bennett thinks Dexter is Aurora’s boyfriend and she is already in a relationship.",
+                "D. Bennett thinks Dexter is Aurora’s estranged father.",
+                "E. Bennett believes Dexter and Aurora are both single."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "He could never get a woman like that in a million years.",
+                    "dia_id": "3:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Aurora",
+                    "utterance": "My husband.",
+                    "dia_id": "3:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Aurora",
+                    "utterance": "Ethan is my... boyfriend.",
+                    "dia_id": "3:24"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett refers to Dexter as not being in a position to pursue a woman like Aurora.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Aurora identified Rick as her husband and Ethan as her boyfriend, confirming that she is in multiple relationships.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett perceives that Dexter is not in a relationship with Aurora, but rather is trying to pursue her while she is already in relationships with others.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "label": "事实提取（多对话）",
+            "qid": 537
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "Which of the following most accurately describes Chloe’s claim about her capabilities based on the context?",
+            "option": [
+                "A. Chloe says she can clean very well and never makes mistakes.",
+                "B. Chloe says she can clean, but is perfectly aware of her shortcomings.",
+                "C. Chloe says she is responsible and organized, but she can be a kook.",
+                "D. Chloe says she cannot be a kook because that would mean she is reckless.",
+                "E. Chloe says she would never make a mistake in her cleaning."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Okay, so I'm responsible, I'm organised. But hey, I can be a kook.",
+                    "dia_id": "4:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Yeah, you are, Chloe. Remember when I lived with you? You were like, a little, y'know,  Ree! Ree! Ree! Ree!",
+                    "dia_id": "4:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Oh c'mon! When we were kids, yours was the only Raggedy Ann doll that wasn't raggedy!",
+                    "dia_id": "4:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe explicitly states she is responsible, organized, but can be a kook.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona and Bennett both reference specific childhood details, showing that Chloe was often seen as responsible and organized, with some kook tendencies.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe’s claim about her ability to be a kook aligns with how her friends perceive her, reinforcing that her statement is genuine and not exaggerated.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 6,
+            "label": "事实提取（多对话）",
+            "qid": 538
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Ariel",
+        "speaker_1": "Dexter",
+        "speaker_2": "Fiona",
+        "speaker_3": "Bennett",
+        "speaker_4": "Ethan",
+        "session_1_date_time": "October 27, 1994",
+        "session_1": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:1",
+                "text": "Ooh! Look! Look! Look! Look, there's Ethan's picture! This is so exciting!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:2",
+                "text": "You can always spot someone who's never seen one of his plays before. Notice, no fear, no sense of impending doom..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:3",
+                "text": "The exclamation point in the title scares me.  Y'know, it's not just Freud, it's Freud!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:4",
+                "text": "Oh, shhh, shh. Magic is about to happen."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:5",
+                "text": "Vell, Eva, ve've done some excellent vork here, and I vould have to say, your pwoblem is qviiite clear."
+            }
+        ],
+        "speaker_5": "Chloe",
+        "speaker_6": "All",
+        "speaker_7": "Aurora",
+        "session_2_date_time": "October 27, 1994",
+        "session_2": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:1",
+                "text": "God. I feel violated."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:2",
+                "text": "Did anybody else feel they just wanted to peel the skin off their body, to have something else to do?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:3",
+                "text": "Bennett, ten o'clock."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:4",
+                "text": "Is it? Feels like two."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:5",
+                "text": "No, ten o'clock."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:6",
+                "text": "What?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:7",
+                "text": "There's a beautiful woman at eight, nine, ten o'clock!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:8",
+                "text": "Oh. Hel-lo!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:9",
+                "text": "She's amazing! She makes the women that I dream about look like short, fat, bald men!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:10",
+                "text": "Well, go over to her! She's not with anyone."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Oh yeah, and what would my opening line be? 'Excuse me. Blarrglarrghh.'"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:12",
+                "text": "Oh, c'mon. She's a person, you can do it!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:13",
+                "text": "Oh please, could she be more out of my league? Bennett, back me up here."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:14",
+                "text": "He could never get a woman like that in a million years."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:15",
+                "text": "Thank you, buddy."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:16",
+                "text": "Oh, oh, but y'know, you always see these really beautiful women with these really nothing guys, you could be one of those guys."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:17",
+                "text": "You could do that!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:18",
+                "text": "Y'think?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:19",
+                "text": "Yeah!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:20",
+                "text": "Oh God, I can't believe I'm even considering this... I'm very very aware of my tongue..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:21",
+                "text": "C'mon! C'mon!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:22",
+                "text": "Here goes."
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "2:23",
+                "text": "...Yes?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:24",
+                "text": "Hi.... um... okay, next word... would be... Dexter! Dexter is my name, and, uh......hi."
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "2:25",
+                "text": "Yes, you said that."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:26",
+                "text": "Yes, yes I did, but what I didn't say was what I was about to say, what I wanted to say was, uh... would you like to go out with me sometime, thankyou, goodnight."
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "2:27",
+                "text": "Dexter?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:28",
+                "text": "Hey! You're in a play! I didn't know you could dance! You had a beard!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:29",
+                "text": "Whadja think?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:30",
+                "text": "...Hey! You're in a play! I didn't know you could dance! You had a beard!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:31",
+                "text": "C'mon, you guys, it wasn't that bad. It was better than that thing I did with the trolls, at least you got to see my head."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:32",
+                "text": "Saw your head. Saw your head."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:33",
+                "text": "She said yes!! She said yes!!  Awful play, man. Whoah.  Her name's Aurora, and she's Italian, and she pronounces my name 'Chand-lrr'. 'Chand-lrr'. I think I like it better that way.  Oh, listen, the usher gave me this to give to you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:34",
+                "text": "What is it?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:35",
+                "text": "The Estelle Leonard Talent Agency. Wow, an agency left me its card! Maybe they wanna sign me!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:36",
+                "text": "Based on this play? ...Based on this play!"
+            }
+        ],
+        "session_3_date_time": "October 28, 1994",
+        "session_3": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:1",
+                "text": "Hey, kids."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:2",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:3",
+                "text": "No, 'cause this line is passion, and this is... just a line."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:4",
+                "text": "Well, I can't believe I've been here almost seven seconds and you haven't asked me how my date went."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:5",
+                "text": "Oh, right, right. How was your date, 'Chand-lrr'?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:6",
+                "text": "It was unbelievable. I-I've never met anyone like her. She's had the most amazing life! She was in the Israeli army..."
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:7",
+                "text": "...Luckily none of the bullets hit the engine block. So, we made it to the border, but just barely, and I- ...I've been talking about myself all night long, I'm sorry. What about you? Tell me one of your stories."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:8",
+                "text": "Alright. Once I got on the subway, right, and it was at night, and I rode it all the way to Brooklyn... just for the hell of it."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:9",
+                "text": "We talked 'til like two. It was this perfect evening... more or less."
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:10",
+                "text": "...All of a sudden we realised we were in Yammon."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:11",
+                "text": "Oh, I'm sorry, so 'we' is?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:12",
+                "text": "'We' would be me and Rick."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:13",
+                "text": "Who's Rick?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:14",
+                "text": "Who's Rick?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:15",
+                "text": "My husband."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:16",
+                "text": "Ooooohhh."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:17",
+                "text": "Oh, so you're divorced?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:18",
+                "text": "No."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:19",
+                "text": "Oh, I'm sorry, then you're widowed?...Hopefully?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:20",
+                "text": "No, I'm still married."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:21",
+                "text": "So tell me, how do- how do you think your husband would feel about you sitting here with me?...Sliding your foot so far up my pant leg you can count the change in my pocket?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:22",
+                "text": "Don't worry. I imagine he'd be okay with you because really, he's okay with Ethan."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:23",
+                "text": "Ethan? There's, there's an Ethan?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:24",
+                "text": "Mmmm... Ethan is my... boyfriend."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:25",
+                "text": "What?!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:26",
+                "text": "So explain something to me here, uh, what kind of a relationship do you imagine us having if you already have a husband and a boyfriend?"
+            },
+            {
+                "speaker": "Aurora",
+                "dia_id": "3:27",
+                "text": "I suppose mainly sexual."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:28",
+                "text": "...Hm."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:29",
+                "text": "Oh. I'm sorry it didn't work out."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:30",
+                "text": "What 'not work out'? I'm seeing her again on Thursday. Didn't you listen to the story?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:31",
+                "text": "Didn't you listen to the story? I mean, this is twisted! How could you get involved with a woman like this?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:32",
+                "text": "Well, y'know, I had some trouble with it at first too, but the way I look at it is, I get all the good stuff: all the fun, all the talking, all the sex; and none of the responsibility. I mean, this is every guy's fantasy!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:33",
+                "text": "Oh, yeah. That is not true. Bennett, is this your fantasy?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:34",
+                "text": "No, of course not!  ...Yeah, yeah, it is."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:35",
+                "text": "What? So you guys don't mind going out with someone else who's going out with someone else?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:36",
+                "text": "I couldn't do it."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:37",
+                "text": "Good for you, Ethan."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:38",
+                "text": "When I'm with a woman, I need to know that I'm going out with more people than she is."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:39",
+                "text": "Well, y'know, monogamy can be a, uh, tricky concept. I mean, anthropologically speaking-"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:40",
+                "text": "Fine. Fine, alright, now you'll never know."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:41",
+                "text": "We're kidding. C'mon, tell us!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:42",
+                "text": "Yeah! C'mon!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:43",
+                "text": "Alright. There's a theory, put forth by Richard Leakey-"
+            }
+        ],
+        "session_4_date_time": "October 28, 1994",
+        "session_4": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:1",
+                "text": "Tah-daaah!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:2",
+                "text": "Are we greeting each other this way now? 'Cause I like that."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:3",
+                "text": "Look! I cleaned! I did the windows, I did the floors... I even used all the attachments on the vacuum, except that little round one with the bristles, I don't know what that's for."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:4",
+                "text": "Oh yeah, nobody knows. And we're not supposed to ask."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:5",
+                "text": "Well, whaddya think?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "4:6",
+                "text": "Very clean! It looks great! Terrific!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:7",
+                "text": "...Oh! I-I see you moved the green ottoman."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "4:8",
+                "text": "Uh-oh..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:9",
+                "text": "How-how did that happen?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:10",
+                "text": "I dunno.. I-I thought it looked better there. And I- and also, it's an extra seat around the coffee table."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:11",
+                "text": "Yeah, yeah, it's interesting.. but y'know what? Just for fun, let's see what it looked like in the old spot.  Alright, just to compare. Let's see. Well, it looks good there too. Let's just leave it there for a while."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:12",
+                "text": "I can't believe you tried to move the green ottoman."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:13",
+                "text": "Thank God you didn't try to fan out the magazines. I mean, she'll scratch your eyes right out."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:14",
+                "text": "You guys, I am not that bad!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:15",
+                "text": "Yeah, you are, Chloe. Remember when I lived with you? You were like, a little, y'know,  Ree! Ree! Ree! Ree!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:16",
+                "text": "That is so unfair!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:17",
+                "text": "Oh c'mon! When we were kids, yours was the only Raggedy Ann doll that wasn't raggedy!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:18",
+                "text": "Okay, so I'm responsible, I'm organised. But hey, I can be a kook."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:19",
+                "text": "Alright, you madcap gal. Try to imagine this. The phone bill arrives, but you don't pay it right away."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:20",
+                "text": "Why not?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:21",
+                "text": "Because you're a kook! Instead you wait until they send you a notice."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:22",
+                "text": "I could do that."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:23",
+                "text": "Okay, uh, you let me go grocery shopping, and I buy laundry detergent, but it's not the one with the easy-pour spout."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:24",
+                "text": "Why would someone do that?! ...One might wonder."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:25",
+                "text": "Someone's left a glass on the coffee table. There's no coaster. It's a cold drink, it's a hot day. Little beads of condensation are inching their way closer and closer to the surface of the wood..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:26",
+                "text": "STOP IT!! ...Oh my God. It's true! Who am I?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:27",
+                "text": "Chloe? You're Mom."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:28",
+                "text": "Ree! Ree! Ree! Ree! Ree!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:29",
+                "text": "Uh huh.. uh huh... oh my God! Okay! Okay, I'll be there!  That was my agent.  My agent has just gotten me a job...in the new Al Pacino movie!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "4:30",
+                "text": "Oh my God! Whoah!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:31",
+                "text": "Well, what's the part?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:32",
+                "text": "Can you believe this? Al Pacino! This guy's the reason I became an actor! \"I'm out of order? Pfeeeh. You're out of order! This whole courtroom's out of order!\""
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:33",
+                "text": "Seriously, what-what's the part?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:34",
+                "text": "\"Just when I thought I was out, they pull me back in!\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:35",
+                "text": "C'mon, seriously, Ethan, what's the part?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:36",
+                "text": "...I'm his"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:37",
+                "text": "..You're, you're 'mah mah mah' what?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:38",
+                "text": "...I'm his butt double. 'Kay? I play Al Pacino's butt. Alright? He goes into the shower, and then- I'm his butt."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:39",
+                "text": "Oh my God."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:40",
+                "text": "C'mon, you guys. This is a real movie, and Al Pacino's in it, and that's big!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:41",
+                "text": "Oh no, it's terrific, it's... it's... y'know, you deserve this, after all your years of struggling, you've finally been able to crack your way into showbusiness."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:42",
+                "text": "Okay, okay, fine! Make jokes, I don't care! This is a big break for me!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:43",
+                "text": "You're right, you're right, it is...So you gonna invite us all to the big opening?"
+            }
+        ],
+        "session_8_date_time": "October 30, 1994",
+        "session_8": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:1",
+                "text": "Look at it this way: you dumped her. Right? I mean, this woman was unbelievably sexy, and beautiful, intelligent, unattainable... Tell me why you did this again?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:2",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:3",
+                "text": "Hey, waitwait, aren't you the guy that plays the butt in the new Al Pacino movie?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:4",
+                "text": "Nope."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:5",
+                "text": "No? What happened, big guy?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:6",
+                "text": "\"Big guy?\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:7",
+                "text": "It felt like a 'big guy' moment."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:8",
+                "text": "I got fired."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:9",
+                "text": "Oh!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:10",
+                "text": "Yeah, they said I acted too much with it. I told everybody about this! Now everybody's gonna go to the theatre, expecting to see me, and..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:11",
+                "text": "Oh, Ethan, you know what, no-one is gonna be able to tell."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:12",
+                "text": "My mom will."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:13",
+                "text": "Something so sweet and...disturbing about that."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:14",
+                "text": "Y'know, I've done nothing but crappy plays for six years. And I finally get my shot, and I blow it!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:15",
+                "text": "Maybe this wasn't your shot."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:16",
+                "text": "Yeah, I mean... I think when it's your shot, y'know, you-you know it's your shot. Did it... feel like your shot..?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:17",
+                "text": "Hard to tell, I was naked."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:18",
+                "text": "No, I don't think this was your shot. I mean, I don't even think you just get one shot. I really believe big things are gonna happen for you, I do! You've gotta just keep thinking about the day that some kid is gonna run up to his friends and go 'I got the part! I got the part! I'm gonna be Ethan Tribbiani's ass!'."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:19",
+                "text": "Yeah? That's so nice!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:20",
+                "text": "I'm sorry, Ethan. I'm gonna go to bed, guys."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:21",
+                "text": "Night."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:22",
+                "text": "Uh, Mon, you-you gonna leave your shoes out here?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:23",
+                "text": "Uh-huh!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:24",
+                "text": "Really? Just casually strewn about in that reckless haphazard manner?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:25",
+                "text": "Doesn't matter, I'll get 'em tomorrow. Or not. Whenever."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:26",
+                "text": "She is a kook."
+            }
+        ]
+    }
+}

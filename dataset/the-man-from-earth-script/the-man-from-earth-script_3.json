@@ -4,58 +4,16 @@
       {
         "character": "Sandy",
         "category": 1,
-        "question": "Which statement best describes Sandy's underlying perspective on the longevity of relationships?",
+        "question": "Which statement best captures Sandy's fundamental outlook on the longevity and value of romantic relationships?",
         "option": [
-          "A. She expects relationships to last indefinitely if both parties are committed.",
-          "B. She believes that true love transcends the boundaries of physical aging.",
-          "C. She views permanent relationships as an illusion due to life's unpredictable nature.",
-          "D. She thinks that a decade is the maximum duration any healthy relationship can survive.",
-          "E. She insists that relationships should only be pursued if they guarantee a lifelong bond."
+          "A. She believes true love guarantees a lifetime of shared experiences without interruption.",
+          "B. She prioritizes long-term security and refuses to invest in relationships with an expiration date.",
+          "C. She accepts that unpredictable factors inevitably truncate relationships, making any duration of connection worthwhile.",
+          "D. She assumes that all relationships will end in divorce within three years, mirroring her family history.",
+          "E. She relies on geographical stability to ensure her romantic partners never have a reason to leave."
         ],
         "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Sandy",
-            "utterance": "How long's forever? Who ever really has it?",
-            "dia_id": "D10:18"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Then there's death, illness, acts of god...no one knows how long they have. Or how little. I love you. Take whatever you can get.",
-            "dia_id": "D10:20"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy questions the existence of 'forever' in any context.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She lists unpredictable factors that end relationships, showing a pragmatic view of love's duration.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 2,
-        "question": "How does Sandy emotionally process John's refusal to offer her a permanent future?",
-        "option": [
-          "A. She becomes deeply offended and demands he leave immediately.",
-          "B. She rationalizes the limitation and attempts to negotiate a temporary arrangement.",
-          "C. She completely ignores his warning and assumes he is making a joke.",
-          "D. She breaks down crying because her previous relationships also failed.",
-          "E. She angrily accuses him of using his supposed immortality as an excuse to avoid commitment."
-        ],
-        "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -66,29 +24,30 @@
           {
             "id": "E2",
             "speaker": "Sandy",
-            "utterance": "Then there's death, illness, acts of god...no one knows how long they have. Or how little. I love you. Take whatever you can get.",
-            "dia_id": "D10:20"
+            "utterance": "How long's forever? Who ever really has it?",
+            "dia_id": "D10:18"
           },
           {
             "id": "E3",
-            "speaker": "John",
-            "utterance": "Like ten years?",
-            "dia_id": "D10:21"
+            "speaker": "Sandy",
+            "utterance": "Then there's death, illness, acts of god...no one knows how long they have. Or how little. I love you. Take whatever you can get.",
+            "dia_id": "D10:20"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John states he cannot give her forever.",
+            "inference": "Sandy challenges the concept of 'forever' by pointing out that unpredictable factors like illness and acts of god can end any relationship.",
             "based_on": [
-              "E1"
+              "E2",
+              "E3"
             ]
           },
           {
             "step": 2,
-            "inference": "Sandy counters by accepting whatever time is available, leading to a negotiation of duration.",
+            "inference": "Because she believes no one knows how much time they have, she advocates for accepting whatever time is available ('Take whatever you can get'), prioritizing the immediate connection over guaranteed longevity.",
             "based_on": [
-              "E2",
+              "E1",
               "E3"
             ]
           }
@@ -96,16 +55,17 @@
       },
       {
         "character": "Sandy",
-        "category": 3,
-        "question": "At what point did Sandy's romantic feelings for her colleague begin?",
+        "category": 2,
+        "question": "When did Sandy's romantic feelings for John first develop?",
         "option": [
-          "A. Right after he gave her the burin artifact.",
-          "B. Shortly after they started packing the moving boxes.",
-          "C. Sometime during her initial days working at the office.",
-          "D. Immediately following his revelation about being a caveman.",
-          "E. After she learned about his May-December romances."
+          "A. Immediately after John confessed that he could not give her forever.",
+          "B. During her first week working at the office.",
+          "C. Right after her parents' marriage dissolved.",
+          "D. When John helped her load boxes into the vehicle.",
+          "E. After she realized John was moving on from his current identity."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -115,6 +75,12 @@
           },
           {
             "id": "E2",
+            "speaker": "John",
+            "utterance": "I know.",
+            "dia_id": "D10:3"
+          },
+          {
+            "id": "E3",
             "speaker": "Sandy",
             "utterance": "Since my first week at the office.",
             "dia_id": "D10:4"
@@ -123,59 +89,9 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy explicitly states the timeline of her feelings.",
+            "inference": "Sandy explicitly states that her feelings of love have existed since her first week at the office.",
             "based_on": [
               "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 4,
-        "question": "What specific physical activity is Sandy engaged in when she brings up her feelings?",
-        "option": [
-          "A. She is examining an old pen from a thrift shop.",
-          "B. She is making a phone call to verify a story.",
-          "C. She is helping transfer packed containers.",
-          "D. She is looking at a painting by Van Gogh.",
-          "E. She is actively blocking someone from leaving the room."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I've got boxes to move.",
-            "dia_id": "D9:48"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "I'll give you a hand.",
-            "dia_id": "D9:49"
-          },
-          {
-            "id": "E3",
-            "speaker": null,
-            "utterance": "John and Sandy load a few boxes. Sandy pauses",
-            "dia_id": "D10:0"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy offers to help John move boxes.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The conversation about her feelings occurs while they are actively loading these boxes.",
-            "based_on": [
               "E3"
             ]
           }
@@ -183,16 +99,17 @@
       },
       {
         "character": "Sandy",
-        "category": 5,
-        "question": "What is explicitly revealed about the marital status of Sandy's biological parents?",
+        "category": 3,
+        "question": "How does Sandy's articulation of her family history progress when discussing relationship lifespans?",
         "option": [
-          "A. They remained together until a tragic accident occurred.",
-          "B. They separated before her birth.",
-          "C. They were married for a total of ten years.",
-          "D. They divorced when she was three years old.",
-          "E. They never officially married but lived together."
+          "A. She first mentions her mom's three-year marriage, then clarifies that her parents split before she was born.",
+          "B. She first describes her parents splitting before her birth, then cites her mother's subsequent three-year marriage.",
+          "C. She initially blames acts of god, then shifts to blaming her parents' early divorce.",
+          "D. She outlines a ten-year relationship plan, then updates it to a three-year expectation based on her mother's history.",
+          "E. She begins by asking John for forever, but updates her stance to accept a temporary May-December romance."
         ],
         "answer": "B",
+        "label": "Temporal Evolution",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -204,7 +121,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy directly states the timing of her parents' separation relative to her birth.",
+            "inference": "Sandy sequentially lists the breakdown of her biological parents' relationship before her birth, followed by the specific three-year duration of her mother's next marriage, illustrating her evolving perspective on relationship longevity.",
             "based_on": [
               "E1"
             ]
@@ -213,16 +130,76 @@
       },
       {
         "character": "Sandy",
-        "category": 6,
-        "question": "How many years did Sandy's mother's subsequent marriage last?",
+        "category": 4,
+        "question": "How does Sandy navigate John's attempts to distance himself emotionally during their private conversation?",
         "option": [
-          "A. 1",
-          "B. 3",
-          "C. 5",
-          "D. 7",
-          "E. 10"
+          "A. She physically attacks him out of frustration over his evasiveness.",
+          "B. She dismisses his historical claims and mocks his story about the cavemen.",
+          "C. She playfully challenges his assertions and explicitly confirms her willingness to compromise on the relationship's duration.",
+          "D. She enlists Dan to convince John to stay by bringing up artifacts from his past.",
+          "E. She breaks down crying when John admits he is only fond of her."
         ],
-        "answer": "B",
+        "answer": "C",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "Do you really think you're a caveman?",
+            "dia_id": "D10:7"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Fond of you... Certainly attracted to you.",
+            "dia_id": "D10:11"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "That's it? ...I can work with that.",
+            "dia_id": "D10:13",
+            "dia_id_2": "D10:14"
+          },
+          {
+            "id": "E4",
+            "speaker": "Sandy",
+            "utterance": "I love you. Take whatever you can get.",
+            "dia_id": "D10:20"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy playfully challenges John's premise ('Do you really think you're a caveman?').",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "When John offers a limited emotional commitment ('Fond of you', 'attracted'), Sandy actively accepts this compromise ('I can work with that', 'Take whatever you can get').",
+            "based_on": [
+              "E2",
+              "E3",
+              "E4"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "In what specific year did Sandy's biological parents finalize their legal separation?",
+        "option": [
+          "A. 1862",
+          "B. 1890",
+          "C. Exactly three years before she was born.",
+          "D. Ten years prior to her joining the office.",
+          "E. During the Bronze Age."
+        ],
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -234,7 +211,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "The text provides an exact numeric duration for the mother's next marriage.",
+            "inference": "The text states her parents split before she was born, but no exact year or specific timeline regarding the legal separation date is provided in the dialogue.",
             "based_on": [
               "E1"
             ]
@@ -242,43 +219,230 @@
         ]
       },
       {
-        "character": "Harry",
+        "character": "John",
         "category": 1,
-        "question": "Which action highlights Harry's skeptical and physically empirical approach to evaluating unusual claims?",
+        "question": "Which behavior best reflects John's long-term strategy for managing his identity across extended lifespans?",
         "option": [
-          "A. He immediately tries to call the authorities to report a fraud.",
-          "B. He quotes philosophical logic to disprove the absurd premises.",
-          "C. He asks detailed historical questions about the Bronze Age.",
-          "D. He executes a surprise physical attack to test the subject's capabilities.",
-          "E. He searches the individual's belongings for hidden artifacts."
+          "A. He frequently preserves artifacts from his early life to prove his origins to skeptics.",
+          "B. He violently defends himself against strangers to prevent them from discovering his secret.",
+          "C. He relies heavily on the credentials and references of his previous identities to maintain his social standing.",
+          "D. He periodically adopts the persona of his own descendant to bypass administrative scrutiny.",
+          "E. He exclusively settles in centralized city-states to blend in with dense populations."
         ],
         "answer": "D",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": null,
-            "utterance": "As John enters the room, Harry jumps him, yelling.",
-            "dia_id": "D11:12"
+            "speaker": "John",
+            "utterance": "I've done that a few times, even passed as my own son. \"Oh, you're an engineer, too? You're Ben's son. He was a good man.\" Saves trouble with credentials and references.",
+            "dia_id": "D9:37"
           },
           {
             "id": "E2",
             "speaker": "John",
-            "utterance": "Why did you do that?",
-            "dia_id": "D11:16"
+            "utterance": "No. I don't have artifacts.",
+            "dia_id": "D9:56"
           },
           {
             "id": "E3",
-            "speaker": "Harry",
-            "utterance": "I wanted to see how fast you were. Check your reflexes.",
-            "dia_id": "D11:17"
+            "speaker": "John",
+            "utterance": "Tougher still in city states where authority was centralized. Strangers were suspect. It seemed as though I was always moving on.",
+            "dia_id": "D11:54"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry uses a physical ambush to gather empirical data about John's reflexes.",
+            "inference": "John explicitly avoids keeping artifacts and finds centralized city-states difficult for blending in.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "To manage his ongoing existence and avoid trouble with references, he uses the tactic of passing as his own son.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 2,
+        "question": "What specific consequence did John face in Belgium in 1862?",
+        "option": [
+          "A. He was forced to migrate to America with French immigrants.",
+          "B. He spent a year in jail for faking a government application.",
+          "C. He had an infected jaw and was abandoned by his peers.",
+          "D. He was arrested for claiming to be Jacque Borne, a pig farmer.",
+          "E. He was busted by a centralized authority for trading copper and tin."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "On the other hand, I've been busted a few times.",
+            "dia_id": "D9:38"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Spent a year in jail, Belgium, 1862- I won't forget that- For faking a government application.",
+            "dia_id": "D9:39"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John states directly that in 1862 in Belgium, he spent a year in jail due to faking a government application.",
             "based_on": [
               "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 3,
+        "question": "How did John's geographical and societal environment change from his earliest memories to the Bronze Age?",
+        "option": [
+          "A. He started in dense urban sprawl, eventually retreating to lonesome tundra and forests.",
+          "B. He transitioned from migrating through flat, endless natural spaces to following structured eastern trade routes.",
+          "C. He began as a Sumerian city-dweller and evolved into a solitary hunter-gatherer.",
+          "D. He moved from sailing the Mediterranean as a Phoenician to hunting mammoths in the north.",
+          "E. He started as a pig farmer in France and ended up studying with the Buddha in India."
+        ],
+        "answer": "B",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Picture it on my scale- I migrated through an endless flat space full of endless new things- Forests, mountains, tundra, canyons. My memory sees what I saw then.",
+            "dia_id": "D9:30"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Eventually I headed to the East. I'd grown curious about the world.",
+            "dia_id": "D11:49"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "It was around the beginning of the Bronze Age, so I followed the trade routes from the East. Copper. Tin. Learning languages as I went.",
+            "dia_id": "D11:51"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John's earliest environmental recollection involves migrating through endless flat spaces and natural terrain.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Over time, his trajectory shifted Eastwards, culminating in navigating structured trade routes for copper and tin during the Bronze Age.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 4,
+        "question": "Which of the following describes John's interaction with the Buddha?",
+        "option": [
+          "A. John taught the Buddha about the creation myths of the Sumerians.",
+          "B. The Buddha attempted to expose John's secret but failed.",
+          "C. John studied under him until the Buddha's death, though John kept his true nature a secret.",
+          "D. The Buddha gave John a painting to commemorate their time together.",
+          "E. John acted as a father figure to the Buddha to bypass village suspicions."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "You studied... with the Buddha?",
+            "dia_id": "D11:59"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Until he died. He knew there was something different about me. I never told him.",
+            "dia_id": "D11:60"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John confirms he studied with the Buddha until the Buddha passed away, noting the Buddha sensed something different, but John never explicitly revealed his secret.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "What specific item did John instruct Dan to keep?",
+        "option": [
+          "A. A Nolde landscape painting.",
+          "B. A thrift shop burin.",
+          "C. A fake government application.",
+          "D. A pen.",
+          "E. A piece of copper from the Bronze Age."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Wouldn't you have some relic, an artifact to remind you of your early life? Like this, maybe? (holds up the burin)",
+            "dia_id": "D9:50",
+            "dia_id_2": "D9:51"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Thrift shop. Really.",
+            "dia_id": "D9:52"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "(to Dan) Keep that.",
+            "dia_id": "D9:58",
+            "dia_id_2": "D9:59"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan holds up an object identified as a burin.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "John addresses Dan and explicitly tells him to 'Keep that,' referring to the burin they were just discussing.",
+            "based_on": [
               "E2",
               "E3"
             ]
@@ -287,182 +451,17 @@
       },
       {
         "character": "Harry",
-        "category": 2,
-        "question": "How does Harry respond when an associate mocks the outcome of his physical demonstration?",
+        "category": 1,
+        "question": "Which of the following describes Harry's established martial arts background?",
         "option": [
-          "A. He laughs it off and admits his mistake.",
-          "B. He tells the associate to be quiet with a dismissive remark.",
-          "C. He challenges the associate to a physical fight as well.",
-          "D. He ignores the comment and continues questioning the subject.",
-          "E. He explains that he slipped on the floor during the attempt."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Smooth demonstration, Harry.",
-            "dia_id": "D11:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Sit on it, Dan.",
-            "dia_id": "D11:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan makes a sarcastic comment about Harry's demonstration.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry snaps back with a dismissive colloquialism.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 3,
-        "question": "In what sequence does Harry conduct his investigations into the situation in Scene 8?",
-        "option": [
-          "A. He tests reflexes first, then looks for hidden recording devices.",
-          "B. He asks about the Buddha first, then checks for microphones.",
-          "C. He searches for a hidden mic, and subsequently launches a physical ambush.",
-          "D. He makes a phone call, and then immediately tackles his colleague.",
-          "E. He questions the cave art, then proceeds to test physical speed."
+          "A. He is a master of Tai Chi.",
+          "B. He holds a first-degree black belt in Karate.",
+          "C. He is a second-degree black belt.",
+          "D. He trained under a Babylonian master.",
+          "E. He is an ex-military combat instructor."
         ],
         "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Checkin' for a hidden mic. Candid Camera.",
-            "dia_id": "D11:7"
-          },
-          {
-            "id": "E2",
-            "speaker": null,
-            "utterance": "As John enters the room, Harry jumps him, yelling.",
-            "dia_id": "D11:12"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry is checking for a mic earlier in the scene.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Later, when the target enters, he physically attacks.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 4,
-        "question": "What is the physical outcome of Harry's attempt to test his colleague's reflexes?",
-        "option": [
-          "A. Harry successfully pins his target to the ground.",
-          "B. Harry avoids a counterattack and remains standing.",
-          "C. Harry is pushed to the floor and struggles to get back up.",
-          "D. Harry manages to disarm his opponent of a hidden weapon.",
-          "E. Harry misses his target entirely and crashes into the boxes."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": null,
-            "utterance": "John expertly counters, and pushes him to the floor.",
-            "dia_id": "D11:14"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "(Struggling to his feet)",
-            "dia_id": "D11:23"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry's attack results in him being countered and put on the floor.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He experiences difficulty returning to a standing position.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 5,
-        "question": "Which specific individual does Harry directly tell to 'sit on it'?",
-        "option": [
-          "A. John",
-          "B. Art",
-          "C. Dan",
-          "D. Edith",
-          "E. Linda"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Smooth demonstration, Harry.",
-            "dia_id": "D11:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Sit on it, Dan.",
-            "dia_id": "D11:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry explicitly addresses Dan with this phrase.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 6,
-        "question": "What numeric rank does Harry claim to hold in martial arts?",
-        "option": [
-          "A. 1st degree",
-          "B. 2nd degree",
-          "C. 3rd degree",
-          "D. 4th degree",
-          "E. 5th degree"
-        ],
-        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -474,7 +473,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry states his specific martial arts degree.",
+            "inference": "Harry explicitly declares his rank as a second-degree black belt after failing to tackle John.",
             "based_on": [
               "E1"
             ]
@@ -482,78 +481,36 @@
         ]
       },
       {
-        "character": "John",
-        "category": 1,
-        "question": "Which statement accurately reflects John's long-term behavioral pattern regarding his personal history?",
-        "option": [
-          "A. He carefully preserves historical relics to validate his age.",
-          "B. He permanently settles in centralized city-states to avoid suspicion.",
-          "C. He regularly transitions to new identities to conceal his lack of aging.",
-          "D. He consistently reveals his true nature to one confidant per century.",
-          "E. He actively seeks out famous artists to document his existence."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "As you've said, there's talk of my not aging, and when that happens, I move on.",
-            "dia_id": "D9:35"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "I've done that a few times, even passed as my own son... Saves trouble with credentials and references.",
-            "dia_id": "D9:37"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John relocates when his lack of aging becomes noticeable.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He systematically creates new identities, such as passing as his own son.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
+        "character": "Harry",
         "category": 2,
-        "question": "What immediate motivation does John give for sharing his extraordinary claims with the group at this moment?",
+        "question": "What was Harry's stated motivation for suddenly jumping at John?",
         "option": [
-          "A. He wants them to publish his story in an academic journal.",
-          "B. He is fulfilling a promise he made to Sandy.",
-          "C. He acts on a sudden desire to depart without his usual deception.",
-          "D. He is trying to gauge if they are capable of understanding history.",
-          "E. He needs their financial assistance to set up his next identity."
+          "A. He believed John was about to attack Art.",
+          "B. He was trying to distract John while Art made a phone call.",
+          "C. He wanted to check John's reflexes and speed.",
+          "D. He was angry that John dismissed his martial arts background.",
+          "E. He wanted to prove that John was a supernatural being."
         ],
         "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Art",
-            "utterance": "Why're you doing this?",
-            "dia_id": "D9:45"
+            "speaker": "John",
+            "utterance": "Why did you do that?",
+            "dia_id": "D11:16"
           },
           {
             "id": "E2",
-            "speaker": "John",
-            "utterance": "A whim. Maybe not such a good idea. I... wanted to say goodbye to you as me, not what you thought I was.",
-            "dia_id": "D9:46"
+            "speaker": "Harry",
+            "utterance": "I wanted to see how fast you were. Check your reflexes.",
+            "dia_id": "D11:17"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John explains his action as a 'whim' to say a genuine goodbye.",
+            "inference": "When questioned by John about the attack, Harry explicitly states his goal was to check John's speed and reflexes.",
             "based_on": [
               "E1",
               "E2"
@@ -562,141 +519,122 @@
         ]
       },
       {
-        "character": "John",
+        "character": "Harry",
         "category": 3,
-        "question": "Based on John's timeline, which sequence of identities or experiences did he undertake?",
+        "question": "How does Harry's approach to John's narrative evolve over the course of the discussion?",
         "option": [
-          "A. He was Babylonian under Hammurabi, then Sumerian for 2,000 years.",
-          "B. He was a pig farmer in Belgium, and then studied with the Buddha.",
-          "C. He spent a year in jail, and later came to America with French immigrants.",
-          "D. He sailed as a Phoenician, and then moved East to the Mediterranean.",
-          "E. He hunted mammoths, and immediately after, worked with Cezanne."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Spent a year in jail, Belgium, 1862- I won't forget that- For faking a government application.",
-            "dia_id": "D9:39"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "1890, right after Van Gogh's death, with some French immigrants...",
-            "dia_id": "D9:41"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John was in a Belgian jail in 1862.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He came to America in 1890, which chronologically follows 1862.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 4,
-        "question": "How did John historically handle the problem of maintaining credibility when transitioning between lives?",
-        "option": [
-          "A. He forged ancient documents using his burin.",
-          "B. He convinced local authorities he was a traveling merchant.",
-          "C. He claimed to be the offspring of his previous persona.",
-          "D. He relied on letters of recommendation from famous artists.",
-          "E. He primarily lived in isolated mountain regions to avoid questions."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I've done that a few times, even passed as my own son. \"Oh, you're an engineer, too? You're Ben's son. He was a good man.\" Saves trouble with credentials and references.",
-            "dia_id": "D9:37"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John literally passed as his own son to inherit established credentials.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 5,
-        "question": "Under whose specific leadership does John claim to have lived while in Babylon?",
-        "option": [
-          "A. Gautama",
-          "B. Hegel",
-          "C. Hammurabi",
-          "D. Giraud",
-          "E. Ben"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "So I was Sumerian for 2,000 years, then finally Babylonian under Hammurabi.",
-            "dia_id": "D11:52"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John explicitly connects his time in Babylon to Hammurabi.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 6,
-        "question": "According to John, in what specific year did he migrate to America?",
-        "option": [
-          "A. 1862",
-          "B. 1890",
-          "C. 1910",
-          "D. 1950",
-          "E. 2000"
+          "A. He starts by physically attacking John, but later sits quietly and takes notes.",
+          "B. He initially defends the intellectual exercise of John's story, but later attempts a physical ambush to test John's claims.",
+          "C. He begins by checking the room for hidden microphones, then completely accepts John's immortality.",
+          "D. He mocks John's pig farmer story initially, but later earnestly asks him about the Buddha.",
+          "E. He demands artifacts at the beginning and later dismisses John as a fraud."
         ],
         "answer": "B",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Linda",
-            "utterance": "When'd you come to America?",
-            "dia_id": "D9:40"
+            "speaker": "Harry",
+            "utterance": "No! Let's go on with it. It's interesting. Besides, I think he's making a certain amount of sense.",
+            "dia_id": "D9:3",
+            "dia_id_2": "D9:4"
           },
           {
             "id": "E2",
-            "speaker": "John",
-            "utterance": "1890, right after Van Gogh's death, with some French immigrants...",
-            "dia_id": "D9:41"
+            "speaker": "Harry",
+            "utterance": "As John enters the room, Harry jumps him, yelling.",
+            "dia_id": "D11:12"
+          },
+          {
+            "id": "E3",
+            "speaker": "Harry",
+            "utterance": "I wanted to see how fast you were. Check your reflexes.",
+            "dia_id": "D11:17"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John provides an exact year in response to the question about America.",
+            "inference": "Early on, Harry defends John's logic, wanting to continue the conversation because he finds it interesting and sensible.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Later, his approach shifts from intellectual engagement to a physical test, jumping John to check his reflexes.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 4,
+        "question": "How does Harry respond when Dan comments on his failed physical demonstration against John?",
+        "option": [
+          "A. He blames his failure on a previous injury.",
+          "B. He agrees with Dan and apologizes to John.",
+          "C. He tells Dan to 'Sit on it'.",
+          "D. He challenges Dan to try it himself.",
+          "E. He ignores Dan and continues questioning John about history."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Smooth demonstration, Harry.",
+            "dia_id": "D11:25"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Sit on it, Dan.",
+            "dia_id": "D11:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Following Dan's sarcastic remark about the 'smooth demonstration', Harry immediately replies with 'Sit on it, Dan.'",
             "based_on": [
               "E1",
               "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 5,
+        "question": "What specific martial arts discipline did Harry mention he held a second-degree black belt in?",
+        "option": [
+          "A. Judo",
+          "B. Taekwondo",
+          "C. Aikido",
+          "D. Brazilian Jiu-Jitsu",
+          "E. Karate"
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Yeah. Well, I'm a second-degree black belt.",
+            "dia_id": "D11:19"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While Harry specifies his rank (second-degree black belt), the dialogue never names the specific martial arts discipline he practices.",
+            "based_on": [
+              "E1"
             ]
           }
         ]
@@ -704,15 +642,16 @@
       {
         "character": "Linda",
         "category": 1,
-        "question": "Which statement reflects Linda's foundational approach to recalling facts?",
+        "question": "What subject did Linda explicitly mention studying under Professor Hansen?",
         "option": [
-          "A. She relies exclusively on physical artifacts to trigger her memories.",
-          "B. She references formal academic instruction to validate permanent concepts like geography.",
-          "C. She prefers to consult ancient texts to understand her personal history.",
-          "D. She trusts her childhood memories only if corroborated by her mother.",
-          "E. She avoids answering direct questions about her past to protect her privacy."
+          "A. Early Bronze Age History",
+          "B. Physical Geography",
+          "C. Art History",
+          "D. Abnormal Psychology",
+          "E. European Migration"
         ],
-        "answer": "B",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -730,7 +669,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Linda uses her classroom learning to argue that geographical facts are static and should be remembered.",
+            "inference": "Linda mentions geography not changing and starts to say where she learned it, which Art completes as 'Professor Hansen's tepid lectures'. However, she does not explicitly state the specific name of the class or her overarching major.",
             "based_on": [
               "E1",
               "E2"
@@ -741,33 +680,34 @@
       {
         "character": "Linda",
         "category": 2,
-        "question": "How does Linda react when probed for specific directional details about her childhood neighborhood?",
+        "question": "According to Linda's recollection of Little Rock, what specific reference points stood out to her?",
         "option": [
-          "A. She provides a precise compass direction without hesitation.",
-          "B. She changes the subject to discuss a nearby gas station.",
-          "C. She expresses uncertainty and admits she does not know.",
-          "D. She becomes defensive and asks why the direction matters.",
-          "E. She immediately remembers the direction after recalling the big field."
+          "A. A gas station and a big field.",
+          "B. An Eiffel tower replica and a flyover.",
+          "C. A large market and an old church.",
+          "D. A thrift shop and a pig farm.",
+          "E. A lakeside village and an endless forest."
         ],
-        "answer": "C",
+        "answer": "A",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "What direction was it? From your house.",
-            "dia_id": "D9:21"
+            "utterance": "Were there any references that stuck in your mind?",
+            "dia_id": "D9:25"
           },
           {
             "id": "E2",
             "speaker": "Linda",
-            "utterance": "I-I don't know.",
-            "dia_id": "D9:22"
+            "utterance": "Well, there was a gas station and a big field. I was told I could never go there alone.",
+            "dia_id": "D9:26"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "When asked for the direction, Linda stutters and admits her lack of knowledge.",
+            "inference": "When asked for references from her five-year-old memory in Little Rock, Linda directly names a gas station and a big field.",
             "based_on": [
               "E1",
               "E2"
@@ -778,36 +718,114 @@
       {
         "character": "Linda",
         "category": 3,
-        "question": "Which spatial detail does Linda recall immediately after being unable to state the direction of the market?",
+        "question": "How does Linda assess the current state of her childhood neighborhood compared to her memories of it?",
         "option": [
-          "A. She remembers the location of Les Eyzies.",
-          "B. She recalls that the market was three blocks away.",
-          "C. She remembers that her mother was with her.",
-          "D. She points out that the field is now built up.",
-          "E. She states she lived in Little Rock."
+          "A. She believes it has been completely abandoned and returned to nature.",
+          "B. She insists the geography hasn't changed at all since she lived there.",
+          "C. She states the market has been replaced by a large highway.",
+          "D. She assumes the area is now built up and different from what she remembers.",
+          "E. She thinks the big field was preserved as a historical landmark."
         ],
-        "answer": "B",
+        "answer": "D",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "What direction was it? From your house.",
-            "dia_id": "D9:21"
+            "utterance": "And if you went back there today, would it be the same?",
+            "dia_id": "D9:27"
           },
           {
             "id": "E2",
             "speaker": "Linda",
-            "utterance": "I-I don't know.",
-            "dia_id": "D9:22"
+            "utterance": "No. I'm sure it's all different and built up.",
+            "dia_id": "D9:28"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While she previously argued that geography doesn't change, when prompted to consider returning to her specific childhood location today, she updates her view, acknowledging it would be 'different and built up'.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 4,
+        "question": "How does Linda attempt to validate John's professional reputation during their conversation about prehistoric survival?",
+        "option": [
+          "A. She asks if his hunting stories are the reason his students find his historical knowledge so amazing.",
+          "B. She suggests he publish his theories on cave art to gain academic tenure.",
+          "C. She defends his account of Les Eyzies against Art's skepticism.",
+          "D. She asks him to draw the animals to prove he was actually there.",
+          "E. She points out that Professor Hansen's lectures corroborate his story."
+        ],
+        "answer": "A",
+        "label": "Multi-hop",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "You have to know what to kill.",
+            "dia_id": "D11:36"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Is this why all your students say your knowledge of history is...so amazing?",
+            "dia_id": "D11:37"
           },
           {
             "id": "E3",
+            "speaker": "John",
+            "utterance": "No, that's mostly based on study.",
+            "dia_id": "D11:38"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "After John explains the brutal realities of survival and knowing what to kill, Linda links this personal, lived narrative to his external reputation.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She specifically asks if his experiential knowledge is the root cause of why his students praise his historical understanding.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 5,
+        "question": "What precise distance did Linda state her childhood home was from the market?",
+        "option": [
+          "A. Two miles.",
+          "B. Three blocks.",
+          "C. Five minutes walking.",
+          "D. Ten miles.",
+          "E. Across a big field."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
             "speaker": "John",
             "utterance": "How far?",
             "dia_id": "D9:23"
           },
           {
-            "id": "E4",
+            "id": "E2",
             "speaker": "Linda",
             "utterance": "Um, three blocks.",
             "dia_id": "D9:24"
@@ -816,137 +834,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "After failing to answer the direction, John asks for the distance.",
-            "based_on": [
-              "E1",
-              "E2",
-              "E3"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda successfully provides the distance measurement.",
-            "based_on": [
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 4,
-        "question": "What restriction was placed on Linda regarding her childhood environment?",
-        "option": [
-          "A. She was not allowed to attend Professor Hansen's lectures.",
-          "B. She was forbidden from going to the gas station at night.",
-          "C. She was instructed never to visit the big field by herself.",
-          "D. She was told to always hold her mother's hand at the market.",
-          "E. She was restricted from playing three blocks away from home."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Well, there was a gas station and a big field. I was told I could never go there alone.",
-            "dia_id": "D9:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda explicitly states the rule she was given regarding the field.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 5,
-        "question": "Who specifically accompanied Linda to the market when she lived in Little Rock?",
-        "option": [
-          "A. Professor Hansen",
-          "B. Her father",
-          "C. Her mother",
-          "D. Sandy",
-          "E. John"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Where did you live when you were five years old?",
-            "dia_id": "D9:17"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Little Rock.",
-            "dia_id": "D9:18"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "Your mother, she took you to the market?",
-            "dia_id": "D9:19"
-          },
-          {
-            "id": "E4",
-            "speaker": "Linda",
-            "utterance": "Mm-hmm.",
-            "dia_id": "D9:20"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John asks if her mother took her to the market.",
-            "based_on": [
-              "E3"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Linda confirms this with 'Mm-hmm'.",
-            "based_on": [
-              "E4"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 6,
-        "question": "At what specific age did Linda live in Little Rock?",
-        "option": [
-          "A. 3",
-          "B. 5",
-          "C. 7",
-          "D. 10",
-          "E. 12"
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Where did you live when you were five years old?",
-            "dia_id": "D9:17"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Little Rock.",
-            "dia_id": "D9:18"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "The question directly targets her location at age five, which she answers.",
+            "inference": "In response to John's direct question 'How far?', Linda specifies the distance as 'three blocks'.",
             "based_on": [
               "E1",
               "E2"
@@ -957,15 +845,55 @@
       {
         "character": "Dan",
         "category": 1,
-        "question": "Which action demonstrates Dan's pragmatic approach to managing unusual logistical situations?",
+        "question": "What is Dan's primary academic discipline?",
         "option": [
-          "A. He insists on immediately calling the authorities to handle the fraud.",
-          "B. He suggests a structured plan for establishing a future identity.",
-          "C. He physically attacks his colleague to test his claims.",
-          "D. He demands to see ancient artwork as proof of existence.",
-          "E. He tries to convince everyone to leave the room immediately."
+          "A. Biological Anthropology",
+          "B. Forensic Psychology",
+          "C. Paleontology",
+          "D. Prehistoric Archaeology",
+          "E. Classical History"
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Wouldn't you have some relic, an artifact to remind you of your early life? Like this, maybe? (holds up the burin)",
+            "dia_id": "D9:50",
+            "dia_id_2": "D9:51"
+          },
+          {
+            "id": "E2",
+            "speaker": "Dan",
+            "utterance": "Well, let's talk about what you say you do know about- Historical times.",
+            "dia_id": "D11:39"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While Dan discusses artifacts and historical times, there is no direct mention in the text of his specific academic title, major, or discipline.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 2,
+        "question": "What practical strategy did Dan propose to help John manage his immortality going forward?",
+        "option": [
+          "A. He suggested John forge government applications in a different country.",
+          "B. He advised John to set up his next identity and drop into it after ten years.",
+          "C. He told John to claim to be Ben's son immediately.",
+          "D. He recommended John stop moving and just let people think he doesn't age.",
+          "E. He suggested John hide artifacts to retrieve in his next lifetime."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -977,37 +905,7 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan offers practical logistical advice regarding identity transitioning.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 2,
-        "question": "How does Dan attempt to steer the group's conversation away from prehistoric speculation?",
-        "option": [
-          "A. He brings out a thrift shop pen to distract them.",
-          "B. He asks to see the Nolde landscapes instead.",
-          "C. He intentionally prompts a discussion focused on established historical times.",
-          "D. He physically steps between John and Art to stop the argument.",
-          "E. He asks Sandy to help him carry boxes outside."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Well, let's talk about what you say you do know about- Historical times.",
-            "dia_id": "D11:39"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan explicitly redirects the topic to 'Historical times'.",
+            "inference": "Dan explicitly outlines a logistical plan: setting up the next identity for the next ten years, then dropping into it.",
             "based_on": [
               "E1"
             ]
@@ -1017,56 +915,43 @@
       {
         "character": "Dan",
         "category": 3,
-        "question": "In what order do Dan's interactions involving physical objects occur?",
+        "question": "Which of the following describes how Dan's focus on historical epochs shifted during the discussion?",
         "option": [
-          "A. He first holds up a burin, and later is given the burin to keep.",
-          "B. He gives John a pen, and then receives a burin in return.",
-          "C. He catches a pen thrown by John, and then picks up a burin.",
-          "D. He helps pack boxes, and then finds a burin inside one.",
-          "E. He holds up a burin, and immediately throws it to Harry."
+          "A. He first questioned John about the Bronze Age, then asked about the invention of agriculture.",
+          "B. He initially asked about the Buddha, then changed topics to John's time in Belgium.",
+          "C. He shifted the group's focus away from prehistory/artifacts to asking about 'Historical times'.",
+          "D. He started by defending Hegel's logic, then shifted to doubting the caveman narrative.",
+          "E. He moved from questioning John's geographical memory to asking about French immigrants."
         ],
-        "answer": "A",
+        "answer": "C",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Dan",
-            "utterance": "Wouldn't you have some relic, an artifact to remind you of your early life? Like this, maybe?",
+            "utterance": "Wouldn't you have some relic, an artifact to remind you of your early life?",
             "dia_id": "D9:50"
           },
           {
             "id": "E2",
             "speaker": "Dan",
-            "utterance": "(holds up the burin)",
-            "dia_id": "D9:51"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "(to Dan)",
-            "dia_id": "D9:58"
-          },
-          {
-            "id": "E4",
-            "speaker": "John",
-            "utterance": "Keep that.",
-            "dia_id": "D9:59"
+            "utterance": "Well, let's talk about what you say you do know about- Historical times.",
+            "dia_id": "D11:39"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan initiates the object interaction by holding up the burin.",
+            "inference": "Dan initially probes John's 'early life' by presenting a prehistoric artifact.",
             "based_on": [
-              "E1",
-              "E2"
+              "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Later in the exchange, John tells Dan to keep the object.",
+            "inference": "Later, Dan actively pivots the conversation's timeline, telling the group to move on to what John knows about 'Historical times'.",
             "based_on": [
-              "E3",
-              "E4"
+              "E2"
             ]
           }
         ]
@@ -1074,65 +959,16 @@
       {
         "character": "Dan",
         "category": 4,
-        "question": "What event sparks Dan's observation that John could have chosen to lie?",
+        "question": "How did Dan react when Edith tried to stop him from engaging with John's story?",
         "option": [
-          "A. John denying that he possesses any ancient artifacts.",
-          "B. John claiming he studied directly with the Buddha.",
-          "C. John admitting he spent time in a Belgian jail.",
-          "D. John failing to anticipate Harry's physical ambush.",
-          "E. John refusing to take Sandy with him when he leaves."
+          "A. He agreed with her and left the room.",
+          "B. He simply stated her name in a firm or dismissive manner.",
+          "C. He yelled at her for interrupting his inquiry.",
+          "D. He threw the burin at her in frustration.",
+          "E. He asked Art to remove her from the conversation."
         ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Thrift shop. Really.",
-            "dia_id": "D9:52"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "No. I don't have artifacts.",
-            "dia_id": "D9:56"
-          },
-          {
-            "id": "E3",
-            "speaker": "Dan",
-            "utterance": "Interesting. You could have lied about that.",
-            "dia_id": "D9:60"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John admits the burin is just from a thrift shop and he has no artifacts.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan finds it noteworthy that John chose to tell the unexciting truth here.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 5,
-        "question": "Which colleague does Dan directly address by name to curtail their interruption?",
-        "option": [
-          "A. Sandy",
-          "B. Harry",
-          "C. Art",
-          "D. Edith",
-          "E. Linda"
-        ],
-        "answer": "D",
+        "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -1156,14 +992,21 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith attempts to stop Dan from questioning John.",
+            "inference": "Dan attempts to steer the conversation to historical times.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith explicitly tells Dan not to encourage John.",
             "based_on": [
               "E2"
             ]
           },
           {
-            "step": 2,
-            "inference": "Dan responds by firmly stating her name to dismiss her objection.",
+            "step": 3,
+            "inference": "Dan's only verbal response to her instruction is stating her name 'Edith.', serving to check or dismiss her interruption.",
             "based_on": [
               "E3"
             ]
@@ -1172,30 +1015,39 @@
       },
       {
         "character": "Dan",
-        "category": 6,
-        "question": "How many years does Dan specifically propose for the duration of a newly set-up identity?",
+        "category": 5,
+        "question": "What is the specific geographical origin of the burin Dan holds up?",
         "option": [
-          "A. 1",
-          "B. 3",
-          "C. 5",
-          "D. 10",
-          "E. 2000"
+          "A. A cave in Les Eyzies.",
+          "B. A dig site in Sumeria.",
+          "C. A thrift shop in Little Rock.",
+          "D. An excavation near a Babylonian trade route.",
+          "E. A field near a gas station."
         ],
-        "answer": "D",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Dan",
-            "utterance": "Well, it might make sense to set up your next identity, your next ten years, and then just drop into it.",
-            "dia_id": "D9:36"
+            "utterance": "Wouldn't you have some relic, an artifact to remind you of your early life? Like this, maybe? (holds up the burin)",
+            "dia_id": "D9:50",
+            "dia_id_2": "D9:51"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "Thrift shop. Really.",
+            "dia_id": "D9:52"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan uses a specific numerical timeframe when advising on the new identity.",
+            "inference": "Dan holds up the burin, and John identifies it as coming from a thrift shop, but the dialogue does not provide any specific geographical origin or location for this thrift shop or the burin.",
             "based_on": [
-              "E1"
+              "E1",
+              "E2"
             ]
           }
         ]
@@ -1203,187 +1055,21 @@
       {
         "character": "Edith",
         "category": 1,
-        "question": "What does Edith's reference to specific landscape paintings indicate about her established background?",
+        "question": "Which specific artist's work did Edith correctly recognize based on John's description of his past?",
         "option": [
-          "A. She is highly knowledgeable about martial arts techniques.",
-          "B. She possesses a recognized familiarity with fine art history.",
-          "C. She has an extensive background in prehistoric anthropology.",
-          "D. She spent a significant portion of her career in Belgium.",
-          "E. She specializes in tracking fraudulent government applications."
+          "A. J.M.W. Turner",
+          "B. Paul Cezanne",
+          "C. Camille Pissarro",
+          "D. Emil Nolde",
+          "E. Vincent Van Gogh"
         ],
-        "answer": "B",
+        "answer": "D",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "John",
-            "utterance": "He would come out to the place, paint. We talked about capturing nature in Art. Turner, Cezanne, Pissarro.",
-            "dia_id": "D9:11"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "Oh, the Nolde landscapes.",
-            "dia_id": "D9:12"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John lists famous painters.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith immediately associates this with the specific landscapes of another artist (Nolde).",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 2,
-        "question": "How does Edith react to the anecdote about the prehistoric chief's infected jaw?",
-        "option": [
-          "A. She laughs out loud at the absurdity of the story.",
-          "B. She questions the historical accuracy of the medical diagnosis.",
-          "C. She expresses explicit distress at the gruesome details.",
-          "D. She eagerly asks for more information about the tribe.",
-          "E. She attempts to change the subject to Bronze Age trade routes."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "...our chief stomped his teeth out... Finally, he got- I suspect- An infected jaw, and he was abandoned.",
-            "dia_id": "D11:34"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "That's awful.",
-            "dia_id": "D11:35"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith's direct response to the story is a verbal expression of horror.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 3,
-        "question": "At what point in the conversation does Edith explicitly express her belief that John's behavior indicates a serious problem?",
-        "option": [
-          "A. Immediately after he claims to have known Van Gogh.",
-          "B. Right before Dan attempts to hand over the burin.",
-          "C. While Art is making his phone call to an outside party.",
-          "D. Shortly after Art concludes that John is fabricating wild stories.",
-          "E. Just as Harry is preparing to launch his physical ambush."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Art walks over to the phone.",
-            "dia_id": "D11:2"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "If he is, I'm sorry to say he's...",
-            "dia_id": "D11:3"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Oh, how could he have concealed that for ten years?",
-            "dia_id": "D11:4"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art initiates a phone call.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "During this exact timeframe, Edith comments on John concealing his condition.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 4,
-        "question": "What is Edith's specific action when Dan tries to steer the group into discussing historical times?",
-        "option": [
-          "A. She takes the burin away from him.",
-          "B. She explicitly tells him not to encourage the behavior.",
-          "C. She leaves the room to help Sandy with the boxes.",
-          "D. She begins questioning John about Babylonian history.",
-          "E. She calls Professor Hansen to verify the geographical facts."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Well, let's talk about what you say you do know about- Historical times.",
-            "dia_id": "D11:39"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "Don't encourage him.",
-            "dia_id": "D11:40"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith directly responds to Dan's prompt by verbalizing a command to stop.",
-            "based_on": [
-              "E1",
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 5,
-        "question": "Which colleague's academic observation does Edith mistakenly apply to the wrong historical era?",
-        "option": [
-          "A. Art",
-          "B. Dan",
-          "C. John",
-          "D. Harry",
-          "E. Linda"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "He would come out to the place, paint. We talked about capturing nature in Art. Turner, Cezanne, Pissarro.",
+            "utterance": "I like to work with my hands. He would come out to the place, paint. We talked about capturing nature in Art. Turner, Cezanne, Pissarro.",
             "dia_id": "D9:11"
           },
           {
@@ -1402,16 +1088,10 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith attempts to add to John's list of artists.",
+            "inference": "Upon hearing John describe capturing nature, Edith chimes in with 'Oh, the Nolde landscapes', demonstrating her specific recognition of that artist's work (even though John corrects the timeline).",
             "based_on": [
               "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John corrects her, noting that her reference belongs to a different time.",
-            "based_on": [
+              "E2",
               "E3"
             ]
           }
@@ -1419,28 +1099,163 @@
       },
       {
         "character": "Edith",
-        "category": 6,
-        "question": "How many years does Edith state John managed to conceal his supposed mental condition?",
+        "category": 2,
+        "question": "How did Edith react to the story of the prehistoric chief getting his teeth stomped out?",
         "option": [
-          "A. 1",
-          "B. 3",
-          "C. 5",
-          "D. 10",
-          "E. 2000"
+          "A. She asked for more details about the magic involved.",
+          "B. She stated that the story was awful.",
+          "C. She suggested it was fabricated from a textbook.",
+          "D. She walked away to check for hidden microphones.",
+          "E. She laughed alongside Harry and Art."
         ],
-        "answer": "D",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
+            "speaker": "John",
+            "utterance": "One day after a fruitless hunt, our chief stomped his teeth out because his magic had failed him. After that, someone had to chew his food for him. Finally, he got- I suspect- An infected jaw, and he was abandoned.",
+            "dia_id": "D11:34"
+          },
+          {
+            "id": "E2",
             "speaker": "Edith",
-            "utterance": "Oh, how could he have concealed that for ten years?",
-            "dia_id": "D11:4"
+            "utterance": "That's awful.",
+            "dia_id": "D11:35"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith uses a specific number to describe the duration of John's concealment.",
+            "inference": "Immediately following John's gruesome account of the chief losing his teeth, Edith's only reaction is verbalizing 'That's awful.'",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 3,
+        "question": "How did Edith's opinion of John's mental state change between discovering his Van Gogh claim and his story about the chief?",
+        "option": [
+          "A. She thought he was a genius initially, but later realized he was stealing from textbooks.",
+          "B. She was horrified by the Van Gogh story, but found the caveman story fascinating.",
+          "C. She defended him early on, but eventually threatened to call the authorities.",
+          "D. She was highly skeptical of his Van Gogh claim, but believed he actually met the Buddha.",
+          "E. She was amused at first, but later demanded that Dan stop encouraging him."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Oh, the Nolde landscapes.",
+            "dia_id": "D9:12"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "That's awful.",
+            "dia_id": "D11:35"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
+            "utterance": "Don't encourage him.",
+            "dia_id": "D11:40"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While Edith interacts at different points, none of the options accurately reflect a stated, evolving shift in her assessment of his mental state as required by the options. She expresses horror at the teeth story and tells Dan not to encourage him, but her initial reaction was merely a neutral/engaged comment on art, not amusement or defense.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 4,
+        "question": "Which colleague did Edith directly admonish for perpetuating John's narrative?",
+        "option": [
+          "A. Harry",
+          "B. Art",
+          "C. Linda",
+          "D. Dan",
+          "E. Sandy"
+        ],
+        "answer": "D",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Well, let's talk about what you say you do know about- Historical times.",
+            "dia_id": "D11:39"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "Don't encourage him.",
+            "dia_id": "D11:40"
+          },
+          {
+            "id": "E3",
+            "speaker": "Dan",
+            "utterance": "Edith.",
+            "dia_id": "D11:41"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan asks John to continue his story into 'Historical times'.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Edith immediately interjects, telling Dan, 'Don't encourage him.', directly admonishing Dan's action.",
+            "based_on": [
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 5,
+        "question": "In what specific year did Edith first learn about the Nolde landscapes?",
+        "option": [
+          "A. 1890",
+          "B. 1862",
+          "C. The same year John met Van Gogh.",
+          "D. Ten years before John revealed his secret.",
+          "E. During Professor Hansen's lectures."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Edith",
+            "utterance": "Oh, the Nolde landscapes.",
+            "dia_id": "D9:12"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith mentions the Nolde landscapes, but the text never states when or where she learned about them.",
             "based_on": [
               "E1"
             ]
@@ -1450,49 +1265,30 @@
       {
         "character": "Art",
         "category": 1,
-        "question": "How does Art consistently engage with John's claims throughout the dialogue?",
+        "question": "Which philosophical comparison does Art use to summarize his perception of John's argument style?",
         "option": [
-          "A. He completely ignores the claims and focuses on packing boxes.",
-          "B. He accepts the claims as fact and asks for personal advice.",
-          "C. He challenges the narrative by demanding logical consistency and predicting historical textbook answers.",
-          "D. He physically attacks John to prove he is not superhuman.",
-          "E. He quietly takes notes to share with Professor Hansen later."
+          "A. Like Socrates: questioning everything until nothing makes sense.",
+          "B. Like Hegel: logic from absurd premises.",
+          "C. Like Descartes: doubting his own existence to prove a point.",
+          "D. Like Kant: relying purely on empirical artifacts.",
+          "E. Like Gautama: building truths from detached observation."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Art",
             "utterance": "Like Hegel: logic from absurd premises.",
             "dia_id": "D9:5"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "...Bison, horses. The game retreated northward as the climate changed... Am- Am I- Am I getting warm, here? I bet I am. Lakeside living becomes commonplace! ... John, this is out of any textbook.",
-            "dia_id": "D11:47"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "John, this is out of any textbook.",
-            "dia_id": "D11:48"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art equates John's story to philosophical logic based on absurdity.",
+            "inference": "Art explicitly compares John's argument to Hegel, specifically citing 'logic from absurd premises'.",
             "based_on": [
               "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He aggressively attempts to preempt John's story using standard textbook history to prove it's fabricated.",
-            "based_on": [
-              "E2",
-              "E3"
             ]
           }
         ]
@@ -1500,48 +1296,51 @@
       {
         "character": "Art",
         "category": 2,
-        "question": "What is Art's immediate reaction upon concluding that John is fabricating wild stories and cannot answer why he is doing it?",
+        "question": "What secret action did Art take while the others were engaging with John's caveman story?",
         "option": [
-          "A. He leaves the house in disgust without saying goodbye.",
-          "B. He asks Dan for the burin to examine it for clues.",
-          "C. He steps aside to place a phone call regarding John's behavior.",
-          "D. He instructs Harry to check the room for hidden microphones.",
-          "E. He confronts Sandy about her feelings for John."
+          "A. He searched John's boxes for forged credentials.",
+          "B. He took notes on John's timeline to prove him wrong.",
+          "C. He placed a hidden microphone in the room.",
+          "D. He made a phone call expressing concern about John's fabricated stories.",
+          "E. He stole the burin to have it tested at a lab."
         ],
-        "answer": "C",
+        "answer": "D",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Art",
-            "utterance": "Well, since this isn't funny, we think you might have a problem. A very serious problem.",
-            "dia_id": "D9:47"
-          },
-          {
-            "id": "E2",
             "speaker": "Dan",
             "utterance": "Art walks over to the phone.",
             "dia_id": "D11:2"
           },
           {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "Art is on the phone to one side.",
+            "dia_id": "D11:8"
+          },
+          {
             "id": "E3",
             "speaker": "Art",
-            "utterance": "He's fabricating these wild stories. I've never seen him acting like this.",
-            "dia_id": "D11:9"
+            "utterance": "He's fabricating these wild stories. I've never seen him acting like this. Oh, it's crazy. Alright. Alright, a-as soon as you can, then.",
+            "dia_id": "D11:9",
+            "dia_id_2": "D11:10",
+            "dia_id_3": "D11:11"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art concludes John has a serious problem.",
+            "inference": "The text notes Art walking over to the phone.",
             "based_on": [
-              "E1"
+              "E1",
+              "E2"
             ]
           },
           {
             "step": 2,
-            "inference": "He follows up this conclusion by making a phone call to report the behavior.",
+            "inference": "On the phone, Art is overheard describing John as fabricating wild stories and acting crazy, requesting someone to come 'as soon as you can'.",
             "based_on": [
-              "E2",
               "E3"
             ]
           }
@@ -1550,36 +1349,57 @@
       {
         "character": "Art",
         "category": 3,
-        "question": "Which action does Art take while Harry is investigating the possibility of a prank?",
+        "question": "How did Art's engagement with John's historical narrative evolve during the discussion of climate change and agriculture?",
         "option": [
-          "A. He is actively restraining John from leaving the room.",
-          "B. He is engaged in a separate telephone conversation.",
-          "C. He is helping Sandy load boxes into a vehicle.",
-          "D. He is discussing the Nolde landscapes with Edith.",
-          "E. He is trying to remember Professor Hansen's lectures."
+          "A. He initially accepted John's claim about the warming climate, but rejected the mention of lakeside living.",
+          "B. He accused John of guessing, then mockingly preempted John's story by listing textbook developments like raising animals and lakeside living.",
+          "C. He started by defending John's logic using Hegel, but ended up calling the authorities.",
+          "D. He refused to listen to John, immediately walking to the phone before John could finish his sentence.",
+          "E. He asked about the Bronze Age first, then backtracked to ask about the Stone Age."
         ],
         "answer": "B",
+        "label": "Memory Update",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Checkin' for a hidden mic. Candid Camera.",
-            "dia_id": "D11:7"
+            "speaker": "John",
+            "utterance": "Next few thousand years, it got warmer.",
+            "dia_id": "D11:42"
           },
           {
             "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Art is on the phone to one side.",
-            "dia_id": "D11:8"
+            "speaker": "Art",
+            "utterance": "A few thousand years- See, now, I know you're guessing.",
+            "dia_id": "D11:43"
+          },
+          {
+            "id": "E3",
+            "speaker": "Art",
+            "utterance": "...Bison, horses. The game retreated northward as the climate changed, you got the idea of growing food rather than gathering it, raising animals rather than hunting them. Am- Am I- Am I getting warm, here? I bet I am. Lakeside living becomes commonplace! Fishing, fowling- Come on!",
+            "dia_id": "D11:47"
+          },
+          {
+            "id": "E4",
+            "speaker": "Art",
+            "utterance": "John, this is out of any textbook.",
+            "dia_id": "D11:48"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "The text explicitly states Art's simultaneous action while Harry searches for a mic.",
+            "inference": "When John mentions it got warmer, Art immediately challenges him, claiming 'I know you're guessing'.",
             "based_on": [
               "E1",
               "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "Art then takes over the narrative, rattling off standard textbook progressions (game retreating, growing food, lakeside living) to prove that John's story is unoriginal and predictable.",
+            "based_on": [
+              "E3",
+              "E4"
             ]
           }
         ]
@@ -1587,36 +1407,57 @@
       {
         "character": "Art",
         "category": 4,
-        "question": "What specific historical concept does Art use to interrupt and finish John's sentence about the warming climate?",
+        "question": "Before leaving the room to move boxes, how did Art directly confront John regarding the underlying purpose of his claims?",
         "option": [
-          "A. He mentions the transition to centralized city-states.",
-          "B. He describes the migration patterns of French immigrants.",
-          "C. He lists the development of lakeside living and agricultural domestication.",
-          "D. He points out the technological shift during the Bronze Age.",
-          "E. He explains the significance of rock art at Les Eyzies."
+          "A. He asked John if he was trying to steal Sandy away.",
+          "B. He accused John of trying to ruin their careers.",
+          "C. He asked John 'Why're you doing this?' and warned him that the group thinks he has a very serious problem.",
+          "D. He demanded John show them proof by producing the burin.",
+          "E. He threatened to call the police if John didn't drop the charade."
         ],
         "answer": "C",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "John",
-            "utterance": "We hunted reindeer, mammoths-",
-            "dia_id": "D11:46"
+            "speaker": "Art",
+            "utterance": "An answer for every question. Except one, John. Why're you doing this?",
+            "dia_id": "D9:44",
+            "dia_id_2": "D9:45"
           },
           {
             "id": "E2",
+            "speaker": "John",
+            "utterance": "A whim. Maybe not such a good idea. I... wanted to say goodbye to you as me, not what you thought I was.",
+            "dia_id": "D9:46"
+          },
+          {
+            "id": "E3",
             "speaker": "Art",
-            "utterance": "...Bison, horses. The game retreated northward as the climate changed, you got the idea of growing food rather than gathering it, raising animals rather than hunting them... Lakeside living becomes commonplace! Fishing, fowling- Come on!",
-            "dia_id": "D11:47"
+            "utterance": "Well, since this isn't funny, we think you might have a problem. A very serious problem.",
+            "dia_id": "D9:47"
+          },
+          {
+            "id": "E4",
+            "speaker": "John",
+            "utterance": "I've got boxes to move.",
+            "dia_id": "D9:48"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art cuts off John's hunting list to insert the textbook progression of agriculture and lakeside settlements.",
+            "inference": "Art asks the underlying question 'Why're you doing this?'.",
             "based_on": [
-              "E1",
-              "E2"
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "After John answers, Art firmly states the group's stance: 'we think you might have a problem. A very serious problem.' immediately before John excuses himself to move boxes.",
+            "based_on": [
+              "E3",
+              "E4"
             ]
           }
         ]
@@ -1624,15 +1465,16 @@
       {
         "character": "Art",
         "category": 5,
-        "question": "Which specific university figure do both Art and Linda share an educational connection to?",
+        "question": "Whose tepid lectures did Art claim were the source of Linda's geographical knowledge?",
         "option": [
-          "A. Gautama",
-          "B. Giraud",
-          "C. Hammurabi",
-          "D. Professor Hansen",
-          "E. Jacque Borne"
+          "A. Professor Turner",
+          "B. Professor Hansen",
+          "C. Professor Borne",
+          "D. Professor Giraud",
+          "E. Professor Cezanne"
         ],
-        "answer": "D",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -1650,71 +1492,10 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Linda starts to mention where she learned geography.",
+            "inference": "When Linda begins to state where she learned that geography hasn't changed, Art finishes her sentence by naming 'Professor Hansen's tepid lectures'.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art seamlessly finishes her sentence, indicating shared knowledge of this professor.",
-            "based_on": [
+              "E1",
               "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Art",
-        "category": 6,
-        "question": "What numeric milestone does Art imply John has reached without exhibiting this type of behavior before?",
-        "option": [
-          "A. 1 year",
-          "B. 3 years",
-          "C. 5 years",
-          "D. 10 years",
-          "E. 100 years"
-        ],
-        "answer": "D",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "An answer for every question. Except one, John.",
-            "dia_id": "D9:44"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Well, since this isn't funny, we think you might have a problem. A very serious problem.",
-            "dia_id": "D9:47"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Oh, how could he have concealed that for ten years?",
-            "dia_id": "D11:4"
-          },
-          {
-            "id": "E4",
-            "speaker": "Art",
-            "utterance": "He's fabricating these wild stories. I've never seen him acting like this.",
-            "dia_id": "D11:9"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith establishes the timeframe they have known John is ten years.",
-            "based_on": [
-              "E3"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art confirms that within his entire experience with John, this behavior is unprecedented.",
-            "based_on": [
-              "E4"
             ]
           }
         ]

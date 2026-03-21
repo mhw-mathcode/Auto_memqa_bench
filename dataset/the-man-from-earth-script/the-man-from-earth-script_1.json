@@ -2,141 +2,107 @@
   {
     "qa": [
       {
-        "character": "Sandy",
+        "character": "John",
         "category": 1,
-        "question": "What statement best characterizes Sandy's reliable function within the group's interactions across the gathering?",
+        "question": "Which statement best describes John's underlying motivation for abandoning his established academic career?",
         "option": [
-          "A. She consistently initiates deep philosophical inquiries into John's past.",
-          "B. She serves as an observant participant who tracks both administrative updates and physical artifacts.",
-          "C. She frequently challenges the academic integrity of her colleagues' publications.",
-          "D. She acts as the primary host, coordinating the distribution of food and drinks.",
-          "E. She purposefully avoids engaging with the physical objects in the room to maintain distance."
+          "A. He is avoiding the stress of becoming the department chair and wants to write instead.",
+          "B. He feels trapped in one place for too long and prefers to relocate periodically.",
+          "C. He was offered a highly prestigious history chair position at Stanford University.",
+          "D. He is fleeing because his colleagues discovered the hidden truth about the Van Gogh painting.",
+          "E. He dislikes the harsh teaching requirements and prefers hunting wild game in the woods."
         ],
         "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Sandy",
-            "utterance": "He hasn't called.",
-            "dia_id": "D1:29"
+            "speaker": "Dan",
+            "utterance": "A decade of professorship, in line to chair the department, and you don't know where you're going?",
+            "dia_id": "D2:16"
           },
           {
             "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Wow! Can you pull this?",
-            "dia_id": "D2:26"
+            "speaker": "John",
+            "utterance": "Call it cabin fever. After a while, I get itchy feet. I've done this before.",
+            "dia_id": "D2:18"
+          },
+          {
+            "id": "E3",
+            "speaker": "John",
+            "utterance": "I just like to move on, now and then.",
+            "dia_id": "D3:38"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy tracks the Dean's administrative call regarding the department chair.",
+            "inference": "Dan highlights John's stable and successful career path.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Sandy actively observes and interacts with physical objects like the bow.",
+            "inference": "John explains his departure is due to a personal feeling of 'cabin fever' and 'itchy feet', indicating a recurring need to relocate.",
             "based_on": [
-              "E2"
+              "E2",
+              "E3"
             ]
           }
         ]
       },
       {
-        "character": "Sandy",
+        "character": "John",
         "category": 2,
-        "question": "Which option best describes Sandy's immediate focus when participating in the group's activities inside the house?",
+        "question": "What sequence of actions does John take regarding the items in his home before his friends sit down inside?",
         "option": [
-          "A. She is preoccupied with finding a comfortable place to sit on the floor.",
-          "B. She is actively engaged in examining a hunting weapon she discovered.",
-          "C. She is intently focused on analyzing the French writing on the painting.",
-          "D. She is eagerly anticipating the opportunity to drink the green labeled scotch.",
-          "E. She is primarily concerned with helping John pack his remaining boxes."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Sandy finds a bow.",
-            "dia_id": "D2:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Wow! Can you pull this?",
-            "dia_id": "D2:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy physically locates a bow inside the house.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She expresses immediate curiosity about the physical strength required to use it.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 3,
-        "question": "Based on the events, what is the sequence of Sandy's vocal contributions to the group?",
-        "option": [
-          "A. She first offers a toast, then asks about the bow, and finally reports on the Dean.",
-          "B. She first asks about the bow, then reports on the Dean, and finally offers a toast.",
-          "C. She first reports on the Dean, then asks about the bow, and finally participates in a toast.",
-          "D. She first participates in a toast, then reports on the Dean, and finally asks about the bow.",
-          "E. She first reports on the Dean, then offers a toast, and finally asks about the bow."
+          "A. He packs the bow into his truck, then brings out a box of plastic cups.",
+          "B. He places the painting in the truck, then directs the food to the kitchen.",
+          "C. He loads the painting into the truck, directs the food, and mentions the furniture.",
+          "D. He unloads the scotch from the truck and places the Van Gogh painting inside the kitchen.",
+          "E. He meticulously prepares the tacos and chicken wings before bringing out the scotch."
         ],
         "answer": "C",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Sandy",
-            "utterance": "He hasn't called.",
-            "dia_id": "D1:29"
+            "speaker": "John",
+            "utterance": "(taking the painting and putting it in the truck) That does it.",
+            "dia_id": "D1:46"
           },
           {
             "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Wow! Can you pull this?",
-            "dia_id": "D2:26"
+            "speaker": "John",
+            "utterance": "Put that stuff in the kitchen.",
+            "dia_id": "D1:49"
           },
           {
             "id": "E3",
-            "speaker": "Sandy",
-            "utterance": "Cheers!",
-            "dia_id": "D3:75"
+            "speaker": "John",
+            "utterance": "Gas is off, electricity's on. Get comfortable while you can, furniture's going this afternoon.",
+            "dia_id": "D1:51"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Sandy speaks about the Dean in D1, which is Scene 1.",
+            "inference": "John puts the painting in the truck.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Sandy asks about the bow in D2, which is Scene 2.",
+            "inference": "He tells Harry to put the food in the kitchen.",
             "based_on": [
               "E2"
             ]
           },
           {
             "step": 3,
-            "inference": "Sandy says cheers in D3, which is Scene 3.",
+            "inference": "He informs everyone that the furniture is leaving in the afternoon.",
             "based_on": [
               "E3"
             ]
@@ -144,143 +110,134 @@
         ]
       },
       {
-        "character": "Sandy",
+        "character": "John",
+        "category": 3,
+        "question": "How does John's offering of hospitality change from the moment his guests sit down to the end of the conversation?",
+        "option": [
+          "A. He starts by offering tacos and wings, then later brings out some beer.",
+          "B. He first offers only conversation, but then brings out Johnny Walker Green.",
+          "C. He serves scotch in glass tumblers first, then switches to plastic cups.",
+          "D. He begins by enthusiastically offering comfortable chairs, but later tells them the furniture is leaving.",
+          "E. He first gives Art a book to read, then provides Johnny Walker Green to the group."
+        ],
+        "answer": "B",
+        "label": "Memory Update",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "I'm sorry I don't have more to offer you. Got conversation. Some seats for your behinds.",
+            "dia_id": "D3:43"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "(enters carrying a box of scotch) ...I do have this.",
+            "dia_id": "D3:48"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Initially, John states he only has conversation and the floor to offer.",
+            "based_on": [
+              "E1"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "He updates this by remembering and retrieving a box of scotch.",
+            "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
         "category": 4,
-        "question": "What specific action does Sandy initiate that shifts the group's conversation toward hunting?",
+        "question": "What indicates the level of respect John has for Art's academic work?",
         "option": [
-          "A. She asks John directly about his past experiences hunting in the wild.",
-          "B. She physically locates a weapon and questions the ability to draw it.",
-          "C. She points out a telescopic sight attached to a rifle in the corner.",
-          "D. She inquires about the natural diet of wild game in the area.",
-          "E. She hands Harry a bow and asks him to demonstrate its use."
+          "A. He promises to immediately recommend the book to his students at Stanford.",
+          "B. He graciously accepts the book and notes he would rather read than write another one.",
+          "C. He outright rejects the book because he disagrees with Art's archaeological methods.",
+          "D. He gives Art a rare Van Gogh painting in exchange for the signed manuscript.",
+          "E. He criticizes the publication for being too repetitive compared to early man."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Sandy finds a bow.",
-            "dia_id": "D2:25"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "Wow! Can you pull this?",
-            "dia_id": "D2:26"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Sandy's action is finding the bow.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Her question about pulling it triggers the subsequent discussion about hunting.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 5,
-        "question": "What is Sandy's informational relationship regarding the academic administration?",
-        "option": [
-          "A. She is the one responsible for making the final decision between George and Trimbell.",
-          "B. She holds the knowledge regarding whether the Dean has communicated a hiring decision.",
-          "C. She is directly competing with George for the department chair position.",
-          "D. She is tasked with calling the Dean to inform him of John's sudden resignation.",
-          "E. She acts as Art's teaching assistant and manages his communications with the Dean."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "George or Trimbell - Has the dean made up his mind?",
-            "dia_id": "D1:28"
-          },
-          {
-            "id": "E2",
-            "speaker": "Sandy",
-            "utterance": "He hasn't called.",
-            "dia_id": "D1:29"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John asks a question about the Dean's decision.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Sandy answers, showing she is the one tracking or receiving this administrative communication.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Sandy",
-        "category": 6,
-        "question": "How many distinct individuals are explicitly presented as candidates for taking over John's position, based on Sandy's and John's exchange?",
-        "option": [
-          "A. 1",
-          "B. 2",
-          "C. 3",
-          "D. 4",
-          "E. 0"
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Is George taking over for you?",
-            "dia_id": "D1:27"
+            "speaker": "Art",
+            "utterance": "(handing John a book) Something for you to read on the road, pal.",
+            "dia_id": "D3:18"
           },
           {
             "id": "E2",
             "speaker": "John",
-            "utterance": "George or Trimbell - Has the dean made up his mind?",
-            "dia_id": "D1:28"
+            "utterance": "\"Shadows of the cave: parallels to early man.\" Arthur M. Jenkins. (holding the book up)",
+            "dia_id": "D3:20"
           },
           {
             "id": "E3",
-            "speaker": "Sandy",
-            "utterance": "He hasn't called.",
-            "dia_id": "D1:29"
+            "speaker": "John",
+            "utterance": "I'd rather read than write another one.",
+            "dia_id": "D3:25"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith names George.",
+            "inference": "Art gives John his book.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John names George and Trimbell as the two options.",
-            "based_on": [
+              "E1",
               "E2"
             ]
           },
           {
-            "step": 3,
-            "inference": "Sandy confirms no decision has been made between these 2 candidates.",
+            "step": 2,
+            "inference": "John warmly accepts it, preferring to read Art's work over writing his own.",
             "based_on": [
               "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "John",
+        "category": 5,
+        "question": "What specific reason does John give for preferring wild game over store-bought meat?",
+        "option": [
+          "A. It is significantly cheaper to hunt than to purchase meat from a local butcher.",
+          "B. It lives naturally and eats naturally.",
+          "C. It reminds him of his childhood growing up in the wilderness.",
+          "D. It provides a much higher level of protein essential for a long life.",
+          "E. It is the only type of meat that pairs well with Johnny Walker Green."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "(examining the bow) Though good eating!",
+            "dia_id": "D2:33"
+          },
+          {
+            "id": "E2",
+            "speaker": "John",
+            "utterance": "The best. Wild game. Lives naturally, eats naturally.",
+            "dia_id": "D2:35"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John responds to Dan's comment about deer meat being good eating by stating the exact benefits.",
+            "based_on": [
+              "E1",
+              "E2"
             ]
           }
         ]
@@ -288,84 +245,80 @@
       {
         "character": "Harry",
         "category": 1,
-        "question": "Which statement best identifies Harry's consistent behavioral approach toward his colleagues?",
+        "question": "Which statement best matches Harry's consistent approach to the gathering?",
         "option": [
-          "A. He remains strictly professional and avoids using informal or teasing language.",
-          "B. He frequently uses sarcasm and humorous exaggeration to express his opinions.",
-          "C. He is highly sensitive to criticism and often reacts defensively to questions.",
-          "D. He consistently ignores social norms and refuses to participate in group rituals.",
-          "E. He focuses entirely on academic discussions and rejects any mention of personal lives."
+          "A. He is emotionally devastated and refuses to participate.",
+          "B. He complains about the wasted party efforts but enthusiastically pours drinks.",
+          "C. He quietly observes the art and asks deep questions.",
+          "D. He is strictly focused on helping John load his pickup truck with heavy boxes.",
+          "E. He repeatedly tries to convince John to accept the history chair position at Stanford."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Harry",
-            "utterance": "Brilliant deduction, Sherlock!",
-            "dia_id": "D1:41"
+            "utterance": "Could've at least stayed a few minutes, huh? Eaten some of the food we so feverishly prepared?",
+            "dia_id": "D1:11"
           },
           {
             "id": "E2",
             "speaker": "Harry",
-            "utterance": "There are over-the-counter remedies for that, John.",
-            "dia_id": "D3:33"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Harry uses a sarcastic cultural reference ('Sherlock') to tease John.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry makes a humorous, slightly inappropriate joke about 'itchy feet' being a medical condition.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 2,
-        "question": "What is Harry's immediate emotional and physical response when John produces the alcohol?",
-        "option": [
-          "A. He is disappointed that it is not wine and refuses to pour it.",
-          "B. He is highly enthusiastic and immediately volunteers to distribute it.",
-          "C. He is suspicious of the brand and questions its authenticity.",
-          "D. He is indifferent and allows Dan to handle the serving.",
-          "E. He is angry that John hid it and demands an explanation."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Oh ho ho! Johnny Walker Green!",
-            "dia_id": "D3:50"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "I will do the honours!",
+            "utterance": "I will do the honours! Oh, come to papa! Ooh! Here, cups, cups? There we go!",
             "dia_id": "D3:59"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry expresses vocal excitement ('Oh ho ho!') upon seeing the brand.",
+            "inference": "Harry voices frustration that John is leaving without enjoying the meticulously prepared party.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "He immediately claims the task of serving the drinks.",
+            "inference": "Despite his complaints, he immediately takes charge of enthusiastically pouring the scotch for everyone.",
             "based_on": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Harry",
+        "category": 2,
+        "question": "What action does Harry declare he will take regarding the party supplies immediately after John's command?",
+        "option": [
+          "A. He decides to throw the food away in the trash.",
+          "B. He places the food in the center of the living room.",
+          "C. He says he is going to put it in the bathroom.",
+          "D. He insists on strictly leaving the food in the back of the pickup truck.",
+          "E. He immediately starts passing out tacos and tuna salad to the group."
+        ],
+        "answer": "C",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Put that stuff in the kitchen.",
+            "dia_id": "D1:49"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "No, I'm going to put it in the bathroom, John.",
+            "dia_id": "D1:50"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "When instructed to put the food in the kitchen, Harry sarcastically replies he will put it in the bathroom.",
+            "based_on": [
+              "E1",
               "E2"
             ]
           }
@@ -374,55 +327,57 @@
       {
         "character": "Harry",
         "category": 3,
-        "question": "Based on the dialogue, what is the sequence of Harry's interactions with items related to the party?",
+        "question": "How does Harry's assumption about John's location change during the course of the event?",
         "option": [
-          "A. He first distributes plastic cups, then complains about the food, and finally moves boxes.",
-          "B. He first lists the food they prepared, then declares where he will put it, and later pours scotch.",
-          "C. He first pours scotch, then lists the food they prepared, and finally declares where he will put it.",
-          "D. He first declares where he will put the food, then pours scotch, and finally lists the food.",
-          "E. He first lists the food, then pours scotch, and finally complains about the lack of furniture."
+          "A. He first thinks John is at the university, then assumes he is at home.",
+          "B. He initially thinks John ducked out on the party, and later suspects he is ducking out on them again.",
+          "C. He thinks John is moving to Stanford, but later realizes he is going nowhere.",
+          "D. He assumes John is diligently preparing the food in the kitchen, but later discovers he is actually packing boxes into his truck outside.",
+          "E. He believes John is grabbing chairs, and then realizes he is grabbing a bow."
         ],
         "answer": "B",
+        "label": "Multi-hop",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Harry",
-            "utterance": "Well, tacos, chicken wings, tuna salad and beer.",
-            "dia_id": "D1:18"
+            "utterance": "Would you like to tell us what the hell that was all about?",
+            "dia_id": "D1:6"
           },
           {
             "id": "E2",
-            "speaker": "Harry",
-            "utterance": "No, I'm going to put it in the bathroom, John.",
-            "dia_id": "D1:50"
+            "speaker": "John",
+            "utterance": "I don't like good-byes.",
+            "dia_id": "D1:7"
           },
           {
             "id": "E3",
+            "speaker": "meta",
+            "utterance": "John lifts his finger as if he's remembered something and suddenly moves for the door.",
+            "dia_id": "D3:46"
+          },
+          {
+            "id": "E4",
             "speaker": "Harry",
-            "utterance": "(pouring everyone a glass)",
-            "dia_id": "D3:63"
+            "utterance": "Is he ducking out on us again?",
+            "dia_id": "D3:47"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry lists the food in D1:18.",
+            "inference": "Harry confronts John in Scene 1 about avoiding the goodbye party.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry states he will put the stuff in the bathroom in D1:50.",
-            "based_on": [
+              "E1",
               "E2"
             ]
           },
           {
-            "step": 3,
-            "inference": "Harry pours the glasses in Scene 3 (D3:63).",
+            "step": 2,
+            "inference": "Later, when John moves abruptly for the door, Harry infers he might be attempting to avoid them ('ducking out') a second time.",
             "based_on": [
-              "E3"
+              "E3",
+              "E4"
             ]
           }
         ]
@@ -430,15 +385,16 @@
       {
         "character": "Harry",
         "category": 4,
-        "question": "How does Harry navigate the distribution of drinks when encountering someone who declines?",
+        "question": "How does Harry handle Linda's refusal of alcohol within their social dynamic?",
         "option": [
-          "A. He insists they take a sip out of politeness to John.",
-          "B. He mocks them for being underage and refuses to give them water.",
-          "C. He jokes about checking their ID but encourages them to remain in the social group.",
-          "D. He ignores their refusal and pours a glass anyway.",
-          "E. He asks Art to convince them to join the toast."
+          "A. He gets extremely angry and asks her to leave the party immediately.",
+          "B. He teases her about carding her, then warmly invites her to join the circle anyway.",
+          "C. He ignores her completely and simply pours a heavy drink for Dan instead.",
+          "D. He aggressively demands that Dr. Jenkins take her home immediately because her refusal is dampening the party mood.",
+          "E. He forces her to hold the cup of Johnny Walker Green against her explicitly stated wishes."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -469,15 +425,9 @@
           },
           {
             "step": 2,
-            "inference": "Harry makes a joke about carding (checking ID).",
+            "inference": "Harry responds with a joke about checking her ID, then politely encourages her to remain in the social circle.",
             "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Harry accepts the refusal but invites her to physically join the circle.",
-            "based_on": [
+              "E2",
               "E3"
             ]
           }
@@ -486,71 +436,16 @@
       {
         "character": "Harry",
         "category": 5,
-        "question": "Which statement accurately describes Harry's relationship dynamic with Edith based on their interaction?",
+        "question": "What exact list of foods did Harry state was prepared for the goodbye party?",
         "option": [
-          "A. Harry acts as Edith's strict supervisor, correcting her academic assumptions.",
-          "B. Harry and Edith engage in familiar, teasing banter regarding her comments.",
-          "C. Harry is romantically pursuing Edith and compliments her constantly.",
-          "D. Harry resents Edith's presence and attempts to exclude her from the toast.",
-          "E. Harry relies on Edith to translate foreign languages for him."
+          "A. Tacos, chicken wings, tuna salad and beer.",
+          "B. Pizza, chicken wings, potato salad and wine.",
+          "C. Tacos, chicken strips, macaroni salad and beer.",
+          "D. Burgers, french fries, coleslaw and soda.",
+          "E. Burritos, incredibly spicy buffalo wings, garden salad and tequila."
         ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "And he hasn't aged a day in ten years! Any woman on the faculty would give anything to have that secret.",
-            "dia_id": "D2:21"
-          },
-          {
-            "id": "E2",
-            "speaker": "Harry",
-            "utterance": "Is that what they're after, Edith?",
-            "dia_id": "D2:22"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Oh, stop, Harry.",
-            "dia_id": "D2:23"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith makes a comment about women wanting John's secret to not aging.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Harry teases her by asking if that's what 'they' (implying her) are after.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Edith responds playfully ('Oh, stop'), indicating a comfortable, teasing peer relationship.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Harry",
-        "category": 6,
-        "question": "According to Harry's explicit statement, how many specific types of food were prepared for the farewell?",
-        "option": [
-          "A. 1",
-          "B. 2",
-          "C. 3",
-          "D. 4",
-          "E. 5"
-        ],
-        "answer": "C",
+        "answer": "A",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -562,506 +457,9 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry lists tacos (1), chicken wings (2), and tuna salad (3) as the food items. Beer is a beverage.",
+            "inference": "Harry explicitly lists the prepared food items as tacos, chicken wings, tuna salad and beer.",
             "based_on": [
               "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 1,
-        "question": "What fundamental behavioral pattern does John exhibit regarding his life transitions?",
-        "option": [
-          "A. He relies heavily on grand farewell parties to find closure with his colleagues.",
-          "B. He frequently seeks out promotions at rival universities to increase his salary.",
-          "C. He prefers to depart abruptly and attributes it to a recurrent personal need to move on.",
-          "D. He systematically sells off all his valuable art and possessions before traveling.",
-          "E. He depends entirely on his students to facilitate his physical moves."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "Call it cabin fever. After a while, I get itchy feet. I've done this before.",
-            "dia_id": "D2:18"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "I just like to move on, now and then.",
-            "dia_id": "D3:38"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John explains his departure as a repeating pattern ('itchy feet', 'done this before').",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He reaffirms that moving on is simply a personal preference he enacts periodically.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 2,
-        "question": "What is John's immediate state of mind when asked to explain the deeper reason for his sudden resignation?",
-        "option": [
-          "A. He is eager to share a complex philosophical theory about his life.",
-          "B. He is deeply offended and demands that his friends leave his house.",
-          "C. He is firmly resistant to elaborating, maintaining that there is no underlying issue.",
-          "D. He is anxious and accidentally drops a box of books.",
-          "E. He is confused and asks Dan to explain what he means."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Truth time, John. Is there a problem?",
-            "dia_id": "D2:9"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "No.",
-            "dia_id": "D2:10"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "That's appreciated, but really - there's no problem.",
-            "dia_id": "D2:13"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan presses John for a deeper truth or problem.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "John immediately and repeatedly denies the existence of any problem, closing off the inquiry.",
-            "based_on": [
-              "E2",
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 3,
-        "question": "According to the established timeline of John's move, what is the sequence of events regarding his resignation and his furniture?",
-        "option": [
-          "A. His furniture left two days ago, and he will resign this afternoon.",
-          "B. He resigned two days ago, and his furniture is leaving this afternoon.",
-          "C. He resigned this afternoon, and his furniture will leave in two days.",
-          "D. His furniture is arriving this afternoon, and he resigned two days ago.",
-          "E. He resigned two days ago, and his furniture already left yesterday."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "But why are you moving so quickly, you only resigned a couple of days ago!",
-            "dia_id": "D1:15"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "Gas is off, electricity's on. Get comfortable while you can, furniture's going this afternoon.",
-            "dia_id": "D1:51"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "The resignation occurred 'a couple of days ago' (in the past).",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The furniture is scheduled to leave 'this afternoon' (in the immediate future).",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 4,
-        "question": "What specific physical action does John take when he realizes he has limited hospitality to offer his guests?",
-        "option": [
-          "A. He leaves the room and returns with a box containing a specific brand of scotch.",
-          "B. He drives to McDonalds to buy a candlelight dinner for everyone.",
-          "C. He unpacks the kitchen boxes to find real glass cups for the drinks.",
-          "D. He takes the Van Gogh painting off the wall and gifts it to Edith.",
-          "E. He opens the refrigerator and serves the tuna salad Harry brought."
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "John",
-            "utterance": "I'm sorry I don't have more to offer you.",
-            "dia_id": "D3:43"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "John lifts his finger as if he's remembered something and suddenly moves for the door.",
-            "dia_id": "D3:46"
-          },
-          {
-            "id": "E3",
-            "speaker": "John",
-            "utterance": "(enters carrying a box of scotch)",
-            "dia_id": "D3:48"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "John expresses regret over his limited offerings.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He physically leaves to retrieve something to improve the situation.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "He returns specifically carrying a box of scotch.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 5,
-        "question": "What is the explicitly defined professional relationship between John and Dan?",
-        "option": [
-          "A. Dan is John's former student who recently joined the faculty.",
-          "B. Dan is the Dean who must decide on John's replacement.",
-          "C. They are colleagues, and Dan is aware of John's academic tenure and potential to chair.",
-          "D. Dan is a professional appraiser whom John hired to value his art.",
-          "E. They are roommates who have shared the house for ten years."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "A decade of professorship, in line to chair the department, and you don't know where you're going?",
-            "dia_id": "D2:16"
-          },
-          {
-            "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Well. To long life, and good fortune to our esteemed friend, and colleague John Oldman.",
-            "dia_id": "D3:72"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan demonstrates intimate knowledge of John's academic career path.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Dan explicitly refers to John as a 'colleague' in his toast.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "John",
-        "category": 6,
-        "question": "According to Dan, how many years of professorship is John leaving behind?",
-        "option": [
-          "A. 2",
-          "B. 5",
-          "C. 10",
-          "D. 12",
-          "E. 20"
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "A decade of professorship, in line to chair the department, and you don't know where you're going?",
-            "dia_id": "D2:16"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan explicitly states John has had a 'decade' of professorship. A decade equals 10 years.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 1,
-        "question": "Which statement describes Linda's consistent disposition toward her professors during the gathering?",
-        "option": [
-          "A. She fiercely debates their archaeological findings and theories.",
-          "B. She maintains a highly polite, deferential, and complimentary attitude toward them.",
-          "C. She attempts to manipulate them into giving her higher grades.",
-          "D. She ignores them completely and focuses only on drinking.",
-          "E. She acts aggressively and demands explanations for John's departure."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Linda",
-            "utterance": "Oh! Archaeology's tough. Dr. Jenkins is a fine teacher.",
-            "dia_id": "D3:14"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "(waving nonchalantly) Hi!",
-            "dia_id": "D3:28"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda compliments Art (Dr. Jenkins) as a 'fine teacher' in front of another professor.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She offers polite, friendly greetings to the group of academics.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 2,
-        "question": "What is Linda's immediate physical action upon settling into the group's circle?",
-        "option": [
-          "A. She immediately starts doing Yoga exercises on the floor.",
-          "B. She warms herself in front of the fire.",
-          "C. She begins unpacking boxes in the kitchen.",
-          "D. She starts reading the book Art gave to John.",
-          "E. She takes the bow from Sandy and tries to pull it."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Everyone makes themselves comfortable, Linda warming herself in front of the fire.",
-            "dia_id": "D3:77"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "The text explicitly states Linda's action is warming herself in front of the fire as everyone settles.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 3,
-        "question": "Based on the dialogue, what is the chronological order of Linda's academic enrollment with the professors?",
-        "option": [
-          "A. She had John's class last semester, and is currently taking Art's class.",
-          "B. She had Art's class last semester, and is currently taking John's class.",
-          "C. She took both John and Art's classes last semester simultaneously.",
-          "D. She will take Art's class next semester, after finishing John's current class.",
-          "E. She was Dan's student before transferring to John's department."
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "Hey! John! You know Linda. You had her last semester.",
-            "dia_id": "D3:8"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "She's one of my victims now; I'm taking her home.",
-            "dia_id": "D3:11"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art states John had Linda 'last semester' (past).",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art states she is one of his 'victims now' (current), meaning she is currently his student.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 4,
-        "question": "What event explicitly precedes Linda's verbal introduction to John at the gathering?",
-        "option": [
-          "A. She examines the Van Gogh painting in the living room.",
-          "B. She rides on Art's bike and takes off her helmet.",
-          "C. She refuses a glass of green scotch from Harry.",
-          "D. She asks Dan about his hunting experience.",
-          "E. She helps John carry the last box to his truck."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Enter: Art and Linda on Art's bike.",
-            "dia_id": "D2:38"
-          },
-          {
-            "id": "E2",
-            "speaker": "Art",
-            "utterance": "Ah. (taking off his helmet)",
-            "dia_id": "D3:1"
-          },
-          {
-            "id": "E3",
-            "speaker": "Linda",
-            "utterance": "Oh my gosh. That was fun!",
-            "dia_id": "D3:6"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Linda arrives riding on Art's bike.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She comments on the fun of the ride immediately before Art formally addresses John about her.",
-            "based_on": [
-              "E3"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 5,
-        "question": "What is the explicitly stated educational relationship between Linda and John?",
-        "option": [
-          "A. She is John's current research assistant.",
-          "B. She was John's student during the previous semester.",
-          "C. She is John's replacement for the history chair.",
-          "D. She was John's academic advisor a decade ago.",
-          "E. She is John's niece who attends the university."
-        ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Art",
-            "utterance": "Hey! John! You know Linda. You had her last semester.",
-            "dia_id": "D3:8"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Art explicitly states that John 'had her last semester', establishing the former teacher-student relationship.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Linda",
-        "category": 6,
-        "question": "How many alcoholic drinks does Linda explicitly consume or accept during the gathering?",
-        "option": [
-          "A. 0",
-          "B. 1",
-          "C. 2",
-          "D. 3",
-          "E. 4"
-        ],
-        "answer": "A",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Harry",
-            "utterance": "(offering it to Linda)",
-            "dia_id": "D3:68"
-          },
-          {
-            "id": "E2",
-            "speaker": "Linda",
-            "utterance": "Oh, no, I don't drink!",
-            "dia_id": "D3:69"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "When offered a drink, Linda explicitly states she does not drink, meaning the count is zero.",
-            "based_on": [
-              "E1",
-              "E2"
             ]
           }
         ]
@@ -1069,27 +467,28 @@
       {
         "character": "Dan",
         "category": 1,
-        "question": "Which option best reflects Dan's consistent conversational role when speaking with John?",
+        "question": "Which of the following describes Dan's underlying emotional reaction to Art's published book?",
         "option": [
-          "A. He frequently changes the subject to avoid discussing uncomfortable realities.",
-          "B. He acts as an interrogator, persistently asking direct questions to uncover John's true motivations.",
-          "C. He relies heavily on sarcastic jokes to mock John's career choices.",
-          "D. He continuously praises John's artwork and ignores the actual move.",
-          "E. He mostly remains silent, only speaking when directly addressed by Edith."
+          "A. He is deeply jealous of the publication.",
+          "B. He is eager to borrow it after John finishes reading.",
+          "C. He strongly critiques its methodology.",
+          "D. He believes it is irrelevant to modern history.",
+          "E. He wants to assign it to his own students."
         ],
-        "answer": "B",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Truth time, John. Is there a problem?",
-            "dia_id": "D2:9"
+            "speaker": "Art",
+            "utterance": "(handing John a book) Something for you to read on the road, pal.",
+            "dia_id": "D3:18"
           },
           {
             "id": "E2",
-            "speaker": "Dan",
-            "utterance": "Well now, I am curious. Where are you going?",
-            "dia_id": "D2:14"
+            "speaker": "John",
+            "utterance": "\"Shadows of the cave: parallels to early man.\" Arthur M. Jenkins. (holding the book up)",
+            "dia_id": "D3:20"
           },
           {
             "id": "E3",
@@ -1101,22 +500,10 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan directly asks if there is a problem.",
+            "inference": "Dan makes no remarks or emotional expressions regarding Art's book at any point in the dialogue.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He pushes further to ask where John is going.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Even after being deflected, he circles back to ask again if there is a problem.",
-            "based_on": [
+              "E1",
+              "E2",
               "E3"
             ]
           }
@@ -1125,57 +512,28 @@
       {
         "character": "Dan",
         "category": 2,
-        "question": "What is Dan's immediate reaction upon having to sit on the floor of John's house?",
+        "question": "What physical activity does Dan engage in before inquiring about John's hunting habits?",
         "option": [
-          "A. He warmly embraces the opportunity to practice Tantric Yoga.",
-          "B. He angrily demands that John bring the furniture back inside.",
-          "C. He casually reflects on how long it has been since he last did so.",
-          "D. He immediately gets back up and prefers to stand by the fire.",
-          "E. He complains that his back is hurting and asks for a chair."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "'Sbeen years since I sat on a floor.",
-            "dia_id": "D2:1"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan's verbal reaction is a simple reflection on the passage of time since he last sat on a floor.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 3,
-        "question": "In what order does Dan question John regarding his personal artifacts and his departure?",
-        "option": [
-          "A. He first asks about the bow, then asks about the painting, and finally asks about the resignation.",
-          "B. He first asks about the painting, then asks about the resignation, and finally asks about the bow.",
-          "C. He first asks about the resignation, then asks about the bow, and finally asks about the painting.",
-          "D. He first asks about the painting, then asks about the bow, and finally asks about the resignation.",
-          "E. He first asks about the bow, then asks about the resignation, and finally asks about the painting."
+          "A. He carefully examines the Van Gogh painting in the kitchen.",
+          "B. He helps lift a heavy box onto the truck, then sits on the floor inside.",
+          "C. He rides on the back of Art's motorcycle.",
+          "D. He deliberately pours the Johnny Walker Green into several plastic cups.",
+          "E. He unloads the tuna salad and beer from his own vehicle."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Is that an original, John?",
-            "dia_id": "D1:32"
+            "speaker": "meta",
+            "utterance": "John and Dan lift a heavy box on to the truck.",
+            "dia_id": "D1:5"
           },
           {
             "id": "E2",
             "speaker": "Dan",
-            "utterance": "Truth time, John. Is there a problem?",
-            "dia_id": "D2:9"
+            "utterance": "'Sbeen years since I sat on a floor.",
+            "dia_id": "D2:1"
           },
           {
             "id": "E3",
@@ -1187,21 +545,21 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan questions the painting in Scene 1.",
+            "inference": "In Scene 1, Dan helps lift a heavy box.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "Dan asks about the underlying reason for leaving early in Scene 2.",
+            "inference": "In Scene 2, Dan sits on the floor.",
             "based_on": [
               "E2"
             ]
           },
           {
             "step": 3,
-            "inference": "Dan asks about what John hunts with the bow later in Scene 2.",
+            "inference": "Later in Scene 2, Dan asks what John hunts.",
             "based_on": [
               "E3"
             ]
@@ -1210,89 +568,17 @@
       },
       {
         "character": "Dan",
-        "category": 4,
-        "question": "What specific physical action does Dan take to facilitate John's move before entering the house?",
+        "category": 3,
+        "question": "How does Dan's view on the tenure process change over the course of his ten-year friendship with John?",
         "option": [
-          "A. He unpacks the food from Harry's car.",
-          "B. He helps John lift a heavy box onto the pickup truck.",
-          "C. He takes the Van Gogh painting and places it safely in the cab.",
-          "D. He unplugs the electricity and turns off the gas.",
-          "E. He helps Art park his motorcycle in the driveway."
+          "A. He initially opposed it but eventually supported it.",
+          "B. He thought it was too short, but later realized it was too long.",
+          "C. He believed it was necessary for the history department, but unnecessary for archaeology.",
+          "D. He considered it a flawed system until George took over.",
+          "E. He believed it hindered academic freedom."
         ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Well, you need help?",
-            "dia_id": "D1:3"
-          },
-          {
-            "id": "E2",
-            "speaker": "John",
-            "utterance": "John and Dan lift a heavy box on to the truck.",
-            "dia_id": "D1:5"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan asks if John needs help.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "The narrative explicitly states Dan helps lift a heavy box.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 5,
-        "question": "What does Dan's toast reveal about his view of John's standing within their professional group?",
-        "option": [
-          "A. He views John as a hostile rival who undeservedly took the department chair.",
-          "B. He considers John a subordinate who needs guidance in his new career.",
-          "C. He explicitly designates John as an esteemed friend and colleague.",
-          "D. He views John solely as an amateur art collector rather than an academic.",
-          "E. He treats John as a mysterious stranger they barely know."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Dan",
-            "utterance": "Well. To long life, and good fortune to our esteemed friend, and colleague John Oldman.",
-            "dia_id": "D3:72"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Dan explicitly uses the words 'esteemed friend' and 'colleague' to describe John during the formal toast.",
-            "based_on": [
-              "E1"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Dan",
-        "category": 6,
-        "question": "According to Dan, how many years of tenure does it normally take to achieve John's level of professional standing before abandoning it?",
-        "option": [
-          "A. 1",
-          "B. 5",
-          "C. 10",
-          "D. 15",
-          "E. 20"
-        ],
-        "answer": "C",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -1304,7 +590,69 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Dan states John has had a 'decade' of professorship. A decade is mathematically 10 years.",
+            "inference": "The text only mentions Dan citing John's decade of professorship, but contains no evidence regarding how Dan's personal views on the tenure process have evolved over time.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 4,
+        "question": "What does Dan reveal about John's academic status prior to his sudden resignation?",
+        "option": [
+          "A. He had just been fired by the dean of the university.",
+          "B. He had a decade of professorship and was in line to chair the department.",
+          "C. He was officially transitioning to become a professor of archaeology.",
+          "D. He was hopelessly struggling to publish a new book on early man to maintain his tenure.",
+          "E. He had just accepted the highly coveted history chair at Stanford."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "A decade of professorship, in line to chair the department, and you don't know where you're going?",
+            "dia_id": "D2:16"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan explicitly states John had a decade of professorship and was in line to chair the department.",
+            "based_on": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Dan",
+        "category": 5,
+        "question": "What specific weapon does Dan believe most people struggle to bag a deer with?",
+        "option": [
+          "A. A standard compound bow and arrow.",
+          "B. A rifle and a telescopic sight.",
+          "C. A customized hunting spear.",
+          "D. A high-powered shotgun with a laser attachment.",
+          "E. A traditional wooden longbow."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Dan",
+            "utterance": "Most people can't bag a deer with a rifle and a telescopic sight!",
+            "dia_id": "D2:32"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Dan specifically names a rifle and a telescopic sight as the equipment most people fail to hunt deer with.",
             "based_on": [
               "E1"
             ]
@@ -1314,58 +662,16 @@
       {
         "character": "Edith",
         "category": 1,
-        "question": "Which of the following best demonstrates Edith's consistent inclination to notice aesthetic and physical details?",
+        "question": "Which of the following statements best describes Edith's long-term religious beliefs?",
         "option": [
-          "A. She calculates the exact monetary value of the food Harry brought.",
-          "B. She carefully observes both the authenticity of the painting's stretcher and John's lack of aging.",
-          "C. She meticulously reviews the academic citations in Art's new book.",
-          "D. She critically analyzes the brand of scotch John brings out.",
-          "E. She measures the draw weight of the hunting bow Sandy finds."
+          "A. She is a devout practitioner of Eastern mysticism.",
+          "B. She rigidly adheres to a strict interpretation of orthodox theology.",
+          "C. She is openly atheist and frequently debates religious scholars.",
+          "D. She practices a unique blend of ancient pagan rituals and modern spirituality.",
+          "E. She believes that art is the only true form of divine communication."
         ],
-        "answer": "B",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Yeah! It's the same stretcher as van Gogh used.",
-            "dia_id": "D1:37"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "And he hasn't aged a day in ten years!",
-            "dia_id": "D2:21"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith observes the specific structural detail (stretcher) of the artwork.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "She also observes and comments on John's physical physical appearance over time.",
-            "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 2,
-        "question": "What is Edith's immediate state of mind when she first notices the artwork in John's possession?",
-        "option": [
-          "A. She is terrified that John has stolen a priceless museum artifact.",
-          "B. She is highly astonished and deeply intrigued by its resemblance to a master's work.",
-          "C. She is dismissive and immediately declares it to be a cheap forgery.",
-          "D. She is jealous and demands that John give it to her instead of taking it.",
-          "E. She is confused and asks Dan to identify the painter for her."
-        ],
-        "answer": "B",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
@@ -1376,6 +682,50 @@
           {
             "id": "E2",
             "speaker": "Edith",
+            "utterance": "Can we do Yoga exercises?",
+            "dia_id": "D2:4"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Edith uses 'My god' as an exclamation and suggests 'Yoga exercises' for sitting on the floor, neither of which establishes her actual long-term religious beliefs.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Edith",
+        "category": 2,
+        "question": "What discovery leads Edith to ask if she can take a closer look at an object?",
+        "option": [
+          "A. She uncovers a strange hunting bow in the corner.",
+          "B. She notices a painting that looks like a van Gogh.",
+          "C. She spots a copy of Arthur Jenkins' newest book.",
+          "D. She observes John attempting to hide a box of expensive scotch inside the kitchen.",
+          "E. She finds an ancient archaeological artifact on Art's motorcycle."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "meta",
+            "utterance": "Edith suddenly notices the painting behind John.",
+            "dia_id": "D1:30"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "My god! Wh-what is this? It looks like a van Gogh, but I've never seen it before!",
+            "dia_id": "D1:31"
+          },
+          {
+            "id": "E3",
+            "speaker": "Edith",
             "utterance": "Still, it's a superb copy! Contemporaneous, I think! May I...take a closer look?",
             "dia_id": "D1:34"
           }
@@ -1383,71 +733,16 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith expresses extreme surprise ('My god!') and recognizes the style.",
+            "inference": "Edith notices the painting behind John.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "She exhibits strong intrigue by evaluating its quality and asking to examine it closer.",
+            "inference": "She recognizes it looks like a van Gogh and immediately asks to take a closer look.",
             "based_on": [
-              "E2"
-            ]
-          }
-        ]
-      },
-      {
-        "character": "Edith",
-        "category": 3,
-        "question": "Based on the events, in what sequence does Edith verbally evaluate the items belonging to John?",
-        "option": [
-          "A. She first evaluates the scotch, then the bow, and finally the painting.",
-          "B. She first evaluates the bow, then the painting, and finally the scotch.",
-          "C. She first evaluates the painting, then John's physical aging, and finally the bow.",
-          "D. She first evaluates John's physical aging, then the bow, and finally the painting.",
-          "E. She first evaluates the painting, then the bow, and finally John's physical aging."
-        ],
-        "answer": "C",
-        "evidence_dialogues": [
-          {
-            "id": "E1",
-            "speaker": "Edith",
-            "utterance": "Still, it's a superb copy! Contemporaneous, I think!",
-            "dia_id": "D1:34"
-          },
-          {
-            "id": "E2",
-            "speaker": "Edith",
-            "utterance": "And he hasn't aged a day in ten years!",
-            "dia_id": "D2:21"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Well it's beautiful.",
-            "dia_id": "D2:37"
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step": 1,
-            "inference": "Edith evaluates the painting in Scene 1.",
-            "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Edith evaluates John's aging in Scene 2.",
-            "based_on": [
-              "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "Edith evaluates the bow (saying it's beautiful) later in Scene 2.",
-            "based_on": [
+              "E2",
               "E3"
             ]
           }
@@ -1455,76 +750,70 @@
       },
       {
         "character": "Edith",
-        "category": 4,
-        "question": "What specific action does Edith perform to gather more information about the painting's history?",
+        "category": 3,
+        "question": "How does Edith's perception of Art's teaching methods evolve from her initial reaction to the end of the evening?",
         "option": [
-          "A. She calls an appraiser on her phone to run the name 'Jacque Borne'.",
-          "B. She physically lifts the painting to examine its construction and the writing on the back.",
-          "C. She asks John to provide the certificate of authenticity he received with the gift.",
-          "D. She uses a magnifying glass to check the brushstrokes against a textbook.",
-          "E. She asks Dan to translate the French writing on the frame."
+          "A. She initially praises him but later criticizes his strictness.",
+          "B. She first ignores him, then becomes fascinated by his historical knowledge.",
+          "C. She thinks he is too lenient but eventually appreciates his rigor.",
+          "D. She views his methods as outdated before changing her mind.",
+          "E. She continuously argues with him over archaeological grading scales."
         ],
-        "answer": "B",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Edith",
-            "utterance": "May I...take a closer look?",
-            "dia_id": "D1:34"
+            "speaker": "Linda",
+            "utterance": "Oh! Archaeology's tough. Dr. Jenkins is a fine teacher.",
+            "dia_id": "D3:14"
           },
           {
             "id": "E2",
             "speaker": "Edith",
-            "utterance": "(lifting the painting)",
-            "dia_id": "D1:36"
-          },
-          {
-            "id": "E3",
-            "speaker": "Edith",
-            "utterance": "Yeah! It's the same stretcher as van Gogh used.",
-            "dia_id": "D1:37"
-          },
-          {
-            "id": "E4",
-            "speaker": "Edith",
-            "utterance": "Oh, \"to my friend Jacque Borne.\" Wonder who that was?",
-            "dia_id": "D1:39"
+            "utterance": "Na Z'drovya!",
+            "dia_id": "D3:74"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith asks to look closer and physically lifts it.",
+            "inference": "The text contains no dialogue where Edith discusses or evaluates Art's teaching methods.",
             "based_on": [
               "E1",
               "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "By lifting it, she observes the stretcher and reads the inscription on the back.",
-            "based_on": [
-              "E3",
-              "E4"
             ]
           }
         ]
       },
       {
         "character": "Edith",
-        "category": 5,
-        "question": "According to Edith, what is the implicit relationship between the female faculty members and John?",
+        "category": 4,
+        "question": "How does Edith respond to Dan's disbelief about John having done this before?",
         "option": [
-          "A. They are fiercely competitive with him for the department chair.",
-          "B. They are highly envious of his apparent inability to age physically.",
-          "C. They are angry that he is leaving without giving them proper notice.",
-          "D. They are constantly trying to buy his artwork for their own collections.",
-          "E. They rely on him to approve their curriculum changes."
+          "A. She aggressively demands that Dan stop prying into John's personal affairs.",
+          "B. She chuckles and remarks that any woman on the faculty would want his secret to not aging.",
+          "C. She completely ignores Dan and asks Sandy about the dean's decision.",
+          "D. She suggests they all practice Tantric Yoga to ease the overwhelmingly tense atmosphere.",
+          "E. She points out that John has always been highly secretive about his past."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
+            "speaker": "Dan",
+            "utterance": "No, no, no, you're too young to have done this before.",
+            "dia_id": "D2:19"
+          },
+          {
+            "id": "E2",
+            "speaker": "Edith",
+            "utterance": "(chuckling)",
+            "dia_id": "D2:20"
+          },
+          {
+            "id": "E3",
             "speaker": "Edith",
             "utterance": "And he hasn't aged a day in ten years! Any woman on the faculty would give anything to have that secret.",
             "dia_id": "D2:21"
@@ -1533,37 +822,46 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith explicitly states that women on the faculty would 'give anything to have that secret' regarding his lack of aging, indicating envy/desire for that trait.",
+            "inference": "Following Dan's statement about John being too young, Edith chuckles.",
             "based_on": [
-              "E1"
+              "E1",
+              "E2"
+            ]
+          },
+          {
+            "step": 2,
+            "inference": "She then adds that John hasn't aged in ten years and female faculty would want his secret.",
+            "based_on": [
+              "E3"
             ]
           }
         ]
       },
       {
         "character": "Edith",
-        "category": 6,
-        "question": "How many years does Edith specify John has gone without visibly aging?",
+        "category": 5,
+        "question": "What specific words does Edith read from the back of the painting?",
         "option": [
-          "A. 2",
-          "B. 5",
-          "C. 10",
-          "D. 12",
-          "E. 20"
+          "A. \"To my beloved friend Vincent.\"",
+          "B. \"To my friend Jacque Borne.\"",
+          "C. \"For the history chair at Stanford.\"",
+          "D. \"A superb contemporaneous copy.\"",
+          "E. \"Arthur M. Jenkins, publish or perish.\""
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Edith",
-            "utterance": "And he hasn't aged a day in ten years!",
-            "dia_id": "D2:21"
+            "utterance": "Oh, \"to my friend Jacque Borne.\" Wonder who that was?",
+            "dia_id": "D1:39"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Edith explicitly states the number 'ten' regarding the years he hasn't aged.",
+            "inference": "Edith explicitly reads the text 'to my friend Jacque Borne.'",
             "based_on": [
               "E1"
             ]
@@ -1573,30 +871,25 @@
       {
         "character": "Art",
         "category": 1,
-        "question": "Which statement best reflects Art's consistent integration of his professional academic role into his social interactions?",
+        "question": "How does Art view the academic publishing process based on his interaction with John?",
         "option": [
-          "A. He refuses to discuss university matters when off-campus.",
-          "B. He blends academic requirements like publishing with informal gifts, and jokingly refers to students as victims.",
-          "C. He strictly separates his students from his colleagues to maintain professional boundaries.",
-          "D. He aggressively demands that John finish reading his book before leaving.",
-          "E. He uses his authority to command Harry to stop pouring drinks."
+          "A. He believes it is a complete waste of valuable teaching time.",
+          "B. He views it as a strict necessity, citing \"Publish or perish!\"",
+          "C. He thinks it should only be done when offered the department chair.",
+          "D. He adamantly refuses to participate in it because it is too political.",
+          "E. He believes books should only be written after a decade of professorship."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Art",
-            "utterance": "She's one of my victims now; I'm taking her home.",
-            "dia_id": "D3:11"
+            "utterance": "(handing John a book) Something for you to read on the road, pal.",
+            "dia_id": "D3:18"
           },
           {
             "id": "E2",
-            "speaker": "Art",
-            "utterance": "Something for you to read on the road, pal.",
-            "dia_id": "D3:19"
-          },
-          {
-            "id": "E3",
             "speaker": "Art",
             "utterance": "Publish or perish!",
             "dia_id": "D3:23"
@@ -1605,17 +898,10 @@
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art jokes about his student being a 'victim' in a social setting.",
+            "inference": "Art hands John a book he presumably wrote, and immediately justifies the effort with the academic phrase 'Publish or perish!'.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He gifts his own academic book and quotes the academic mandate 'Publish or perish' as a joke.",
-            "based_on": [
-              "E2",
-              "E3"
+              "E1",
+              "E2"
             ]
           }
         ]
@@ -1623,49 +909,51 @@
       {
         "character": "Art",
         "category": 2,
-        "question": "What is Art's immediate reaction when Harry offers him a glass of scotch?",
+        "question": "What does Art do immediately upon arriving at the gathering?",
         "option": [
-          "A. He eagerly accepts it to celebrate his new book.",
-          "B. He politely declines the beverage completely.",
-          "C. He takes it but gives it to Linda instead.",
-          "D. He demands a clean glass instead of a plastic cup.",
-          "E. He asks what brand it is before deciding."
+          "A. He frantically examines the Van Gogh painting.",
+          "B. He takes off his helmet and asks Linda if he gets an A for Awesome.",
+          "C. He demands a glass of Johnny Walker Green.",
+          "D. He immediately begins arguing with Harry over the lack of proper seating.",
+          "E. He hands John a signed copy of his brand new archaeology book."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Harry",
-            "utterance": "Excuse me! Art?",
-            "dia_id": "D3:65"
+            "speaker": "Art",
+            "utterance": "Ah.",
+            "dia_id": "D3:1"
           },
           {
             "id": "E2",
-            "speaker": "Harry",
-            "utterance": "(offering Art a glass.)",
-            "dia_id": "D3:66"
+            "speaker": "Art",
+            "utterance": "(taking off his helmet)",
+            "dia_id": "D3:2"
           },
           {
             "id": "E3",
             "speaker": "Art",
-            "utterance": "No, not for me",
-            "dia_id": "D3:67"
+            "utterance": "(to Linda)",
+            "dia_id": "D3:3"
+          },
+          {
+            "id": "E4",
+            "speaker": "Art",
+            "utterance": "So, do I get an A for Awesome?",
+            "dia_id": "D3:4"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Harry explicitly offers Art the drink.",
+            "inference": "Art's very first actions in Scene 3 are taking off his helmet and asking Linda if he gets an A for Awesome.",
             "based_on": [
               "E1",
-              "E2"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "Art immediately and directly declines it.",
-            "based_on": [
-              "E3"
+              "E2",
+              "E3",
+              "E4"
             ]
           }
         ]
@@ -1673,55 +961,37 @@
       {
         "character": "Art",
         "category": 3,
-        "question": "Based on the dialogue, in what sequence does Art execute his social duties upon arriving?",
+        "question": "How does Art's opinion on John's hunting methods evolve from the time he arrives to the toast?",
         "option": [
-          "A. He first introduces Linda to the group, then gives John the book, and finally removes his helmet.",
-          "B. He first gives John the book, then removes his helmet, and finally introduces Linda.",
-          "C. He first removes his helmet, then reminds John of his connection to Linda, and finally gives John the book.",
-          "D. He first reminds John of his connection to Linda, then gives John the book, and finally removes his helmet.",
-          "E. He first gives John the book, then introduces Linda to the group, and finally declines a drink."
+          "A. He initially criticizes the bow but later agrees wild game is best.",
+          "B. He first thinks hunting is dangerous, then asks for deer meat.",
+          "C. He mocks the use of a telescopic sight, then praises the bow.",
+          "D. He initially ignores the bow but eventually asks John to teach him.",
+          "E. He believes hunting is unethical before realizing it is natural."
         ],
-        "answer": "C",
+        "answer": "F",
+        "label": "Abstain",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Art",
-            "utterance": "(taking off his helmet)",
-            "dia_id": "D3:2"
+            "speaker": "Dan",
+            "utterance": "(Whoa!) What d'ya hunt?",
+            "dia_id": "D2:29"
           },
           {
             "id": "E2",
             "speaker": "Art",
-            "utterance": "Hey! John! You know Linda. You had her last semester.",
-            "dia_id": "D3:8"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "Something for you to read on the road, pal.",
-            "dia_id": "D3:19"
+            "utterance": "Ah.",
+            "dia_id": "D3:1"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art physically removes his helmet first upon entering.",
+            "inference": "Art arrives after the conversation about the bow and hunting has already concluded. He never states an opinion on John's hunting methods.",
             "based_on": [
-              "E1"
-            ]
-          },
-          {
-            "step": 2,
-            "inference": "He then addresses John and points out his prior connection to Linda.",
-            "based_on": [
+              "E1",
               "E2"
-            ]
-          },
-          {
-            "step": 3,
-            "inference": "After they converse about the class, Art hands John the book.",
-            "based_on": [
-              "E3"
             ]
           }
         ]
@@ -1729,40 +999,41 @@
       {
         "character": "Art",
         "category": 4,
-        "question": "What specific physical action does Art perform to commemorate John's departure?",
+        "question": "How does Art introduce Linda to the rest of the group?",
         "option": [
-          "A. He helps John pack the Van Gogh painting.",
-          "B. He brings John a six-pack of beer.",
-          "C. He hands John a physical copy of his newly published book.",
-          "D. He proposes a formal toast with the green labeled scotch.",
-          "E. He gives John a ride on the back of his motorcycle."
+          "A. He formally introduces her as the newly appointed history chair at Stanford.",
+          "B. He mentions she is one of his victims from last semester and introduces her to everybody.",
+          "C. He completely ignores her presence and only speaks directly to John and Harry.",
+          "D. He introduces her as a highly esteemed colleague from the archaeology department.",
+          "E. He aggressively demands that they not card her because she is too young to drink."
         ],
-        "answer": "C",
+        "answer": "B",
+        "label": "Fact Extraction (Multiple Dialogues)",
         "evidence_dialogues": [
           {
             "id": "E1",
             "speaker": "Art",
-            "utterance": "(handing John a book)",
-            "dia_id": "D3:18"
+            "utterance": "She's one of my victims now; I'm taking her home. She wanted to come by and say hello- goodbye.",
+            "dia_id": "D3:11"
           },
           {
             "id": "E2",
             "speaker": "Art",
-            "utterance": "Something for you to read on the road, pal.",
-            "dia_id": "D3:19"
+            "utterance": "Oh! Everybody, this is Linda. Linda, this is everybody.",
+            "dia_id": "D3:29"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "Art physically hands John a book.",
+            "inference": "Art jokes to John that Linda is 'one of his victims now'.",
             "based_on": [
               "E1"
             ]
           },
           {
             "step": 2,
-            "inference": "He states it is meant for him to read 'on the road' as a parting gift.",
+            "inference": "He later announces her to the rest of the group as 'Everybody, this is Linda.'",
             "based_on": [
               "E2"
             ]
@@ -1772,79 +1043,445 @@
       {
         "character": "Art",
         "category": 5,
-        "question": "What is the explicitly defined professional relationship between Art and the book he gives John?",
+        "question": "What is the exact title of the book Art hands to John?",
         "option": [
-          "A. He is simply passing along a book he borrowed from the library.",
-          "B. He is the author of the book.",
-          "C. He is the publisher who printed the book.",
-          "D. He bought the book based on John's recommendation.",
-          "E. He stole the book from the department's archive."
+          "A. \"Early man: parallels to the shadows of the cave.\"",
+          "B. \"Shadows of the cave: parallels to early man.\"",
+          "C. \"The history chair: a decade of professorship.\"",
+          "D. \"Tantric Yoga and the art of modern archaeology.\"",
+          "E. \"Publish or perish: the Arthur M. Jenkins story.\""
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "John",
-            "utterance": "\"Shadows of the cave: parallels to early man.\"",
-            "dia_id": "D3:20"
+            "speaker": "Art",
+            "utterance": "(handing John a book) Something for you to read on the road, pal.",
+            "dia_id": "D3:18"
           },
           {
             "id": "E2",
             "speaker": "John",
-            "utterance": "Arthur M. Jenkins.",
-            "dia_id": "D3:21"
-          },
-          {
-            "id": "E3",
-            "speaker": "Art",
-            "utterance": "Publish or perish!",
-            "dia_id": "D3:23"
+            "utterance": "\"Shadows of the cave: parallels to early man.\"",
+            "dia_id": "D3:20"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "John reads the author's name aloud: Arthur M. Jenkins. Art's name is Arthur (Art).",
+            "inference": "When Art hands John the book, John reads the specific title aloud.",
             "based_on": [
               "E1",
               "E2"
             ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 1,
+        "question": "What long-term dietary or lifestyle choice does Linda express during the gathering?",
+        "option": [
+          "A. She only eats wild game because it lives naturally.",
+          "B. She does not drink alcohol.",
+          "C. She strictly adheres to a diet of tacos and tuna salad.",
+          "D. She refuses to eat fast food like McDonalds.",
+          "E. She only drinks Johnny Walker Green label scotch."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Excuse me! Art? (offering Art a glass.)",
+            "dia_id": "D3:65"
           },
           {
-            "step": 2,
-            "inference": "Art's response, 'Publish or perish!', confirms he is the one who published (authored) it.",
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "(offering it to Linda)",
+            "dia_id": "D3:68"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "Oh, no, I don't drink!",
+            "dia_id": "D3:69"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "When offered a glass of scotch by Harry, Linda explicitly states she does not drink.",
             "based_on": [
+              "E1",
+              "E2",
               "E3"
             ]
           }
         ]
       },
       {
-        "character": "Art",
-        "category": 6,
-        "question": "How many items does Art explicitly physically hand to John upon arriving at the gathering?",
+        "character": "Linda",
+        "category": 2,
+        "question": "How does Linda position herself once the drinks have been served inside the house?",
         "option": [
-          "A. 0",
-          "B. 1",
-          "C. 2",
-          "D. 3",
-          "E. 4"
+          "A. She firmly sits on the floor next to Dan.",
+          "B. She warms herself in front of the fire.",
+          "C. She thoroughly inspects the Van Gogh painting in the kitchen.",
+          "D. She quickly jumps back onto Art's motorcycle to leave.",
+          "E. She attempts to pull the heavy hunting bow that Sandy found."
         ],
         "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
         "evidence_dialogues": [
           {
             "id": "E1",
-            "speaker": "Art",
-            "utterance": "(handing John a book)",
-            "dia_id": "D3:18"
+            "speaker": "meta",
+            "utterance": "Everyone makes themselves comfortable, Linda warming herself in front of the fire.",
+            "dia_id": "D3:77"
           }
         ],
         "reasoning_steps": [
           {
             "step": 1,
-            "inference": "The text explicitly describes Art performing the action of handing exactly one item (a book) to John.",
+            "inference": "The text explicitly states that Linda warms herself in front of the fire at the end of Scene 3.",
             "based_on": [
               "E1"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 3,
+        "question": "How does Linda's assessment of Art's motorcycle driving change between the ride and arriving at the house?",
+        "option": [
+          "A. She first thinks he drives too fast, then decides it was thrilling.",
+          "B. She initially complains about the lack of helmets, then appreciates the breeze.",
+          "C. She thinks he is highly reckless but later admits he is an extremely safe driver.",
+          "D. She strongly dislikes the noise but later enjoys the speed.",
+          "E. She claims she wants to learn to ride but immediately changes her mind."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "So, do I get an A for Awesome?",
+            "dia_id": "D3:4"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "(rolling her eyes) Oh my gosh. That was fun!",
+            "dia_id": "D3:5"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Linda only states that the ride was fun upon arriving. There is no information on how her assessment changed over time during the ride.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 4,
+        "question": "How does Linda characterize her academic relationship with Dr. Jenkins?",
+        "option": [
+          "A. She despises his class because he intentionally tries to fail his students.",
+          "B. She says archaeology is tough but he is a fine teacher.",
+          "C. She considers him a close personal friend rather than just a professor.",
+          "D. She refuses to answer John and changes the subject entirely.",
+          "E. She enthusiastically claims he is the single best professor at the university."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "Is Art as tough as I hear?",
+            "dia_id": "D3:13"
+          },
+          {
+            "id": "E2",
+            "speaker": "Linda",
+            "utterance": "Oh! Archaeology's tough. Dr. Jenkins is a fine teacher.",
+            "dia_id": "D3:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "John asks if Art is tough. Linda defends Art by saying the subject (archaeology) is tough, but Art (Dr. Jenkins) is a fine teacher.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Linda",
+        "category": 5,
+        "question": "What precise grade did Linda receive in Dr. Jenkins' archaeology class last semester?",
+        "option": [
+          "A. She received an A for Awesome.",
+          "B. She barely passed with a C-minus.",
+          "C. She achieved a perfect score on her final exam.",
+          "D. She received a B-plus after submitting extra credit.",
+          "E. She failed the class completely."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Art",
+            "utterance": "Hey! John! You know Linda. You had her last semester.",
+            "dia_id": "D3:8"
+          },
+          {
+            "id": "E2",
+            "speaker": "Art",
+            "utterance": "She's one of my victims now; I'm taking her home. She wanted to come by and say hello- goodbye.",
+            "dia_id": "D3:11"
+          },
+          {
+            "id": "E3",
+            "speaker": "Linda",
+            "utterance": "Oh! Archaeology's tough. Dr. Jenkins is a fine teacher.",
+            "dia_id": "D3:14"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While Art mentions she is one of his victims and Linda says the class is tough, her exact grade is never stated.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 1,
+        "question": "Which of the following statements accurately reflects Sandy's long-term academic research focus?",
+        "option": [
+          "A. She specializes in the linguistic evolution of early French dialects.",
+          "B. She is primarily focused on the architectural ruins of ancient Greece.",
+          "C. She focuses entirely on the preservation of early American literature.",
+          "D. She meticulously studies the use of hunting tools by early man.",
+          "E. She is actively writing a comprehensive biography of Vincent van Gogh."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "He hasn't called.",
+            "dia_id": "D1:29"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Wow! Can you pull this?",
+            "dia_id": "D2:26"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Cheers!",
+            "dia_id": "D3:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy's dialogue contains no references to her personal academic research focus or profession.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 2,
+        "question": "What specific item does Sandy discover while the group is gathered inside?",
+        "option": [
+          "A. She discovers a box of highly expensive scotch hidden in the corner.",
+          "B. She finds a hunting bow and asks if it can be pulled.",
+          "C. She uncovers a signed copy of Arthur Jenkins' newest book.",
+          "D. She suddenly spots a contemporaneous copy of a Van Gogh painting.",
+          "E. She enthusiastically finds a fully loaded rifle equipped with a telescopic sight."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "meta",
+            "utterance": "Sandy finds a bow.",
+            "dia_id": "D2:25"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Wow! Can you pull this?",
+            "dia_id": "D2:26"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "The text explicitly notes that Sandy finds a bow and then she asks if it can be pulled.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 3,
+        "question": "How does Sandy's understanding of John's departure evolve throughout the provided scenes?",
+        "option": [
+          "A. She initially thinks he was fired but later discovers he resigned voluntarily.",
+          "B. She suspects he is moving to Stanford, but eventually realizes he lacks a destination.",
+          "C. She believes he is seeking higher pay, then decides he simply hates goodbyes.",
+          "D. She assumes he is going on a hunting trip before learning he is giving up tenure.",
+          "E. She initially thinks he is avoiding the party, then realizes he is simply packing."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Sandy",
+            "utterance": "He hasn't called.",
+            "dia_id": "D1:29"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "Wow! Can you pull this?",
+            "dia_id": "D2:26"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Cheers!",
+            "dia_id": "D3:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "Sandy never expresses any thoughts, questions, or understanding regarding the reasons behind John's departure.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 4,
+        "question": "What piece of administrative news does Sandy provide regarding the department?",
+        "option": [
+          "A. She reveals that John has officially been offered the history chair at Stanford.",
+          "B. She explicitly confirms that the dean hasn't called about George or Trimbell taking over.",
+          "C. She announces that Dr. Jenkins' new book has been rejected by the publisher.",
+          "D. She aggressively complains that the dean is refusing to accept John's resignation.",
+          "E. She enthusiastically confirms that George has officially been chosen to take over."
+        ],
+        "answer": "B",
+        "label": "Fact Extraction (Single Dialogue)",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "John",
+            "utterance": "George or Trimbell - Has the dean made up his mind?",
+            "dia_id": "D1:28"
+          },
+          {
+            "id": "E2",
+            "speaker": "Sandy",
+            "utterance": "He hasn't called.",
+            "dia_id": "D1:29"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "When John asks if the dean has made up his mind about George or Trimbell taking over, Sandy provides the update that the dean hasn't called yet.",
+            "based_on": [
+              "E1",
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "character": "Sandy",
+        "category": 5,
+        "question": "What specific type of alcoholic beverage does Sandy consume during the toast?",
+        "option": [
+          "A. She specifically drinks a plastic cup of Johnny Walker Green.",
+          "B. She explicitly drinks a can of beer.",
+          "C. She carefully sips a glass of expensive wine.",
+          "D. She aggressively drinks a large amount of tequila.",
+          "E. She completely refuses to drink any alcohol during the toast."
+        ],
+        "answer": "F",
+        "label": "Abstain",
+        "evidence_dialogues": [
+          {
+            "id": "E1",
+            "speaker": "Harry",
+            "utterance": "Ooh! Here, cups, cups? There we go!",
+            "dia_id": "D3:62"
+          },
+          {
+            "id": "E2",
+            "speaker": "Harry",
+            "utterance": "(pouring everyone a glass)",
+            "dia_id": "D3:63"
+          },
+          {
+            "id": "E3",
+            "speaker": "Sandy",
+            "utterance": "Cheers!",
+            "dia_id": "D3:75"
+          }
+        ],
+        "reasoning_steps": [
+          {
+            "step": 1,
+            "inference": "While Harry pours everyone a glass and Sandy says 'Cheers!', the text does not strictly state that Sandy herself drank from the cup, only that she participated in the toast.",
+            "based_on": [
+              "E1",
+              "E2",
+              "E3"
             ]
           }
         ]

@@ -1,0 +1,2796 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "During her evening conversation, Ariel often reflected on the importance of personal growth and the challenges of maintaining friendships in a fast-paced world. She was particularly interested in how people balance their individual aspirations with the expectations of those around them.\n\nBased on her discussions and reactions throughout the evening, what best captures Ariel's underlying belief about romantic relationships?",
+            "option": [
+                "A. She thinks relationships that start with immediate passion are doomed to fail and prefers a slow build-up.",
+                "B. She is actively seeking a relationship with someone who speaks a different language for the novelty.",
+                "C. She prioritizes finding a partner who is part of her established friend group for comfort.",
+                "D. She feels she has missed out on a passionate connection and desires it, despite acknowledging its complexities.",
+                "E. She believes trust and security are more important than passion in the long run.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She feels she has missed out on a passionate connection and desires it, despite acknowledging its complexities.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I just never had a relationship with that kind of passion, you know, where you have to have somebody right there, in the middle of a theme park.",
+                    "dia_id": "8:20"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "There, well, see? Barry wouldn't even kiss me on a miniature golf course.",
+                    "dia_id": "8:22"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "I mean, do you think there are people who go through life never having that kind of...",
+                    "dia_id": "8:26"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "But, um... I don't think that's going to be you.",
+                    "dia_id": "8:31"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ariel",
+                    "utterance": "You don't.",
+                    "dia_id": "8:32"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "Uh-uh. See, I see.... big passion in your future.",
+                    "dia_id": "8:33"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Ariel",
+                    "utterance": "Really?",
+                    "dia_id": "8:34"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Ariel",
+                    "utterance": "You do?",
+                    "dia_id": "8:36"
+                },
+                {
+                    "id": "E9",
+                    "speaker": "Ariel",
+                    "utterance": "Y'know, I know it's totally superficial and we have absolutely nothing in common, and we don't even speak the same language but Goooooooddddddd....",
+                    "dia_id": "18:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel explicitly states she has never experienced a relationship with impulsive passion, contrasting it with her ex Barry's refusal to kiss her during a mundane activity (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She expresses a broader existential concern about whether some people never experience such passion, indicating her fear of missing out is not just about her past but a potential future state (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "When Bennett suggests she *won't* be one of those people and predicts 'big passion' for her, her repeated questioning ('Really?', 'You do?') shows a hopeful and invested desire for this prediction to be true (E4, E5, E6, E7, E8).",
+                    "based_on": [
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Later, her reaction to Paolo, despite acknowledging the superficiality and lack of common ground, is an intense, wordless expression of desire ('Goooooooddddddd'), directly showcasing her attraction to the immediate, passionate possibility he represents (E9).",
+                    "based_on": [
+                        "E9"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "Across multiple sessions, Ariel consistently voices a lack of past passion, a fear of missing it, hope for it in the future, and exhibits an intense, immediate attraction that aligns with that desire, even while recognizing its flaws. This forms a coherent underlying belief.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7",
+                        "E8",
+                        "E9"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 218,
+            "label": "多跳"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "Ariel spent much of her early adulthood navigating the pressures of her family's expectations, which often clashed with her own desires for independence and self-expression. She found herself frequently questioning what was truly important in life, especially when it came to relationships and career paths.\n\nConsidering the sequence of events mentioned by Ariel, what was the relationship between her past feelings for Barry and her decision not to marry him?",
+            "option": [
+                "A. The relationship ended because Barry wanted to move to Milwaukee and she refused.",
+                "B. She decided not to marry him after a single, unpassionate kiss on a miniature golf course.",
+                "C. She married Barry, but their relationship lacked passion, which led to their eventual divorce.",
+                "D. Barry's consistent refusal to be spontaneously affectionate was a contributing factor to her not marrying him.",
+                "E. She broke off the engagement after discovering Barry had been passionate with someone else on a theme park ride.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. Barry's consistent refusal to be spontaneously affectionate was a contributing factor to her not marrying him.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "There, well, see? Barry wouldn't even kiss me on a miniature golf course.",
+                    "dia_id": "8:22"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "No, he said we were holding up the people behind us.",
+                    "dia_id": "8:24"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "And you didn't marry him because...?",
+                    "dia_id": "8:25"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "I mean, do you think there are people who go through life never having that kind of...",
+                    "dia_id": "8:26"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ariel",
+                    "utterance": "God, the first time he smiled at me... those three seconds were more exciting than three weeks in Bermuda with Barry.",
+                    "dia_id": "18:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel cites a specific instance where Barry refused to kiss her on a miniature golf course, using it as an example to contrast with Bennett's passionate story (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She provides Barry's reason for refusal (holding up the line), framing it as a practical concern that inhibited spontaneous affection (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett directly links this characteristic ('wouldn't even kiss me') to the outcome ('didn't marry him'), and Ariel does not correct him (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Instead of correcting Bennett, Ariel pivots to a broader question about people missing passion, implicitly affirming the connection between Barry's lack of passion and her decision (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "Later, she reinforces the lack of excitement in her relationship with Barry by comparing three weeks with him unfavorably to three seconds with Paolo (E5).",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 6,
+                    "cross-session conclusion": "The temporal and logical sequence is: 1) Barry exhibited non-spontaneous, unpassionate behavior (E1, E2). 2) This behavior is presented as a direct reason for not marrying him (E3, E4). 3) Ariel later confirms the lack of excitement in that past relationship (E5). The refusal to kiss is framed as a symptom of the broader lack of passion that contributed to the relationship's end.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 219,
+            "label": "多跳"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "How did Ariel first meet Paolo that evening when the lights went out, and what was the immediate result?\n\nYou must choose the correct answer from the following list:\n['A. She bumped into Paolo in the dark hallway and he helped her find candles for the apartment.', 'B. She met him while playing Monopoly in the hallway, and he offered to teach her Italian.', 'C. She found her lost little cat in the building during the power outage, which led to their meeting and Paolo being introduced to her friends.', 'D. Fiona brought her home, because she had lost her and was looking for her cat.', 'E. Bennett introduced them, because Paolo was his former roommate at university who was looking for a place to spend the night.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She bumped into him in the dark hallway, and he helped her find candles for the apartment.",
+                "B. She met him while playing Monopoly in the hallway, and he offered to teach her Italian.",
+                "C. She found his lost cat in the building during the blackout, which led to her meeting and introducing him to her friends.",
+                "D. Fiona brought him to the apartment because she found him lost and looking for his cat.",
+                "E. Bennett introduced them because Paolo was his old college roommate looking for a place to stay.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She found his lost cat in the building during the blackout, which led to her meeting and introducing him to her friends.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, poor little Tooty is scared to death. We should find his owner.",
+                    "dia_id": "12:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "During a blackout? He'd get trampled!",
+                    "dia_id": "12:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Alright. I looked all over the building and I couldn't find the kitty anywhere.",
+                    "dia_id": "16:16"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, I found him. He was Paolo's cat.",
+                    "dia_id": "16:17"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ariel",
+                    "utterance": "Well, the cat... the cat turned out to be Paolo's cat!",
+                    "dia_id": "16:14"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Ariel",
+                    "utterance": "Everybody, this is Paolo. Paolo, I want you to meet my friends...",
+                    "dia_id": "16:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "A cat ('poor little Tooty') is found in the apartment, and the group discusses finding its owner (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona later reports she searched the building for the cat but couldn't find it (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel then states she is the one who found the cat, and identifies its owner as Paolo (E4, E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Immediately after this, Ariel introduces Paolo to the entire group, presenting him as a new person to her friends (E6).",
+                    "based_on": [
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "The event chain is clear: A cat was found (session 12). Ariel later found its owner, Paolo (session 16). The immediate result of finding the cat's owner was Ariel meeting Paolo and subsequently introducing him to her social circle.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 220,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "Bennett has always been fascinated by the concept of time travel, often spending hours reading about theoretical physics and debating with friends about the ethics of altering past events. He finds it intriguing to imagine how different life choices might play out under alternate timelines.\n\nWhich of the following best describes Bennett's consistent perspective on romantic relationships, as revealed through his advice and actions?",
+            "option": [
+                "A. He believes the most stable relationships are those where both partners have a clear, shared financial plan.",
+                "B. He believes relationships should be kept separate from one's existing friend group to avoid drama.",
+                "C. He thinks that passion is fleeting and less important than the lasting qualities of trust and security, though he acknowledges passion's initial appeal.",
+                "D. He is a firm believer in love at first sight and advocates for immediate confession of feelings.",
+                "E. He values friendship above all and thinks romance inevitably ruins a good friendship.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He thinks that passion is fleeting and less important than the lasting qualities of trust and security, though he acknowledges passion's initial appeal.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Probably. But you know, I'll tell you something. Passion is way overrated.",
+                    "dia_id": "8:27"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "It is. Eventually, it kind of... burns out. But hopefully, what you're left with is trust, and security, and... well, in the case of my ex-wife, lesbianism.",
+                    "dia_id": "8:29"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Because you waited too long to make your move, and now you're in the friend zone.",
+                    "dia_id": "8:43"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "No, no, no. I'm not in the zone.",
+                    "dia_id": "8:44"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "I'm taking my time, alright? I'm laying the groundwork. Yeah. I mean, every day I get just a little bit closer to...",
+                    "dia_id": "8:46"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "I will, I will. See, I'm waiting for the right moment.",
+                    "dia_id": "8:48"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett explicitly states his belief that 'passion is way overrated' and that it eventually 'burns out,' contrasting it with enduring qualities like 'trust and security' (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Despite this stated philosophy, his actions regarding Ariel contradict a complete dismissal of passion. He denies being in the 'friend zone' and describes a deliberate strategy of 'laying the groundwork' and 'waiting for the right moment' to advance a romantic relationship with her (E4, E5, E6).",
+                    "based_on": [
+                        "E4",
+                        "E5",
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "cross-session conclusion": "Bennett's persona involves a dual perspective: 1) A reflective, perhaps cynical, belief that intense passion is not sustainable and that deeper, stable bonds are more valuable (learned from past experience). 2) A concurrent, active desire to cultivate a romantic relationship (with Ariel), showing he still engages in the pursuit, albeit cautiously. His philosophy comments on the long-term nature of relationships, not his immediate romantic intentions.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 221,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "At what moment in the sequence of events does Bennett become aware, or is informed, that his romantic approach toward Ariel could fail?\n\nYou must choose the correct answer from the following options:\n[\"A. After Ariel introduces Paolo to the group, when Bennett sarcastically asks where Paolo suddenly comes from.\", \"B. When Ethan first mentions the concept of « friendship zone » during their private conversation.\", \"C. At the exact moment Ariel interrupts his confession on the terrace to draw attention to the cat.\", \"D. When Fiona returns and complains about being the last to hear the news about Paolo.\", \"E. After he confronted Paolo and called him « crapweasel », realizing that Paolo does not yield.\", \"F. The answer cannot be deduced from the information provided.\"]",
+            "option": [
+                "A. After Ariel introduces Paolo to the group, when Bennett sarcastically asks where he 'suddenly' came from.",
+                "B. When Ethan first mentions the concept of the 'friend zone' during their private conversation.",
+                "C. The moment Ariel interrupts his balcony confession to point out the cat.",
+                "D. When Fiona returns and complains about being the last to know about Paolo.",
+                "E. After he confronts Paolo and calls him a 'crapweasel,' realizing Paolo won't back down.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. When Ethan first mentions the concept of the 'friend zone' during their private conversation.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "It's never gonna happen.",
+                    "dia_id": "8:39"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "You and Ariel.",
+                    "dia_id": "8:41"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Because you waited too long to make your move, and now you're in the friend zone.",
+                    "dia_id": "8:43"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Bennett, you're mayor of the zone.",
+                    "dia_id": "8:45"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ethan",
+                    "utterance": "Look Bennett, I'm telling you, she has no idea what you're thinking. If you don't ask her out soon you're going to end up stuck in the zone forever.",
+                    "dia_id": "8:47"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "No, no, no. I'm not in the zone.",
+                    "dia_id": "8:44"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Bennett",
+                    "utterance": "I will, I will. See, I'm waiting for the right moment.",
+                    "dia_id": "8:48"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan directly tells Bennett a romantic relationship with Ariel is 'never gonna happen' and explicitly states the reason: Bennett is in the 'friend zone' because he waited too long (E1, E2, E3, E5).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan reinforces this diagnosis with the hyperbolic 'mayor of the zone' (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett's immediate, repeated denial ('No, no, no') and his defensive justification about 'waiting for the right moment' indicate that Ethan's critique is a new and pressing concern he feels the need to argue against (E6, E7).",
+                    "based_on": [
+                        "E6",
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "The temporal sequence is clear: Before this conversation, Bennett was operating under his own strategy ('laying the groundwork'). During session 8, Ethan articulates the specific concept of the 'friend zone' as the failure mode of Bennett's approach. Bennett's defensive reaction shows this is the point where the potential failure of his strategy is explicitly laid out for him, prompting his subsequent attempts to act (in sessions 10 and 11).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 222,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "After returning from a long trip, Bennett found himself reflecting on the importance of personal space and the value of maintaining clear boundaries in friendships, especially after overhearing a conversation about a mutual acquaintance. The idea of how people navigate social dynamics and emotional connections had been on his mind all week. What specific action did Bennett take regarding Paolo after seeing Ariel's interest in him, and what was Paolo's verbal response to Bennett's core request?",
+            "option": [
+                "A. Bennett politely asked Paolo to leave the party; Paolo refused by saying 'Monopoly!'",
+                "B. Bennett physically pushed Paolo out of the apartment; Paolo yelled 'Bennett!' in protest.",
+                "C. Bennett challenged Paolo to a game of Monopoly for Ariel's affection; Paolo said 'Si' and won the game.",
+                "D. Bennett warned Paolo to stay away from Ariel because they had a 'thing'; Paolo acknowledged understanding by saying 'Si'.",
+                "E. Bennett offered to help Paolo find his cat; Paolo thanked him and said 'Grazie'.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. Bennett warned Paolo to stay away from Ariel because they had a 'thing'; Paolo acknowledged understanding by saying 'Si'.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Listen. Um, listen. Something you should... know... um, Ariel and I... we're kind of a thing.",
+                    "dia_id": "18:13"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Thing, yes. Thing.",
+                    "dia_id": "18:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "No, no, no. Technically the... sex is not... being had, but that's... see, that's not the point. See, um, the point is that... Ariel and I should be, er, together. You know, and if you get in the.... um...",
+                    "dia_id": "18:17"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "No, no, that's not where I was going. Er, if you get in the... way, of us becoming a thing, then I would be, well, very sad.",
+                    "dia_id": "18:19"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Paolo",
+                    "utterance": "Oh!",
+                    "dia_id": "18:20"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Bennett",
+                    "utterance": "Yeah! Se vice?",
+                    "dia_id": "18:21"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Paolo",
+                    "utterance": "Si.",
+                    "dia_id": "18:22"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett's action is to privately confront Paolo and claim that he and Ariel are 'a thing' and 'should be... together' (E1, E2, E3).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He explicitly frames this as a warning: if Paolo gets 'in the way,' Bennett would be 'very sad' (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "After Paolo's initial exclamation ('Oh!'), Bennett seeks confirmation of understanding with what appears to be broken Italian/Spanish ('Se vice?') (E5, E6).",
+                    "based_on": [
+                        "E5",
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Paolo's direct verbal response to this request for confirmation/agreement is 'Si,' meaning 'Yes' (E7).",
+                    "based_on": [
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "Bennett's specific action was issuing a warning/claim about his status with Ariel. Paolo's relevant verbal response was an affirmative 'Si,' indicating he understood Bennett's claim/warning.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 223,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "Chloe has always had a deep passion for gardening, often spending her weekends tending to rare plants and experimenting with new cultivation techniques. She finds solace in the quiet rhythm of nature and believes that nurturing plants teaches patience and responsibility. \n\nBased on her interactions, how does Chloe typically respond to social events or news involving her friends?",
+            "option": [
+                "A. She becomes withdrawn and prefers to process information privately before engaging.",
+                "B. She acts as a mediator, carefully weighing everyone's feelings before giving her opinion.",
+                "C. She reacts with immediate, enthusiastic excitement and wants to be involved.",
+                "D. She deflects attention away from herself by changing the subject to other people.",
+                "E. She is skeptical and requires multiple confirmations before believing any news.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She reacts with immediate, enthusiastic excitement and wants to be involved.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "OK, I'll go. OK, senior year of college... on a pool table.",
+                    "dia_id": "8:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "All",
+                    "utterance": "Whoooaa!",
+                    "dia_id": "8:3"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "dia_id": "10:21",
+                    "utterance": "Oh my God! I love him!"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "You'd better act surprised.",
+                    "dia_id": "10:22"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Chloe",
+                    "utterance": "My surprise party!",
+                    "dia_id": "10:24"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Chloe",
+                    "utterance": "Hi!",
+                    "dia_id": "16:3"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Chloe",
+                    "utterance": "Hi!",
+                    "dia_id": "16:5"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Chloe",
+                    "utterance": "Hi!",
+                    "dia_id": "16:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In the 'weirdest place' game, Chloe volunteers immediately ('I'll go') and shares a provocative story that elicits a group reaction, showing she is eager to participate and create a lively social atmosphere (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When she mistakenly believes Bennett is planning a surprise party for her, her immediate reaction is an exuberant 'Oh my God! I love him!' despite being told to 'act surprised' (E3, E4). This shows an instinctive, unfiltered enthusiastic response.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She immediately blurts out 'My surprise party!' to Fiona, further spreading the exciting (though incorrect) news (E5).",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "When Ariel introduces Paolo, Chloe greets him three separate times with a cheerful 'Hi!', demonstrating an instantly warm and welcoming social demeanor (E6, E7, E8).",
+                    "based_on": [
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "Across multiple sessions and different contexts (sharing stories, receiving personal news, meeting a stranger), Chloe consistently exhibits a pattern of immediate, vocal, and enthusiastic engagement. She leans into social excitement without hesitation.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 224,
+            "label": "多跳"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "What did Chloe do to help Bennett after his accident on the terrace, and which substance did she use?\n\nYou must choose the correct answer from the following options:\n['A. She bandaged his hand after he burned it with a candle flame.', 'B. She helped him clean up the spilled candle wax with a cloth.', 'C. She applied Bactine to a wound on his head after he got one from falling.', 'D. She gave him wine to calm his nerves after the failure of his confession.', \"E. She put the cat ('Tooty') on his knees to amuse him after Paolo's arrival.\", 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She bandaged his hand after he burned it on a candle flame.",
+                "B. She helped him clean up spilled wax from the candles using a cloth.",
+                "C. She applied Bactine to a wound on his head after he hit it.",
+                "D. She gave him wine to calm his nerves after his failed confession attempt.",
+                "E. She put the cat ('Tooty') in his lap to cheer him up after Paolo arrived.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She applied Bactine to a wound on his head after he hit it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "What?  Ow!",
+                    "dia_id": "11:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "This is just Bactine. It won't hurt.",
+                    "dia_id": "12:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Sorry, that was wax.",
+                    "dia_id": "12:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 11, Bennett exclaims 'Ow!' indicating he has just been hurt (E1). The previous line is Ariel being distracted by a cat, implying Bennett may have hit his head while turning.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In the very next session (12), Chloe is speaking to someone, saying 'This is just Bactine. It won't hurt.' Bactine is a topical antiseptic (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ethan's following line ('Sorry, that was wax.') is a separate apology, not related to Chloe's action (E3). The sequence and lack of any other injured person makes it clear Chloe is tending to Bennett's injury from the previous scene.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "The event is directly sequential. Bennett gets hurt ('Ow!'). In the next scene, Chloe is applying Bactine to an injury. Given the timing and characters present, the logical conclusion is that Chloe is treating Bennett's injury with Bactine.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 225,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "Based on how it is mentioned by others, what can be generally inferred about how Dexter handles minor personal incidents?\n\nYou must choose the correct answer from the following list:\n[\"A. He handles things on his own and does not always inform his broader group of friends.\", 'B. He actively seeks advice from all his friends for every problem.', 'C. He often exaggerates minor incidents in order to gain his friends' sympathy.', 'D. He ignores problems in the hope that they will resolve themselves over time.', 'E. He immediately reports every problem to Fiona, since she is his main confidant.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. He handles things independently and doesn't always inform his wider friend group.",
+                "B. He actively seeks advice from all his friends before dealing with any problem.",
+                "C. He tends to exaggerate small incidents to gain sympathy from his friends.",
+                "D. He ignores problems in the hope that they will resolve themselves over time.",
+                "E. He immediately reports any issue to Fiona, as she is his primary confidante.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He handles things independently and doesn't always inform his wider friend group.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Yuh-huh! I was the last one to know when Dexter got bitten by the peacock at the zoo.",
+                    "dia_id": "10:31"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Well, Dexter's old roomate was Jewish, and these are the only candles we have, so...",
+                    "dia_id": "5:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona lists 'Dexter got bitten by the peacock at the zoo' as an example of an event she was 'the last one to know' about (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This implies that the incident was known among the friend group, but Fiona found out later than others. For this to happen, Dexter (or someone who knew) must have told some friends but not Fiona, or Fiona was simply not in the communication loop initially.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Separately, Ethan references 'Dexter's old roommate' in a matter-of-fact way, indicating Dexter's past life is shared knowledge, but the specific detail (the roommate's religion) is tied to a practical item (candles) (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "The peacock incident is presented as a known event within the group that Fiona learned about belatedly. This pattern suggests Dexter does not systematically broadcast his minor misfortunes to everyone at once. He either told a subset of friends or someone else did, but it did not reach Fiona quickly. This points to an independent or selective approach to sharing personal incidents, rather than a communal or attention-seeking one.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 226,
+            "label": "多跳"
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "While visiting the zoo, Dexter had been deeply contemplating the balance between personal ambition and the expectations of his family, wondering if he should pursue a career in the arts or follow a more traditional path. He also found himself fascinated by the way different animals interacted with their environments, noting how even the most docile creatures could display unexpected behavior under certain conditions. What immediate concern or problem was Dexter most likely dealing with at the time he was bitten by the peacock at the zoo?",
+            "option": [
+                "A. He was trying to separate two friends who were arguing about animal ethics.",
+                "B. The dialogue does not provide any information about his activities or state of mind at that moment.",
+                "C. He was attempting to take a photograph of the peacock for a school project.",
+                "D. He was feeding the peacock despite clear signs warning not to, which provoked the bite.",
+                "E. He was lost and trying to find the zoo exit when the peacock approached him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. The dialogue does not provide any information about his activities or state of mind at that moment.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Yuh-huh! I was the last one to know when Dexter got bitten by the peacock at the zoo.",
+                    "dia_id": "10:31"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The only mention of the peacock incident is Fiona's statement above (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The statement only contains three pieces of information: 1) The actor: Dexter. 2) The action: got bitten. 3) The location: at the zoo. 4) The meta-information: Fiona was last to know.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "cross-session conclusion": "There is no information in any session about what Dexter was doing, thinking, or trying to achieve at the zoo prior to or during the bite. Any specific activity (taking photos, feeding, being lost) is pure conjecture not supported by the text. Therefore, the dialogue does not provide this information.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 227,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "During her recent trip to the countryside, Fiona had the unusual experience of meeting a group of retired astronomers who shared fascinating stories about celestial navigation and the history of star charts. Their conversations often drifted into philosophical discussions about the unpredictability of life and how even the most carefully planned paths can be altered by chance encounters.\n\nRegarding the event where Dexter was bitten by a peacock, what is known about the timing of when Fiona learned of it relative to the rest of the friend group?",
+            "option": [
+                "A. She was the first person Dexter told after the incident, and she spread the news.",
+                "B. She still doesn't know about it, and the others have kept it a secret from her.",
+                "C. She learned about it later than the other friends, as she is often the last to know things.",
+                "D. She found out at the same time as everyone else because she was present at the zoo.",
+                "E. She discovered it weeks later when she saw the scar, and Dexter then confessed.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She learned about it later than the other friends, as she is often the last to know things.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Yuh-huh! I was the last one to know when Dexter got bitten by the peacock at the zoo.",
+                    "dia_id": "10:31"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "This is so typical. I'm always the last one to know everything.",
+                    "dia_id": "10:29"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona states explicitly, 'I was the last one to know when Dexter got bitten by the peacock at the zoo' (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She prefaces this by saying her being last to know is 'typical' and that she's 'always the last one to know everything,' framing the peacock incident as a specific example of this pattern (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "cross-session conclusion": "The temporal relationship is directly stated by Fiona: she learned of the event after other friends already knew. There is no contradictory information.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 228,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "During the recent community gathering, many residents discussed the importance of making environmentally conscious decisions, such as reducing energy use and embracing alternative light sources. This conversation was sparked by the growing interest in sustainable living and the stories people shared about their past experiences with power outages.\n\nWhat is the connection between the candles used during the blackout and Dexter's past living situation?",
+            "option": [
+                "A. Dexter took the candles from a synagogue and gave them to the group for emergencies.",
+                "B. Dexter bought the candles in anticipation of the blackout and left them with Ethan.",
+                "C. The candles were a gift from Paolo to Dexter, who then shared them with the group.",
+                "D. Dexter's former Jewish roommate left the candles behind, and Ethan now has them.",
+                "E. The candles are leftover from a birthday party thrown for Dexter the previous year.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. Dexter's former Jewish roommate left the candles behind, and Ethan now has them.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Well, Dexter's old roomate was Jewish, and these are the only candles we have, so... Happy Chanukah, everyone.",
+                    "dia_id": "5:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan states the provenance of the candles: 'Dexter's old roommate was Jewish, and these are the only candles we have' (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The phrasing 'Dexter's old roommate was Jewish, and these are the only candles we have' directly links the candles' origin to the property of Dexter's former roommate. The logical implication is that the candles came from that roommate and ended up in the friend group's possession.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "cross-session conclusion": "The event/experience is simply the origin story of the candles. Ethan explicitly states they are used because Dexter's former Jewish roommate left them (or they are associated with him), and now the group has them.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 229,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "How does Ethan typically interact with Bennett regarding Bennett's privacy, especially his romantic interest in Ariel?\n\nYou must choose the correct answer from the following options:\n[\"A. He speaks to Ariel on Bennett's behalf to determine her interest.\", 'B. He gives practical, direct, and slightly mocking advice, and pushes Bennett to take action.', \"C. He becomes jealous and tries to sabotage Bennett's chances with Ariel.\", 'D. He diverts Bennett's attention through games and jokes to keep him away from his romantic problems.', \"E. He remains neutral and refuses to give advice, because he thinks it's not his job.\", 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. He talks to Ariel on Bennett's behalf to gauge her interest first.",
+                "B. He offers practical, direct, and slightly teasing advice, pushing Bennett to take action.",
+                "C. He becomes jealous and tries to sabotage Bennett's chances with Ariel.",
+                "D. He distracts Bennett with games and jokes to keep his mind off his romantic troubles.",
+                "E. He remains neutral and refuses to give advice, believing it's not his place.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He offers practical, direct, and slightly teasing advice, pushing Bennett to take action.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "It's never gonna happen.",
+                    "dia_id": "8:39"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Because you waited too long to make your move, and now you're in the friend zone.",
+                    "dia_id": "8:43"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Bennett, you're mayor of the zone.",
+                    "dia_id": "8:45"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Look Bennett, I'm telling you, she has no idea what you're thinking. If you don't ask her out soon you're going to end up stuck in the zone forever.",
+                    "dia_id": "8:47"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ethan",
+                    "utterance": "Yeeeeaaaahhh! What's messing you up? The wine? The candles? The moonlight? You've just got to go up to her and say, 'Ariel, I think that...'",
+                    "dia_id": "8:49"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Ethan",
+                    "utterance": "Are you going to do it?",
+                    "dia_id": "10:3"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Ethan",
+                    "utterance": "Do you want any help?",
+                    "dia_id": "10:5"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Ethan",
+                    "utterance": "Good luck, man.",
+                    "dia_id": "10:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan is brutally direct in diagnosing Bennett's situation, using terms like 'never gonna happen,' 'friend zone,' and 'mayor of the zone' (E1, E2, E3, E4). This is teasing but pointed.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He immediately follows the diagnosis with clear, actionable advice: 'ask her out soon' and even provides a mock script ('Ariel, I think that...') while mockingly listing potential obstacles (E5).",
+                    "based_on": [
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later, he checks in on Bennett's progress ('Are you going to do it?'), offers assistance ('Do you want any help?'), and gives encouragement ('Good luck, man.') (E6, E7, E8).",
+                    "based_on": [
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Across two sessions, Ethan's interaction pattern is consistent: he observes Bennett's hesitation, directly (and humorously) points out the problem, advocates for immediate action, and follows up to support the execution. This is practical, direct, and framed with a teasing camaraderie.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7",
+                        "E8"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 230,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "In the quiet town of Maplewood, where everyone knew each other's business, Chloe had recently started questioning the value of traditional celebrations and preferred more low-key gatherings instead. She often found herself reflecting on how personal choices shaped social interactions, though she never expected her own decisions to be the subject of such a story.\n\nWhat was the sequence of actions that led to Chloe believing Ethan's story about a surprise party?",
+            "option": [
+                "A. Ethan saw Bennett buying party supplies and correctly deduced a party was being planned.",
+                "B. Ethan planned the party, Bennett helped, and Chloe overheard them discussing it.",
+                "C. Chloe asked Ethan if a party was being planned, and he confirmed her suspicions.",
+                "D. Fiona told Ethan about the party, and he accidentally confirmed it to Chloe.",
+                "E. Ethan needed an excuse to stop Chloe from going outside, so he invented the party story on the spot.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Ethan needed an excuse to stop Chloe from going outside, so he invented the party story on the spot.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Outside.",
+                    "dia_id": "10:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "You can't go out there.",
+                    "dia_id": "10:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Why not?",
+                    "dia_id": "10:13"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Because of... the reason.",
+                    "dia_id": "10:14"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Chloe",
+                    "utterance": "And that would be?",
+                    "dia_id": "10:15"
+                },
+                {
+                    "id": "E6",
+                    "speaker": "Ethan",
+                    "utterance": "I, um, can't tell you.",
+                    "dia_id": "10:16"
+                },
+                {
+                    "id": "E7",
+                    "speaker": "Chloe",
+                    "utterance": "Ethan, what's going on?",
+                    "dia_id": "10:17"
+                },
+                {
+                    "id": "E8",
+                    "speaker": "Ethan",
+                    "utterance": "OK, you've got to promise that you'll never, ever tell Bennett that I told you.",
+                    "dia_id": "10:18"
+                },
+                {
+                    "id": "E9",
+                    "speaker": "Ethan",
+                    "utterance": "He's planning your birthday party.",
+                    "dia_id": "10:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe's attempt to go outside triggers Ethan's obstruction (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When pressed for a reason, Ethan is evasive ('the reason,' 'I, um, can't tell you.') (E3, E4, E5, E6).",
+                    "based_on": [
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "This evasion increases Chloe's curiosity and insistence ('Ethan, what's going on?') (E7).",
+                    "based_on": [
+                        "E7"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Faced with her insistence, Ethan invents a plausible, exciting secret, framing it with a demand for secrecy ('promise... never tell Bennett') before stating the fabrication ('He's planning your birthday party.') (E8, E9).",
+                    "based_on": [
+                        "E8",
+                        "E9"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "cross-session conclusion": "The temporal and causal sequence is clear: Ethan needs to stop Chloe -> He refuses to give the real reason -> Under pressure, he fabricates a convincing lie (the party) as a pretext. The invention is a direct response to the immediate need for an excuse.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5",
+                        "E6",
+                        "E7",
+                        "E8",
+                        "E9"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 231,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "During the evening, Ethan and his friends were discussing the pressures of modern life and the importance of disconnecting from technology to find inner peace. They shared stories about how people often rely too much on artificial light and noise to feel in control of their environment.  \n\nWhat specific, practical action did Ethan take to create a festive atmosphere during the blackout, and what was his stated justification for using those particular items?",
+            "option": [
+                "A. He lit a bunch of candles and connected them to a Jewish holiday; he said they were the only candles available and came from Dexter's old roommate.",
+                "B. He broke out a board game; he said it would distract everyone from the darkness.",
+                "C. He opened a bottle of wine; he said he had been saving it for a special occasion and a blackout qualified.",
+                "D. He told funny ghost stories; he said spooky stories were traditional during blackouts.",
+                "E. He played music on a battery-powered radio; he said music lifts spirits in a crisis.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He lit a bunch of candles and connected them to a Jewish holiday; he said they were the only candles available and came from Dexter's old roommate.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hi everyone.",
+                    "dia_id": "5:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "And officiating at tonight's blackout, is Rabbi Tribbiani.",
+                    "dia_id": "5:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Well, Dexter's old roomate was Jewish, and these are the only candles we have, so... Happy Chanukah, everyone.",
+                    "dia_id": "5:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The scene begins with Ethan greeting everyone, likely as he provides light (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett's joke ('Rabbi Tribbiani') confirms Ethan is associated with the candles being lit, framing it in a Jewish context (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ethan explains his action: he lit 'these' candles. He gives two justifications: 1) Their origin: 'Dexter's old roommate was Jewish.' 2) Their necessity: 'these are the only candles we have.' He then humorously declares 'Happy Chanukah' to formalize the makeshift celebration (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Ethan's specific action was lighting the available candles. His stated justification for using those specific candles is twofold: they are the only ones they possess, and they have a Jewish connection due to their origin with Dexter's former roommate.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 232,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Fiona has always been passionate about gardening, spending many weekends tending to her vibrant flower beds and experimenting with new plant varieties. She finds great peace in the quiet rhythm of nurturing plants and often shares her latest successes with neighbors.\n\nBased on her repeated complaints, what is a consistent feature of Fiona's experience within her friend group?",
+            "option": [
+                "A. She feels she is frequently the last person in the group to learn about news and events.",
+                "B. She believes her friends deliberately exclude her from important conversations.",
+                "C. She takes on a leadership role during crises, like the blackout.",
+                "D. She is the most cautious member and often warns others about potential dangers.",
+                "E. She is often the one who plans events and surprises for others.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She feels she is frequently the last person in the group to learn about news and events.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "This is so typical. I'm always the last one to know everything.",
+                    "dia_id": "10:29"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Yuh-huh! I was the last one to know when Dexter got bitten by the peacock at the zoo. I was the last one to know when you had a crush on Ethan when he was moving in.",
+                    "dia_id": "10:31"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Ah! Well! There you go! Last to know again! And I'm guessing... since nobody told me... this is Paolo.",
+                    "dia_id": "16:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona makes a general statement about her role: 'I'm always the last one to know everything.' (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She provides two specific, past examples to back this up: being last to know about Dexter's peacock bite and about a friend's crush on Ethan (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In a later session, when she returns to find Paolo with the group, she immediately exclaims 'Last to know again!' and deduces who he is because 'nobody told me' (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Across multiple sessions, Fiona consistently voices the same grievance using the same phrasing ('last to know'), citing both historical and immediate instances. This establishes it as a stable, recurring feature of her social experience within the group.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 233,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "Fiona had recently taken up painting as a way to cope with the stress of her demanding job, often spending long hours in her studio capturing the essence of the city around her. She found solace in the quiet moments of creation, which helped her reflect on her life decisions and the expectations placed upon her by friends and family.  \n\nIn what order did the key events involving the lost cat occur, from Fiona's perspective?",
+            "option": [
+                "A. Fiona met Paolo in the hall -> Paolo asked her to help find his cat -> They searched together and found it with Ariel.",
+                "B. The cat was found by Ariel -> Fiona learned it was Paolo's -> Fiona then went to search for the cat anyway.",
+                "C. The cat was found by Ariel -> Fiona searched and couldn't find it -> Fiona met Paolo -> Fiona learned the cat was Paolo's.",
+                "D. Fiona searched for the cat and found Paolo -> They returned together to find Ariel already holding the cat.",
+                "E. Fiona searched for the cat -> The cat was found by Ariel -> Fiona learned the cat was Paolo's and met Paolo simultaneously.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Fiona searched for the cat -> The cat was found by Ariel -> Fiona learned the cat was Paolo's and met Paolo simultaneously.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Alright. I looked all over the building and I couldn't find the kitty anywhere.",
+                    "dia_id": "16:16"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, I found him. He was Paolo's cat.",
+                    "dia_id": "16:17"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Ah! Well! There you go! Last to know again! And I'm guessing... since nobody told me... this is Paolo.",
+                    "dia_id": "16:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona's first action reported is the search: 'I looked all over the building and I couldn't find the kitty anywhere.' (E1). This implies she left to search before the cat was found by the group.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Upon her return, Ariel informs her of the two outcomes that happened in her absence: 1) 'I found him.' 2) 'He was Paolo's cat.' (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona's reaction indicates she is learning both facts (the discovery and the owner's identity) for the first time, and she deduces the man present is Paolo (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "From Fiona's point of view, the sequence is: 1) She left to search (and failed). 2) Meanwhile, Ariel found the cat and discovered its owner, Paolo. 3) Fiona returned and learned both results at once, meeting Paolo at that moment.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 234,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "What did Fiona do after the group decided that the found cat should not be placed in the hallway, and what was the result of her action?\n\nYou must choose the correct answer from the following options:\n['A. She went home to get some cat food; she returned with a bowl of milk.', 'B. She argued that Bennett should take the cat home; Bennett agreed and took it.', 'C. She started singing a song to calm the cat; the cat fell asleep on her lap.', \"D. She suggested looking for the cat's owner in the building; she returned without finding either the cat or the owner.\", 'E. She took the cat to the concierge's office; the concierge knew Paolo and called him.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. She went to her apartment to get cat food; she returned with a bowl of milk.",
+                "B. She argued that Bennett should take the cat to his apartment; Bennett agreed and took it.",
+                "C. She started singing a song to calm the cat; the cat fell asleep in her lap.",
+                "D. She volunteered to go look for the cat's owner in the building; she returned having not found the cat or the owner.",
+                "E. She took the cat to the superintendent's office; the superintendent knew Paolo and called him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She volunteered to go look for the cat's owner in the building; she returned having not found the cat or the owner.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, poor little Tooty is scared to death. We should find his owner.",
+                    "dia_id": "12:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Why don't we just put 'poor little Tooty' out in the hall?",
+                    "dia_id": "12:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "During a blackout? He'd get trampled!",
+                    "dia_id": "12:5"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Alright. I looked all over the building and I couldn't find the kitty anywhere.",
+                    "dia_id": "16:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona suggests finding the cat's owner (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After Bennett's dismissive suggestion and Ariel's rebuttal, the implied decision is not to put the cat in the hall (E2, E3). Fiona's suggestion to find the owner becomes the alternative course of action.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later, Fiona reports on her activity: 'I looked all over the building and I couldn't find the kitty anywhere.' (E4). The phrase 'looked all over the building' aligns with searching for the owner (as the cat is already with them).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "cross-session conclusion": "Fiona's action was to follow through on her own suggestion to search the building for the cat's owner. The outcome, as she reports it, was that she 'couldn't find the kitty anywhere,' meaning her search for the owner (by looking for where the cat might belong) was unsuccessful.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "qid": 235,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "What can be inferred about Ariel’s view of emotional connection with Bennett, based on her interactions and statements?",
+            "option": [
+                "A. She sees Bennett as a distant colleague.",
+                "B. She will only consider a relationship with someone who speaks Italian.",
+                "C. She values brief moments of connection highly, even if they are not deeply rooted.",
+                "D. She is actively looking for a long-term relationship with someone else.",
+                "E. She has no interest in forming any kind of relationship with Bennett."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "The first time he smiled at me... those three seconds were more exciting than three weeks in Bermuda with Barry.",
+                    "dia_id": "18:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I just never had a relationship with that kind of passion, you know, where you have to have somebody right there, in the middle of a theme park.",
+                    "dia_id": "8:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel finds brief emotional interaction with Bennett (his smile) more exciting than spending extended time with someone else (Barry in Bermuda).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This suggests she values moments of connection, even if they are not long-term or deeply rooted, and her previous relationships lacked this intensity.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 539
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "What can be inferred about the nature of Bennett’s relationship with Ariel based on her refusal to marry Barry and Bennett’s advice to her?",
+            "option": [
+                "A. He sees her as someone who will eventually abandon all relationships.",
+                "B. He believes she is only interested in physical passion and not in emotional stability.",
+                "C. He sees her as committed to meaningful, long-term relationships.",
+                "D. He sees her as someone who has never been in a real relationship.",
+                "E. He believes she already has a deep, meaningful relationship with someone else."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "There, well, see? Barry wouldn't even kiss me on a miniature golf course.",
+                    "dia_id": "8:22"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Passion is way overrated. Eventually, it kind of... burns out. But hopefully, what you're left with is trust, and security...",
+                    "dia_id": "8:28"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel references a relationship with Barry that lacked physical intimacy.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett views passion as fleeting and suggests that emotional bonds like trust and security are more important, indicating he believes Ariel may be overly focused on passion rather than emotional depth.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 540
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "Based on Chloe’s reactions and interactions with other characters, what is a solid inference about what she values in relationships?",
+            "option": [
+                "A. She believes that spontaneity and being surprised are essential to a relationship.",
+                "B. She prefers emotional depth over physical passion.",
+                "C. She is only interested in relationships that are transitory in nature.",
+                "D. She does not value trust or security in relationships.",
+                "E. She prefers being informed about other people’s plans ahead of time."
+            ],
+            "answer": "A",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "I love him!",
+                    "dia_id": "10:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "You can't go out there.",
+                    "dia_id": "10:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe reacts with surprise and joy when she learns of the surprise party for her, suggesting she values unexpected gestures and being surprised.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She also reacts strongly to someone trying to leave during a blackout, suggesting that she values the stability and planning involved in relationships, especially when it involves surprising her.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 541
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "What can be inferred about Ethan’s attitude toward the relationship between Chloe and Bennett, based on his comments and actions?",
+            "option": [
+                "A. He is indifferent to whether they form a relationship.",
+                "B. He is supportive of them forming a relationship.",
+                "C. He is actively trying to prevent them from being together.",
+                "D. He believes that their relationship is doomed from the start.",
+                "E. He is skeptical they can develop a real bond."
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "This probably isn't the best time to bring it up, but you have to throw a party for Chloe.",
+                    "dia_id": "20:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "It's never gonna happen.",
+                    "dia_id": "8:41"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan suggests that Chloe needs a surprise party, possibly to create an environment conducive to forming a relationship with Bennett.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Despite this, he still says 'It's never gonna happen,' implying skepticism about the possibility of a real bond forming between Chloe and Bennett.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 542
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "What can be inferred about Fiona’s relationship with the other characters based on her responses to events and others’ actions?",
+            "option": [
+                "A. She is the most emotionally reserved of the group.",
+                "B. She has no close relationships with anyone.",
+                "C. She often feels left out of key events and relationships.",
+                "D. She is overly invested in others' relationships.",
+                "E. She is the most aggressive in forming new romantic connections."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I was the last one to know when Dexter got bitten by the peacock at the zoo.",
+                    "dia_id": "10:27"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I was the last one to know when you had a crush on Ethan when he was moving in.",
+                    "dia_id": "10:27"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona is pointed out by Chloe as being the 'last one to know' about key events, such as Dexter’s incident and Ethan’s crush.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This pattern suggests that she does not always have a central role in or knowledge of others’ relationships and events, indicating she often feels left out.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 543
+        },
+        {
+            "character": "Ariel",
+            "category": 6,
+            "question": "How many utterances are present in Session 8 that directly mention Ariel?",
+            "option": [
+                "A. 1",
+                "B. 3",
+                "C. 5",
+                "D. 7",
+                "E. 9"
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Oh come on, I already went.",
+                    "dia_id": "8:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Oh, Ariel.",
+                    "dia_id": "8:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "I just never had a relationship with that kind of passion...",
+                    "dia_id": "8:20"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "OK.",
+                    "dia_id": "8:30"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Ariel",
+                    "utterance": "You don't.",
+                    "dia_id": "8:32"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel’s name is directly mentioned in utterances at dia_id '8:13', '8:14', '8:20', '8:30', and '8:32'.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This adds up to 5 utterances that directly mention Ariel in Session 8.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "事实提取（单对话）",
+            "qid": 544
+        },
+        {
+            "character": "Paolo",
+            "category": 5,
+            "question": "What can be inferred about Paolo’s social interaction style from the dialogue fragments referring to him?",
+            "option": [
+                "A. He is overly candid and unaware of social norms.",
+                "B. He is a passive observer in social conversations.",
+                "C. He is warm but comes from a culture with different interaction norms.",
+                "D. He is likely to take offense if not accepted immediately.",
+                "E. He is more interested in casual conversation than romantic encounters."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "He doesn't speak much English.",
+                    "dia_id": "16:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "So you do know a little English.",
+                    "dia_id": "18:23"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Paolo",
+                    "utterance": "Ah, you... have the sex?",
+                    "dia_id": "18:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Paolo is described as not speaking much English, indicating he may come from a different cultural background or be less fluent.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "However, he does understand and use some English, as suggested by Bennett's comment to him, indicating he is actively engaging with the group, albeit with limited linguistic fluency.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Despite limited communication, Paolo seems to engage interactively in the moment, such as when he says 'Ah, you... have the sex?' showing warmth but also cultural differences in social communication.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 7,
+            "label": "多跳",
+            "qid": 545
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "What was the final outcome regarding the Las Vegas trip that Chloe proposed?",
+            "option": [
+                "A. Dexter outright refused to go, causing a big argument.",
+                "B. He agreed to go, but only if they went at a later date.",
+                "C. He accepted the gift and agreed to go that weekend.",
+                "D. He said he would go, but secretly planned to cancel.",
+                "E. He suggested that only Chloe should go to surprise Ethan."
+            ],
+            "answer": "F",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Okay this is great, but Ethan said he didn't want any of us out there.",
+                    "dia_id": "2:36"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "But we can go, right?",
+                    "dia_id": "2:39"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Yes.",
+                    "dia_id": "2:40"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "It's a great idea.",
+                    "dia_id": "2:42"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter initially voices a concern about Ethan not wanting visitors.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After Chloe persists (\"But we can go, right?\"), he directly answers \"Yes.\"",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He then reaffirms his agreement by stating, \"It's a great idea.\"",
+                    "based_on": [
+                        "E4"
+                    ]
+                }
+            ],
+            "label": "弃权",
+            "qid": 648
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Ethan",
+        "speaker_1": "Bennett",
+        "speaker_2": "Fiona",
+        "speaker_3": "Ariel",
+        "session_5_date_time": "November 3, 1994",
+        "session_5": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:1",
+                "text": "Hi everyone."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:2",
+                "text": "And officiating at tonight's blackout, is Rabbi Tribbiani."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:3",
+                "text": "Well, Dexter's old roomate was Jewish, and these are the only candles we have, so... Happy Chanukah, everyone."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:4",
+                "text": "Eww, look. Ugly Naked Guy lit a bunch of candles."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:5",
+                "text": "That had to hurt!"
+            }
+        ],
+        "speaker_4": "Chloe",
+        "speaker_5": "All",
+        "session_8_date_time": "November 3, 1994",
+        "session_8": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:1",
+                "text": "Alright, somebody."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:2",
+                "text": "OK, I'll go. OK, senior year of college... on a pool table."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:3",
+                "text": "Whoooaa!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:4",
+                "text": "That's my sister."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:5",
+                "text": "OK... my weirdest place would have to be... the women's room on the second floor of the New York CIty public library."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:6",
+                "text": "Oh my God! What were you doing in a library?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:7",
+                "text": "Pheebs, what about you?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:8",
+                "text": "Oh... Milwaukee."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:9",
+                "text": "Um... Bennett?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:10",
+                "text": "Disneyland, 1989, 'It's a Small World After All.'"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:11",
+                "text": "No way!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:12",
+                "text": "The ride broke down. So, Carol and I went behind a couple of those mechanical Dutch children... then they fixed the ride, and we were asked never to return to the Magic Kingdom."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:13",
+                "text": "Oh, Ariel."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:14",
+                "text": "Oh come on, I already went."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:15",
+                "text": "You did not go!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "8:16",
+                "text": "Come on."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:17",
+                "text": "Oh, alright. The weirdest place would have to be... ... oh, the foot of the bed."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:18",
+                "text": "Step back."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:19",
+                "text": "We have a winner!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:20",
+                "text": "I just never had a relationship with that kind of passion, you know, where you have to have somebody right there, in the middle of a theme park."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:21",
+                "text": "Well, it was the only thing to do there that didn't have a line."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:22",
+                "text": "There, well, see? Barry wouldn't even kiss me on a miniature golf course."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:23",
+                "text": "Come on."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:24",
+                "text": "No, he said we were holding up the people behind us."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:25",
+                "text": "And you didn't marry him because...?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:26",
+                "text": "I mean, do you think there are people who go through life never having that kind of..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:27",
+                "text": "Probably. But you know, I'll tell you something. Passion is way overrated."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:28",
+                "text": "Yeah right."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:29",
+                "text": "It is. Eventually, it kind of... burns out. But hopefully, what you're left with is trust, and security, and... well, in the case of my ex-wife, lesbianism. So, you know, for all of those people who miss out on that passion... thing, there's all that other good stuff."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:30",
+                "text": "OK."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:31",
+                "text": "But, um... I don't think that's going to be you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:32",
+                "text": "You don't."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:33",
+                "text": "Uh-uh. See, I see.... big passion in your future."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:34",
+                "text": "Really?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:35",
+                "text": "Mmmm."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:36",
+                "text": "You do?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:37",
+                "text": "I do."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:38",
+                "text": "Oh Bennett, you're so great."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:39",
+                "text": "It's never gonna happen."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:40",
+                "text": "What?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:41",
+                "text": "You and Ariel."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:42",
+                "text": "What?  Why not?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:43",
+                "text": "Because you waited too long to make your move, and now you're in the friend zone."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:44",
+                "text": "No, no, no. I'm not in the zone."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:45",
+                "text": "Bennett, you're mayor of the zone."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:46",
+                "text": "I'm taking my time, alright? I'm laying the groundwork. Yeah. I mean, every day I get just a little bit closer to..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:47",
+                "text": "Priesthood! Look Bennett, I'm telling you, she has no idea what you're thinking. If you don't ask her out soon you're going to end up stuck in the zone forever."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:48",
+                "text": "I will, I will. See, I'm waiting for the right moment.  What? What, now?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:49",
+                "text": "Yeeeeaaaahhh! What's messing you up? The wine? The candles? The moonlight? You've just got to go up to her and say, 'Ariel, I think that...'"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:50",
+                "text": "Shhhh!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:51",
+                "text": "What are you shushing?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:52",
+                "text": "We're shushing... because... we're trying to hear something. Listen.  Don't you hear that?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:53",
+                "text": "Ahhhh!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:54",
+                "text": "See?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:55",
+                "text": "Huh."
+            }
+        ],
+        "session_10_date_time": "November 3, 1994",
+        "session_10": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:1",
+                "text": "New York City has no power, and the milk is getting sour. But to me it is not scary, 'cause I stay away from dairy.... la la la, la la, la la..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:2",
+                "text": "OK, here goes."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:3",
+                "text": "Are you going to do it?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:4",
+                "text": "I'm going to do it."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:5",
+                "text": "Do you want any help?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:6",
+                "text": "You come out there, you're a dead man."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:7",
+                "text": "Good luck, man."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:8",
+                "text": "Thanks.  OK."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:9",
+                "text": "OK."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:10",
+                "text": "Hey, where are you going?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:11",
+                "text": "Outside."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:12",
+                "text": "You can't go out there."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:13",
+                "text": "Why not?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:14",
+                "text": "Because of... the reason."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:15",
+                "text": "And that would be?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:16",
+                "text": "I, um, can't tell you."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:17",
+                "text": "Ethan, what's going on?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:18",
+                "text": "OK, you've got to promise that you'll never, ever tell Bennett that I told you."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:19",
+                "text": "About what?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:20",
+                "text": "He's planning your birthday party."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:21",
+                "text": "Oh my God! I love him!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:22",
+                "text": "You'd better act surprised."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:23",
+                "text": "About what?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:24",
+                "text": "My surprise party!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:25",
+                "text": "What surprise party?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:26",
+                "text": "Oh stop it. Ethan already told me."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:27",
+                "text": "Well, he didn't tell me."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:28",
+                "text": "Hey, don't look at me. This is Bennett's thing."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:29",
+                "text": "This is so typical. I'm always the last one to know everything."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:30",
+                "text": "No, you are not. We tell you stuff."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:31",
+                "text": "Yuh-huh! I was the last one to know when Dexter got bitten by the peacock at the zoo. I was the last one to know when you had a crush on Ethan when he was moving in.  Looks like I was second to last."
+            }
+        ],
+        "session_11_date_time": "November 3, 1994",
+        "session_11": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:1",
+                "text": "Hmmm... this is so nice."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:2",
+                "text": "OK, I have a question. Well, actually, it's not so much a question as.. more of a general wondering... ment."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:3",
+                "text": "OK."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:4",
+                "text": "OK. Here goes. For a while now, I've been wanting to, um...."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:5",
+                "text": "Ohhh!!!!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:6",
+                "text": "Yes, yes, that's right..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:7",
+                "text": "Oh, look at the little cat!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:8",
+                "text": "What?  Ow!"
+            }
+        ],
+        "session_12_date_time": "November 3, 1994",
+        "session_12": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:1",
+                "text": "This is just Bactine. It won't hurt."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:2",
+                "text": "Sorry, that was wax."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:3",
+                "text": "Oh, poor little Tooty is scared to death. We should find his owner."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:4",
+                "text": "Why don't we just put 'poor little Tooty' out in the hall?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:5",
+                "text": "During a blackout? He'd get trampled!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:6",
+                "text": "Yeah?"
+            }
+        ],
+        "session_16_date_time": "November 3, 1994",
+        "session_16": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "16:1",
+                "text": "Lucky sixes...."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:2",
+                "text": "Everybody, this is Paolo. Paolo, I want you to meet my friends. This is Chloe."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "16:3",
+                "text": "Hi!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:4",
+                "text": "And Ethan...."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "16:5",
+                "text": "Hi!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:6",
+                "text": "And Bennett."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "16:7",
+                "text": "Hi!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:8",
+                "text": "He doesn't speak much English."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "16:9",
+                "text": "Monopoly!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:10",
+                "text": "Look at that!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "16:11",
+                "text": "So, um... where did Paolo come from?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:12",
+                "text": "Oh... Italy, I think."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "16:13",
+                "text": "No, I mean tonight, in the building. Suddenly. Into our lives."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:14",
+                "text": "Well, the cat... the cat turned out to be Paolo's cat!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "16:15",
+                "text": "That, that is funny... .... and Ariel keeps touching him."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "16:16",
+                "text": "Alright. I looked all over the building and I couldn't find the kitty anywhere."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:17",
+                "text": "Oh, I found him. He was Paolo's cat."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "16:18",
+                "text": "Ah! Well! There you go! Last to know again! And I'm guessing... since nobody told me... this is Paolo."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "16:19",
+                "text": "Ah, Paolo, this is Fiona."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "16:20",
+                "text": "You betcha!"
+            }
+        ],
+        "session_18_date_time": "November 3, 1994",
+        "session_18": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:1",
+                "text": "Blah blah blah, blah blah blah... blah blaaaaaah...."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:2",
+                "text": "Wha-What did he say that was so funny?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "18:3",
+                "text": "I have absolutely no idea."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:4",
+                "text": "That's... that's classic."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "18:5",
+                "text": "Oh my God, you guys, what am I doing? What am I doing? This is so un-me!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "18:6",
+                "text": "If you want, I'll do it."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "18:7",
+                "text": "I know, I just want to bite his bottom lip.  But I won't."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "18:8",
+                "text": "God, the first time he smiled at me... those three seconds were more exciting than three weeks in Bermuda with Barry."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "18:9",
+                "text": "You know, did you ride mopeds? 'Cause I've heard... ... oh, I see... it's not about that right now. OK."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "18:10",
+                "text": "Y'know, I know it's totally superficial and we have absolutely nothing in common, and we don't even speak the same language but Goooooooddddddd...."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:11",
+                "text": "Paolo. Hi."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:12",
+                "text": "Bennett!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:13",
+                "text": "Listen. Um, listen. Something you should... know... um, Ariel and I... we're kind of a thing."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:14",
+                "text": "Thing?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:15",
+                "text": "Thing, yes. Thing."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:16",
+                "text": "Ah, you... have the sex?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:17",
+                "text": "No, no, no. Technically the... sex is not... being had, but that's... see, that's not the point. See, um, the point is that... Ariel and I should be, er, together. You know, and if you get in the.... um..."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:18",
+                "text": "Bed?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:19",
+                "text": "No, no, that's not where I was going. Er, if you get in the... way, of us becoming a thing, then I would be, well, very sad."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:20",
+                "text": "Oh!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:21",
+                "text": "Yeah! Se vice?"
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:22",
+                "text": "Si."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:23",
+                "text": "So you do know a little English."
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:24",
+                "text": "Poco... a leetle."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:25",
+                "text": "Do you know the word crapweasel?"
+            },
+            {
+                "speaker": "Paolo",
+                "dia_id": "18:26",
+                "text": "No."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "18:27",
+                "text": "That's funny, because you know, you are a huge crapweasel!"
+            }
+        ],
+        "session_20_date_time": "November 3, 1994",
+        "session_20": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "20:1",
+                "text": "Oh, look look look. The last candle's about to burn out. 10, 9, 8, 7... ... negative 46, negative 47, negative 48...."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "20:2",
+                "text": "Thank you."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "20:3",
+                "text": "Thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "20:4",
+                "text": "Kinda... spooky without any lights."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "20:5",
+                "text": "Bwah-hah-hah!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "20:6",
+                "text": "OK, guys, guys? I have the definitive one. Mwwwooooo-hah-hah..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "20:7",
+                "text": "Oh.. oh... oh."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "20:8",
+                "text": "Hey Bennett. This probably isn't the best time to bring it up, but you have to throw a party for Chloe."
+            }
+        ],
+        "speaker_6": "Paolo"
+    }
+}

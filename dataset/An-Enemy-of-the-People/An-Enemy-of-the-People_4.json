@@ -3,802 +3,1425 @@
     {
       "character": "Dr. Stockmann",
       "category": 1,
-      "question": "Which statement best matches Dr. Stockmann's fundamental attitude toward the established beliefs of the masses?",
+      "question": "Which statement best captures Dr. Stockmann's core belief regarding who should govern society?",
       "option": [
-        "A. He ignores them.",
-        "B. He respects their old age.",
-        "C. He views them as outdated and morally corrupting lies.",
-        "D. He believes they are mostly true but need minor updates.",
-        "E. He completely agrees with the compact majority and wants to conform to their established social norms."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "The majority never has right on its side. Never, I say! That is one of these social lies against which an independent, intelligent man must wage war.", "dia_id": "D4:133" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "These \"majority truths\" are like last year's cured meat—like rancid, tainted ham; and they are the origin of the moral scurvy that is rampant in our communities.", "dia_id": "D4:137" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Dr. Stockmann identifies the majority's views as social lies that must be fought.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He explicitly equates these accepted truths to tainted meat causing moral disease, confirming his hostile and critical attitude toward them.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 1,
-      "question": "Which option reflects Hovstad's professional philosophy regarding his newspaper?",
-      "option": [
-        "A. Total truth.",
-        "B. He aligns with the majority.",
-        "C. He fights against the town's Mayor.",
-        "D. He ignores the ratepayers completely.",
-        "E. He aggressively promotes revolutionary ideas regardless of what his local subscribers think."
+        "A. The majority should govern because they represent the essential part of the population.",
+        "B. The clever folk should govern the stupid folk, because the majority never has right on its side.",
+        "C. The community should be governed by the Mayor and the established leading men.",
+        "D. Governance should be determined by a formal ballot of all citizens.",
+        "E. Only those who have inherited wealth and standing should have the right to direct the community."
       ],
       "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "But the advice of experienced and thoughtful men has convinced me that in purely local matters a newspaper ought to proceed with a certain caution.", "dia_id": "D4:79" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "Now, what is an editor's first and most obvious duty, gentlemen? Is it not to work in harmony with his readers?", "dia_id": "D4:81" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "The majority never has right on its side. Never, I say! That is one of these social lies against which an independent, intelligent man must wage war.",
+          "dia_id": "D4:133"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "But, good Lord!—you can never pretend that it is right that the stupid folk should govern the clever ones!",
+          "dia_id": "D4:133"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad believes newspapers must be cautious in local matters.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He explicitly defines his primary duty as working in harmony with his readers (the majority), establishing his alignment with public opinion.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 1,
-      "question": "Which statement best describes Katherine's primary focus during the public meeting?",
-      "option": [
-        "A. She is loud.",
-        "B. She attacks Peter.",
-        "C. She wants to lead the crowd.",
-        "D. She tries to manage her family's safety and decorum.",
-        "E. She actively attempts to deliver her own lecture to the hostile citizens gathered in the room."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "All right, thank you. Be sure not to lose your temper, Thomas.", "dia_id": "D4:36" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Thomas, dear, let us go out by the back way.", "dia_id": "D4:227" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Mrs. Stockmann advises her husband to control his temper, showing a desire for decorum.", "based_on": ["E1"] },
-        { "step": 2, "inference": "After the meeting turns completely hostile, she suggests taking the back exit, indicating her focus on physical safety and avoiding conflict.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 1,
-      "question": "What is the Mayor's consistent approach to handling his brother's opposition?",
-      "option": [
-        "A. He uses violence.",
-        "B. He agrees with him.",
-        "C. He leverages procedure and public expense fears to block him.",
-        "D. He begs him to speak longer to humiliate him publicly.",
-        "E. He completely ignores the situation and allows the Medical Officer to say whatever he wants to the crowd."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "From it you will see that the main result of the Medical Officer's proposals... would be to saddle the ratepayers with an unnecessary expenditure of at least some thousands of pounds.", "dia_id": "D4:73" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Therefore, I should like to propose that the meeting should not permit the Medical Officer either to read or to comment on his proposed lecture.", "dia_id": "D4:69" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The Mayor uses the financial threat to the ratepayers as a weapon against his brother.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He formally uses meeting procedure to propose a gag order on the Doctor.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 1,
-      "question": "How does Petra generally react to those involved in her father's struggle?",
-      "option": [
-        "A. She cries often.",
-        "B. She praises those who are brave.",
-        "C. She joins the crowd in hissing.",
-        "D. She physically fights the townspeople.",
-        "E. She publicly denounces her father and immediately leaves the meeting hall to go back to her house alone."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "And it was a plucky thing to do, Captain Horster.", "dia_id": "D4:27" },
-        { "id": "E2", "speaker": "Horster", "utterance": "For you and yours we will make room, Doctor.", "dia_id": "D4:225" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Petra openly admires Horster's courage in giving them the room.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Her positive alignment is consistently with those who provide brave support, like Horster.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Aslaksen",
-      "category": 1,
-      "question": "What is Aslaksen's defining principle in public affairs?",
-      "option": [
-        "A. Radicalism.",
-        "B. Absolute freedom.",
-        "C. Supporting the Doctor's revolution.",
-        "D. Discretion, moderation, and protecting the ratepayers.",
-        "E. Advocating for the immediate and total destruction of all existing local government structures and town administration."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "I have learned in the school of life and experience that moderation is the most valuable virtue a citizen can possess—", "dia_id": "D4:58" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "I myself am a believer in self-government for the people, provided it does not fall too heavily on the ratepayers.", "dia_id": "D4:75" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Aslaksen explicitly identifies moderation as the highest virtue.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He links his political beliefs directly to protecting the financial interests of the ratepayers.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann explicitly rejects the idea that the majority is right.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He states it is not right for the stupid folk to govern the clever ones.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 2,
-      "question": "How does Dr. Stockmann's emotional state shift at the beginning of the meeting?",
+      "question": "What specifically does Dr. Stockmann intend to do if he is not allowed to speak at the meeting?",
       "option": [
-        "A. He cries.",
-        "B. He becomes terrified.",
-        "C. He moves from claiming self-control to fiery indignation.",
-        "D. He is consistently sleepy and entirely bored by the crowd.",
-        "E. He instantly attacks the Mayor physically and destroys the furniture on the platform."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Oh, I know how to control myself.", "dia_id": "D4:37" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "I should like to have seen anyone, a few days ago, dare to attempt to silence me as has been done tonight! I would have defended my sacred rights as a man, like a lion!", "dia_id": "D4:98" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Dr. Stockmann initially assures his wife he is composed.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Once gagged by the vote, his speech immediately erupts into passionate, indignant defiance.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 2,
-      "question": "What is Hovstad's immediate motivation for speaking up during the initial debate?",
-      "option": [
-        "A. Pure greed.",
-        "B. He feels the need to justify his betrayal.",
-        "C. He wants to physically protect the Mayor.",
-        "D. He is trying to win Petra's affection immediately.",
-        "E. He intends to forcefully disband the entire meeting and throw everyone out into the street."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "I, too, feel called upon to explain my position.", "dia_id": "D4:77" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "It has cost me a severe struggle to break with a man in whose house I have been lately a frequent guest...", "dia_id": "D4:83" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad explicitly states he feels compelled to explain himself.", "based_on": ["E1"] },
-        { "step": 2, "inference": "His explanation centers on framing his abandonment of his friend as a difficult but necessary duty.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 2,
-      "question": "What is Katherine's short-term reaction when her family is brought into the public argument?",
-      "option": [
-        "A. She cheers.",
-        "B. She throws an object.",
-        "C. She starts a formal debate.",
-        "D. She quickly shushes her son to avoid attention.",
-        "E. She runs onto the stage and violently attacks the editor for mentioning her children."
+        "A. He will immediately leave for the New World on Captain Horster's ship.",
+        "B. He will physically attack the Mayor and Aslaksen.",
+        "C. He will write about it in the \"People's Messenger\" and sue the town.",
+        "D. He will shout the truth at every street corner and write it in other towns' newspapers.",
+        "E. He will resign from his position as Medical Officer of the Baths."
       ],
       "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "consideration, I repeat, for his wife and his children for whom he has made no provision.", "dia_id": "D4:87" },
-        { "id": "E2", "speaker": "Morten", "utterance": "Is that us, mother?", "dia_id": "D4:88" },
-        { "id": "E3", "speaker": "Mrs. Stockmann", "utterance": "Hush!", "dia_id": "D4:89" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Then I will go and shout the truth at every street corner! I will write it in other towns' newspapers! The whole country shall know what is going on here!",
+          "dia_id": "D4:177"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad publicly invokes the Doctor's family.", "based_on": ["E1"] },
-        { "step": 2, "inference": "When Morten reacts, Katherine immediately silences him, showing her desire to remain unnoticed in the tense atmosphere.", "based_on": ["E2", "E3"] }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 2,
-      "question": "What immediate goal drives Peter Stockmann's interruptions during the Doctor's speech?",
-      "option": [
-        "A. To sing.",
-        "B. To praise him.",
-        "C. To censor and control the Medical Officer's language.",
-        "D. To resign his position as the Mayor of the town.",
-        "E. To permanently rewrite the entire legal code of the town based on the new discoveries."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "...what I should like best would be to see them exterminated like any other vermin—.", "dia_id": "D4:115" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Mr. Chairman, can we allow such expressions to pass?", "dia_id": "D4:116" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The Doctor uses inflammatory language about leading men.", "based_on": ["E1"] },
-        { "step": 2, "inference": "The Mayor immediately appeals to the chair to stop this specific language, showing his goal is active censorship.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 2,
-      "question": "What immediate concern does Petra express near the end of the meeting?",
-      "option": [
-        "A. The weather.",
-        "B. Identifying the man who just threatened their host.",
-        "C. Finding her missing schoolbooks.",
-        "D. Securing a new job at the newspaper.",
-        "E. Organizing a brand new political party to completely overthrow the local government."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "The Stout Man", "utterance": "You shall hear from me in the morning.", "dia_id": "D4:216" },
-        { "id": "E2", "speaker": "Petra", "utterance": "Was that not your owner, Captain Horster?", "dia_id": "D4:217" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "A Stout Man threatens Horster.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Petra immediately asks to identify the man, focusing on the real-time threat to their ally.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Aslaksen",
-      "category": 2,
-      "question": "How does Aslaksen handle the final vote process?",
-      "option": [
-        "A. He delays it.",
-        "B. He refuses it.",
-        "C. He argues with Billing.",
-        "D. He swiftly organizes a silent ballot to avoid further emotional outbursts.",
-        "E. He demands that every single citizen speak for an hour before casting their final paper."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "We cannot hear you now, Doctor. A formal vote is about to be taken; but, out of regard for personal feelings, it shall be by ballot and not verbal.", "dia_id": "D4:188" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "That will do nicely; we shall get on more quickly that way.", "dia_id": "D4:190" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Aslaksen silences the Doctor to push the vote.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He explicitly chooses paper ballots to speed things up and manage personal feelings.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann outlines his exact alternative plan of action if silenced.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 3,
-      "question": "What is the chronological sequence of Dr. Stockmann's realizations about his town?",
+      "question": "How does Dr. Stockmann's intended topic for his lecture shift according to his own statements at the meeting?",
       "option": [
-        "A. He knew yesterday.",
-        "B. He hatched the plans yesterday.",
-        "C. He planned the baths up north, then realized the truth yesterday afternoon.",
-        "D. He realized the truth as a child, then forgot it.",
-        "E. He learned the truth from his brother ten years ago and kept it a total secret until this evening."
+        "A. He originally wanted to speak about the tanneries, but instead chose to discuss his brother's political ambitions.",
+        "B. He initially planned to attack the \"People's Messenger\", but shifted to attacking the Householders' Association.",
+        "C. He meant to discuss the poisoned water-supply at the Baths, but decided to reveal that the sources of the town's moral life are poisoned.",
+        "D. He wanted to discuss his salary increase, but changed his mind to speak about Captain Horster's ship.",
+        "E. He planned to discuss the history of his Pomeranian ancestors, but instead discussed the evolution of poodles."
       ],
       "answer": "C",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "I was like one of the eider-ducks brooding on its nest, and what I hatched was the plans for these Baths.", "dia_id": "D4:110" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "But yesterday morning—no, to be precise, it was yesterday afternoon—the eyes of my mind were opened wide, and the first thing I realised was the colossal stupidity of the authorities—.", "dia_id": "D4:112" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Tonight I have no intention of dealing with all that filth down at the Baths. No; I have something quite different to say to you.",
+          "dia_id": "D4:91"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "I have already told you that what I want to speak about is the great discovery I have made lately—the discovery that all the sources of our moral life are poisoned...",
+          "dia_id": "D4:103"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "The Doctor first created the plans in the past (up north).", "based_on": ["E1"] },
-        { "step": 2, "inference": "His new revelation about the authorities and the truth occurred specifically 'yesterday afternoon'.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 3,
-      "question": "What event caused Hovstad to sequentially change his mind about supporting the Doctor?",
-      "option": [
-        "A. A bad meal.",
-        "B. He read the Mayor's statement.",
-        "C. He was bribed by Morten Kiil.",
-        "D. He lost his job at the newspaper.",
-        "E. He received a secret telegram from the capital ordering him to change his political stance immediately."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "Dr. Stockmann's agitation appeared to be gaining a certain amount of sympathy at first, so I supported it as impartially as I could.", "dia_id": "D4:77" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "Well, let us say a not entirely trustworthy representation. The Mayor's statement has proved that.", "dia_id": "D4:79" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad supported the Doctor earlier in the timeline.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He justifies his shift by claiming the Mayor's statement proved the Doctor's representation was untrustworthy.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 3,
-      "question": "What is the sequence of Mrs. Stockmann's logistical concerns during the event?",
-      "option": [
-        "A. She left first.",
-        "B. She lost her hat.",
-        "C. She fought Petra.",
-        "D. She asked about a disturbance upon arrival, and later suggested a back exit.",
-        "E. She demanded to be seated on the main platform but was subsequently thrown out of the room."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Mrs. Stockmann", "utterance": "Do you think there will be a disturbance?", "dia_id": "D4:23" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Thomas, dear, let us go out by the back way.", "dia_id": "D4:227" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Early in the scene, Katherine worries about a disturbance upon arriving.", "based_on": ["E1"] },
-        { "step": 2, "inference": "After the hostility peaks at the end, she sequentially proposes using the back way to leave.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 3,
-      "question": "What is the chronological order of the Mayor's actions against his brother?",
-      "option": [
-        "A. He yelled first.",
-        "B. He left early.",
-        "C. He published in the Messenger, then proposed the gag order.",
-        "D. He fought him physically before writing.",
-        "E. He voted secretly and then refused to speak to anyone in the town for the rest of the year."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "In my communication to the \"People's Messenger,\" I have put the essential facts before the public...", "dia_id": "D4:73" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "Therefore, I should like to propose that the meeting should not permit the Medical Officer either to read or to comment on his proposed lecture.", "dia_id": "D4:69" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The Mayor references a past action: his communication already published in the paper.", "based_on": ["E1"] },
-        { "step": 2, "inference": "His present action is to propose the motion blocking the lecture.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 3,
-      "question": "How do Petra's interactions with Horster evolve from the start to the end of the meeting?",
-      "option": [
-        "A. She ignores him.",
-        "B. She praises him initially, then later identifies his threatening boss.",
-        "C. She argues with him constantly.",
-        "D. She begs him for money.",
-        "E. She demands he sell his ship and move away from the town immediately to avoid further trouble."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "And it was a plucky thing to do, Captain Horster.", "dia_id": "D4:27" },
-        { "id": "E2", "speaker": "Petra", "utterance": "Was that not your owner, Captain Horster?", "dia_id": "D4:217" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "At the beginning, Petra praises Horster for hosting.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Near the end, she actively identifies the Stout Man as Horster's owner after a threat.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Aslaksen",
-      "category": 3,
-      "question": "What is the sequence of Aslaksen's official duties during this scene?",
-      "option": [
-        "A. He ate first.",
-        "B. He went home.",
-        "C. He fought the Mayor.",
-        "D. He accepted the chairmanship, stated his principles, and later dissolved the meeting.",
-        "E. He completely refused to participate in any voting and locked himself inside the adjacent room."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "Since my fellow-citizens choose to entrust me with this duty, I cannot refuse.", "dia_id": "D4:53" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "And now, as I am in this position, I should like to say a few brief words... moderation is the most valuable virtue...", "dia_id": "D4:56", "dia_id_2": "D4:58" },
-        { "id": "E3", "speaker": "Aslaksen", "utterance": "The meeting is dissolved.", "dia_id": "D4:221" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Aslaksen first accepts the role and states his doctrine of moderation.", "based_on": ["E1", "E2"] },
-        { "step": 2, "inference": "At the very end of the chronological sequence, he officially dissolves the gathering.", "based_on": ["E1", "E2", "E3"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann abandons his expected topic of the Baths.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He replaces it with his new discovery about moral poisoning.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 4,
-      "question": "What major plot event occurs after Dr. Stockmann is prevented from reading his lecture?",
+      "question": "Based on the dialogue, why does Dr. Stockmann categorize his brother Peter as belonging to the \"common people\" intellectually?",
       "option": [
-        "A. He leaves.",
-        "B. He attacks Peter.",
-        "C. He delivers a speech denouncing the compact majority.",
-        "D. He writes a new book.",
-        "E. He explicitly apologizes to everyone in the room and promises to never mention the poisoned water again."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "Tonight I have no intention of dealing with all that filth down at the Baths. No; I have something quite different to say to you.", "dia_id": "D4:91" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "The most dangerous enemy of truth and freedom amongst us is the compact majority...", "dia_id": "D4:128" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Prevented from discussing the Baths, the Doctor pivots to a different topic.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He executes his new plan by delivering a speech targeting the compact majority.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Hovstad",
-      "category": 4,
-      "question": "What specific action does Hovstad take to solidify his stance at the meeting?",
-      "option": [
-        "A. He cries.",
-        "B. He uses his speech to publicly denounce his former friend.",
-        "C. He hits Aslaksen.",
-        "D. He throws blue paper.",
-        "E. He forcibly removes the Doctor from the platform and burns his manuscript in front of the crowd."
+        "A. Because Peter is descended from a pirate from Pomerania.",
+        "B. Because Peter thinks what his superiors think and holds the same opinions as they do.",
+        "C. Because Peter refuses to spend the ratepayers' money on the Baths.",
+        "D. Because Peter writes for the \"People's Messenger\" alongside Hovstad.",
+        "E. Because Peter associates with the drunken navvies from out of town."
       ],
       "answer": "B",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "It has cost me a severe struggle to break with a man in whose house I have been lately a frequent guest...", "dia_id": "D4:83" },
-        { "id": "E2", "speaker": "Hovstad", "utterance": "But my duty to the community obliged me to break with him.", "dia_id": "D4:85" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "My brother Peter is every bit as plebeian as anyone that walks in two shoes—",
+          "dia_id": "D4:166"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "—but because he thinks what his superiors think, and holds the same opinions as they, People who do that are, intellectually speaking, common people...",
+          "dia_id": "D4:170"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad actively takes the floor to address the crowd.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He officially and publicly breaks ties with the Doctor during this speech.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Mrs. Stockmann",
-      "category": 4,
-      "question": "What physical action does Katherine take when the debate touches upon her family?",
-      "option": [
-        "A. She leaves.",
-        "B. She slaps Hovstad.",
-        "C. She throws a chair.",
-        "D. She hushes her son Morten.",
-        "E. She stands up and delivers a prolonged defense of her husband's medical qualifications to the entire crowd."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten", "utterance": "Is that us, mother?", "dia_id": "D4:88" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Hush!", "dia_id": "D4:89" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Morten speaks out when his family is mentioned.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Katherine executes the action of shushing him.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Peter Stockmann",
-      "category": 4,
-      "question": "What maneuver does the Mayor execute to ensure the meeting goes his way?",
-      "option": [
-        "A. He buys votes.",
-        "B. He bribes Hovstad.",
-        "C. He nominates Aslaksen as chairman.",
-        "D. He steals the manuscript.",
-        "E. He permanently locks the doors of the hall so that no one can enter or leave until the vote is finished."
-      ],
-      "answer": "C",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I certainly think too that we ought to have a chairman.", "dia_id": "D4:42" },
-        { "id": "E2", "speaker": "Peter Stockmann", "utterance": "I refer to the President of the Householders' Association, Mr. Aslaksen.", "dia_id": "D4:50" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The Mayor insists on procedural control via a chairman.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He directly nominates the moderate Aslaksen, ensuring the meeting remains under his faction's control.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Petra",
-      "category": 4,
-      "question": "What is Petra tasked with as the family prepares to leave the hostile meeting?",
-      "option": [
-        "A. She pays.",
-        "B. She is asked to bring her father's hat and coat.",
-        "C. She opens the door.",
-        "D. She fights the drunken man.",
-        "E. She is commanded to stay behind and clean the entire room after the crowd has completely dispersed."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "The meeting is dissolved.", "dia_id": "D4:221" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "My hat and coat, Petra! Captain, have you room on your ship for passengers to the New World?", "dia_id": "D4:224" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The meeting ends abruptly after the hostile vote.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Dr. Stockmann directly tasks Petra with fetching his hat and coat for their departure.", "based_on": ["E1", "E2"] }
-      ]
-    },
-    {
-      "character": "Aslaksen",
-      "category": 4,
-      "question": "How does Aslaksen practically execute the resolution against Dr. Stockmann?",
-      "option": [
-        "A. By shouting.",
-        "B. By using a bell.",
-        "C. By calling the police.",
-        "D. By cutting up blue and white paper strips for a ballot.",
-        "E. By forcing every single person to sign a massive legal document permanently banishing the Doctor."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "A formal vote is about to be taken... it shall be by ballot...", "dia_id": "D4:188" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "Cut it up into small strips—yes, that's it. Blue means no; white means yes.", "dia_id": "D4:190" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Aslaksen calls for a formal ballot.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He executes this by directing the cutting of blue and white paper strips.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann labels his brother as plebeian/common.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He clarifies this is due to Peter adopting the opinions of his superiors.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
       "character": "Dr. Stockmann",
       "category": 5,
-      "question": "What is the explicit familial relationship between the speaker attempting to give the lecture and the Mayor?",
+      "question": "What is the precise maximum age of a \"normally constituted truth\" according to Dr. Stockmann?",
       "option": [
-        "A. They are cousins.",
-        "B. They are roommates.",
-        "C. They are brothers.",
-        "D. They are father and son.",
-        "E. They have absolutely no biological or legal relation to one another whatsoever."
+        "A. Ten to twelve years.",
+        "B. Seventeen or eighteen, or at most twenty years.",
+        "C. Twenty to twenty-five years.",
+        "D. As long-lived as Methuselah.",
+        "E. Fifty years."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "4th Citizen", "utterance": "But the Mayor is his brother.", "dia_id": "D4:10" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "...I had almost daily before my eyes in this town such an excellent specimen of them—my brother Peter—", "dia_id": "D4:118" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "A normally constituted truth lives, let us say, as a rule seventeen or eighteen, or at most twenty years—seldom longer.",
+          "dia_id": "D4:137"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "The crowd notes the relationship before the speech.", "based_on": ["E1"] },
-        { "step": 2, "inference": "The Doctor explicitly confirms Peter is his brother.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann provides exact numbers for the lifespan of a truth.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     },
     {
-      "character": "Hovstad",
-      "category": 5,
-      "question": "What explicit prior relationship did Hovstad have with the speaker's household?",
+      "character": "Mrs. Stockmann",
+      "category": 1,
+      "question": "Which of the following best demonstrates Mrs. Stockmann's primary concern during the public meeting?",
       "option": [
-        "A. He was a landlord.",
-        "B. He was a frequent guest in his house.",
-        "C. He was his medical patient.",
-        "D. He was a business partner.",
-        "E. He was completely unacquainted with the family until the very moment the public meeting began."
+        "A. She is eager to help her husband read his manuscript to the crowd.",
+        "B. She attempts to urge her husband to maintain control of his temper.",
+        "C. She wants to ensure that Morten Kiil's tannery is protected from accusations.",
+        "D. She actively debates with Aslaksen over the chairmanship.",
+        "E. She encourages Captain Horster to speak up against Mr. Vik."
       ],
       "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "It has cost me a severe struggle to break with a man in whose house I have been lately a frequent guest...", "dia_id": "D4:83" }
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "All right, thank you. Be sure not to lose your temper, Thomas.",
+          "dia_id": "D4:36"
+        },
+        {
+          "id": "E2",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Ahem!-ahem!",
+          "dia_id": "D4:71"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad explicitly defines his relationship as having been a frequent guest in Dr. Stockmann's house.", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "She explicitly asks Thomas not to lose his temper.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "She clears her throat to caution him when he begins to lose his temper at Peter's motion.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 2,
+      "question": "What specific suggestion does Mrs. Stockmann make regarding their departure from the meeting?",
+      "option": [
+        "A. She suggests they confront the crowd directly at the main exit.",
+        "B. She asks Captain Horster to escort them out the front door.",
+        "C. She suggests they go out by the back way.",
+        "D. She tells Morten to run ahead and secure a carriage.",
+        "E. She suggests waiting in the ante-room until the crowd disperses."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Thomas, dear, let us go out by the back way.",
+          "dia_id": "D4:227"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Mrs. Stockmann explicitly proposes the back way as their exit route.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 3,
+      "question": "How does Mrs. Stockmann's opinion on the financial cost of repairing the Baths change over the course of the meeting?",
+      "option": [
+        "A. She initially supports spending the thousands of pounds but later agrees with Peter that it is too expensive.",
+        "B. She first agrees with Aslaksen on moderation, but later demands the ratepayers pay.",
+        "C. She starts by defending the tanneries and ends by condemning them.",
+        "D. She initially refuses to pay taxes but later offers to fund the repairs herself.",
+        "E. She begins by wanting to sell her shares but later decides to keep them."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Do you think there will be a disturbance?",
+          "dia_id": "D4:23"
+        },
+        {
+          "id": "E2",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "It was extremely kind of you to offer my husband the room.",
+          "dia_id": "D4:25"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "None of Mrs. Stockmann's dialogue addresses the financial cost of repairing the Baths.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Mrs. Stockmann",
+      "category": 4,
+      "question": "How does Mrs. Stockmann intervene when Hovstad brings her family into his argument against the Doctor?",
+      "option": [
+        "A. She loudly protests Hovstad's invasion of her privacy.",
+        "B. She thanks Hovstad for his consideration of her children.",
+        "C. She asks her husband to stick to the topic of the water-supply.",
+        "D. She simply hushes her son Morten when he asks if Hovstad is talking about them.",
+        "E. She demands Aslaksen silence Hovstad."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "consideration, I repeat, for his wife and his children for whom he has made no provision.",
+          "dia_id": "D4:87"
+        },
+        {
+          "id": "E2",
+          "speaker": "Morten",
+          "utterance": "Is that us, mother?",
+          "dia_id": "D4:88"
+        },
+        {
+          "id": "E3",
+          "speaker": "Mrs. Stockmann",
+          "utterance": "Hush!",
+          "dia_id": "D4:89"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Hovstad mentions the family, prompting Morten to ask a question.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Mrs. Stockmann's only response is hushing Morten.",
+          "based_on": [
+            "E3"
+          ]
+        }
       ]
     },
     {
       "character": "Mrs. Stockmann",
       "category": 5,
-      "question": "What is Katherine's explicit familial relationship to Morten?",
+      "question": "According to Dr. Stockmann's anecdote, what is Katherine's (Mrs. Stockmann's) debatable opinion regarding household cleaning?",
       "option": [
-        "A. She is his aunt.",
-        "B. She is his sister.",
-        "C. She is his teacher.",
-        "D. She is his mother.",
-        "E. She is an entirely unrelated guardian who was hired to watch him during the meeting."
+        "A. That houses should only be aired and swept once a week.",
+        "B. That dogs should not be allowed inside to befoul the floors.",
+        "C. That the floor ought to be scrubbed every day, not just aired and swept.",
+        "D. That carpets must be beaten every spring to prevent moral scurvy.",
+        "E. That oxygen weakens the conscience if a house is too clean."
       ],
-      "answer": "D",
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Morten", "utterance": "Is that us, mother?", "dia_id": "D4:88" },
-        { "id": "E2", "speaker": "Mrs. Stockmann", "utterance": "Hush!", "dia_id": "D4:89" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "In a house which does not get aired and swept every day—my wife Katherine maintains that the floor ought to be scrubbed as well, but that is a debatable question—",
+          "dia_id": "D4:173"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Morten directly addresses Mrs. Stockmann as 'mother'.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Her immediate response confirms she occupies this maternal role.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann specifically notes Katherine's stance on scrubbing floors.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 1,
+      "question": "Which of the following arguments does Peter Stockmann prioritize when convincing the crowd not to listen to the Doctor?",
+      "option": [
+        "A. He argues that the Doctor is intoxicated and prone to making false statements.",
+        "B. He appeals to the financial burden the Doctor's proposals would place on the ratepayers.",
+        "C. He insists that the Doctor's proposals violate the constitution of the Householders' Association.",
+        "D. He claims the Doctor is attempting to steal the Mayor's position.",
+        "E. He warns that the \"People's Messenger\" will ruin the town's reputation."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "From it you will see that the main result of the Medical Officer's proposals... would be to saddle the ratepayers with an unnecessary expenditure of at least some thousands of pounds.",
+          "dia_id": "D4:73"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter explicitly highlights the financial expenditure falling on the ratepayers as the main result of the proposals.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 2,
+      "question": "Who does Peter Stockmann nominate to act as the chairman of the meeting?",
+      "option": [
+        "A. Captain Horster",
+        "B. Hovstad",
+        "C. Billing",
+        "D. Mr. Aslaksen",
+        "E. Evensen"
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "I refer to the President of the Householders' Association, Mr. Aslaksen.",
+          "dia_id": "D4:50"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter specifically names Mr. Aslaksen as his suggestion for chairman.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 3,
+      "question": "How does Peter Stockmann's willingness to address the crowd shift at the beginning of the meeting?",
+      "option": [
+        "A. He states he originally wanted to debate his brother, but decides to remain completely silent.",
+        "B. He initially preferred not to speak due to their close relationship, but feels compelled by his official position to bring forward a motion.",
+        "C. He wanted to read a prepared statement from the \"People's Messenger\", but changes his mind when the crowd boos.",
+        "D. He initially supports his brother's right to speak, but changes his mind after the Doctor insults him.",
+        "E. He refuses to enter the room at first, but is dragged in by Aslaksen and forced to speak."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "In consideration of the close relationship... I should have preferred not to speak this evening. But my official position with regard to the Baths and my solicitude for the vital interests of the town compel me to bring forward a motion.",
+          "dia_id": "D4:67"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Peter states his initial preference was not to speak.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He immediately updates this by stating his position compels him to speak and make a motion.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Peter Stockmann",
+      "category": 4,
+      "question": "How does Peter respond to Dr. Stockmann's claim that they are descended from a pirate from Pomerania?",
+      "option": [
+        "A. He admits it but claims his own hard work erased that heritage.",
+        "B. He completely ignores the statement and calls on Aslaksen.",
+        "C. He dismisses it as an absurd legend and denies it.",
+        "D. He argues that the pirate was actually a respected merchant.",
+        "E. He threatens to have the Doctor arrested for slander."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "and that, not because he is like myself, descended from some old rascal of a pirate from Pomerania or thereabouts—",
+          "dia_id": "D4:168"
+        },
+        {
+          "id": "E2",
+          "speaker": "Peter Stockmann",
+          "utterance": "An absurd legend. I deny it!",
+          "dia_id": "D4:169"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann introduces the Pomeranian pirate ancestry.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Peter directly refutes it as an absurd legend.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
       "character": "Peter Stockmann",
       "category": 5,
-      "question": "What is Peter Stockmann's explicit relationship to Dr. Thomas Stockmann?",
+      "question": "What is the exact number of pounds Peter Stockmann claims the Doctor's proposals will cost the ratepayers?",
       "option": [
-        "A. He is his boss.",
-        "B. He is his uncle.",
-        "C. He is his brother.",
-        "D. He is his landlord.",
-        "E. He is a completely unrelated official who happens to share the exact same last name."
+        "A. Exactly five thousand pounds.",
+        "B. At least ten thousand pounds.",
+        "C. Seventeen or eighteen pounds.",
+        "D. Three thousand pounds.",
+        "E. Exactly one thousand pounds."
       ],
-      "answer": "C",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "But I have called this meeting to deliver a lecture, Peter.", "dia_id": "D4:43" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "...my magnificent brother Peter...", "dia_id": "D4:170" }
+        {
+          "id": "E1",
+          "speaker": "Peter Stockmann",
+          "utterance": "would be to saddle the ratepayers with an unnecessary expenditure of at least some thousands of pounds.",
+          "dia_id": "D4:73"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Dr. Stockmann refers to the Mayor as Peter.", "based_on": ["E1"] },
-        { "step": 2, "inference": "Dr. Stockmann explicitly names Peter as his brother.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "Peter only says 'at least some thousands of pounds'.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He never provides an exact numerical figure, making all A-E options incorrect.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 1,
+      "question": "How does Petra view Captain Horster's decision to provide a venue for her father's meeting?",
+      "option": [
+        "A. She considers it a reckless mistake that will ruin his career.",
+        "B. She considers it a plucky thing to do.",
+        "C. She thinks he did it solely because nobody else would.",
+        "D. She believes he is seeking revenge against his shipowner.",
+        "E. She views it as an attempt to win her affection."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "And it was a plucky thing to do, Captain Horster.",
+          "dia_id": "D4:27"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra explicitly describes Horster's action as 'plucky'.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 2,
+      "question": "Which specific individual in the crowd does Petra point out to Captain Horster?",
+      "option": [
+        "A. Evensen with his cow-horn.",
+        "B. Mr. Vik the shipowner.",
+        "C. The drunken man.",
+        "D. Morten Kiil.",
+        "E. Lamstad."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Was that not your owner, Captain Horster?",
+          "dia_id": "D4:217"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "Yes, that was Mr. Vik the shipowner.",
+          "dia_id": "D4:218"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra recognizes someone talking to Horster and asks if it is his owner.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Horster confirms it is Mr. Vik the shipowner.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 3,
+      "question": "At what point during the meeting does Petra decide to publicly denounce Hovstad?",
+      "option": [
+        "A. Right after he claims to be a freethinker.",
+        "B. When he mentions the Doctor's family.",
+        "C. When he votes blue on the ballot.",
+        "D. Right before they leave by the back way.",
+        "E. After Aslaksen proposes the resolution."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "And it was a plucky thing to do, Captain Horster.",
+          "dia_id": "D4:27"
+        },
+        {
+          "id": "E2",
+          "speaker": "Petra",
+          "utterance": "Was that not your owner, Captain Horster?",
+          "dia_id": "D4:217"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra has very limited dialogue in this text, and none of it involves denouncing Hovstad.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Petra",
+      "category": 4,
+      "question": "Based on the text, what action connects Petra to her father's final departure from the meeting?",
+      "option": [
+        "A. She physically blocks Aslaksen from collecting the ballots.",
+        "B. She throws a glass of water at the Mayor.",
+        "C. She is called upon by her father to fetch his hat and coat.",
+        "D. She begs her father to forgive the crowd.",
+        "E. She runs ahead to secure Captain Horster's ship."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Aslaksen",
+          "utterance": "...this meeting of citizens declares Dr. Thomas Stockmann to be an enemy of the people...",
+          "dia_id": "D4:221"
+        },
+        {
+          "id": "E2",
+          "speaker": "Dr. Stockmann",
+          "utterance": "My hat and coat, Petra! Captain, have you room on your ship for passengers to the New World?",
+          "dia_id": "D4:224"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "As the meeting concludes against him, Dr. Stockmann prepares to leave.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "His immediate instruction to Petra is for her to get his hat and coat.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
       "character": "Petra",
       "category": 5,
-      "question": "How is Petra explicitly related to the Medical Officer?",
+      "question": "Which specific door does Captain Horster bring Petra through at the beginning of the scene?",
       "option": [
-        "A. She is his niece.",
-        "B. She is his daughter.",
-        "C. She is his student.",
-        "D. She is his sister.",
-        "E. She is a hired servant who assists him with his coat and has no blood relation."
-      ],
-      "answer": "B",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Petra", "utterance": "Was that not your owner, Captain Horster?", "dia_id": "D4:217" },
-        { "id": "E2", "speaker": "Dr. Stockmann", "utterance": "My hat and coat, Petra!", "dia_id": "D4:224" },
-        { "id": "E3", "speaker": "STAGE", "utterance": "(Horn-blowing, hisses, and wild cries. DR. STOCKMANN goes out through the hall with his family, HORSTER elbowing a way for them.)", "dia_id": "D4:234" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "Petra is part of the group identified as Dr. Stockmann's family.", "based_on": ["E2", "E3"] },
-        { "step": 2, "inference": "The text collectively refers to those leaving with him (including Petra, Katherine, and the boys) as 'his family', confirming her familial (daughter) status.", "based_on": ["E2", "E3"] }
-      ]
-    },
-    {
-      "character": "Aslaksen",
-      "category": 5,
-      "question": "What formal organizational role does Aslaksen hold in relation to the townspeople?",
-      "option": [
-        "A. He is the Mayor.",
-        "B. He is the Sheriff.",
-        "C. He is the Doctor.",
-        "D. He is the President of the Householders' Association.",
-        "E. He is the supreme commander of the local naval forces and the militia."
-      ],
-      "answer": "D",
-      "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "I refer to the President of the Householders' Association, Mr. Aslaksen.", "dia_id": "D4:50" }
-      ],
-      "reasoning_steps": [
-        { "step": 1, "inference": "The Mayor explicitly states Aslaksen's title, defining his formal relationship to the citizens.", "based_on": ["E1"] }
-      ]
-    },
-    {
-      "character": "Dr. Stockmann",
-      "category": 6,
-      "question": "According to Dr. Stockmann's medical analogy, what is the maximum number of years a normally constituted truth typically lives?",
-      "option": [
-        "A. 10 years.",
-        "B. 15 years.",
-        "C. 20 years.",
-        "D. 50 years.",
-        "E. 100 years or substantially more depending on the circumstances."
+        "A. The folding-doors at the back.",
+        "B. The door on the left.",
+        "C. The door on the right.",
+        "D. The main entrance to the ante-room.",
+        "E. The door near the platform."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "A normally constituted truth lives, let us say, as a rule seventeen or eighteen, or at most twenty years—seldom longer.", "dia_id": "D4:137" }
+        {
+          "id": "E1",
+          "speaker": "STAGE",
+          "utterance": "(CAPTAIN HORSTER brings in MRS. STOCKMANN and PETRA through the door on the right. EJLIF and MORTEN follow them in.)",
+          "dia_id": "D4:21"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "The text explicitly states the lifespan of a truth.", "based_on": ["E1"] },
-        { "step": 2, "inference": "The absolute maximum stated in the range is 20 years.", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "The stage direction explicitly notes the door on the right.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 1,
+      "question": "How does Horster articulate his attitude toward lending his house to the Doctor when confronted by Mr. Vik?",
+      "option": [
+        "A. He apologizes and says he didn't realize the Doctor was an enemy of the people.",
+        "B. He insists that he can do what he likes with his own possessions.",
+        "C. He argues that the \"People's Messenger\" gave him permission.",
+        "D. He claims he was forced into it by the Householders' Association.",
+        "E. He says he only did it to make money for his upcoming voyage."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "The Stout Man",
+          "utterance": "Well, Captain, so you lend your house to enemies of the people?",
+          "dia_id": "D4:212"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "I imagine I can do what I like with my own possessions, Mr. Vik.",
+          "dia_id": "D4:213"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster responds to Mr. Vik's questioning about lending the house.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "His justification is his right to do what he likes with his own possessions.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 2,
+      "question": "What concrete assistance does Horster offer the Stockmann family at the conclusion of the meeting?",
+      "option": [
+        "A. He offers them safe passage out the back door.",
+        "B. He offers to fight Evensen and the crowd.",
+        "C. He offers them room on his ship as passengers to the New World.",
+        "D. He offers them a permanent residence in his big old-fashioned room.",
+        "E. He offers to lend the Doctor money to repair the Baths."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "Captain, have you room on your ship for passengers to the New World?",
+          "dia_id": "D4:224"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "For you and yours we will make room, Doctor.",
+          "dia_id": "D4:225"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann asks for room on Horster's ship to the New World.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Horster explicitly agrees to make room for them.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 3,
+      "question": "How does Horster's allegiance shift from the beginning of the meeting to the end?",
+      "option": [
+        "A. He starts by supporting the Mayor but ends up supporting the Doctor.",
+        "B. He initially refuses to lend his house but later allows it.",
+        "C. He initially votes blue, but later changes his vote to white.",
+        "D. He begins as a neutral observer but joins the crowd in shouting against the Doctor.",
+        "E. He starts by supporting the Householders' Association but ends up agreeing with Aslaksen."
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "I thought you might all sit here; you can slip out easily from here...",
+          "dia_id": "D4:22"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "For you and yours we will make room, Doctor.",
+          "dia_id": "D4:225"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster supports the Stockmanns at the beginning by hosting them and ensuring their exit strategy.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He continues supporting them at the end by offering them passage on his ship.",
+          "based_on": [
+            "E2"
+          ]
+        },
+        {
+          "step": 3,
+          "inference": "His allegiance does not shift; none of the options are correct.",
+          "based_on": [
+            "E1",
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 4,
+      "question": "Based on their brief exchange, what is the implicit nature of Horster's professional relationship with Mr. Vik?",
+      "option": [
+        "A. Mr. Vik is Horster's younger brother.",
+        "B. Mr. Vik is a subordinate sailor on Horster's ship.",
+        "C. Mr. Vik is the shipowner, making him Horster's employer or superior.",
+        "D. Mr. Vik is the Mayor's assistant, checking up on Horster.",
+        "E. Mr. Vik is a journalist trying to interview Horster."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Petra",
+          "utterance": "Was that not your owner, Captain Horster?",
+          "dia_id": "D4:217"
+        },
+        {
+          "id": "E2",
+          "speaker": "Horster",
+          "utterance": "Yes, that was Mr. Vik the shipowner.",
+          "dia_id": "D4:218"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Petra identifies the man as Horster's \"owner\".",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Horster confirms it is Mr. Vik, the shipowner, establishing a hierarchical professional relationship.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Horster",
+      "category": 5,
+      "question": "When Horster suggests a seating location for Mrs. Stockmann and Petra, what specific reason does he give?",
+      "option": [
+        "A. So they can hear the Doctor's speech more clearly.",
+        "B. So they can avoid sitting near the drunken man.",
+        "C. So they can slip out easily from there if things get too lively.",
+        "D. So they can keep an eye on Morten Kiil.",
+        "E. So they can distribute the blue and white paper strips."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Horster",
+          "utterance": "I thought you might all sit here; you can slip out easily from here, if things get too lively.",
+          "dia_id": "D4:22"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Horster explicitly states the reason for their seating placement.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     },
     {
       "character": "Hovstad",
-      "category": 6,
-      "question": "According to Hovstad's sarcastic remark, exactly how many days ago did Dr. Stockmann become an aristocrat?",
+      "category": 1,
+      "question": "How does Hovstad justify his editorial philosophy regarding his audience?",
       "option": [
-        "A. 0.",
-        "B. 2 days ago.",
-        "C. 5 days ago.",
-        "D. 10 days ago.",
-        "E. 30 days ago or an entire month."
+        "A. He believes an editor must prioritize objective scientific truth over public opinion.",
+        "B. He believes an editor's primary duty is to work in harmony with his readers.",
+        "C. He believes an editor should always challenge the Mayor and established authorities.",
+        "D. He believes an editor should focus exclusively on national politics rather than local matters.",
+        "E. He believes an editor must never associate with the Householders' Association."
       ],
       "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Hovstad", "utterance": "Aha!—so Dr. Stockmann has become an aristocrat since the day before yesterday!", "dia_id": "D4:134" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Now, what is an editor's first and most obvious duty, gentlemen? Is it not to work in harmony with his readers?",
+          "dia_id": "D4:81"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Hovstad points to 'the day before yesterday'.", "based_on": ["E1"] },
-        { "step": 2, "inference": "The day before yesterday is mathematically exactly 2 days ago.", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "Hovstad rhetorically defines an editor's duty.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "His answer is that it is to work in harmony with the readers.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     },
     {
-      "character": "Mrs. Stockmann",
-      "category": 6,
-      "question": "According to her husband, within how many years does a person lose their power of moral thinking in an un-aired house (like the one Katherine wants scrubbed)?",
+      "character": "Hovstad",
+      "category": 2,
+      "question": "What explicit personal reason does Hovstad cite for opposing Dr. Stockmann's course of action?",
       "option": [
-        "A. 1 year.",
-        "B. 4 years.",
-        "C. 2 or 3 years.",
-        "D. 5 to 6 years.",
-        "E. 10 to 20 years depending on the conditions."
+        "A. He claims the Doctor stole money from the Baths.",
+        "B. He claims the Doctor insulted his father.",
+        "C. He claims consideration for the Doctor's wife and children, for whom no provision has been made.",
+        "D. He claims the Doctor owes the \"People's Messenger\" money for advertising.",
+        "E. He claims he wants to replace the Doctor as the Medical Officer."
       ],
       "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Dr. Stockmann", "utterance": "In a house which does not get aired and swept every day—my wife Katherine maintains that the floor ought to be scrubbed as well... in such a house, let me tell you, people will lose within two or three years the power of thinking or acting in a moral manner.", "dia_id": "D4:173" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "And there is another consideration that impels me to oppose him... consideration, I repeat, for his wife and his children for whom he has made no provision.",
+          "dia_id": "D4:85"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "consideration, I repeat, for his wife and his children for whom he has made no provision.",
+          "dia_id": "D4:87"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Dr. Stockmann connects Katherine's cleaning rules to a specific timeline for moral decay.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He explicitly states this decay happens within 'two or three years'.", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "Hovstad cites another consideration for opposing the Doctor.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He specifies this is consideration for the Doctor's unprovided-for wife and children.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
-      "character": "Peter Stockmann",
-      "category": 6,
-      "question": "What is the minimum amount of pounds the Mayor claims the Medical Officer's proposals would cost the ratepayers?",
+      "character": "Hovstad",
+      "category": 3,
+      "question": "How does Hovstad describe the evolution of his support for Dr. Stockmann's agitation?",
       "option": [
-        "A. 100.",
-        "B. 500.",
-        "C. Some thousands.",
-        "D. 100,000.",
-        "E. 1,000,000 or substantially more."
+        "A. He never supported it and always knew it was a lie.",
+        "B. He supported it impartially at first, but later suspected they were misled by misrepresentation.",
+        "C. He only supported it after the Mayor proved the Doctor was right.",
+        "D. He started by opposing it, but was convinced by the Doctor's speech to support it.",
+        "E. He supported it until he found out the tanneries were involved, then stopped."
       ],
-      "answer": "C",
+      "answer": "B",
+      "label": "Memory Update",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Peter Stockmann", "utterance": "...would be to saddle the ratepayers with an unnecessary expenditure of at least some thousands of pounds.", "dia_id": "D4:73" }
+        {
+          "id": "E1",
+          "speaker": "Hovstad",
+          "utterance": "Dr. Stockmann's agitation appeared to be gaining a certain amount of sympathy at first, so I supported it as impartially as I could. But presently we had reason to suspect that we had allowed ourselves to be misled by misrepresentation of the state of affairs—",
+          "dia_id": "D4:77"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "The Mayor quotes a specific financial figure to scare the crowd.", "based_on": ["E1"] },
-        { "step": 2, "inference": "That exact figure is 'at least some thousands of pounds'.", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "Hovstad states his initial position was impartial support.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He explains his shift away from support was due to suspected misrepresentation.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     },
     {
-      "character": "Petra",
-      "category": 6,
-      "question": "Not including Captain Horster, exactly how many of Dr. Stockmann's family members are explicitly stated to walk into the room alongside or immediately following Petra at the start of the meeting?",
+      "character": "Hovstad",
+      "category": 4,
+      "question": "How does Hovstad defend himself socially against Dr. Stockmann's claim that the masses are \"barn-door hens and street curs\"?",
       "option": [
-        "A. 1.",
-        "B. 2.",
-        "C. 3.",
-        "D. 5.",
-        "E. 10 or more people."
+        "A. He claims he was educated in the city and therefore is not part of the masses.",
+        "B. He claims to be the son of a wealthy shipowner, making him an aristocrat.",
+        "C. He states he is the son of humble country-folk and is proud of his stock rooted among the common people.",
+        "D. He argues that he is a freethinker and therefore above social class distinctions.",
+        "E. He agrees with the Doctor but says he must pretend otherwise for his readers."
       ],
       "answer": "C",
+      "label": "Multi-hop",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "STAGE", "utterance": "(CAPTAIN HORSTER brings in MRS. STOCKMANN and PETRA through the door on the right. EJLIF and MORTEN follow them in.)", "dia_id": "D4:21" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "proclaims in the \"People's Messenger\" that it is the barn-door hens and street curs that are the finest specimens...",
+          "dia_id": "D4:163"
+        },
+        {
+          "id": "E2",
+          "speaker": "Hovstad",
+          "utterance": "I lay no claim to any sort of distinction, I am the son of humble country-folk, and I am proud that the stock I come from is rooted deep among the common people he insults.",
+          "dia_id": "D4:164"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "The stage direction names the people entering with Petra.", "based_on": ["E1"] },
-        { "step": 2, "inference": "The family members listed alongside her are Mrs. Stockmann, Ejlif, and Morten (totaling 3).", "based_on": ["E1"] }
+        {
+          "step": 1,
+          "inference": "Dr. Stockmann attacks Hovstad's promotion of the common masses.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Hovstad defends himself by aligning his personal heritage with the humble country-folk the Doctor insults.",
+          "based_on": [
+            "E2"
+          ]
+        }
       ]
     },
     {
-      "character": "Aslaksen",
-      "category": 6,
-      "question": "Exactly how many people present at the meeting voted against the resolution declaring Dr. Stockmann an enemy of the people?",
+      "character": "Hovstad",
+      "category": 5,
+      "question": "What exact publication date does Hovstad cite for his article claiming the masses are the real essence of the People?",
       "option": [
-        "A. 0.",
-        "B. 3.",
-        "C. 1.",
-        "D. 5.",
-        "E. 10 or more individuals."
+        "A. The day before yesterday.",
+        "B. Yesterday morning.",
+        "C. Yesterday afternoon.",
+        "D. Earlier today.",
+        "E. Last week."
       ],
-      "answer": "C",
+      "answer": "F",
+      "label": "Abstain",
       "evidence_dialogues": [
-        { "id": "E1", "speaker": "Aslaksen", "utterance": "Gentlemen, allow me to announce the result. By the votes of every one here except one person—", "dia_id": "D4:219" },
-        { "id": "E2", "speaker": "Aslaksen", "utterance": "By the votes of everyone here except a tipsy man, this meeting of citizens declares Dr. Thomas Stockmann to be an enemy of the people.", "dia_id": "D4:221" }
+        {
+          "id": "E1",
+          "speaker": "Dr. Stockmann",
+          "utterance": "I am going to prove to you, scientifically, that the \"People's Messenger\" leads you by the nose in a shameful manner when it tells you that you—that the common people, the crowd, the masses, are the real essence of the People.",
+          "dia_id": "D4:158"
+        }
       ],
       "reasoning_steps": [
-        { "step": 1, "inference": "Aslaksen announces the mathematical result of the ballot.", "based_on": ["E1"] },
-        { "step": 2, "inference": "He states exactly 'one person' (the tipsy man) voted against it.", "based_on": ["E1", "E2"] }
+        {
+          "step": 1,
+          "inference": "The dialogue mentions the \"People's Messenger\" telling the crowd this message.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "No exact publication date for this specific article is ever provided in the text.",
+          "based_on": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 1,
+      "question": "Which statement best characterizes Billing's default social behavior when interacting with the crowd during the meeting?",
+      "option": [
+        "A. He frequently contradicts the Mayor and Aslaksen.",
+        "B. He remains entirely silent and only takes notes for the newspaper.",
+        "C. He consistently attempts to defend the Stockmann family from insults.",
+        "D. He enthusiastically echoes and validates the prevailing hostile sentiment of the crowd against the Doctor.",
+        "E. He continually asks the drunken man to speak louder."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Billing",
+          "utterance": "And truth too, by God!",
+          "dia_id": "D4:132"
+        },
+        {
+          "id": "E2",
+          "speaker": "Billing",
+          "utterance": "There sounded the voice of the people, by all that's holy!",
+          "dia_id": "D4:184"
+        },
+        {
+          "id": "E3",
+          "speaker": "Billing",
+          "utterance": "Three cheers for the Chairman!",
+          "dia_id": "D4:222"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Billing supports Hovstad's claim that the majority is right.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "He validates the crowd calling the Doctor an enemy.",
+          "based_on": [
+            "E2"
+          ]
+        },
+        {
+          "step": 3,
+          "inference": "He initiates cheers for Aslaksen.",
+          "based_on": [
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 2,
+      "question": "What role does Billing perform to facilitate Aslaksen's formal vote?",
+      "option": [
+        "A. He writes the resolution on a chalkboard.",
+        "B. He collects the money for the voting fee.",
+        "C. He provides the colored paper to be cut into strips for the ballot.",
+        "D. He blows Evensen's horn to signal the start of voting.",
+        "E. He acts as the bouncer to remove the drunken man before voting."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Aslaksen",
+          "utterance": "Have you any clean paper, Mr. Billing?",
+          "dia_id": "D4:188"
+        },
+        {
+          "id": "E2",
+          "speaker": "Billing",
+          "utterance": "I have both blue and white here.",
+          "dia_id": "D4:189"
+        },
+        {
+          "id": "E3",
+          "speaker": "Aslaksen",
+          "utterance": "That will do nicely... Cut it up into small strips—yes, that's it.",
+          "dia_id": "D4:190"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Aslaksen asks Billing for paper.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Billing provides blue and white paper.",
+          "based_on": [
+            "E2"
+          ]
+        },
+        {
+          "step": 3,
+          "inference": "This paper is cut into strips for the vote.",
+          "based_on": [
+            "E3"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 3,
+      "question": "How does Billing's expressed intention regarding his social visits to the Stockmann household change by the end of the scene?",
+      "option": [
+        "A. He decides to move into their house permanently.",
+        "B. He notes that he used to go there and enjoy spirits, but declares he will absolutely not drink toddy with them tonight.",
+        "C. He previously refused to visit them, but decides he must go to interview the Doctor.",
+        "D. He used to drink water with them, but now insists on bringing his own beer.",
+        "E. He previously went there for dinner, but now will only go for breakfast."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Billing",
+          "utterance": "There are always spirits on the table when you go.",
+          "dia_id": "D4:194"
+        },
+        {
+          "id": "E2",
+          "speaker": "Billing",
+          "utterance": "Well, I'm damned if I go and drink toddy with the Stockmanns tonight!",
+          "dia_id": "D4:236"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Billing confirms he has visited their house and observed spirits on the table.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "At the end of the scene, he emphatically states he will not go drink toddy with them tonight.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 4,
+      "question": "What underlying motive does Billing suggest to the citizens is the real reason for Dr. Stockmann's behavior?",
+      "option": [
+        "A. The Doctor is secretly working for the tanneries.",
+        "B. The Doctor is being manipulated by Hovstad.",
+        "C. The Doctor is acting out of malice because he was recently denied a rise in salary.",
+        "D. The Doctor is acting out of grief for a lost patient.",
+        "E. The Doctor is trying to help Captain Horster get a new ship."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "4th Citizen",
+          "utterance": "No, it is nothing more than sheer malice; he wants to get even with somebody for something or other.",
+          "dia_id": "D4:198"
+        },
+        {
+          "id": "E2",
+          "speaker": "Billing",
+          "utterance": "Well certainly he suggested a rise in his salary on one occasion lately, and did not get it.",
+          "dia_id": "D4:199"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "A citizen suspects the Doctor is acting out of malice to get even.",
+          "based_on": [
+            "E1"
+          ]
+        },
+        {
+          "step": 2,
+          "inference": "Billing supplies the motive for this malice: a denied request for a salary increase.",
+          "based_on": [
+            "E2"
+          ]
+        }
+      ]
+    },
+    {
+      "character": "Billing",
+      "category": 5,
+      "question": "What specific two colors of paper does Billing provide to Aslaksen for the ballot?",
+      "option": [
+        "A. Red and white.",
+        "B. Blue and green.",
+        "C. Yellow and black.",
+        "D. Blue and white.",
+        "E. Blue and red."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Billing",
+          "utterance": "I have both blue and white here.",
+          "dia_id": "D4:189"
+        }
+      ],
+      "reasoning_steps": [
+        {
+          "step": 1,
+          "inference": "Billing specifically identifies the colors of the paper he has.",
+          "based_on": [
+            "E1"
+          ]
+        }
       ]
     }
   ],
   "conversation": {
-    "1st Citizen": "speaker_1",
-    "2nd Citizen": "speaker_2",
-    "3rd Citizen": "speaker_3",
-    "4th Citizen": "speaker_4",
-    "A Man in another part of the crowd": "speaker_5",
-    "Another Man": "speaker_6",
-    "Billing": "speaker_7",
-    "A Workman": "speaker_8",
-    "Second Workman": "speaker_9",
-    "Horster": "speaker_10",
-    "Mrs. Stockmann": "speaker_11",
-    "Petra": "speaker_12",
-    "Aslaksen": "speaker_13",
-    "Hovstad": "speaker_14",
-    "Dr. Stockmann": "speaker_15",
-    "Some of the Crowd": "speaker_16",
-    "Peter Stockmann": "speaker_17",
-    "Voices in the Crowd": "speaker_18",
-    "Three Men": "speaker_19",
-    "Several voices": "speaker_20",
-    "Several Voices": "speaker_21",
-    "A Man": "speaker_22",
-    "A Voice": "speaker_23",
-    "Voices from the crowd": "speaker_24",
-    "A few scattered voices": "speaker_25",
-    "Morten": "speaker_26",
-    "A Drunken Man": "speaker_27",
-    "A number of voices": "speaker_28",
-    "Others": "speaker_29",
-    "Voices of disconcerted Citizens": "speaker_30",
-    "The Drunken Man": "speaker_31",
-    "Angry Voices": "speaker_32",
-    "UNKNOWN": "speaker_33",
-    "Another": "speaker_34",
-    "Voices": "speaker_35",
-    "A Citizen": "speaker_36",
-    "Another Citizen": "speaker_37",
-    "The whole crowd": "speaker_38",
-    "The Citizens": "speaker_39",
-    "Morten Kiil": "speaker_40",
-    "A Stout Man": "speaker_41",
-    "The Stout Man": "speaker_42",
-    "A Young Man": "speaker_43",
-    "A Coarse Voice": "speaker_44",
-    "Other Voices": "speaker_45",
-    "Another Voice": "speaker_46",
-    "The Whole Crowd": "speaker_47",
+    "speakers": [
+      "Dr. Stockmann",
+      "Mrs. Stockmann",
+      "Peter Stockmann",
+      "Petra",
+      "Horster",
+      "Hovstad",
+      "Billing"
+    ],
     "session_4": [
       {
         "speaker": "NARRATION",

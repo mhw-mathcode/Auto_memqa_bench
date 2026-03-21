@@ -113,6 +113,200 @@ def evaluate_results_data(data: Any) -> Dict[str, List[Dict[str, Any]]]:
     return serialized
 
 
+def _load_json_if_exists(path: Path) -> Optional[Any]:
+    if not path.exists():
+        return None
+
+    try:
+        with path.open("r", encoding="utf-8") as file:
+            return json.load(file)
+    except Exception as exc:
+        logging.warning("Failed to load existing file %s: %s", path, exc)
+        return None
+
+
+def _is_llm_failure_response(response: Any) -> bool:
+    return isinstance(response, str) and response.startswith("Error: Failed to get response from LLM.")
+
+
+def _normalize_question_key(question: Any) -> str:
+    return " ".join(str(question or "").split())
+
+
+def _entry_quality(item: Dict[str, Any]) -> Tuple[int, int, float]:
+    scored = _score_mcq_result(item)
+    has_predicted = 1 if bool(scored.get("predicted_options")) else 0
+    is_non_error = 0 if _is_llm_failure_response(item.get("response")) else 1
+    score_value = float(scored.get("mcq_score", 0.0) or 0.0)
+    return is_non_error, has_predicted, score_value
+
+
+def _build_entry_map(data: Any) -> Dict[Any, Dict[int, Dict[str, Any]]]:
+    entry_map: Dict[Any, Dict[int, Dict[str, Any]]] = defaultdict(dict)
+    for conv_idx, question_idx, item in _iter_result_entries(data):
+        if isinstance(item, dict):
+            conv_key = _coerce_numeric_key(conv_idx)
+            try:
+                q_idx = int(question_idx)
+            except (TypeError, ValueError):
+                continue
+            entry_map[conv_key][q_idx] = dict(item)
+    return entry_map
+
+
+def _serialize_entry_map(entry_map: Dict[Any, Dict[int, Dict[str, Any]]]) -> Dict[str, List[Dict[str, Any]]]:
+    serialized: Dict[str, List[Dict[str, Any]]] = {}
+    for conv_idx in sorted(entry_map.keys(), key=_sort_key):
+        question_map = entry_map[conv_idx]
+        serialized[str(conv_idx)] = [
+            question_map[q_idx] for q_idx in sorted(question_map.keys(), key=_sort_key)
+        ]
+    return serialized
+
+
+def _merge_results_data(base_data: Any, patch_data: Any) -> Dict[str, List[Dict[str, Any]]]:
+    return _merge_results_map(base_data, _build_entry_map(patch_data))
+
+
+def _merge_results_map(
+    base_data: Any,
+    patch_map: Dict[Any, Dict[int, Dict[str, Any]]],
+) -> Dict[str, List[Dict[str, Any]]]:
+    base_map = _build_entry_map(base_data)
+    question_index: Dict[str, List[Tuple[Any, int]]] = defaultdict(list)
+    for conv_idx, question_map in base_map.items():
+        for question_idx, item in question_map.items():
+            question_key = _normalize_question_key(item.get("question") if isinstance(item, dict) else "")
+            if question_key:
+                question_index[question_key].append((conv_idx, question_idx))
+
+    replaced = 0
+    kept_old = 0
+    matched_by_question = 0
+    fallback_to_index = 0
+    ambiguous_question = 0
+    skipped_missing_target = 0
+    for conv_idx, question_map in patch_map.items():
+        for question_idx, new_item in question_map.items():
+            target_conv_idx = conv_idx
+            target_question_idx = question_idx
+
+            question_key = _normalize_question_key(new_item.get("question") if isinstance(new_item, dict) else "")
+            matched_positions = question_index.get(question_key, []) if question_key else []
+            if len(matched_positions) == 1:
+                target_conv_idx, target_question_idx = matched_positions[0]
+                matched_by_question += 1
+            elif len(matched_positions) > 1:
+                ambiguous_question += 1
+                if (conv_idx, question_idx) in matched_positions:
+                    target_conv_idx, target_question_idx = conv_idx, question_idx
+                    fallback_to_index += 1
+                else:
+                    skipped_missing_target += 1
+                    continue
+            else:
+                fallback_to_index += 1
+
+            old_item = base_map.get(target_conv_idx, {}).get(target_question_idx)
+            if old_item is None:
+                skipped_missing_target += 1
+                continue
+
+            if _entry_quality(new_item) > _entry_quality(old_item):
+                base_map[target_conv_idx][target_question_idx] = new_item
+                replaced += 1
+            else:
+                kept_old += 1
+
+    logging.info(
+        "Incremental merge completed. replaced=%d, kept_old=%d, matched_by_question=%d, fallback_to_index=%d, ambiguous_question=%d, skipped_missing_target=%d",
+        replaced,
+        kept_old,
+        matched_by_question,
+        fallback_to_index,
+        ambiguous_question,
+        skipped_missing_target,
+    )
+    return _serialize_entry_map(base_map)
+
+
+def _collect_dataset_indices(data: Any) -> Set[Tuple[int, int]]:
+    normalized = normalize_dataset_records(data)
+    indices: Set[Tuple[int, int]] = set()
+    for conv_idx, item in enumerate(normalized):
+        for question_idx, _ in enumerate(item.get("qa", [])):
+            indices.add((conv_idx, question_idx))
+    return indices
+
+
+def _collect_result_indices(data: Any) -> Set[Tuple[int, int]]:
+    indices: Set[Tuple[int, int]] = set()
+    for conv_idx, question_idx, _ in _iter_result_entries(data):
+        conv_key = _coerce_numeric_key(conv_idx)
+        if isinstance(conv_key, int):
+            indices.add((conv_key, question_idx))
+    return indices
+
+
+def _collect_empty_prediction_targets(scored_data: Any) -> Set[Tuple[int, int]]:
+    targets: Set[Tuple[int, int]] = set()
+    for conv_idx, question_idx, item in _iter_result_entries(scored_data):
+        conv_key = _coerce_numeric_key(conv_idx)
+        if not isinstance(conv_key, int):
+            continue
+        predicted_options = item.get("predicted_options") if isinstance(item, dict) else None
+        has_empty_prediction = not isinstance(predicted_options, list) or len(predicted_options) == 0
+        is_llm_error = _is_llm_failure_response(item.get("response") if isinstance(item, dict) else None)
+        if has_empty_prediction or is_llm_error:
+            targets.add((conv_key, question_idx))
+    return targets
+
+
+def _collect_retry_question_keys(scored_data: Any) -> Set[str]:
+    question_keys: Set[str] = set()
+    for _conv_idx, _question_idx, item in _iter_result_entries(scored_data):
+        if not isinstance(item, dict):
+            continue
+        predicted_options = item.get("predicted_options")
+        has_empty_prediction = not isinstance(predicted_options, list) or len(predicted_options) == 0
+        is_llm_error = _is_llm_failure_response(item.get("response"))
+        if not (has_empty_prediction or is_llm_error):
+            continue
+        question_key = _normalize_question_key(item.get("question"))
+        if question_key:
+            question_keys.add(question_key)
+    return question_keys
+
+
+def _collect_retry_targets_by_question(
+    dataset_data: Any,
+    retry_question_keys: Set[str],
+) -> Tuple[Set[Tuple[int, int]], int, int]:
+    targets: Set[Tuple[int, int]] = set()
+    question_to_indices: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
+
+    normalized = normalize_dataset_records(dataset_data)
+    for conv_idx, item in enumerate(normalized):
+        for question_idx, question_item in enumerate(item.get("qa", [])):
+            question_key = _normalize_question_key(question_item.get("question") if isinstance(question_item, dict) else "")
+            if question_key:
+                question_to_indices[question_key].append((conv_idx, question_idx))
+
+    unmatched_questions = 0
+    ambiguous_questions = 0
+    for question_key in retry_question_keys:
+        matched_indices = question_to_indices.get(question_key, [])
+        if not matched_indices:
+            unmatched_questions += 1
+            continue
+        if len(matched_indices) > 1:
+            ambiguous_questions += 1
+        for index_pair in matched_indices:
+            targets.add(index_pair)
+
+    return targets, unmatched_questions, ambiguous_questions
+
+
 def write_metrics_summary(results_dict: Dict[str, List[Dict[str, Any]]], output_path: Path) -> None:
     grouped: Dict[Any, List[Dict[str, Any]]] = defaultdict(list)
     all_items: List[Dict[str, Any]] = []
@@ -188,6 +382,12 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
     if args.run_full_context:
+        with input_path.open("r", encoding="utf-8") as file:
+            dataset_data = json.load(file)
+
+        existing_eval_data = _load_json_if_exists(eval_output_path)
+        existing_raw_data = _load_json_if_exists(raw_output_path)
+
         runner = FullContextRunner(
             output_path=raw_output_path,
             figure_view=args.figure_view,
@@ -197,7 +397,58 @@ def main() -> None:
                 "api_key": args.api_key,
             },
         )
-        raw_results_dict = runner.process_data_file(str(input_path), max_workers=args.max_workers)
+
+        can_incremental_retry = False
+        retry_targets: Set[Tuple[int, int]] = set()
+
+        if existing_eval_data is not None:
+            retry_question_keys = _collect_retry_question_keys(existing_eval_data)
+            retry_targets, unmatched_questions, ambiguous_questions = _collect_retry_targets_by_question(
+                dataset_data,
+                retry_question_keys,
+            )
+            if retry_question_keys and not retry_targets:
+                logging.warning(
+                    "Existing eval file %s has retry candidates, but none matched current dataset by question. Falling back to full rerun.",
+                    eval_output_path,
+                )
+            else:
+                can_incremental_retry = True
+                logging.info(
+                    "Question-key retry planning: retry_questions=%d, mapped_targets=%d, unmatched_questions=%d, ambiguous_questions=%d",
+                    len(retry_question_keys),
+                    len(retry_targets),
+                    unmatched_questions,
+                    ambiguous_questions,
+                )
+
+        if can_incremental_retry:
+            if retry_targets:
+                logging.info(
+                    "Found existing eval file %s. Rerunning only %d entries mapped by question (empty predicted_options or LLM error responses).",
+                    eval_output_path,
+                    len(retry_targets),
+                )
+                runner.process_data_file(
+                    str(input_path),
+                    max_workers=args.max_workers,
+                    target_questions=retry_targets,
+                    persist_output=False,
+                )
+                base_results = existing_raw_data if existing_raw_data is not None else existing_eval_data
+                raw_results_dict = _merge_results_map(base_results, runner.results)
+            else:
+                logging.info(
+                    "Found existing eval file %s. No empty predicted_options or LLM error responses found, skip full-context rerun.",
+                    eval_output_path,
+                )
+                raw_results_dict = existing_raw_data if existing_raw_data is not None else existing_eval_data
+
+            raw_output_path.parent.mkdir(parents=True, exist_ok=True)
+            with raw_output_path.open("w", encoding="utf-8") as file:
+                json.dump(raw_results_dict, file, indent=4, ensure_ascii=False)
+        else:
+            raw_results_dict = runner.process_data_file(str(input_path), max_workers=args.max_workers)
     else:
         with input_path.open("r", encoding="utf-8") as file:
             raw_results_dict = json.load(file)
@@ -219,4 +470,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# python mcq_eval.py --run_full_context --input_file ../result/12_Angry_Men_final.json --max_workers 2 --model qwen3-14b --base_url https://api.vveai.com/v1 --api_key 你的APIKey
+# python mcq_eval.py --run_full_context --input_file ../result/the-man-from-earth-script_final.json --max_workers 2 --model Qwen/Qwen3-14B --base_url https://api.siliconflow.cn/v1 --api_key 你的APIKey

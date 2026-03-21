@@ -1,0 +1,2068 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "Ariel has always found comfort in the routine of her daily life, often spending evenings reading or walking along the beach to clear her mind. She enjoys the quiet moments spent with her family, especially during holidays when they gather to share traditional meals and stories.\n\nBased on her interactions, which of the following statements best aligns with Ariel's approach to her friends' romantic lives?",
+            "option": [
+                "A. She actively discourages friends from pursuing any romantic connection out of caution.",
+                "B. She remains detached and believes romantic issues should be resolved alone.",
+                "C. She prioritizes having plans on special occasions over the quality of a romantic partner.",
+                "D. She believes friends should experiment in their relationships without outside advice.",
+                "E. She is observant, protective, and tries to steer friends away from individuals she perceives as harmful.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. She is observant, protective, and tries to steer friends away from individuals she perceives as harmful.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "No! Phoebes! Don't you remember why you dumped the guy?",
+                    "dia_id": "2:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Well, what are you guys doing tomorrow night?",
+                    "dia_id": "2:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 2, Ariel reacts strongly against Fiona potentially going out with Roger, implying she remembers negative traits about him ('Don't you remember why you dumped the guy?').",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Her follow-up question about her friends' plans shows her engagement in their social/romantic lives and a concern for their well-being, aligning with her protective reaction in E1.",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The combination shows a pattern: Ariel pays attention to her friends' romantic histories, actively recalls negative information, and intervenes based on that concern.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 361,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "On a typical Tuesday, the town of Rivertown hosted its annual book fair, where residents gathered to exchange stories and enjoy the quiet charm of literature. The event had become a beloved tradition, often sparking conversations about personal growth and community bonding. How did Ariel feel about Fiona's potential date with Roger on February 13th, and what was the primary reason?",
+            "option": [
+                "A. Indifferent, as she wasn't personally involved in the situation.",
+                "B. Excited, because she thought Roger had changed for the better.",
+                "C. Supportive, because she believed any date was better than no date.",
+                "D. Jealous, because she herself wanted a date for Valentine's Day.",
+                "E. Concerned and opposed, because she remembered Fiona had negative reasons for breaking up with him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Concerned and opposed, because she remembered Fiona had negative reasons for breaking up with him.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "No! Phoebes! Don't you remember why you dumped the guy?",
+                    "dia_id": "2:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "On February 13th (session_2_date_time), Chloe informs the group about Roger's intention to date Fiona ('tomorrow night' refers to Valentine's Day).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel's immediate reaction is a forceful \"No!\" followed by a rhetorical question prompting Fiona to recall her own reasons for the breakup.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona then confirms Ariel's implied negative assessment by listing Roger's negative traits. Ariel's opposition was triggered by her memory of these specific negative reasons.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 362,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "It was a particularly chilly evening in March, and the group had just finished discussing their favorite winter movies, reminiscing about cozy nights spent indoors. The conversation had taken on a nostalgic tone, making them all feel a bit sentimental about past experiences.\n\nWhen Ariel asked her friends \"what are you guys doing tomorrow night?\", what specific day was she referring to?",
+            "option": [
+                "A. The night of February 13th, the same day as the conversation.",
+                "B. An unspecified weekend night.",
+                "C. The night when Bennett planned to return the egg.",
+                "D. The night of February 14th, Valentine's Day.",
+                "E. The night of February 15th, the day after Valentine's Day.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. The night of February 14th, Valentine's Day.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Well, what are you guys doing tomorrow night?",
+                    "dia_id": "2:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "session_2",
+                    "utterance": "session_2_date_time\": \"February 13, 1995\"",
+                    "dia_id": "metadata"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The conversation in Session 2 takes place on February 13, 1995.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Just before Ariel's question, Chloe refers to Roger wanting to take Fiona out \"tomorrow night\".",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel's question uses the same phrase \"tomorrow night\", referring to the same calendar date as the one in Chloe's statement. Therefore, from February 13th, \"tomorrow night\" is February 14th.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 363,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "It was a particularly rainy Tuesday in the small town of Willowbrook, where the locals often spent their evenings cozying up with books and hot cocoa rather than going out. The community had a strong sense of tradition, and many still believed that the best way to celebrate love was through quiet reflection rather than grand gestures.\n\nWhat specific action did Ariel take in response to hearing about Fiona's possible Valentine's Day date?",
+            "option": [
+                "A. She privately reassured Chloe that the date would be fine.",
+                "B. She suggested an alternative group activity for everyone.",
+                "C. She immediately called Roger to tell him off.",
+                "D. She tried to dissuade Fiona by reminding her of the past reasons for the breakup.",
+                "E. She offered to double-date with Fiona for safety.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She tried to dissuade Fiona by reminding her of the past reasons for the breakup.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "No! Phoebes! Don't you remember why you dumped the guy?",
+                    "dia_id": "2:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The event was triggered by Chloe's announcement about Roger's invitation to Fiona for Valentine's Day.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel's immediate verbal response was \"No! Phoebes!\" followed by a direct question to Fiona: \"Don't you remember why you dumped the guy?\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "This question served to remind Fiona of her own negative past experience with Roger, which Fiona then vocalized. Ariel's action was an attempt at verbal dissuasion by invoking past negative reasons.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 364,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "Which of the following options best describes Bennett's fundamental attitude toward returning to the realm of romantic relationships, as it emerges from several conversations?\n\nYou must choose the correct answer from the list below:\n['A. He is hesitant, uncertain, and has difficulty moving on from his previous relationship.', 'B. He is confident and enthusiastic, viewing it as a new beginning.', 'C. He is very demanding and quickly rejects potential partners.', 'D. He is indifferent and only attends meetings to appease his social environment.', 'E. He is strategic and easily follows his friends' advice.', 'F. The answer cannot be deduced based on the information provided.']",
+            "option": [
+                "A. He is reluctant, insecure, and struggles to move on from his past relationship.",
+                "B. He is confident and eager, seeing it as a fresh start.",
+                "C. He is highly selective and quickly dismisses potential partners.",
+                "D. He is indifferent and only dates to appease his social circle.",
+                "E. He is strategic and takes advice from friends easily.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He is reluctant, insecure, and struggles to move on from his past relationship.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Come on, Bennett, you gotta get back in the game here, ok? The Ariel thing's not happening, your ex-wife is a lesbian—I don't think we need a third...",
+                    "dia_id": "1:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "You know, here's a wacky thought. Um, what's say you and I give it another shot?",
+                    "dia_id": "15:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, god. You know, this is still pretty hot. Mushroom. Smile. They won't all be like this. Some women might even stay through dinner.",
+                    "dia_id": "15:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 1, Dexter's need to urge Bennett to 'get back in the game' and reference his ex-wife's new relationship implies Bennett has been inactive in dating and is hung up on the past.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On Valentine's Day, after a failed date, Bennett's first instinct is to propose getting back together with his ex-wife Carol, explicitly saying 'we're great together'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Moments before that, he expresses self-doubt about dating ('maybe I screwed up the first date I had in 9 years') and sarcastically tries to downplay the failure.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Across these sessions, Bennett shows a consistent pattern: reluctance to date, insecurity about his abilities, and a persistent emotional attachment to his past marriage.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 365,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "On a quiet Tuesday evening, Bennett was reflecting on his recent decision to take up a new hobby—birdwatching—hoping it would provide some much-needed balance in his chaotic schedule. He had spent the morning helping his neighbor prune her rose bushes, a task he found oddly satisfying despite the thorns.\n\nHow did Bennett feel about the \"egg plan\" proposed by Ethan and Dexter on February 13th, and what best captures his immediate, conflicted reaction?",
+            "option": [
+                "A. He was skeptical and thought it was foolish, but felt social pressure to try it.",
+                "B. He was embarrassed and refused to engage with the idea at all.",
+                "C. He was angry and felt his friends were making fun of his situation.",
+                "D. He was immediately enthusiastic and grateful for the creative idea.",
+                "E. He was confused but willing to try anything without question.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He was skeptical and thought it was foolish, but felt social pressure to try it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\"",
+                    "dia_id": "1:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "I think it's insane.",
+                    "dia_id": "1:14"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Hi. She said yes.",
+                    "dia_id": "2:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan proposes the specific 'egg plan' to Bennett as a way to initiate contact with his neighbor.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett's direct, verbal evaluation of the plan is \"I think it's insane,\" showing clear skepticism and belief that it's a bad idea.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Despite this negative assessment, a later conversation reveals that Bennett did execute the plan ('Still got the egg, huh?') and it resulted in a successful date ('She said yes.'). His initial state was skepticism combined with eventual compliance, likely due to peer pressure.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 366,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "What event transpired subsequent to the initiation of Bennett's Valentine's Day dinner date with Kristin, yet preceded his private dialogue with Carol at the restaurant?\n\nYou need to select the correct answer from the following options:\n['A. He invited his ex-wife Carol to join them at the table.', 'B. Kristin left the restaurant without saying goodbye.', 'C. He called Ariel to ask for dating advice.', 'D. He successfully returned the egg to his neighbor.', 'E. He had a fight with Dexter and Ethan about their advice.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. He invited his ex-wife Carol to join them at the table.",
+                "B. Kristin left the restaurant without saying goodbye.",
+                "C. He called Ariel to ask for dating advice.",
+                "D. He successfully returned the egg to his neighbor.",
+                "E. He had a fight with Dexter and Ethan about their advice.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. Kristin left the restaurant without saying goodbye.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "How long has she been in the bathroom?",
+                    "dia_id": "15:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Carol",
+                    "utterance": "Uh, I don't think she's in the bathroom. Her coat is gone.",
+                    "dia_id": "15:3"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "dia_id": "12:9",
+                    "text": "Uh, Kristen Riggs, this is Carol Willick. Carol, Kristin."
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "Now that is funny. Hey, do you think...would it be too weird if I invited Carol over to join us?",
+                    "dia_id": "12:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Session 12 shows Bennett and Kristin on their date, and Bennett invites Carol to join them, which happens.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Session 15 continues the scene. Bennett asks Carol how long Kristin has been in the bathroom, indicating Kristin was present but then absent.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Carol informs Bennett that Kristin's coat is gone, confirming she has left the restaurant entirely.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "The causal/temporal sequence is: 1) Date with Kristin starts. 2) Carol is invited and joins. 3) At some point, Kristin leaves (coat gone). 4) Bennett and Carol have their private conversation. Therefore, Kristin leaving happened after the date began and before the private talk.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 367,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "In the quiet town of Maplewood, where everyone knew each other's business yet rarely acted on it, the local bakery had recently started offering a new kind of sourdough that caused quite a stir. Meanwhile, the community was buzzing about the latest trend in backyard gardening, with many residents experimenting with heirloom vegetables.\n\nWhat was the specific, unusual method Bennett used to initiate a date with his neighbor, and what was the direct outcome?",
+            "option": [
+                "A. He pretended to need help moving furniture; she agreed to help later.",
+                "B. He asked his friends to formally introduce them; the introduction was awkward but successful.",
+                "C. He returned an egg she had previously lent him, using it as a conversation starter; she accepted a date.",
+                "D. He directly complimented her and asked her out; she politely declined.",
+                "E. He left a humorous note about dog years at her door; she called him to discuss it.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He returned an egg she had previously lent him, using it as a conversation starter; she accepted a date.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "She lent me an egg once.",
+                    "dia_id": "1:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\"",
+                    "dia_id": "1:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Hi. She said yes.",
+                    "dia_id": "2:13"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "Still got the egg, huh?",
+                    "dia_id": "2:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett established a prior connection with the neighbor: she lent him an egg.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan formulated a plan for Bennett to use that exact egg as a prop to start a conversation and return it.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later, Bennett announces \"She said yes,\" in the context of the friends discussing his dating life, indicating the plan succeeded in securing a date.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Dexter's follow-up comment \"Still got the egg, huh?\" confirms the egg was the central element of the executed plan.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 368,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "Chloe often finds herself reflecting on the balance between personal goals and the expectations that come with growing up. She enjoys long walks in the park and has a particular fondness for vintage records, which she believes capture a different kind of emotion than modern music. Based on her comments across conversations, which statement best reflects Chloe's perspective on dating and relationships?",
+            "option": [
+                "A. She believes in grand romantic gestures and holding out for perfect partners.",
+                "B. She is optimistic and encourages friends to give everyone a second chance.",
+                "C. She is jealous of her friends' relationships and tries to sabotage them.",
+                "D. She has a cynical or resigned view, accepting low standards based on her own experience.",
+                "E. She avoids discussing romance and focuses on practical matters.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She has a cynical or resigned view, accepting low standards based on her own experience.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "You can not do this.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "But Fiona, you can go out with a creepy guy any night of the year. I know I do.",
+                    "dia_id": "2:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe's opening line shows she is judgmental and opposed to Fiona's specific dating choice ('You can not do this.').",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "To bolster her argument, she makes a generalized, self-deprecating statement about her own dating habits: she goes out with 'creepy' guys regularly ('any night of the year').",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The combination reveals a persona: she disapproves of bad dates for her friend, not out of idealism, but from a place of shared, resigned experience. She accepts low standards in her own life ('I know I do') and uses that as a reason for Fiona to aim higher.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 369,
+            "label": "多跳"
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "Chloe had always believed that the best way to handle romantic entanglements was to let people make their own decisions, no matter how unconventional. She often spent her weekends volunteering at a local animal shelter, finding peace in the quiet companionship of the animals.  \n\nWhat was Chloe's immediate stance upon learning Fiona might date Roger for Valentine's Day, and what personal experience did she cite to support it?",
+            "option": [
+                "A. Amused; she cited Roger's funny but harmless past behavior.",
+                "B. Opposed; she cited her own pattern of dating undesirable men.",
+                "C. Neutral; she cited her busy schedule as a reason not to interfere.",
+                "D. Supportive; she cited her own happy Valentine's Day memories.",
+                "E. Envious; she cited her own lack of a Valentine's date.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. Opposed; she cited her own pattern of dating undesirable men.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "You can not do this.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "But Fiona, you can go out with a creepy guy any night of the year. I know I do.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe's first reaction is an absolute prohibition: \"You can not do this.\"",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fiona then confirms Roger's negative traits ('creepy, and mean...'), establishing the premise of the argument.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe reinforces her opposition by arguing that dating a 'creepy guy' is not special for Valentine's Day because it's commonplace. She uses her own admitted habit ('I know I do') as evidence to support her stance that Fiona should not settle.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 370,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "Which specific occurrence prompted Chloe's statement, \"You cannot do this,\" as mentioned in the dialogue? \n\nYou need to select the correct answer from the following options:  \n['A. Bennett deciding to return an egg to his neighbor.', \"B. The news that Roger asked Fiona out for Valentine's Day.\", 'C. Carol deciding to leave her work event early.', 'D. Ethan planning a double date for the evening of February 13th.', 'E. Ariel considering setting Fiona up with someone else.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. Bennett deciding to return an egg to his neighbor.",
+                "B. The news that Roger asked Fiona out for Valentine's Day.",
+                "C. Carol deciding to leave her work event early.",
+                "D. Ethan planning a double date for the evening of February 13th.",
+                "E. Ariel considering setting Fiona up with someone else.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. The news that Roger asked Fiona out for Valentine's Day.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "You can not do this.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Do what, do what?",
+                    "dia_id": "2:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe's statement \"You can not do this\" is the opening line of the dialogue in Session 2.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel's immediate follow-up asks for clarification: \"Do what, do what?\"",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Chloe then provides the clarification: \"Roger wants to take her out tomorrow night.\" This specifies the action she was objecting to.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 371,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "Which individual rationale did Chloe present in her opposition to Fiona's Valentine's Day arrangements?\n\nYou need to select the correct answer from the following options:\n[\"A. She claimed that Valentine's Day is a commercial holiday not worth celebrating.\", 'B. She offered to set Fiona up with a better friend of hers instead.', \"C. She threatened to tell Fiona's mother about the date.\", 'D. She stated that she herself frequently dates men she considers undesirable.', 'E. She revealed she had a bad past date with Roger herself.', 'F. Cannot infer the answer based on the given information.'].",
+            "option": [
+                "A. She claimed that Valentine's Day is a commercial holiday not worth celebrating.",
+                "B. She offered to set Fiona up with a better friend of hers instead.",
+                "C. She threatened to tell Fiona's mother about the date.",
+                "D. She stated that she herself frequently dates men she considers undesirable.",
+                "E. She revealed she had a bad past date with Roger herself.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She stated that she herself frequently dates men she considers undesirable.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "But Fiona, you can go out with a creepy guy any night of the year.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "I know I do.",
+                    "dia_id": "2:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona had just confirmed Roger's traits included being 'creepy'.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe's argument is that going out with a 'creepy guy' is not special or necessary for Valentine's Day, as it can be done any time.",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She personalizes this argument by adding \"I know I do,\" citing her own experience of frequently dating creepy guys as justification for why Fiona shouldn't do it on this particular occasion.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 372,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "Dexter had been spending his evenings lately volunteering at a local animal shelter, where he found solace in helping care for stray cats and dogs. The quiet routine provided him with a much-needed escape from the pressures of his social life.  \n\nWhat was Dexter's primary concern when Ethan pressed him about the double date plans on February 13th?",
+            "option": [
+                "A. He had a scheduling conflict with another prior engagement.",
+                "B. He had a negative impression of the woman he was being set up with.",
+                "C. He was still upset about his own past breakup with Janice.",
+                "D. He was worried about the cost of the evening.",
+                "E. He didn't want to third-wheel Bennett and his neighbor.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He had a negative impression of the woman he was being set up with.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "No, no, no, don't you dare bail on me. The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yes, I know, but her friend sounds like such a...",
+                    "dia_id": "2:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Pathetic mess? I know, but—come on, man...",
+                    "dia_id": "2:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan confronts Dexter about potentially bailing on their double date plans, indicating Dexter's reluctance.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter starts to explain his hesitation: \"but her friend sounds like such a...\" He trails off, implying a negative characterization.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ethan finishes Dexter's thought with \"Pathetic mess?\", confirming the nature of Dexter's concern was specifically about the quality or character of his blind date.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 373,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "On a quiet Tuesday afternoon, Dexter found himself contemplating the meaning of life while watching a documentary about the migration patterns of monarch butterflies. The film sparked a philosophical debate in his mind about the balance between instinct and intention in decision-making.  \n\nOn February 13th, after initially supporting the \"egg plan,\" what was Dexter's final, private assessment of its likelihood of success?",
+            "option": [
+                "A. He suggested a different, more conventional approach instead.",
+                "B. He offered to go with Bennett for moral support.",
+                "C. He immediately forgot about the plan and changed the subject.",
+                "D. He told Ethan he thought it would fail disastrously.",
+                "E. He became convinced it was a guaranteed success.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He told Ethan he thought it would fail disastrously.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I think it's winning. She'll love it. Go with the egg, my friend.",
+                    "dia_id": "1:13"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Think it'll work?",
+                    "dia_id": "1:16"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "No, it's suicide. The man's got an egg.",
+                    "dia_id": "1:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Publicly, in front of Bennett, Dexter encouraged the plan, saying it was 'winning'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, after Bennett has presumably left or is out of earshot, Ethan asks Dexter for his genuine opinion.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Dexter's private answer is starkly different: \"No, it's suicide.\" This is his final, candid assessment of the plan's odds after Bennett had already gone to execute it.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 374,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "What specific advice did Dexter Bennett give regarding how he should address his neighbors, and how did he later evaluate this advice in private?\n\nYou must choose the correct answer from the following options:\n['A. He advised to ignore the egg and directly invite the neighbors out; he later thought this was too direct.', 'B. He advised to pretend to need another egg; he later worried it was too obvious.', 'C. He advised to use the egg as a starting point for conversation; he later admitted he thought it was a terrible idea.', 'D. He advised to write a poem about the egg; he later admitted it was too sentimental.', 'E. He advised to directly apologize for borrowing the egg; he later thought this was too aggressive.', 'F. The answer cannot be deduced from the given information.']",
+            "option": [
+                "A. He advised ignoring the egg and asking her out directly; he later thought it was too forward.",
+                "B. He advised pretending to need another egg; he later worried it was too transparent.",
+                "C. He advised returning the egg as a conversation starter; he later confessed he thought it was a terrible idea.",
+                "D. He advised writing a poem about the egg; he later admitted it was overly sentimental.",
+                "E. He advised a direct apology for borrowing the egg; he later thought it was too aggressive.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He advised returning the egg as a conversation starter; he later confessed he thought it was a terrible idea.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\"",
+                    "dia_id": "1:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I think it's winning. She'll love it. Go with the egg, my friend.",
+                    "dia_id": "1:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "No, it's suicide. The man's got an egg.",
+                    "dia_id": "1:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan formulated the 'return the egg' plan. Dexter immediately endorsed it when speaking to Bennett, telling him to 'Go with the egg'.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This public endorsement constitutes the advice given to Bennett.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Privately, when asked by Ethan, Dexter evaluated the same plan as 'suicide', a clear admission that he thought it was a terrible idea.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 375,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "Based on his interactions, which of the following options best describes Ethan's characteristic approach to his friends' romantic lives?\n\nYou must choose the correct answer from the following options:\n[\"A. He is egocentric and uses his friends' situations for his own entertainment.\", 'B. He is analytical and prefers to listen rather than intervene.', 'C. He is a conspirator, proactive, and devises ingenious and risky social plans.', 'D. He is pessimistic and tries to protect his friends from potential romantic disappointments.', 'E. He is traditionalist and advocates for slow and cautious engagements.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. He is self-absorbed and uses his friends' situations for his own entertainment.",
+                "B. He is analytical and prefers to listen rather than intervene.",
+                "C. He is mischievous, proactive, and creates elaborate, high-risk social schemes.",
+                "D. He is pessimistic and tries to protect his friends from potential heartbreak.",
+                "E. He is traditional and advocates for slow, cautious courtship.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He is mischievous, proactive, and creates elaborate, high-risk social schemes.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Excuse me, could we get an egg over here, still in the shell? Thanks.",
+                    "dia_id": "1:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\"",
+                    "dia_id": "1:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "For Bennett, Ethan doesn't just give advice; he actively procures a prop (an egg) and scripts a specific, unusual line for Bennett to use. This shows a hands-on, scheme-creating approach.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "For his own dating life, he orchestrates a double date, using the promise of a friend for his date's friend as leverage to secure the outing. This shows proactive social engineering.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Both actions are high-risk (relying on a gimmick, setting up a potentially awkward blind date) and involve Ethan taking the lead in creating elaborate plans for romantic connections.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 376,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "On a particularly chilly morning, Ethan spent hours debating whether to take his dog for a walk or finish his reading list before the weekend. Meanwhile, Dexter was busy trying to decide between a career in finance or something more creative, like painting.  \n\nWhat was Ethan's immediate, pressing need when speaking to Dexter on February 13th, and what was the specific consequence if that need wasn't met?",
+            "option": [
+                "A. He needed money to pay for dinner; his date would be canceled.",
+                "B. He needed advice on what to wear; he would be embarrassed.",
+                "C. He needed Dexter to go on a double date with him; his own date would be called off.",
+                "D. He needed help finding a gift; he would arrive empty-handed.",
+                "E. He needed Dexter to confirm the egg plan was good; Bennett would lose confidence.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He needed Dexter to go on a double date with him; his own date would be called off.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, uh, listen, about tonight...",
+                    "dia_id": "2:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "No, no, no, don't you dare bail on me. The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter begins to express hesitation about their plans for 'tonight' (February 13th).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan's urgent response reveals his immediate need: for Dexter not to bail. He explicitly states the consequence: the woman is only going out with him on the condition that he brings a friend for her friend. Therefore, if Dexter bails, Ethan's date would be canceled.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 377,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "What specific commitment did Ethan disclose to his date in order to ensure the arrangements for the evening of February 13th?\n\nYou need to select the correct answer from the following options:\n['A. He promised his date that he would bring a male friend to pair with her female friend.', 'B. He promised his date that he would arrange a romantic dinner at a specific restaurant.', \"C. He promised his date that he would not discuss his friend's egg plan.\", 'D. He promised his date that they would meet Carol and Susan.', 'E. He promised his date that Bennett would also be there.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. He promised his date that he would bring a male friend to pair with her female friend.",
+                "B. He promised his date that he would arrange a romantic dinner at a specific restaurant.",
+                "C. He promised his date that he would not discuss his friend's egg plan.",
+                "D. He promised his date that they would meet Carol and Susan.",
+                "E. He promised his date that Bennett would also be there.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He promised his date that he would bring a male friend to pair with her female friend.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Actually, tomorrow night kinda depends on how tonight goes.",
+                    "dia_id": "2:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "session_2",
+                    "utterance": "session_2_date_time\": \"February 13, 1995\"",
+                    "dia_id": "metadata"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The conversation in Session 2 takes place on February 13th.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan refers to 'tonight' when discussing his plans with Dexter, meaning the evening of February 13th.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He explicitly states the condition for his date happening 'tonight': he must bring a friend (Dexter) to be a date for his date's friend.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 378,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "What was the precise, step-by-step plan that Ethan devised for Bennett to use with his neighbor?\n\nYou must choose the correct answer from the following options:\n['A. Pretend to see her in the store and casually mention borrowing the egg.', \"B. Get a single egg in its shell, approach her, and say that he is returning the borrowed egg.\", 'C. Write a thank-you letter for the egg and leave it at her door with a flower.', 'D. Buy a dozen eggs, knock on her door, and offer to cook her breakfast.', 'E. Ask to borrow another egg as an excuse to start a longer conversation.', 'F. Not be able to deduce the answer from the given information.']",
+            "option": [
+                "A. Pretend to see her at the store and casually mention the egg loan.",
+                "B. Obtain a single egg in its shell, approach her, and say he's returning the borrowed egg.",
+                "C. Write a thank-you note for the egg and leave it at her door with a flower.",
+                "D. Buy a dozen eggs, knock on her door, and offer to cook her breakfast.",
+                "E. Ask to borrow another egg as an excuse to start a longer conversation.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. Obtain a single egg in its shell, approach her, and say he's returning the borrowed egg.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Excuse me, could we get an egg over here, still in the shell? Thanks.",
+                    "dia_id": "1:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\"",
+                    "dia_id": "1:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan first acquires the necessary prop: he requests an egg, specifying it must be 'still in the shell'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He then instructs Bennett on the action ('go up to her') and provides the exact scripted line to say, which frames the action as returning the previously borrowed item.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The plan is a complete, specific sequence: 1) Get a shell egg. 2) Approach the woman. 3) Deliver the specified line while handing over the egg.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 379,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "According to her reasoning in the interview, what seems to she prioritize when considering a Valentine's Day date?\n\nYou must choose the correct answer from the following options:\n['A. The approval and enthusiastic support of all her friends.', 'B. The social status and financial prospects of her date.', 'C. The possibility of repairing a previously failed relationship.', 'D. Simply having a date for this holiday, even if the person is flawed.', 'E. Intellectual compatibility and shared interests with her date.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. The approval and enthusiastic support of all her friends.",
+                "B. The social status and financial prospects of her date.",
+                "C. The opportunity to reconcile and fix a past failed relationship.",
+                "D. The simple fact of having a date on the holiday, even if the person is flawed.",
+                "E. The intellectual compatibility and shared interests with her date.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. The simple fact of having a date on the holiday, even if the person is flawed.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "alright, still, it's nice to have a date on Valentine's Day!",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona openly acknowledges multiple serious negative traits about Roger ('creepy, mean, frightening'), confirming he is not an ideal partner.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Immediately after conceding these flaws, she offers a counterargument using the word 'still', which prioritizes a different value: 'it's nice to have a date on Valentine's Day!'",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her reasoning structure reveals her priority: the social/emotional value of not being alone on the specific holiday can outweigh known, significant personal drawbacks in a date.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 380,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "On February 13th, Fiona was contemplating whether to take up her friend’s offer to try a new type of yoga that had recently gained popularity in their city. She found the idea both intriguing and slightly intimidating, as it involved a completely different approach to fitness than she was used to.  \n\nIn the conversation on February 13th, what was Fiona's conflicted feeling about potentially dating Roger, and what was the source of her internal conflict?",
+            "option": [
+                "A. She was angry but forgiving; the conflict was about whether he had apologized sufficiently.",
+                "B. She was repulsed but tempted; the conflict was between his negative traits and her desire for a Valentine's date.",
+                "C. She was loyal but conflicted; the conflict was about choosing between Roger and another suitor.",
+                "D. She was eager but nervous; the conflict was about what to wear.",
+                "E. She was bored but curious; the conflict was about trying something new versus staying in.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She was repulsed but tempted; the conflict was between his negative traits and her desire for a Valentine's date.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "alright, still, it's nice to have a date on Valentine's Day!",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona lists concrete, highly negative attributes of Roger, showing clear recognition and memory of why he is undesirable ('creepy, mean, frightening'). This represents the repulsion side of her conflict.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She then uses the concessive word 'still' to introduce a competing positive: the value of 'hav[ing] a date on Valentine's Day'. This represents the temptation side of her conflict.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her single utterance contains both sides of the conflict: the negative push (his traits) and the positive pull (the holiday date).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 381,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "Fiona had been contemplating a variety of weekend plans, from attending a local art gallery to trying out a new hiking trail, as she sought ways to balance her professional and personal life. She also found herself reflecting on the importance of spontaneity in relationships, especially when deciding whether to accept unexpected invitations.\n\nWhen Fiona discussed Roger's invitation, for which specific calendar date was the proposed date scheduled?",
+            "option": [
+                "A. An unspecified 'tomorrow night' that was later canceled.",
+                "B. The evening of February 13th, the same day as the conversation.",
+                "C. The following Saturday night, regardless of date.",
+                "D. The evening of February 15th, the day after Valentine's Day.",
+                "E. The evening of February 14th, Valentine's Day.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. The evening of February 14th, Valentine's Day.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "alright, still, it's nice to have a date on Valentine's Day!",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "session_2",
+                    "utterance": "session_2_date_time\": \"February 13, 1995\"",
+                    "dia_id": "metadata"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The conversation occurs on February 13th.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe states the invitation is for 'tomorrow night'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona, in her response, explicitly names the holiday: 'Valentine's Day'. This confirms that 'tomorrow night' from February 13th is February 14th, Valentine's Day.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 382,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "Fiona had recently taken up painting as a way to cope with the stress of her demanding job, often losing herself in the colors and textures of her artwork. She found solace in the quiet moments of creation, which helped her reflect on her personal and professional life. What was Fiona's stated justification for considering going out with Roger, despite her negative description of him?",
+            "option": [
+                "A. She believed he had sincerely changed his personality.",
+                "B. She wanted to make another man she liked jealous.",
+                "C. She valued the experience of having a date specifically on Valentine's Day.",
+                "D. Her friends pressured her into giving him a second chance.",
+                "E. She felt lonely and thought any company was better than none.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She valued the experience of having a date specifically on Valentine's Day.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening...",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "alright, still, it's nice to have a date on Valentine's Day!",
+                    "dia_id": "2:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona does not refute or downplay Roger's negative traits; she lists them as fact.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Her justification for overlooking these traits is introduced with 'still', directly linking to the subsequent clause.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The justification is explicit and specific: 'it's nice to have a date on Valentine's Day.' The value is attached to the event (the holiday date), not the person.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "qid": 383,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which of the following best describes the nature of the relationship between Bennett and Carol?",
+            "option": [
+                "A. They are siblings.",
+                "B. They are coworkers.",
+                "C. They are ex-partners.",
+                "D. They are friends.",
+                "E. They are mother and child."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "You know that thing you put over here with the pin in it? It's time to take the pin out. You'll find someone, I know you will. The right woman is just waiting for you.",
+                    "dia_id": "15:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Carol",
+                    "utterance": "Oh, I love you too. But...",
+                    "dia_id": "15:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "I love you.",
+                    "dia_id": "15:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett and Carol explicitly express mutual affection, such as 'I love you' and 'Oh, I love you too.'",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This mutual affection is contextually supported by Bennett’s claim that Carol is pregnant with his baby, linking their relationship to a romantic and reproductive context.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（多对话）",
+            "qid": 591
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which of the following best describes the nature of the relationship between Bennett and Kristin?",
+            "option": [
+                "A. They are coworkers.",
+                "B. They are siblings.",
+                "C. They are ex-partners.",
+                "D. They are friends.",
+                "E. They are mother and child."
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Hey. She's pregnant with my baby. I always forget that part. Helloo!",
+                    "dia_id": "9:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Kristen Riggs, this is Carol Willick. Carol, Kristin. Uh, Carol teaches sixth grade. And, Kristin, Kristin......does something that, funnily enough, wasn't even her major!",
+                    "dia_id": "12:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Kristin",
+                    "utterance": "I guess.",
+                    "dia_id": "12:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett introduces Kristin as a friend who is present at the conversation with Carol, and he discusses her as someone to be included in the social setting.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Kristin does not object or comment on the relationship status between Bennett and Carol, and her role remains as a friend who is there for social engagement.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（单对话）",
+            "qid": 592
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "Which of the following best describes the nature of the relationship between Ethan and Dexter?",
+            "option": [
+                "A. They are coworkers.",
+                "B. They are siblings.",
+                "C. They are ex-partners.",
+                "D. They are roommates.",
+                "E. They are friends."
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I'm tellin' you Bennett, she wants you.",
+                    "dia_id": "1:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Come on, Bennett, you gotta get back in the game here, ok? The Ariel thing's not happening, your ex-wife is a lesbian—I don't think we need a third...",
+                    "dia_id": "1:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "No, no, no, don't you dare bail on me. The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan is speaking to Dexter about a plan to get Bennett to go on a date with a woman, suggesting they are working together on a social strategy.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan refers to Dexter as a 'friend' in the context of going on a date, indicating a friendly, trusting relationship.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（单对话）",
+            "qid": 593
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "Which of the following best describes the relationship status between Ariel and Roger?",
+            "option": [
+                "A. They are married.",
+                "B. They are dating.",
+                "C. They are siblings.",
+                "D. They are coworkers.",
+                "E. They are strangers."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "You can not do this.",
+                    "dia_id": "2:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Do what, do what?",
+                    "dia_id": "2:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Roger wants to take her out tomorrow night.",
+                    "dia_id": "2:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe warns Ariel not to engage in an action, suggesting it is about a social arrangement.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Roger is explicitly mentioned as someone who wants to take Ariel out, supporting the idea that they are in a dating relationship.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（单对话）",
+            "qid": 594
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "What is Fiona’s relationship to Ethan and Dexter?",
+            "option": [
+                "A. She is their teacher.",
+                "B. She is their mother.",
+                "C. She is their ex-girlfriend.",
+                "D. She is a family member.",
+                "E. She is a mutual friend."
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "'Cause he was creepy, and mean, and a little frightening... alright, still, it's nice to have a date on Valentine's Day!",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "No, no, no, don't you dare bail on me. The only reason she's goin' out with me is because I said I could bring a friend for her friend.",
+                    "dia_id": "2:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Come on, Bennett, you gotta get back in the game here, ok? The Ariel thing's not happening, your ex-wife is a lesbian—I don't think we need a third...",
+                    "dia_id": "1:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona is present in the conversation and actively participates in the dialogue, expressing her opinions and being addressed by Ethan.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan refers to Fiona as a friend when talking about accompaniment, and Dexter makes a casual reference to her in the same context, suggesting they share a mutual social circle.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（单对话）",
+            "qid": 595
+        },
+        {
+            "character": "Kristin",
+            "category": 6,
+            "question": "How many times is Kristin's name or identity explicitly mentioned in the text?",
+            "option": [
+                "A. Once",
+                "B. Twice",
+                "C. Three times",
+                "D. Four times",
+                "E. Five times"
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Kristen Riggs, this is Carol Willick. Carol, Kristin. Uh, Carol teaches sixth grade. And, Kristin, Kristin......does something that, funnily enough, wasn't even her major!",
+                    "dia_id": "12:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Still got the egg, huh?",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Kristin, Kristin......does something that, funnily enough, wasn't even her major!",
+                    "dia_id": "12:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In dialogues, the name ‘Kristin’ appears explicitly at least three times in session_12 (two times), one of which includes the full name 'Kristen Riggs,' a plausible variant of 'Kristin.'",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "No other utterances explicitly mention the name or identity of Kristin outside session_12.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 14,
+            "label": "事实提取（单对话）",
+            "qid": 596
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Ethan",
+        "speaker_1": "Bennett",
+        "speaker_2": "Dexter",
+        "speaker_3": "Woman",
+        "session_1_date_time": "February 13, 1995",
+        "session_1": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:1",
+                "text": "I'm tellin' you Bennett, she wants you."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:2",
+                "text": "She barely knows me. We just live in the same building."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:3",
+                "text": "Any contact?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:4",
+                "text": "She lent me an egg once."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:5",
+                "text": "You're in!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:6",
+                "text": "Aw, right."
+            },
+            {
+                "speaker": "Woman",
+                "dia_id": "1:7",
+                "text": "Hi, Bennett."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:8",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:9",
+                "text": "Come on, Bennett, you gotta get back in the game here, ok? The Ariel thing's not happening, your ex-wife is a lesbian—I don't think we need a third..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:10",
+                "text": "Excuse me, could we get an egg over here, still in the shell? Thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:11",
+                "text": "An egg?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:12",
+                "text": "Yeah, you're gonna go up to her and say, \"Here's your egg back, I'm returning your egg.\""
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:13",
+                "text": "I think it's winning."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:14",
+                "text": "I think it's insane."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:15",
+                "text": "She'll love it. Go with the egg, my friend."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:16",
+                "text": "Think it'll work?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:17",
+                "text": "No, it's suicide. The man's got an egg."
+            }
+        ],
+        "speaker_4": "Chloe",
+        "speaker_5": "Ariel",
+        "session_2_date_time": "February 13, 1995",
+        "session_2": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:1",
+                "text": "You can not do this."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:2",
+                "text": "Do what, do what?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:3",
+                "text": "Roger wants to take her out tomorrow night."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:4",
+                "text": "No! Phoebes! Don't you remember why you dumped the guy?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:5",
+                "text": "'Cause he was creepy, and mean, and a little frightening... alright, still, it's nice to have a date on Valentine's Day!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:6",
+                "text": "But Fiona, you can go out with a creepy guy any night of the year. I know I do."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:7",
+                "text": "Well, what are you guys doing tomorrow night?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:8",
+                "text": "Actually, tomorrow night kinda depends on how tonight goes."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:9",
+                "text": "Oh, uh, listen, about tonight..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:10",
+                "text": "No, no, no, don't you dare bail on me. The only reason she's goin' out with me is because I said I could bring a friend for her friend."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Yes, I know, but her friend sounds like such a..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:12",
+                "text": "Pathetic mess? I know, but—come on, man, she's needy, she's vulnerable. I'm thinkin', cha-ching!  Thanks. Look, you have not been out with a woman since Janice. You're doin' this."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:13",
+                "text": "Hi. She said yes."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:14",
+                "text": "Yes! Way to go, man!  Still got the egg, huh?"
+            }
+        ],
+        "session_9_date_time": "February 14, 1995",
+        "session_9": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:1",
+                "text": "I'm just sayin' if dogs do experience jet lag, then, because of the whole um, seven dog years to one human year thing, then, when a dog flies from New York to Los Angeles, he doesn't just lose three hours, he loses like a week and a half."
+            },
+            {
+                "speaker": "Kristin",
+                "dia_id": "9:2",
+                "text": "That's funny. Who are they?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:3",
+                "text": "The blond woman is my ex-wife, and the woman touching her is her... close, personal friend."
+            },
+            {
+                "speaker": "Kristin",
+                "dia_id": "9:4",
+                "text": "You mean they're lovers."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:5",
+                "text": "If you wanna put a label on it."
+            },
+            {
+                "speaker": "Kristin",
+                "dia_id": "9:6",
+                "text": "Wow, uh, anything else I should know?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:7",
+                "text": "Nope, nope, that's it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:8",
+                "text": "Oh, and she's pregnant with my baby. I always forget that part.  Helloo!"
+            }
+        ],
+        "session_12_date_time": "February 14, 1995",
+        "session_12": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:1",
+                "text": "So, um, what do you do for a living?"
+            },
+            {
+                "speaker": "Kristin",
+                "dia_id": "12:2",
+                "text": "Well, um, for the past few years I've been working.....which is funny because, that wasn't even my major."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:3",
+                "text": "Oh no. I thought you said they could shoot the spot without you."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:4",
+                "text": "I thought they could...I'll try to get back as soon as I can. I'm sorry."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:5",
+                "text": "Now that is funny. Hey, do you think...would it be too weird if I invited Carol over to join us? 'Cause she's, she's alone now, and pregnant, and, and sad."
+            },
+            {
+                "speaker": "Kristin",
+                "dia_id": "12:6",
+                "text": "I guess."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:7",
+                "text": "Are you sure? Great. Carol? Wanna come over and join us?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:8",
+                "text": "Oh, no no no. I'm fine. I'm fine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:9",
+                "text": "Come on. These people'll scooch down. You guys'll scooch, won't you? Let's try scooching! Come on. Come on. Uh, Kristen Riggs, this is Carol Willick. Carol, Kristin. Uh, Carol teaches sixth grade. And, Kristin, Kristin......does something that, funnily enough, wasn't even her major!"
+            }
+        ],
+        "session_15_date_time": "February 14, 1995",
+        "session_15": [
+            {
+                "speaker": "Carol",
+                "dia_id": "15:1",
+                "text": "It's not true. I never called your mother a wolverine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:2",
+                "text": "You did so. I swear, I swear— How long has she been in the bathroom?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:3",
+                "text": "Uh, I don't think she's in the bathroom. Her coat is gone."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:4",
+                "text": "Well maybe it's cold in there. Or maybe I screwed up the first date I had in 9 years."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:5",
+                "text": "That could be it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:6",
+                "text": "Oh, god.  You know, this is still pretty hot."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:7",
+                "text": "Mushroom. Smile. They won't all be like this. Some women might even stay through dinner. Sorry, that's not funny"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:8",
+                "text": "No, it's just...you know the whole \"getting on with your life\" thing. Well, do I have to? I mean, I'm sitting here with this cute woman, and, and, and she's perfectly nice, and, but that there's, that's it. And um, and then I'm here talkin' to you, and, and it's easy, and it's fun, and, and I don't, I don't have to...You know, here's a wacky thought. Um, what's say you and I give it another shot? No no no, I know what you're gonna say, you're a lesbian. But what do you say we just put that aside for now you know? Let's just stick a pin in it, ok? Because, we're great together, you know. You can't deny it. Besides, you're carrying my baby. I mean, how perfect is that? But see, you know, you keep sayin' that, but there's somethin' right here. I love you."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:9",
+                "text": "Oh, I love you too. But..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:10",
+                "text": "No but, no but."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:11",
+                "text": "You know that thing you put over here with the pin in it? It's time to take the pin out. You'll find someone, I know you will. The right woman is just waiting for you."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:12",
+                "text": "That's easy for you to say, you found one already."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:13",
+                "text": "All you need is a woman who likes men and you'll be set."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "15:14",
+                "text": "Not her."
+            }
+        ],
+        "speaker_6": "Fiona",
+        "speaker_7": "Kristin",
+        "speaker_8": "Carol",
+        "speaker_9": "Susan"
+    }
+}

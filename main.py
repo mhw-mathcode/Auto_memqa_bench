@@ -19,6 +19,7 @@ import json
 import argparse
 import time
 import shutil
+import tempfile
 from pathlib import Path
 from tqdm import tqdm
 from config import get_config, VersionManager, PipelineConfig
@@ -74,6 +75,19 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     
     config_loader = get_config()
     pipeline_cfg = config_loader.get_pipeline_config()
+
+    def should_run_step(step_idx: int, step_key: str) -> bool:
+        """步骤执行条件：在 start/end 范围内且未配置 skip。"""
+        if not (start_step <= step_idx <= end_step):
+            return False
+        try:
+            is_skip = bool(config_loader.get_step_flag(step_key, "skip", False))
+        except ValueError:
+            is_skip = False
+        if is_skip:
+            print(f"\n[步骤 {step_idx}] 配置为 skip=true，跳过执行")
+            return False
+        return True
     
     input_dir = pipeline_cfg.get('input_dir', 'dataset')
     temp_dir = pipeline_cfg.get('temp_dir', 'temp')
@@ -103,9 +117,163 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     v3_path = os.path.join(temp_dir, f"{dataset_name}_v3.json")  # new_qa
     v4_path = os.path.join(temp_dir, f"{dataset_name}_v4.json")  # 题目乱序
     final_path = os.path.join(output_dir, f"{dataset_name}_final.json")
+
+    def resolve_step_input(step_label, preferred_path, fallback_paths):
+        """按顺序选择存在的输入文件，支持步骤间自动回退。"""
+        checked = []
+        ordered_candidates = [preferred_path] + list(fallback_paths)
+
+        for candidate in ordered_candidates:
+            if not candidate or candidate in checked:
+                continue
+            checked.append(candidate)
+            if os.path.exists(candidate):
+                if candidate != preferred_path:
+                    print(
+                        f"⚠️ {step_label}: 输入 {os.path.basename(preferred_path)} 不存在，"
+                        f"回退使用 {os.path.basename(candidate)}"
+                    )
+                return candidate
+
+        checked_text = ", ".join(os.path.basename(path) for path in checked)
+        print(f"❌ 错误: {step_label} 未找到可用输入文件，已检查: {checked_text}")
+        return None
+
+    def _passes_v1a_rule(qa_item):
+        only_check = qa_item.get("only_evidence_check")
+        if isinstance(only_check, dict):
+            return only_check.get("result") == "right"
+        # 缺失字段时不强制删除，保持向后兼容。
+        return True
+
+    def _passes_v1b_rule(qa_item):
+        """v1b 删题规则：仅当存在 round==3 且其 result != wrong 才删除。"""
+        # v3 生成的新题没有稳定的 iterative_evidence_ablation 语义，直接豁免。
+        if qa_item.get("is_generated_qa") is True:
+            return True
+
+        if "iterative_evidence_ablation" not in qa_item:
+            return True
+
+        ablation = qa_item.get("iterative_evidence_ablation")
+        if not isinstance(ablation, list):
+            return True
+
+        for record in ablation:
+            if not isinstance(record, dict):
+                continue
+            if record.get("round") == 3:
+                return record.get("result") == "wrong"
+
+        # 未找到 round == 3 则保留
+        return True
+
+    def _passes_v4_rule(qa_item):
+        """v4 删题规则：仅当存在 pollution_check.result 且其不为 good 才删除。
+        
+        豁免：由 v3 生成的新题（is_generated_qa=true）不受 v4 规则影响。
+        """
+        # v3 生成的题目豁免 v4 规则
+        if qa_item.get("is_generated_qa") is True:
+            return True
+
+        if "pollution_check" not in qa_item:
+            return True
+
+        pollution_check = qa_item.get("pollution_check")
+        if not isinstance(pollution_check, dict):
+            return True
+
+        if "result" not in pollution_check:
+            return True
+
+        return pollution_check.get("result") == "good"
+
+    def apply_cumulative_rules(input_path, rule_names, stage_label, output_path=None):
+        """对输入文件应用累积删题规则；仅在指定 output_path 时落盘。"""
+        with open(input_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if isinstance(data, dict):
+            data = [data]
+
+        rule_checkers = {
+            "v1a": _passes_v1a_rule,
+            "v1b": _passes_v1b_rule,
+            "v4": _passes_v4_rule,
+        }
+
+        total_before = 0
+        total_after = 0
+        removed_by_rule = {rule: 0 for rule in rule_names}
+
+        for section in data:
+            qa_list = section.get("qa", [])
+            if not isinstance(qa_list, list):
+                continue
+
+            filtered = []
+            for qa_item in qa_list:
+                total_before += 1
+                removed_rule = None
+
+                for rule in rule_names:
+                    checker = rule_checkers.get(rule)
+                    if checker and not checker(qa_item):
+                        removed_rule = rule
+                        break
+
+                if removed_rule:
+                    removed_by_rule[removed_rule] += 1
+                    continue
+
+                filtered.append(qa_item)
+                total_after += 1
+
+            section["qa"] = filtered
+
+        if output_path:
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+
+        removed_total = total_before - total_after
+        print(
+            f"  [{stage_label}] 规则过滤: {total_before} -> {total_after}，"
+            f"移除 {removed_total}"
+        )
+        for rule in rule_names:
+            print(f"    - {rule} 规则移除: {removed_by_rule.get(rule, 0)}")
+
+        return data
+
+    def run_with_temp_filtered_input(input_path, rule_names, stage_label, runner):
+        """在临时文件中传递过滤结果，执行后立即删除，避免持久化中间文件。"""
+        filtered_data = apply_cumulative_rules(
+            input_path,
+            rule_names,
+            stage_label
+        )
+
+        temp_file_path = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                suffix=".json",
+                prefix=f"{dataset_name}_{stage_label}_",
+                encoding="utf-8",
+                delete=False,
+            ) as temp_file:
+                json.dump(filtered_data, temp_file, indent=4, ensure_ascii=False)
+                temp_file_path = temp_file.name
+
+            return runner(temp_file_path)
+        finally:
+            if temp_file_path and os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
     
     # 步骤 0: 生成原始问答对
-    if start_step <= 0 <= end_step:
+    if should_run_step(0, "step_0_generate_qa"):
         step_start = time.time()
         print("\n[步骤 0] 生成原始问答对...")
         from src.qa_generate import generate_v0
@@ -116,12 +284,18 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
             "force_generate_new_qa",
             False,
         )
+        step0_batch_size = config_loader.get_step_flag(
+            "step_0_generate_qa",
+            "speaker_batch_size",
+            8,
+        )
         v0_path = generate_v0(
             dataset_name,
             input_dir,
             v0_path,
             step0_llm,
             force_generate_new_qa=bool(step0_force_generate_new_qa),
+            initial_batch_size=int(step0_batch_size),
         )
         if not v0_path:
             return
@@ -160,7 +334,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
                 return
 
     # 步骤 1: 题目合理性检测
-    if start_step <= 1 <= end_step:
+    if should_run_step(1, "step_1_full_context"):
         step_start = time.time()
         print("\n[步骤 1] 题目合理性检测...")
         from src.evidence_check import evidence_check_main
@@ -186,63 +360,84 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         print(f"✓ 步骤 1 完成: {output_path}，耗时: {step_times['步骤 1: 题目合理性检测']:.2f} 秒")
     
     # 步骤 2: 题目标注
-    if start_step <= 2 <= end_step:
+    if should_run_step(2, "step_2_label"):
         step_start = time.time()
         print("\n[步骤 2] 题目标注...")
         from src.label import label_main
         
-        # 步骤 2 的输入是步骤 1 的输出（优先 v1b，兼容 legacy v1）
-        if 'output_path' in locals():
-            step1_output_path = output_path
-        elif os.path.exists(v1b_path):
-            step1_output_path = v1b_path
-        else:
-            step1_output_path = legacy_v1_path
-        
-        if not os.path.exists(step1_output_path):
-            print(f"❌ 错误: 输入文件不存在 {step1_output_path}")
+        # 步骤 2 的输入是步骤 1 的输出；若缺失则向前回退。
+        preferred_step2_input = output_path if 'output_path' in locals() else v1b_path
+        step2_input_path = resolve_step_input(
+            "步骤 2",
+            preferred_step2_input,
+            [v1b_path, legacy_v1_path, v1a_path, v0_path],
+        )
+
+        if not step2_input_path:
             return
 
         step2_llm = config_loader.get_step_llm("step_2_label")
 
-        label_main(
-            step1_output_path,
-            v2_path,
-            api_key=step2_llm.api_key,
-            base_url=step2_llm.base_url,
-            model_name=step2_llm.model
+        run_with_temp_filtered_input(
+            step2_input_path,
+            ["v1a", "v1b"],
+            "step2",
+            lambda filtered_path: label_main(
+                filtered_path,
+                v2_path,
+                api_key=step2_llm.api_key,
+                base_url=step2_llm.base_url,
+                model_name=step2_llm.model
+            ),
         )
         step_times['步骤 2: 题目标注'] = time.time() - step_start
         print(f"✓ 步骤 2 完成: {v2_path}，耗时: {step_times['步骤 2: 题目标注']:.2f} 秒")
     
     # 步骤 3: new_qa (问答精炼重构)
-    if start_step <= 3 <= end_step:
+    if should_run_step(3, "step_3_new_qa"):
         step_start = time.time()
         print("\n[步骤 3] new_qa (问答精炼重构)...")
         from src.new_qa import new_qa_main
-        
-        if not os.path.exists(v2_path):
-            print(f"❌ 错误: 输入文件不存在 {v2_path}")
+
+        step3_input_path = resolve_step_input(
+            "步骤 3",
+            v2_path,
+            [v1b_path, legacy_v1_path, v1a_path, v0_path],
+        )
+        if not step3_input_path:
             return
 
         step3_llm = config_loader.get_step_llm("step_3_new_qa")
 
-        new_qa_main(
-            v2_path,
-            v3_path,
-            api_key=step3_llm.api_key,
-            base_url=step3_llm.base_url,
-            model=step3_llm.model
+        run_with_temp_filtered_input(
+            step3_input_path,
+            ["v1a", "v1b"],
+            "step3",
+            lambda filtered_path: new_qa_main(
+                filtered_path,
+                v3_path,
+                api_key=step3_llm.api_key,
+                base_url=step3_llm.base_url,
+                model=step3_llm.model
+            ),
         )
         step_times['步骤 3: new_qa'] = time.time() - step_start
         print(f"✓ 步骤 3 完成: {v3_path}，耗时: {step_times['步骤 3: new_qa']:.2f} 秒")
     
     # 步骤 4: 题目乱序 (污染检查)
-    if start_step <= 4 <= end_step:
+    if should_run_step(4, "step_4_pollution_check"):
         step_start = time.time()
         print("\n[步骤 4] 题目乱序 (污染性检查)...")
         from src.pollution_check import pollution_check_main
         from argparse import Namespace
+
+        step4_input_path = resolve_step_input(
+            "步骤 4",
+            v3_path,
+            [v2_path, v1b_path, legacy_v1_path, v1a_path, v0_path],
+        )
+        if not step4_input_path:
+            return
 
         step4_llm = config_loader.get_step_llm("step_4_pollution_check")
         enable_contamination_check = config_loader.get_step_flag(
@@ -264,50 +459,40 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
             max_workers=pipeline_cfg.get('max_workers', 4)
         )
 
-        pollution_check_main(
-            args,
-            v3_path,
-            v4_path,
-            enable_contamination_check=enable_contamination_check,
-            cleanup_temp_files=cleanup_temp_files
+        run_with_temp_filtered_input(
+            step4_input_path,
+            ["v1a", "v1b"],
+            "step4",
+            lambda filtered_path: pollution_check_main(
+                args,
+                filtered_path,
+                v4_path,
+                enable_contamination_check=enable_contamination_check,
+                cleanup_temp_files=cleanup_temp_files
+            ),
         )
         step_times['步骤 4: 题目乱序 (污染性检查)'] = time.time() - step_start
-        print(f"✓ 步骤 4 完成: {v4_path}，耗时: {step_times['步骤 4: 题目乱序']:.2f} 秒")
+        print(f"✓ 步骤 4 完成: {v4_path}，耗时: {step_times['步骤 4: 题目乱序 (污染性检查)']:.2f} 秒")
     
     # 步骤 5: 生成最终版本
-    if start_step <= 5 <= end_step:
+    if should_run_step(5, "step_5_finalize"):
         step_start = time.time()
         print("\n[步骤 5] 生成最终版本（过滤污染题目）...")
 
-        if not os.path.exists(v4_path):
-            print(f"❌ 错误: 输入文件不存在 {v4_path}")
+        step5_input_path = resolve_step_input(
+            "步骤 5",
+            v4_path,
+            [v3_path, v2_path, v1b_path, legacy_v1_path, v1a_path, v0_path],
+        )
+        if not step5_input_path:
             return
 
-        with open(v4_path, "r", encoding="utf-8") as f:
-            v4_data = json.load(f)
-
-        if isinstance(v4_data, dict):
-            v4_data = [v4_data]
-
-        total_before = 0
-        total_after = 0
-        for section in v4_data:
-            qa_list = section.get("qa", [])
-            if not isinstance(qa_list, list):
-                continue
-            total_before += len(qa_list)
-            filtered = [
-                item for item in qa_list
-                if item.get("pollution_check", {}).get("result", "good") == "good"
-            ]
-            total_after += len(filtered)
-            section["qa"] = filtered
-
-        removed = total_before - total_after
-        print(f"  过滤前: {total_before} 题，过滤后: {total_after} 题，移除污染题: {removed} 题")
-
-        with open(final_path, "w", encoding="utf-8") as f:
-            json.dump(v4_data, f, indent=4, ensure_ascii=False)
+        apply_cumulative_rules(
+            step5_input_path,
+            ["v1a", "v1b", "v4"],
+            "步骤 5",
+            output_path=final_path,
+        )
 
         step_times['步骤 5: 生成最终版本'] = time.time() - step_start
         print(f"✓ 步骤 5 完成: {final_path}，耗时: {step_times['步骤 5: 生成最终版本']:.2f} 秒")
@@ -423,6 +608,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python main.py --run An-Enemy-of-the-People > pipeline_AnEnemy.log 2>&1
-# python main.py --run the-man-from-earth-script --start 1 > pipeline_themanfromearth.log 2>&1
-# python main.py --run 12_Angry_Men > pipeline_12Angrymen.log 2>&1

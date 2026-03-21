@@ -1,0 +1,2979 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "Which statement best corresponds to how Ariel handled the consequences of the disaster?\n\nYou must choose the correct answer from the following options:\n['A. She repeatedly confronted Paolo and demanded to know why he had missed the flight.', \"B. She isolated herself and refused to participate in any New Year's Eve celebration.\", 'C. She pretended everything was fine, even at the party, although she was hurt.', 'D. She spent the evening actively seeking compassion and telling everyone all the details.', 'E. She immediately started dating someone new, to prove that she could handle the situation well.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She confronted Paolo repeatedly, demanding to know why he missed the flight.",
+                "B. She isolated herself and refused to attend any New Year's events.",
+                "C. She pretended everything was normal at the party, even though she was hurt.",
+                "D. She spent the evening actively seeking sympathy and telling everyone the details.",
+                "E. She immediately started dating someone new to prove she was fine.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. She pretended everything was normal at the party, even though she was hurt.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Rome. Jerk missed his flight.",
+                    "dia_id": "7:16"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "...everybody having fun at the party?  Are people eating my dip?",
+                    "dia_id": "7:18"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Nothing for you, you have Paolo.",
+                    "dia_id": "2:11"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ariel",
+                    "utterance": "Well, for your information, Paolo is gonna be in Rome this New Year, so I'll be just as pathetic as the rest of you.",
+                    "dia_id": "2:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel was in a relationship with Paolo, and his presence was expected to spare her from the pressure of New Year's (E3, E4).",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On New Year's Eve, Paolo failed to return (missed his flight), leaving Ariel without her date (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Despite this personal disappointment, Ariel's immediate concern at the party shifts to whether guests are enjoying the food, indicating an effort to maintain a normal, host-like demeanor (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "She acknowledges the issue briefly but quickly redirects focus to the party's success, matching the behavior of pretending things are normal while hurt.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 280,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "Why did Ariel feel particularly uncomfortable and physically hurt when she arrived at the New Year's party?\n\nYou must choose the correct answer from the following options:\n['A. She had slipped on ice in front of the apartment building.', 'B. She had just had a physical argument with a stranger at the airport.', 'C. She had a severe allergic reaction to something she had eaten earlier.', 'D. She was recovering from a wisdom tooth extraction.', 'E. The monkey Marcel had scared her and caused her to fall.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. She had slipped on ice outside the apartment building.",
+                "B. She had just been in a physical altercation with a stranger at the airport.",
+                "C. She had a severe allergic reaction to something she ate earlier.",
+                "D. She was recovering from a wisdom tooth extraction surgery.",
+                "E. Marcel the monkey had startled her and caused her to trip.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She had just been in a physical altercation with a stranger at the airport.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Okay. I was at the airport, getting into a cab, when this woman- this blonde planet with a pocketbook- starts yelling at me... And then the next thing I know she just starts- starts pulling me out by my hair!... she tackles me. And I hit my head on the kerb and cut my lip on my whistle...",
+                    "dia_id": "7:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "...I think that bitch cracked my tooth.",
+                    "dia_id": "8:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel describes a specific incident at the airport involving a physical fight with another woman over a cab (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She specifies the injuries from that fight: hitting her head and cutting her lip (E1). Later, she suspects a cracked tooth from the same incident (E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "conclusion": "Her upset state and physical injuries upon arrival are directly attributed to the airport altercation.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 281,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "Ariel had always been passionate about travel, often dreaming of exploring distant lands and immersing herself in new cultures. Recently, she found herself caught between her love for adventure and the comfort of familiar relationships.  \n\nWhat was the sequence of events regarding Ariel's plans with Paolo for the New Year?",
+            "option": [
+                "A. They planned to spend it together, but she changed her mind after the pact.",
+                "B. He was scheduled to be away, then was supposed to return, but ultimately did not.",
+                "C. He canceled weeks in advance, then surprised her by showing up.",
+                "D. Plans were always uncertain, and they decided last minute not to see each other.",
+                "E. He was supposed to be in Rome, returned early, and then they argued.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He was scheduled to be away, then was supposed to return, but ultimately did not.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Well, for your information, Paolo is gonna be in Rome this New Year, so I'll be just as pathetic as the rest of you.",
+                    "dia_id": "2:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Sorry. Paolo's catching an earlier flight.",
+                    "dia_id": "5:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Rome. Jerk missed his flight.",
+                    "dia_id": "7:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In mid-December (Session 2), Ariel states Paolo will be in Rome for New Year's (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On December 29th (Session 5), she updates the group that Paolo is catching an earlier flight, implying a plan change and his return for New Year's (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "On New Year's Eve (Session 7), she reveals the final outcome: he missed that earlier flight and is still in Rome (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The sequence is: initial plan to be away, revised plan to return early, final outcome of not returning.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 282,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "While attending a conference on global travel trends, Ariel spent the evening reflecting on how modern transportation systems shape personal experiences and societal norms. The discussion around security and etiquette at airports was particularly thought-provoking for her. What specific incident happened to Ariel at the airport, and what was her immediate reaction during it?",
+            "option": [
+                "A. She was mugged and immediately called the police.",
+                "B. She got into a physical fight over a cab and used an attack whistle.",
+                "C. She witnessed an accident and provided first aid to the injured.",
+                "D. She was detained for mistaken identity and demanded a lawyer.",
+                "E. She lost her luggage and filed a complaint with airport staff.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She got into a physical fight over a cab and used an attack whistle.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I was at the airport, getting into a cab, when this woman- this blonde planet with a pocketbook- starts yelling at me. Something about how it was her cab first. And then the next thing I know she just starts- starts pulling me out by my hair! So I'm blowing my attack whistle thingy and three more cabs show up, and as I'm going to get into a cab she tackles me.",
+                    "dia_id": "7:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel narrates a dispute over a taxi at the airport that escalated to physical violence (hair-pulling, tackling) (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Her immediate reaction during the altercation was to use an \"attack whistle\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "conclusion": "The incident was a physical fight over a cab, and her reaction included blowing a whistle.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 283,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "Bennett had always been fascinated by the idea of urban gardening and spent many evenings tending to his rooftop plants, finding solace in the quiet hum of city life. He often reflected on how the rhythm of nature could soothe the chaos of everyday living. Which of the following best describes Bennett's underlying motivation for getting Marcel and his attitude towards living alone?",
+            "option": [
+                "A. He sought a replacement for a lost job opportunity and finds solitude peaceful.",
+                "B. He wanted a unique pet to impress his friends and loves having roommates.",
+                "C. He felt lonely after a breakup and is somewhat defensive about roommate arrangements.",
+                "D. He rescued Marcel on a whim and is actively looking for a new human roommate.",
+                "E. He is conducting a secret animal behavior study and prefers total independence.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He felt lonely after a breakup and is somewhat defensive about roommate arrangements.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Yeah. I mean, it's been kinda quiet since Carol left, so...",
+                    "dia_id": "1:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Nah, I dunno... I think you reach a certain age, having a roommate is kinda pathe-  ....sorry, that's, that's 'pathet', which is Sanskrit for 'really cool way to live'.",
+                    "dia_id": "1:13"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "My friend Bethel rescued him from some lab.",
+                    "dia_id": "1:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett connects getting Marcel to his apartment being quiet since \"Carol\" left, indicating loneliness post-breakup (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When Chloe suggests a roommate, he starts to call it \"pathe-\" (pathetic) before covering it up, showing a defensive or negative view of having a roommate at his age (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Marcel was obtained via rescue, not primarily for novelty or study (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "His motivation is linked to post-breakup loneliness, and he holds a defensive attitude against the idea of adult roommates.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 284,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "As the holiday season approached, Bennett found himself reflecting on the many changes in his life over the past year, from new friendships to unexpected career shifts. He was especially fond of the way the neighborhood had come together to celebrate the holidays with shared traditions and mutual support.\n\nWhy was Bennett feeling particularly rejected and upset during the party preparations on December 29th?",
+            "option": [
+                "A. He realized he had lost a valuable piece of jewelry.",
+                "B. His monkey, Marcel, was showing more affection towards Dexter.",
+                "C. Everyone forgot his birthday, which was the same day.",
+                "D. Carol, his ex-girlfriend, showed up at the apartment unexpectedly.",
+                "E. He had just been fired from his job earlier that week.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. His monkey, Marcel, was showing more affection towards Dexter.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, it's-it's Marcel. He keeps shutting me out, y'know? He's walking around all the time dragging his hands...",
+                    "dia_id": "5:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "That's so weird, I had such a blast with him the other night.",
+                    "dia_id": "5:22"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, we played, we watched TV.. that juggling thing is amazing.",
+                    "dia_id": "5:24"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "What, uh... what juggling thing?",
+                    "dia_id": "5:25"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Bennett",
+                    "utterance": "No.",
+                    "dia_id": "5:27"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett expresses that Marcel is \"shutting [him] out\" and acting withdrawn (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter contrasts this by stating he had a great time with Marcel recently and mentions a juggling trick (E2, E3).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Bennett's questions (\"what juggling thing?\") and his denial of teaching it reveal his ignorance of this behavior, showing Marcel did it with Dexter, not him (E4, E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Bennett is upset because Marcel is behaving distantly with him while having shared a positive, novel experience with Dexter.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 285,
+            "label": "多跳"
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "On a crisp autumn morning, Clara decided to bake a pie for her neighbor, only to discover that the recipe had been written in a forgotten language she couldn’t decipher. Meanwhile, she pondered how life often presents unexpected challenges that seem unrelated to our immediate goals.  \n\nWhat was the progression of Bennett's relationship with Marcel from their introduction to New Year's Day?",
+            "option": [
+                "A. Initial excitement, then signs of mutual disconnect and Bennett's feeling of unreciprocated love.",
+                "B. Reluctant adoption, gradual warming up, ending with Bennett giving him away.",
+                "C. Immediate behavioral problems, successful training, culminating in a deep bond.",
+                "D. Constant playful interaction, a minor injury incident, followed by full reconciliation.",
+                "E. Instant bond, followed by harmonious cohabitation, ending with Marcel running away.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Initial excitement, then signs of mutual disconnect and Bennett's feeling of unreciprocated love.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Guys? There's a somebody I'd like you to meet.",
+                    "dia_id": "1:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "We- we had our first fight this morning... he- he threw some faeces...",
+                    "dia_id": "3:24"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, it's-it's Marcel. He keeps shutting me out, y'know?",
+                    "dia_id": "5:21"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Bennett",
+                    "utterance": "I wanted this to work so much... but he's just phoning it in. Just so hard to accept the fact that something you love so much doesn't love you back.",
+                    "dia_id": "8:1"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett introduces Marcel with positive enthusiasm (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By December 20th, they have their \"first fight,\" involving thrown feces, indicating conflict (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "By December 29th, Bennett feels Marcel is \"shutting him out\" (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "On New Year's Day, Bennett explicitly states he loves Marcel but feels the love is not reciprocated (\"doesn't love you back\") (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "conclusion": "The progression is from initial excitement to conflict, emotional distance, and finally Bennett's acknowledgment of unrequited affection.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 286,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "At the heart of every New Year's Eve party is the hope for a fresh start, but sometimes old habits can resurface in the most unexpected ways. The evening was filled with laughter and toasts to the future, yet the atmosphere shifted when a long-standing family feud over holiday traditions was briefly revisited by an old relative.\n\nWhat specific incident involving Marcel caused tension between Bennett and Chloe at the New Year's Eve party?",
+            "option": [
+                "A. Marcel bit one of Sandy's children.",
+                "B. Marcel broke an expensive vase while playing.",
+                "C. Marcel stole food from the buffet table.",
+                "D. Marcel ate all of Ariel's special dip.",
+                "E. Marcel had previously urinated on Chloe's coffee table.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Marcel had previously urinated on Chloe's coffee table.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "dia_id": "7:11",
+                    "utterance": "I'm guessing your new girlfriend wouldn't urinate on my coffee table."
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "dia_id": "7:12",
+                    "utterance": "Okay. He was more embarrassed about that than anyone. Okay? And for him to have the courage to walk back in here like nothing happened..."
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe references an incident where Marcel urinated on her coffee table (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett does not deny the incident; instead, he defends Marcel's embarrassment and courage to return, confirming it happened (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "conclusion": "The past incident of Marcel urinating on the coffee table is the specific cause of tension during the party entry dispute.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 287,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "As the holiday season approached, Chloe found herself reflecting on the importance of personal growth and how sometimes stepping out of one's comfort zone could lead to unexpected opportunities. She had been reading a lot about the power of forgiveness and the value of second chances in relationships.\n\nWhat was the primary reason Chloe decided to invite Fun Bobby to the New Year's Eve party, despite the earlier pact?",
+            "option": [
+                "A. Fun Bobby unexpectedly called and begged her for a second chance.",
+                "B. She thought everyone else had a date, so she should get one too.",
+                "C. She felt sorry for him because he had recently lost his job.",
+                "D. She believed the pact was silly and had planned to break it all along.",
+                "E. She wanted to make Ethan jealous after seeing him with Sandy.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. She thought everyone else had a date, so she should get one too.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "I'm sorry, okay. It's just that Dexter has somebody, and Fiona has somebody- I thought I'd ask Fun Bobby.",
+                    "dia_id": "5:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I happen to know a Fun Bob.",
+                    "dia_id": "5:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "dia_id": "5:5",
+                    "utterance": "You know more than one Fun Bobby?"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When confronted about breaking the pact, Chloe justifies her action by pointing out that Dexter and Fiona already had dates (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Her solution was to ask \"Fun Bobby,\" an ex-boyfriend identifiable by a nickname known to the group (E2, E3).",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "conclusion": "Her stated primary reason for getting a date was the perception that others in the group had already done so.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 288,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "During the holiday season, Chloe spent a considerable amount of time reflecting on her long-distance friendship with a colleague in another city, which made her appreciate the value of face-to-face interactions more than ever. Despite this, her thoughts were soon interrupted by a sudden snowstorm that delayed her flight home, giving her unexpected time to consider various aspects of her personal life. Over the course of the holiday period, how did Chloe's stance on the 'no-date pact' change?",
+            "option": [
+                "A. She forgot about the pact entirely until reminded on New Year's Eve.",
+                "B. She enthusiastically supported it, then was the last to reluctantly break it.",
+                "C. She was against it from the start and never agreed to it.",
+                "D. She agreed to it, then broke it after learning others had broken it first.",
+                "E. She tried to strengthen the pact by proposing penalties for breaking it.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She agreed to it, then broke it after learning others had broken it first.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "All",
+                    "utterance": "Yeah, okay. Alright.",
+                    "dia_id": "2:15"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "I'm sorry, okay. It's just that Dexter has somebody, and Fiona has somebody- I thought I'd ask Fun Bobby.",
+                    "dia_id": "5:2"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Okay, so on our no-date evening, three of you now have dates.",
+                    "dia_id": "5:10"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When Dexter proposed the no-date pact in Session 2, the group (including Chloe as part of \"All\") agreed (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "On December 29th, when Bennett confronts the group, Chloe admits to asking Fun Bobby (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her justification for breaking the pact is explicitly that Dexter and Fiona already had dates (E2), which Bennett's count confirms (E3).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Chloe changed from agreeing to the pact to breaking it, citing others' prior breaches as her reason.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 289,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "What did Chloe do when Bennett tried to bring Marcel into his apartment for the New Year's Eve party?\n\nYou must choose the correct answer from the following options:\n['A. She immediately called animal protection services to report the situation.', 'B. She warmly greeted Marcel and offered him a special treat.', \"C. She suggested that Marcel stay in Bennett's apartment on the street side.\", 'D. She first refused entry, but after a conflict, she set conditions.', 'E. She discreetly expressed her concerns to Bennett, but still let him in.', 'F. The answer cannot be deduced from the provided information.']",
+            "option": [
+                "A. She immediately called animal control to report the situation.",
+                "B. She warmly welcomed Marcel and offered him a special treat.",
+                "C. She suggested Marcel stay in Bennett's apartment next door.",
+                "D. She initially refused entry, then set conditions after an argument.",
+                "E. She quietly expressed concern to Bennett but let him in.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She initially refused entry, then set conditions after an argument.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "That thing is not coming in here.",
+                    "dia_id": "7:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "'That thing'? This is how you greet guests at a party?...",
+                    "dia_id": "7:10"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "dia_id": "7:13",
+                    "utterance": "Alright. Just keep him away from me."
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe's first action is a firm refusal of entry: \"That thing is not coming in here.\" (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "An argument ensues, with Bennett protesting her greeting (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "After the exchange, Chloe relents but sets a clear condition: \"Just keep him away from me.\" (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Her actions were initial refusal, followed by conditional allowance after an argument.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 290,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "During his time at university, Dexter often found himself immersed in academic research, spending late nights in the library and prioritizing intellectual pursuits over social activities. He was known to take long walks by the river whenever he needed to clear his mind, which became a sort of meditation for him in the midst of chaos.\n\nWhich pattern best reflects Dexter's approach to romantic relationships or dating pressures during this period?",
+            "option": [
+                "A. He remains consistently single and content despite friends' relationships.",
+                "B. He feels pressured by holidays, acts impulsively, then regrets it.",
+                "C. He openly seeks a serious partner and enjoys the process.",
+                "D. He carefully plans long-term commitments and follows through.",
+                "E. He actively avoids all social events to escape dating expectations.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He feels pressured by holidays, acts impulsively, then regrets it.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I'm sick of being a victim of this Dick Clark holiday. I say this year, no dates, we make a pact. Just the six of us- dinner.",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, 'cause I already asked Janice.",
+                    "dia_id": "3:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "I snapped, okay? I couldn't handle the pressure and I snapped.",
+                    "dia_id": "3:14"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "dia_id": "7:27",
+                    "utterance": "Kill me. Kill me now."
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Dexter",
+                    "utterance": "I'm sorry you misunderstood...",
+                    "dia_id": "7:33"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter explicitly states he feels like a \"victim\" of New Year's pressure and proposes a no-date pact to avoid it (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Soon after, he admits to having already broken the pact by asking Janice, an ex-girlfriend (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He explains this impulsive action as \"snapping\" under pressure (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "At the party with Janice, he expresses extreme regret (\"Kill me.\") (E4) and later tries to clarify it was a misunderstanding (E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "conclusion": "The pattern is feeling holiday pressure, impulsively making a date (breaking his own pact), and subsequently experiencing regret.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 291,
+            "label": "多跳"
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "In what order did Dexter perform the actions related to the New Year's projects?\n\nYou must choose the correct answer from the following options:\n[\"A. Forgot New Year -> Remembered at the last minute -> Called everyone -> Had no appointment.\", 'B. Secretly went to Janice -> Proposed a pact as a cover -> Admitted the truth -> Enjoyed the party.', 'C. Proposed a pact -> Broke the pact with Janice -> Regretted asking Janice -> Begged for a kiss.', 'D. Organized a big party -> Invited everyone -> Returned the pact -> Went out alone.', 'E. Opposed the pact -> Was convinced to join it -> Found an excellent appointment -> Motivated others.', 'F. The answer cannot be deduced from the provided information.']",
+            "option": [
+                "A. Forgot about New Year's -> Remembered last minute -> Called everyone -> Had no date.",
+                "B. Secretly dated Janice -> Proposed pact as a cover -> Admitted the truth -> Enjoyed the party.",
+                "C. Proposed pact -> Broke pact with Janice -> Regretted asking Janice -> Begged for a kiss.",
+                "D. Planned a big party -> Invited everyone -> Canceled the pact -> Went out alone.",
+                "E. Opposed the pact -> Was convinced to join -> Found a great date -> Encouraged others.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. Proposed pact -> Broke pact with Janice -> Regretted asking Janice -> Begged for a kiss.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I say this year, no dates, we make a pact. Just the six of us- dinner.",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, 'cause I already asked Janice.",
+                    "dia_id": "3:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Kill me. Kill me now.",
+                    "dia_id": "7:27"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "Alright, somebody kiss me. Somebody kiss me, it's midnight! Somebody kiss me!",
+                    "dia_id": "7:68"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "First, Dexter proposed the no-date pact (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, he revealed he had already broken the pact by asking Janice (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "At the party with Janice, he expressed deep regret (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Finally, at midnight, he desperately begged for a kiss (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "conclusion": "The chronological order is: propose pact, break it with Janice, regret it, then beg for a kiss.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 292,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "At the party, the atmosphere was filled with laughter and music, and many guests were engrossed in conversations about their recent career moves and personal achievements. The evening was marked by a series of unexpected surprises, from the sudden appearance of a long-lost friend to a mysterious guest who arrived without an invitation. What specific interaction did Dexter have with Janice at the party that led to her angry outburst?",
+            "option": [
+                "A. He left the party suddenly without saying goodbye.",
+                "B. He complimented another woman right in front of her.",
+                "C. He told her he had only invited her as a friend, not a date.",
+                "D. He refused to dance with her to a song she loved.",
+                "E. He accidentally spilled a drink on her new dress.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He told her he had only invited her as a friend, not a date.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Alright, Janice, that's it! Janice... Janice... Hey, Janice, when I invited you to this party I didn't necessarily think that it meant that we-",
+                    "dia_id": "7:31"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I'm sorry you misunderstood...",
+                    "dia_id": "7:33"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Janice",
+                    "utterance": "Oh my God. You listen to me, Dexter, you listen to me. One of these times is just gonna be your last chance with me.",
+                    "dia_id": "7:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter attempts to clarify to Janice that inviting her to the party did not necessarily imply a romantic rekindling (\"didn't necessarily think that it meant that we-\") (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He frames her expectations as a \"misunderstanding\" (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Janice reacts with anger and a threat about \"last chances,\" indicating she perceived the invitation as a date (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "The triggering interaction was Dexter explicitly stating he did not intend the invitation as a romantic date.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 293,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "During his summer break, Ethan spent a considerable amount of time exploring the local art scene, attending gallery openings, and even taking a few painting classes to better understand the creative process. He found great joy in meeting new people and discussing philosophy over coffee. Based on his actions and statements, what is a consistent trait in Ethan's approach to his seasonal job and social life?\n\nYou need to select the correct answer from the following options:\n['A. He uses his work environment as a place to meet potential romantic partners.', 'B. He is fiercely competitive about securing the most prestigious role.', 'C. He treats his job casually and integrates it into his personal interactions.', 'D. He is deeply embarrassed by his job and hides it from new people.', 'E. He prioritizes career advancement over all social engagements.', 'F. Cannot infer the answer based on the given information.']",
+            "option": [
+                "A. He uses his work environment as a place to meet potential romantic partners.",
+                "B. He is fiercely competitive about securing the most prestigious role.",
+                "C. He treats his job casually and integrates it into his personal interactions.",
+                "D. He is deeply embarrassed by his job and hides it from new people.",
+                "E. He prioritizes career advancement over all social engagements.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He treats his job casually and integrates it into his personal interactions.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Ahhhhhh, I didn't get the job. Some fat guy's sleeping with the store manager. He's not even jolly, it's all political.",
+                    "dia_id": "2:5, 2:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Ah, I'm gonna be one of his helpers. It's just such a slap in the face, y'know?",
+                    "dia_id": "2:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, and I met this really hot single mom at the store. What's an elf to do?",
+                    "dia_id": "5:16"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Ethan",
+                    "utterance": "Hey, kids...",
+                    "dia_id": "7:22"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Sandy",
+                    "utterance": "Y'know, when I saw you at the store last week, it was probably the first time I ever mentally undressed an elf.",
+                    "dia_id": "7:19"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan openly discusses his job (not getting Santa, being an elf) and its office politics with friends (E1, E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He casually mentions meeting a romantic interest \"at the store\" where he works (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "He brings that date (Sandy) and her kids to the party, and interacts with the kids (E4). Sandy confirms they met at the store (E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "He does not hide his job, discusses it humorously, and seamlessly connects his work life (meeting Sandy) to his social life, showing a casual, integrated approach.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 294,
+            "label": "多跳"
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "Ethan had recently taken up painting as a way to cope with the stress of his busy work schedule, often spending late evenings in his studio capturing the essence of city life. He found solace in the quiet moments of creation, where the world outside faded away, leaving only the rhythm of his brush and the colors on the canvas.\n\nWhat was Ethan's primary motivation for inviting Sandy and her children to the New Year's Eve party?",
+            "option": [
+                "A. He thought the kids would entertain the other guests.",
+                "B. He needed help with childcare for Marcel during the party.",
+                "C. He was romantically interested in her and wanted to spend time together.",
+                "D. He wanted to make his ex-girlfriend, Chloe, jealous.",
+                "E. He felt obligated because she was a customer at the store.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He was romantically interested in her and wanted to spend time together.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, and I met this really hot single mom at the store. What's an elf to do?",
+                    "dia_id": "5:16"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Sandy! Hi! C'mon in! ...You brought your kids.",
+                    "dia_id": "7:6"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Sandy",
+                    "utterance": "Y'know, when I saw you at the store last week, it was probably the first time I ever mentally undressed an elf.",
+                    "dia_id": "7:19"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan previously described Sandy as a \"really hot single mom\" he met at the store, indicating romantic attraction (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He personally greets her and her children at the door (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Sandy's comment confirms a mutual romantic/sexual attraction that began at his workplace (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "His motivation for inviting her stems from his stated romantic interest in her.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 295,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "How did Ethen's situation regarding his seasonal job develop from mid-December until New Year's Eve?\n\nYou must choose the correct answer from the following list:\n['A. He was fired and rehired as Santa after the previous Santa resigned.', 'B. He resigned from his assistant position in protest and later found a better-paying job in retail.', 'C. He regained the Santa position after filing a complaint with headquarters.', 'D. He failed to get the Santa job, accepted an assistant role, and met someone there.', 'E. He was promoted to Santa by Santa Claus last week of December.', 'F. The answer cannot be deduced from the information given.']",
+            "option": [
+                "A. He was fired, then rehired as Santa after the original Santa quit.",
+                "B. He quit the helper job in protest, then found a better-paying retail position.",
+                "C. He got the Santa job back after complaining to corporate headquarters.",
+                "D. He failed to get the Santa role, accepted a helper role, then met someone through that job.",
+                "E. He was promoted from elf to Santa during the final week of December.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He failed to get the Santa role, accepted a helper role, then met someone through that job.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Ahhhhhh, I didn't get the job.",
+                    "dia_id": "2:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Ah, I'm gonna be one of his helpers.",
+                    "dia_id": "2:9"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah, and I met this really hot single mom at the store. What's an elf to do?",
+                    "dia_id": "5:16"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Sandy",
+                    "utterance": "Y'know, when I saw you at the store last week...",
+                    "dia_id": "7:19"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In mid-December, Ethan reports he did not get the Santa job he wanted (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He states he will be one of Santa's helpers instead (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "By December 29th, he mentions meeting a \"hot single mom at the store,\" implying he is working there as an elf (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Sandy confirms meeting him at the store (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "conclusion": "The evolution is: not getting Santa -> accepting helper/elf role -> meeting a romantic interest at that workplace.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 296,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "On the evening of New Year's Eve, Ethan attended a local art gallery opening where he was captivated by a series of abstract paintings that seemed to reflect the chaotic beauty of urban life. The event was filled with spontaneous conversations and unexpected encounters, making it a memorable experience for everyone in attendance.\n\nWhat specific action did Ethan take at midnight on New Year's Eve?",
+            "option": [
+                "A. He kissed Dexter on the cheek.",
+                "B. He went to find Sandy and her children.",
+                "C. He comforted Fiona after David left.",
+                "D. He turned on the television for the ball drop.",
+                "E. He gave a heartfelt toast to all his friends.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He kissed Dexter on the cheek.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Alright, somebody kiss me. Somebody kiss me, it's midnight! Somebody kiss me!",
+                    "dia_id": "7:68"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Alrightalrightalright.  There.",
+                    "dia_id": "7:69"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter is desperately asking for someone to kiss him at midnight (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan responds with \"Alrightalrightalright. There.\" This direct response to Dexter's plea, coupled with the word \"There,\" implies he performed the requested action—likely giving Dexter a kiss (on the cheek) (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "conclusion": "Ethan's specific action was kissing Dexter in response to his plea.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 297,
+            "label": "事实提取（单对话）"
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Which of the following options best describes Fiona's consistent behavior in her romantic relationship with David?\n\nYou must choose the correct answer from the following options:\n['A. She is emotionally cold and ready to end everything at any moment.', 'B. She is hesitant and constantly tests his trust.', 'C. She is pragmatic and focuses on practical challenges.', 'D. She is deeply in love and prioritizes their bond.', 'E. She is controlling and makes plans without consulting him.', 'F. The answer cannot be deduced from the information provided.']",
+            "option": [
+                "A. She is detached and ready to end things at any moment.",
+                "B. She is hesitant and constantly tests his commitment.",
+                "C. She is pragmatic and focuses on the practical challenges.",
+                "D. She is deeply infatuated and prioritizes their connection.",
+                "E. She is controlling and makes plans without consulting him.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. She is deeply infatuated and prioritizes their connection.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I just- I just wanna be with him all the time. Day and night, and night and day... and special occasions...",
+                    "dia_id": "3:8"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Oh yes, yes, yes you can. Just say, um, 'Fiona, my work is my life and that's what I have to do right now'... And, um, and then you tell me that you love me and you'll never forget me.",
+                    "dia_id": "7:46, 7:48"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "I'm gonna miss you. You scientist guy.",
+                    "dia_id": "7:50"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona expresses an intense desire to be with David constantly (E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When faced with his potential move to Minsk, she scripts an emotional breakup where the core message is his love for her, showing she values the romantic connection deeply (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Her final words to him are affectionate (\"You scientist guy\") and express that she will miss him (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Across sessions, her behavior shows deep infatuation and a prioritization of their emotional bond.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 298,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "Fiona had always believed that the best way to handle difficult conversations was through direct, face-to-face communication, often preferring to avoid digital messages altogether. She enjoyed long walks in the evenings and found solace in the quiet rhythm of the city streets.\n\nWhat was Fiona's immediate emotional reaction upon learning from Max that David had received the grant for Minsk?",
+            "option": [
+                "A. She was shocked and concerned about the implications for their relationship.",
+                "B. She was relieved because she had been wanting to end the relationship.",
+                "C. She was confused about where Minsk was and asked for clarification.",
+                "D. She was excited for David and started planning a going-away party.",
+                "E. She was angry at Max for delivering the news in front of everyone.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. She was shocked and concerned about the implications for their relationship.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Max",
+                    "utterance": "We got the grant. Three years, all expenses paid.",
+                    "dia_id": "5:37"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "So when, when do you leave?",
+                    "dia_id": "5:38"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Max",
+                    "utterance": "January first.",
+                    "dia_id": "5:39"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "Minsk?",
+                    "dia_id": "5:34"
+                },
+                {
+                    "id": "E5",
+                    "speaker": "Fiona",
+                    "utterance": "I know where Minsk is.",
+                    "dia_id": "5:36"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Max announces the grant for Minsk (E1). Fiona's first follow-up question is about the departure date (\"So when, when do you leave?\") (E2).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The immediacy of the date (January 1st) is revealed (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Just prior, her initial, short response was to repeat \"Minsk?\" (E4), which she quickly clarifies is not a question of geography but of surprise (E5).",
+                    "based_on": [
+                        "E4",
+                        "E5"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "conclusion": "Her sequence of reactions—surprised repetition of the destination, clarification that she knows it, and immediate focus on the imminent departure date—indicates shock and concern about the relationship's timeline.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4",
+                        "E5"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 299,
+            "label": "多跳"
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "Fiona had recently taken up a new hobby of birdwatching, which she found both calming and intellectually stimulating as she explored the local nature reserves on weekends. She often reflected on how this newfound passion helped her gain perspective on life and its many choices.\n\nWhat was the sequence of key developments in Fiona's relationship with David from their meeting to New Year's Eve?",
+            "option": [
+                "A. Met at her show, dated slowly, he got a job offer, she encouraged him to leave.",
+                "B. She pursued him aggressively, he was reluctant, they broke up before the party.",
+                "C. He heckled her show, she apologized, they became friends with benefits.",
+                "D. They met through friends, kept it secret, decided to move in together on New Year's.",
+                "E. He was a fan, they had a whirlwind romance, he proposed, she accepted.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. Met at her show, dated slowly, he got a job offer, she encouraged him to leave.",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "David",
+                    "utterance": "I was just saying to my friend that I thought you were the most beautiful woman that I'd ever seen in my- in my life...",
+                    "dia_id": "2:27"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "David's like, y'know, Scientist Guy. He's very methodical.",
+                    "dia_id": "3:4"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Max",
+                    "utterance": "We got the grant. Three years, all expenses paid. ...January first.",
+                    "dia_id": "5:37, 5:39"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Fiona",
+                    "utterance": "You're going to Minsk. ...You can't stay here just 'cause of me.",
+                    "dia_id": "7:44"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "They met when David saw her perform and expressed admiration (Session 2, E1).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By Session 3, they are dating, and she describes him as \"methodical,\" implying a measured pace (E2).",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In Session 5, David's colleague Max announces David got a 3-year grant to Minsk, leaving January 1st (E3).",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "On New Year's Eve, Fiona explicitly tells David he should go and not stay just for her (E4).",
+                    "based_on": [
+                        "E4"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "conclusion": "The sequence is: met at show, dated, he received a distant job offer, she encouraged him to take it.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "qid": 300,
+            "label": "事实提取（多对话）"
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "Which of the following best describes the relationship between Ariel and Paolo?",
+            "option": [
+                "A. They are long-term partners.",
+                "B. They are coworkers.",
+                "C. They are not currently together.",
+                "D. They are siblings.",
+                "E. They are friends."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Paolo is gonna be in Rome this New Year, so I'll be just as pathetic as the rest of you.",
+                    "dia_id": "5:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I can't believe he hasn't kissed you yet. I mean God, by my sixth date with Paolo, I mean he had already named both my breasts!",
+                    "dia_id": "3:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel mentions that Paolo was her date and had already named both her breasts by the sixth date, which implies romantic involvement.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, she is told that Paolo missed his flight and is in Rome, which indicates that they are no longer together at the time of the conversation.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 561
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "Which of the following best describes how Bennett is related to Marcel?",
+            "option": [
+                "A. They are coworkers.",
+                "B. They are strangers.",
+                "C. They are roommates.",
+                "D. They are siblings.",
+                "E. They are friends."
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Guys? There's a somebody I'd like you to meet.",
+                    "dia_id": "1:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "My friend Bethel rescued him from some lab.",
+                    "dia_id": "1:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "I didn't wanna leave him alone. Alright? We- we had our first fight this morning. I said some things that I didn't mean, and he- he threw some faeces...",
+                    "dia_id": "5:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett introduces Marcel as someone he rescued with the help of Bethel, and also mentions that he keeps Marcel company.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett says he's been living with Marcel in his apartment since Carol left, and they have had conflicts, which indicates a friendship, not a familial or professional relationship.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 562
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "Which of the following best describes the relationship between Fiona and David?",
+            "option": [
+                "A. They are in a romantic relationship.",
+                "B. They are friends.",
+                "C. They are strangers.",
+                "D. They are coworkers.",
+                "E. They are parents."
+            ],
+            "answer": "A",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "David's like, y'know, Scientist Guy. He's very methodical.",
+                    "dia_id": "3:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "David",
+                    "utterance": "Yes I can. Because if I go it means I have to break up with you, and I can't break up with you.",
+                    "dia_id": "7:45"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona talks about David as an important figure in her life, identifying him as 'Scientist Guy,' which points toward a romantic relationship.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "David acknowledges that if he goes to Minsk, it would mean a breakup, affirming the romantic nature of their relationship.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "多跳",
+            "qid": 563
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "What kind of relationship is implied between Dexter and Janice at the end of the conversations?",
+            "option": [
+                "A. They are newlyweds.",
+                "B. They are siblings.",
+                "C. They are enemies.",
+                "D. They are current partners.",
+                "E. They are no longer in a romantic relationship."
+            ],
+            "answer": "E",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I snapped, okay? I couldn't handle the pressure and I snapped.",
+                    "dia_id": "3:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Janice",
+                    "utterance": "Oh my God. You listen to me, Dexter, you listen to me. One of these times is just gonna be your last chance with me.",
+                    "dia_id": "7:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter breaks the 'no date pact' by inviting Janice, suggesting that he had been in a romantic relationship with her before.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Janice realizes that Dexter was not genuinely interested in her at the party and warns him that his chance with her may be his last, indicating their relationship is over or was never truly serious.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "多跳",
+            "qid": 564
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "Which of the following best describes Chloe’s relationship with Fun Bobby at the end of the conversations?",
+            "option": [
+                "A. He proposed to her.",
+                "B. They are now engaged.",
+                "C. They are no longer together.",
+                "D. They broke up.",
+                "E. They are on a romantic date."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "I thought I'd ask Fun Bobby.",
+                    "dia_id": "5:2"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Ooh. Uh, I don't know how to tell you this, but she's in Chloe's bedroom, getting it on with Max, that scientist geek.",
+                    "dia_id": "7:54"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe considers asking Fun Bobby to the New Year's event, signaling that she is single at the time.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Fun Bobby is later described as being in Chloe's bedroom with Max, indicating that he is no longer exclusively with Chloe.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 565
+        },
+        {
+            "character": "Max",
+            "category": 5,
+            "question": "Which of the following best describes how Max is related to Sandy?",
+            "option": [
+                "A. They are siblings.",
+                "B. They are coworkers.",
+                "C. They are not currently together.",
+                "D. They are dating.",
+                "E. They are strangers."
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Sandy",
+                    "utterance": "Hi, I'm Sandy.",
+                    "dia_id": "7:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Max",
+                    "utterance": "We got the grant. Three years, all expenses paid.",
+                    "dia_id": "5:37"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Dexter",
+                    "utterance": "Ooh. Uh, I don't know how to tell you this, but she's in Chloe's bedroom, getting it on with Max, that scientist geek.",
+                    "dia_id": "7:54"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Sandy shows up at the party with Max, as he is mentioned by Dexter to be 'getting it on' with her.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Max had asked Fiona to come with him to Minsk, but then changed his mind, indicating that he was not in a committed relationship with Fiona at the time and could be with Sandy.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 566
+        },
+        {
+            "character": "Chloe",
+            "category": 6,
+            "question": "How many people are in the group that Dexter originally suggested to make a 'no date pact'?",
+            "option": [
+                "A. 4",
+                "B. 5",
+                "C. 6",
+                "D. 7",
+                "E. 8"
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Just the six of us- dinner.",
+                    "dia_id": "2:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "All",
+                    "utterance": "Yeah, okay. Alright.",
+                    "dia_id": "2:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "All",
+                    "utterance": "Woooo! Yeah! ...",
+                    "dia_id": "2:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter explicitly mentions the pact involves 'the six of us,' and the group agrees to it.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The subsequent 'Woooo! Yeah!' reaction from the group confirms they are in agreement, supporting the six-person group claim.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 567
+        },
+        {
+            "character": "Fiona",
+            "category": 6,
+            "question": "How many dates does Fiona admit to having with someone by the end of the conversations?",
+            "option": [
+                "A. 0",
+                "B. 1",
+                "C. 2",
+                "D. 3",
+                "E. 4"
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I think it's romantic.",
+                    "dia_id": "3:5"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "So when, when do you leave?",
+                    "dia_id": "5:38"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Max",
+                    "utterance": "We got the grant. Three years, all expenses paid.",
+                    "dia_id": "5:37"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona talks about her romantic feelings for David in the context of 'An Officer and a Gentleman,' which indicates the relationship is ongoing.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She asks Max when he is leaving for Minsk, confirming that Max was previously asked to join her but changed his mind, indicating only one romantic partner (David).",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 568
+        },
+        {
+            "character": "Ariel",
+            "category": 6,
+            "question": "How many days after the no-date pact was the New Year's party held?",
+            "option": [
+                "A. 5 days",
+                "B. 10 days",
+                "C. 15 days",
+                "D. 16 days",
+                "E. 20 days"
+            ],
+            "answer": "D",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "session_2_date_time",
+                    "utterance": "December 15, 1994",
+                    "dia_id": "session_2_date_time"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "session_7_date_time",
+                    "utterance": "December 31, 1994",
+                    "dia_id": "session_7_date_time"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The initial no-date pact is discussed on December 15, 1994.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The party occurs on December 31, 1994, which is exactly 16 days after December 15, 1994.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "事实提取（单对话）",
+            "qid": 569
+        },
+        {
+            "character": "Dexter",
+            "category": 6,
+            "question": "How many members of the group are involved in a romantic relationship or romantic activity at the New Year's party?",
+            "option": [
+                "A. 1",
+                "B. 2",
+                "C. 3",
+                "D. 4",
+                "E. 5"
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "I snapped, okay? I couldn't handle the pressure and I snapped.",
+                    "dia_id": "3:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Ooh. Uh, I don't know how to tell you this, but she's in Chloe's bedroom, getting it on with Max, that scientist geek.",
+                    "dia_id": "7:54"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Paolo is gonna be in Rome this New Year...",
+                    "dia_id": "5:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter had a past relationship with Janice and is seemingly no longer with her.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Max and Sandy are described as being 'getting it on' with each other at the party.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel is in a relationship with Paolo, but it is confirmed that Paolo missed his flight and is not at the party.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 4,
+                    "inference": "Fiona is in a romantic relationship with David, as David clearly states that a trip to Minsk would force a breakup.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 5,
+                    "inference": "This makes a total of three relationships or interactions: Fiona/David, Max/Sandy, and (former) Dexter/Janice.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "episode": 10,
+            "label": "多跳",
+            "qid": 570
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Bennett",
+        "speaker_1": "All",
+        "speaker_2": "Chloe",
+        "speaker_3": "Ariel",
+        "speaker_4": "Fiona",
+        "speaker_5": "Dexter",
+        "session_1_date_time": "December 15, 1994",
+        "session_1": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:1",
+                "text": "Guys? There's a somebody I'd like you to meet."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "1:2",
+                "text": "Oooh!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:3",
+                "text": "W-wait. What is that?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:4",
+                "text": "'That' would be Marcel. You wanna say hi?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:5",
+                "text": "No, no, I don't."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:6",
+                "text": "Oh, he is precious! Where did you get him?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:7",
+                "text": "My friend Bethel rescued him from some lab."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:8",
+                "text": "That is so cruel! Why? Why would a parent name their child Bethel?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:9",
+                "text": "Hey, that monkey's got a Bennett on its ass!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:10",
+                "text": "Bennett, is he gonna live with you, like, in your apartment?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:11",
+                "text": "Yeah. I mean, it's been kinda quiet since Carol left, so..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:12",
+                "text": "Why don't you just get a roommate?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:13",
+                "text": "Nah, I dunno... I think you reach a certain age, having a roommate is kinda pathe-  ....sorry, that's, that's 'pathet', which is Sanskrit for 'really cool way to live'."
+            }
+        ],
+        "speaker_6": "Ethan",
+        "speaker_7": "Max",
+        "speaker_8": "David",
+        "session_2_date_time": "December 15, 1994",
+        "session_2": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:1",
+                "text": "So you guys, I'm doing all new material tonight. I have twelve new songs about my mother's suicide, and one about a snowman."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:2",
+                "text": "Might wanna open with the snowman."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:3",
+                "text": "Hey, Ethan. Hey, buddy."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:4",
+                "text": "So, how'd it go?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:5",
+                "text": "Ahhhhhh, I didn't get the job."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:6",
+                "text": "How could you not get it? You were Santa last year."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:7",
+                "text": "I dunno. Some fat guy's sleeping with the store manager. He's not even jolly, it's all political."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:8",
+                "text": "So what are you gonna be?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:9",
+                "text": "Ah, I'm gonna be one of his helpers. It's just such a slap in the face, y'know?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:10",
+                "text": "Hey, do you guys know what you're doing for New Year's?  Gee, what?! What is wrong with New Year's?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Nothing for you, you have Paolo. You don't have to face the horrible pressures of this holiday: desperate scramble to find anything with lips just so you can have someone to kiss when the ball drops!! Man, I'm talking loud!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:12",
+                "text": "Well, for your information, Paolo is gonna be in Rome this New Year, so I'll be just as pathetic as the rest of you."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:13",
+                "text": "Yeah, you wish!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:14",
+                "text": "It's just that I'm sick of being a victim of this Dick Clark holiday. I say this year, no dates, we make a pact. Just the six of us- dinner."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:15",
+                "text": "Yeah, okay. Alright."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:16",
+                "text": "Y'know, I was hoping for a little more enthusiasm."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:17",
+                "text": "Woooo! Yeah!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:18",
+                "text": "Fiona, you're on."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:19",
+                "text": "Oh, oh, good."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:20",
+                "text": "Okay, hi. Ladies and gentlemen, back by popular demand, Miss Fiona Buffay. Wooh!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:21",
+                "text": "Thanks, hi. Um, I wanna start with a song that means a lot to me this time of year."
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "2:22",
+                "text": "No. No, that's- that's okay."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:23",
+                "text": "Well, c'mon, if it's important enough to discuss while I'm playing, then I assume it's important enough for everyone else to hear!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:24",
+                "text": "That guy's going home with a note!"
+            },
+            {
+                "speaker": "David",
+                "dia_id": "2:25",
+                "text": "Noth- I was- I was just saying to my-"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:26",
+                "text": "Could you speak up please?"
+            },
+            {
+                "speaker": "David",
+                "dia_id": "2:27",
+                "text": "Sorry, I wa- I was just saying to my friend that I thought you were the most beautiful woman that I'd ever seen in my- in my life. And then he said that- you said you thought"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "2:28",
+                "text": "Daryl Hannah."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "2:29",
+                "text": "Daryl Hannah was the most beautiful woman that he'd ever seen in his life and I said yeah, I liked her in Splash, a lot, but not so much in- in Wall Street, I thought she had kind of a"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "2:30",
+                "text": "Hard quality."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "2:31",
+                "text": "-hard quality. And uh, while Daryl Hannah is beautiful in a conventional way, you are luminous with a kind of a delicate grace. Then, uh, that-that-that's when you started yelling."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:32",
+                "text": "Okay, we're gonna take a short break."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:33",
+                "text": "Hey, that guy's going home with more than a note!"
+            }
+        ],
+        "session_3_date_time": "December 20, 1994",
+        "session_3": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:1",
+                "text": "Come here, Marcel. Sit here."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:2",
+                "text": "Pheebs, I can't believe he hasn't kissed you yet. I mean God, by my sixth date with Paolo, I mean he had already named both my breasts! ...Ooh. Did I just share too much?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:3",
+                "text": "Just a smidge."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:4",
+                "text": "David's like, y'know, Scientist Guy. He's very methodical."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:5",
+                "text": "I think it's romantic."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:6",
+                "text": "Me too! Oh! Did you ever see An Officer and a Gentleman?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:7",
+                "text": "Yeah!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:8",
+                "text": "Well, he's kinda like the guy I went to see that with. Except, except he-he's smarter, and gentler, and sweeter... I just- I just wanna be with him all the time. Day and night, and night and day... and special occasions..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:9",
+                "text": "Wait a minute, wait a minute, I see where this is going, you're gonna ask him to New Year's, aren't you. You're gonna break the pact. She's gonna break the pact."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:10",
+                "text": "No, no, no, no, no, no. Yeah, could I just?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:11",
+                "text": "Yeah, 'cause I already asked Janice."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:12",
+                "text": "What?!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:13",
+                "text": "C'mon, this was a pact! This was your pact!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:14",
+                "text": "I snapped, okay? I couldn't handle the pressure and I snapped."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:15",
+                "text": "Yeah, but Janice? That-that was like the worst breakup in history!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:16",
+                "text": "I'm not saying it was a good idea, I'm saying I snapped!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:17",
+                "text": "Hi. Hi, sorry I'm late."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:18",
+                "text": "Too many jokes... must mock Ethan!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:19",
+                "text": "Nice shoes, huh?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:20",
+                "text": "Aah, y'killing me!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:21",
+                "text": "Bennett! He's playing with my spatulas again!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:22",
+                "text": "Okay, look, he's not gonna hurt them, right?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:23",
+                "text": "Do you always have to bring him here?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:24",
+                "text": "I didn't wanna leave him alone. Alright? We- we had our first fight this morning. I think it has to do with my working late. I said some things that I didn't mean, and he- he threw some faeces..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:25",
+                "text": "Y'know, if you're gonna work late, I could look in on him for you."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:26",
+                "text": "Oh, that'd be great! Okay, but if you do, make sure it seems like you're there to see him, okay, and you're not like doing it as a favour to me."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:27",
+                "text": "Okay, but if he asks, I'm not going to lie."
+            }
+        ],
+        "session_5_date_time": "December 29, 1994",
+        "session_5": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:1",
+                "text": "So tell me something. What does the phrase 'no date pact' mean to you?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:2",
+                "text": "I'm sorry, okay. It's just that Dexter has somebody, and Fiona has somebody- I thought I'd ask Fun Bobby."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:3",
+                "text": "Fun Bobby? Your ex-boyfriend Fun Bobby?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:4",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:5",
+                "text": "You know more than one Fun Bobby?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:6",
+                "text": "I happen to know a Fun Bob."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:7",
+                "text": "Okay, here we go..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:8",
+                "text": "Ooh ooh ooh ooh, there's no room for milk!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:9",
+                "text": "There. Now there is."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:10",
+                "text": "Okay, so on our no-date evening, three of you now have dates."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:11",
+                "text": "Uh, four."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:12",
+                "text": "Four."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:13",
+                "text": "Five."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:14",
+                "text": "Five."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:15",
+                "text": "Sorry. Paolo's catching an earlier flight."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:16",
+                "text": "Yeah, and I met this really hot single mom at the store. What's an elf to do?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:17",
+                "text": "Okay, so I'm gonna be the only one standing there alone when the ball drops?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:18",
+                "text": "Oh, c'mon. We'll have, we'll have a big party, and no-one'll know who's with who."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:19",
+                "text": "Hey, y'know, this is so not what I needed right now."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:20",
+                "text": "What's the matter?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:21",
+                "text": "Oh, it's-it's Marcel. He keeps shutting me out, y'know? He's walking around all the time dragging his hands..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:22",
+                "text": "That's so weird, I had such a blast with him the other night."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:23",
+                "text": "Really."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:24",
+                "text": "Yeah, we played, we watched TV.. that juggling thing is amazing."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:25",
+                "text": "What, uh... what juggling thing?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:26",
+                "text": "With the balled-up socks? I figured you taught him that."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:27",
+                "text": "No."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:28",
+                "text": "Y'know, it wasn't that big a deal. He just balled up socks... and a melon..."
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:29",
+                "text": "Fiona. Hi."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:30",
+                "text": "Oh, hi Max! Hey, do you know everybody?"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:31",
+                "text": "No. Have you seen David?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:32",
+                "text": "No, no, he hasn't been around."
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:33",
+                "text": "Well, if you see him, tell him to pack his bags. We are going to Minsk."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:34",
+                "text": "Minsk?"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:35",
+                "text": "Minsk. It's in Russia."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:36",
+                "text": "I know where Minsk is."
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:37",
+                "text": "We got the grant. Three years, all expenses paid."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:38",
+                "text": "So when, when do you leave?"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "5:39",
+                "text": "January first."
+            }
+        ],
+        "speaker_9": "Janice",
+        "speaker_10": "Sandy",
+        "session_7_date_time": "December 31, 1994",
+        "session_7": [
+            {
+                "speaker": "Janice",
+                "dia_id": "7:1",
+                "text": "I love this artichoke thing! Oh, don't tell me what's in it, the diet starts tomorrow!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:2",
+                "text": "You remember Janice."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:3",
+                "text": "Vividly."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:4",
+                "text": "Hi."
+            },
+            {
+                "speaker": "Sandy",
+                "dia_id": "7:5",
+                "text": "Hi, I'm Sandy."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:6",
+                "text": "Sandy! Hi! C'mon in! ...You brought your kids."
+            },
+            {
+                "speaker": "Sandy",
+                "dia_id": "7:7",
+                "text": "Yeah. That's okay, right?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:8",
+                "text": "Par-tay!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:9",
+                "text": "That thing is not coming in here."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:10",
+                "text": "'That thing'? This is how you greet guests at a party? Let me ask you something, if I showed up here with my new girlfriend, she wouldn't be welcome in your home?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:11",
+                "text": "I'm guessing your new girlfriend wouldn't urinate on my coffee table."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:12",
+                "text": "Okay. He was more embarrassed about that than anyone. Okay? And for him to have the courage to walk back in here like nothing happened..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:13",
+                "text": "Alright. Just keep him away from me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:14",
+                "text": "Thank you.  C'mon, Marcel, whaddya say you and I do a little mingling?  Alright, I'll, uh... catch up with you later."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:15",
+                "text": "Oh my gosh! Ariel, honey.. are you okay? Where-where's Paolo?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:16",
+                "text": "Rome. Jerk missed his flight."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:17",
+                "text": "And then... your face is bloated?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:18",
+                "text": "No. Okay. I was at the airport, getting into a cab, when this woman- this blonde planet with a pocketbook- starts yelling at me. Something about how it was her cab first. And then the next thing I know she just starts- starts pulling me out by my hair! So I'm blowing my attack whistle thingy and three more cabs show up, and as I'm going to get into a cab she tackles me. And I hit my head on the kerb and cut my lip on my whistle...oh...everybody having fun at the party?  Are people eating my dip?"
+            },
+            {
+                "speaker": "Sandy",
+                "dia_id": "7:19",
+                "text": "Y'know, when I saw you at the store last week, it was probably the first time I ever mentally undressed an elf."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:20",
+                "text": "Wow, that's, uh, dirty."
+            },
+            {
+                "speaker": "Sandy",
+                "dia_id": "7:21",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:22",
+                "text": "Hey, kids..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:23",
+                "text": "Look at him. I'm not saying he has to spend the whole evening with me, but at least check in."
+            },
+            {
+                "speaker": "Janice",
+                "dia_id": "7:24",
+                "text": "There you are! Haaah, you got away from me!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:25",
+                "text": "But you found me!"
+            },
+            {
+                "speaker": "Janice",
+                "dia_id": "7:26",
+                "text": "Here, Bennett, take our picture.  Smile! You're on Janice Camera!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:27",
+                "text": "Kill me. Kill me now."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:28",
+                "text": "Hey everybody! It's Fun Bobby!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:29",
+                "text": "Hey Fun Bobby! Whoah! Who died?"
+            },
+            {
+                "speaker": "Janice",
+                "dia_id": "7:30",
+                "text": "Oh, I'm gonna blow this one up, and I'm gonna write 'Reunited' in glitter."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:31",
+                "text": "Alright, Janice, that's it! Janice... Janice... Hey, Janice, when I invited you to this party I didn't necessarily think that it meant that we-"
+            },
+            {
+                "speaker": "Janice",
+                "dia_id": "7:32",
+                "text": "Oh, no. Oh, no."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:33",
+                "text": "I'm sorry you misunderstood..."
+            },
+            {
+                "speaker": "Janice",
+                "dia_id": "7:34",
+                "text": "Oh my God. You listen to me, Dexter, you listen to me. One of these times is just gonna be your last chance with me."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:35",
+                "text": "Oh, will you give me the thing."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:36",
+                "text": "Hi, Max!"
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "7:37",
+                "text": "Yoko.  I've decided to go to Minsk without you."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:38",
+                "text": "Wow."
+            },
+            {
+                "speaker": "Max",
+                "dia_id": "7:39",
+                "text": "It won't be the same- but it'll still be Minsk. Happy New Year."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:40",
+                "text": "Are you alright?"
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:41",
+                "text": "Yeah, I'm fine, I'm fine."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:42",
+                "text": "You're going to Minsk."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:43",
+                "text": "No, I'm... not going to Minsk."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:44",
+                "text": "Oh, you are so going to Minsk. You belong in Minsk. You can't stay here just 'cause of me."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:45",
+                "text": "Yes I can. Because if I go it means I have to break up with you, and I can't break up with you."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:46",
+                "text": "Oh yes, yes, yes you can. Just say, um, 'Fiona, my work is my life and that's what I have to do right now'. And I say 'your work?! Your work?! How can you say that?!'. And then you say, um, 'it's tearing me apart, but I have no choice. Can't you understand that?'. And I say  'no! No! I can't understand that!'."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:47",
+                "text": "Uh, ow."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:48",
+                "text": "Ooh, sorry. Um, and, and then you put your arms around me. And then you put your arms around me.  And, um, and then you tell me that you love me and you'll never forget me."
+            },
+            {
+                "speaker": "David",
+                "dia_id": "7:49",
+                "text": "I'll never forget you."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:50",
+                "text": "And then you say that it's almost midnight and you have to go because you don't wanna start the new year with me if you can't finish it.  I'm gonna miss you. You scientist guy."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:51",
+                "text": "There y'go, kids."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:52",
+                "text": "And then the peacock bit me.  Please kiss me at midnight."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:53",
+                "text": "You seen Sandy?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:54",
+                "text": "Ooh. Uh, I don't know how to tell you this, but she's in Chloe's bedroom, getting it on with Max, that scientist geek. Ooh, look at that, I did know how to tell you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:55",
+                "text": "Vrrbddy, the bll is drrbing."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "7:56",
+                "text": "What?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:57",
+                "text": "The bll is drrbing!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:58",
+                "text": "And the moment of joy is upon us."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:59",
+                "text": "Looks like that no date pact thing worked out."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:60",
+                "text": "Everybody looks so happy. I hate that."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:61",
+                "text": "Not everybody's happy. Hey Bobby!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:62",
+                "text": "Y'know, I uh.. just thought I'd throw this out here. I'm no math whiz, but I do believe there are three girls and three guys right here."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:63",
+                "text": "I dunno. I don't feel like kissing anyone tonight."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:64",
+                "text": "I can't kiss anyone."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:65",
+                "text": "So I'm kissing everyone?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:66",
+                "text": "Nonono, you can't kiss Bennett, that's your brother."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:67",
+                "text": "Perfect. Perfect. So now everybody's getting kissed but me."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:68",
+                "text": "Alright, somebody kiss me. Somebody kiss me, it's midnight! Somebody kiss me!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:69",
+                "text": "Alrightalrightalright.  There."
+            }
+        ],
+        "session_8_date_time": "January 1, 1994",
+        "session_8": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:1",
+                "text": "I wanted this to work so much. I mean I'm still in there, changing his diapers, pickin' his fleas... but he's just phoning it in. Just so hard to accept the fact that something you love so much doesn't love you back."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:2",
+                "text": "...I think that bitch cracked my tooth."
+            }
+        ]
+    }
+}

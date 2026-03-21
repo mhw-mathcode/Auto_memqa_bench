@@ -11,7 +11,9 @@
       "function": "generate_qa_v0",
       "api_required": true,
       "description": "步骤 0: 生成原始问答对",
+      "skip": false,
       "force_generate_new_qa": false,
+      "speaker_batch_size": 8,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -22,6 +24,7 @@
       "function": "evidence_check_main",
       "api_required": true,
       "description": "步骤 1: 题目合理性检测 (v0 -> v1a -> v1b)",
+      "skip": false,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -32,6 +35,7 @@
       "function": "label_main",
       "api_required": true,
       "description": "步骤 2: 题目标注 (v1b -> v2)",
+      "skip": false,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -42,6 +46,7 @@
       "function": "new_qa_main",
       "api_required": true,
       "description": "步骤 3: 问答精炼重构 (v2 -> v3)",
+      "skip": false,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -52,6 +57,7 @@
       "function": "pollution_check_main",
       "api_required": true,
       "description": "步骤 4: 题目乱序和污染检查 (v3 -> v4)",
+      "skip": false,
       "enable_contamination_check": true,
       "cleanup_temp_files": true,
       "llm": {
@@ -59,6 +65,12 @@
         "base_url": "https://api.example.com/v1",
         "api_key": "YOUR_API_KEY_HERE"
       }
+    },
+    "step_5_finalize": {
+      "function": "finalize_main",
+      "api_required": false,
+      "description": "步骤 5: 生成最终版本 (v4 -> final)",
+      "skip": false
     }
   },
   "tools": {

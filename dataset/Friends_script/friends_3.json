@@ -1,0 +1,2737 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "What stable trait defines Ariel's professional attitude and the group's perception of her work progress throughout the various coffee shop interactions?",
+            "option": [
+                "A. She is consistently accurate in her orders but is criticized for her lack of enthusiasm by the group.",
+                "B. She maintains a high level of self-assurance in her service skills despite her friends' later doubts about her accuracy.",
+                "C. She is primarily motivated by the desire to meet Alan's family rather than improving her skills as a server.",
+                "D. She consistently prioritizes her dating life with Alan over any significant improvement in her work performance.",
+                "E. She remains discouraged and insecure about her ability to memorize drinks throughout every single session."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Decaf cappucino for Ethan.. Coffee black.. Late.. And an iced tea. I'm getting pretty good at this!",
+                    "dia_id": "3:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "\"Indeed there isn't\"... I should really get back to work.",
+                    "dia_id": "10:18"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Yeah, 'cause otherwise someone might get what they actually ordered.",
+                    "dia_id": "10:19"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 3, Ariel expresses self-satisfaction and believes she is improving at serving drinks.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By Session 10, she still shows dedication to her work by wanting to return to it during a group conflict.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Fiona's sarcasm in Session 10 suggests that Ariel's perceived accuracy might not be as high as Ariel believes, showing a gap between Ariel's self-assurance and the group's reality.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "When did Ariel express a desire for Alan to meet her family, and how did this relate to her feelings about the relationship's longevity?",
+            "option": [
+                "A. In Session 5, right after meeting him, because she believed he was the 'yardstick' for all future boyfriends.",
+                "B. In Session 3, when she initially told the group she was having fun and things were going well.",
+                "C. In Session 13, because she believed Alan could be 'the one' and had planned for him to meet them during the holidays.",
+                "D. In Session 15, while reminiscing about their time renting boats in Central Park with the rest of the group.",
+                "E. In Session 6, after Alan helped the group win their softball game against the Hassidic jewellers."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Nono, I th- I think this could be, y'know, it.",
+                    "dia_id": "5:30"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I just can't believe this! I mean, with the holidays coming up- I wanted him to meet my family-",
+                    "dia_id": "13:38"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel indicates in Session 5 that she believes Alan could be 'it' (a long-term partner).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In Session 13, following the news of the breakup, she reveals she had specific plans for him to meet her family during the upcoming holidays.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "How does Ariel's reaction to dating clichés change from her initial conversation with Fiona to the group's discussion about Alan?",
+            "option": [
+                "A. She initially thinks 'we should do this again' is a positive sign but eventually uses dating language to cushion her own blows.",
+                "B. She remains the most skeptical member of the group, never accepting the 'dating language' explained by Ethan and Chloe.",
+                "C. She transitions from being confused by dating euphemisms to being the primary advocate for Alan's 'innate Alan-ness'.",
+                "D. She starts as a novice in dating language and ends by teaching the group new terms based on her experience with Alan.",
+                "E. She initially understands dating language perfectly but later becomes confused by Chloe's reasons for breaking up."
+            ],
+            "answer": "C",
+            "label": "Multi-hop",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "What? He said 'we should do it again', that's good, right?",
+                    "dia_id": "1:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "And everybody knows this?",
+                    "dia_id": "1:12"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "Well, no. That's impossible. You can never be too Alan.",
+                    "dia_id": "6:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel is initially naive about 'dating language,' incorrectly interpreting a rejection phrase as a positive one.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "As her relationship with Alan progresses through the group's influence, she becomes deeply invested in his persona, defending him against any criticism.",
+                    "based_on": [
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The state transition is from naive observer of dating norms to a devoted partner (socially) who rejects the idea that a person can be 'too much' of themselves.",
+                    "based_on": [
+                        "E1",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "What role did Ariel play in the group's collective bonding with Alan, and how did she describe his impact on them as a unit?",
+            "option": [
+                "A. She was the first to criticize him but changed her mind after he bought the group coffee.",
+                "B. She felt that Alan was responsible for transforming the group from individuals into a cohesive team.",
+                "C. She acted as a mediator between Chloe and Alan when the group started 'Alan-bashing'.",
+                "D. She was the one who suggested renting boats in Central Park to test Alan's viking-like strength.",
+                "E. She coordinated the plan to pay Fiona seven thousand dollars to stop Dexter from smoking."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I mean, it-it was like, it was like he made us into a team.",
+                    "dia_id": "6:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Remember when we went to Central Park and rented boats?.. That was fun.",
+                    "dia_id": "15:1"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel specifically credits Alan with the group's newfound sense of teamwork after the softball game.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She later reinforces this bond by reminiscing about shared group activities like the boat rental.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "Which specific set of drinks did Ariel serve to her friends in the coffee shop, as recorded during her attempt to prove her mastery of the job?",
+            "option": [
+                "A. A decaf cappuccino, a black coffee, a latte, and an iced tea.",
+                "B. Three black coffees, one latte, and a decaf cappuccino for Ethan.",
+                "C. An iced tea for Fiona, a latte for Chloe, and two cappuccinos.",
+                "D. A decaf latte, a black coffee, an herbal tea, and a cappuccino.",
+                "E. Two decaf cappuccinos, a black coffee, and a hot tea."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Alright, don't tell me, don't tell me!  Decaf cappucino for Ethan.. Coffee black.. Late.. And an iced tea. I'm getting pretty good at this!",
+                    "dia_id": "3:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel lists the four specific drinks she is serving: Decaf cappuccino, Coffee black, Latte (misspelled as 'Late'), and Iced tea.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 6,
+            "question": "Based on the dialogue, what lesson did Ariel learn about the significance of the phrase 'We should do this again' in a dating context?",
+            "option": [
+                "A. It means the person is genuinely interested but currently too busy to schedule a second date.",
+                "B. It is a polite way of saying the person found the date average but is open to a friendship.",
+                "C. It is 'dating language' that effectively translates to never seeing the other person naked again.",
+                "D. It is a sign that the date went exceptionally well and a commitment is imminent.",
+                "E. It is an invitation to immediately schedule a follow-up activity like renting boats."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Um, not so good. He walked me to the subway and said 'We should do this again!'",
+                    "dia_id": "1:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Uh, no. Loosely translated 'We should do this again' means 'You will never see me naked'.",
+                    "dia_id": "1:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "And everybody knows this?",
+                    "dia_id": "1:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel initially questions the negative reaction to the phrase.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe provides the 'lesson' or translation of the phrase as a clear rejection.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel acknowledges that this is common knowledge she was previously unaware of.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 7,
+            "question": "What specific future event involving Alan did Ariel mention she was disappointed about missing due to the breakup?",
+            "option": [
+                "A. A planned trip to the Millners' farm in Connecticut to see the horses.",
+                "B. A follow-up softball game against the Hassidic jewellers.",
+                "C. A New Year's Eve party where Dexter was going to do impressions.",
+                "D. Having Alan meet her family during the upcoming holiday season.",
+                "E. Going back to Central Park to rent boats for a second time."
+            ],
+            "answer": "D",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I just can't believe this! I mean, with the holidays coming up- I wanted him to meet my family-",
+                    "dia_id": "13:38"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel explicitly states her commitment/plan was for Alan to meet her family during the holidays.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "What linguistic habit of Bennett's does Dexter identify as an annoying personal flaw, and how does Bennett defend it?",
+            "option": [
+                "A. His tendency to use excessive sarcasm; he claims it's just his way of being funny.",
+                "B. His habit of cracking his knuckles; he argues that it helps him focus during conversations.",
+                "C. His over-pronunciation of every single word; he defends it as simply speaking correctly.",
+                "D. His constant hair-chewing; he argues that it is an endearing habit that cushions the blow.",
+                "E. His frequent use of dating clichés; he claims it is necessary for social cohesion."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "And Bennett, with his over-pronouncing every single word? ...I accept all those flaws, why can't you accept me for this?",
+                    "dia_id": "10:11"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "You know, there's nothing wrong with speaking correctly.",
+                    "dia_id": "10:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter lists Bennett's over-pronunciation as a flaw alongside others' habits.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett explicitly defends the habit by framing it as 'speaking correctly.'",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "What specific details does Bennett recall about the 'farm' where his childhood dog Chi Chi supposedly went to live?",
+            "option": [
+                "A. It was located in New Jersey and owned by a family named the Millners who had many rabbits.",
+                "B. It was the Millners' farm in Connecticut, featuring horses and rabbits for the dog to chase.",
+                "C. It was a giant karmic farm where dogs went to live out their lives after being put to sleep.",
+                "D. It was a property in Central Park where the dog could run around while people rented boats.",
+                "E. It was a farm owned by Hassidic jewellers who also played softball on the weekends."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "What? Wh- hello? The Millners' farm in Connecticut? The Millners, they had this unbelievable farm, they had horses, and, and rabbits that he could chase and it was- it w- .....Oh my God, Chi Chi!",
+                    "dia_id": "1:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett identifies the location (Connecticut), the owners (The Millners), and the animals (horses, rabbits) present on the farm.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "What shift occurs in Bennett's understanding of his childhood pet's fate between the first session and his later interactions with the group?",
+            "option": [
+                "A. He initially believes Chi Chi is alive but later admits he knew the truth the entire time.",
+                "B. He transitions from defending his parents' story to finally accepting that the dog was put to sleep.",
+                "C. He moves from anger at his parents to a state of nostalgic reminiscence about the Millners' farm.",
+                "D. He starts by believing the dog was on a farm and ends by finding out the dog was actually in Central Park.",
+                "E. He remains convinced the dog is on the farm but stops talking about it to avoid Dexter's mockery."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "That's funny, that, no, because, uh, our parents actually did, uh, send our dog off to live on a farm.",
+                    "dia_id": "1:15"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": ".....Oh my God, Chi Chi!",
+                    "dia_id": "1:17"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "Yeah, well, you didn't know Chi Chi.",
+                    "dia_id": "5:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 1, Bennett initially argues with Dexter, insisting his dog really went to a farm.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The realization hits him in 1:17 that the 'farm' was a euphemism for the dog being put to sleep.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In Session 5, his tone changes to somber reflection, showing he has moved past the denial phase.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "How did Bennett describe his personal emotional response to Alan, and what specific physical skill of Alan's did he admire?",
+            "option": [
+                "A. He felt Alan was like a brother and admired his ability to crack his knuckles loudly.",
+                "B. He felt better about himself around Alan and admired his viking-like rowing skills.",
+                "C. He was jealous of Alan's relationship with Chloe and hated his David Hasselhoff impression.",
+                "D. He felt insecure around Alan's 'innate Alan-ness' but admired his crooked smile.",
+                "E. He felt annoyed by Alan's presence but admired his ability to play every position in softball."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "The way he makes me feel about myself.",
+                    "dia_id": "5:35"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Yeah. He could row like a viking.",
+                    "dia_id": "15:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett states that Alan's primary impact was making Bennett feel good about himself.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He later reminisces about Alan's physical prowess, specifically his rowing ability.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "According to Bennett's description in the first session, what were the names of the owners of the farm in Connecticut?",
+            "option": [
+                "A. The Millners",
+                "B. The Hassidics",
+                "C. The Hasselhoffs",
+                "D. The Steve-sons",
+                "E. The Buffays"
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "What? Wh- hello? The Millners' farm in Connecticut? The Millners, they had this unbelievable farm...",
+                    "dia_id": "1:17"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett identifies the owners of the farm as 'The Millners'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 6,
+            "question": "What 'lesson' or advice does Ethan give Bennett regarding his fixation on the story of Chi Chi in Session 5?",
+            "option": [
+                "A. To go to Connecticut and find the farm himself.",
+                "B. To accept that the dog was actually sent to a farm with horses.",
+                "C. To 'let it go' and move on from the realization of the dog's death.",
+                "D. To start over-pronouncing his words more to feel better.",
+                "E. To measure future dogs against the yardstick of Chi Chi."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Let it go, Bennett.",
+                    "dia_id": "5:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Yeah, well, you didn't know Chi Chi.",
+                    "dia_id": "5:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan tells Bennett to 'let it go,' referring to the dog story.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett's response confirms he is still struggling with the meta-cognitive process of letting go of that childhood belief.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 7,
+            "question": "What immediate action did Bennett propose to take to help Dexter with his smoking relapse in Session 13?",
+            "option": [
+                "A. He suggested giving Dexter seven thousand dollars to quit.",
+                "B. He decided it was time to change Dexter's nicotine patch.",
+                "C. He planned to take Dexter to the Millners' farm for a distraction.",
+                "D. He intended to call Alan to give Dexter another pep talk.",
+                "E. He proposed they all go rent boats in Central Park again."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Okay. I think it's time to change somebody's nicotine patch.",
+                    "dia_id": "13:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett explicitly states he thinks it's time to change the nicotine patch, which is a specific task/commitment to help Dexter.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "Which idiosyncratic behavioral flaw of Chloe's is highlighted by the group as an annoying habit she exhibits while laughing?",
+            "option": [
+                "A. She chews her hair nervously whenever she finds something funny.",
+                "B. She cracks her knuckles loudly at the end of every joke.",
+                "C. She makes a snorting sound whenever she laughs.",
+                "D. She over-pronounces words to make her humor seem more sophisticated.",
+                "E. She smokes cigarettes only when she is laughing at Dexter's jokes."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "And Chloe, with that snort when she laughs? I mean, what the hell is that thing?",
+                    "dia_id": "10:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter explicitly identifies Chloe's 'snort when she laughs' as her specific flaw.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "Why did Chloe initially refuse to let her friends meet Alan, and what previous event did she cite as the reason for her caution?",
+            "option": [
+                "A. She was afraid they would bash him; she cited the time they were mean to a guy named Steve.",
+                "B. she didn't know how she felt about him yet; she cited the bad experience with Steve.",
+                "C. She thought he was 'too Alan' for them; she cited the softball game incident.",
+                "D. She was embarrassed by his crooked smile; she cited the 'crooked man' nursery rhyme.",
+                "E. She didn't want him to see Fiona chewing her hair; she cited Fiona's karmic debt."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "No. Not after what happened with Steve.",
+                    "dia_id": "3:39"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Look, I don't even know how I feel about him yet. Just give me a chance to figure that out.",
+                    "dia_id": "3:41"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe mentions a past event with 'Steve' as a deterrent for introducing Alan.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She explains she needs time to figure out her own feelings first.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "How did Chloe's stated feelings for Alan evolve from Session 3 to the time she decided to break up with him?",
+            "option": [
+                "A. She went from being 'unsure' to believing he was 'the one' after the softball game, then back to being unsure.",
+                "B. She initially loved him deeply but realized he was 'too Alan' after he gave Dexter a pep talk.",
+                "C. She moved from uncertainty about her feelings to concluding that 'things change' and she could no longer pretend.",
+                "D. She started the relationship with full confidence but ended it because her friends liked him more than she did.",
+                "E. She transitioned from hiding him from her friends to breaking up with him solely because Fiona found a thumb."
+            ],
+            "answer": "C",
+            "label": "Temporal Evolution Category",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Look, I don't even know how I feel about him yet.",
+                    "dia_id": "3:41"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "I've decided to break up with Alan. ...it's just.. things change. People change.",
+                    "dia_id": "13:26-28"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Look, I- I could go on pretending-",
+                    "dia_id": "13:32"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 3, Chloe is in an uncertain state, needing time to 'figure it out.'",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By Session 13, she has reached a decision to end it, citing personal change.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "She admits she had been 'pretending' to some extent, marking a shift from genuine exploration to a performative state before the final break.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "What was the group's reaction to Chloe's previous boyfriend, Steve, as compared to their reaction to Alan?",
+            "option": [
+                "A. They hated Steve and called him names, but they loved Alan's crooked smile.",
+                "B. They thought Steve was 'schhexy' and loved him, and they also loved Alan.",
+                "C. They didn't know Steve at all, which is why Chloe was so nervous about Alan.",
+                "D. They found Steve annoying because of his knuckle-cracking, whereas Alan was a team player.",
+                "E. They compared Steve to a viking, but Alan was compared to a yardstick."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "What are you talking about? We love Schhteve! Schhteve was schhexy!.. Sorry.",
+                    "dia_id": "3:40"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "All",
+                    "utterance": "Loved him! Yeah! He's great!",
+                    "dia_id": "5:21"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter clarifies that the group actually loved Steve and found him attractive.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The group's reaction to Alan is similarly enthusiastic, which contradicts Chloe's fear of them 'bashing' him.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "On which specific day of the week did Chloe initially tell her friends she would 'never' let them meet Alan?",
+            "option": [
+                "A. Monday",
+                "B. Wednesday",
+                "C. Friday",
+                "D. Sunday",
+                "E. Saturday"
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Let's see, today's Monday... Never.",
+                    "dia_id": "3:37"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe explicitly states 'today's Monday' in the context of the meeting discussion.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 6,
+            "question": "What meta-cognitive reflection did Chloe share regarding the fairness of her relationship with Alan before she ended it?",
+            "option": [
+                "A. She felt it was unfair to her friends because they liked Alan more than she did.",
+                "B. She believed pretending to have feelings was unfair to herself, to Alan, and to her friends.",
+                "C. She thought it was unfair that Alan was so good at softball while the rest of them were bad.",
+                "D. She reflected that it was unfair to the bank that Fiona received so much extra money.",
+                "E. She concluded that the 'dating language' Ethan described was fundamentally unfair to women."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "-but that wouldn't be fair to me, it wouldn't be fair to Alan- It wouldn't be fair to you!",
+                    "dia_id": "13:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe explains her logic for breaking up: continuing to pretend would be an act of unfairness toward all three parties involved (herself, her partner, and her social circle).",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 7,
+            "question": "What was Chloe's immediate plan for the evening in Session 3, and how did she feel about the prospect of meeting her date?",
+            "option": [
+                "A. She was going to change for a date with Alan and felt excited because they were having fun.",
+                "B. She was planning to stay and help Ariel with coffee orders because they were short-staffed.",
+                "C. She was going to meet Steve to discuss why the group liked him so much.",
+                "D. She was going to Connecticut to visit a farm she heard about from Bennett.",
+                "E. She was planning to go to Central Park to rent boats with the entire group."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Alright. I'm gonna go change, I've got a date.",
+                    "dia_id": "3:33"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "'S'going pretty good, y'know? It's nice, and, we're having fun.",
+                    "dia_id": "3:35"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe explicitly states her plan to go change for a date.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She characterizes her feelings about the relationship as positive ('nice' and 'fun') at that time.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "What is Dexter's persistent attitude toward smoking, even when confronted with the health risks by his friends?",
+            "option": [
+                "A. He admits he is weak and hates himself for relapsing after three years.",
+                "B. He believes smoking is fundamentally 'cool' and is tired of hearing about disease.",
+                "C. He thinks smoking is a reward for his three years of being good and selfless.",
+                "D. He only smokes because he enjoys the David Hasselhoff impression it allows him to do.",
+                "E. He believes smoking helps him accept the flaws of his friends, like Chloe's snorting."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "And this- is my reward!",
+                    "dia_id": "3:27"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "The bottom line is, smoking is cool, and you know it.",
+                    "dia_id": "12:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter initially frames his relapse as a 'reward' for his past efforts.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He later explicitly states a core value/attribute: that he views smoking as inherently 'cool' and dismisses his friends' medical concerns.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "What occurred during the phone call between Dexter and Alan in Session 12, and how did it affect Dexter's behavior?",
+            "option": [
+                "A. Alan mocked Dexter's smoking, causing Dexter to angrily hang up and buy more cigarettes.",
+                "B. Alan gave Dexter a new perspective on smoking that Dexter admitted no one had ever used before.",
+                "C. Alan asked Dexter to do his David Hasselhoff impression, which cheered Dexter up.",
+                "D. Alan revealed he was breaking up with Chloe, which caused Dexter to start smoking again.",
+                "E. Alan offered Dexter seven thousand dollars to quit, but Dexter refused the money."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Gee, y'know, no-one- no-one's ever put it like that before. Well, okay, thanks!",
+                    "dia_id": "12:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter has a conversation with Alan over the phone where Alan uses a novel argument to address Dexter's smoking habit.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "Which sequence best tracks Dexter's relationship with nicotine across the entire timeline of the sessions?",
+            "option": [
+                "A. Smoked for three years, quit for three days, then relapsed during the Alan-bashing session.",
+                "B. Quit for three years, relapsed, and finally agreed to quit again in exchange for a large sum of money.",
+                "C. Relapsed because of the bank error, quit for Alan, then relapsed again because of the breakup.",
+                "D. Never actually quit smoking but successfully hid it from his friends until Fiona found a thumb.",
+                "E. Quit smoking for seven thousand dollars at the start and never looked back during the observed dates."
+            ],
+            "answer": "B",
+            "label": "Temporal Evolution Category",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, I can't believe you! You've been so good, for three years!",
+                    "dia_id": "3:26"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "I'm smoking. I'm smoking, I'm smoking.",
+                    "dia_id": "3:25"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "If you never smoke again I'll give you seven thousand dollars!",
+                    "dia_id": "15:13"
+                },
+                {
+                    "id": "E4",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, alright.",
+                    "dia_id": "15:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The dialogue establishes that Dexter had not smoked for three years prior to the events of Session 3.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He relapses in Session 3.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "In the final session, he agrees to quit again based on Fiona's financial incentive.",
+                    "based_on": [
+                        "E3",
+                        "E4"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "What specific social activity involving Alan did Dexter express a plan to replicate at parties?",
+            "option": [
+                "A. Alan's viking-style rowing technique from Central Park.",
+                "B. Alan's crooked smile from the nursery rhyme.",
+                "C. Alan's impression of David Hasselhoff.",
+                "D. Alan's ability to play every position in softball.",
+                "E. Alan's way of picking at things while eating."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Oh, yeah. I'd marry him just for his David Hasselhof impression alone. You know I'm gonna be doing that at parties, right?",
+                    "dia_id": "5:32"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter expresses a high level of social admiration for Alan's Hasselhoff impression and intends to perform it himself.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "In the context of the soda-related lawsuit, how many years did Fiona claim Dexter had been 'good' (non-smoking) before his relapse?",
+            "option": [
+                "A. One year",
+                "B. Two years",
+                "C. Three years",
+                "D. Five years",
+                "E. Seven years"
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, I can't believe you! You've been so good, for three years!",
+                    "dia_id": "3:26"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona explicitly mentions the duration of Dexter's abstinence was 'three years'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 6,
+            "question": "What logic does Dexter use to argue that his friends should accept his flaw of smoking, and what specific flaws does he attribute to them?",
+            "option": [
+                "A. He argues that smoking is a 'reward' and they should reward themselves for their own quirks too.",
+                "B. He believes since he accepts Ethan's knuckle-cracking and Bennett's over-pronunciation, they should accept his smoking.",
+                "C. He claims that since Alan accepted him, they have no right to judge him for his habits.",
+                "D. He argues that his smoking is less annoying than Fiona's hair-chewing and Ariel's bad coffee service.",
+                "E. He reflects that since he killed Ethan for eating his gum, he is beyond their judgement anyway."
+            ],
+            "answer": "B",
+            "label": "Multi-hop",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Like Ethan's constant knuckle-cracking isn't annoying? And Bennett, with his over-pronouncing every single word? And Chloe, with that snort when she laughs? ...I accept all those flaws, why can't you accept me for this?",
+                    "dia_id": "10:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter lists the flaws of three other group members: Ethan (knuckle-cracking), Bennett (over-pronunciation), and Chloe (snorting).",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He builds a meta-cognitive argument for mutual acceptance based on his own tolerance of their behaviors.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 7,
+            "question": "What was Dexter's final stated intention in the last session regarding his habit, and what triggered this decision?",
+            "option": [
+                "A. He intended to stop smoking forever because he realized Alan wouldn't approve.",
+                "B. He decided to continue smoking because the game was over and he felt weak.",
+                "C. He agreed to never smoke again in exchange for seven thousand dollars from Fiona.",
+                "D. He planned to go to Central Park to clear his head after the breakup with Alan.",
+                "E. He intended to buy a football phone to distract himself from the urge to smoke."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "If you never smoke again I'll give you seven thousand dollars!",
+                    "dia_id": "15:13"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, alright.",
+                    "dia_id": "15:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona offers a specific financial commitment ($7,000) for Dexter's future behavior.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter accepts the deal, forming a commitment to quit.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "What persistent physical habit does Ethan possess that is noted by the group as being highly annoying?",
+            "option": [
+                "A. Over-pronouncing every single word.",
+                "B. Constant knuckle-cracking.",
+                "C. Snorting when he laughs.",
+                "D. Chewing on his own hair.",
+                "E. Picking at his food crookedly."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Like Ethan's constant knuckle-cracking isn't annoying?",
+                    "dia_id": "10:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter explicitly names 'Ethan's constant knuckle-cracking' as a flaw.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "What explanation did Ethan provide for the meaning of certain 'dating language' phrases in the first session?",
+            "option": [
+                "A. He explained that 'I'm busy' actually means 'I'm already seeing other people'.",
+                "B. He stated that 'It's not you' really means 'It is you' and cushions the blow.",
+                "C. He claimed that 'We should do this again' means 'You will never see me naked'.",
+                "D. He argued that 'You're a nice guy' means 'I'm dating alcoholics'.",
+                "E. He suggested that 'I think we should see other people' is a sign of true honesty."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Since always. It's like dating language. Y'know, like 'It's not you' means 'It is you'.",
+                    "dia_id": "1:9"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Yeah. Cushions the blow.",
+                    "dia_id": "1:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan identifies 'dating language' and provides a specific translation for 'It's not you'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He clarifies the purpose of this language is to 'cushion the blow'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "How did Ethan's tone toward Dexter's smoking habit change between Session 3 and Session 5?",
+            "option": [
+                "A. He went from encouraging Dexter to keep it to being the one who demanded he put it out.",
+                "B. He moved from initial annoyance to helping Dexter by letting his 'filter-tipped buddy' stay outside.",
+                "C. He transitioned from ignorance of the habit to mocking Dexter's weakness in every session.",
+                "D. He initially defended the smoking as 'cool' but later joined the group in Alan-bashing.",
+                "E. He remained consistently supportive of Dexter's right to smoke throughout all sessions."
+            ],
+            "answer": "B",
+            "label": "Temporal Evolution Category",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "All",
+                    "utterance": "Ohhh! Put it out!",
+                    "dia_id": "3:30"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "You can come in, but your filter-tipped little buddy has to stay outside!",
+                    "dia_id": "5:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 3, Ethan is part of the collective shouting at Dexter to put the cigarette out.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By Session 5, he uses a more humorous, conditional approach, referring to the cigarette as a 'filter-tipped little buddy'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "What secret about Bennett's childhood dog did Ethan help reveal to Bennett in the presence of the group?",
+            "option": [
+                "A. That the dog was actually living in Central Park renting boats.",
+                "B. That the 'farm' was a lie and the dog was actually put to sleep.",
+                "C. That the Millners were actually Hassidic jewellers who stole the dog.",
+                "D. That the dog had died of emphysema and heart disease from smoking.",
+                "E. That the dog was actually a sock puppet named Lambchop."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Yeah, it's like when you're a kid, and your parents put your dog to sleep, and they tell you it went off to live on some farm.",
+                    "dia_id": "1:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "That's funny, that, no, because, uh, our parents actually did, uh, send our dog off to live on a farm.",
+                    "dia_id": "1:15"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Uh, Bennett.",
+                    "dia_id": "1:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "While Dexter initiates the 'farm' comparison, the dialogue sequence between Dexter, Bennett, and Chloe (with Ethan present) leads to Bennett's realization that his parents lied.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "What exact drink order did Ethan receive from Ariel in the third session?",
+            "option": [
+                "A. A black coffee",
+                "B. A latte",
+                "C. A decaf cappuccino",
+                "D. An iced tea",
+                "E. An herbal tea"
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Alright, don't tell me, don't tell me!  Decaf cappucino for Ethan..",
+                    "dia_id": "3:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel identifies the 'decaf cappucino' as Ethan's specific order.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 6,
+            "question": "Upon learning that his friends found his habit annoying, how did Ethan's self-perception or inquiry into the group's opinion manifest?",
+            "option": [
+                "A. He immediately stopped doing it and apologized to everyone.",
+                "B. He asked if it was more or less annoying than Fiona chewing her hair.",
+                "C. He argued that it wasn't as bad as Bennett's over-pronunciation.",
+                "D. He claimed that Alan told him the habit was actually endearing.",
+                "E. He joked that he would stop if Fiona gave him seven thousand dollars."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Well, is it, like, a little annoying, or is it like when Fiona chews her hair?",
+                    "dia_id": "10:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan attempts to gauge the severity of his 'flaw' by comparing it to another person's habit (Fiona's hair chewing).",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 7,
+            "question": "What future social milestone was Ethan eager to achieve regarding Chloe's relationship with Alan in the early sessions?",
+            "option": [
+                "A. He wanted Alan to coach their softball team against the Hassidics.",
+                "B. He wanted to know when the group would finally get to meet the guy.",
+                "C. He planned to invite Alan to a party to do Hasselhoff impressions.",
+                "D. He wanted to go on a double date with Alan and Chloe.",
+                "E. He was looking forward to Alan meeting Ariel's family during the holidays."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "So when do we get to meet the guy?",
+                    "dia_id": "3:36"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan asks a direct question about the future timeline for a social introduction.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Which specific nervous habit of Fiona's is mentioned by her friends, and how does she react when they compare it to their own flaws?",
+            "option": [
+                "A. She snorts when she laughs and claims it is a sign of karmic energy.",
+                "B. She cracks her knuckles and argues that it is better than smoking.",
+                "C. She chews her hair, which Bennett calls 'endearing' despite others finding it annoying.",
+                "D. She over-pronounces words like 'statement' to express her anger at the bank.",
+                "E. She smokes filter-tipped cigarettes whenever she is stressed about money."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Well, is it, like, a little annoying, or is it like when Fiona chews her hair?",
+                    "dia_id": "10:14"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "Oh, now, don't listen to him, Pheebs, I think it's endearing.",
+                    "dia_id": "10:15"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan uses Fiona's hair-chewing as a benchmark for an annoying habit.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Bennett offers a counter-view, calling the habit 'endearing'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "What is the sequence of items or discoveries Fiona finds in her food or beverage products across the sessions?",
+            "option": [
+                "A. A football phone in her mail, then a thumb in her soda, then gum on her shoe.",
+                "B. Five hundred dollars in her bank account, then a thumb in her soda can.",
+                "C. A thumb floating in her drink, and later she steps in gum on her way over.",
+                "D. A thousand dollars from the bank, then a hitch-hiking thumb in her soup.",
+                "E. A decaf cappuccino with a thumb in it, then a seven thousand dollar check."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I know! I know, I opened it up and there it was, just floating in there, like this tiny little hitch-hiker!",
+                    "dia_id": "10:3"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "A thumb?!",
+                    "dia_id": "10:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "And on my way over here, I stepped in gum.",
+                    "dia_id": "13:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In Session 10, Fiona reveals she found a thumb in a product (implied soda/drink).",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In Session 13, she mentions a separate incident of stepping in gum.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "How did Fiona's financial situation regarding the bank error evolve, including the final compensation she received from the soda company?",
+            "option": [
+                "A. She started with 500 extra dollars, then had 1000 total plus a football phone, and finally received 7000 for the thumb.",
+                "B. She had 500 dollars, then the bank took it back and gave her a football phone instead, then she won 7000 in a contest.",
+                "C. She received 1000 dollars initially, which she kept as 'karmic debt', before receiving 7000 for stepping in gum.",
+                "D. She found 500 dollars, returned it, and was given a football phone and 1000 dollars as a reward for her honesty.",
+                "E. She was credited with 500 dollars by mistake, then 500 more as a gift, and finally 7000 dollars from the 'stupid soda people'."
+            ],
+            "answer": "E",
+            "label": "Temporal Evolution Category",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "- and there's five hundred extra dollars in my account.",
+                    "dia_id": "3:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "We have credited your account with five hundred dollars. ...Now I have a thousand dollars, and a football phone!",
+                    "dia_id": "5:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "Y'know, those stupid soda people gave me seven thousand dollars for the thumb.",
+                    "dia_id": "13:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona first finds $500 extra due to a bank error.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After reporting it, the bank gives her another $500 and a football phone, totaling $1,000.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Later, a separate incident with a thumb in a soda results in her receiving an additional $7,000.",
+                    "based_on": [
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "What interpretation did Fiona and her friends provide for the 'dating language' phrase 'I think we should see other people' in the first session?",
+            "option": [
+                "A. It means the person is unhappy and needs space to think.",
+                "B. It is a polite way of saying the relationship is moving too fast.",
+                "C. It means 'Ha, ha, I already am' seeing other people.",
+                "D. It translates to 'I want you to meet my family during the holidays'.",
+                "E. It is a sign that the person is going to live on a farm in Connecticut."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Or, or, y'know, um, 'I think we should see other people' means 'Ha, ha, I already am'.",
+                    "dia_id": "1:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona explicitly provides the translation for the specific dating phrase.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "What were the exact monetary amounts Fiona mentioned receiving throughout the sessions, including the bank credits and the thumb settlement?",
+            "option": [
+                "A. $500, $500, and $7,000",
+                "B. $500, $1,000, and $5,000",
+                "C. $1,000, $2,000, and $7,000",
+                "D. $500, $750, and $10,000",
+                "E. $250, $500, and $7,000"
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "- and there's five hundred extra dollars in my account.",
+                    "dia_id": "3:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "We have credited your account with five hundred dollars.",
+                    "dia_id": "5:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Fiona",
+                    "utterance": "those stupid soda people gave me seven thousand dollars for the thumb.",
+                    "dia_id": "13:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona mentions two separate credits of $500 each and one payment of $7,000.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 6,
+            "question": "How did Fiona explain her moral objection to keeping the original five hundred extra dollars in her account?",
+            "option": [
+                "A. She was afraid the bank would charge her interest on the mistake.",
+                "B. She believed keeping it would be like stealing and would create a 'giant karmic debt'.",
+                "C. She felt she didn't need the money because she already had a football phone.",
+                "D. She thought the money was cursed because it came from 'Satan's minions'.",
+                "E. She was worried her friends would ask her for loans if they knew she had it."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "It's not mine, I didn't earn it, if I kept it, it would be like stealing.",
+                    "dia_id": "3:16"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "It would be like this giant karmic debt.",
+                    "dia_id": "3:20"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona uses the concept of 'stealing' and 'karmic debt' as her meta-cognitive framework for rejecting the unearned money.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 7,
+            "question": "What significant financial commitment did Fiona make to Dexter in the final session to help him quit smoking?",
+            "option": [
+                "A. She offered to pay for his nicotine patches for the rest of the year.",
+                "B. She promised to give him seven thousand dollars if he never smoked again.",
+                "C. She agreed to buy him a football phone if he quit for at least three years.",
+                "D. She committed to taking him to Central Park to rent boats every weekend.",
+                "E. She offered to share the original five hundred dollars she got from the bank."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "If you never smoke again I'll give you seven thousand dollars!",
+                    "dia_id": "15:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona makes a concrete prospective commitment: a payment of $7,000 conditioned on Dexter's future behavior.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Fiona",
+        "speaker_1": "All",
+        "speaker_2": "Bennett",
+        "speaker_3": "Ariel",
+        "speaker_4": "Chloe",
+        "speaker_5": "Ethan",
+        "speaker_6": "Dexter",
+        "session_1_date_time": "October 6, 1994",
+        "session_1": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:1",
+                "text": "Hi guys!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "1:2",
+                "text": "Hey, Pheebs! Hi!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:3",
+                "text": "Hey. Oh, oh, how'd it go?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:4",
+                "text": "Um, not so good. He walked me to the subway and said 'We should do this again!'"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "1:5",
+                "text": "Ohh. Ouch."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:6",
+                "text": "What? He said 'we should do it again', that's good, right?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:7",
+                "text": "Uh, no. Loosely translated 'We should do this again' means 'You will never see me naked'."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:8",
+                "text": "Since when?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:9",
+                "text": "Since always. It's like dating language. Y'know, like 'It's not you' means 'It is you'."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:10",
+                "text": "Or 'You're such a nice guy' means 'I'm gonna be dating leather-wearing alcoholics and complaining about them to you'."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:11",
+                "text": "Or, or, y'know, um, 'I think we should see other people' means 'Ha, ha, I already am'."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:12",
+                "text": "And everybody knows this?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:13",
+                "text": "Yeah. Cushions the blow."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:14",
+                "text": "Yeah, it's like when you're a kid, and your parents put your dog to sleep, and they tell you it went off to live on some farm."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:15",
+                "text": "That's funny, that, no, because, uh, our parents actually did, uh, send our dog off to live on a farm."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:16",
+                "text": "Uh, Bennett."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:17",
+                "text": "What? Wh- hello? The Millners' farm in Connecticut? The Millners, they had this unbelievable farm, they had horses, and, and rabbits that he could chase and it was- it w- .....Oh my God, Chi Chi!"
+            }
+        ],
+        "session_3_date_time": "October 7, 1994",
+        "session_3": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:1",
+                "text": "No, no, no. They say it's the same as the distance from the tip of a guy's thumb to the tip of his index finger."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:2",
+                "text": "That's ridiculous!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:3",
+                "text": "Can I use.. either thumb?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:4",
+                "text": "Alright, don't tell me, don't tell me!  Decaf cappucino for Ethan.. Coffee black.. Late.. And an iced tea. I'm getting pretty good at this!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:5",
+                "text": "Yeah. Yeah, excellent."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:6",
+                "text": "Good for me!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:7",
+                "text": "Y'okay, Fiona?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:8",
+                "text": "Yeah- no- I'm just- it's, I haven't worked- It's my bank."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:9",
+                "text": "What did they do to you?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:10",
+                "text": "It's nothing, it's just- Okay. I'm going through my mail, and I open up their monthly, you know, STATEMENT-"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:11",
+                "text": "Easy."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:12",
+                "text": "- and there's five hundred extra dollars in my account."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:13",
+                "text": "Oh, Satan's minions at work again..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:14",
+                "text": "Yes, 'cause now I have to go down there, and deal with them."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:15",
+                "text": "What are you talking about? Keep it!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:16",
+                "text": "It's not mine, I didn't earn it, if I kept it, it would be like stealing."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:17",
+                "text": "Yeah, but if you spent it, it would be like shopping!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:18",
+                "text": "Okay. Okay, let's say I bought a really great pair of shoes. Do you know what I'd hear, with every step I took? 'Not-mine. Not-mine. Not-mine.' And even if I was happy, okay, and, and skipping- 'Not-not-mine, not-not-mine, not-not-mine, not-not-mine'..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:19",
+                "text": "We're with you. We got it."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:20",
+                "text": "Okay. I'd- just- I'd never be able to enjoy it. It would be like this giant karmic debt."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:21",
+                "text": "Dexter, what are you doing?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:22",
+                "text": "Hey. Whaddya doing?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:23",
+                "text": "Oh! Oh, God!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:24",
+                "text": "What is this?!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:25",
+                "text": "I'm smoking. I'm smoking, I'm smoking."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:26",
+                "text": "Oh, I can't believe you! You've been so good, for three years!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:27",
+                "text": "And this- is my reward!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:28",
+                "text": "Hold on a second, alright? Just think about what you went through the last time you quit."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:29",
+                "text": "Okay, so this time I won't quit!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:30",
+                "text": "Ohhh! Put it out!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:31",
+                "text": "All right! I'm putting it out, I'm putting it out."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:32",
+                "text": "Oh, no! I- I can't drink this now!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:33",
+                "text": "Alright. I'm gonna go change, I've got a date."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:34",
+                "text": "This Alan again? How's it goin'?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:35",
+                "text": "'S'going pretty good, y'know? It's nice, and, we're having fun."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:36",
+                "text": "So when do we get to meet the guy?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:37",
+                "text": "Let's see, today's Monday... Never."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:38",
+                "text": "Oh, come on! Come on!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:39",
+                "text": "No. Not after what happened with Steve."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:40",
+                "text": "What are you talking about? We love Schhteve! Schhteve was schhexy!.. Sorry."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:41",
+                "text": "Look, I don't even know how I feel about him yet. Just give me a chance to figure that out."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:42",
+                "text": "Well, then can we meet him?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:43",
+                "text": "Nope. Schhorry."
+            }
+        ],
+        "speaker_7": "Alan",
+        "session_5_date_time": "October 8, 1994",
+        "session_5": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:1",
+                "text": "Let it go, Bennett."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:2",
+                "text": "Yeah, well, you didn't know Chi Chi."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:3",
+                "text": "Do you all promise?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:4",
+                "text": "Yeah! We promise! We'll be good!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:5",
+                "text": "Dexter? Do you promise to be good?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:6",
+                "text": "You can come in, but your filter-tipped little buddy has to stay outside!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:7",
+                "text": "Hey, Pheebs."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:8",
+                "text": "'Dear Ms. Buffay. Thank you for calling attention to our error. We have credited your account with five hundred dollars. We're sorry for the inconvenience, and hope you'll accept this-  -football phone as our free gift.' Do you believe this?! Now I have a thousand dollars, and a football phone!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:9",
+                "text": "What bank is this?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:10",
+                "text": "Hey. It's him.  Who is it?"
+            },
+            {
+                "speaker": "Alan",
+                "dia_id": "5:11",
+                "text": "It's Alan."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:12",
+                "text": "Dexter! He's here!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:13",
+                "text": "Okay, please be good, please. Just remember how much you all like me."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:14",
+                "text": "Hi. Alan, this is everybody. Everybody, this is Alan."
+            },
+            {
+                "speaker": "Alan",
+                "dia_id": "5:15",
+                "text": "Hi."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:16",
+                "text": "Hi, Alan."
+            },
+            {
+                "speaker": "Alan",
+                "dia_id": "5:17",
+                "text": "I've heard schho much about all you guyschh!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:18",
+                "text": "Thanks. I'll call you tomorrow.  Okay. Okay, let's let the Alan-bashing begin. Who's gonna take the first shot, hmm?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:19",
+                "text": "C'mon!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:20",
+                "text": "...I'll go. Let's start with the way he kept picking at- no, I'm sorry, I can't do this, can't do this. We loved him."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:21",
+                "text": "Loved him! Yeah! He's great!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:22",
+                "text": "Wait a minute! We're talking about someone that I'm going out with?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:23",
+                "text": "Yeah!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:24",
+                "text": "And did you notice...?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:25",
+                "text": "Know what was great? The way his smile was kinda crooked."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:26",
+                "text": "Yes, yes! Like the man in the shoe!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:27",
+                "text": "...What shoe?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:28",
+                "text": "From the nursery rhyme. 'There was a crooked man, Who had a crooked smile, Who lived in a shoe, For a... while...'"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:29",
+                "text": "...So I think Alan will become the yardstick against which all future boyfriends will be measured."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:30",
+                "text": "What future boyfriends? Nono, I th- I think this could be, y'know, it."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:31",
+                "text": "Really!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:32",
+                "text": "Oh, yeah. I'd marry him just for his David Hasselhof impression alone. You know I'm gonna be doing that at parties, right?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:33",
+                "text": "You know what I like most about him, though?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:34",
+                "text": "What?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:35",
+                "text": "The way he makes me feel about myself."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "5:36",
+                "text": "Yeah..."
+            }
+        ],
+        "session_6_date_time": "October 9, 1994",
+        "session_6": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:1",
+                "text": "Hi.. how was the game?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:2",
+                "text": "Well.."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "6:3",
+                "text": "WE WON!! Thank you! Yes!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:4",
+                "text": "Fantastic! I have one question: How is that possible?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "6:5",
+                "text": "Alan."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:6",
+                "text": "He was unbelievable. He was like that-that-that Bugs Bunny cartoon where Bugs is playing all the positions, right, but instead of Bugs it was first base-Alan, second base-Alan, third base-..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:7",
+                "text": "I mean, it-it was like, it was like he made us into a team."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:8",
+                "text": "Yep, we sure showed those Hassidic jewellers a thing or two about softball.."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:9",
+                "text": "Can I ask you guys a question? D'you ever think that Alan is maybe.. sometimes.."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:10",
+                "text": "What?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "6:11",
+                "text": "..I dunno, a little too Alan?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "6:12",
+                "text": "Well, no. That's impossible. You can never be too Alan."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:13",
+                "text": "Yeah, it's his, uh, innate Alan-ness that-that-that we adore."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "6:14",
+                "text": "I personally could have a gallon of Alan."
+            }
+        ],
+        "session_10_date_time": "October 9, 1994",
+        "session_10": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:1",
+                "text": "A thumb?!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "10:2",
+                "text": "Eww!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:3",
+                "text": "I know! I know, I opened it up and there it was, just floating in there, like this tiny little hitch-hiker!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:4",
+                "text": "Well, maybe it's a contest, y'know? Like, collect all five?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:5",
+                "text": "Does, um, anyone wanna see?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "10:6",
+                "text": "Nooo!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "10:7",
+                "text": "Oh, hey, don't do that! Cut it out!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "10:8",
+                "text": "It's worse than the thumb!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:9",
+                "text": "Hey, this is so unfair!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "10:10",
+                "text": "Oh, why is it unfair?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:11",
+                "text": "So I have a flaw! Big deal! Like Ethan's constant knuckle-cracking isn't annoying? And Bennett, with his over-pronouncing every single word? And Chloe, with that snort when she laughs? I mean, what the hell is that thing? ...I accept all those flaws, why can't you accept me for this?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:12",
+                "text": "...Does the knuckle-cracking bother everybody?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "10:13",
+                "text": "Well, I-I could live without it."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:14",
+                "text": "Well, is it, like, a little annoying, or is it like when Fiona chews her hair?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:15",
+                "text": "Oh, now, don't listen to him, Pheebs, I think it's endearing."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:16",
+                "text": "Oh,  \"you do, do you\"?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:17",
+                "text": "You know, there's nothing wrong with speaking correctly."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "10:18",
+                "text": "\"Indeed there isn't\"... I should really get back to work."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "10:19",
+                "text": "Yeah, 'cause otherwise someone might get what they actually ordered."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "10:20",
+                "text": "Ohh-ho-hooohhh. The hair comes out, and the gloves come on."
+            }
+        ],
+        "session_12_date_time": "October 10, 1994",
+        "session_12": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:1",
+                "text": "Do you have any respect for your body?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:2",
+                "text": "Don't you realise what you're-you're doing to yourself?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:3",
+                "text": "Hey, y'know, I have had it with you guys and your cancer and your emphysema and your heart disease. The bottom line is, smoking is cool, and you know it."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:4",
+                "text": "Dexter? It's Alan, he wants to speak to you."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:5",
+                "text": "Really? He does?  Hey, buddy, what's up! Oh, she told you about that, huh. Well, yeah, I have one now and then. Well, yeah, now. Well, it's not that big- ..well, that's true,.. Gee, y'know, no-one- no-one's ever put it like that before. Well, okay, thanks!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:6",
+                "text": "God, he's good."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:7",
+                "text": "If only he were a woman."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:8",
+                "text": "Yeah."
+            }
+        ],
+        "session_13_date_time": "October 10, 1994",
+        "session_13": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:1",
+                "text": "Ooh, Lambchop. How old is that sock? If I had a sock on my hand for thirty years it'd be talking too."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:2",
+                "text": "Okay. I think it's time to change somebody's nicotine patch."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:3",
+                "text": "Hey. Where's Ethan?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:4",
+                "text": "Ethan ate my last stick of gum, so I killed him. Do you think that was wrong?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:5",
+                "text": "I think he's across the hall."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:6",
+                "text": "Thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:7",
+                "text": "There y'go."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:8",
+                "text": "Ooh, I'm alive with pleasure now."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:9",
+                "text": "Hey Pheebs, you gonna have the rest of that Pop-Tart?.. Pheebs?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:10",
+                "text": "Does anyone want the rest of this Pop-Tart?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:11",
+                "text": "Hey, I might!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:12",
+                "text": "Sorry. ..Y'know, those stupid soda people gave me seven thousand dollars for the thumb."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "13:13",
+                "text": "You're kidding. Oh my God."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:14",
+                "text": "And on my way over here, I stepped in gum. ...What is up with the universe?!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:15",
+                "text": "What's going on?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:16",
+                "text": "Nothing. I just think it's nice when we're all here together."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:17",
+                "text": "Even nicer when everyone gets to wear their underwear.."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:18",
+                "text": "Uh, Ethan.."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:19",
+                "text": "Oh, God!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:20",
+                "text": "Okay.."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "13:21",
+                "text": "Oh! That was Lambchop!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:22",
+                "text": "Please, guys, we have to talk."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:23",
+                "text": "Wait, wait, I'm getting a deja vu...no, I'm not."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:24",
+                "text": "Alright, we have to talk."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:25",
+                "text": "There it is!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:26",
+                "text": "Okay. It's-it's about Alan. There's something that you should know. I mean, there's really no easy way to say this.. uh.. I've decided to break up with Alan."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:27",
+                "text": "Is there somebody else?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:28",
+                "text": "No, nononono.. it's just.. things change. People change."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:29",
+                "text": "We didn't change.."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:30",
+                "text": "So that's it? It's over? Just like that?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:31",
+                "text": "You know.. you let your guard down, you start to really care about someone, and I just- I-"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:32",
+                "text": "Look, I- I could go on pretending-"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:33",
+                "text": "Okay!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:34",
+                "text": "-but that wouldn't be fair to me, it wouldn't be fair to Alan- It wouldn't be fair to you!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:35",
+                "text": "Who-who wants fair? Y'know, I just want things back. Y'know, the way they were."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:36",
+                "text": "I'm sorry.."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:37",
+                "text": "Oh, she's sorry! I feel better!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:38",
+                "text": "I just can't believe this! I mean, with the holidays coming up- I wanted him to meet my family-"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:39",
+                "text": "I'll meet somone else. There'll be other Alans."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "13:40",
+                "text": "Oh, yeah! Right!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:41",
+                "text": "Are you guys gonna be okay?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:42",
+                "text": "Hey hey, we'll be fine. We're just gonna need a little time."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:43",
+                "text": "I understand."
+            }
+        ],
+        "session_15_date_time": "October 10, 1994",
+        "session_15": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:1",
+                "text": "Remember when we went to Central Park and rented boats?.. That was fun."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:2",
+                "text": "Yeah. He could row like a viking."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:3",
+                "text": "Hi."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "15:4",
+                "text": "Mmm."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:5",
+                "text": "So how'd it go?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:6",
+                "text": "Oh, y'know.."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:7",
+                "text": "Did he mention us?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:8",
+                "text": "He said he's really gonna miss you guys."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:9",
+                "text": "You had a rough day, huh.. c'mere."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:10",
+                "text": "...That's it. I'm getting cigarettes."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "15:11",
+                "text": "No no no!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:12",
+                "text": "I don't care, I don't care! Game's over! I'm weak! I've gotta smoke! I've gotta have the smoke!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:13",
+                "text": "If you never smoke again I'll give you seven thousand dollars!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:14",
+                "text": "Yeah, alright."
+            }
+        ]
+    }
+}

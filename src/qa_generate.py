@@ -7,6 +7,18 @@ import time
 import random
 from tqdm import tqdm
 
+DEFAULT_USER_LIST = [
+  "Ariel",
+  "Bennett",
+  "Chloe",
+  "Dexter",
+  "Ethan",
+  "Fiona"
+]
+
+TOTAL_CATEGORIES = 7
+REQUIRED_CATEGORIES = set(range(1, TOTAL_CATEGORIES + 1))
+
 QA_GENERATE_PROMPT = """
 {conversation}
 
@@ -14,7 +26,8 @@ Role:
 You are a top-tier AI evaluation expert, specializing in designing extremely high-difficulty stress test datasets for evaluating large language models’ long-range, cross-conversation memory.
 
 Task:
-Based on the provided long text dialogue, please design 1 high-quality question-answer pair for each user in {user_list} for each of the seven specific category 1-7 (total of {total_question_num} pairs). If a user speaks too little to support the creation of a sufficient number of questions, the limit on the number of questions that can be generated can be removed. You can try to explore as many questions as possible, but there are no requirements or restrictions on the number of generated questions.
+Based on the provided long text dialogue, please design 1 high-quality question-answer pair for each user in {user_list} for each of the seven specific categories 1-7 (total of {total_question_num} pairs).
+Hard requirement: for each user, categories 1, 2, 3, 4, 5, 6, and 7 must all appear at least once in the output.
 
 Part I: Core Objectives and Depth Requirements
 
@@ -27,7 +40,7 @@ Part I: Core Objectives and Depth Requirements
 - Absolutely no external knowledge, common sense assumptions, associative reasoning, or hallucinations are allowed.
 - If a fact is not explicitly stated or logically necessitated by the dialogue, it must be treated as non-existent.
 
-Part II: Strict Definitions of the Two Question Categories
+Part II: Strict Definitions of the Seven Question Categories
 
 Category 1 - User Profile Category: Evaluates the model's ability to capture and maintain long-term, stable user attributes such as demographics, core values, and persistent habits to ensure persona consistency.
 
@@ -51,7 +64,7 @@ When crafting each question, select one of the following five construction metho
 - Fact Extraction (Multiple Dialogues): Scatter the key clues across two or more sessions so that the answer can only be obtained by combining them. The cross-session dependency should be non-obvious.
 - Memory Update: Exploit a fact that was stated differently at two points in time. The question rewards recognising the newer version; the outdated version must appear as a highly attractive distractor.
 - Multi-hop: Require at least two inferential steps, each grounded in dialogue evidence, to reach the answer. No single utterance is sufficient; the chain must be traceable.
-- Abstain: Construct a question for which none of the five options (A–E) is actually supported by the dialogue. Set "answer" to "F". All five options must look plausible but be factually wrong or unsupported. evidence_dialogues should demonstrate that none of the options can be derived from the text.
+- Abstain: If constructing an Abstain question, options A through E MUST ALL be distractors. All five options must look highly plausible but be factually wrong or unsupported by the dialogue. In this case, you must set the "answer" strictly to "F" by default. The evidence_dialogues must demonstrate exactly why none of the options (A-E) can be derived from the text.
 
 1. Question Stem Design (Natural & Implicit):
 - Feature leakage is forbidden. Do not use phrases such as “based on their introverted personality” or “shows a stable coping pattern.”
@@ -143,7 +156,7 @@ def call_openai_json(
     model: str,
     api_key: Optional[str] = None,
     base_url: Optional[str] = None,
-    timeout_s: int = 120
+  timeout_s: int = 240
 ) -> Dict[str, Any]:
     """
     Invoke the large model to generate a JSON file
@@ -195,28 +208,55 @@ def call_openai_json(
         raise ValueError(f"Top-level JSON must be an object/dict, got {type(obj)}")
       return obj
 
+    def _best_effort_json_loads(text: str) -> Dict[str, Any]:
+      """在严格解析失败后做一次轻量修复（如尾逗号）再解析。"""
+      t = _extract_json_object_text(text)
+      # 去除对象/数组结束前的尾逗号
+      t = re.sub(r",\s*([}\]])", r"\1", t)
+      obj = json.loads(t)
+      if not isinstance(obj, dict):
+        raise ValueError(f"Top-level JSON must be an object/dict, got {type(obj)}")
+      return obj
+
+    def _repair_json_with_llm(raw_text: str) -> str:
+      """让模型仅做 JSON 语法修复，不改语义内容。"""
+      repair_prompt = (
+        "You are a JSON repair tool.\n"
+        "Fix the JSON syntax only and preserve original semantics.\n"
+        "Return ONLY one valid JSON object. No markdown, no explanation.\n"
+        "If a value contains double quotes, escape them.\n\n"
+        "Malformed JSON:\n"
+        f"{_extract_json_object_text(raw_text)}"
+      )
+      repair_resp = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": repair_prompt}],
+        temperature=0.0,
+      )
+      return repair_resp.choices[0].message.content or ""
+
     # -------- retry loop --------
     max_retries = 10  # json 生成失败重试次数
     max_other_error_retries = 10  # 其他请求失败重试次数
+    max_timeout_retries = 10  # 请求超时重试次数
     last_content = ""
     last_finish_reason: Optional[str] = None
-    use_enable_thinking = True  # 首次尝试带 enable_thinking，若不支持则自动降级
     use_json_object_mode = True  # 优先请求 JSON 对象模式，降低引号/格式错误
+    json_retry_hint = ""
 
     for attempt in range(max_retries + 1):
       llm_error_retries = 0
       other_error_retries = 0
+      timeout_retries = 0
       resp = None
 
       while True:
         try:
           kwargs: Dict[str, Any] = {
             "model": model,
-            "messages": [{"role": "system", "content": answer_prompt}],
+            "messages": [{"role": "user", "content": answer_prompt + json_retry_hint}],
             "temperature": 0.0,
           }
-          if use_enable_thinking:
-            kwargs["extra_body"] = {"enable_thinking": False}
           if use_json_object_mode:
             kwargs["response_format"] = {"type": "json_object"}
 
@@ -226,11 +266,14 @@ def call_openai_json(
           error_str = str(e).lower()
           print(error_str)
 
-          # 模型不支持 enable_thinking 参数 → 立即降级，不再传该参数
-          if "enable_thinking" in error_str and "unknown parameter" in error_str:
-            print("[INFO] 模型不支持 enable_thinking，已自动降级，不再传该参数")
-            use_enable_thinking = False
-            continue
+          # 部分网关在携带 response_format 时会错误返回缺参，先降级再重试 chat。
+          if "missing_required_parameter" in error_str or (
+            "one of \"input\"" in error_str and "prompt" in error_str
+          ):
+            if use_json_object_mode:
+              print("[INFO] 命中 missing_required_parameter，关闭 response_format 后重试 chat.completions")
+              use_json_object_mode = False
+              continue
 
           # 模型/网关不支持 response_format=json_object → 自动降级
           if "response_format" in error_str and (
@@ -257,12 +300,31 @@ def call_openai_json(
             time.sleep(sleep_duration)
             continue
 
+          if (
+            "request timed out" in error_str
+            or "timed out" in error_str
+            or "timeout" in error_str
+          ):
+            timeout_retries += 1
+            other_error_retries = 0
+            sleep_duration = random.uniform(3, 10) + 4 * timeout_retries
+            print(
+              f"[WARN] Request timeout. Retrying {timeout_retries}/{max_timeout_retries} "
+              f"in {sleep_duration:.2f}s..."
+            )
+            if timeout_retries >= max_timeout_retries:
+              print("Error: Timeout retries exceeded.")
+              break
+            time.sleep(sleep_duration)
+            continue
+
           # 识别为其他错误
           other_error_retries += 1
           print("other_error_retries: ", other_error_retries)
           if other_error_retries >= max_other_error_retries:
             print("Error: Default response due to unrecoverable error.")
             break
+          time.sleep(random.uniform(1.0, 3.0))
 
       if resp is None:
         continue
@@ -275,7 +337,28 @@ def call_openai_json(
       try:
         return _strict_json_loads(last_content)
       except Exception as parse_error:
-        print(f"[WARN] JSON parse failed on attempt {attempt + 1}/{max_retries + 1}: {parse_error}")
+        try:
+          repaired = _best_effort_json_loads(last_content)
+          print(f"[INFO] JSON repaired locally on attempt {attempt + 1}/{max_retries + 1}")
+          return repaired
+        except Exception:
+          try:
+            repaired_text = _repair_json_with_llm(last_content)
+            repaired = _strict_json_loads(repaired_text)
+            print(f"[INFO] JSON repaired by LLM on attempt {attempt + 1}/{max_retries + 1}")
+            return repaired
+          except Exception as repair_error:
+            print(
+              f"[WARN] JSON parse failed on attempt {attempt + 1}/{max_retries + 1}: "
+              f"{parse_error}; repair failed: {repair_error}"
+            )
+          json_retry_hint = (
+            "\n\nIMPORTANT JSON RETRY INSTRUCTION:\n"
+            "Your previous output was invalid JSON. Return ONLY one valid JSON object.\n"
+            "Do not include markdown fences.\n"
+            "Do not use trailing commas.\n"
+            "If a string contains double quotes, escape them as \\\".\n"
+          )
         continue
 
     # if still invalid after retries
@@ -291,7 +374,7 @@ def _build_qa_generate_prompt(conversation: Dict[str, Any], speakers: List[str])
       conversation=conversation,
       user_list=speakers,
       question_num=1,
-      total_question_num=len(speakers) * 7
+      total_question_num=len(speakers) * TOTAL_CATEGORIES
     )
 
 
@@ -314,11 +397,30 @@ def _deduplicate_qa_items(qa_items: List[Dict[str, Any]]) -> List[Dict[str, Any]
     return deduped
 
 
+def _speaker_category_coverage(qa_items: List[Dict[str, Any]], speakers: List[str]) -> Dict[str, set]:
+    coverage: Dict[str, set] = {speaker: set() for speaker in speakers}
+    for item in qa_items:
+      if not isinstance(item, dict):
+        continue
+      character = str(item.get("character", "")).strip()
+      if character not in coverage:
+        continue
+      try:
+        category = int(item.get("category"))
+      except (TypeError, ValueError):
+        continue
+      if 1 <= category <= TOTAL_CATEGORIES:
+        coverage[character].add(category)
+    return coverage
+
+
 def _generate_qa_for_speakers_with_split(
   conversation: Dict[str, Any],
   speakers: List[str],
   llm_config,
   filename: str,
+  repair_round: int = 0,
+  max_repair_rounds: int = 3,
 ) -> Tuple[List[Dict[str, Any]], List[str]]:
     """
     为 speaker 列表生成题目，失败时自动二分拆批重试。
@@ -364,17 +466,41 @@ def _generate_qa_for_speakers_with_split(
       if not filtered_qa:
         raise ValueError("模型返回 qa 为空，或角色与请求批次不匹配")
 
-      missing_speakers = [speaker for speaker in speakers if speaker not in returned_characters]
+      coverage = _speaker_category_coverage(filtered_qa, speakers)
+      missing_speakers = [
+        speaker for speaker in speakers
+        if speaker not in returned_characters or coverage.get(speaker, set()) != REQUIRED_CATEGORIES
+      ]
+
+      for speaker in missing_speakers:
+        have = sorted(coverage.get(speaker, set()))
+        missing = sorted(REQUIRED_CATEGORIES - set(have))
+        print(f"[WARN] {filename} 角色 {speaker} 类别覆盖不足，已有={have} 缺失={missing}")
+
       if missing_speakers:
+        if repair_round >= max_repair_rounds:
+          print(f"[WARN] {filename} 达到补生成上限，未覆盖完整类别的角色将标记为失败: {missing_speakers}")
+          return filtered_qa, missing_speakers
+
         print(f"[WARN] {filename} 批次缺少角色，自动补生成: {missing_speakers}")
         recovered_qa, failed_missing = _generate_qa_for_speakers_with_split(
           conversation=conversation,
           speakers=missing_speakers,
           llm_config=llm_config,
           filename=filename,
+          repair_round=repair_round + 1,
+          max_repair_rounds=max_repair_rounds,
         )
         merged_qa = filtered_qa + recovered_qa
-        return _deduplicate_qa_items(merged_qa), failed_missing
+        merged_qa = _deduplicate_qa_items(merged_qa)
+
+        merged_coverage = _speaker_category_coverage(merged_qa, speakers)
+        still_missing = [
+          speaker for speaker in speakers
+          if merged_coverage.get(speaker, set()) != REQUIRED_CATEGORIES
+        ]
+        failed_union = sorted(set(failed_missing + still_missing))
+        return merged_qa, failed_union
 
       return filtered_qa, []
 
@@ -394,12 +520,16 @@ def _generate_qa_for_speakers_with_split(
         speakers=left,
         llm_config=llm_config,
         filename=filename,
+        repair_round=repair_round,
+        max_repair_rounds=max_repair_rounds,
       )
       right_qa, right_failed = _generate_qa_for_speakers_with_split(
         conversation=conversation,
         speakers=right,
         llm_config=llm_config,
         filename=filename,
+        repair_round=repair_round,
+        max_repair_rounds=max_repair_rounds,
       )
 
       merged = left_qa + right_qa
@@ -475,6 +605,10 @@ def generate_v0(
           if extracted_speakers:
               speakers = extracted_speakers
 
+      # 默认 user_list 兜底为老友记六主角
+      if not speakers:
+        speakers = list(DEFAULT_USER_LIST)
+
       # 检查是否已有问答对
       has_existing_qa = bool(existing_qa and isinstance(existing_qa, list) and len(existing_qa) > 0)
       if has_existing_qa and not force_generate_new_qa:
@@ -516,7 +650,7 @@ def generate_v0(
         if failed_speakers_all:
           print(f"⚠️ {filename} 以下角色生成失败，已跳过: {sorted(set(failed_speakers_all))}")
 
-        print(f"  生成用户 {speakers} 类别6问题: {len(current_qa)} 个")
+        print(f"  生成用户 {speakers} 类别1-7问题: {len(current_qa)} 个")
 
         generated_count += 1
 

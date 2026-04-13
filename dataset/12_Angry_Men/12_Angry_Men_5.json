@@ -3333,6 +3333,1168 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "CLERK",
+            "category": 6,
+            "question": "What would be the most appropriate action for the Clerk to take if the jury is unable to reach a decision?\nA. Ask the Judge to declare a mistrial.\nB. Offer to bring in a new jury for deliberation.\nC. Advise the jury to take a vote and report back.\nD. Provide the jury with additional evidence from the trial.\nE. Call for a recess and allow the jury to take a break.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Ask the Judge to declare a mistrial.",
+                "B. Offer to bring in a new jury for deliberation.",
+                "C. Advise the jury to take a vote and report back.",
+                "D. Provide the jury with additional evidence from the trial.",
+                "E. Call for a recess and allow the jury to take a break.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. Call for a recess and allow the jury to take a break.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "I guess the quickest way is a show of hands. Anybody object?",
+                    "dia_id": "D5:337"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "The vote is nine to three in favor of acquittal.",
+                    "dia_id": "D5:353"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Clerk is not mentioned in the dialogue, so no direct evidence exists for their actions.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "None of the options are directly supported by the text, as the Clerk's role is not discussed in the scene.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"I guess the quickest way is a show of hands. Anybody object?\", \"dia_id\": \"D5:337\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"The vote is nine to three in favor of acquittal.\", \"dia_id\": \"D5:353\"}, {\"step\": 1, \"inference\": \"The Clerk is not mentioned in the dialogue, so no direct evidence exists for their actions.\", \"based_on\": [\"E1\", \"E2\"]}, {\"step\": 2, \"inference\": \"None of the options are directly supported by the text, as the Clerk's role is not discussed in the scene.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most appropriate action for the Clerk to take if the jury is unable to reach a decision?\nA. Ask the Judge to declare a mistrial.\nB. Call for a recess and allow the jury to take a break.\nC. Offer to bring in a new jury for deliberation.\nD. Provide the jury with additional evidence from the trial.\nE. Advise the jury to take a vote and report back.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.344423770904541,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            }
+        },
+        {
+            "character": "FOREMAN",
+            "category": 6,
+            "question": "What is the most accurate description of the Foreman's role in the discussion about the boy's alibi?\nA. He dismissed the alibi as a weak point in the case.\nB. He supported the idea that the boy was at the movies.\nC. He suggested the jury should take a vote on the boy's guilt.\nD. He insisted that the boy was definitely guilty.\nE. He argued that the boy's alibi was the only proof of his innocence.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He dismissed the alibi as a weak point in the case.",
+                "B. He supported the idea that the boy was at the movies.",
+                "C. He suggested the jury should take a vote on the boy's guilt.",
+                "D. He insisted that the boy was definitely guilty.",
+                "E. He argued that the boy's alibi was the only proof of his innocence.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. He suggested the jury should take a vote on the boy's guilt.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "All right. Let's stop the arguing for two minutes in here. Who's got something constructive to say?",
+                    "dia_id": "D5:96"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay, there's another vote called for. I guess the quickest way is a show of hands. Anybody object?",
+                    "dia_id": "D5:337"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Foreman calls for a pause in the argument and asks for constructive input.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, he calls for another vote, indicating he is facilitating the process of reaching a decision.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"All right. Let's stop the arguing for two minutes in here. Who's got something constructive to say?\", \"dia_id\": \"D5:96\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay, there's another vote called for. I guess the quickest way is a show of hands. Anybody object?\", \"dia_id\": \"D5:337\"}, {\"step\": 1, \"inference\": \"The Foreman calls for a pause in the argument and asks for constructive input.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, he calls for another vote, indicating he is facilitating the process of reaching a decision.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of the Foreman's role in the discussion about the boy's alibi?\nA. He suggested the jury should take a vote on the boy's guilt.\nB. He insisted that the boy was definitely guilty.\nC. He argued that the boy's alibi was the only proof of his innocence.\nD. He dismissed the alibi as a weak point in the case.\nE. He supported the idea that the boy was at the movies.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3474314212799072,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. He argued that the boy's alibi was the only proof of his innocence.)",
+                        "score": 0,
+                        "response_time": 0.756011962890625,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "JUDGE",
+            "category": 6,
+            "question": "What would be the most appropriate action for the Judge to take if the jury is unable to reach a unanimous decision?\nA. Allow the jury to continue deliberating for another hour.\nB. Send the jury back for further discussion and request a new vote.\nC. Dismiss the case and order a retrial.\nD. Require the jury to provide written justifications for their votes.\nE. Declare the defendant guilty based on the majority vote.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Allow the jury to continue deliberating for another hour.",
+                "B. Send the jury back for further discussion and request a new vote.",
+                "C. Dismiss the case and order a retrial.",
+                "D. Require the jury to provide written justifications for their votes.",
+                "E. Declare the defendant guilty based on the majority vote.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. Send the jury back for further discussion and request a new vote.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "I guess the quickest way is a show of hands. Anybody object?",
+                    "dia_id": "D5:337"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "The vote is nine to three in favor of acquittal.",
+                    "dia_id": "D5:353"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The jury has not reached a unanimous decision, as evidenced by the vote being nine to three in favor of acquittal.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The Foreman suggests a show of hands to determine the vote, which implies the Judge would likely send the jury back for further discussion if they are not unanimous.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"I guess the quickest way is a show of hands. Anybody object?\", \"dia_id\": \"D5:337\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"The vote is nine to three in favor of acquittal.\", \"dia_id\": \"D5:353\"}, {\"step\": 1, \"inference\": \"The jury has not reached a unanimous decision, as evidenced by the vote being nine to three in favor of acquittal.\", \"based_on\": [\"E2\"]}, {\"step\": 2, \"inference\": \"The Foreman suggests a show of hands to determine the vote, which implies the Judge would likely send the jury back for further discussion if they are not unanimous.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most appropriate action for the Judge to take if the jury is unable to reach a unanimous decision?\nA. Allow the jury to continue deliberating for another hour.\nB. Declare the defendant guilty based on the majority vote.\nC. Dismiss the case and order a retrial.\nD. Require the jury to provide written justifications for their votes.\nE. Send the jury back for further discussion and request a new vote.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3556334972381592,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "I don't think the court will accept hung jury. We haven't been in, here very long.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Well let’s find out!",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "All right. Let's stop the arguing for two minutes in here. Who's got something constructive to say?",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: One. Two. Three. Four. Five. Six. Seven.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Nine.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "Listen, just let's take it easy here.",
+                            "dia_id": "15"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "I guess the quickest way is a show of hands. Anybody object?",
+                            "dia_id": "D5:337"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "The vote is nine to three in favor of acquittal.",
+                            "dia_id": "D5:353"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. Dismiss the case and order a retrial.)",
+                        "score": 0,
+                        "response_time": 1.5445518493652344,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#8",
+            "category": 6,
+            "question": "What is the most accurate description of #8's approach to the discussion of the boy's alibi?\nA. He argued that the boy's alibi was the only proof of his innocence.\nB. He used it to challenge the jury's assumptions about the boy's memory.\nC. He dismissed the alibi as irrelevant.\nD. He agreed with the others that the boy was definitely guilty.\nE. He suggested the boy was lying about being at the movies.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He argued that the boy's alibi was the only proof of his innocence.",
+                "B. He used it to challenge the jury's assumptions about the boy's memory.",
+                "C. He dismissed the alibi as irrelevant.",
+                "D. He agreed with the others that the boy was definitely guilty.",
+                "E. He suggested the boy was lying about being at the movies.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He used it to challenge the jury's assumptions about the boy's memory.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#8",
+                    "utterance": "An important point for the prosecution was the fact that the boy, after he claimed he was at the movies during the hours the killing took place, couldn't name the pictures he saw or the stars who appeared in them.",
+                    "dia_id": "D5:100"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#8",
+                    "utterance": "Putting yourself in the boy's place, if you can, do you think you'd be able to remember details after an upsetting experience such as being struck in the face by your father?",
+                    "dia_id": "D5:105"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#8 highlights the boy's inability to recall the movies he claimed to have seen.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He challenges the jury's assumptions about the boy's memory under emotional stress, suggesting that the lack of detail might not prove guilt.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#8\", \"utterance\": \"An important point for the prosecution was the fact that the boy, after he claimed he was at the movies during the hours the killing took place, couldn't name the pictures he saw or the stars who appeared in them.\", \"dia_id\": \"D5:100\"}, {\"id\": \"E2\", \"speaker\": \"#8\", \"utterance\": \"Putting yourself in the boy's place, if you can, do you think you'd be able to remember details after an upsetting experience such as being struck in the face by your father?\", \"dia_id\": \"D5:105\"}, {\"step\": 1, \"inference\": \"#8 highlights the boy's inability to recall the movies he claimed to have seen.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"He challenges the jury's assumptions about the boy's memory under emotional stress, suggesting that the lack of detail might not prove guilt.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #8's approach to the discussion of the boy's alibi?\nA. He used it to challenge the jury's assumptions about the boy's memory.\nB. He dismissed the alibi as irrelevant.\nC. He agreed with the others that the boy was definitely guilty.\nD. He argued that the boy's alibi was the only proof of his innocence.\nE. He suggested the boy was lying about being at the movies.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.4023170471191406,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "According to police testimony in court he was questioned by the police in the kitchen of his apartment while the body of his father was lying an the floor in the bedroom. Do you think you could remember details under those circumstances?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress?",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "He remembered the movies in court. He named them correctly and he named the stars who played in them.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "And the night before that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "What do you think?",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Doesn't that seem like an awkward way to handle a knife?",
+                            "dia_id": "38"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "An important point for the prosecution was the fact that the boy, after he claimed he was at the movies during the hours the killing took place, couldn't name the pictures he saw or the stars who appeared in them.",
+                            "dia_id": "D5:100"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Putting yourself in the boy's place, if you can, do you think you'd be able to remember details after an upsetting experience such as being struck in the face by your father?",
+                            "dia_id": "D5:105"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "According to police testimony in court he was questioned by the police in the kitchen of his apartment while the body of his father was lying an the floor in the bedroom. Do you think you could remember details under those circumstances?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress?",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "He remembered the movies in court. He named them correctly and he named the stars who played in them.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "And the night before that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "What do you think?",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Doesn't that seem like an awkward way to handle a knife?",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I'd like to go over something, if you gentlemen don't mind.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "This gentleman has repeated that point in here several times.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "And Monday night?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "What was the second feature?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "And you weren’t under an emotional strain, were you!",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Do you think he could, have made the kind of wound that killed his father?",
+                            "dia_id": "25"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I want another vote.",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "That's correct. It was the only alibi the boy offered, and he himself couldn’t back it up with any details at all.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Well have you ever seen a knifing?",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "The boy is pretty handy with a knife, isn't he?",
+                            "dia_id": "27"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I'd like to go over something, if you gentlemen don't mind.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "This gentleman has repeated that point in here several times.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "And Monday night?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "What was the second feature?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "And you weren’t under an emotional strain, were you!",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Do you think he could, have made the kind of wound that killed his father?",
+                            "dia_id": "25"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I want another vote.",
+                            "dia_id": "28"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "An important point for the prosecution was the fact that the boy, after he claimed he was at the movies during the hours the killing took place, couldn't name the pictures he saw or the stars who appeared in them.",
+                            "dia_id": "D5:100"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Putting yourself in the boy's place, if you can, do you think you'd be able to remember details after an upsetting experience such as being struck in the face by your father?",
+                            "dia_id": "D5:105"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "According to police testimony in court he was questioned by the police in the kitchen of his apartment while the body of his father was lying an the floor in the bedroom. Do you think you could remember details under those circumstances?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress?",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "He remembered the movies in court. He named them correctly and he named the stars who played in them.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "And the night before that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "What do you think?",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Doesn't that seem like an awkward way to handle a knife?",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I'd like to go over something, if you gentlemen don't mind.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "This gentleman has repeated that point in here several times.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "And Monday night?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "What was the second feature?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "And you weren’t under an emotional strain, were you!",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Do you think he could, have made the kind of wound that killed his father?",
+                            "dia_id": "25"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I want another vote.",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "That's correct. It was the only alibi the boy offered, and he himself couldn’t back it up with any details at all.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Well have you ever seen a knifing?",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "The boy is pretty handy with a knife, isn't he?",
+                            "dia_id": "27"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "That's correct. It was the only alibi the boy offered, and he himself couldn’t back it up with any details at all.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Well have you ever seen a knifing?",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "The boy is pretty handy with a knife, isn't he?",
+                            "dia_id": "27"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "An important point for the prosecution was the fact that the boy, after he claimed he was at the movies during the hours the killing took place, couldn't name the pictures he saw or the stars who appeared in them.",
+                            "dia_id": "D5:100"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Putting yourself in the boy's place, if you can, do you think you'd be able to remember details after an upsetting experience such as being struck in the face by your father?",
+                            "dia_id": "D5:105"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "According to police testimony in court he was questioned by the police in the kitchen of his apartment while the body of his father was lying an the floor in the bedroom. Do you think you could remember details under those circumstances?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress?",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "He remembered the movies in court. He named them correctly and he named the stars who played in them.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "And the night before that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "What do you think?",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Doesn't that seem like an awkward way to handle a knife?",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I'd like to go over something, if you gentlemen don't mind.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "This gentleman has repeated that point in here several times.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "And Monday night?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "What was the second feature?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "And you weren’t under an emotional strain, were you!",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "Do you think he could, have made the kind of wound that killed his father?",
+                            "dia_id": "25"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I want another vote.",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "That's correct. It was the only alibi the boy offered, and he himself couldn’t back it up with any details at all.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Under great emotional stress.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Well have you ever seen a knifing?",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "The boy is pretty handy with a knife, isn't he?",
+                            "dia_id": "27"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(F)",
+                        "score": 0,
+                        "response_time": 0.3138871192932129,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#5",
+            "category": 6,
+            "question": "What is the most accurate description of #5's contribution to the discussion about the knife wound?\nA. He suggested that the boy had no reason to kill his father.\nB. He said that the boy was likely to have used the knife underhanded.\nC. He argued that the boy's knife skills were irrelevant to the case.\nD. He stated that the boy could not have made the wound with the knife.\nE. He claimed that the boy had no experience with knives.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He suggested that the boy had no reason to kill his father.",
+                "B. He said that the boy was likely to have used the knife underhanded.",
+                "C. He argued that the boy's knife skills were irrelevant to the case.",
+                "D. He stated that the boy could not have made the wound with the knife.",
+                "E. He claimed that the boy had no experience with knives.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He said that the boy was likely to have used the knife underhanded.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#5",
+                    "utterance": "Anyone who's ever used a switch-knife'd never handle it any other way.",
+                    "dia_id": "D5:272"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#5",
+                    "utterance": "No, I don't think he could. He'd go for him underhanded...",
+                    "dia_id": "D5:283"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#5 states that switch-knives are typically used underhanded.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He later suggests that the boy would have used the knife underhanded, which aligns with his earlier statement.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#5\", \"utterance\": \"Anyone who's ever used a switch-knife'd never handle it any other way.\", \"dia_id\": \"D5:272\"}, {\"id\": \"E2\", \"speaker\": \"#5\", \"utterance\": \"No, I don't think he could. He'd go for him underhanded...\", \"dia_id\": \"D5:283\"}, {\"step\": 1, \"inference\": \"#5 states that switch-knives are typically used underhanded.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"He later suggests that the boy would have used the knife underhanded, which aligns with his earlier statement.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #5's contribution to the discussion about the knife wound?\nA. He argued that the boy's knife skills were irrelevant to the case.\nB. He claimed that the boy had no experience with knives.\nC. He stated that the boy could not have made the wound with the knife.\nD. He suggested that the boy had no reason to kill his father.\nE. He said that the boy was likely to have used the knife underhanded.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3647432327270508,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#5",
+                            "utterance": "I hate these things.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#5",
+                            "utterance": "I’m sure.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "That’s why they’re made like this.",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#5",
+                            "utterance": "Not with the experience he'd had all his life with these things.",
+                            "dia_id": "19"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#5",
+                            "utterance": "Anyone who's ever used a switch-knife'd never handle it any other way.",
+                            "dia_id": "D5:272"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#5",
+                            "utterance": "No, I don't think he could. He'd go for him underhanded...",
+                            "dia_id": "D5:283"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D).",
+                        "score": 0,
+                        "response_time": 0.28873467445373535,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#7",
+            "category": 6,
+            "question": "What is the most accurate description of #7's change in stance during the discussion?\nA. He was initially unsure but later became convinced of the boy's guilt.\nB. He changed his vote to not guilty after being challenged by #11.\nC. He remained consistent in his support for the prosecution throughout.\nD. He initially supported the prosecution but later changed his vote to not guilty.\nE. He was the only one who voted guilty in the final count.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He was initially unsure but later became convinced of the boy's guilt.",
+                "B. He changed his vote to not guilty after being challenged by #11.",
+                "C. He remained consistent in his support for the prosecution throughout.",
+                "D. He initially supported the prosecution but later changed his vote to not guilty.",
+                "E. He was the only one who voted guilty in the final count.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He changed his vote to not guilty after being challenged by #11.",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#7",
+                    "utterance": "I mean you haven't got a leg to stand on. You know that, don'tcha?",
+                    "dia_id": "D5:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#7",
+                    "utterance": "I... don't think he's guilty.",
+                    "dia_id": "D5:331"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#7 initially appears to be a strong proponent of the prosecution's case.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, after being challenged by #11, he changes his vote to not guilty, indicating a shift in his stance.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(D) He changed his vote to not guilty after being challenged by #11.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#7\", \"utterance\": \"I mean you haven't got a leg to stand on. You know that, don'tcha?\", \"dia_id\": \"D5:7\"}, {\"id\": \"E2\", \"speaker\": \"#7\", \"utterance\": \"I... don't think he's guilty.\", \"dia_id\": \"D5:331\"}, {\"step\": 1, \"inference\": \"#7 initially appears to be a strong proponent of the prosecution's case.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, after being challenged by #11, he changes his vote to not guilty, indicating a shift in his stance.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #7's change in stance during the discussion?\nA. He remained consistent in his support for the prosecution throughout.\nB. He was the only one who voted guilty in the final count.\nC. He was initially unsure but later became convinced of the boy's guilt.\nD. He changed his vote to not guilty after being challenged by #11.\nE. He initially supported the prosecution but later changed his vote to not guilty.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.6550357341766357,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "D"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(E)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "I go for that too. Let's take it into the judge and let the kid take his chances with twelve other guys.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "I'm changing my vote to not guilty.",
+                            "dia_id": "32"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "I mean you haven't got a leg to stand on. You know that, don'tcha?",
+                            "dia_id": "D5:7"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "I... don't think he's guilty.",
+                            "dia_id": "D5:331"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D).",
+                        "score": 0,
+                        "response_time": 0.3208956718444824,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#10",
+            "category": 6,
+            "question": "What is the most accurate description of #10's reaction to the discussion about the boy's alibi?\nA. He dismissed the alibi as irrelevant and suggested the jury was hung.\nB. He suggested the jury should take a break and reconsider.\nC. He believed the boy was lying about being at the movies.\nD. He agreed with #8 that the boy might have forgotten the movie names.\nE. He supported the idea that the boy was at the movies.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He dismissed the alibi as irrelevant and suggested the jury was hung.",
+                "B. He suggested the jury should take a break and reconsider.",
+                "C. He believed the boy was lying about being at the movies.",
+                "D. He agreed with #8 that the boy might have forgotten the movie names.",
+                "E. He supported the idea that the boy was at the movies.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He dismissed the alibi as irrelevant and suggested the jury was hung.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#10",
+                    "utterance": "We're goin' nowhere here. I'm ready to walk into court right now and declare a hung jury. There's no point in this thing goin' on any more.",
+                    "dia_id": "D5:69"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "I suppose that proves the kid was at the movies.",
+                    "dia_id": "D5:148"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#10 is frustrated with the discussion and suggests declaring a hung jury.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He later dismisses the alibi as irrelevant, suggesting the boy was at the movies, which aligns with his earlier frustration.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(B) He dismissed the alibi as irrelevant and suggested the jury was hung.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#10\", \"utterance\": \"We're goin' nowhere here. I'm ready to walk into court right now and declare a hung jury. There's no point in this thing goin' on any more.\", \"dia_id\": \"D5:69\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"I suppose that proves the kid was at the movies.\", \"dia_id\": \"D5:148\"}, {\"step\": 1, \"inference\": \"#10 is frustrated with the discussion and suggests declaring a hung jury.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"He later dismisses the alibi as irrelevant, suggesting the boy was at the movies, which aligns with his earlier frustration.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #10's reaction to the discussion about the boy's alibi?\nA. He believed the boy was lying about being at the movies.\nB. He dismissed the alibi as irrelevant and suggested the jury was hung.\nC. He supported the idea that the boy was at the movies.\nD. He agreed with #8 that the boy might have forgotten the movie names.\nE. He suggested the jury should take a break and reconsider.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.6107089519500732,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "B"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "You're not gonna tell me you believe that phoney story about losing the knife, and that business about being at the movies. Look, you know how these people lie! It's born in them!",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "We're goin' nowhere here. I'm ready to walk into court right now and declare a hung jury. There's no point in this thing goin' on any more.",
+                            "dia_id": "D5:69"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I suppose that proves the kid was at the movies.",
+                            "dia_id": "D5:148"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. He supported the idea that the boy was at the movies.)",
+                        "score": 0,
+                        "response_time": 0.816115140914917,
+                        "file_id": 1
+                    }
+                ]
+            }
         }
     ],
     "conversation": {

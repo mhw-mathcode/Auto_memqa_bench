@@ -223,7 +223,6 @@ class FullContextRunner:
                     model=self.model_name,
                     messages=[{"role": "user", "content": answer_prompt}],
                     temperature=0.0,
-                    extra_body={"enable_thinking": False},
                 )
                 response_content = response.choices[0].message.content or ""
                 break

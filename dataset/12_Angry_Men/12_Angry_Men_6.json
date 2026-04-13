@@ -2487,6 +2487,2890 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "#12",
+            "category": 7,
+            "question": "Juror #12 mentions his commitment to his profession in advertising, often using industry logic ('run it up the flagpole'). What is the final status of his commitment to his 'guilty' vote?\nA. Executed with consistency: he stays 'guilty' because the 'brand' of the prosecution is stronger.\nB. Implicitly abandoned: he becomes the first to switch to 'not guilty' because he likes Juror #8's 'sales pitch.'\nC. Contradicted later: he changes his vote to 'guilty' (D8:125), then later switches back to 'not guilty' (D9:28), showing he is easily swayed.\nD. He is removed from the jury for being too indecisive.\nE. He leads the final consensus for 'guilty' by using advertising graphs to explain the evidence.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Executed with consistency: he stays 'guilty' because the 'brand' of the prosecution is stronger.",
+                "B. Implicitly abandoned: he becomes the first to switch to 'not guilty' because he likes Juror #8's 'sales pitch.'",
+                "C. Contradicted later: he changes his vote to 'guilty' (D8:125), then later switches back to 'not guilty' (D9:28), showing he is easily swayed.",
+                "D. He is removed from the jury for being too indecisive.",
+                "E. He leads the final consensus for 'guilty' by using advertising graphs to explain the evidence.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#12",
+                    "utterance": "I'm changing my vote. I think he's guilty.",
+                    "dia_id": "D8:125"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#12",
+                    "utterance": "Yes. [In response to Juror #8 asking if it is possible the boy is not guilty]",
+                    "dia_id": "D9:28"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "FOREMAN",
+                    "utterance": "It's eleven to one. [Meaning only #3 is left voting guilty]",
+                    "dia_id": "D9:40"
+                }
+            ]
+        },
+        {
+            "character": "#5",
+            "category": 6,
+            "question": "What did #5 learn from the discussion that made him reconsider the reliability of the woman's testimony?\nA. That the woman might have been wearing glasses during the murder.\nB. That the woman had a prior relationship with the defendant.\nC. That the woman had a poor memory of the events.\nD. That the woman had a history of dishonesty.\nE. That the woman had a strong motive to lie.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman might have been wearing glasses during the murder.",
+                "B. That the woman had a prior relationship with the defendant.",
+                "C. That the woman had a poor memory of the events.",
+                "D. That the woman had a history of dishonesty.",
+                "E. That the woman had a strong motive to lie.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. That the woman might have been wearing glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#5",
+                    "utterance": "He's right! She did do that a lot.",
+                    "dia_id": "D6:183"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, similar to #4, which are linked to glasses.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#5 confirms that the woman was rubbing her nose, which suggests she might have been wearing glasses during the murder.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#5\", \"utterance\": \"He's right! She did do that a lot.\", \"dia_id\": \"D6:183\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, similar to #4, which are linked to glasses.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#5 confirms that the woman was rubbing her nose, which suggests she might have been wearing glasses during the murder.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #5 learn from the discussion that made him reconsider the reliability of the woman's testimony?\nA. That the woman had a poor memory of the events.\nB. That the woman might have been wearing glasses during the murder.\nC. That the woman had a strong motive to lie.\nD. That the woman had a history of dishonesty.\nE. That the woman had a prior relationship with the defendant.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3495192527770996,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. That the woman had a strong motive to lie.)",
+                        "score": 0,
+                        "response_time": 0.43604087829589844,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#10",
+            "category": 6,
+            "question": "What did #10 learn from the discussion that made him reconsider his own position on the case?\nA. That the woman's testimony was unreliable due to her age.\nB. That the woman had a history of false testimony.\nC. That the other jurors were not convinced by his arguments.\nD. That the woman might have been wearing glasses during the murder.\nE. That the evidence against the defendant was circumstantial.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman's testimony was unreliable due to her age.",
+                "B. That the woman had a history of false testimony.",
+                "C. That the other jurors were not convinced by his arguments.",
+                "D. That the woman might have been wearing glasses during the murder.",
+                "E. That the evidence against the defendant was circumstantial.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. That the other jurors were not convinced by his arguments.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#4",
+                    "utterance": "If you open your mouth again I'm going to split your skull!",
+                    "dia_id": "D6:33"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "I'm only tryin' to tell you...",
+                    "dia_id": "D6:35"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#10 is threatened by #4, indicating that his arguments are not being well received.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#10 realizes that his position is not convincing the others, leading him to reconsider his stance.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#4\", \"utterance\": \"If you open your mouth again I'm going to split your skull!\", \"dia_id\": \"D6:33\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"I'm only tryin' to tell you...\", \"dia_id\": \"D6:35\"}, {\"step\": 1, \"inference\": \"#10 is threatened by #4, indicating that his arguments are not being well received.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#10 realizes that his position is not convincing the others, leading him to reconsider his stance.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #10 learn from the discussion that made him reconsider his own position on the case?\nA. That the other jurors were not convinced by his arguments.\nB. That the woman's testimony was unreliable due to her age.\nC. That the woman might have been wearing glasses during the murder.\nD. That the woman had a history of false testimony.\nE. That the evidence against the defendant was circumstantial.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.40811800956726074,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. That the evidence against the defendant was circumstantial.)",
+                        "score": 0,
+                        "response_time": 0.43761444091796875,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "FOREMAN",
+            "category": 6,
+            "question": "What did the Foreman learn from the discussion that made him reconsider the possibility of a hung jury?\nA. That the woman had a history of false testimony.\nB. That the woman might have been wearing glasses during the murder.\nC. That the other jurors were not convinced by his arguments.\nD. That the evidence against the defendant was circumstantial.\nE. That the woman's testimony was unreliable due to her age.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman had a history of false testimony.",
+                "B. That the woman might have been wearing glasses during the murder.",
+                "C. That the other jurors were not convinced by his arguments.",
+                "D. That the evidence against the defendant was circumstantial.",
+                "E. That the woman's testimony was unreliable due to her age.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. That the woman might have been wearing glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#4",
+                    "utterance": "I have a reasonable doubt now.",
+                    "dia_id": "D6:248"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, similar to #4, which are linked to glasses.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The Foreman observes that #4 now has reasonable doubt, which may be due to the woman's questionable testimony.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#4\", \"utterance\": \"I have a reasonable doubt now.\", \"dia_id\": \"D6:248\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, similar to #4, which are linked to glasses.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"The Foreman observes that #4 now has reasonable doubt, which may be due to the woman's questionable testimony.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did the Foreman learn from the discussion that made him reconsider the possibility of a hung jury?\nA. That the woman had a history of false testimony.\nB. That the evidence against the defendant was circumstantial.\nC. That the woman might have been wearing glasses during the murder.\nD. That the woman's testimony was unreliable due to her age.\nE. That the other jurors were not convinced by his arguments.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.45435237884521484,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "C"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. That the woman might have been wearing glasses during the murder.)",
+                        "score": 0,
+                        "response_time": 0.4934065341949463,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "JUDGE",
+            "category": 6,
+            "question": "What would be the most appropriate action for the Judge to take if the jury is still deadlocked after this session?\nA. Allow the jury to continue deliberating for another hour.\nB. Require the jury to take a vote again without further discussion.\nC. Declare a mistrial and dismiss the jury immediately.\nD. Send the jury back with additional instructions on reasonable doubt.\nE. Ask the jury to review the evidence once more with the court's guidance.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Allow the jury to continue deliberating for another hour.",
+                "B. Require the jury to take a vote again without further discussion.",
+                "C. Declare a mistrial and dismiss the jury immediately.",
+                "D. Send the jury back with additional instructions on reasonable doubt.",
+                "E. Ask the jury to review the evidence once more with the court's guidance.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "F. Cannot infer the answer based on the given information.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. There's another vote called for. Anybody object?",
+                    "dia_id": "D6:93"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#3",
+                    "utterance": "I say he's guilty.",
+                    "dia_id": "D6:304"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#3",
+                    "utterance": "I'm entitled to my opinion!",
+                    "dia_id": "D6:302"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The jury has already taken multiple votes and is still deadlocked.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The dialogue does not mention the Judge taking any action or providing instructions.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "None of the options are explicitly supported by the text, as the Judge is not mentioned in the scene.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. There's another vote called for. Anybody object?\", \"dia_id\": \"D6:93\"}, {\"id\": \"E2\", \"speaker\": \"#3\", \"utterance\": \"I say he's guilty.\", \"dia_id\": \"D6:304\"}, {\"id\": \"E3\", \"speaker\": \"#3\", \"utterance\": \"I'm entitled to my opinion!\", \"dia_id\": \"D6:302\"}, {\"step\": 1, \"inference\": \"The jury has already taken multiple votes and is still deadlocked.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"The dialogue does not mention the Judge taking any action or providing instructions.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 3, \"inference\": \"None of the options are explicitly supported by the text, as the Judge is not mentioned in the scene.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most appropriate action for the Judge to take if the jury is still deadlocked after this session?\nA. Require the jury to take a vote again without further discussion.\nB. Ask the jury to review the evidence once more with the court's guidance.\nC. Declare a mistrial and dismiss the jury immediately.\nD. Send the jury back with additional instructions on reasonable doubt.\nE. Allow the jury to continue deliberating for another hour.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3809504508972168,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "F"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "Let's take it inside to the judge.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I say we're hung.",
+                            "dia_id": "dia_11"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. There's another vote called for. Anybody object?",
+                            "dia_id": "D6:93"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I say he's guilty.",
+                            "dia_id": "D6:304"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "I'm entitled to my opinion!",
+                            "dia_id": "D6:302"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ]
+        },
+        {
+            "character": "CLERK",
+            "category": 6,
+            "question": "What would be the most appropriate action for the Clerk to take if the jury is still deadlocked after this session?\nA. Call the Judge immediately to request a recess.\nB. Allow the jury to continue deliberating without interference.\nC. Provide the jury with a summary of the evidence.\nD. Suggest that the jury take a break and return later.\nE. Offer to bring coffee and snacks to the jury.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Call the Judge immediately to request a recess.",
+                "B. Allow the jury to continue deliberating without interference.",
+                "C. Provide the jury with a summary of the evidence.",
+                "D. Suggest that the jury take a break and return later.",
+                "E. Offer to bring coffee and snacks to the jury.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "F. Cannot infer the answer based on the given information.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. There's another vote called for. Anybody object?",
+                    "dia_id": "D6:93"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#3",
+                    "utterance": "I'm entitled to my opinion!",
+                    "dia_id": "D6:302"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#10",
+                    "utterance": "I'm only tryin' to tell you...",
+                    "dia_id": "D6:35"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Clerk is not mentioned in the scene and has no dialogue.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "No action or suggestion from the Clerk is described in the text.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "None of the options are supported by the text, as the Clerk is not involved in the deliberation process.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. There's another vote called for. Anybody object?\", \"dia_id\": \"D6:93\"}, {\"id\": \"E2\", \"speaker\": \"#3\", \"utterance\": \"I'm entitled to my opinion!\", \"dia_id\": \"D6:302\"}, {\"id\": \"E3\", \"speaker\": \"#10\", \"utterance\": \"I'm only tryin' to tell you...\", \"dia_id\": \"D6:35\"}, {\"step\": 1, \"inference\": \"The Clerk is not mentioned in the scene and has no dialogue.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 2, \"inference\": \"No action or suggestion from the Clerk is described in the text.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 3, \"inference\": \"None of the options are supported by the text, as the Clerk is not involved in the deliberation process.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most appropriate action for the Clerk to take if the jury is still deadlocked after this session?\nA. Call the Judge immediately to request a recess.\nB. Offer to bring coffee and snacks to the jury.\nC. Allow the jury to continue deliberating without interference.\nD. Suggest that the jury take a break and return later.\nE. Provide the jury with a summary of the evidence.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.4056277275085449,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "F"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I say we're hung.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "We nine can't understand how you three are still so sure.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "I don't care whether I'm alone or not. It's my right!",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "All right!\nNot guilty.",
+                            "dia_id": "31"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. There's another vote called for. Anybody object?",
+                            "dia_id": "D6:93"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I'm entitled to my opinion!",
+                            "dia_id": "D6:302"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "I'm only tryin' to tell you...",
+                            "dia_id": "D6:35"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I say we're hung.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "We nine can't understand how you three are still so sure.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "I don't care whether I'm alone or not. It's my right!",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "All right!\nNot guilty.",
+                            "dia_id": "31"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "Okay, now here’s what I think. I think we're a hung jury. Let's take it inside to the judge.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It's your right.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "There’s no point in getting nasty about it. You keep trying to make this into a contest.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "Well what d’we do now?",
+                            "dia_id": "dia_23"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#5",
+                            "utterance": "You're alone.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "Well what about all the other evidence? What about all that stuff... the knife... the whole business.",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#2",
+                            "utterance": "You said, we could throw out all the other evidence.",
+                            "dia_id": "dia_29"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "You lousy bunch, of bleeding hearts!",
+                            "dia_id": "dia_32"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "You're not gonna intimidate me!",
+                            "dia_id": "dia_33"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#3",
+                            "utterance": "Let's go, mister.",
+                            "dia_id": "dia_36"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Somebody say something.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "There is no answer.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "There is no answer. And suddenly he strides swiftly to #8, stands in front of him with utter hatred. Camera moves in on them. #3 clenches his fists and stares at #8. #8 stares impassively back. It seems as though #3 mist inevitably hit #8. #8 waits for it, hands down. #3 half-raises both flats, stands there tensely, his face contorted in silent rage. Then suddenly he turns to the table and bangs both flats down on it. Camera moves in close on his face.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE JURY ROOM\nNone\nOnly #'s 3 and 8 are left now. #8 walks to the door. He in the doorway and looks back at #3. Then he steps out of the room. #3 still starve at the table, head down. The guard looks at him.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "#3 looks up. Then slowly he goes for his coat. He gets it, puts it on, and slowly walks toward the door. The guard steps outside. As #3 passes the table he stops, then walks over to it. The knife is sticking He reaches over, pulls it cut. He holds it up in front of him and looks at the doorway. Then, with a last burst of anger he flips it into the table. It quivers there. He turns and walks out, slamming the door. The knife quivers in the table in the empty room. Camera moves in for eye level shot of the knife. Behind it we see the window. Rain beats against it.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "Camera moves back and up, ending with a long shot, through the pelting rain, of the steps and the jurors spreading out silently in all directions, never to see each other again.",
+                            "dia_id": "16"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "Okay, now here’s what I think. I think we're a hung jury. Let's take it inside to the judge.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It's your right.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "There’s no point in getting nasty about it. You keep trying to make this into a contest.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "Well what d’we do now?",
+                            "dia_id": "dia_23"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#5",
+                            "utterance": "You're alone.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "Well what about all the other evidence? What about all that stuff... the knife... the whole business.",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#2",
+                            "utterance": "You said, we could throw out all the other evidence.",
+                            "dia_id": "dia_29"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "You lousy bunch, of bleeding hearts!",
+                            "dia_id": "dia_32"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "You're not gonna intimidate me!",
+                            "dia_id": "dia_33"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#3",
+                            "utterance": "Let's go, mister.",
+                            "dia_id": "dia_36"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. There's another vote called for. Anybody object?",
+                            "dia_id": "D6:93"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I'm entitled to my opinion!",
+                            "dia_id": "D6:302"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "I'm only tryin' to tell you...",
+                            "dia_id": "D6:35"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I say we're hung.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "We nine can't understand how you three are still so sure.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "I don't care whether I'm alone or not. It's my right!",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "All right!\nNot guilty.",
+                            "dia_id": "31"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "Okay, now here’s what I think. I think we're a hung jury. Let's take it inside to the judge.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It's your right.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "There’s no point in getting nasty about it. You keep trying to make this into a contest.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "Well what d’we do now?",
+                            "dia_id": "dia_23"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#5",
+                            "utterance": "You're alone.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "Well what about all the other evidence? What about all that stuff... the knife... the whole business.",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#2",
+                            "utterance": "You said, we could throw out all the other evidence.",
+                            "dia_id": "dia_29"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "You lousy bunch, of bleeding hearts!",
+                            "dia_id": "dia_32"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "You're not gonna intimidate me!",
+                            "dia_id": "dia_33"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#3",
+                            "utterance": "Let's go, mister.",
+                            "dia_id": "dia_36"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Somebody say something.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "There is no answer.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "There is no answer. And suddenly he strides swiftly to #8, stands in front of him with utter hatred. Camera moves in on them. #3 clenches his fists and stares at #8. #8 stares impassively back. It seems as though #3 mist inevitably hit #8. #8 waits for it, hands down. #3 half-raises both flats, stands there tensely, his face contorted in silent rage. Then suddenly he turns to the table and bangs both flats down on it. Camera moves in close on his face.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE JURY ROOM\nNone\nOnly #'s 3 and 8 are left now. #8 walks to the door. He in the doorway and looks back at #3. Then he steps out of the room. #3 still starve at the table, head down. The guard looks at him.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "#3 looks up. Then slowly he goes for his coat. He gets it, puts it on, and slowly walks toward the door. The guard steps outside. As #3 passes the table he stops, then walks over to it. The knife is sticking He reaches over, pulls it cut. He holds it up in front of him and looks at the doorway. Then, with a last burst of anger he flips it into the table. It quivers there. He turns and walks out, slamming the door. The knife quivers in the table in the empty room. Camera moves in for eye level shot of the knife. Behind it we see the window. Rain beats against it.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "Camera moves back and up, ending with a long shot, through the pelting rain, of the steps and the jurors spreading out silently in all directions, never to see each other again.",
+                            "dia_id": "16"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Somebody say something.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "There is no answer.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "There is no answer. And suddenly he strides swiftly to #8, stands in front of him with utter hatred. Camera moves in on them. #3 clenches his fists and stares at #8. #8 stares impassively back. It seems as though #3 mist inevitably hit #8. #8 waits for it, hands down. #3 half-raises both flats, stands there tensely, his face contorted in silent rage. Then suddenly he turns to the table and bangs both flats down on it. Camera moves in close on his face.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE JURY ROOM\nNone\nOnly #'s 3 and 8 are left now. #8 walks to the door. He in the doorway and looks back at #3. Then he steps out of the room. #3 still starve at the table, head down. The guard looks at him.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "#3 looks up. Then slowly he goes for his coat. He gets it, puts it on, and slowly walks toward the door. The guard steps outside. As #3 passes the table he stops, then walks over to it. The knife is sticking He reaches over, pulls it cut. He holds it up in front of him and looks at the doorway. Then, with a last burst of anger he flips it into the table. It quivers there. He turns and walks out, slamming the door. The knife quivers in the table in the empty room. Camera moves in for eye level shot of the knife. Behind it we see the window. Rain beats against it.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "Camera moves back and up, ending with a long shot, through the pelting rain, of the steps and the jurors spreading out silently in all directions, never to see each other again.",
+                            "dia_id": "16"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. There's another vote called for. Anybody object?",
+                            "dia_id": "D6:93"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I'm entitled to my opinion!",
+                            "dia_id": "D6:302"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "I'm only tryin' to tell you...",
+                            "dia_id": "D6:35"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I say we're hung.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "We nine can't understand how you three are still so sure.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "I don't care whether I'm alone or not. It's my right!",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "All right!\nNot guilty.",
+                            "dia_id": "31"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "Okay, now here’s what I think. I think we're a hung jury. Let's take it inside to the judge.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It's your right.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "There’s no point in getting nasty about it. You keep trying to make this into a contest.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "Well what d’we do now?",
+                            "dia_id": "dia_23"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#5",
+                            "utterance": "You're alone.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "Well what about all the other evidence? What about all that stuff... the knife... the whole business.",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#2",
+                            "utterance": "You said, we could throw out all the other evidence.",
+                            "dia_id": "dia_29"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "You lousy bunch, of bleeding hearts!",
+                            "dia_id": "dia_32"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "You're not gonna intimidate me!",
+                            "dia_id": "dia_33"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#3",
+                            "utterance": "Let's go, mister.",
+                            "dia_id": "dia_36"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Somebody say something.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "There is no answer.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "There is no answer. And suddenly he strides swiftly to #8, stands in front of him with utter hatred. Camera moves in on them. #3 clenches his fists and stares at #8. #8 stares impassively back. It seems as though #3 mist inevitably hit #8. #8 waits for it, hands down. #3 half-raises both flats, stands there tensely, his face contorted in silent rage. Then suddenly he turns to the table and bangs both flats down on it. Camera moves in close on his face.",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE JURY ROOM\nNone\nOnly #'s 3 and 8 are left now. #8 walks to the door. He in the doorway and looks back at #3. Then he steps out of the room. #3 still starve at the table, head down. The guard looks at him.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "#3 looks up. Then slowly he goes for his coat. He gets it, puts it on, and slowly walks toward the door. The guard steps outside. As #3 passes the table he stops, then walks over to it. The knife is sticking He reaches over, pulls it cut. He holds it up in front of him and looks at the doorway. Then, with a last burst of anger he flips it into the table. It quivers there. He turns and walks out, slamming the door. The knife quivers in the table in the empty room. Camera moves in for eye level shot of the knife. Behind it we see the window. Rain beats against it.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "Camera moves back and up, ending with a long shot, through the pelting rain, of the steps and the jurors spreading out silently in all directions, never to see each other again.",
+                            "dia_id": "16"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ]
+        },
+        {
+            "character": "GUARD",
+            "category": 6,
+            "question": "What did the Guard learn from the discussion that might have influenced his behavior when interacting with the jurors?\nA. That the jurors were not being respectful to each other.\nB. That the jurors were not taking the case seriously.\nC. That the jurors were not following the proper procedures.\nD. That the jurors were likely to be tired and in need of rest.\nE. That the jurors were likely to be divided on the verdict.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the jurors were not being respectful to each other.",
+                "B. That the jurors were not taking the case seriously.",
+                "C. That the jurors were not following the proper procedures.",
+                "D. That the jurors were likely to be tired and in need of rest.",
+                "E. That the jurors were likely to be divided on the verdict.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "F. Cannot infer the answer based on the given information.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#3",
+                    "utterance": "I'm entitled to my opinion!",
+                    "dia_id": "D6:302"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "I'm only tryin' to tell you...",
+                    "dia_id": "D6:35"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "GUARD",
+                    "utterance": "Let's go, mister.",
+                    "dia_id": "D6:311"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Guard is not involved in the deliberation and has no dialogue about the jurors' behavior.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "No evidence is provided that the Guard learned anything from the discussion.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "None of the options are supported by the text, as the Guard is not part of the deliberation process.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#3\", \"utterance\": \"I'm entitled to my opinion!\", \"dia_id\": \"D6:302\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"I'm only tryin' to tell you...\", \"dia_id\": \"D6:35\"}, {\"id\": \"E3\", \"speaker\": \"GUARD\", \"utterance\": \"Let's go, mister.\", \"dia_id\": \"D6:311\"}, {\"step\": 1, \"inference\": \"The Guard is not involved in the deliberation and has no dialogue about the jurors' behavior.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 2, \"inference\": \"No evidence is provided that the Guard learned anything from the discussion.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 3, \"inference\": \"None of the options are supported by the text, as the Guard is not part of the deliberation process.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did the Guard learn from the discussion that might have influenced his behavior when interacting with the jurors?\nA. That the jurors were not taking the case seriously.\nB. That the jurors were not being respectful to each other.\nC. That the jurors were not following the proper procedures.\nD. That the jurors were likely to be tired and in need of rest.\nE. That the jurors were likely to be divided on the verdict.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3444490432739258,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "F"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(F)",
+                    "used_evidence": [],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I'm entitled to my opinion!",
+                            "dia_id": "D6:302"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I'm only tryin' to tell you...",
+                            "dia_id": "D6:35"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "GUARD",
+                            "utterance": "Let's go, mister.",
+                            "dia_id": "D6:311"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ]
+        },
+        {
+            "character": "#4",
+            "category": 6,
+            "question": "What did #4 learn from the discussion that caused him to express a reasonable doubt about the defendant's guilt?\nA. That the woman had a perfect memory of the events.\nB. That the woman had previously testified in other cases.\nC. That the woman had a clear motive to lie about the defendant.\nD. That the woman had a history of making mistakes in court.\nE. That the woman may not have been wearing her glasses during the murder.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman had a perfect memory of the events.",
+                "B. That the woman had previously testified in other cases.",
+                "C. That the woman had a clear motive to lie about the defendant.",
+                "D. That the woman had a history of making mistakes in court.",
+                "E. That the woman may not have been wearing her glasses during the murder.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. That the woman may not have been wearing her glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#4",
+                    "utterance": "I have a reasonable doubt now.",
+                    "dia_id": "D6:248"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This detail caused #4 to express a reasonable doubt about the reliability of the testimony and the defendant's guilt.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(D)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#4\", \"utterance\": \"I have a reasonable doubt now.\", \"dia_id\": \"D6:248\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"This detail caused #4 to express a reasonable doubt about the reliability of the testimony and the defendant's guilt.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #4 learn from the discussion that caused him to express a reasonable doubt about the defendant's guilt?\nA. That the woman had a clear motive to lie about the defendant.\nB. That the woman had previously testified in other cases.\nC. That the woman had a perfect memory of the events.\nD. That the woman may not have been wearing her glasses during the murder.\nE. That the woman had a history of making mistakes in court.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3342721462249756,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "D"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "As far as I can see, this is unshakeable testimony.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_19"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "D6:248"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "As far as I can see, this is unshakeable testimony.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "You've made some excellent points. The last one, in which you 'proved' that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Don’t you think that the woman might have made a mistake?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "What do you think?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That’s what I mean! That's the whole case!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#4",
+                            "utterance": "I’ll try.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#9",
+                            "utterance": "I'm sure you'll pardon me for this, but I was wondering why you were rubbing your nose like that.",
+                            "dia_id": "23"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#4",
+                            "utterance": "It is. Now could we get on to something else?",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#9",
+                            "utterance": "She had those marks. She kept rubbing them, in court.",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#5",
+                            "utterance": "He's right! She did do that a lot.",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I’m telling ya, as soon as we walk outa the house...",
+                            "dia_id": "29"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "30"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#4",
+                            "utterance": "No. I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "#11",
+                            "utterance": "She had to he able to identify a person 60 feet away, at night, without glasses.",
+                            "dia_id": "33"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "#2",
+                            "utterance": "You can’t send someone off to die on evidence like that.",
+                            "dia_id": "34"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "#3",
+                            "utterance": "Don’t give me that!",
+                            "dia_id": "35"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "#8",
+                            "utterance": "We’re not convinced.. We want to hear them again. We have as much time as It takes.",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "#3",
+                            "utterance": "Everything... every single thing that came out in that courtroom, but I mean everything... says he’s guilty. Do you think I'm an idiot or something? Why dontcha take that stuff about the old man... the old man who lived there... and heard everything, or take the knife, what, just because he... found one exactly like it? That old man saw him. Right there on the stairs. What’s the difference how many seconds it was? What's the difference? Every single thing. The knife falling through a hole in his pocket... you can't prove that he didn't get to the door. Sure, you can hobble around the room and take all the time you want, but you can't prove it! And that stuff with the el! And the movies! Now there’s a phoney deal if I ever saw one. I betcha five thousand dollars I'd remember the movies I saw the night I killed my father... as if I ever would! I’m telling you, every single thing that went on has been twisted and turned in here. That business with the glasses, how do you know she didn’t have them on? The woman testified in court... and that whole thing about hearing the boy yell... Listen, I've got all the facts here! You guys...",
+                            "dia_id": "40"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "D6:248"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "As far as I can see, this is unshakeable testimony.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "You've made some excellent points. The last one, in which you 'proved' that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Don’t you think that the woman might have made a mistake?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "What do you think?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That’s what I mean! That's the whole case!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#4",
+                            "utterance": "I’ll try.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#9",
+                            "utterance": "I'm sure you'll pardon me for this, but I was wondering why you were rubbing your nose like that.",
+                            "dia_id": "23"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#4",
+                            "utterance": "It is. Now could we get on to something else?",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#9",
+                            "utterance": "She had those marks. She kept rubbing them, in court.",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#5",
+                            "utterance": "He's right! She did do that a lot.",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I’m telling ya, as soon as we walk outa the house...",
+                            "dia_id": "29"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "30"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#4",
+                            "utterance": "No. I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "#11",
+                            "utterance": "She had to he able to identify a person 60 feet away, at night, without glasses.",
+                            "dia_id": "33"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "#2",
+                            "utterance": "You can’t send someone off to die on evidence like that.",
+                            "dia_id": "34"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "#3",
+                            "utterance": "Don’t give me that!",
+                            "dia_id": "35"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "#8",
+                            "utterance": "We’re not convinced.. We want to hear them again. We have as much time as It takes.",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "#3",
+                            "utterance": "Everything... every single thing that came out in that courtroom, but I mean everything... says he’s guilty. Do you think I'm an idiot or something? Why dontcha take that stuff about the old man... the old man who lived there... and heard everything, or take the knife, what, just because he... found one exactly like it? That old man saw him. Right there on the stairs. What’s the difference how many seconds it was? What's the difference? Every single thing. The knife falling through a hole in his pocket... you can't prove that he didn't get to the door. Sure, you can hobble around the room and take all the time you want, but you can't prove it! And that stuff with the el! And the movies! Now there’s a phoney deal if I ever saw one. I betcha five thousand dollars I'd remember the movies I saw the night I killed my father... as if I ever would! I’m telling you, every single thing that went on has been twisted and turned in here. That business with the glasses, how do you know she didn’t have them on? The woman testified in court... and that whole thing about hearing the boy yell... Listen, I've got all the facts here! You guys...",
+                            "dia_id": "40"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "You've made some excellent points. The last one, in which you 'proved' that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Don’t you think that the woman might have made a mistake?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "What do you think?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That’s what I mean! That's the whole case!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#4",
+                            "utterance": "I’ll try.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#9",
+                            "utterance": "I'm sure you'll pardon me for this, but I was wondering why you were rubbing your nose like that.",
+                            "dia_id": "23"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#4",
+                            "utterance": "It is. Now could we get on to something else?",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#9",
+                            "utterance": "She had those marks. She kept rubbing them, in court.",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#5",
+                            "utterance": "He's right! She did do that a lot.",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I’m telling ya, as soon as we walk outa the house...",
+                            "dia_id": "29"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "30"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#4",
+                            "utterance": "No. I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "#11",
+                            "utterance": "She had to he able to identify a person 60 feet away, at night, without glasses.",
+                            "dia_id": "33"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "#2",
+                            "utterance": "You can’t send someone off to die on evidence like that.",
+                            "dia_id": "34"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "#3",
+                            "utterance": "Don’t give me that!",
+                            "dia_id": "35"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "#8",
+                            "utterance": "We’re not convinced.. We want to hear them again. We have as much time as It takes.",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "#3",
+                            "utterance": "Everything... every single thing that came out in that courtroom, but I mean everything... says he’s guilty. Do you think I'm an idiot or something? Why dontcha take that stuff about the old man... the old man who lived there... and heard everything, or take the knife, what, just because he... found one exactly like it? That old man saw him. Right there on the stairs. What’s the difference how many seconds it was? What's the difference? Every single thing. The knife falling through a hole in his pocket... you can't prove that he didn't get to the door. Sure, you can hobble around the room and take all the time you want, but you can't prove it! And that stuff with the el! And the movies! Now there’s a phoney deal if I ever saw one. I betcha five thousand dollars I'd remember the movies I saw the night I killed my father... as if I ever would! I’m telling you, every single thing that went on has been twisted and turned in here. That business with the glasses, how do you know she didn’t have them on? The woman testified in court... and that whole thing about hearing the boy yell... Listen, I've got all the facts here! You guys...",
+                            "dia_id": "40"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I have a reasonable doubt now.",
+                            "dia_id": "D6:248"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "As far as I can see, this is unshakeable testimony.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "You've made some excellent points. The last one, in which you 'proved' that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "Don’t you think that the woman might have made a mistake?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "What do you think?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That’s what I mean! That's the whole case!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#4",
+                            "utterance": "I’ll try.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#9",
+                            "utterance": "I'm sure you'll pardon me for this, but I was wondering why you were rubbing your nose like that.",
+                            "dia_id": "23"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#4",
+                            "utterance": "It is. Now could we get on to something else?",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#9",
+                            "utterance": "She had those marks. She kept rubbing them, in court.",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#5",
+                            "utterance": "He's right! She did do that a lot.",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I’m telling ya, as soon as we walk outa the house...",
+                            "dia_id": "29"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "30"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#4",
+                            "utterance": "No. I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "32"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "#11",
+                            "utterance": "She had to he able to identify a person 60 feet away, at night, without glasses.",
+                            "dia_id": "33"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "#2",
+                            "utterance": "You can’t send someone off to die on evidence like that.",
+                            "dia_id": "34"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "#3",
+                            "utterance": "Don’t give me that!",
+                            "dia_id": "35"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "#8",
+                            "utterance": "We’re not convinced.. We want to hear them again. We have as much time as It takes.",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "#3",
+                            "utterance": "Everything... every single thing that came out in that courtroom, but I mean everything... says he’s guilty. Do you think I'm an idiot or something? Why dontcha take that stuff about the old man... the old man who lived there... and heard everything, or take the knife, what, just because he... found one exactly like it? That old man saw him. Right there on the stairs. What’s the difference how many seconds it was? What's the difference? Every single thing. The knife falling through a hole in his pocket... you can't prove that he didn't get to the door. Sure, you can hobble around the room and take all the time you want, but you can't prove it! And that stuff with the el! And the movies! Now there’s a phoney deal if I ever saw one. I betcha five thousand dollars I'd remember the movies I saw the night I killed my father... as if I ever would! I’m telling you, every single thing that went on has been twisted and turned in here. That business with the glasses, how do you know she didn’t have them on? The woman testified in court... and that whole thing about hearing the boy yell... Listen, I've got all the facts here! You guys...",
+                            "dia_id": "40"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. That the woman had a clear motive to lie about the defendant.)",
+                        "score": 0,
+                        "response_time": 0.5200703144073486,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#12",
+            "category": 6,
+            "question": "What did #12 learn from the discussion that made him change his vote from not guilty to guilty?\nA. That the woman had a clear motive to lie.\nB. That the woman had a perfect memory of the events.\nC. That the woman may not have been wearing her glasses during the murder.\nD. That the woman had a strong alibi for the time of the murder.\nE. That the woman had previously testified in other cases.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman had a clear motive to lie.",
+                "B. That the woman had a perfect memory of the events.",
+                "C. That the woman may not have been wearing her glasses during the murder.",
+                "D. That the woman had a strong alibi for the time of the murder.",
+                "E. That the woman had previously testified in other cases.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. That the woman may not have been wearing her glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#12",
+                    "utterance": "I'm changing my vote. I think he's guilty.",
+                    "dia_id": "D6:94"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This made #12 reconsider the reliability of the testimony, leading him to change his vote.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(D) That the woman may not have been wearing her glasses during the murder.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#12\", \"utterance\": \"I'm changing my vote. I think he's guilty.\", \"dia_id\": \"D6:94\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"This made #12 reconsider the reliability of the testimony, leading him to change his vote.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #12 learn from the discussion that made him change his vote from not guilty to guilty?\nA. That the woman had a clear motive to lie.\nB. That the woman had a perfect memory of the events.\nC. That the woman had previously testified in other cases.\nD. That the woman may not have been wearing her glasses during the murder.\nE. That the woman had a strong alibi for the time of the murder.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.6922492980957031,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "D"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "And two. The fact that this woman described the stabbing by saying she saw the boy raise his arm over his head and plunge the knife down into the father's chest. She saw him do it... the wrong way.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#8",
+                            "utterance": "And here's another guess. Maybe she honestly thought she saw the boy knife his father. I say that she saw only a blur.",
+                            "dia_id": "dia_25"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#12",
+                            "utterance": "Well... I don’t know. There’s so much evidence to sift.",
+                            "dia_id": "dia_18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#12",
+                            "utterance": "Well maybe...",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#4",
+                            "utterance": "Frankly, I don’t see how you can vote for acquittal.",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "dia_21"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#12",
+                            "utterance": "Well, it’s not so easy to arrange the evidence in order...",
+                            "dia_id": "dia_23"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#12",
+                            "utterance": "I'm changing my vote. I think he's guilty.",
+                            "dia_id": "D6:94"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "And two. The fact that this woman described the stabbing by saying she saw the boy raise his arm over his head and plunge the knife down into the father's chest. She saw him do it... the wrong way.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#8",
+                            "utterance": "And here's another guess. Maybe she honestly thought she saw the boy knife his father. I say that she saw only a blur.",
+                            "dia_id": "dia_25"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#12",
+                            "utterance": "Well... I don’t know. There’s so much evidence to sift.",
+                            "dia_id": "dia_18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#12",
+                            "utterance": "Well maybe...",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#4",
+                            "utterance": "Frankly, I don’t see how you can vote for acquittal.",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "dia_21"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#12",
+                            "utterance": "Well, it’s not so easy to arrange the evidence in order...",
+                            "dia_id": "dia_23"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "You've made some excellent points. The last one, in which you 'proved' that the boy couldn't have made the of overhand stab wound, that killed his father was very convincing.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "We may be trying to return a guilty man to the community. No one can really know. But we have a reasonable doubt, and this is a safeguard which has enormous value to our system. No jury can declare a man guilty unless it’s sure.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "I think we're a hung jury. Let's take it inside to the judge.",
+                            "dia_id": "22"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "I'm the competitive type!",
+                            "dia_id": "23"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "I think he’s guilty!",
+                            "dia_id": "31"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "That's the whole case!",
+                            "dia_id": "35"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "You can throw out all the other evidence. The woman saw him do it. What else do you want?",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "27"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#12",
+                            "utterance": "This is a pretty complicated business.",
+                            "dia_id": "28"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#3",
+                            "utterance": "I don't care whether I'm alone or not. It's my right!",
+                            "dia_id": "37"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#3",
+                            "utterance": "You're not gonna intimidate me!",
+                            "dia_id": "38"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#3",
+                            "utterance": "I’m entitled to my opinion!",
+                            "dia_id": "39"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#3",
+                            "utterance": "All right!",
+                            "dia_id": "40"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#3",
+                            "utterance": "Not guilty.",
+                            "dia_id": "41"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#12",
+                            "utterance": "I'm changing my vote. I think he's guilty.",
+                            "dia_id": "D6:94"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "But I still believe the boy is guilty of murder. I have two reasons. One: The evidence given by the woman across the street who actually saw the murder committed.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "And two. The fact that this woman described the stabbing by saying she saw the boy raise his arm over his head and plunge the knife down into the father's chest. She saw him do it... the wrong way.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "Now let's talk about this woman for a minute. She said that she went to bed at about 11 o’clock that night. Her bed was next to the window and she could look out while lying down and see directly into the boy's window across the street.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She tossed and turned for over an hour, unable to fail asleep, Finally, she turned toward the window at about ten minutes after twelve and, as she looked out, she saw the killing through the window of the passing el train.",
+                            "dia_id": "dia_15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#4",
+                            "utterance": "She says that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#8",
+                            "utterance": "And here's another guess. Maybe she honestly thought she saw the boy knife his father. I say that she saw only a blur.",
+                            "dia_id": "dia_25"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#12",
+                            "utterance": "Well... I don’t know. There’s so much evidence to sift.",
+                            "dia_id": "dia_18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#12",
+                            "utterance": "Well maybe...",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#4",
+                            "utterance": "Frankly, I don’t see how you can vote for acquittal.",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#3",
+                            "utterance": "That’s right! That's absolutely right!",
+                            "dia_id": "dia_21"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#12",
+                            "utterance": "Well, it’s not so easy to arrange the evidence in order...",
+                            "dia_id": "dia_23"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(A) That the woman had a clear motive to lie.",
+                        "score": 0,
+                        "response_time": 0.5074620246887207,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#6",
+            "category": 6,
+            "question": "What did #6 learn from the discussion that made him question the reliability of the woman's testimony?\nA. That the woman had a perfect memory of the events.\nB. That the woman may not have been wearing her glasses during the murder.\nC. That the woman had previously testified in other cases.\nD. That the woman had a history of making mistakes in court.\nE. That the woman had a clear motive to lie about the defendant.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman had a perfect memory of the events.",
+                "B. That the woman may not have been wearing her glasses during the murder.",
+                "C. That the woman had previously testified in other cases.",
+                "D. That the woman had a history of making mistakes in court.",
+                "E. That the woman had a clear motive to lie about the defendant.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. That the woman may not have been wearing her glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#6",
+                    "utterance": "My wife. Listen, I'm telling ya, as soon as we walk outa the house...",
+                    "dia_id": "D6:202"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "This detail, combined with the idea that people often avoid glasses in certain situations, made #6 question the reliability of the woman's testimony.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#6\", \"utterance\": \"My wife. Listen, I'm telling ya, as soon as we walk outa the house...\", \"dia_id\": \"D6:202\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, likely from glasses, which implies she may not have worn them during the murder.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"This detail, combined with the idea that people often avoid glasses in certain situations, made #6 question the reliability of the woman's testimony.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #6 learn from the discussion that made him question the reliability of the woman's testimony?\nA. That the woman may not have been wearing her glasses during the murder.\nB. That the woman had previously testified in other cases.\nC. That the woman had a history of making mistakes in court.\nD. That the woman had a perfect memory of the events.\nE. That the woman had a clear motive to lie about the defendant.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3671855926513672,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She said that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#6",
+                            "utterance": "Yeah, that's what I was just gonna say.",
+                            "dia_id": "dia_14"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I'm telling ya, as soon as we walk outa the house...",
+                            "dia_id": "D6:202"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She said that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#6",
+                            "utterance": "Yeah, that's what I was just gonna say.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Do you wear your glasses when you go to bed?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "No, I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I did. Strange, but I didn't think about it before...",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#6",
+                            "utterance": "Now that we're talking about it, I saw them. I mean it never occurred to me...",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Do you wear your glasses when you go to bed?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "No, I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_13"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I'm telling ya, as soon as we walk outa the house...",
+                            "dia_id": "D6:202"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She said that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#6",
+                            "utterance": "Yeah, that's what I was just gonna say.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Do you wear your glasses when you go to bed?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "No, I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I did. Strange, but I didn't think about it before...",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#6",
+                            "utterance": "Now that we're talking about it, I saw them. I mean it never occurred to me...",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I did. Strange, but I didn't think about it before...",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#6",
+                            "utterance": "Now that we're talking about it, I saw them. I mean it never occurred to me...",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#6",
+                            "utterance": "My wife. Listen, I'm telling ya, as soon as we walk outa the house...",
+                            "dia_id": "D6:202"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She said that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She saw him do it... the wrong way.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#6",
+                            "utterance": "Yeah, that's what I was just gonna say.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Do you wear your glasses when you go to bed?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "No, I don’t. No one wears eyeglasses to bed.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#8",
+                            "utterance": "I don't knew. I guessed. I'm also guessing that she probably didn't put on her glasses when she turned, and looked casually out of the window. And she herself said that the murder took place just as she looked out, and the lights went off a split second later. She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Did you ever see a woman who had to wear glasses, and didn't want to because she thinks they spoil her looks?",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I did. Strange, but I didn't think about it before...",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#6",
+                            "utterance": "Now that we're talking about it, I saw them. I mean it never occurred to me...",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. That the woman had a clear motive to lie about the defendant.)",
+                        "score": 0,
+                        "response_time": 0.5263895988464355,
+                        "file_id": 1
+                    }
+                ]
+            }
         }
     ],
     "conversation": {

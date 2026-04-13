@@ -1,0 +1,1672 @@
+{
+    "qa": [
+       
+    {
+      "character": "Ariel",
+      "category": 1,
+      "question": "Which recurring technological mishap does Ariel admit to experiencing, similar to the behavior Bennett attributes to his pet?",
+      "option": [
+        "A. Accidentally peeing on physical newspapers like the crossword section.",
+        "B. Unintentionally deleting recorded messages on an answering machine.",
+        "C. Losing the television remote control to a small household creature.",
+        "D. Forgetting to take down holiday decorations after the New Year.",
+        "E. Struggling to operate a kitchen appliance during a social gathering."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I don’t know whether he’s testing me, or just acting out, but my monkey is out of control. But, he keeps erasing the messages on my machine, \\\"supposedly\\\" by accident.", "dia_id": "2:1" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "No, yeah, I’ve done that.", "dia_id": "2:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, Bennett complains that his monkey erases messages on his machine, supposedly by accident.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel immediately responds that she has done that specific action herself.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 2,
+      "question": "Based on Ariel's observations, what linguistic fact does she discover while watching television with the group?",
+      "option": [
+        "A. The character name 'Rossie' is used as a nickname for Bennett's monkey.",
+        "B. The show 'Laverne y Shirley' is translated directly into Spanish titles.",
+        "C. The character name 'Urkel' remains unchanged when translated into Spanish.",
+        "D. Spanish speakers use the term 'buddies' to describe close female friends.",
+        "E. The word for 'vagina' is compared to an opening flower in medical classes."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "You wanna watch Laverne y Shirley?", "dia_id": "5:26" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Cool... \\\"Urkel\\\" in Spanish is \\\"Urkel.\\\"", "dia_id": "5:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The group is watching television, specifically 'Laverne y Shirley' or a similar program with Spanish audio options.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel explicitly notes that the name 'Urkel' is the same in Spanish.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 3,
+      "question": "How does Ariel's line of questioning regarding Bennett's pregnancy situation reflect her understanding of his social dynamics?",
+      "option": [
+        "A. She questions if he is truly comfortable with Carol and Susan being together.",
+        "B. She asks whether Carol is planning to move back in with Bennett after the birth.",
+        "C. She expresses concern that Susan is being excluded from the coaching training.",
+        "D. She suggests that Bennett should use his 'sperm card' to win the coin flip.",
+        "E. She wonders if the parenting team will include Fiona as a secondary coach."
+      ],
+      "answer": "A",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "No, Susan’s gonna be there too. We’ve got dads, we’ve got lesbians, the whole parenting team.", "dia_id": "2:33" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Well, isn’t, isn’t that gonna be weird?", "dia_id": "2:34" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "No, no. I mean, it mighta been at first, but by now I, I think I’m pretty comfortable with the whole situation.", "dia_id": "2:35" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett explains the group dynamic for the baby (dads and lesbians).", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel anticipates social awkwardness and asks if it will be weird.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Ariel's prompt leads Bennett to declare his comfort level, showing she was checking his emotional state regarding the team.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 4,
+      "question": "What is Ariel's perspective on the level of seriousness in Ethan's relationship with Ursula?",
+      "option": [
+        "A. She thinks it is serious because Ursula is giving him free curly fries.",
+        "B. She believes it is serious because they have been dating for over a week.",
+        "C. She views it as not serious because they have not yet had sexual relations.",
+        "D. She considers it dangerous because Ursula stole Randy Brown in the past.",
+        "E. She thinks it is significant because Ethan asked for Fiona's permission."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Well, not that it’s any of your business, but, no, we haven’t, okay?", "dia_id": "13:13" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "You meant sex, right?", "dia_id": "13:14" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Oh please, they’ve been going out a week. They haven’t even slept together yet, I mean, that’s not serious.", "dia_id": "15:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan confirms to Fiona that he and Ursula have not had sex.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Ariel later uses this specific lack of intimacy (not sleeping together) to argue the relationship isn't serious.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 5,
+      "question": "Which specific show does Ariel watch that leads to her comment about a character name translation?",
+      "option": [
+        "A. Friends",
+        "B. Laverne y Shirley",
+        "C. The Urkel Show",
+        "D. Riff's Diner",
+        "E. Earth Science"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "You wanna watch Laverne y Shirley?", "dia_id": "5:26" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Cool... \\\"Urkel\\\" in Spanish is \\\"Urkel.\\\"", "dia_id": "5:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett offers to watch 'Laverne y Shirley' in Session 5.", "based_on": ["E1"] },
+        { "step": 2, "inference": "In the same session, Ariel makes a comment about Urkel's name in Spanish, which occurs while the TV is the focus.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 6,
+      "question": "What does Ariel learn about her own behavior after Bennett compares it to his monkey's actions?",
+      "option": [
+        "A. She learns she is capable of peeing on newspapers just like Marcel.",
+        "B. She realizes she has the same habit of erasing answering machine messages.",
+        "C. She discovers she has been accidentally taking Chloe's jackets as well.",
+        "D. She finds out she shares a preference for curly fries with Ethan.",
+        "E. She learns that she and Ursula actually look exactly the same."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "But, he keeps erasing the messages on my machine, \\\"supposedly\\\" by accident.", "dia_id": "2:1" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "No, yeah, I’ve done that.", "dia_id": "2:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett lists his monkey's problematic behaviors, including erasing machine messages.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel admits she has also done this, distinguishing it from the other monkey behavior (peeing on crosswords) she hasn't done.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 7,
+      "question": "Who is Ariel's last name?",
+      "option": [
+        "A. Ariel Geller",
+        "B. Ariel Willick",
+        "C. Ariel Bunch",
+        "D. Ariel Buffay",
+        "E. Ariel Green"
+      ],
+      "answer": "F",
+      "label": "Abstain",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I’m Bennett Geller...", "dia_id": "3:3" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "...this is Carol Willick, and this... is Susan Bunch.", "dia_id": "3:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The dialogue identifies the surnames Geller, Willick, and Bunch.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Ariel's surname is never mentioned in any of the sessions provided.", "based_on": [] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 1,
+      "question": "What is Bennett's primary role in the upcoming birth according to his own description?",
+      "option": [
+        "A. He is the sole guardian of the boy and the girl being born.",
+        "B. He is the coach who will be supporting the mother's head during breathing.",
+        "C. He is part of a 'parenting team' consisting of himself, Carol, and Susan.",
+        "D. He is a professional animal trainer struggling to manage a monkey.",
+        "E. He is a primary school teacher stuck at a parent-teacher meeting."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "We’ve got dads, we’ve got lesbians, the whole parenting team.", "dia_id": "2:33" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "I’m Bennett Geller... that’s my boy in there, and uh, this is Carol Willick, and this... is Susan Bunch.", "dia_id": "3:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett describes the group as a 'parenting team' including himself, Carol, and Susan.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He confirms his biological connection to the baby and identifies the other two members of the team.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 2,
+      "question": "What happens when Bennett attempts to take the remote control from Marcel?",
+      "option": [
+        "A. Marcel gives the remote back to Bennett immediately.",
+        "B. Chloe takes the remote from Marcel and hands it to Bennett.",
+        "C. Marcel gives the remote to 'Rossie' as Bennett commanded.",
+        "D. Bennett is unable to get Marcel to comply despite repeated orders.",
+        "E. Marcel erases the television settings instead of giving it back."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Bennett, your little creature’s got the remote again.", "dia_id": "5:3" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Marcel, Marcel, give Rossie the remote. Marcel. Marcel, you give Rossie the remote right now...", "dia_id": "5:4" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "Great.", "dia_id": "5:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe points out that Marcel has the remote.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett repeatedly commands Marcel to give the remote to 'Rossie'.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Chloe's sarcastic 'Great' and the lack of success implies the monkey did not comply.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 3,
+      "question": "How does Bennett's attitude toward being the 'coach' in Lamaze class change due to Susan's presence?",
+      "option": [
+        "A. He yields the role to Susan immediately to avoid conflict.",
+        "B. He insists on staying but eventually loses the coaching role to a coin flip.",
+        "C. He decides that Carol should be the coach while he plays the role of 'Mommy'.",
+        "D. He gets stuck at school and misses the opportunity to coach entirely.",
+        "E. He remains comfortable throughout and never argues with Susan over the role."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I think I should stay, I think we should both know what’s going on.", "dia_id": "6:4" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Okay, I’m gonna play my sperm card one more time.", "dia_id": "6:8" },
+        { "id": "E3", "speaker": "Susan", "utterance": "I will flip you for it.", "dia_id": "6:11" },
+        { "id": "E4", "speaker": "Susan", "utterance": "On your back... Mom.", "dia_id": "6:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett initially says he and Susan should both stay and know what is going on.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He tries to use his status as the father ('sperm card') to be the coach.", "based_on": ["E2"] },
+        { "step": 3, "inference": "They settle it with a coin flip.", "based_on": ["E3"] },
+        { "step": 4, "inference": "Susan tells him to get on his back and calls him 'Mom', indicating he lost the flip and the coaching role.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 4,
+      "question": "Which statement accurately describes Bennett's relationship history with Carol?",
+      "option": [
+        "A. He was never married to her but is the father of her child.",
+        "B. He was married to her before she started living with Susan.",
+        "C. He is currently married to her and they are having a boy and a girl.",
+        "D. He is Carol's brother and is helping her through a complicated divorce.",
+        "E. He is Susan's life partner and is helping Carol with her pregnancy."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Although I was married to her.", "dia_id": "3:11" },
+        { "id": "E2", "speaker": "Susan", "utterance": "Carol, not me.", "dia_id": "3:12" },
+        { "id": "E3", "speaker": "Carol", "utterance": "Susan and I live together.", "dia_id": "3:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett explicitly states he was married to Carol.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Carol confirms she currently lives with Susan.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 5,
+      "question": "When introducing himself at the Lamaze class, what is the specific surname Bennett provides?",
+      "option": [
+        "A. Willick",
+        "B. Bunch",
+        "C. Geller",
+        "D. Green",
+        "E. Buffay"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Hi, um, I’m err, I’m Bennett Geller...", "dia_id": "3:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 3, Bennett introduces himself using the name 'Bennett Geller'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 6,
+      "question": "What realization does Bennett have about parenting after comparing his child to his pet monkey?",
+      "option": [
+        "A. He realizes that babies and monkeys are actually the same species according to scientists.",
+        "B. He understands that a baby is 'having him' rather than just him 'having a baby'.",
+        "C. He learns that he needs to stop the baby from eating the bath mat early on.",
+        "D. He realizes that Susan is much better at training monkeys than he is.",
+        "E. He concludes that raising a child will be exactly like dealing with Marcel."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Aw, how can you say that? I can’t even get Marcel to stop eating the bath mat. How am I gonna raise a kid?", "dia_id": "13:5" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "I always knew I was havin’ a baby, I just never realised the baby was having me.", "dia_id": "13:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett is anxious about raising a kid because he cannot even control his monkey, Marcel.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He reaches a deeper understanding that the relationship is reciprocal and overwhelming ('the baby was having me').", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 7,
+      "question": "Where is Bennett scheduled to go immediately after his conversation in Session 2?",
+      "option": [
+        "A. To an Earth Science class with Dexter.",
+        "B. To Riff's to see Ursula.",
+        "C. To a Lamaze class for expectant parents.",
+        "D. To Gym class with Ariel.",
+        "E. To his office to refill his pen with ink."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Oh, Pheebs, I’m sorry, I’ve got to go. I’ve got Lamaze class.", "dia_id": "2:30" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Oh, and I’ve got Earth Science, but I'll catch you in Gym.", "dia_id": "2:31" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, Bennett explicitly states he has to leave for Lamaze class.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He is not going to Earth Science, as that is Dexter's plan.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 1,
+      "question": "Which of these objects does Chloe possess that is accidentally taken or used by Bennett?",
+      "option": [
+        "A. A Judy Jetson thermos from when she was eight.",
+        "B. A crossword puzzle that has been peed on.",
+        "C. A remote control that is currently with a monkey.",
+        "D. A jacket that Bennett is wearing at the end of Session 2.",
+        "E. A stapler that Dexter left on his desk."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Bennett, that’s my jacket.", "dia_id": "2:36" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "I know.", "dia_id": "2:37" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "At the end of Session 2, Chloe identifies that Bennett is wearing or has her jacket.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett acknowledges he knows it is hers.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 2,
+      "question": "What task does Chloe remind the group was neglected after New Year’s?",
+      "option": [
+        "A. Refilling the answering machine with new tapes.",
+        "B. Writing a reminder note to take down the holiday lights.",
+        "C. Taking down the Christmas lights in the apartment.",
+        "D. Returning a borrowed jacket to her.",
+        "E. Training the monkey to stop eating the bath mat."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?", "dia_id": "5:9" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot.", "dia_id": "5:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter asks about the Christmas lights still being up.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Chloe explains that they were supposed to be taken down after New Year's but were forgotten.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 3,
+      "question": "How does Chloe's interaction with Bennett concerning his pet change from Session 2 to Session 5?",
+      "option": [
+        "A. She goes from ignoring the monkey to wanting to adopt it.",
+        "B. She changes from identifying it as a 'monkey' to calling it a 'little creature'.",
+        "C. She moves from being annoyed by the monkey to helping Bennett train it.",
+        "D. She switches from blaming Bennett to blaming Ariel for the message erasure.",
+        "E. She evolves from being a neutral observer to being the one who loses the remote."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "...my monkey is out of control.", "dia_id": "2:1" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Bennett, your little creature’s got the remote again.", "dia_id": "5:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, the animal is referred to as a 'monkey'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "By Session 5, Chloe refers to the animal specifically as Bennett's 'little creature'.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 4,
+      "question": "What advice does Chloe provide to Fiona regarding her feelings about Ethan and Ursula?",
+      "option": [
+        "A. She tells Fiona to stay away from Riff's to avoid seeing Ursula.",
+        "B. She advises Fiona that she should definitely talk to Ethan about her feelings.",
+        "C. She suggests that Fiona should steal Ethan away like Ursula stole Randy.",
+        "D. She warns Fiona that Ethan is falling in love and it is already too late.",
+        "E. She encourages Fiona to focus on her haircut instead of the 'Ursula thing'."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Hon, you gotta talk to Ethan.", "dia_id": "15:16" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Yeah. Okay.", "dia_id": "15:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "After Fiona expresses her distress about Ethan dating Ursula, Chloe offers a direct recommendation.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona agrees with Chloe's suggestion to speak with him.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 5,
+      "question": "In Session 5, what name does Ariel use that refers to a person Chloe should have written a note for?",
+      "option": [
+        "A. Pheebs",
+        "B. Ursula",
+        "C. Rach",
+        "D. Carol",
+        "E. Susan"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "Well, someone was supposed to write \\\"Rach, take down the lights\\\" and put it on the re...", "dia_id": "5:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel mentions a note should have been written to 'Rach' about the lights.", "based_on": ["E1"] },
+        { "step": 2, "inference": "In the context of the speaker list, Chloe is the character often identified with that nickname (Rachel).", "based_on": [] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 6,
+      "question": "Based on the discussion about holiday lights, what 'plan' does Chloe fail to execute correctly?",
+      "option": [
+        "A. Reminding Bennett to take his Lamaze class information.",
+        "B. Putting a note on the refrigerator for someone to take down the lights.",
+        "C. Removing the Christmas lights by the designated New Year's deadline.",
+        "D. Returning the jacket she took from Bennett before he left.",
+        "E. Making sure the group stayed merry throughout the entire year."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot.", "dia_id": "5:10" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Well, someone was supposed to write \\\"Rach, take down the lights\\\" and put it on the re...", "dia_id": "5:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe admits the lights were supposed to be removed by New Year's.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel's follow-up suggests that 'Rach' (Chloe) was the intended recipient of a reminder note that wasn't written, confirming Chloe was the one who forgot.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 7,
+      "question": "What is Chloe's upcoming task at the end of Session 15?",
+      "option": [
+        "A. She is going to Riff's to talk to Ursula about Ethan.",
+        "B. She is going to help Bennett with his breathing exercises.",
+        "C. She is going to make sure Fiona finally speaks to Ethan.",
+        "D. She is going to write the note for the refrigerator.",
+        "E. She is going to return the jacket Bennett took."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Hon, you gotta talk to Ethan.", "dia_id": "15:16" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Yeah. Okay.", "dia_id": "15:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe pushes Fiona to talk to Ethan.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona agrees, making this the next logical step in their interaction.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 1,
+      "question": "What is Dexter's status as a student according to the conversations?",
+      "option": [
+        "A. He is taking a course on Natural Language Processing.",
+        "B. He is currently enrolled in an Earth Science class.",
+        "C. He is graduating from Gym class this upcoming week.",
+        "D. He is a teacher at the school Carol works for.",
+        "E. He is studying the differences between monkeys and babies."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Oh, and I’ve got Earth Science, but I'll catch you in Gym.", "dia_id": "2:31" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter says he has 'Earth Science', which refers to a class he is attending.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 2,
+      "question": "Who does Dexter see working at a specific establishment called Riff's?",
+      "option": [
+        "A. Fiona",
+        "B. Ariel",
+        "C. Ursula",
+        "D. Carol",
+        "E. Susan"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Your sister Ursula.", "dia_id": "2:20" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Yeah, yeah, she works over at that place, uh...", "dia_id": "2:22" },
+        { "id": "E3", "speaker": "Fiona", "utterance": "Rift’s. Yeah, I know.", "dia_id": "2:23" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter announces that he saw Ursula.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He begins to name where she works, and Fiona finishes by identifying it as Riff's/Rift's.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 3,
+      "question": "How does Dexter's stance on the physical similarity between the twins change during the conversations?",
+      "option": [
+        "A. He initially thinks they look the same but later thinks they look totally different.",
+        "B. He consistently maintains that they look exactly like each other.",
+        "C. He thinks Fiona is prettier at first but eventually decides Ursula is hotter.",
+        "D. He starts by thinking they are different and ends up thinking they are identical.",
+        "E. He never discusses their physical appearance after Session 2."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "All right, now look at her and tell me she doesn’t look exactly like her sister.", "dia_id": "2:5" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "They’re twins!", "dia_id": "2:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, Dexter argues that the sisters look exactly alike because they are twins.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "There is no point in later dialogues where Dexter changes this opinion, unlike Ethan who 'sees a difference'.", "based_on": [] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 4,
+      "question": "What advice does Dexter give regarding interpersonal relationships in a professional setting?",
+      "option": [
+        "A. You should always flip a coin to decide who the coach is.",
+        "B. You shouldn't dip your pen in the company ink.",
+        "C. You should talk to your friends about things every single day.",
+        "D. You should never leave your hand on the desk when someone is upset.",
+        "E. You should always order curly fries when you go to Riff's."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "It doesn’t matter. You don’t dip your pen in the company ink.", "dia_id": "5:2" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err...", "dia_id": "5:16" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett gives the advice about not 'dipping your pen in company ink' to Dexter in Session 5.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter later tries to pass on similar caution to Ethan before Ethan asks out Ursula.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 5,
+      "question": "Which specific location does Dexter mention where he intends to meet Bennett later?",
+      "option": [
+        "A. Riff's",
+        "B. Earth Science",
+        "C. Gym",
+        "D. Lamaze Class",
+        "E. The Refrigerator"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Oh, and I’ve got Earth Science, but I'll catch you in Gym.", "dia_id": "2:31" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter tells Bennett he will 'catch him in Gym' after his science class.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 6,
+      "question": "What 'little tip' does Dexter share after a presumably painful interaction with a woman?",
+      "option": [
+        "A. Never date a waitress at a place called Riff's.",
+        "B. Don't tell your girlfriend everything all at once.",
+        "C. Never leave your hand on the desk in such a situation.",
+        "D. Always double-check if someone is having twins.",
+        "E. Stop talking to friends about personal things entirely."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Little tip: if you’re ever in a similar situation, never ever leave your hand... ..on the desk.", "dia_id": "15:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 15, Dexter recounts a story where he told a woman 'everything' and mentions a 'stapler thing', giving the advice to never leave a hand on the desk.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 7,
+      "question": "What does Dexter plan to do immediately after the scene where Fiona discusses her childhood?",
+      "option": [
+        "A. Go to a Lamaze class with Bennett.",
+        "B. Go to his Earth Science class.",
+        "C. Take down the Christmas lights.",
+        "D. Order curly fries from Ursula.",
+        "E. Stop talking to Ethan forever."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Oh, and I’ve got Earth Science, but I'll catch you in Gym.", "dia_id": "2:31" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, Dexter states his immediate plan is to attend 'Earth Science'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 1,
+      "question": "What is Ethan's stated physical preference regarding the twin sisters?",
+      "option": [
+        "A. He prefers Fiona because she started walking first.",
+        "B. He thinks Ursula is hot and sees a difference between them.",
+        "C. He believes they are identical and both are equally attractive.",
+        "D. He finds both of them unattractive because they look the same.",
+        "E. He prefers Fiona because she is 'Fiona' while Ursula is not."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I’m sayin’ I see a difference.", "dia_id": "2:6" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!", "dia_id": "2:8" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan explicitly disagrees with Dexter and says he sees a difference between the twins.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He clarifies that he finds Ursula 'hot'.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 2,
+      "question": "When Ethan visits Riff's, what specifically happens with his food order?",
+      "option": [
+        "A. He orders curly fries but Ursula brings him a tuna melt instead.",
+        "B. He orders only coffee, but Ursula brings extra food items for free.",
+        "C. He orders a tuna melt and four plates of curly fries.",
+        "D. He orders coffee and is charged for a full meal he didn't want.",
+        "E. Ursula refuses to serve him because he is Fiona's friend."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.", "dia_id": "5:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan recounts his visit to Riff's where he only ordered coffee.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explains that Ursula brought him unsolicited tuna melt and curly fries, implying she likes him.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 3,
+      "question": "How does the status of Ethan and Ursula's relationship change from Session 5 to Session 13?",
+      "option": [
+        "A. They go from being total strangers to being in a serious marriage.",
+        "B. They progress from Ethan wanting to ask her out to them going on dates.",
+        "C. They move from a casual dating phase to being 'slept together' serious.",
+        "D. They start with Ethan hating her and end with him falling in love.",
+        "E. Their relationship doesn't change because Ethan never actually asks her out."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "You think it would be okay if I asked out your sister?", "dia_id": "5:19" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Oh please, they’ve been going out a week.", "dia_id": "15:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 5, Ethan is still asking for permission to ask Ursula out.", "based_on": ["E1"] },
+        { "step": 2, "inference": "By Session 15 (discussing events around Session 13), it's confirmed they have been 'going out' for a week.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 4,
+      "question": "Why does Ethan feel the need to ask Fiona for permission to date Ursula?",
+      "option": [
+        "A. Because Fiona is the one who introduced them at Riff's.",
+        "B. Because he wants to make sure Fiona doesn't want to date him herself.",
+        "C. Because they are twins and he wants to be respectful of their bond.",
+        "D. Because Ursula is fat and he thinks Fiona might be offended.",
+        "E. Because Dexter told him it was part of the 'company ink' policy."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "They’re twins!", "dia_id": "2:7" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err...", "dia_id": "5:16" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "You think it would be okay if I asked out your sister?", "dia_id": "5:19" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan is aware that Fiona and Ursula are sisters/twins.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter suggests he check with Fiona before making a move.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Ethan follows this advice, showing he considers Fiona's feelings regarding her sister.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 5,
+      "question": "What is the exact quantity of curly fries Ursula brings to Ethan's table?",
+      "option": [
+        "A. Two plates",
+        "B. One large plate",
+        "C. Four plates",
+        "D. Three plates",
+        "E. Five plates"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries.", "dia_id": "5:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan explicitly states the number of plates of curly fries was four.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 6,
+      "question": "What difference does Ethan notice between Fiona and Ursula that Dexter does not?",
+      "option": [
+        "A. He realizes that Ursula is smarter and works at Riff's.",
+        "B. He thinks Ursula is hot while Fiona is just 'Fiona'.",
+        "C. He notices that Ursula walks differently than Fiona.",
+        "D. He finds out that Ursula erases machine messages and Fiona doesn't.",
+        "E. He sees that Ursula has more curly fries than Fiona."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I’m sayin’ I see a difference.", "dia_id": "2:6" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "I don’t care. Fiona’s Fiona. Ursula’s... hot!", "dia_id": "2:8" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "While Dexter insists they look identical, Ethan claims to see a difference.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He defines this difference through his attraction to Ursula.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 7,
+      "question": "In Session 13, where is Ethan going when Fiona stops him with questions?",
+      "option": [
+        "A. To Riff's",
+        "B. Out",
+        "C. To Gym",
+        "D. To school",
+        "E. To his office"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Where’re you going?", "dia_id": "13:7" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Out.", "dia_id": "13:8" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona asks Ethan where he is going, and he provides a vague one-word answer.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 1,
+      "question": "What is Fiona's childhood memory regarding her motor skill development compared to her sister?",
+      "option": [
+        "A. She learned to talk much earlier than Ursula did.",
+        "B. She started walking after Ursula, but on the very same day.",
+        "C. She was the first one to walk, but her parents didn't notice.",
+        "D. She learned to crawl before Ursula stole her thermos.",
+        "E. She and Ursula both started walking at exactly the same moment."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Oh, oh, she was the first one to start walking, even though I did it... later that same day.", "dia_id": "2:29" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona recalls that Ursula was the first to start walking.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She clarifies that she herself walked later that same day.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 2,
+      "question": "What guess did Fiona make during the game about who Dexter and Ethan saw today?",
+      "option": [
+        "A. Liam Neeson",
+        "B. Randy Brown",
+        "C. Carol Willick",
+        "D. Susan Bunch",
+        "E. Bennett Geller"
+      ],
+      "answer": "A",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Ooh, ooh, fun! Okay... um, Liam Neeson.", "dia_id": "2:14" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "During the guessing game in Session 2, Fiona's first guess is the actor Liam Neeson.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 3,
+      "question": "How does Fiona's opinion of Ethan's interest in Ursula evolve from Session 5 to Session 15?",
+      "option": [
+        "A. She goes from being happy for them to being jealous of Ursula's thermos.",
+        "B. She changes from cautiously agreeing to it to being deeply upset that he might 'fall in love'.",
+        "C. She moves from wanting to date Ethan herself to wanting to date Randy Brown.",
+        "D. She starts by thinking Ursula is fat and ends by thinking she is pretty.",
+        "E. She evolves from being strangers with Ursula to becoming best friends again."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "I don’t know, why not? Okay.", "dia_id": "5:22" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "But he’s falling in love with her.", "dia_id": "15:19" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 5, Fiona reluctantly gives Ethan permission to ask Ursula out.", "based_on": ["E1"] },
+        { "step": 2, "inference": "In Session 15, she expresses distress to the group because she believes he is falling in love with her.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 4,
+      "question": "What happened to Fiona's past boyfriend, Randy Brown?",
+      "option": [
+        "A. He was peed on by Bennett's monkey before they broke up.",
+        "B. He was stolen by Ursula, had his heart broken, and then refused to talk to Fiona.",
+        "C. He became Fiona's best friend and eventually married her sister.",
+        "D. He died in a bus accident involving a Judy Jetson thermos.",
+        "E. He started working at Riff's and refused to serve Fiona curly fries."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "And then, oh, and then there was Randy Brown, who was like... Have you ever had a boyfriend who was like your best friend?", "dia_id": "15:11" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "And she you know, kind of stole him away, and then... broke his heart... and then he wouldn’t even talk to me any more.", "dia_id": "15:12" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona identifies Randy Brown as a boyfriend who was like a best friend.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She explains that Ursula 'stole him away' and broke his heart.", "based_on": ["E2"] },
+        { "step": 3, "inference": "She notes that the result was Randy refusing to talk to her anymore.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 5,
+      "question": "What specific item did Ursula throw under a bus when Fiona was eight years old?",
+      "option": [
+        "A. A crossword puzzle",
+        "B. A tuna melt",
+        "C. A Judy Jetson thermos",
+        "D. A remote control",
+        "E. A stapler"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus.", "dia_id": "15:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona recounts a childhood incident where Ursula destroyed her 'Judy Jetson thermos' by throwing it under a bus.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 6,
+      "question": "What did Fiona learn about her parents' attention from her experience of learning to walk?",
+      "option": [
+        "A. She learned that they loved Ursula more because she was 'the pretty one'.",
+        "B. She realized that being second to do something meant her parents were unimpressed.",
+        "C. She learned that they were more interested in her than in her sister.",
+        "D. She found out that they didn't believe she could walk at all.",
+        "E. She learned that her parents were primarily focused on their own careers."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "...she was the first one to start walking... But, to my parents, by then it was like \\\"yeah, right, well what else is new?\\\"", "dia_id": "2:29" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona notes that Ursula walked first.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She describes her parents' reaction to her own walking later that day as dismissive because it wasn't 'new' anymore.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 7,
+      "question": "What is Fiona's intention regarding Ethan at the end of the shared sessions?",
+      "option": [
+        "A. She plans to sabotage his date with Ursula.",
+        "B. She intends to have a conversation with him about her feelings.",
+        "C. She plans to find Randy Brown and apologize to him.",
+        "D. She wants to start working at Riff's to keep an eye on them.",
+        "E. She is going to confront Ursula about the thermos."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Hon, you gotta talk to Ethan.", "dia_id": "15:16" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Yeah. Okay.", "dia_id": "15:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe advises Fiona to talk to Ethan about the situation.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona agrees, making this her current plan or commitment.", "based_on": ["E2"] }
+      ]
+    }
+    ],
+    "conversation": {
+        "speaker_0": "Bennett",
+        "speaker_1": "Ariel",
+        "speaker_2": "Dexter",
+        "speaker_3": "Ethan",
+        "speaker_4": "All",
+        "speaker_5": "Fiona",
+        "speaker_6": "Chloe",
+        "session_2_date_time": "February 23, 1995",
+        "session_2": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:1",
+                "text": "I don’t know whether he’s testing me, or just acting out, but my monkey is out of control. But, he keeps erasing the messages on my machine, \"supposedly\" by accident."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:2",
+                "text": "No, yeah, I’ve done that."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:3",
+                "text": "And then, like three days in a row he got to the newspaper before I did, and peed all over the crossword."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:4",
+                "text": "I’ve never done that."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:5",
+                "text": "All right, now look at her and tell me she doesn’t look exactly like her sister."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:6",
+                "text": "I’m sayin’ I see a difference."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:7",
+                "text": "They’re twins!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:8",
+                "text": "I don’t care. Fiona’s Fiona. Ursula’s... hot!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:9",
+                "text": "You know that thing, when you and I talk to each other about things?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:10",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Let’s not do that any more."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:12",
+                "text": "Hey guys! Hey!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:13",
+                "text": "Hey Pheebs, guess who we saw today."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:14",
+                "text": "Ooh, ooh, fun! Okay... um, Liam Neeson."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:15",
+                "text": "Nope."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:16",
+                "text": "Morly Safer."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:17",
+                "text": "Nope."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:18",
+                "text": "The woman who cuts my hair!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:19",
+                "text": "Okay, look, this could be a really long game."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:20",
+                "text": "Your sister Ursula."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:21",
+                "text": "Oh, really."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:22",
+                "text": "Yeah, yeah, she works over at that place, uh..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:23",
+                "text": "Rift’s. Yeah, I know."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:24",
+                "text": "Oh, you do? Because she said you guys haven’t talked in like years."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:25",
+                "text": "Hmmm? Yeah. So, um, is she fat?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:26",
+                "text": "Not from where I was standin’."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:27",
+                "text": "where were you standing?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:28",
+                "text": "Um, Pheebs, so, you guys just don’t get along?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:29",
+                "text": "It’s mostly just dumb sister stuff, you know, I mean, like, everyone always thought of her as the pretty one, you know... Oh, oh, she was the first one to start walking, even though I did it... later that same day. But, to my parents, by then it was like \"yeah, right, well what else is new?\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:30",
+                "text": "Oh, Pheebs, I’m sorry, I’ve got to go. I’ve got Lamaze class."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:31",
+                "text": "Oh, and I’ve got Earth Science, but I'll catch you in Gym."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:32",
+                "text": "So, is this just gonna be you and Carol?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:33",
+                "text": "No, Susan’s gonna be there too. We’ve got dads, we’ve got lesbians, the whole parenting team."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:34",
+                "text": "Well, isn’t, isn’t that gonna be weird?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:35",
+                "text": "No, no.  I mean, it mighta been at first, but by now I, I think I’m pretty comfortable with the whole situation."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:36",
+                "text": "Bennett, that’s my jacket."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:37",
+                "text": "I know."
+            }
+        ],
+        "session_3_date_time": "February 23, 1995",
+        "session_3": [
+            {
+                "speaker": "Woman",
+                "dia_id": "3:1",
+                "text": "Hi, we’re the Rostins. Err, I’m J.C., and he’s Michael, and we’re having a boy, and a girl."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "3:2",
+                "text": "Good for you. Alrighty, next?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:3",
+                "text": "Hi, um, I’m err,  I’m Bennett Geller, and err ah...  ..that’s, that’s my boy in there, and uh,  this is Carol Willick, and this... is Susan Bunch. Susan is um Carol’s, just, com...  ..who’s next?"
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "3:4",
+                "text": "I’m sorry, I didn’t get... Susan is?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:5",
+                "text": "Susan is Carol’s, Carol’s, Carol’s, friend..."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:6",
+                "text": "Life partner."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:7",
+                "text": "Like buddies."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:8",
+                "text": "Like lovers."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:9",
+                "text": "You know how close women can get."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:10",
+                "text": "Susan and I live together."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:11",
+                "text": "Although I was married to her."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:12",
+                "text": "Carol, not me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:13",
+                "text": "Err, right."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "3:14",
+                "text": "It’s a little complicated."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:15",
+                "text": "A little."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:16",
+                "text": "But we’re fine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:17",
+                "text": "Absolutely.  So, twins... hah! That’s like two births.  Ouch."
+            }
+        ],
+        "session_5_date_time": "February 24, 1995",
+        "session_5": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:1",
+                "text": "It’s not just that she’s cute, okay. It’s just that... she’s really really cute."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:2",
+                "text": "It doesn’t matter. You don’t dip your pen in the company ink."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:3",
+                "text": "Bennett, your little creature’s got the remote again."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:4",
+                "text": "Marcel, Marcel, give Rossie the remote. Marcel. Marcel, you give Rossie the remote right now... Marce... you give Rossie the remote..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:5",
+                "text": "Great."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:6",
+                "text": "Relax, I’ll fix it."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:7",
+                "text": "Cool... \"Urkel\" in Spanish is \"Urkel.\""
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:8",
+                "text": "How did he do this?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:9",
+                "text": "So tell me something, is leaving the Christmas lights up part of your plan to keep us merry all year long?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "5:10",
+                "text": "Ah no, you see, someone was supposed to take them down around New Year’s... but obviously someone forgot."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "5:11",
+                "text": "Well, someone was supposed to write \"Rach, take down the lights\" and put it on the re... frigerate...  How long has that been there?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:12",
+                "text": "Hey, where you been?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:13",
+                "text": "I went back to Riff’s. I think Ursula likes me. All I ordered was coffee, she brought me a tuna meltt and four plates of curly fries."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:14",
+                "text": "Score."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:15",
+                "text": "She is so hot!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "5:16",
+                "text": "Yeah, listen. Okay, before you do anything Ethan-like, you might wanna run it by err..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:17",
+                "text": "Pheebs?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:18",
+                "text": "Yeah?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:19",
+                "text": "You think it would be okay if I asked out your sister?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:20",
+                "text": "Why? Why would you wanna... do that?  Why?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:21",
+                "text": "So that if we went out on a date, she’d be there."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:22",
+                "text": "Well, I mean, I’m not my sister’s, you know, whatever, and um... I mean, it’s true, we were one egg, once, but err, you know, we’ve grown apart, so, um... I don’t know, why not? Okay."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "5:23",
+                "text": "Cool, thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:24",
+                "text": "You okay?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "5:25",
+                "text": "Yeah I’m fine."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:26",
+                "text": "You wanna watch Laverne y Shirley?"
+            }
+        ],
+        "session_6_date_time": "February 25, 1995",
+        "session_6": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:1",
+                "text": "Sorry."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:2",
+                "text": "Hi. Sorry I’m late. Where’s, where’s Carol?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:3",
+                "text": "Stuck at school. Some parent-teacher thing. You can go. I’ll get the information."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:4",
+                "text": "No... No... No. I think I should stay, I think we should both know what’s going on."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:5",
+                "text": "Oh, good. This’ll be fun."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:6",
+                "text": "Alrighty. We’re gonna start with some basic third stage breathing exercises, so Mummies, why don’t you get on your back? And... coaches, you should be supporting Mummy’s head."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:7",
+                "text": "I am supposed to be the mommy?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:8",
+                "text": "Okay, I’m gonna play my sperm card one more time."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:9",
+                "text": "Look, I don’t see why I should have to miss out on the coaching training just because I’m a woman."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:10",
+                "text": "I see. So what do you propose to do?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:11",
+                "text": "I will flip you for it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "6:12",
+                "text": "Flip me for it? No, no, no... heads, heads, heads!"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "6:13",
+                "text": "On your back... Mom."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:14",
+                "text": "Alright, Mommies, take a nice deep cleansing breath."
+            },
+            {
+                "speaker": "Teacher",
+                "dia_id": "6:15",
+                "text": "Good. Now imagine your vagina is opening like a flower."
+            }
+        ],
+        "session_12_date_time": "February 27, 1995",
+        "session_12": [
+            {
+                "speaker": "Teacher",
+                "dia_id": "12:1",
+                "text": "Lights please? And that’s having a baby. Next week is our final class."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:2",
+                "text": "Susan, go deep."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:3",
+                "text": "This is impossible. It’s just impossible."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:4",
+                "text": "What is, honey?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:5",
+                "text": "What that woman... did. I am not doin’ that. It’s just gonna have to stay in, that’s all, everything will be the same, it’ll just stay in."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:6",
+                "text": "Carol, honey, shhh, shhh, everything’s gonna be alright."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "12:7",
+                "text": "Oh, what do you know?  No one's going up to you and saying, \"Hi, is that your nostril?  Mind if we push this pot roast through it?\""
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:8",
+                "text": "Carol, Carol, sweetie. Cleansing breath."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:9",
+                "text": "I know it’s frightening, but, big picture. The birth part is just one day, and when it’s over, we’re all gonna be parents for the rest of our lives."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "12:10",
+                "text": "I mean, that’s what this is all about, right? Bennett? Bennett?"
+            }
+        ],
+        "session_13_date_time": "February 27, 1995",
+        "session_13": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:1",
+                "text": "I’m gonna be a father."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:2",
+                "text": "This is just occurring to you?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:3",
+                "text": "I always knew I was havin’ a baby, I just never realised the baby was having me."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:4",
+                "text": "Oh, you’re gonna be great!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:5",
+                "text": "Aw, how can you say that? I can’t even get Marcel to stop eating the bath mat. How am I gonna raise a kid?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:6",
+                "text": "You know, Bennett, some scientists are now saying that, that monkeys and babies are actually different."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:7",
+                "text": "Where’re you going?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:8",
+                "text": "Out."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:9",
+                "text": "With?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:10",
+                "text": "Yes."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:11",
+                "text": "Alright, could I just ask you one question?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:12",
+                "text": "Have you two, you know... like... you know... you know... yet?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:13",
+                "text": "Well, not that it’s any of your business, but, no, we haven’t, okay?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:14",
+                "text": "You meant sex, right?"
+            }
+        ],
+        "session_15_date_time": "February 28, 1995",
+        "session_15": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:1",
+                "text": "Well, I ended up telling her everything."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:2",
+                "text": "Oh, how’d she take it?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:3",
+                "text": "Pretty well. Except for the stapler thing.  Little tip: if you’re ever in a similar situation, never ever leave your hand...  ..on the desk."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:4",
+                "text": "Okay, I think I get how to do this."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:5",
+                "text": "Alright, so, can we turn this off? Can we just make it... make them go away? Because I can’t, I can’t watch."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:6",
+                "text": "okay, Pheebs, they’re gone."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:7",
+                "text": "Okay."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:8",
+                "text": "Are you alright?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:9",
+                "text": "Yeah. It’s just, you know, it’s this whole stupid Ursula thing, it’s..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:10",
+                "text": "Okay, Pheebs, can I ask? So, he’s going out with her. I mean, is it really so terrible?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:11",
+                "text": "Um, yeah. Look, I mean, I’m not saying she’s like evil or anything. She just, you know, she’s always breaking my stuff. When I was eight, and I wouldn’t let her have my Judy Jetson thermos, so she threw it under the bus. And then, oh, and then there was Randy Brown, who was like... Have you ever had a boyfriend who was like your best friend?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:12",
+                "text": "Well, but that’s what he was for me. And she you know, kind of stole him away, and then... broke his heart... and then he wouldn’t even talk to me any more. Because he said he didn’t wanna be around... anything that looked like either one of us."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:13",
+                "text": "Oh... Oh, Pheebs."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:14",
+                "text": "I mean, I know Ethan is not my boyfriend, or my thermos, or anything, but..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:15",
+                "text": "You’re not gonna lose him."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:16",
+                "text": "Hon, you gotta talk to Ethan."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:17",
+                "text": "Yeah. Okay."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:18",
+                "text": "No, come on, he doesn’t know this stuff. If he knew how you felt."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:19",
+                "text": "But he’s falling in love with her."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:20",
+                "text": "Oh please, they’ve been going out a week. They haven’t even slept together yet, I mean, that’s not serious."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:21",
+                "text": "Okay... Okay."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:22",
+                "text": "Oh, okay, oh."
+            },
+            {
+                "speaker": "Ursula",
+                "dia_id": "15:23",
+                "text": "Oh."
+            },
+            {
+                "speaker": "Ursula",
+                "dia_id": "15:24",
+                "text": "Yeah, um, may we help you?"
+            }
+        ],
+        "speaker_7": "Woman",
+        "speaker_8": "Teacher",
+        "speaker_9": "Carol",
+        "speaker_10": "Susan",
+        "speaker_11": "Ursula"
+    }
+}

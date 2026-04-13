@@ -3238,6 +3238,651 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "FOREMAN",
+            "category": 7,
+            "question": "The Foreman plans to take a 5-minute break before starting the deliberation. Was this plan executed?\nA. No: it was rejected by Juror #7 who wanted to 'get this show on the road' immediately.\nB. Executed: the Foreman waits for Juror #9 to return from the bathroom before calling the meeting to order.\nC. Modified: the break lasted 30 minutes because they got into a discussion about baseball.\nD. Implicitly abandoned: they started voting while Juror #9 was still in the bathroom.\nE. Contradicted later: the Foreman decides no one can leave the table at all.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. No: it was rejected by Juror #7 who wanted to 'get this show on the road' immediately.",
+                "B. Executed: the Foreman waits for Juror #9 to return from the bathroom before calling the meeting to order.",
+                "C. Modified: the break lasted 30 minutes because they got into a discussion about baseball.",
+                "D. Implicitly abandoned: they started voting while Juror #9 was still in the bathroom.",
+                "E. Contradicted later: the Foreman decides no one can leave the table at all.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "Well I was figuring we'd take a five minute break. I mean one gentleman's in the bathroom...",
+                    "dia_id": "D1:100"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#9",
+                    "utterance": "Forgive me gentlemen. I didn't mean to keep you waiting.",
+                    "dia_id": "D1:186"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "FOREMAN",
+                    "utterance": "All right, gentlemen. Let’s take seats.",
+                    "dia_id": "D1:137"
+                }
+            ]
+        },
+        {
+            "character": "#7",
+            "category": 7,
+            "question": "Juror #7 enters the jury room with a clear plan: to finish the deliberation quickly so he can attend a ball game. How does this commitment evolve throughout the deliberation?\nA. He remains committed to a 'guilty' vote to speed things up until the Foreman declares a hung jury.\nB. He eventually abandons his 'guilty' vote and switches to 'not guilty' specifically because he is tired of the talking and wants to leave quickly, rather than out of conviction.\nC. He decides the ball game is less important than justice and leads the final logical argument for acquittal to ensure a unanimous vote.\nD. He tries to convince the Foreman to skip the discussion and move straight to a final vote so he can leave early.\nE. He executes his plan perfectly: the jury reaches a 'guilty' verdict in under an hour, and he leaves for the stadium.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He remains committed to a 'guilty' vote to speed things up until the Foreman declares a hung jury.",
+                "B. He eventually abandons his 'guilty' vote and switches to 'not guilty' specifically because he is tired of the talking and wants to leave quickly, rather than out of conviction.",
+                "C. He decides the ball game is less important than justice and leads the final logical argument for acquittal to ensure a unanimous vote.",
+                "D. He tries to convince the Foreman to skip the discussion and move straight to a final vote so he can leave early.",
+                "E. He executes his plan perfectly: the jury reaches a 'guilty' verdict in under an hour, and he leaves for the stadium.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#7",
+                    "utterance": "This better be fast. I get tickets to a ball game tonight. Yanks-Cleveland.",
+                    "dia_id": "D1:139"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#7",
+                    "utterance": "I've had enough. I’m changing my vote to not guilty.",
+                    "dia_id": "D7:214"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#11",
+                    "utterance": "You have changed your vote because you say you're sick of all the talking here.",
+                    "dia_id": "D7:227"
+                }
+            ]
+        },
+        {
+            "character": "#12",
+            "category": 7,
+            "question": "Juror #12 proposes a plan to structure the deliberation by going 'around the table' to convince #8 of the boy's guilt. What becomes of this structured plan?\nA. It is rejected immediately because Juror #7 wants to talk about the ball game instead.\nB. It is executed: the jurors proceed in numerical order to state their cases, but the structure dissolves into debate as #8 begins to question each point.\nC. It is modified: they decide to let only the Foreman and Juror #4 speak for the group.\nD. Implicitly abandoned: Juror #12 forgets his own proposal and starts playing tic-tac-toe instead.\nE. It succeeds fully: after everyone speaks, Juror #8 changes his vote to 'guilty.'\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. It is rejected immediately because Juror #7 wants to talk about the ball game instead.",
+                "B. It is executed: the jurors proceed in numerical order to state their cases, but the structure dissolves into debate as #8 begins to question each point.",
+                "C. It is modified: they decide to let only the Foreman and Juror #4 speak for the group.",
+                "D. Implicitly abandoned: Juror #12 forgets his own proposal and starts playing tic-tac-toe instead.",
+                "E. It succeeds fully: after everyone speaks, Juror #8 changes his vote to 'guilty.'",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#12",
+                    "utterance": "Maybe if we each took a minute or two. Mind you, this is just a quick idea...",
+                    "dia_id": "D2:62"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "No, I think it's a good one. Supposing we go once around the table.",
+                    "dia_id": "D2:63"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "narration",
+                    "utterance": "Camera pans down table... #2, #3, #4, #10 etc. speak in sequence.",
+                    "dia_id": "D2:72-152"
+                }
+            ]
+        },
+        {
+            "character": "#9",
+            "category": 6,
+            "question": "What did #9 say about the woman's testimony, and how did he react when #10 made a comment about the defendant's background?\nA. He said the woman's testimony was not reliable and said he didn't know the defendant's background.\nB. He said the woman's testimony was reliable and said #10 was being unfair.\nC. He said the woman's testimony was reliable and said he didn't know the defendant's background.\nD. He said the woman's testimony was reliable and agreed with #10's point about the defendant's background.\nE. He said the woman's testimony was not reliable and said #10 was being unfair.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He said the woman's testimony was not reliable and said he didn't know the defendant's background.",
+                "B. He said the woman's testimony was reliable and said #10 was being unfair.",
+                "C. He said the woman's testimony was reliable and said he didn't know the defendant's background.",
+                "D. He said the woman's testimony was reliable and agreed with #10's point about the defendant's background.",
+                "E. He said the woman's testimony was not reliable and said #10 was being unfair.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He said the woman's testimony was reliable and said #10 was being unfair.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "Only an ignorant man can believe that.",
+                    "dia_id": "D1:277"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "I mean they're born liars.",
+                    "dia_id": "D1:275"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#9",
+                    "utterance": "Do you think you were born with a monopoly on the truth?",
+                    "dia_id": "D1:279"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#9 said that only an ignorant man could believe the woman's testimony, implying he thought it was not reliable.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When #10 made a comment about the defendant's background, #9 challenged him by asking if he thought he had a monopoly on the truth, indicating he found #10's comment unfair.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(A) He said the woman's testimony was not reliable and said #10 was being unfair.  \n(Answer: A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"Only an ignorant man can believe that.\", \"dia_id\": \"D1:277\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"I mean they're born liars.\", \"dia_id\": \"D1:275\"}, {\"id\": \"E3\", \"speaker\": \"#9\", \"utterance\": \"Do you think you were born with a monopoly on the truth?\", \"dia_id\": \"D1:279\"}, {\"step\": 1, \"inference\": \"#9 said that only an ignorant man could believe the woman's testimony, implying he thought it was not reliable.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"When #10 made a comment about the defendant's background, #9 challenged him by asking if he thought he had a monopoly on the truth, indicating he found #10's comment unfair.\", \"based_on\": [\"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #9 say about the woman's testimony, and how did he react when #10 made a comment about the defendant's background?\nA. He said the woman's testimony was not reliable and said #10 was being unfair.\nB. He said the woman's testimony was not reliable and said he didn't know the defendant's background.\nC. He said the woman's testimony was reliable and said #10 was being unfair.\nD. He said the woman's testimony was reliable and agreed with #10's point about the defendant's background.\nE. He said the woman's testimony was reliable and said he didn't know the defendant's background.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.7526578903198242,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "C"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C) He said the woman's testimony was reliable and said he didn't know the defendant's background.",
+                        "score": 0,
+                        "response_time": 1.6976768970489502,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "CLERK",
+            "category": 6,
+            "question": "What did the clerk say about the alternate jurors after the judge finished speaking?\nA. The alternate jurors were to be given a separate room for deliberation.\nB. The alternate jurors were to be seated at the head of the table.\nC. The alternate jurors were to be considered for the final verdict.\nD. The alternate jurors were to be questioned further.\nE. The alternate jurors were excused from the proceedings.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The alternate jurors were to be given a separate room for deliberation.",
+                "B. The alternate jurors were to be seated at the head of the table.",
+                "C. The alternate jurors were to be considered for the final verdict.",
+                "D. The alternate jurors were to be questioned further.",
+                "E. The alternate jurors were excused from the proceedings.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. The alternate jurors were excused from the proceedings.",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "CLERK",
+                    "utterance": "The alternate jurors are excused.",
+                    "dia_id": "D1:54"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The clerk explicitly stated that the alternate jurors are excused.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"CLERK\", \"utterance\": \"The alternate jurors are excused.\", \"dia_id\": \"D1:54\"}, {\"step\": 1, \"inference\": \"The clerk explicitly stated that the alternate jurors are excused.\", \"based_on\": [\"E1\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did the clerk say about the alternate jurors after the judge finished speaking?\nA. The alternate jurors were to be questioned further.\nB. The alternate jurors were to be given a separate room for deliberation.\nC. The alternate jurors were to be considered for the final verdict.\nD. The alternate jurors were to be seated at the head of the table.\nE. The alternate jurors were excused from the proceedings.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.5974514484405518,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "CLERK",
+                            "utterance": "The Jury will retire.",
+                            "dia_id": "14"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "CLERK",
+                            "utterance": "The alternate jurors are excused.",
+                            "dia_id": "D1:54"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(F)",
+                        "score": 0,
+                        "response_time": 0.4612123966217041,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#8",
+            "category": 6,
+            "question": "What did Juror #8 suggest as a reason to reconsider the verdict before finalizing it?\nA. The lack of evidence against the defendant.\nB. The emotional state of the other jurors.\nC. The possibility of a reasonable doubt.\nD. The defendant's age and background.\nE. The need to follow the law strictly.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The lack of evidence against the defendant.",
+                "B. The emotional state of the other jurors.",
+                "C. The possibility of a reasonable doubt.",
+                "D. The defendant's age and background.",
+                "E. The need to follow the law strictly.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. The defendant's age and background.",
+            "label": "Multi-hop",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#8",
+                    "utterance": "This boy's been kicked around all his life. You know, living in a slum, his mother dead since he was nine.",
+                    "dia_id": "D1:269"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#8",
+                    "utterance": "I think maybe we owe him a few words. That's all.",
+                    "dia_id": "D1:269"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Juror #8 described the defendant's difficult life circumstances, including being raised in a slum and losing his mother at a young age.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Based on this, Juror #8 suggested that the jury should consider the defendant's background before making a final decision, implying a need for reconsideration.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#8\", \"utterance\": \"This boy's been kicked around all his life. You know, living in a slum, his mother dead since he was nine.\", \"dia_id\": \"D1:269\"}, {\"id\": \"E2\", \"speaker\": \"#8\", \"utterance\": \"I think maybe we owe him a few words. That's all.\", \"dia_id\": \"D1:269\"}, {\"step\": 1, \"inference\": \"Juror #8 described the defendant's difficult life circumstances, including being raised in a slum and losing his mother at a young age.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Based on this, Juror #8 suggested that the jury should consider the defendant's background before making a final decision, implying a need for reconsideration.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did Juror #8 suggest as a reason to reconsider the verdict before finalizing it?\nA. The defendant's age and background.\nB. The possibility of a reasonable doubt.\nC. The need to follow the law strictly.\nD. The lack of evidence against the defendant.\nE. The emotional state of the other jurors.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.5764923095703125,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "There were eleven votes for guilty. It's not so easy for me to raise my hand and send a boy off to die without talking about it first.",
+                            "dia_id": "12"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "This boy's been kicked around all his life. You know, living in a slum, his mother dead since he was nine.",
+                            "dia_id": "D1:269"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I think maybe we owe him a few words. That's all.",
+                            "dia_id": "D1:269"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "There were eleven votes for guilty. It's not so easy for me to raise my hand and send a boy off to die without talking about it first.",
+                            "dia_id": "12"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(B)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I'm not trying to change your mind. It's just that we're talking about somebody's life here. I mean, we can't decide in five minutes. Sup-posing we're wrong?",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "This boy's been kicked around all his life. You know, living in a slum, his mother dead since he was nine.",
+                            "dia_id": "D1:269"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I think maybe we owe him a few words. That's all.",
+                            "dia_id": "D1:269"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "There were eleven votes for guilty. It's not so easy for me to raise my hand and send a boy off to die without talking about it first.",
+                            "dia_id": "12"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. The possibility of a reasonable doubt.)",
+                        "score": 0,
+                        "response_time": 0.5493628978729248,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#10",
+            "category": 6,
+            "question": "What did Juror #10 say about the woman who testified against the defendant?\nA. He said she was a reliable witness.\nB. He said she was not present during the trial.\nC. He said she was a liar and should not be trusted.\nD. He said she was a victim of the crime.\nE. He said she was known to the defendant all his life.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He said she was a reliable witness.",
+                "B. He said she was not present during the trial.",
+                "C. He said she was a liar and should not be trusted.",
+                "D. He said she was a victim of the crime.",
+                "E. He said she was known to the defendant all his life.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. He said she was known to the defendant all his life.",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#10",
+                    "utterance": "She's known the kid all his life.",
+                    "dia_id": "D1:344"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Juror #10 explicitly stated that the woman was known to the defendant all his life.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(C) He said she was known to the defendant all his life.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#10\", \"utterance\": \"She's known the kid all his life.\", \"dia_id\": \"D1:344\"}, {\"step\": 1, \"inference\": \"Juror #10 explicitly stated that the woman was known to the defendant all his life.\", \"based_on\": [\"E1\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did Juror #10 say about the woman who testified against the defendant?\nA. He said she was a liar and should not be trusted.\nB. He said she was not present during the trial.\nC. He said she was known to the defendant all his life.\nD. He said she was a victim of the crime.\nE. He said she was a reliable witness.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.5529532432556152,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "C"
+                ],
+                "ground_truth_options": [
+                    [
+                        "C"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(E)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "Juror #10",
+                            "utterance": "Listen, what about that woman across the street? If her testimony don’t prove it, nothing does.",
+                            "dia_id": "dia_10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "She's known the kid all his life.",
+                            "dia_id": "D1:344"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. He said she was a liar and should not be trusted.)",
+                        "score": 0,
+                        "response_time": 1.5048918724060059,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#6",
+            "category": 6,
+            "question": "What did #6 say about the case, and how did he react when #10 made a comment about the defendant's background?\nA. He said he was convinced from the start and thought the case was clear.\nB. He said he was convinced from the start and thought #10 was being unfair.\nC. He said he was convinced from the start and agreed with #10's point about the defendant's background.\nD. He said he was convinced from the start and didn't respond to #10's comment.\nE. He said he was convinced from the start and thought the defendant was a liar.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He said he was convinced from the start and thought the case was clear.",
+                "B. He said he was convinced from the start and thought #10 was being unfair.",
+                "C. He said he was convinced from the start and agreed with #10's point about the defendant's background.",
+                "D. He said he was convinced from the start and didn't respond to #10's comment.",
+                "E. He said he was convinced from the start and thought the defendant was a liar.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He said he was convinced from the start and didn't respond to #10's comment.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#6",
+                    "utterance": "It's pretty obvious. I mean, I was convinced from the first day.",
+                    "dia_id": "D1:228"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "I mean they're born liars.",
+                    "dia_id": "D1:275"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#6",
+                    "utterance": "He's a wild, angry kid and that's all he's ever been. You know why he got that way? Because he was knocked on the head by somebody once a day, every day.",
+                    "dia_id": "D1:269"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#6 said he was convinced from the first day, indicating he had no doubts about the case.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "When #10 made a comment about the defendant being a liar, #6 did not respond directly, but his earlier statement about being convinced from the start suggests he did not challenge #10's claim.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "#6 said he was convinced from the first day about the case, and when #10 made a comment about the defendant being a liar, #6 did not respond directly. (B)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#6\", \"utterance\": \"It's pretty obvious. I mean, I was convinced from the first day.\", \"dia_id\": \"D1:228\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"I mean they're born liars.\", \"dia_id\": \"D1:275\"}, {\"id\": \"E3\", \"speaker\": \"#6\", \"utterance\": \"He's a wild, angry kid and that's all he's ever been. You know why he got that way? Because he was knocked on the head by somebody once a day, every day.\", \"dia_id\": \"D1:269\"}, {\"step\": 1, \"inference\": \"#6 said he was convinced from the first day, indicating he had no doubts about the case.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"When #10 made a comment about the defendant being a liar, #6 did not respond directly, but his earlier statement about being convinced from the start suggests he did not challenge #10's claim.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #6 say about the case, and how did he react when #10 made a comment about the defendant's background?\nA. He said he was convinced from the start and thought #10 was being unfair.\nB. He said he was convinced from the start and didn't respond to #10's comment.\nC. He said he was convinced from the start and thought the case was clear.\nD. He said he was convinced from the start and agreed with #10's point about the defendant's background.\nE. He said he was convinced from the start and thought the defendant was a liar.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 1.0006587505340576,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "B"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "F",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#6",
+                            "utterance": "He said it was obvious from the word go. I mean nobody proved otherwise.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "Listen, what about that woman across the street? If her testimony don’t prove it, nothing does.",
+                            "dia_id": "dia_0003"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "She's known the kid all his life. His window is right opposite hers, across the el tracks, and she swore she saw him do it.",
+                            "dia_id": "dia_0004"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "Through the windows of a passing elevated train.",
+                            "dia_id": "dia_0005"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Right. This el train had no passengers on it. It was just being moved downtown. The lights were out, remember? Anyway, she looks out the window and right across the street she sees the kid stick the knife into his father. The time is 12:10 on the nose. Everything fits. Look, she's known the kid all his life. His window is right opposite hers, across the el tracks, and she swore she saw him do it.",
+                            "dia_id": "dia_0006"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "I’d like to ask you something. You don’t believe the boy. How come you believe the woman? She's one of \"them\" too, isn't she?",
+                            "dia_id": "dia_0007"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#6",
+                            "utterance": "It's pretty obvious. I mean, I was convinced from the first day.",
+                            "dia_id": "D1:228"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I mean they're born liars.",
+                            "dia_id": "D1:275"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#6",
+                            "utterance": "He's a wild, angry kid and that's all he's ever been. You know why he got that way? Because he was knocked on the head by somebody once a day, every day.",
+                            "dia_id": "D1:269"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(B. He said he was convinced from the start and thought #10 was being unfair.)",
+                        "score": 0,
+                        "response_time": 0.5805039405822754,
+                        "file_id": 1
+                    }
+                ]
+            }
         }
     ],
     "conversation": {

@@ -45,9 +45,19 @@ Thumbs.db
 .env
 .env.*
 !.env.example
-config.json
-config.local.json
-my_config.json
+/config.json
+/config.local.json
+/my_config.json
+/config.*.json
+!/config.example.json
+secrets.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa
+id_ed25519
 
 # ------------------------------
 # Pipeline/intermediate outputs
@@ -58,6 +68,8 @@ temp/
 **/*_v2.json
 **/*_v3.json
 **/*_v4.json
+temp_qwen/
+temp_4o/
 
 # QA-only incremental scratch files
 *.partial

@@ -25,6 +25,7 @@
       "api_required": true,
       "description": "步骤 1: 题目合理性检测 (v0 -> v1a -> v1b)",
       "skip": false,
+      "mode": "full",
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
@@ -56,7 +57,7 @@
     "step_4_pollution_check": {
       "function": "pollution_check_main",
       "api_required": true,
-      "description": "步骤 4: 题目乱序和污染检查 (v3 -> v4)",
+      "description": "步骤 4: 选项乱序和污染检查 (v3 -> v4)",
       "skip": false,
       "enable_contamination_check": true,
       "cleanup_temp_files": true,

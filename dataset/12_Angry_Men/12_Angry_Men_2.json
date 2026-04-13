@@ -2898,6 +2898,1681 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "FOREMAN",
+            "category": 7,
+            "question": "During a heated moment, the Foreman makes a drastic commitment to change his status within the group. Did he follow through with this plan?\nA. He plans to call the judge and request a new foreman, and he does so immediately.\nB. He offers to resign and give his seat and responsibility to Juror #10; the plan fails because #10 refuses to take the chair.\nC. He decides to stop counting votes entirely and lets the jurors count themselves.\nD. He plans to leave the room until everyone calms down, and he stays in the bathroom for ten minutes.\nE. Executed with modification: he gives up his seat to Juror #8 instead of Juror #10.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He plans to call the judge and request a new foreman, and he does so immediately.",
+                "B. He offers to resign and give his seat and responsibility to Juror #10; the plan fails because #10 refuses to take the chair.",
+                "C. He decides to stop counting votes entirely and lets the jurors count themselves.",
+                "D. He plans to leave the room until everyone calms down, and he stays in the bathroom for ten minutes.",
+                "E. Executed with modification: he gives up his seat to Juror #8 instead of Juror #10.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "You want to do it? Here. You sit here. You take the responsibility. I'll just shut up, that’s all.",
+                    "dia_id": "D2:206"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "Listen, what are you getting so hot about? Calm down.",
+                    "dia_id": "D2:207"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "narration",
+                    "utterance": "The Foreman looks down at the table. He remains in his seat and later resumes his duties.",
+                    "dia_id": "D2:227"
+                }
+            ]
+        },
+        {
+            "character": "#3",
+            "category": 7,
+            "question": "Juror #3 reveals a long-term personal commitment he made years ago regarding his son's upbringing. What was the outcome of that commitment as described in the script?\nA. Successfully executed: his son became a 'man' and followed in his father's footsteps as head of a business.\nB. Failed/Evolution: he planned to 'make a man' out of his son through toughness, but it resulted in a physical fight and a two-year estrangement.\nC. Implicitly abandoned: he realized toughness was the wrong approach and reconciled with his son before the trial.\nD. Modified later: he eventually let his son live his own life and they now have a friendly relationship.\nE. Contradicted later: his son never actually hit him; #3 made up the story to gain sympathy from the other jurors.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Successfully executed: his son became a 'man' and followed in his father's footsteps as head of a business.",
+                "B. Failed/Evolution: he planned to 'make a man' out of his son through toughness, but it resulted in a physical fight and a two-year estrangement.",
+                "C. Implicitly abandoned: he realized toughness was the wrong approach and reconciled with his son before the trial.",
+                "D. Modified later: he eventually let his son live his own life and they now have a friendly relationship.",
+                "E. Contradicted later: his son never actually hit him; #3 made up the story to gain sympathy from the other jurors.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#3",
+                    "utterance": "I’m gonna make a man outa you or I'm gonna bust you in half trying. Well, I made a man outa him all right.",
+                    "dia_id": "D2:162"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#3",
+                    "utterance": "When he was sixteen we had a battle. He hit me in the face! I haven't seen him in two years. Rotten kid.",
+                    "dia_id": "D2:162"
+                }
+            ]
+        },
+        {
+            "character": "#7",
+            "category": 6,
+            "question": "What did #7 learn from the discussion that made him reconsider the woman's testimony?\nA. That the woman had a prior relationship with the defendant.\nB. That the woman had a strong motive to lie.\nC. That the woman had a poor memory of the events.\nD. That the woman had a history of mental instability.\nE. That the woman might have been wearing glasses during the murder.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. That the woman had a prior relationship with the defendant.",
+                "B. That the woman had a strong motive to lie.",
+                "C. That the woman had a poor memory of the events.",
+                "D. That the woman had a history of mental instability.",
+                "E. That the woman might have been wearing glasses during the murder.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. That the woman might have been wearing glasses during the murder.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                    "dia_id": "D6:171"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#8",
+                    "utterance": "It's not possible.",
+                    "dia_id": "D6:234"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The woman had marks on her nose, similar to #4, which are linked to glasses.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#7 learns that the woman might have been wearing glasses during the murder, which could have affected her ability to see clearly.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(B. That the woman might have been wearing glasses during the murder.)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"The woman who testified that she saw the filing had those same marks on the sides of her nose.\", \"dia_id\": \"D6:171\"}, {\"id\": \"E2\", \"speaker\": \"#8\", \"utterance\": \"It's not possible.\", \"dia_id\": \"D6:234\"}, {\"step\": 1, \"inference\": \"The woman had marks on her nose, similar to #4, which are linked to glasses.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#7 learns that the woman might have been wearing glasses during the murder, which could have affected her ability to see clearly.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #7 learn from the discussion that made him reconsider the woman's testimony?\nA. That the woman had a strong motive to lie.\nB. That the woman might have been wearing glasses during the murder.\nC. That the woman had a poor memory of the events.\nD. That the woman had a history of mental instability.\nE. That the woman had a prior relationship with the defendant.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.5398900508880615,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "B"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(F)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "It’s logical to say that she wasn’t wearing them while she was in bed, tossing and turning, trying to fall asleep.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "I only know that the eyesight is in question now.",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#4",
+                            "utterance": "She said that the lights went out immediately after the killing but that she got a good look at the boy in the act of stabbing his father.",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "She couldn’t have had time to put glasses on then.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "Maybe she honestly thought she saw the boy knife his father. I say that she saw only a blur.",
+                            "dia_id": "dia_14"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#9",
+                            "utterance": "The woman who testified that she saw the filing had those same marks on the sides of her nose.",
+                            "dia_id": "D6:171"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "It's not possible.",
+                            "dia_id": "D6:234"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(F)",
+                        "score": 0,
+                        "response_time": 0.30312061309814453,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "GUARD",
+            "category": 6,
+            "question": "What is the most accurate description of the Guard's role in the discussion based on the text?\nA. The Guard is the one who suggests the boy is guilty.\nB. The Guard is the one who brings the knife into the room.\nC. The Guard is the one who calls for a vote.\nD. The Guard is the one who identifies the knife as the murder weapon.\nE. The Guard is the one who argues about the boy's motive.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The Guard is the one who suggests the boy is guilty.",
+                "B. The Guard is the one who brings the knife into the room.",
+                "C. The Guard is the one who calls for a vote.",
+                "D. The Guard is the one who identifies the knife as the murder weapon.",
+                "E. The Guard is the one who argues about the boy's motive.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. The Guard is the one who brings the knife into the room.",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "GUARD",
+                    "utterance": "The door opens and the guard, pokes his head into the room.",
+                    "dia_id": "D2:150"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Guard is only mentioned in the context of entering the room with the knife.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"GUARD\", \"utterance\": \"The door opens and the guard, pokes his head into the room.\", \"dia_id\": \"D2:150\"}, {\"step\": 1, \"inference\": \"The Guard is only mentioned in the context of entering the room with the knife.\", \"based_on\": [\"E1\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of the Guard's role in the discussion based on the text?\nA. The Guard is the one who identifies the knife as the murder weapon.\nB. The Guard is the one who suggests the boy is guilty.\nC. The Guard is the one who brings the knife into the room.\nD. The Guard is the one who calls for a vote.\nE. The Guard is the one who argues about the boy's motive.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3163917064666748,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "C"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(F)",
+                        "score": 0,
+                        "response_time": 0.4415919780731201,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "FOREMAN",
+            "category": 6,
+            "question": "What is the most accurate description of the Foreman's leadership style based on the discussion?\nA. The Foreman is the one who reacts strongly to being called a 'kid.'\nB. The Foreman is the one who suggests the vote.\nC. The Foreman is overly aggressive and dismissive of others' opinions.\nD. The Foreman is the one who found the knife in the pawnshop.\nE. The Foreman is calm and insists on keeping the discussion organized.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The Foreman is the one who reacts strongly to being called a 'kid.'",
+                "B. The Foreman is the one who suggests the vote.",
+                "C. The Foreman is overly aggressive and dismissive of others' opinions.",
+                "D. The Foreman is the one who found the knife in the pawnshop.",
+                "E. The Foreman is calm and insists on keeping the discussion organized.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. The Foreman is the one who suggests the vote.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. Let's try to keep it peaceful in here.",
+                    "dia_id": "D2:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. I think we oughta get on with it now. These side arguments only slow us up.",
+                    "dia_id": "D2:281"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "FOREMAN",
+                    "utterance": "That sounds fair.",
+                    "dia_id": "D2:289"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Foreman is trying to maintain order and peace in the jury room.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He is the one who suggests the vote as a way to move forward, showing a structured and fair leadership style.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(D)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. Let's try to keep it peaceful in here.\", \"dia_id\": \"D2:7\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. I think we oughta get on with it now. These side arguments only slow us up.\", \"dia_id\": \"D2:281\"}, {\"id\": \"E3\", \"speaker\": \"FOREMAN\", \"utterance\": \"That sounds fair.\", \"dia_id\": \"D2:289\"}, {\"step\": 1, \"inference\": \"The Foreman is trying to maintain order and peace in the jury room.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"He is the one who suggests the vote as a way to move forward, showing a structured and fair leadership style.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of the Foreman's leadership style based on the discussion?\nA. The Foreman is the one who found the knife in the pawnshop.\nB. The Foreman is the one who suggests the vote.\nC. The Foreman is the one who reacts strongly to being called a 'kid.'\nD. The Foreman is calm and insists on keeping the discussion organized.\nE. The Foreman is overly aggressive and dismissive of others' opinions.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.7737882137298584,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E) The Foreman is calm and insists on keeping the discussion organized.",
+                        "score": 0,
+                        "response_time": 0.8898627758026123,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#7",
+            "category": 6,
+            "question": "What is the most accurate description of #7's attitude toward the boy's background based on his statements?\nA. #7 is critical of the boy's behavior and background.\nB. #7 is the one who found the knife in the pawnshop.\nC. #7 is indifferent to the boy's background and focuses only on the evidence.\nD. #7 believes the boy's background is irrelevant to the case.\nE. #7 is sympathetic to the boy and believes his background justifies his actions.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. #7 is critical of the boy's behavior and background.",
+                "B. #7 is the one who found the knife in the pawnshop.",
+                "C. #7 is indifferent to the boy's background and focuses only on the evidence.",
+                "D. #7 believes the boy's background is irrelevant to the case.",
+                "E. #7 is sympathetic to the boy and believes his background justifies his actions.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. #7 is critical of the boy's behavior and background.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#7",
+                    "utterance": "This kid is five for oh. Look at his record...",
+                    "dia_id": "D2:34"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#7",
+                    "utterance": "He's real swift with a knife, they said. This is a very fine boy.",
+                    "dia_id": "D2:36"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#7 is critical of the boy's behavior and history, as he lists his offenses.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Despite calling the boy a 'very fine boy,' the overall tone of his statements is negative and critical of the boy's background.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#7\", \"utterance\": \"This kid is five for oh. Look at his record...\", \"dia_id\": \"D2:34\"}, {\"id\": \"E2\", \"speaker\": \"#7\", \"utterance\": \"He's real swift with a knife, they said. This is a very fine boy.\", \"dia_id\": \"D2:36\"}, {\"step\": 1, \"inference\": \"#7 is critical of the boy's behavior and history, as he lists his offenses.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Despite calling the boy a 'very fine boy,' the overall tone of his statements is negative and critical of the boy's background.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #7's attitude toward the boy's background based on his statements?\nA. #7 is sympathetic to the boy and believes his background justifies his actions.\nB. #7 believes the boy's background is irrelevant to the case.\nC. #7 is indifferent to the boy's background and focuses only on the evidence.\nD. #7 is the one who found the knife in the pawnshop.\nE. #7 is critical of the boy's behavior and background.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3318779468536377,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(B)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "We can't help that. We're here to decide whether he's guilty or innocent, not to go into the reasons why he grew up this way.",
+                            "dia_id": "dia_10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "This kid is five for oh. Look at his record...",
+                            "dia_id": "D2:34"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "He's real swift with a knife, they said. This is a very fine boy.",
+                            "dia_id": "D2:36"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. #7 is indifferent to the boy's background and focuses only on the evidence.)",
+                        "score": 0,
+                        "response_time": 1.0969109535217285,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "CLERK",
+            "category": 6,
+            "question": "What would be the most accurate statement about the Clerk's role in the trial based on the discussion?\nA. The Clerk is the one who identifies the knife as the murder weapon.\nB. The Clerk is the one who calls for a vote.\nC. The Clerk is the one who brings the knife into the room.\nD. The Clerk is responsible for the jury's final decision.\nE. The Clerk is not mentioned in the discussion and has no role in the deliberations.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The Clerk is the one who identifies the knife as the murder weapon.",
+                "B. The Clerk is the one who calls for a vote.",
+                "C. The Clerk is the one who brings the knife into the room.",
+                "D. The Clerk is responsible for the jury's final decision.",
+                "E. The Clerk is not mentioned in the discussion and has no role in the deliberations.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. The Clerk is not mentioned in the discussion and has no role in the deliberations.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "GUARD",
+                    "utterance": "The door opens and the guard, pokes his head into the room.",
+                    "dia_id": "D2:150"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. Let's try to keep it peaceful in here.",
+                    "dia_id": "D2:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "FOREMAN",
+                    "utterance": "I think we oughta get on with it now. These side arguments only slow us up.",
+                    "dia_id": "D2:281"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Clerk is not mentioned in any of the dialogue exchanges.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "None of the options are supported by the text, as the Clerk is not involved in the deliberations or actions described.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A) The Clerk is not mentioned in the discussion and has no role in the deliberations.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"GUARD\", \"utterance\": \"The door opens and the guard, pokes his head into the room.\", \"dia_id\": \"D2:150\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. Let's try to keep it peaceful in here.\", \"dia_id\": \"D2:7\"}, {\"id\": \"E3\", \"speaker\": \"FOREMAN\", \"utterance\": \"I think we oughta get on with it now. These side arguments only slow us up.\", \"dia_id\": \"D2:281\"}, {\"step\": 1, \"inference\": \"The Clerk is not mentioned in any of the dialogue exchanges.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}, {\"step\": 2, \"inference\": \"None of the options are supported by the text, as the Clerk is not involved in the deliberations or actions described.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most accurate statement about the Clerk's role in the trial based on the discussion?\nA. The Clerk is not mentioned in the discussion and has no role in the deliberations.\nB. The Clerk is responsible for the jury's final decision.\nC. The Clerk is the one who calls for a vote.\nD. The Clerk is the one who identifies the knife as the murder weapon.\nE. The Clerk is the one who brings the knife into the room.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.7747220993041992,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "He begins to lead #10 back to his seat, camera panning with them.",
+                            "dia_id": "dia_0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #7 WITH #8 AT RIGHT SIDE OF FRAME",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_34"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_38"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #3",
+                            "dia_id": "dia_42"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_46"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_50"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_54"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #2",
+                            "dia_id": "dia_58"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 5",
+                            "dia_id": "dia_60"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE DOOR",
+                            "dia_id": "dia_64"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE JURORS, CLUSTERED AROUND KNIVES",
+                            "dia_id": "dia_72"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #2, SHOOTING 0VER #10 AND #11",
+                            "dia_id": "dia_80"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE JURY, FROM ABOVE",
+                            "dia_id": "dia_84"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_88"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN",
+                            "dia_id": "dia_90"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "GUARD",
+                            "utterance": "The door opens and the guard, pokes his head into the room.",
+                            "dia_id": "D2:150"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. Let's try to keep it peaceful in here.",
+                            "dia_id": "D2:7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "I think we oughta get on with it now. These side arguments only slow us up.",
+                            "dia_id": "D2:281"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "He begins to lead #10 back to his seat, camera panning with them.",
+                            "dia_id": "dia_0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #7 WITH #8 AT RIGHT SIDE OF FRAME",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_34"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_38"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #3",
+                            "dia_id": "dia_42"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_46"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_50"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_54"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #2",
+                            "dia_id": "dia_58"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 5",
+                            "dia_id": "dia_60"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE DOOR",
+                            "dia_id": "dia_64"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE JURORS, CLUSTERED AROUND KNIVES",
+                            "dia_id": "dia_72"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #2, SHOOTING 0VER #10 AND #11",
+                            "dia_id": "dia_80"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE JURY, FROM ABOVE",
+                            "dia_id": "dia_84"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_88"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN",
+                            "dia_id": "dia_90"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "What are you letting him get you all upset for? Relax.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Let's calm down now. I mean we're not gonna get anywhere fighting.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. You've got two minutes.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "How about the next gentleman?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "All right, let’s stop all this arguing. We're wasting time here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "It's your turn. Let’s go.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "Now let’s be reasonable. There’s nothing personal...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "Listen, let's take seats. There's no point in milling around here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "What do you want me to do?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "FOREMAN",
+                            "utterance": "Anyone doesn't agree? Okay. Pass these along.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON FOREMAN\nHe is standing.\nHe looks down the table.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nHe reacts to the following.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nHe knows he has said the wrong thing.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nI’ve lived in a slum all my life....",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nNow listen, sonny...",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE TABLE OVER FOREMAN’S SHOULDER\nForeman has risen.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 11, 12, FOREMAN SHOOTING OVER #’S 3, 4\nThe Foreman Looks at #11, and his face shows distaste for him in spite of himself. #12 gets up and walks to the window.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 9, 10\nThey all look in direction of Foreman. There is a pause. Then:",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #4\nHe takes the knife from #5’s hand and speaks to #3, who stands at left of frame.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 7, 11, 5.\n#3 is silent for a minute. He knows that a tiny dent has been made in the case. He splutters.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8, BEHIND #9\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 10, 11, SHOOTING BETWEEN #'S 4 AND 5\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8\nCamera pans with him as he walks back to his seat. He stands behind it. #'s 3, 7, 9 are included, #3 standing behind #7's seat.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "None: Writing. Now some of them begin to fold up their slips, and pass them back to the Foreman. As the passing back begins, camera be gins to move down, centering on entire jury. By the time all the slips are back the camera is shooting over shoulder of Foreman. He stacks the slips on the table next to him. Then he looks over at #8.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nHe looks from #8 down to table. He picks up the first slip, opens it, and reads.",
+                            "dia_id": "None"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "What are you letting him get you all upset for? Relax.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Let's calm down now. I mean we're not gonna get anywhere fighting.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. You've got two minutes.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "How about the next gentleman?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "All right, let’s stop all this arguing. We're wasting time here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "It's your turn. Let’s go.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "Now let’s be reasonable. There’s nothing personal...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "Listen, let's take seats. There's no point in milling around here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "What do you want me to do?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "FOREMAN",
+                            "utterance": "Anyone doesn't agree? Okay. Pass these along.",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "GUARD",
+                            "utterance": "The door opens and the guard, pokes his head into the room.",
+                            "dia_id": "D2:150"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. Let's try to keep it peaceful in here.",
+                            "dia_id": "D2:7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "I think we oughta get on with it now. These side arguments only slow us up.",
+                            "dia_id": "D2:281"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "He begins to lead #10 back to his seat, camera panning with them.",
+                            "dia_id": "dia_0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #7 WITH #8 AT RIGHT SIDE OF FRAME",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_34"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_38"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #3",
+                            "dia_id": "dia_42"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_46"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_50"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_54"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #2",
+                            "dia_id": "dia_58"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 5",
+                            "dia_id": "dia_60"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE DOOR",
+                            "dia_id": "dia_64"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE JURORS, CLUSTERED AROUND KNIVES",
+                            "dia_id": "dia_72"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #2, SHOOTING 0VER #10 AND #11",
+                            "dia_id": "dia_80"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE JURY, FROM ABOVE",
+                            "dia_id": "dia_84"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_88"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN",
+                            "dia_id": "dia_90"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "What are you letting him get you all upset for? Relax.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Let's calm down now. I mean we're not gonna get anywhere fighting.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. You've got two minutes.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "How about the next gentleman?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "All right, let’s stop all this arguing. We're wasting time here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "It's your turn. Let’s go.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "Now let’s be reasonable. There’s nothing personal...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "Listen, let's take seats. There's no point in milling around here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "What do you want me to do?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "FOREMAN",
+                            "utterance": "Anyone doesn't agree? Okay. Pass these along.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON FOREMAN\nHe is standing.\nHe looks down the table.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nHe reacts to the following.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nHe knows he has said the wrong thing.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nI’ve lived in a slum all my life....",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nNow listen, sonny...",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE TABLE OVER FOREMAN’S SHOULDER\nForeman has risen.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 11, 12, FOREMAN SHOOTING OVER #’S 3, 4\nThe Foreman Looks at #11, and his face shows distaste for him in spite of himself. #12 gets up and walks to the window.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 9, 10\nThey all look in direction of Foreman. There is a pause. Then:",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #4\nHe takes the knife from #5’s hand and speaks to #3, who stands at left of frame.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 7, 11, 5.\n#3 is silent for a minute. He knows that a tiny dent has been made in the case. He splutters.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8, BEHIND #9\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 10, 11, SHOOTING BETWEEN #'S 4 AND 5\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8\nCamera pans with him as he walks back to his seat. He stands behind it. #'s 3, 7, 9 are included, #3 standing behind #7's seat.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "None: Writing. Now some of them begin to fold up their slips, and pass them back to the Foreman. As the passing back begins, camera be gins to move down, centering on entire jury. By the time all the slips are back the camera is shooting over shoulder of Foreman. He stacks the slips on the table next to him. Then he looks over at #8.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nHe looks from #8 down to table. He picks up the first slip, opens it, and reads.",
+                            "dia_id": "None"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON FOREMAN\nHe is standing.\nHe looks down the table.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nHe reacts to the following.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nHe knows he has said the wrong thing.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nI’ve lived in a slum all my life....",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nNow listen, sonny...",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE TABLE OVER FOREMAN’S SHOULDER\nForeman has risen.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 11, 12, FOREMAN SHOOTING OVER #’S 3, 4\nThe Foreman Looks at #11, and his face shows distaste for him in spite of himself. #12 gets up and walks to the window.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 9, 10\nThey all look in direction of Foreman. There is a pause. Then:",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #4\nHe takes the knife from #5’s hand and speaks to #3, who stands at left of frame.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 7, 11, 5.\n#3 is silent for a minute. He knows that a tiny dent has been made in the case. He splutters.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8, BEHIND #9\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 10, 11, SHOOTING BETWEEN #'S 4 AND 5\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8\nCamera pans with him as he walks back to his seat. He stands behind it. #'s 3, 7, 9 are included, #3 standing behind #7's seat.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "None: Writing. Now some of them begin to fold up their slips, and pass them back to the Foreman. As the passing back begins, camera be gins to move down, centering on entire jury. By the time all the slips are back the camera is shooting over shoulder of Foreman. He stacks the slips on the table next to him. Then he looks over at #8.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nHe looks from #8 down to table. He picks up the first slip, opens it, and reads.",
+                            "dia_id": "None"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "GUARD",
+                            "utterance": "The door opens and the guard, pokes his head into the room.",
+                            "dia_id": "D2:150"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. Let's try to keep it peaceful in here.",
+                            "dia_id": "D2:7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "I think we oughta get on with it now. These side arguments only slow us up.",
+                            "dia_id": "D2:281"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "He begins to lead #10 back to his seat, camera panning with them.",
+                            "dia_id": "dia_0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #7 WITH #8 AT RIGHT SIDE OF FRAME",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_34"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #6",
+                            "dia_id": "dia_38"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #3",
+                            "dia_id": "dia_42"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_46"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #4",
+                            "dia_id": "dia_50"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_54"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #2",
+                            "dia_id": "dia_58"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 5",
+                            "dia_id": "dia_60"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE DOOR",
+                            "dia_id": "dia_64"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - THE JURORS, CLUSTERED AROUND KNIVES",
+                            "dia_id": "dia_72"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #2, SHOOTING 0VER #10 AND #11",
+                            "dia_id": "dia_80"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE JURY, FROM ABOVE",
+                            "dia_id": "dia_84"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8",
+                            "dia_id": "dia_88"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN",
+                            "dia_id": "dia_90"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "What are you letting him get you all upset for? Relax.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "Let's calm down now. I mean we're not gonna get anywhere fighting.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay. You've got two minutes.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "How about the next gentleman?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "Okay.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "All right, let’s stop all this arguing. We're wasting time here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "It's your turn. Let’s go.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "Now let’s be reasonable. There’s nothing personal...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "Listen, let's take seats. There's no point in milling around here.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "What do you want me to do?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "FOREMAN",
+                            "utterance": "Anyone doesn't agree? Okay. Pass these along.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON FOREMAN\nHe is standing.\nHe looks down the table.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nHe reacts to the following.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nHe knows he has said the wrong thing.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #5\nI’ve lived in a slum all my life....",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #10\nNow listen, sonny...",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - ENTIRE TABLE OVER FOREMAN’S SHOULDER\nForeman has risen.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 11, 12, FOREMAN SHOOTING OVER #’S 3, 4\nThe Foreman Looks at #11, and his face shows distaste for him in spite of himself. #12 gets up and walks to the window.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 9, 10\nThey all look in direction of Foreman. There is a pause. Then:",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - CENTERED ON #4\nHe takes the knife from #5’s hand and speaks to #3, who stands at left of frame.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 3, 4, 7, 11, 5.\n#3 is silent for a minute. He knows that a tiny dent has been made in the case. He splutters.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8, BEHIND #9\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #’S 8, 10, 11, SHOOTING BETWEEN #'S 4 AND 5\n#8 waits until the laughter dies down.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #8\nCamera pans with him as he walks back to his seat. He stands behind it. #'s 3, 7, 9 are included, #3 standing behind #7's seat.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "None",
+                            "utterance": "None: Writing. Now some of them begin to fold up their slips, and pass them back to the Foreman. As the passing back begins, camera be gins to move down, centering on entire jury. By the time all the slips are back the camera is shooting over shoulder of Foreman. He stacks the slips on the table next to him. Then he looks over at #8.",
+                            "dia_id": "None"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nHe looks from #8 down to table. He picks up the first slip, opens it, and reads.",
+                            "dia_id": "None"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ]
         }
     ],
     "conversation": {

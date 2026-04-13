@@ -8,6 +8,7 @@ import traceback
 import uuid
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
+from types import SimpleNamespace
 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -28,7 +29,7 @@ You are an expert knowledge retrieval and logical deduction system tasked with t
 # INSTRUCTIONS:
 1. Answer the provided choice question using ONLY your pre-trained world knowledge, common sense, and logical deduction. Do not expect any external context or memory banks to be provided.
 2. You MUST select the single most likely correct option. Under no circumstances should you refuse to answer, state that there is insufficient context, or choose/output "F" (Insufficient evidence/Refusal).
-3. **Evaluate Option Plausibility:** Carefully analyze the provided options. Eliminate options that are logically absurd, contradict common sense, or feel out of place for natural human dialogue/behavior. Select the option that makes the most logical or real-world sense, even if you do not know the exact source material.
+3. Evaluate Option Plausibility: Carefully analyze the provided options. Eliminate options that are logically absurd, contradict common sense, or feel out of place for natural human dialogue/behavior. Select the option that makes the most logical or real-world sense, even if you do not know the exact source material.
 4. If the question contains specific character names or recognizable scenarios, leverage your broad knowledge of popular culture and human interaction to deduce the most likely answer.
 5. The final answer must be strictly the selected option letter or the exact text of the chosen option (under 5-6 words).
 
@@ -163,12 +164,31 @@ class QAOnlyRunner:
                     messages=messages,
                     temperature=temperature,
                     max_tokens=max_tokens,
-                    extra_body={
-                        "enable_thinking": False
-                    }
                 )
             except Exception as e:
                 s = str(e).lower()
+                if "missing_required_parameter" in s or (
+                    "one of \"input\"" in s and "prompt" in s
+                ):
+                    prompt_text = "\n".join(
+                        str(msg.get("content", ""))
+                        for msg in messages
+                        if isinstance(msg, dict)
+                    )
+                    try:
+                        resp2 = self.answer_client.responses.create(
+                            model=model,
+                            input=prompt_text,
+                            temperature=temperature,
+                        )
+                        content2 = getattr(resp2, "output_text", "") or ""
+                        return SimpleNamespace(
+                            choices=[SimpleNamespace(message=SimpleNamespace(content=content2))]
+                        )
+                    except Exception as e2:
+                        s = str(e2).lower()
+                        e = e2
+
                 if ("429" in s) or ("tpm" in s) or ("rate limit" in s):
                     wait_s = sleep_time + random.uniform(0, 3)
                     print(f"⚠️ 触发速率限制，等待 {wait_s:.1f}s 后重试...")

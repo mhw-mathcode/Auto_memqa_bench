@@ -114,7 +114,6 @@ def classify_question(conversation, question, answer, client, model):
                 messages=messages,
                 temperature=0.0,
                 max_tokens=32,
-                extra_body={"enable_thinking": False},
             )
 
             # 基本合法性检查
@@ -134,6 +133,24 @@ def classify_question(conversation, question, answer, client, model):
             raise ValueError("Empty response")
 
         except Exception as e:
+            error_text = str(e).lower()
+            if "missing_required_parameter" in error_text or (
+                "one of \"input\"" in error_text and "prompt" in error_text
+            ):
+                try:
+                    response2 = client.responses.create(
+                        model=model,
+                        input=prompt,
+                        temperature=0.0,
+                    )
+                    raw_label = (getattr(response2, "output_text", "") or "").strip()
+                    normalized_label = _normalize_label(raw_label)
+                    if normalized_label:
+                        return normalized_label
+                    raise ValueError(f"Invalid label output: {raw_label}")
+                except Exception as e2:
+                    e = e2
+
             sleep_time = 60 + random.uniform(0, 10)
             print(f"[Retry {attempt+1}/{10}] API failed: {e}")
             time.sleep(sleep_time)

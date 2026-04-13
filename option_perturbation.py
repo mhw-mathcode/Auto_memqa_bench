@@ -68,7 +68,6 @@ def gen_chat(prompt: str, temp=0.7) -> str:
         model=GEN_MODEL,
         messages=[{"role": "user", "content": prompt}],
         temperature=temp,
-        extra_body={"enable_thinking": False},
     )
     return resp.choices[0].message.content.strip()
 

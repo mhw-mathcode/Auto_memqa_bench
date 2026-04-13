@@ -1,0 +1,1663 @@
+{
+    "qa": [
+
+    {
+      "character": "Ariel",
+      "category": 1,
+      "question": "What is a consistent trait Ariel shows regarding her role and attentiveness when serving her friends in the group?",
+      "option": [
+        "A. She is perfectly accurate and never mixes up orders or items.",
+        "B. She provides the correct beverages but forgets to bring any utensils or stirrers.",
+        "C. She is prone to service mishaps, such as providing non-edible items as stirrers.",
+        "D. She only serves coffee-based drinks and refuses to serve hot cider or tea.",
+        "E. She consistently forgets Chloe's name and calls her Rach instead."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "And a nice hot cider for Chloe.", "dia_id": "1:5" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Why does my cinamon stick have an eraser?", "dia_id": "1:8" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Oh! That's why. I'm sorry!", "dia_id": "1:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel is serving drinks to the group in Session 1, including a cider for Chloe.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel accidentally gave Chloe a pencil (with an eraser) instead of a cinnamon stick, acknowledging the mistake.", "based_on": ["E2", "E3"] },
+        { "step": 3, "inference": "This establishes a profile of being well-meaning but prone to specific, unusual service errors.", "based_on": ["E1", "E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 2,
+      "question": "What specific question did Ariel ask regarding the chef's audition dinner being prepared for Steve?",
+      "option": [
+        "A. She asked if the restaurant on 10th Street was formerly owned by bears.",
+        "B. She asked what specific dishes were going to be made for the meal.",
+        "C. She asked Fiona if she would be able to make the 'yummy noises' required.",
+        "D. She asked Bennett if he knew a good date place for a chef.",
+        "E. She asked Dexter if he was going to wear his suity-man outfit to the dinner."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "So anyway, I'm cooking dinner for him Monday night. You know, kind of like an audition.", "dia_id": "4:15" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "What are you going to make?", "dia_id": "4:16" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "And Chloe, what are you going to make?", "dia_id": "4:18" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe explains she is cooking an audition dinner on Monday night.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel repeatedly asks Chloe what she is planning to cook for this specific event.", "based_on": ["E2", "E4"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 3,
+      "question": "How does Ariel's understanding of Dexter's professional terminology change over the course of the conversations?",
+      "option": [
+        "A. She initially thinks WENUS is a planet and later learns it is a medical term.",
+        "B. She is initially confused by the term WENUS but eventually claims familiarity with it after hearing the definition.",
+        "C. She explains the meaning of WENUS to Ethan after Dexter refuses to do so.",
+        "D. She believes WENUS stands for Weekly Electronic Network User Statistics throughout the sessions.",
+        "E. She never hears the definition of the term and remains confused in the final session."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "... the WENUS?", "dia_id": "3:16" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Weekly Estimated Net Usage Systems. A processing term.", "dia_id": "3:17" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Oh. That WENUS.", "dia_id": "3:18" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel shows initial confusion/unfamiliarity with the acronym WENUS.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter provides the full definition: Weekly Estimated Net Usage Systems.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Ariel updates her state to acting as if she knows exactly what it is ('That WENUS').", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 4,
+      "question": "Based on Ariel's interactions with Bennett regarding his date with Celia, what is her attitude toward his romantic life?",
+      "option": [
+        "A. She is deeply jealous and tries to sabotage the date by mentioning the monkey.",
+        "B. She is supportive and offers to help Celia curate the insect collection.",
+        "C. She is playful and mockingly teases him about Celia's profession.",
+        "D. She is indifferent and ignores Bennett when he asks for date location advice.",
+        "E. She is professional and provides him with a list of five-star restaurants."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Oh, is this the bug lady?", "dia_id": "4:25" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Bzzzz.... I love you, Bennett.", "dia_id": "4:26" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Her name is Celia. She's not a bug lady. She's curator of insects at the museum.", "dia_id": "4:27" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel hears Fiona refer to Bennett's date as the 'bug lady'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel immediately makes a buzzing sound ('Bzzzz') to tease Bennett while mimicking a declaration of love.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Bennett has to correct them, showing the interaction was based on teasing his date's niche profession.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 5,
+      "question": "What does Ariel explicitly state regarding her own career aspirations during the group's discussion about dreams and goals?",
+      "option": [
+        "A. She wants to be a professional chef like Chloe.",
+        "B. She confirms she has no idea what she wants to do.",
+        "C. She admits her dream is to be a career counselor like Dr. Pillman.",
+        "D. She states she wants to own her own coffee shop on 10th Street.",
+        "E. She claims she wants to work on the fifteenth floor with Mr. Kostelic."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Hey, you guys all know what you want to do.", "dia_id": "4:6" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "I don't!", "dia_id": "4:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter makes a general assumption that everyone in the group has a clear career path or goal.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel explicitly contradicts this, stating she does not know what she wants to do.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 6,
+      "question": "Which piece of advice or feedback does Ariel offer Dexter regarding his interactions with his former employer, Al?",
+      "option": [
+        "A. She tells him he should have asked for more money during the negotiation.",
+        "B. She suggests he should take the processing supervisor job temporarily.",
+        "C. She tells him he should not work for someone who acts like a 'tool'.",
+        "D. She advises him to steal more pens from the office before leaving.",
+        "E. She suggests he should see Dr. Pillman to help deal with Al's calls."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "What a tool!", "dia_id": "12:1" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "You don't want to work for a guy like that.", "dia_id": "12:2" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "I'll see you on Monday!", "dia_id": "8:38" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter is pressured into returning to his job by Al/Mr. Kostelic.", "based_on": ["E3"] },
+        { "step": 2, "inference": "Ethan refers to the employer/situation as being a 'tool'.", "based_on": ["E1"] },
+        { "step": 3, "inference": "Ariel reinforces this by telling Dexter he shouldn't work for a person with those negative qualities.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 7,
+      "question": "What plan or commitment does Ariel suggest to the group at the end of the recorded sessions?",
+      "option": [
+        "A. She plans to visit the new restaurant on 10th Street on Monday.",
+        "B. She suggests they should wait for Dexter before going to a movie.",
+        "C. She commits to helping Bennett with his 'villager' motif dirty talk.",
+        "D. She promises to bring real cinnamon sticks for the next gathering.",
+        "E. She plans to meet Dr. Robert Pillman for a career consultation."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "You guys wanna try and catch a late movie or something?", "dia_id": "12:15" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Maybe, but shouldn't we wait for Dexter?", "dia_id": "12:16" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona proposes a future action: catching a movie.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel responds with a conditional plan/commitment to wait for Dexter first.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 1,
+      "question": "What persistent hobby or living situation defines Bennett's home life across several sessions?",
+      "option": [
+        "A. He is an aspiring writer who uses 'villagers' as a recurring motif.",
+        "B. He owns a pet monkey named Marcel.",
+        "C. He is a semi-professional curator of insects.",
+        "D. He spends his nights inputting numbers for Weekly Estimated Net Usage Systems.",
+        "E. He is a regular at Tony's steakhouse and eats 32-ounce steaks."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Oh, I just thought we could go out to dinner, and then maybe bring her back to my place and I'd introduce her to my monkey.", "dia_id": "4:29" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Celia, don't worry! Don't scream! He's not going to hurt you! Soothing tones, Celia. Soothing tones! Marcel...", "dia_id": "5:1" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett mentions having a monkey at his place that he wants to introduce to his date.", "based_on": ["E1"] },
+        { "step": 2, "inference": "The monkey is later identified by name as Marcel during a chaotic interaction with Celia.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 2,
+      "question": "During the date with Celia, what was the first 'dirty' word Bennett said that caused him to panic?",
+      "option": [
+        "A. Motifs",
+        "B. Villagers",
+        "C. Vulva",
+        "D. Puma",
+        "E. Trembling"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Um... uh.... vulva.", "dia_id": "7:10" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Vulva?", "dia_id": "8:1" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Alright, I panicked, alright? She took me by surprise.", "dia_id": "8:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett says 'vulva' during his date with Celia when she asks him to say something hot.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He later admits to Ethan that he said this word because he panicked.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 3,
+      "question": "How did Bennett's self-described ability to 'talk dirty' evolve between the practice session with Ethan and his final report to the group?",
+      "option": [
+        "A. He remained completely unable to speak and chose to cuddle instead.",
+        "B. He went from panicking and saying medical terms to creating elaborate narratives with plot lines and characters.",
+        "C. He successfully learned to use 'yummy noises' instead of words.",
+        "D. He decided to stop talking entirely and only used 'soothing tones'.",
+        "E. He mastered the 'puma' technique recommended by Ethan."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I just... I don't think I'm the dirty-talking kind of guy, you know?", "dia_id": "8:4" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "I was the James Michener of dirty talk. It was the most elaborate filth you have ever heard. I mean, there were characters, plot lines, themes, a motif... at one point there were villagers.", "dia_id": "12:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Initially, Bennett expresses doubt about his ability to talk dirty after his failure with 'vulva'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "By the final session, he claims to have become a master of it, using complex storytelling elements.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 4,
+      "question": "What was the result of Bennett's plan to use his pet as a 'chick magnet' for his date with Celia?",
+      "option": [
+        "A. It worked perfectly and led to a night of passion.",
+        "B. It failed initially because the pet put its claws in her and she screamed.",
+        "C. Celia was a curator of insects and preferred bugs over monkeys.",
+        "D. Ethan stole the monkey, preventing the date from happening.",
+        "E. Bennett ended up cuddling with the monkey instead of Celia."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I'm telling you, that monkey is a chick magnet!", "dia_id": "4:33" },
+        { "id": "E2", "speaker": "Celia", "utterance": "I can't stand this! He's got his claws in my...", "dia_id": "5:2" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Celia, don't worry! Don't scream!", "dia_id": "5:1" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett and Ethan plan to use the monkey to 'seal the deal' with Celia.", "based_on": ["E1"] },
+        { "step": 2, "inference": "The actual meeting with the monkey resulted in Celia screaming and being hurt/uncomfortable.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 5,
+      "question": "What specific literary author did Bennett compare himself to when describing the quality of his 'dirty talk'?",
+      "option": [
+        "A. Dr. Robert Pillman",
+        "B. James Michener",
+        "C. Big Al",
+        "D. Mr. Kostelic",
+        "E. Steve from the restaurant"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I was the James Michener of dirty talk.", "dia_id": "12:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 12, Bennett explicitly uses the name 'James Michener' to describe his elaborate storytelling style during dirty talk.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 6,
+      "question": "How did Bennett apply the practice session he had with Ethan to his actual date with Celia?",
+      "option": [
+        "A. He used the 'puma' steakhouse idea to impress her.",
+        "B. He successfully used the phrase 'caress my butt' during the date.",
+        "C. He turned his insecurity about talking dirty into an elaborate storytelling performance.",
+        "D. He realized Ethan was right and that the monkey was a 'chick magnet'.",
+        "E. He decided to take Ariel's advice and stop using 'vulva'."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I just... I don't think I'm the dirty-talking kind of guy, you know?", "dia_id": "8:4" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "What's the big deal? You just say what you want to do to her. Or what you want her to do to you.", "dia_id": "8:5" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "I was the James Michener of dirty talk. It was the most elaborate filth you have ever heard. I mean, there were characters, plot lines, themes, a motif...", "dia_id": "12:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett initially struggled and felt he wasn't the 'kind of guy' for dirty talk.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ethan encouraged him to just say what he wants or what he thinks.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Bennett took the advice of 'saying what he thinks' and turned it into an elaborate narrative 'filth' session.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 7,
+      "question": "What is Bennett's planned reaction to Dexter's eventual return in the final session?",
+      "option": [
+        "A. He wants to show Dexter his new 'villager' motif.",
+        "B. He plans to go to a late movie with the group once Dexter arrives.",
+        "C. He plans to help Dexter negotiate a better bonus with Big Al.",
+        "D. He wants to introduce Dexter to Celia the bug lady.",
+        "E. He plans to cook a 32-ounce steak for Dexter."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "You guys wanna try and catch a late movie or something?", "dia_id": "12:15" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Maybe, but shouldn't we wait for Dexter?", "dia_id": "12:16" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Yeah!", "dia_id": "12:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The group is discussing going to a movie.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel suggests waiting for Dexter.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Bennett is part of this group consensus and agrees to the general sentiment of the final gathering.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 1,
+      "question": "What is Chloe's professional background and primary career ambition as revealed throughout the sessions?",
+      "option": [
+        "A. She is a massage therapist looking for new clients like Steve.",
+        "B. She is a data processing supervisor specialized in WENUS.",
+        "C. She is a chef who wants to create an entire menu for a new restaurant.",
+        "D. She is a museum curator specializing in insects.",
+        "E. She is a career counselor who works with Dr. Robert Pillman."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Hi! Oh, yeah, no, I know. You're a chef.", "dia_id": "3:23" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Oh my God!", "dia_id": "3:28" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "So anyway, I'm cooking dinner for him Monday night. You know, kind of like an audition.", "dia_id": "4:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona explicitly confirms Chloe's profession as a chef.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Chloe expresses intense excitement ('Oh my God!') when Fiona mentions a head chef job creating a menu.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Chloe follows through by setting up an audition dinner to secure the role.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 2,
+      "question": "What was Chloe's specific reaction to the location of the restaurant Steve is opening?",
+      "option": [
+        "A. She thought it was too big and intimidating for a first-time head chef.",
+        "B. She described it as a cute little place on 10th Street that was 'just right'.",
+        "C. She was disappointed because it was formerly owned by bears.",
+        "D. She was worried because it was too close to Dexter's old office.",
+        "E. She felt the kitchen was too small to create an eclectic menu."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "So great! He showed me where the restaurant's going to be. It's this, it's this cute little place on 10th Street. Not too big, not too small. Just right.", "dia_id": "4:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In session 4, Chloe provides a detailed description of the restaurant's location and her satisfaction with its size.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 3,
+      "question": "How did Chloe's level of professional confidence change from Session 3 to the final session?",
+      "option": [
+        "A. She started out confident but became depressed after failing the audition.",
+        "B. She was initially hurt by being overlooked for a job but later regained her spirits despite the audition outcome.",
+        "C. She remained consistently anxious about her 'all-toast' menu.",
+        "D. She moved from being a chef to wanting to be a career counselor.",
+        "E. She went from loving her life to quitting her job like Dexter."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Um... hi there.", "dia_id": "3:22" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Hi! Oh, yeah, no, I know. You're a chef. I know, and I thought of you first, but um, Dexter's the one who needs a job right now, so....", "dia_id": "3:23" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "I know... it's just... I thought this was, you know... it.", "dia_id": "12:4" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe is initially slighted when Fiona offers a chef job to Dexter instead of her.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "She later gets the audition but it doesn't seem to result in the job ('I thought this was... it').", "based_on": ["E3"] },
+        { "step": 3, "inference": "Despite the disappointment, the group's support (E5) suggests a transition from hurt to acceptance.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 4,
+      "question": "Which friend does Chloe specifically ask to help her during her 'audition' by making 'yummy noises'?",
+      "option": [
+        "A. Ariel",
+        "B. Bennett",
+        "C. Fiona",
+        "D. Ethan",
+        "E. Celia"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "And Fiona, he really wants you to be here, which will be great for me because then you can 'ooh' and 'ahh' and make yummy noises.", "dia_id": "4:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe explicitly requests Fiona's presence at the audition to provide positive vocal feedback on the food.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 5,
+      "question": "According to the dialogue, how long has Dexter been at the job he calls a 'temp job', according to Chloe?",
+      "option": [
+        "A. Two years",
+        "B. Five years",
+        "C. Twelve o'clock",
+        "D. Since February 16, 1995",
+        "E. Fifteen floors"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Yeah, Dexter... you've been there for five years.", "dia_id": "3:12" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe corrects Dexter's claim that his job was temporary by stating the exact duration of his employment.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 6,
+      "question": "What did Chloe learn about Fiona's support during her cooking audition?",
+      "option": [
+        "A. Fiona was faking the noises the entire time.",
+        "B. Fiona's 'yummy noises' were genuine and not faked.",
+        "C. Fiona forgot to show up to the audition.",
+        "D. Fiona preferred the 'stuff with the thing' over the actual menu.",
+        "E. Fiona thought the restaurant on 10th street was too small."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "And Fiona... you can 'ooh' and 'ahh' and make yummy noises.", "dia_id": "4:15" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Yeah! You know all those yummy noises? I wasn't faking.", "dia_id": "12:6" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe planned for Fiona to make noises to help the audition.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona later confirms to Chloe that the noises she made were authentic, proving she actually liked the food.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 7,
+      "question": "On what specific day of the week did Chloe schedule her audition dinner for Steve?",
+      "option": [
+        "A. Friday",
+        "B. Sunday",
+        "C. Monday",
+        "D. February 17",
+        "E. Saturday"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "So anyway, I'm cooking dinner for him Monday night. You know, kind of like an audition.", "dia_id": "4:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe explicitly names 'Monday night' as the time for her commitment to cook for Steve.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 1,
+      "question": "What is Dexter’s primary internal conflict regarding his long-term career identity?",
+      "option": [
+        "A. He wants to be a head chef but lacks the 'big white hat'.",
+        "B. He struggles with admitting that his data processing job is his actual career rather than a temporary one.",
+        "C. He is torn between being a career counselor and an insect curator.",
+        "D. He wants to move to the 15th floor but hates Mr. Kostelic.",
+        "E. He believes he is a 'tool' and wants to change his personality."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Why? This was supposed to be a temp job!", "dia_id": "3:11" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Yeah, Dexter... you've been there for five years.", "dia_id": "3:12" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "If I took this promotion, it'd be like admitting that this is what I actually do.", "dia_id": "3:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter views his work as temporary despite the long duration (5 years).", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "He explicitly states that accepting a promotion would force him to accept that processing is his actual identity.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 2,
+      "question": "What specific action did Dexter take immediately after Big Al offered him the position of processing supervisor?",
+      "option": [
+        "A. He asked for a yearly bonus structure.",
+        "B. He accepted the job and moved to the 15th floor.",
+        "C. He quit his job.",
+        "D. He went to see Dr. Robert Pillman.",
+        "E. He stole all the pens from the office."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "So, it's a typical day at work. I'm inputting my numbers, and big Al calls me into his office and tells me he wants to make me processing supervisor.", "dia_id": "3:7" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "So.... I quit.", "dia_id": "3:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter recounts being offered a promotion and then immediately tells the group that he quit as a result.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 3,
+      "question": "Despite his strong stance in Session 3, what is Dexter's employment status by the end of the conversations?",
+      "option": [
+        "A. He has become the head chef at the restaurant on 10th Street.",
+        "B. He is unemployed and pursuing a career in counseling.",
+        "C. He has agreed to return to his old job on Monday.",
+        "D. He is working for Steve as a menu creator.",
+        "E. He has opened an 'all-toast' restaurant."
+      ],
+      "answer": "C",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "So.... I quit.", "dia_id": "3:9" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "I'll see you on Monday!", "dia_id": "8:38" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 3, Dexter definitively states that he quit his job.", "based_on": ["E1"] },
+        { "step": 2, "inference": "By Session 8, after relentless calls and bonus offers from Al, Dexter concedes and agrees to show up on Monday.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 4,
+      "question": "What is Dexter’s sarcastic interpretation of the relationship between Bennett and Ethan in Session 8?",
+      "option": [
+        "A. He thinks they are plotting to steal his job at the 15th floor.",
+        "B. He claims he was always rooting for the two of them to get together.",
+        "C. He believes they are both pumas who eat 32-ounce steaks.",
+        "D. He thinks they are characters in a James Michener novel.",
+        "E. He believes they are trying to trick him into becoming a chef."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "...run it all over your body until you're... trembling with... with...", "dia_id": "8:30" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "It's OK. It's OK. I was always rooting for you two kids to get together.", "dia_id": "8:34" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter walks in on Bennett and Ethan during their dirty talk practice session.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He makes a sarcastic joke about them being a romantic couple.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 5,
+      "question": "According to Dexter, what does the processing term WENUS stand for?",
+      "option": [
+        "A. Weekly Electronic Network Usage Statistics",
+        "B. Weekly Estimated Net Usage Systems",
+        "C. Worldwide Estimated Network User Systems",
+        "D. Weekly Estimated Net User Statistics",
+        "E. Work Efficiency Net Usage Systems"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Weekly Estimated Net Usage Systems. A processing term.", "dia_id": "3:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter provides the exact acronym expansion for WENUS in session 3.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 6,
+      "question": "Based on Dexter's discussion about 'goals and dreams', what realization does he come to about his own life compared to his friends?",
+      "option": [
+        "A. He realizes he is the only one who actually knows what they want to do.",
+        "B. He concludes that he doesn't have a dream or a clear goal.",
+        "C. He learns that everyone in the group is just as lost as he is.",
+        "D. He discovers that he wants to be a career counselor.",
+        "E. He finds out that his dream is actually to be a chef."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "You know, you have goals. You have dreams. I don't have a dream.", "dia_id": "4:8" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Ah, the lesser-known \"I don't have a dream\" speech.", "dia_id": "4:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter contrasts himself with his friends in the living room, noting that he lacks the dreams and goals they possess.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explicitly labels this state of mind as not having a dream.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 7,
+      "question": "What is Dexter’s scheduled commitment for the Monday following the final conversation?",
+      "option": [
+        "A. He is meeting Dr. Robert Pillman for a follow-up appointment.",
+        "B. He is going to work at his old job (Al's office).",
+        "C. He is attending Chloe's audition dinner.",
+        "D. He is seeing a late movie with the group.",
+        "E. He is opening an all-toast restaurant."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "I'll see you on Monday!", "dia_id": "8:38" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "So, it's a typical day at work... and big Al calls me into his office...", "dia_id": "3:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter is speaking to Al (his employer) on the phone.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Despite trying to reject the job, he ends the call by committing to see Al on Monday.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 1,
+      "question": "What is Ethan's general attitude and style when giving social or romantic advice to Bennett?",
+      "option": [
+        "A. He is sensitive and encourages Bennett to be honest about his feelings.",
+        "B. He is aggressive and uses hyper-masculine metaphors like pumas and magnets.",
+        "C. He is cautious and warns Bennett not to rush into 'dirty talk'.",
+        "D. He is skeptical and thinks Bennett's monkey is a terrible idea.",
+        "E. He is professional and suggests Bennett should see a career counselor."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "How about Tony's? If you can finish a 32-ounce steak, it's free.", "dia_id": "4:22" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "I'm telling you, that monkey is a chick magnet!", "dia_id": "4:33" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "Now tell me you want to caress my butt!", "dia_id": "8:21" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan suggests an intense steakhouse date for Bennett.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He uses the term 'chick magnet' to describe the monkey's appeal.", "based_on": ["E2"] },
+        { "step": 3, "inference": "He pushes Bennett to use aggressive sexual language during practice.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 2,
+      "question": "What specific observation did Ethan make about the frequency of Al's phone calls to Dexter?",
+      "option": [
+        "A. He noted that Al only called once during the night.",
+        "B. He observed that Al called 'again, and again, and again'.",
+        "C. He mentioned that Al only called to discuss the bonus structure.",
+        "D. He said that Al called to offer Dexter a chef position.",
+        "E. He noted that Al called while Dexter was at Dr. Pillman's office."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "And again, and again, and again... Hello? And again.", "dia_id": "8:37" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan emphasizes the repetitiveness of the calls Dexter received from his boss while sleeping.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 3,
+      "question": "How did Ethan's opinion of Bennett's romantic progress change from the date's planning to the final summary?",
+      "option": [
+        "A. He was initially skeptical but became Bennett's biggest fan.",
+        "B. He went from thinking Bennett had a 'chick magnet' to mocking him for 'cuddling'.",
+        "C. He remained consistently impressed by Bennett's 'villager' stories.",
+        "D. He thought Bennett was a puma but later realized he was a 'bug lady'.",
+        "E. He was supportive until he found out Bennett used medical terms."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I'm telling you, that monkey is a chick magnet!", "dia_id": "4:33" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Whoaa!! You cuddled? How many times??", "dia_id": "8:3" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "You cuddled.", "dia_id": "12:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan has high expectations for Bennett's success using the monkey.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He later reacts with disbelief and mockery when he learns the result was only 'cuddling'.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 4,
+      "question": "What was Ethan's reaction when he realized Dexter had witnessed his 'dirty talk' practice session with Bennett?",
+      "option": [
+        "A. He tried to explain it as a 'funny story'.",
+        "B. He claimed he was just helping Bennett with his 'villager' motif.",
+        "C. He admitted he was in a relationship with Bennett.",
+        "D. He immediately left the room to find Dr. Pillman.",
+        "E. He told Dexter that Bennett was a tool."
+      ],
+      "answer": "A",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "You're not going to believe this!", "dia_id": "8:33" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Funny story!", "dia_id": "8:32" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "When Dexter catches them, Bennett calls it a 'funny story' and Ethan immediately follows up by saying 'You're not going to believe this!' to deflect.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 5,
+      "question": "What numerical value does Ethan mention in his suggestion for a date location for Bennett?",
+      "option": [
+        "A. Five years",
+        "B. 32-ounce",
+        "C. 10th Street",
+        "D. 15th floor",
+        "E. Twelve o'clock"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "How about Tony's? If you can finish a 32-ounce steak, it's free.", "dia_id": "4:22" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan specifies the exact weight of the steak (32-ounce) at Tony's.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 6,
+      "question": "What method did Ethan use to teach Bennett how to talk dirty?",
+      "option": [
+        "A. He had Bennett read a James Michener novel.",
+        "B. He performed a role-play where he spoke dirty to Bennett first to demonstrate.",
+        "C. He told Bennett to use medical terms like 'vulva' to surprise the woman.",
+        "D. He advised him to bring the monkey to the date to act as a 'chick magnet'.",
+        "E. He suggested using 'yummy noises' instead of actual words."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Alright, look, I'll start, OK?", "dia_id": "8:11" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Oh... Bennett.... you get me so hot. I want your lips on me now.", "dia_id": "8:13" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "Now tell me you want to caress my butt!", "dia_id": "8:21" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan decides to initiate a practice session for Bennett.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He models the behavior by directing sexualized language toward Bennett.", "based_on": ["E2"] },
+        { "step": 3, "inference": "He then instructs Bennett to repeat the pattern back to him.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 7,
+      "question": "What group activity is Ethan participating in planning at the very end of the dialogue?",
+      "option": [
+        "A. A dinner on Monday at the restaurant on 10th street.",
+        "B. Catching a late movie.",
+        "C. A negotiation session with Big Al.",
+        "D. A role-playing session involving villagers.",
+        "E. A trip to Tony's for a free steak."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "You guys wanna try and catch a late movie or something?", "dia_id": "12:15" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Yeah, where the hell is he?", "dia_id": "12:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona suggests the movie, and Ethan joins the discussion by asking about Dexter's whereabouts so they can go.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 1,
+      "question": "What is Fiona's profession based on her conversation about a 'new client' named Steve?",
+      "option": [
+        "A. Career Counselor",
+        "B. Chef",
+        "C. Massage Therapist",
+        "D. Museum Curator",
+        "E. Processing Supervisor"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "I have this new massage client... Steve?", "dia_id": "3:21" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona explicitly identifies Steve as a 'massage client', revealing her own job.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 2,
+      "question": "What did Fiona try to do for Dexter when he first arrived in Session 3 with 'incredible news'?",
+      "option": [
+        "A. She tried to coordinate the group to act in a certain way when he entered.",
+        "B. She offered him a job as a head chef immediately.",
+        "C. She told him about her client Steve opening a restaurant.",
+        "D. She asked him if his nipples were visible through his shirt.",
+        "E. She warned him about the WENUS."
+      ],
+      "answer": "A",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Hey you guys! Dexter's coming and he says he has, like, this incredible news, so when he gets here, we could all act like, you know...", "dia_id": "3:1" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Hey!", "dia_id": "3:2" },
+        { "id": "E3", "speaker": "Fiona", "utterance": "Never mind. But it was going to be really good.", "dia_id": "3:4" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona attempted to stage a group reaction for Dexter's entrance but was interrupted by him arriving early.", "based_on": ["E1", "E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 3,
+      "question": "How did Fiona's attempt to describe a recipe to Chloe change between her initial thought and her final admission?",
+      "option": [
+        "A. She described a complex eclectic dish and then realized it was actually toast.",
+        "B. She started describing 'the thing with the stuff' but then admitted she didn't know what it was.",
+        "C. She suggested a 32-ounce steak and then changed it to hot cider.",
+        "D. She recommended 'yummy noises' and then realized they were faked.",
+        "E. She thought of a dish for Dexter and then decided Chloe should make it instead."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Ooh! I know what you could make! I know! Oh, you should definitely make that thing... you know, with the stuff?", "dia_id": "4:20" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "OK, I don't know.", "dia_id": "4:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona excitedly claims she has a specific recipe recommendation.", "based_on": ["E1"] },
+        { "step": 2, "inference": "As she struggles to find words ('thing with the stuff'), she immediately admits she actually has no idea.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 4,
+      "question": "Why did Fiona initially offer the head chef job to Dexter instead of Chloe?",
+      "option": [
+        "A. She thought Dexter was a better chef than Chloe.",
+        "B. She forgot that Chloe was a chef.",
+        "C. She felt Dexter was the one who needed a job right then.",
+        "D. Steve specifically asked for a male chef.",
+        "E. Chloe was busy with her date with Celia."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Hi! Oh, yeah, no, I know. You're a chef. I know, and I thought of you first, but um, Dexter's the one who needs a job right now, so....", "dia_id": "3:23" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona explains her reasoning to Chloe, clarifying that while she knows Chloe is a chef, Dexter's unemployment was the priority.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 5,
+      "question": "What nickname did Fiona use for Dexter when she saw him wearing a suit for his appointment?",
+      "option": [
+        "A. Big Al",
+        "B. Mr. Suity-Man",
+        "C. The WENUS",
+        "D. Dr. Pillman",
+        "E. Steve"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Where are you going, Mr. Suity-Man?", "dia_id": "4:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona uses the specific phrase 'Mr. Suity-Man' to address Dexter because he is dressed for his career counseling appointment.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 6,
+      "question": "What did Fiona confirm about her reaction to Chloe's cooking after the audition was over?",
+      "option": [
+        "A. She confirmed that she hated the 'eclectic' menu.",
+        "B. She admitted that she was faking her 'yummy noises' to help Chloe.",
+        "C. She clarified that her 'yummy noises' were genuine and not faked.",
+        "D. She learned that she preferred 'all-toast' restaurants.",
+        "E. She realized she should have gone to Tony's instead."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "And Fiona... you can 'ooh' and 'ahh' and make yummy noises.", "dia_id": "4:15" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Yeah! You know all those yummy noises? I wasn't faking.", "dia_id": "12:6" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe set the expectation for Fiona to produce vocal approval of the food.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona later verifies that her positive vocal reactions were an honest reflection of the food's quality.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 7,
+      "question": "What specific movie-related event does Fiona propose to the group at the conclusion of the sessions?",
+      "option": [
+        "A. Watching 'Brian's Song' together.",
+        "B. Catching a late movie.",
+        "C. Going to see a documentary about insects.",
+        "D. Meeting Dexter at a theater on 10th Street.",
+        "E. Watching a film about James Michener."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "You guys wanna try and catch a late movie or something?", "dia_id": "12:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona initiates the group's final planned activity for the evening.", "based_on": ["E1"] }
+      ]
+    }
+    ],
+    "conversation": {
+        "speaker_0": "Ariel",
+        "speaker_1": "Ethan",
+        "speaker_2": "Bennett",
+        "speaker_3": "Chloe",
+        "session_1_date_time": "February 16, 1995",
+        "session_1": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:1",
+                "text": "Coffee."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:2",
+                "text": "Thank you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:3",
+                "text": "Cappuccino."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:4",
+                "text": "Grazie."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:5",
+                "text": "And a nice hot cider for Chloe."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:6",
+                "text": "Aww, thank you.  Uh Rach?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:7",
+                "text": "Yeah?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:8",
+                "text": "Why does my cinamon stick have an eraser?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:9",
+                "text": "Oh! That's why.  I'm sorry!"
+            }
+        ],
+        "speaker_4": "Fiona",
+        "speaker_5": "Dexter",
+        "speaker_6": "All",
+        "session_3_date_time": "February 16, 1995",
+        "session_3": [
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:1",
+                "text": "Hey you guys! Dexter's coming and he says he has, like, this incredible news, so when he gets here, we could all act like, you know..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:2",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:3",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:4",
+                "text": "Never mind. But it was going to be really good."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:5",
+                "text": "What's going on?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:6",
+                "text": "What is it?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:7",
+                "text": "So, it's a typical day at work. I'm inputting my numbers, and big Al calls me into his office and tells me he wants to make me processing supervisor."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:8",
+                "text": "That's great!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:9",
+                "text": "So.... I quit."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "3:10",
+                "text": "Why?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:11",
+                "text": "Why? This was supposed to be a temp job!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:12",
+                "text": "Yeah, Dexter... you've been there for five years."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:13",
+                "text": "If I took this promotion, it'd be like admitting that this is what I actually do."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:14",
+                "text": "So was it a lot more money?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:15",
+                "text": "It doesn't matter. I just don't want to be one of those guys that's in his office until twelve o'clock at night worrying about the WENUS."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:16",
+                "text": "... the WENUS?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:17",
+                "text": "Weekly Estimated Net Usage Systems. A processing term."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "3:18",
+                "text": "Oh. That WENUS."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "3:19",
+                "text": "So what're you going to do?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:20",
+                "text": "I don't know. That's the thing. I don't know what I want to do. I just know I'm not going to figure it out working there."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:21",
+                "text": "Oooh! I have something you can do! I have this new massage client... Steve?  Anyway, he's opening up a restaurant and he's looking for a head chef."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:22",
+                "text": "Um... hi there."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:23",
+                "text": "Hi!  Oh, yeah, no, I know. You're a chef. I know, and I thought of you first, but um, Dexter's the one who needs a job right now, so...."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:24",
+                "text": "Yeah... I just don't have that much cheffing experience. Unless it's an all-toast restaurant."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:25",
+                "text": "Yeah, yeah!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:26",
+                "text": "Well, what kind of food is he looking for?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:27",
+                "text": "Well, he wants to do some ecclectic, so he's looking for someone who can, you know, create the entire menu."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "3:28",
+                "text": "Oh my God!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:29",
+                "text": "Yeah, I know!  So, what do you think?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "3:30",
+                "text": "Thanks, Fiona. But I just don't really see myself in a big white hat."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "3:31",
+                "text": "OK.  Oh Chloe! Guess what!"
+            }
+        ],
+        "session_4_date_time": "February 17, 1995",
+        "session_4": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:1",
+                "text": "Can you see my nipples through this shirt?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:2",
+                "text": "No. But don't worry, I'm sure they're still there."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:3",
+                "text": "Where are you going, Mr. Suity-Man?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:4",
+                "text": "Well, I have an appointment to see Dr. Robert Pillman, career counselor a-gogo.  I added the \"a-gogo.\""
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:5",
+                "text": "Career counselor?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:6",
+                "text": "Hey, you guys all know what you want to do."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:7",
+                "text": "I don't!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:8",
+                "text": "Hey, you guys in the living room all know what you want to do. You know, you have goals. You have dreams. I don't have a dream."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:9",
+                "text": "Ah, the lesser-known \"I don't have a dream\" speech."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:10",
+                "text": "Oh, I love my life, I love my life!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:11",
+                "text": "Ooh! Brian's Song!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:12",
+                "text": "The meeting with the guy went great?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:13",
+                "text": "So great! He showed me where the restaurant's going to be. It's this, it's this cute little place on 10th Street. Not too big, not too small. Just right."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:14",
+                "text": "Was it formerly owned by a blonde woman and some bears?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:15",
+                "text": "So anyway, I'm cooking dinner for him Monday night. You know, kind of like an audition. And Fiona, he really wants you to be here, which will be great for me because then you can 'ooh' and 'ahh' and make yummy noises."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:16",
+                "text": "What are you going to make?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:17",
+                "text": "Yummy noises."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:18",
+                "text": "And Chloe, what are you going to make?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:19",
+                "text": "I don't know. I don't know. It's just going to be so great!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:20",
+                "text": "Ooh! I know what you could make!  I know! Oh, you should definitely make that thing... you know, with the stuff?  You know, that thing... with the stuff...? OK, I don't know."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:21",
+                "text": "Hey guys, does anybody know a good date place in the neighborhood?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:22",
+                "text": "How about Tony's? If you can finish a 32-ounce steak, it's free."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:23",
+                "text": "OK, ahem, hey, does anybody know a good place if you're not dating a puma?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:24",
+                "text": "Who are you going out with?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:25",
+                "text": "Oh, is this the bug lady?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:26",
+                "text": "Bzzzz.... I love you, Bennett."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:27",
+                "text": "Her name is Celia. She's not a bug lady. She's curator of insects at the museum."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:28",
+                "text": "So what are you guys going to do?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:29",
+                "text": "Oh, I just thought we could go out to dinner, and then maybe bring her back to my place and I'd introduce her to my monkey."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:30",
+                "text": "And he's not speaking metaphorically."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:31",
+                "text": "So.... back to your place...you thinking, maybe...  huh-huh?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:32",
+                "text": "Well, I don't know....  huh-huh.... but I'm hoping  huh-huh."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:33",
+                "text": "I'm telling you, that monkey is a chick magnet! She's going to take one look at his furry, cute little face and it'll seal the deal."
+            }
+        ],
+        "session_5_date_time": "February 17, 1995",
+        "session_5": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:1",
+                "text": "Celia, don't worry!  Don't scream!  He's not going to hurt you! Soothing tones, Celia. Soothing tones! Marcel..."
+            },
+            {
+                "speaker": "Celia",
+                "dia_id": "5:2",
+                "text": "I can't stand this! He's got his claws in my..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:3",
+                "text": "Alright..."
+            }
+        ],
+        "session_7_date_time": "February 17, 1995",
+        "session_7": [
+            {
+                "speaker": "Celia",
+                "dia_id": "7:1",
+                "text": "Talk to me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:2",
+                "text": "OK.... um, a weird thing happened to me on the train this morning..."
+            },
+            {
+                "speaker": "Celia",
+                "dia_id": "7:3",
+                "text": "No no no. Talk... dirty."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:4",
+                "text": "Wha... what, here?"
+            },
+            {
+                "speaker": "Celia",
+                "dia_id": "7:5",
+                "text": "Yes..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:6",
+                "text": "Ah...."
+            },
+            {
+                "speaker": "Celia",
+                "dia_id": "7:7",
+                "text": "Say something..... hot."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:8",
+                "text": "Er.... um....."
+            },
+            {
+                "speaker": "Celia",
+                "dia_id": "7:9",
+                "text": "What?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:10",
+                "text": "Um... uh.... vulva."
+            }
+        ],
+        "session_8_date_time": "February 18, 1995",
+        "session_8": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:1",
+                "text": "Vulva?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:2",
+                "text": "Alright, I panicked, alright? She took me by surprise. You know, but it wasn't a total loss. I mean, we ended up cuddling."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:3",
+                "text": "Whoaa!! You cuddled? How many times??"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:4",
+                "text": "Shut up! It was nice. I just... I don't think I'm the dirty-talking kind of guy, you know?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:5",
+                "text": "What's the big deal? You just say what you want to do to her. Or what you want her to do to you. Or what you think other people might be doing to each other. I'll tell you what. Just try something on me."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:6",
+                "text": "Please be kidding."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:7",
+                "text": "Why not? Come on! Just, just close your eyes and tell me what you'd like to be doing right now."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:8",
+                "text": "OK.  I'm in my apartment..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:9",
+                "text": "....yeah... what else?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:10",
+                "text": "That's it. I'm in my apartment, you're not there, we're not having this conversation."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:11",
+                "text": "Alright, look, I'll start, OK?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:12",
+                "text": "Ethan, please."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:13",
+                "text": "Come on. Come on. Alright, ready, look!  Oh... Bennett.... you get me so hot. I want your lips on me now."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:14",
+                "text": "Wow."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:15",
+                "text": "Alright, now you say something."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:16",
+                "text": "I... ahem... I really don't think so."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:17",
+                "text": "Come on! You like this woman, right?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:18",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:19",
+                "text": "You want to see her again, right?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:20",
+                "text": "Sure."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:21",
+                "text": "Well if you can't talk dirty to me, how're you going to talk dirty to her? Now tell me you want to caress my butt!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:22",
+                "text": "OK, turn around.  I just don't want you staring at me when I'm doing this."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:23",
+                "text": "Alright, alright. I'm around. Go ahead."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:24",
+                "text": "Ahem... I want.... OK, I want to... feel your... hot, soft skin with my lips."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:25",
+                "text": "There you go! Keep going. Keep going!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:26",
+                "text": "I, er..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:27",
+                "text": "I want to take my tongue... and..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:28",
+                "text": "....and...."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:29",
+                "text": "Say it... say it!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:30",
+                "text": "...run it all over your body until you're... trembling with... with..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:31",
+                "text": "....with??"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:32",
+                "text": "Funny story!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:33",
+                "text": "You're not going to believe this!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:34",
+                "text": "It's OK. It's OK. I was always rooting for you two kids to get together."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:35",
+                "text": "Hey Dexter, while you were sleeping that guy from your old job called again."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:36",
+                "text": "Again?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:37",
+                "text": "And again, and again, and again...  Hello?  And again."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:38",
+                "text": "Hey Mr. Kostelic! How's life on the fifteenth floor?  Yeah, I miss you too.  Yeah, it's a lot less satisfying to steal pens from your own home, you know?  Well, that's very generous  er, but look, this isn't about the money. I need something that's more than a job. I need something I can really care about....  And that's on top of the yearly bonus structure you mentioned earlier?  Look, Al, Al... I'm not playing hardball here, OK? This is not a negotiation, this is a rejection!  No! No! No, stop saying numbers! I'm telling you, you've got the wrong guy! You've got the wrong guy!  I'll see you on Monday!"
+            }
+        ],
+        "session_12_date_time": "February 18, 1995",
+        "session_12": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:1",
+                "text": "What a tool!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:2",
+                "text": "You don't want to work for a guy like that."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:3",
+                "text": "Yeah!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:4",
+                "text": "I know... it's just... I thought this was, you know... it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:5",
+                "text": "Look, you'll get there. You're an amazing chef."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:6",
+                "text": "Yeah! You know all those yummy noises? I wasn't faking."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:7",
+                "text": "So, er... how did it go with Celia?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:8",
+                "text": "Oh, I was unbelievable."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:9",
+                "text": "All right, Bennett!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:10",
+                "text": "I was the James Michener of dirty talk. It was the most elaborate filth you have ever heard. I mean, there were characters, plot lines, themes, a motif... at one point there were villagers."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:11",
+                "text": "Whoa! And the...  huh-huh?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:12",
+                "text": "Well, ahem... you know, by the time we'd finished with all the dirty talk, it was kinda late... and we were both kind of exhausted, so uh..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:13",
+                "text": "You cuddled."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:14",
+                "text": "Yeah, which was nice."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:15",
+                "text": "You guys wanna try and catch a late movie or something?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:16",
+                "text": "Maybe, but shouldn't we wait for Dexter?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:17",
+                "text": "Yeah, where the hell is he?"
+            }
+        ],
+        "speaker_7": "Celia"
+    }
+}

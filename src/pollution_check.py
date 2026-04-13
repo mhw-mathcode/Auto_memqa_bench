@@ -82,122 +82,158 @@ def rename_and_shuffle_options(input_file_path: str, output_file_path: str) -> N
         return
 
     # 2. 遍历数据结构进行处理 (选项打乱)
+    import copy
+
     new_data = []
 
-    # 外层结构通常是 List[Dict[str, List[Dict]]]
+    def _strip_letter_prefix(s: str) -> str:
+        s = (s or "").strip()
+        match = re.match(r"^[A-Fa-f][\.．\)]\s*(.*)$", s)
+        return match.group(1).strip() if match else s
+
+    def _build_question_text(core_question: str, option_lines: List[str]) -> str:
+        option_block = "\n".join(option_lines)
+        return (
+            f"{core_question}\n"
+            f"{option_block}\n"
+            "Please provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X)."
+        )
+
+    def _shuffle_item(new_item: Dict[str, Any]) -> Dict[str, Any]:
+        original_answer = (new_item.get("answer", "") or "").strip()
+        option_field = new_item.get("option", []) or []
+
+        # 支持字典格式：{"A": "...", "B": "...", ...}
+        if isinstance(option_field, dict):
+            ordered_ae_keys = []
+            for letter in ["A", "B", "C", "D", "E"]:
+                for key in option_field.keys():
+                    if str(key).strip().upper() == letter:
+                        ordered_ae_keys.append(key)
+                        break
+
+            ae_bodies = [str(option_field[key]).strip() for key in ordered_ae_keys]
+
+            f_body = None
+            for key, value in option_field.items():
+                if str(key).strip().upper() == "F":
+                    f_body = str(value).strip()
+                    break
+
+            answer_letter = ""
+            answer_body = ""
+
+            match = re.match(r"^([A-Fa-f])(?:[\.．\)]\s*)?$", original_answer)
+            if match:
+                answer_letter = match.group(1).upper()
+                if answer_letter in ["A", "B", "C", "D", "E"]:
+                    for key in ordered_ae_keys:
+                        if str(key).strip().upper() == answer_letter:
+                            answer_body = str(option_field.get(key, "")).strip()
+                            break
+                elif answer_letter == "F":
+                    answer_body = f_body or ""
+            else:
+                answer_body = _strip_letter_prefix(original_answer)
+
+            rng = np.random.default_rng()
+            shuffled_bodies = list(ae_bodies)
+            rng.shuffle(shuffled_bodies)
+
+            new_option_dict: Dict[str, str] = {}
+            new_answer = original_answer
+            matched_correct = False
+
+            for idx, body in enumerate(shuffled_bodies):
+                letter = ["A", "B", "C", "D", "E"][idx]
+                new_option_dict[letter] = body
+                if answer_body and body == answer_body and not matched_correct:
+                    new_answer = letter
+                    matched_correct = True
+
+            if f_body is not None:
+                new_option_dict["F"] = f_body
+                if answer_letter == "F":
+                    new_answer = "F"
+
+            new_item["option"] = new_option_dict
+            new_item["answer"] = new_answer
+            return new_item
+
+        # 兼容旧格式：option 为列表字符串
+        orig_option_list = option_field
+        if not isinstance(orig_option_list, list):
+            orig_option_list = [str(orig_option_list)]
+
+        ae_options = []
+        f_option = None
+        for opt in orig_option_list:
+            opt = (opt or "").strip()
+            if opt.startswith("F.") or opt.startswith("F．"):
+                f_option = opt
+            else:
+                ae_options.append(opt)
+
+        question = new_item.get("question", "")
+        core_question = _extract_core_question_text(question)
+
+        if len(original_answer) == 1 and original_answer.isalpha():
+            idx = ord(original_answer.upper()) - ord('A')
+            if 0 <= idx < len(ae_options):
+                answer_body = _strip_letter_prefix(ae_options[idx])
+            else:
+                answer_body = original_answer
+        else:
+            answer_body = _strip_letter_prefix(original_answer)
+
+        option_bodies = [_strip_letter_prefix(opt) for opt in ae_options]
+        rng = np.random.default_rng()
+        rng.shuffle(option_bodies)
+
+        new_option_list = []
+        new_correct_answer = ""
+        option_letters = ['A', 'B', 'C', 'D', 'E'][:len(option_bodies)]
+
+        for letter, body in zip(option_letters, option_bodies):
+            new_opt_full = f"{letter}. {body}"
+            new_option_list.append(new_opt_full)
+            if body == answer_body and not new_correct_answer:
+                new_correct_answer = new_opt_full
+
+        if f_option:
+            new_option_list.append(f_option)
+            if original_answer.startswith("F"):
+                new_correct_answer = f_option
+        else:
+            new_option_list.append(
+                "F. Cannot infer the answer based on the given information."
+            )
+
+        new_item["option"] = new_option_list
+        new_item["answer"] = new_correct_answer or original_answer
+
+        new_item["question"] = _build_question_text(core_question, new_option_list)
+        return new_item
+
+    # 外层可能是 List[section]（section 内含 qa）或 List[qa_item]
     if isinstance(data, dict):
         data = [data]
+
     for section in data:
-        if 'qa' in section and isinstance(section['qa'], list):
+        if isinstance(section, dict) and 'qa' in section and isinstance(section['qa'], list):
             new_qa_list = []
-
             for item in section['qa']:
-                # 使用深拷贝以保留所有嵌套字段
-                import copy
                 new_item = copy.deepcopy(item)
+                new_qa_list.append(_shuffle_item(new_item))
 
-                # ===============================
-                # 读取原始 option
-                # ===============================
-                orig_option_list = new_item.get("option", []) or []
-                if not isinstance(orig_option_list, list):
-                    orig_option_list = [str(orig_option_list)]
-
-                # ===============================
-                # 拆分 A–E 与 F
-                # ===============================
-                ae_options = []
-                f_option = None
-
-                for opt in orig_option_list:
-                    opt = (opt or "").strip()
-                    if opt.startswith("F.") or opt.startswith("F．"):
-                        f_option = opt
-                    else:
-                        ae_options.append(opt)
-
-                # ===============================
-                # 读取原始答案
-                # ===============================
-                original_answer = (new_item.get("answer", "") or "").strip()
-
-                # ===============================
-                # 提取核心问题
-                # ===============================
-                question = new_item.get("question", "")
-                core_question = _extract_core_question_text(question)
-
-                # ===============================
-                # 工具函数：去掉 "A. "
-                # ===============================
-                def _strip_letter_prefix(s: str) -> str:
-                    s = (s or "").strip()
-                    parts = s.split(". ", 1)
-                    return parts[1].strip() if len(parts) == 2 and len(parts[0]) == 1 else s
-
-                # ===============================
-                # 解析原正确答案正文
-                # ===============================
-                if len(original_answer) == 1 and original_answer.isalpha():
-                    idx = ord(original_answer.upper()) - ord('A')
-                    if 0 <= idx < len(ae_options):
-                        answer_body = _strip_letter_prefix(ae_options[idx])
-                    else:
-                        answer_body = original_answer
-                else:
-                    answer_body = _strip_letter_prefix(original_answer)
-
-                # ===============================
-                # 只 shuffle A–E
-                # ===============================
-                option_bodies = [_strip_letter_prefix(opt) for opt in ae_options]
-
-                rng = np.random.default_rng()
-                rng.shuffle(option_bodies)
-
-                # ===============================
-                # 重新生成 A–E
-                # ===============================
-                new_option_list = []
-                new_correct_answer = ""
-
-                option_letters = ['A', 'B', 'C', 'D', 'E'][:len(option_bodies)]
-
-                for letter, body in zip(option_letters, option_bodies):
-                    new_opt_full = f"{letter}. {body}"
-                    new_option_list.append(new_opt_full)
-                    if body == answer_body and not new_correct_answer:
-                        new_correct_answer = new_opt_full
-
-                # ===============================
-                # F 放回最后（不参与打乱）
-                # ===============================
-                if f_option:
-                    new_option_list.append(f_option)
-                    if original_answer.startswith("F"):
-                        new_correct_answer = f_option
-                else:
-                    # 如果原本没有 F，可选择是否补一个
-                    new_option_list.append(
-                        "F. Cannot infer the answer based on the given information."
-                    )
-
-                # ===============================
-                # 写回结果
-                # ===============================
-                new_item["option"] = new_option_list
-                new_item["answer"] = new_correct_answer or original_answer
-
-                new_option_txt = "\n".join(new_option_list)
-                new_item["question"] = f"{core_question}\n{new_option_txt}\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X)."
-
-                new_qa_list.append(new_item)
-
-            # 深拷贝section以保留所有字段
-            import copy
             new_section = copy.deepcopy(section)
             new_section["qa"] = new_qa_list
             new_data.append(new_section)
+        elif isinstance(section, dict) and "question" in section and "option" in section:
+            new_item = copy.deepcopy(section)
+            new_data.append(_shuffle_item(new_item))
+        else:
+            new_data.append(copy.deepcopy(section))
             
     # 3. 写入输出文件
     try:

@@ -2629,6 +2629,2886 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "JUDGE",
+            "category": 6,
+            "question": "What would be the most appropriate way for the judge to handle the situation if the jury was unable to reach a unanimous decision?\nA. Allow the jury to continue deliberating without time constraints.\nB. Require the jury to reach a decision before adjourning for the day.\nC. Ask the jury to take a vote and then explain the law to them.\nD. Declare a mistrial immediately and dismiss the case.\nE. Send the jury home and reschedule the trial for the next day.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. Allow the jury to continue deliberating without time constraints.",
+                "B. Require the jury to reach a decision before adjourning for the day.",
+                "C. Ask the jury to take a vote and then explain the law to them.",
+                "D. Declare a mistrial immediately and dismiss the case.",
+                "E. Send the jury home and reschedule the trial for the next day.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. Require the jury to reach a decision before adjourning for the day.",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. Let's take a break. One man's inside there. Let's wait for him.",
+                    "dia_id": "D3:80"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "Okay. Let's take seats.",
+                    "dia_id": "D3:135"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The Foreman initially suggested taking a break and waiting for one juror to return, indicating that the jury was not yet ready to conclude.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, the Foreman addressed the group and required them to take seats, implying that the jury was expected to continue deliberating and reach a decision.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. Let's take a break. One man's inside there. Let's wait for him.\", \"dia_id\": \"D3:80\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"Okay. Let's take seats.\", \"dia_id\": \"D3:135\"}, {\"step\": 1, \"inference\": \"The Foreman initially suggested taking a break and waiting for one juror to return, indicating that the jury was not yet ready to conclude.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, the Foreman addressed the group and required them to take seats, implying that the jury was expected to continue deliberating and reach a decision.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most appropriate way for the judge to handle the situation if the jury was unable to reach a unanimous decision?\nA. Send the jury home and reschedule the trial for the next day.\nB. Allow the jury to continue deliberating without time constraints.\nC. Declare a mistrial immediately and dismiss the case.\nD. Ask the jury to take a vote and then explain the law to them.\nE. Require the jury to reach a decision before adjourning for the day.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.3588521480560303,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D).",
+                        "score": 0,
+                        "response_time": 0.31600117683410645,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#8",
+            "category": 6,
+            "question": "What is the most accurate description of #8's behavior in the jury room based on his statements and actions?\nA. #8 is emotionally driven and wants to ensure the boy is punished for his actions.\nB. #8 is a skeptic who believes the boy is innocent and wants to prove it.\nC. #8 is indifferent to the case and only participates when others are speaking.\nD. #8 is a mediator who tries to keep the conversation calm and focused.\nE. #8 is convinced of the boy's guilt and is not interested in further discussion.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. #8 is emotionally driven and wants to ensure the boy is punished for his actions.",
+                "B. #8 is a skeptic who believes the boy is innocent and wants to prove it.",
+                "C. #8 is indifferent to the case and only participates when others are speaking.",
+                "D. #8 is a mediator who tries to keep the conversation calm and focused.",
+                "E. #8 is convinced of the boy's guilt and is not interested in further discussion.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "F. Cannot infer the answer based on the given information.",
+            "label": "Abstain",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#8",
+                    "utterance": "I don't know. It doesn't sound right to me.",
+                    "dia_id": "D3:209"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#8",
+                    "utterance": "I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.",
+                    "dia_id": "D3:361"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#8 expresses doubt about the evidence and is not immediately convinced of the boy's guilt.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#8 continues to question the reliability of the testimonies and insists on examining the facts carefully, indicating a skeptical approach.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(C) #8 is a skeptic who believes the boy is innocent and wants to prove it.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#8\", \"utterance\": \"I don't know. It doesn't sound right to me.\", \"dia_id\": \"D3:209\"}, {\"id\": \"E2\", \"speaker\": \"#8\", \"utterance\": \"I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.\", \"dia_id\": \"D3:361\"}, {\"step\": 1, \"inference\": \"#8 expresses doubt about the evidence and is not immediately convinced of the boy's guilt.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#8 continues to question the reliability of the testimonies and insists on examining the facts carefully, indicating a skeptical approach.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #8's behavior in the jury room based on his statements and actions?\nA. #8 is a mediator who tries to keep the conversation calm and focused.\nB. #8 is emotionally driven and wants to ensure the boy is punished for his actions.\nC. #8 is a skeptic who believes the boy is innocent and wants to prove it.\nD. #8 is indifferent to the case and only participates when others are speaking.\nE. #8 is convinced of the boy's guilt and is not interested in further discussion.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 1.4298808574676514,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "C"
+                ],
+                "ground_truth_options": [
+                    [
+                        "F"
+                    ]
+                ]
+            }
+        },
+        {
+            "character": "#9",
+            "category": 6,
+            "question": "What did you say about the old man's desire for recognition, and how did your perspective change after considering the possibility that he might have been mistaken?\nA. I said the old man wanted recognition, and I now think he was lying.\nB. I said the old man wanted recognition, and I still think he was mistaken.\nC. I said the old man wanted recognition, and I now think he was not mistaken.\nD. I said the old man wanted recognition, and I now think he was not lying.\nE. I said the old man wanted recognition, and I now think he was not mistaken.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. I said the old man wanted recognition, and I now think he was lying.",
+                "B. I said the old man wanted recognition, and I still think he was mistaken.",
+                "C. I said the old man wanted recognition, and I now think he was not mistaken.",
+                "D. I said the old man wanted recognition, and I now think he was not lying.",
+                "E. I said the old man wanted recognition, and I now think he was not mistaken.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. I said the old man wanted recognition, and I still think he was mistaken.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#9",
+                    "utterance": "A man like this need to be recognized, to be listened to, to be quoted just once.",
+                    "dia_id": "D3:300"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#9",
+                    "utterance": "The seam of his jacket was split under his arm. Did you notice it? I mean, to come into court like that. He was a very old man with a torn jacket and he walked very slowly to the stand.",
+                    "dia_id": "D3:301"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#9 suggested that the old man might have wanted recognition and might have been mistaken in his testimony.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, when #8 raised the possibility that the old man might have been mistaken due to the el train noise, #9 did not directly refute it, but instead described the old man's appearance, which supports the idea that he might have been mistaken.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "maybe_wrong",
+                "response": "(F)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#9\", \"utterance\": \"A man like this need to be recognized, to be listened to, to be quoted just once.\", \"dia_id\": \"D3:300\"}, {\"id\": \"E2\", \"speaker\": \"#9\", \"utterance\": \"The seam of his jacket was split under his arm. Did you notice it? I mean, to come into court like that. He was a very old man with a torn jacket and he walked very slowly to the stand.\", \"dia_id\": \"D3:301\"}, {\"step\": 1, \"inference\": \"#9 suggested that the old man might have wanted recognition and might have been mistaken in his testimony.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, when #8 raised the possibility that the old man might have been mistaken due to the el train noise, #9 did not directly refute it, but instead described the old man's appearance, which supports the idea that he might have been mistaken.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did you say about the old man's desire for recognition, and how did your perspective change after considering the possibility that he might have been mistaken?\nA. I said the old man wanted recognition, and I still think he was mistaken.\nB. I said the old man wanted recognition, and I now think he was not lying.\nC. I said the old man wanted recognition, and I now think he was lying.\nD. I said the old man wanted recognition, and I now think he was not mistaken.\nE. I said the old man wanted recognition, and I now think he was not mistaken.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.46300292015075684,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "F"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C) I said the old man wanted recognition, and I now think he was not mistaken.",
+                        "score": 0,
+                        "response_time": 0.9550259113311768,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "CLERK",
+            "category": 6,
+            "question": "What would be the most accurate description of the clerk's role in the jury room based on the interactions observed?\nA. The clerk is responsible for reading the verdict aloud.\nB. The clerk is the one who mediates between jurors with conflicting opinions.\nC. The clerk is the one who provides the jurors with the evidence from the trial.\nD. The clerk is the one who collects the ballots and ensures the process is followed.\nE. The clerk is not present in the jury room and has no role in deliberations.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. The clerk is responsible for reading the verdict aloud.",
+                "B. The clerk is the one who mediates between jurors with conflicting opinions.",
+                "C. The clerk is the one who provides the jurors with the evidence from the trial.",
+                "D. The clerk is the one who collects the ballots and ensures the process is followed.",
+                "E. The clerk is not present in the jury room and has no role in deliberations.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. The clerk is not present in the jury room and has no role in deliberations.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "FOREMAN",
+                    "utterance": "The camera is now on #10. He waits anxiously.",
+                    "dia_id": "D3:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "FOREMAN",
+                    "utterance": "The Foreman reads off the last ballot.",
+                    "dia_id": "D3:15"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "The clerk is not mentioned in any of the dialogue exchanges, and the Foreman is the one who reads the ballots.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The clerk is not present in the jury room and does not participate in the deliberations or ballot reading, as the Foreman is the one who handles these tasks.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(B) The clerk is not present in the jury room and has no role in deliberations.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"FOREMAN\", \"utterance\": \"The camera is now on #10. He waits anxiously.\", \"dia_id\": \"D3:10\"}, {\"id\": \"E2\", \"speaker\": \"FOREMAN\", \"utterance\": \"The Foreman reads off the last ballot.\", \"dia_id\": \"D3:15\"}, {\"step\": 1, \"inference\": \"The clerk is not mentioned in any of the dialogue exchanges, and the Foreman is the one who reads the ballots.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"The clerk is not present in the jury room and does not participate in the deliberations or ballot reading, as the Foreman is the one who handles these tasks.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What would be the most accurate description of the clerk's role in the jury room based on the interactions observed?\nA. The clerk is the one who collects the ballots and ensures the process is followed.\nB. The clerk is not present in the jury room and has no role in deliberations.\nC. The clerk is the one who mediates between jurors with conflicting opinions.\nD. The clerk is responsible for reading the verdict aloud.\nE. The clerk is the one who provides the jurors with the evidence from the trial.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 1.086184024810791,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "B"
+                ],
+                "ground_truth_options": [
+                    [
+                        "B"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(B)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8\nHe seems to relax a bit. He starts back for his seat.",
+                            "dia_id": "dia_id_8"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #'S 10, 11, 12, FOREMAN\nFOREMAN: Okay, let's stop the yelling.",
+                            "dia_id": "dia_id_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - FOREMAN, #2, #3\nFOREMAN: I think we ought to take a break. One man's inside there. Let's wait for him.",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nFOREMAN: He identified it in court. He picked the boy's voice out of five other voices, blindfolded.",
+                            "dia_id": "dia_id_12"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE ENTIRE JURY FROM ABOVE\nSlowly moving to their seats, save #8. #8 looks at the paper in his hand, and suddenly something seems to click for him.",
+                            "dia_id": "dia_id_13"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "FOREMAN: Okay. Let's take seats.",
+                            "dia_id": "dia_id_14"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "The camera is now on #10. He waits anxiously.",
+                            "dia_id": "D3:10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "The Foreman reads off the last ballot.",
+                            "dia_id": "D3:15"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8\nHe seems to relax a bit. He starts back for his seat.",
+                            "dia_id": "dia_id_8"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #'S 10, 11, 12, FOREMAN\nFOREMAN: Okay, let's stop the yelling.",
+                            "dia_id": "dia_id_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - FOREMAN, #2, #3\nFOREMAN: I think we ought to take a break. One man's inside there. Let's wait for him.",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nFOREMAN: He identified it in court. He picked the boy's voice out of five other voices, blindfolded.",
+                            "dia_id": "dia_id_12"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE ENTIRE JURY FROM ABOVE\nSlowly moving to their seats, save #8. #8 looks at the paper in his hand, and suddenly something seems to click for him.",
+                            "dia_id": "dia_id_13"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "FOREMAN: Okay. Let's take seats.",
+                            "dia_id": "dia_id_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "None: No one moves. Each man waits tensely.",
+                            "dia_id": "0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "1"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "2"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "4"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "5"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "6"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Not guilty.",
+                            "dia_id": "8"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "9"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(B)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "None: No one moves. Each man waits tensely.",
+                            "dia_id": "0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "1"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "2"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "4"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "5"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "6"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Not guilty.",
+                            "dia_id": "8"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "9"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "The camera is now on #10. He waits anxiously.",
+                            "dia_id": "D3:10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "The Foreman reads off the last ballot.",
+                            "dia_id": "D3:15"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8\nHe seems to relax a bit. He starts back for his seat.",
+                            "dia_id": "dia_id_8"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #'S 10, 11, 12, FOREMAN\nFOREMAN: Okay, let's stop the yelling.",
+                            "dia_id": "dia_id_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - FOREMAN, #2, #3\nFOREMAN: I think we ought to take a break. One man's inside there. Let's wait for him.",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nFOREMAN: He identified it in court. He picked the boy's voice out of five other voices, blindfolded.",
+                            "dia_id": "dia_id_12"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE ENTIRE JURY FROM ABOVE\nSlowly moving to their seats, save #8. #8 looks at the paper in his hand, and suddenly something seems to click for him.",
+                            "dia_id": "dia_id_13"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "FOREMAN: Okay. Let's take seats.",
+                            "dia_id": "dia_id_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "None: No one moves. Each man waits tensely.",
+                            "dia_id": "0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "1"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "2"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "4"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "5"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "6"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Not guilty.",
+                            "dia_id": "8"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "9"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(F)",
+                    "used_evidence": [],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "FOREMAN",
+                            "utterance": "The camera is now on #10. He waits anxiously.",
+                            "dia_id": "D3:10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "The Foreman reads off the last ballot.",
+                            "dia_id": "D3:15"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - #8\nHe seems to relax a bit. He starts back for his seat.",
+                            "dia_id": "dia_id_8"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - #'S 10, 11, 12, FOREMAN\nFOREMAN: Okay, let's stop the yelling.",
+                            "dia_id": "dia_id_10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "None",
+                            "utterance": "MEDIUM SHOT - FOREMAN, #2, #3\nFOREMAN: I think we ought to take a break. One man's inside there. Let's wait for him.",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "None",
+                            "utterance": "CLOSE UP - FOREMAN\nFOREMAN: He identified it in court. He picked the boy's voice out of five other voices, blindfolded.",
+                            "dia_id": "dia_id_12"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "None",
+                            "utterance": "LONG SHOT - THE ENTIRE JURY FROM ABOVE\nSlowly moving to their seats, save #8. #8 looks at the paper in his hand, and suddenly something seems to click for him.",
+                            "dia_id": "dia_id_13"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "None",
+                            "utterance": "FOREMAN: Okay. Let's take seats.",
+                            "dia_id": "dia_id_14"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "None",
+                            "utterance": "None: No one moves. Each man waits tensely.",
+                            "dia_id": "0"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "1"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "2"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "4"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "5"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "6"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Not guilty.",
+                            "dia_id": "8"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "FOREMAN",
+                            "utterance": "FOREMAN: Guilty.",
+                            "dia_id": "9"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D. The clerk is the one who collects the ballots and ensures the process is followed.)",
+                        "score": 0,
+                        "response_time": 0.49802303314208984,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#10",
+            "category": 6,
+            "question": "What is the most accurate description of #10's behavior in the jury room based on his statements and actions?\nA. #10 is a joker who uses humor to avoid serious discussion of the case.\nB. #10 is a mediator who tries to keep the conversation calm and focused.\nC. #10 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.\nD. #10 is a quiet observer who rarely speaks but listens carefully.\nE. #10 is a supporter of the boy's innocence and challenges others to reconsider.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. #10 is a joker who uses humor to avoid serious discussion of the case.",
+                "B. #10 is a mediator who tries to keep the conversation calm and focused.",
+                "C. #10 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+                "D. #10 is a quiet observer who rarely speaks but listens carefully.",
+                "E. #10 is a supporter of the boy's innocence and challenges others to reconsider.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "C. #10 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#10",
+                    "utterance": "Boy! How do you like that!",
+                    "dia_id": "D3:17"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#10",
+                    "utterance": "What d'ya think these people get up on the witness stand for -- their health?",
+                    "dia_id": "D3:369"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#10 reacts strongly to the not guilty vote and is dismissive of doubts about the evidence.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#10 is quick to dismiss the possibility of doubt and insists on the facts, indicating he is a strong advocate for the boy's guilt.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A) #10 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#10\", \"utterance\": \"Boy! How do you like that!\", \"dia_id\": \"D3:17\"}, {\"id\": \"E2\", \"speaker\": \"#10\", \"utterance\": \"What d'ya think these people get up on the witness stand for -- their health?\", \"dia_id\": \"D3:369\"}, {\"step\": 1, \"inference\": \"#10 reacts strongly to the not guilty vote and is dismissive of doubts about the evidence.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#10 is quick to dismiss the possibility of doubt and insists on the facts, indicating he is a strong advocate for the boy's guilt.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #10's behavior in the jury room based on his statements and actions?\nA. #10 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.\nB. #10 is a quiet observer who rarely speaks but listens carefully.\nC. #10 is a mediator who tries to keep the conversation calm and focused.\nD. #10 is a joker who uses humor to avoid serious discussion of the case.\nE. #10 is a supporter of the boy's innocence and challenges others to reconsider.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.9301362037658691,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "All right, who was it? Come on, I want to know!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What do we have to listen to now, the whole history of your country?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy, that’s the biggest load ’a tripe I ever... Listen, we know the father was a bum! So what has that got to do with anything?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "Well, this is just off the top of my head, but if I were the boy, and I'd, you know, done the stabbing and everything, I'd take a chance and go back for the knife. I'll bet he figured no one had seen him and that the body probably wasn't even discovered yet. After all, it was the middle of the night. He probably thought no one would find the boy till the next day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "You keep saying that. Maybe what we need is a little yelling in here. These guys are going off every which way. Did hear the scream, didn't hear the scream. What's the difference? They're just little details. You're forgetting the important stuff. I mean, all of a sudden here everybody...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you!",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy! How do you like that!",
+                            "dia_id": "D3:17"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health?",
+                            "dia_id": "D3:369"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "All right, who was it? Come on, I want to know!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What do we have to listen to now, the whole history of your country?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy, that’s the biggest load ’a tripe I ever... Listen, we know the father was a bum! So what has that got to do with anything?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "Well, this is just off the top of my head, but if I were the boy, and I'd, you know, done the stabbing and everything, I'd take a chance and go back for the knife. I'll bet he figured no one had seen him and that the body probably wasn't even discovered yet. After all, it was the middle of the night. He probably thought no one would find the boy till the next day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "You keep saying that. Maybe what we need is a little yelling in here. These guys are going off every which way. Did hear the scream, didn't hear the scream. What's the difference? They're just little details. You're forgetting the important stuff. I mean, all of a sudden here everybody...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Looks like we're really hung up here. I mean that thing with the old man was pretty unexpected.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I wish I knew how we could break this up.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Your turn. We might as well pass the time.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "All right. Forget it. It's not important. Know what I mean?",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "What're ya talking to him like that for?",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "Come on, what’s the guessing game for?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "Well, that's the most fantastic story I've ever heard. How can you make up a think like that? What do you know about it?",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#10",
+                            "utterance": "Right! There's your answer.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Everyone’s a lawyer!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "You didn't prove it at all. What are you talking about?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Come on, will ya.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you, we can yakety-yak until next Tuesday here. Where's it getting us?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "What a murderous day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "I don’t know if there are any more to make. I just have a feeling...",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Looks like we're really hung up here. I mean that thing with the old man was pretty unexpected.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I wish I knew how we could break this up.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Your turn. We might as well pass the time.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "All right. Forget it. It's not important. Know what I mean?",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "What're ya talking to him like that for?",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "Come on, what’s the guessing game for?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "Well, that's the most fantastic story I've ever heard. How can you make up a think like that? What do you know about it?",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#10",
+                            "utterance": "Right! There's your answer.",
+                            "dia_id": "21"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy! How do you like that!",
+                            "dia_id": "D3:17"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health?",
+                            "dia_id": "D3:369"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "All right, who was it? Come on, I want to know!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What do we have to listen to now, the whole history of your country?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy, that’s the biggest load ’a tripe I ever... Listen, we know the father was a bum! So what has that got to do with anything?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "Well, this is just off the top of my head, but if I were the boy, and I'd, you know, done the stabbing and everything, I'd take a chance and go back for the knife. I'll bet he figured no one had seen him and that the body probably wasn't even discovered yet. After all, it was the middle of the night. He probably thought no one would find the boy till the next day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "You keep saying that. Maybe what we need is a little yelling in here. These guys are going off every which way. Did hear the scream, didn't hear the scream. What's the difference? They're just little details. You're forgetting the important stuff. I mean, all of a sudden here everybody...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Looks like we're really hung up here. I mean that thing with the old man was pretty unexpected.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I wish I knew how we could break this up.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Your turn. We might as well pass the time.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "All right. Forget it. It's not important. Know what I mean?",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "What're ya talking to him like that for?",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "Come on, what’s the guessing game for?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "Well, that's the most fantastic story I've ever heard. How can you make up a think like that? What do you know about it?",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#10",
+                            "utterance": "Right! There's your answer.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Everyone’s a lawyer!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "You didn't prove it at all. What are you talking about?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Come on, will ya.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you, we can yakety-yak until next Tuesday here. Where's it getting us?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "What a murderous day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "I don’t know if there are any more to make. I just have a feeling...",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Everyone’s a lawyer!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "You didn't prove it at all. What are you talking about?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Come on, will ya.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you, we can yakety-yak until next Tuesday here. Where's it getting us?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "What a murderous day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "I don’t know if there are any more to make. I just have a feeling...",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy! How do you like that!",
+                            "dia_id": "D3:17"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health?",
+                            "dia_id": "D3:369"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "All right, who was it? Come on, I want to know!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "What do we have to listen to now, the whole history of your country?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy, that’s the biggest load ’a tripe I ever... Listen, we know the father was a bum! So what has that got to do with anything?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "Well, this is just off the top of my head, but if I were the boy, and I'd, you know, done the stabbing and everything, I'd take a chance and go back for the knife. I'll bet he figured no one had seen him and that the body probably wasn't even discovered yet. After all, it was the middle of the night. He probably thought no one would find the boy till the next day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "You keep saying that. Maybe what we need is a little yelling in here. These guys are going off every which way. Did hear the scream, didn't hear the scream. What's the difference? They're just little details. You're forgetting the important stuff. I mean, all of a sudden here everybody...",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Looks like we're really hung up here. I mean that thing with the old man was pretty unexpected.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "I wish I knew how we could break this up.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Your turn. We might as well pass the time.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "All right. Forget it. It's not important. Know what I mean?",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "What're ya talking to him like that for?",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "Come on, what’s the guessing game for?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "Well, that's the most fantastic story I've ever heard. How can you make up a think like that? What do you know about it?",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#10",
+                            "utterance": "Listen, I'm talking here.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#10",
+                            "utterance": "Right! There's your answer.",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#10",
+                            "utterance": "Boy-oh-boy! How do you like that?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#10",
+                            "utterance": "Says he did!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#10",
+                            "utterance": "Everyone’s a lawyer!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#10",
+                            "utterance": "You didn't prove it at all. What are you talking about?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#10",
+                            "utterance": "Come on, will ya.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#10",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#10",
+                            "utterance": "I'm telling you, we can yakety-yak until next Tuesday here. Where's it getting us?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#10",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#10",
+                            "utterance": "What a murderous day.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#10",
+                            "utterance": "I don’t know if there are any more to make. I just have a feeling...",
+                            "dia_id": "10"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. #10 is a supporter of the boy's innocence and challenges others to reconsider.)",
+                        "score": 0,
+                        "response_time": 0.7078263759613037,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#7",
+            "category": 6,
+            "question": "What is the most accurate description of #7's behavior in the jury room based on his statements and actions?\nA. #7 is a joker who uses humor to avoid serious discussion of the case.\nB. #7 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.\nC. #7 is a mediator who tries to keep the conversation calm and focused.\nD. #7 is a supporter of the boy's innocence and challenges others to reconsider.\nE. #7 is a quiet observer who rarely speaks but listens carefully.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. #7 is a joker who uses humor to avoid serious discussion of the case.",
+                "B. #7 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+                "C. #7 is a mediator who tries to keep the conversation calm and focused.",
+                "D. #7 is a supporter of the boy's innocence and challenges others to reconsider.",
+                "E. #7 is a quiet observer who rarely speaks but listens carefully.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. #7 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#7",
+                    "utterance": "And another chap flips his wig!",
+                    "dia_id": "D3:18"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#7",
+                    "utterance": "You're talking about a matter of seconds here. Nobody can be that accurate.",
+                    "dia_id": "D3:286"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#7 reacts strongly to #3's accusations, suggesting he is quick to dismiss doubts and support the guilty verdict.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "#7 is dismissive of the possibility of doubt, indicating he is a strong advocate for the boy's guilt.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(C) #7 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#7\", \"utterance\": \"And another chap flips his wig!\", \"dia_id\": \"D3:18\"}, {\"id\": \"E2\", \"speaker\": \"#7\", \"utterance\": \"You're talking about a matter of seconds here. Nobody can be that accurate.\", \"dia_id\": \"D3:286\"}, {\"step\": 1, \"inference\": \"#7 reacts strongly to #3's accusations, suggesting he is quick to dismiss doubts and support the guilty verdict.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"#7 is dismissive of the possibility of doubt, indicating he is a strong advocate for the boy's guilt.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What is the most accurate description of #7's behavior in the jury room based on his statements and actions?\nA. #7 is a quiet observer who rarely speaks but listens carefully.\nB. #7 is a supporter of the boy's innocence and challenges others to reconsider.\nC. #7 is a strong advocate for the boy's guilt and is quick to dismiss any doubts.\nD. #7 is a mediator who tries to keep the conversation calm and focused.\nE. #7 is a joker who uses humor to avoid serious discussion of the case.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 1.0315468311309814,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "C"
+                ],
+                "ground_truth_options": [
+                    [
+                        "C"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "Now I’m talking facts. What made you change your vote?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Yeah, let's stick to the subject.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "No, I wouldn't like you to tell me why.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I mean, didn't the old man see him running out of the house? He's twisting the facts. I'm telling you!",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health? I'm telling you men the facts are being changed around here. Witnesses are being doubted and there's no reason for it.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Say, are you a salesman?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#7",
+                            "utterance": "You think he’s not guilty?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#7",
+                            "utterance": "I don't care, ’y’know. It beats workin’.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#7",
+                            "utterance": "Well, if that isn't the livin' end! What are you basing it on? Stories this guy made up. He oughta write for Amazing Detective Monthly. He'd make a fortune.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#7",
+                            "utterance": "Come on already! Look at the time!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#7",
+                            "utterance": "How do you like him? It's like talking into a dead phone.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#7",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "21"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "And another chap flips his wig!",
+                            "dia_id": "D3:18"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "You're talking about a matter of seconds here. Nobody can be that accurate.",
+                            "dia_id": "D3:286"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "Now I’m talking facts. What made you change your vote?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Yeah, let's stick to the subject.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "No, I wouldn't like you to tell me why.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I mean, didn't the old man see him running out of the house? He's twisting the facts. I'm telling you!",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health? I'm telling you men the facts are being changed around here. Witnesses are being doubted and there's no reason for it.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Say, are you a salesman?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#7",
+                            "utterance": "You think he’s not guilty?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#7",
+                            "utterance": "I don't care, ’y’know. It beats workin’.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#7",
+                            "utterance": "Well, if that isn't the livin' end! What are you basing it on? Stories this guy made up. He oughta write for Amazing Detective Monthly. He'd make a fortune.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#7",
+                            "utterance": "Come on already! Look at the time!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#7",
+                            "utterance": "How do you like him? It's like talking into a dead phone.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#7",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "You think we'll be much longer?",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "The boy is guilty, pal. Like the nose on your face. So let's go home before we get sore throats.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It's possible.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I'm not used to supposing. I’m just a working man. My boss does the supposing. But I’ll try one. Supposing you talk us all outa this, and the kid really did knife his father?",
+                            "dia_id": "D13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "Sure he didn't. Who in hell could, except God come to earth or somebody?",
+                            "dia_id": "D14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "D15"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "You think we'll be much longer?",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "The boy is guilty, pal. Like the nose on your face. So let's go home before we get sore throats.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It's possible.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I'm not used to supposing. I’m just a working man. My boss does the supposing. But I’ll try one. Supposing you talk us all outa this, and the kid really did knife his father?",
+                            "dia_id": "D13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "Sure he didn't. Who in hell could, except God come to earth or somebody?",
+                            "dia_id": "D14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "D15"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "And another chap flips his wig!",
+                            "dia_id": "D3:18"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "You're talking about a matter of seconds here. Nobody can be that accurate.",
+                            "dia_id": "D3:286"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "Now I’m talking facts. What made you change your vote?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Yeah, let's stick to the subject.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "No, I wouldn't like you to tell me why.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I mean, didn't the old man see him running out of the house? He's twisting the facts. I'm telling you!",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health? I'm telling you men the facts are being changed around here. Witnesses are being doubted and there's no reason for it.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Say, are you a salesman?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#7",
+                            "utterance": "You think he’s not guilty?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#7",
+                            "utterance": "I don't care, ’y’know. It beats workin’.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#7",
+                            "utterance": "Well, if that isn't the livin' end! What are you basing it on? Stories this guy made up. He oughta write for Amazing Detective Monthly. He'd make a fortune.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#7",
+                            "utterance": "Come on already! Look at the time!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#7",
+                            "utterance": "How do you like him? It's like talking into a dead phone.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#7",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "You think we'll be much longer?",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "The boy is guilty, pal. Like the nose on your face. So let's go home before we get sore throats.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It's possible.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I'm not used to supposing. I’m just a working man. My boss does the supposing. But I’ll try one. Supposing you talk us all outa this, and the kid really did knife his father?",
+                            "dia_id": "D13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "Sure he didn't. Who in hell could, except God come to earth or somebody?",
+                            "dia_id": "D14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "D15"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "I'm talkin' to him --\nnot to you.\nBoy, this guy is really something.",
+                            "dia_id": "dia_10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "What d'ya think you are to talk like...",
+                            "dia_id": "dia_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "What's the difference whether you get it here or at the ball game?",
+                            "dia_id": "dia_12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "No difference, pal. No difference at all.",
+                            "dia_id": "dia_13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "I don't think he could have heard it.",
+                            "dia_id": "dia_14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Yeah. Maybe he didn't hear it. I mean, with the el noise...",
+                            "dia_id": "dia_15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#7",
+                            "utterance": "Now, wait a minute. Are you trying to tell us he'd lie just so that he could be important once?",
+                            "dia_id": "dia_16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#7",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "dia_17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#7",
+                            "utterance": "I don’t see anything funny about it.",
+                            "dia_id": "dia_18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#7",
+                            "utterance": "Yeah, especially relatives.",
+                            "dia_id": "dia_19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "dia_20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#7",
+                            "utterance": "I think I know him better than anyone her. This is a quiet, frightened, insignificant old man who has been nothing all his life, who has never had recognition, his name in the newspapers. Nobody knows him, nobody quotes him, nobody seeks his advice after seventy-five years. That's a very sad thing, to be nothing. A man like this need to be recognized, to be listened to, to be quoted just once. This is very important. It would be so hard for him to recede into the background when there's a chance to be...",
+                            "dia_id": "dia_21"
+                        },
+                        {
+                            "id": "E13",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "dia_22"
+                        },
+                        {
+                            "id": "E14",
+                            "speaker": "#7",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "dia_23"
+                        },
+                        {
+                            "id": "E15",
+                            "speaker": "#7",
+                            "utterance": "I don’t see anything funny about it.",
+                            "dia_id": "dia_24"
+                        },
+                        {
+                            "id": "E16",
+                            "speaker": "#7",
+                            "utterance": "Yeah, especially relatives.",
+                            "dia_id": "dia_25"
+                        },
+                        {
+                            "id": "E17",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "dia_26"
+                        },
+                        {
+                            "id": "E18",
+                            "speaker": "#7",
+                            "utterance": "I think that’s a bit far-fetched.",
+                            "dia_id": "dia_27"
+                        },
+                        {
+                            "id": "E19",
+                            "speaker": "#7",
+                            "utterance": "I don’t see anything funny about it.",
+                            "dia_id": "dia_28"
+                        },
+                        {
+                            "id": "E20",
+                            "speaker": "#7",
+                            "utterance": "Yeah, especially relatives.",
+                            "dia_id": "dia_29"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "And another chap flips his wig!",
+                            "dia_id": "D3:18"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "You're talking about a matter of seconds here. Nobody can be that accurate.",
+                            "dia_id": "D3:286"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "Now I’m talking facts. What made you change your vote?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Yeah, let's stick to the subject.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "No, I wouldn't like you to tell me why.",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I mean, didn't the old man see him running out of the house? He's twisting the facts. I'm telling you!",
+                            "dia_id": "13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "What d'ya think these people get up on the witness stand for -- their health? I'm telling you men the facts are being changed around here. Witnesses are being doubted and there's no reason for it.",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Say, are you a salesman?",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#7",
+                            "utterance": "You think he’s not guilty?",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#7",
+                            "utterance": "I don't care, ’y’know. It beats workin’.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#7",
+                            "utterance": "Well, if that isn't the livin' end! What are you basing it on? Stories this guy made up. He oughta write for Amazing Detective Monthly. He'd make a fortune.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E10",
+                            "speaker": "#7",
+                            "utterance": "Come on already! Look at the time!",
+                            "dia_id": "19"
+                        },
+                        {
+                            "id": "E11",
+                            "speaker": "#7",
+                            "utterance": "How do you like him? It's like talking into a dead phone.",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E12",
+                            "speaker": "#7",
+                            "utterance": "Oh, brother!",
+                            "dia_id": "21"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#7",
+                            "utterance": "You think we'll be much longer?",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "The boy is guilty, pal. Like the nose on your face. So let's go home before we get sore throats.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#7",
+                            "utterance": "I don’t know. It's possible.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#7",
+                            "utterance": "I'm not used to supposing. I’m just a working man. My boss does the supposing. But I’ll try one. Supposing you talk us all outa this, and the kid really did knife his father?",
+                            "dia_id": "D13"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#7",
+                            "utterance": "Sure he didn't. Who in hell could, except God come to earth or somebody?",
+                            "dia_id": "D14"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "D15"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D) #7 is a supporter of the boy's innocence and challenges others to reconsider.",
+                        "score": 0,
+                        "response_time": 0.5988812446594238,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#2",
+            "category": 6,
+            "question": "What did you say about the time it would take for the el train to pass a given point, and how did you later respond to the idea that this might be relevant to the case?\nA. I said it takes about ten seconds, and I thought it was a logical point.\nB. I said it takes about ten seconds, and I thought it was a fair guess.\nC. I said it takes about ten seconds, and I thought it was very relevant.\nD. I said it takes about ten seconds, and I thought it was a distraction.\nE. I said it takes about ten seconds, and I thought it was a waste of time.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. I said it takes about ten seconds, and I thought it was a logical point.",
+                "B. I said it takes about ten seconds, and I thought it was a fair guess.",
+                "C. I said it takes about ten seconds, and I thought it was very relevant.",
+                "D. I said it takes about ten seconds, and I thought it was a distraction.",
+                "E. I said it takes about ten seconds, and I thought it was a waste of time.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. I said it takes about ten seconds, and I thought it was a fair guess.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#2",
+                    "utterance": "Ten seconds is about right.",
+                    "dia_id": "D3:261"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#2",
+                    "utterance": "I wouldn't have the slightest idea.",
+                    "dia_id": "D3:250"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#2 estimated that an el train takes about ten seconds to pass a given point.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, when asked about the relevance of the time it takes for the el train to pass, #2 admitted he wouldn't have the slightest idea, indicating he thought it was a fair guess but not a definitive fact.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(D) I said it takes about ten seconds, and I thought it was a fair guess.",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#2\", \"utterance\": \"Ten seconds is about right.\", \"dia_id\": \"D3:261\"}, {\"id\": \"E2\", \"speaker\": \"#2\", \"utterance\": \"I wouldn't have the slightest idea.\", \"dia_id\": \"D3:250\"}, {\"step\": 1, \"inference\": \"#2 estimated that an el train takes about ten seconds to pass a given point.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, when asked about the relevance of the time it takes for the el train to pass, #2 admitted he wouldn't have the slightest idea, indicating he thought it was a fair guess but not a definitive fact.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did you say about the time it would take for the el train to pass a given point, and how did you later respond to the idea that this might be relevant to the case?\nA. I said it takes about ten seconds, and I thought it was a waste of time.\nB. I said it takes about ten seconds, and I thought it was a distraction.\nC. I said it takes about ten seconds, and I thought it was very relevant.\nD. I said it takes about ten seconds, and I thought it was a fair guess.\nE. I said it takes about ten seconds, and I thought it was a logical point.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 1.1868770122528076,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "D"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I’d say that was a fair guess. Anyone else?",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Well, I think that testimony which could put a human being into the electric chair should be that accurate.",
+                            "dia_id": "11"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "Ten seconds is about right.",
+                            "dia_id": "D3:261"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I wouldn't have the slightest idea.",
+                            "dia_id": "D3:250"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(D).",
+                        "score": 0,
+                        "response_time": 0.4807281494140625,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#11",
+            "category": 6,
+            "question": "What did you say about the boy's lawyer, and how did your perspective change after considering the lawyer's lack of motivation?\nA. I said the lawyer was ineffective, and I still think that.\nB. I said the lawyer was ineffective, and I now think the lawyer was uninterested.\nC. I said the lawyer was ineffective, and I now think the boy was guilty.\nD. I said the lawyer was ineffective, and I now think the lawyer was motivated.\nE. I said the lawyer was ineffective, and I now think the boy might be innocent.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. I said the lawyer was ineffective, and I still think that.",
+                "B. I said the lawyer was ineffective, and I now think the lawyer was uninterested.",
+                "C. I said the lawyer was ineffective, and I now think the boy was guilty.",
+                "D. I said the lawyer was ineffective, and I now think the lawyer was motivated.",
+                "E. I said the lawyer was ineffective, and I now think the boy might be innocent.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. I said the lawyer was ineffective, and I now think the boy might be innocent.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#11",
+                    "utterance": "In my own country, I am ashamed to say...",
+                    "dia_id": "D3:46"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#11",
+                    "utterance": "The lawyer was court-appointed. It could mean he didn't want the case. It could mean he resented being appointed.",
+                    "dia_id": "D3:335"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#11 initially expressed a personal perspective on the lawyer, but did not directly state whether the lawyer was effective or not.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After #5 pointed out that the lawyer was court-appointed and possibly uninterested, #11's perspective shifted to considering the possibility that the boy might be innocent, as the lawyer's lack of motivation could have led to an incomplete defense.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(D)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#11\", \"utterance\": \"In my own country, I am ashamed to say...\", \"dia_id\": \"D3:46\"}, {\"id\": \"E2\", \"speaker\": \"#11\", \"utterance\": \"The lawyer was court-appointed. It could mean he didn't want the case. It could mean he resented being appointed.\", \"dia_id\": \"D3:335\"}, {\"step\": 1, \"inference\": \"#11 initially expressed a personal perspective on the lawyer, but did not directly state whether the lawyer was effective or not.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"After #5 pointed out that the lawyer was court-appointed and possibly uninterested, #11's perspective shifted to considering the possibility that the boy might be innocent, as the lawyer's lack of motivation could have led to an incomplete defense.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did you say about the boy's lawyer, and how did your perspective change after considering the lawyer's lack of motivation?\nA. I said the lawyer was ineffective, and I now think the lawyer was motivated.\nB. I said the lawyer was ineffective, and I now think the boy was guilty.\nC. I said the lawyer was ineffective, and I now think the lawyer was uninterested.\nD. I said the lawyer was ineffective, and I now think the boy might be innocent.\nE. I said the lawyer was ineffective, and I still think that.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.35298800468444824,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "D"
+                ],
+                "ground_truth_options": [
+                    [
+                        "D"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Does he? It's happened before that someone's been convicted of a murder, and executed, and years later someone else has confessed to the crime. Sometimes... sometimes the facts that are staring everyone in the face are wrong.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "11"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#11",
+                            "utterance": "In my own country, I am ashamed to say...",
+                            "dia_id": "D3:46"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#11",
+                            "utterance": "The lawyer was court-appointed. It could mean he didn't want the case. It could mean he resented being appointed.",
+                            "dia_id": "D3:335"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Does he? It's happened before that someone's been convicted of a murder, and executed, and years later someone else has confessed to the crime. Sometimes... sometimes the facts that are staring everyone in the face are wrong.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I didn't bring it up. I was asked who else might have killed him. Right? The last two cars.",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Well, I think that testimony which could put a human being into the electric chair should be that accurate.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "I don't think he could have heard it.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "There's another thing I wanted to talk about for a minute. I think we've proved that the old man couldn't have heard the boy say, 'I'm going to kill you,' but supposing...",
+                            "dia_id": "D15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.",
+                            "dia_id": "D17"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Well I don’t know. The father wasn’t exactly a model citizen. The boy’s lawyer brought this out pretty clearly, I thought.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "But supposing he really did hear it. This phrase, how many times has each of us used it? Probably hundreds. \"I could kill you for that, darling.\" \"If you do that once more, Junior, I'm going to kill you.\" \"Come on, Rocky, kill him.\" We say it every day. It doesn't mean we're going to kill someone.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "Well, let me ask you this: do you really think the boy would shout out a thing1 like that so the whole neighborhood would hear it? I don't think so. He's much too bright for that.",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "Not right now. No, it isn't.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "This then depends on your definition of panic. He was calm enough to see to it that there were no fingerprints on the knife. Now where did his panic start and where did it end?",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#11",
+                            "utterance": "I vote not guilty.",
+                            "dia_id": "23"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I didn't bring it up. I was asked who else might have killed him. Right? The last two cars.",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Well, I think that testimony which could put a human being into the electric chair should be that accurate.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "I don't think he could have heard it.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "There's another thing I wanted to talk about for a minute. I think we've proved that the old man couldn't have heard the boy say, 'I'm going to kill you,' but supposing...",
+                            "dia_id": "D15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.",
+                            "dia_id": "D17"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#11",
+                            "utterance": "In my own country, I am ashamed to say...",
+                            "dia_id": "D3:46"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#11",
+                            "utterance": "The lawyer was court-appointed. It could mean he didn't want the case. It could mean he resented being appointed.",
+                            "dia_id": "D3:335"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Does he? It's happened before that someone's been convicted of a murder, and executed, and years later someone else has confessed to the crime. Sometimes... sometimes the facts that are staring everyone in the face are wrong.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I didn't bring it up. I was asked who else might have killed him. Right? The last two cars.",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Well, I think that testimony which could put a human being into the electric chair should be that accurate.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "I don't think he could have heard it.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "There's another thing I wanted to talk about for a minute. I think we've proved that the old man couldn't have heard the boy say, 'I'm going to kill you,' but supposing...",
+                            "dia_id": "D15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.",
+                            "dia_id": "D17"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Well I don’t know. The father wasn’t exactly a model citizen. The boy’s lawyer brought this out pretty clearly, I thought.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "But supposing he really did hear it. This phrase, how many times has each of us used it? Probably hundreds. \"I could kill you for that, darling.\" \"If you do that once more, Junior, I'm going to kill you.\" \"Come on, Rocky, kill him.\" We say it every day. It doesn't mean we're going to kill someone.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "Well, let me ask you this: do you really think the boy would shout out a thing1 like that so the whole neighborhood would hear it? I don't think so. He's much too bright for that.",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "Not right now. No, it isn't.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "This then depends on your definition of panic. He was calm enough to see to it that there were no fingerprints on the knife. Now where did his panic start and where did it end?",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#11",
+                            "utterance": "I vote not guilty.",
+                            "dia_id": "23"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Well I don’t know. The father wasn’t exactly a model citizen. The boy’s lawyer brought this out pretty clearly, I thought.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "But supposing he really did hear it. This phrase, how many times has each of us used it? Probably hundreds. \"I could kill you for that, darling.\" \"If you do that once more, Junior, I'm going to kill you.\" \"Come on, Rocky, kill him.\" We say it every day. It doesn't mean we're going to kill someone.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "Well, let me ask you this: do you really think the boy would shout out a thing1 like that so the whole neighborhood would hear it? I don't think so. He's much too bright for that.",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "Not right now. No, it isn't.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "This then depends on your definition of panic. He was calm enough to see to it that there were no fingerprints on the knife. Now where did his panic start and where did it end?",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#11",
+                            "utterance": "I vote not guilty.",
+                            "dia_id": "23"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#11",
+                            "utterance": "In my own country, I am ashamed to say...",
+                            "dia_id": "D3:46"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#11",
+                            "utterance": "The lawyer was court-appointed. It could mean he didn't want the case. It could mean he resented being appointed.",
+                            "dia_id": "D3:335"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Does he? It's happened before that someone's been convicted of a murder, and executed, and years later someone else has confessed to the crime. Sometimes... sometimes the facts that are staring everyone in the face are wrong.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#7",
+                            "utterance": "Listen, there are facts staring you right in your face. Every one of them says this kid killed his old man. For cryin' out loud his own lawyer knew he didn't stand a chance right from the beginning. His own lawyer. You could see it. He deserves the chair.",
+                            "dia_id": "11"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "I didn't bring it up. I was asked who else might have killed him. Right? The last two cars.",
+                            "dia_id": "D10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "Well, I think that testimony which could put a human being into the electric chair should be that accurate.",
+                            "dia_id": "D11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "I don't think he could have heard it.",
+                            "dia_id": "D12"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "There's another thing I wanted to talk about for a minute. I think we've proved that the old man couldn't have heard the boy say, 'I'm going to kill you,' but supposing...",
+                            "dia_id": "D15"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I think there's enough doubt to make us wonder whether he was there at all during the time the murder took place.",
+                            "dia_id": "D17"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#8",
+                            "utterance": "Well I don’t know. The father wasn’t exactly a model citizen. The boy’s lawyer brought this out pretty clearly, I thought.",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#8",
+                            "utterance": "But supposing he really did hear it. This phrase, how many times has each of us used it? Probably hundreds. \"I could kill you for that, darling.\" \"If you do that once more, Junior, I'm going to kill you.\" \"Come on, Rocky, kill him.\" We say it every day. It doesn't mean we're going to kill someone.",
+                            "dia_id": "15"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#5",
+                            "utterance": "Well, let me ask you this: do you really think the boy would shout out a thing1 like that so the whole neighborhood would hear it? I don't think so. He's much too bright for that.",
+                            "dia_id": "16"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#8",
+                            "utterance": "Not right now. No, it isn't.",
+                            "dia_id": "17"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#8",
+                            "utterance": "I don’t know. It doesn't sound right to me.",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#8",
+                            "utterance": "This then depends on your definition of panic. He was calm enough to see to it that there were no fingerprints on the knife. Now where did his panic start and where did it end?",
+                            "dia_id": "20"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#11",
+                            "utterance": "I vote not guilty.",
+                            "dia_id": "23"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(C. I said the lawyer was ineffective, and I now think the boy was guilty.)",
+                        "score": 0,
+                        "response_time": 0.7810084819793701,
+                        "file_id": 1
+                    }
+                ]
+            }
         }
     ],
     "conversation": {

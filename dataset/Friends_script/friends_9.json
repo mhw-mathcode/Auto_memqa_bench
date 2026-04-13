@@ -1,0 +1,1934 @@
+{
+    "qa": [
+     
+    {
+      "character": "Ariel",
+      "category": 1,
+      "question": "What persistent financial goal and specific habit does Ariel display throughout the week leading up to Thanksgiving?",
+      "option": [
+        "A. She is trying to save $100 for a family trip and uses a specific catchphrase to track her progress.",
+        "B. She is working to earn exactly $102 in tips to pay for a ski trip to Vail while frequently saying \"shoop, shoop, shoop.\"",
+        "C. She is saving up roughly $100 for a trip to Puerto Rico and repeatedly mimics skiing motions.",
+        "D. She is focused on earning enough money to visit her parents in Vail and tells everyone she has $98.50 left to go.",
+        "E. She is trying to raise over $100 for a vacation by asking customers for advances on her tips and singing songs."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "Only $98.50 to go.", "dia_id": "2:3" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Rach, are you thinking you're gonna make it to Vail?", "dia_id": "2:37" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Absolutely. Shoop, shoop, shoop. Only a hundred and two dollars to go.", "dia_id": "2:38" },
+        { "id": "E4", "speaker": "Ariel", "utterance": "I got the tickets! I got the tickets! Five hours from now, shoop, shoop, shoop.", "dia_id": "8:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel is tracking a specific monetary goal for a trip to Vail.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Her final required amount mentioned in Session 2 is exactly $102.", "based_on": ["E3"] },
+        { "step": 3, "inference": "She consistently uses the phrase \"shoop, shoop, shoop\" in relation to this goal across multiple sessions.", "based_on": ["E3", "E4"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 2,
+      "question": "Why did the amount of money Ariel needed to save for her trip increase between her initial calculation and her conversation later that same day?",
+      "option": [
+        "A. She had to chip in twenty dollars to help Chloe with the Thanksgiving dinner expenses.",
+        "B. She lost a portion of her saved tips because she spilled a drink on a customer named Guy.",
+        "C. She was penalized by her boss for being late to her shift at the coffee shop.",
+        "D. She broke a piece of inventory which added to the total cost she needed to cover.",
+        "E. The price of the plane tickets to Vail increased while she was waiting to earn the tips."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "Only $98.50 to go.", "dia_id": "2:3" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Absolutely. Shoop, shoop, shoop. Only a hundred and two dollars to go.", "dia_id": "2:38" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "I thought it was $98.50.", "dia_id": "2:39" },
+        { "id": "E4", "speaker": "Ariel", "utterance": "Yeah, well it was. I, I broke a cup.", "dia_id": "2:40" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel's 'to go' amount changes from $98.50 to $102 within Session 2.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Dexter notices the discrepancy and asks for clarification.", "based_on": ["E3"] },
+        { "step": 3, "inference": "Ariel explicitly states the increase is because she broke a cup.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 3,
+      "question": "How does Ariel's status regarding her Thanksgiving travel plans change from the day before the holiday to the afternoon of Thanksgiving?",
+      "option": [
+        "A. She initially lacks the funds, then receives a loan from Bennett, but eventually misses the flight due to a parade balloon.",
+        "B. She starts with a deficit, successfully gathers the money with friends' help, but ultimately gets stuck because the plane has already departed.",
+        "C. She is short on cash, wins the money in a bet with Ethan, but decides to stay because of the burnt turkey.",
+        "D. She is $102 short, asks a stranger for an advance, and eventually makes it to Vail after the Underdog balloon is caught.",
+        "E. She has the money initially, loses it due to breaking a cup, but manages to find a cheaper flight at the last minute."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "No, not even close. Forget Vail, forget seeing my family, forget shoop, shoop, shoop.", "dia_id": "4:5" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "We all chipped in.", "dia_id": "4:12" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "I got the tickets! I got the tickets! Five hours from now, shoop, shoop, shoop.", "dia_id": "8:5" },
+        { "id": "E4", "speaker": "Ariel", "utterance": "The plane is gone, so it looks like I'm stuck here with you guys.", "dia_id": "12:23" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "On Nov 23, Ariel believes she cannot go because she hasn't made the money.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Her friends chip in to give her the money she needs.", "based_on": ["E2"] },
+        { "step": 3, "inference": "On Nov 24, she confirms she has the tickets.", "based_on": ["E3"] },
+        { "step": 4, "inference": "Later on Nov 24, she reveals she missed the flight and is stuck.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 4,
+      "question": "Based on the interactions throughout the sessions, what is the nature of the financial relationship between Ariel and Chloe regarding the trip to Vail?",
+      "option": [
+        "A. Chloe lent Ariel the full $102 and expects to be repaid after the holiday.",
+        "B. Chloe acted as the organizer to collect money from the group, including a specific amount from Ethan, to fund Ariel's ticket.",
+        "C. Ariel asked Chloe for an advance on her tips because they work together at the same clinic.",
+        "D. Chloe refused to help Ariel financially because she wanted Ariel to stay and help cook the three types of potatoes.",
+        "E. Chloe and Ariel both contributed $20 to a group fund to help Bennett visit his ex-wife Carol."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "We all chipped in.", "dia_id": "4:12" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "You owe me 20 bucks.", "dia_id": "4:14" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "We did?", "dia_id": "4:13" },
+        { "id": "E4", "speaker": "Ariel", "utterance": "Thank you. Thank you so much!", "dia_id": "4:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe presents Ariel with the money collected from the group.", "based_on": ["E1", "E4"] },
+        { "step": 2, "inference": "Chloe organized the 'chipping in' and specifically tells Ethan he owes her $20 for it, implying she covered his share initially.", "based_on": ["E1", "E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 5,
+      "question": "Exactly how much money did Ariel still need to earn for her trip right before she announced she had broken a cup?",
+      "option": [
+        "A. $102.00",
+        "B. $100.00",
+        "C. $98.50",
+        "D. $20.00",
+        "E. $95.00"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "Only $98.50 to go.", "dia_id": "2:3" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "I thought it was $98.50.", "dia_id": "2:39" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Yeah, well it was. I, I broke a cup.", "dia_id": "2:40" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel explicitly states she has $98.50 to go earlier in the session.", "based_on": ["E1"] },
+        { "step": 2, "inference": "When the amount changes to $102, she confirms that $98.50 was the previous figure before the cup incident.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 6,
+      "question": "What does Ariel learn about her group of friends' willingness to support her personal goals despite their own conflicting holiday feelings?",
+      "option": [
+        "A. She learns that they value her presence so much that they intentionally sabotaged her flight to keep her at dinner.",
+        "B. She realizes that even though they have their own traditions and issues, they were willing to combine resources to buy her plane tickets.",
+        "C. She discovers that Fiona and Dexter were the only ones who actually wanted to help her, while Ethan was confused about the payment.",
+        "D. She finds out that Chloe is the only one she can rely on, as Chloe paid for the entire ticket herself without telling the others.",
+        "E. She learns that her friends prefer celebrating a 'lousy' holiday together rather than helping each other fulfill individual plans."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "We all chipped in.", "dia_id": "4:12" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Oh my god, oh, you guys are great.", "dia_id": "4:11" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "Thank you. Thank you so much!", "dia_id": "4:15" },
+        { "id": "E4", "speaker": "Dexter", "utterance": "I know this isn't the kind of Thanksgiving that all of you all planned... I'm very thankful that all of your Thanksgivings sucked.", "dia_id": "12:45" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The friends collectively contribute money to solve Ariel's financial problem for her trip.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "Ariel expresses deep gratitude for this collective effort.", "based_on": ["E3"] },
+        { "step": 3, "inference": "Dexter's final toast acknowledges that despite the failure of their individual plans (including Ariel's), being together is a positive outcome.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 7,
+      "question": "What was Ariel's original intended schedule for Thanksgiving Day before the balloon incident occurred?",
+      "option": [
+        "A. She planned to stay and help Chloe cook three different types of potatoes before leaving for the airport at night.",
+        "B. She intended to watch the parade in Washington Square Park and then catch a flight five hours later.",
+        "C. She was scheduled to be on a plane by late afternoon, where she expected to see a flight attendant performing safety demonstrations.",
+        "D. She planned to visit her grandma and her boyfriend because they were celebrating on a different day.",
+        "E. She committed to eating a 'traditional' meal of Funyuns and tomato soup with Dexter before heading to Vail."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "I got the tickets! I got the tickets! Five hours from now, shoop, shoop, shoop.", "dia_id": "8:5" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "If it wasn't for you and your stupid balloon, I would be on a plane watching a woman do this right now. But I'm not.", "dia_id": "12:6" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel had a ticket for a flight departing five hours after she arrived at the apartment on Thanksgiving morning.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She describes her expected experience on that flight as watching a woman 'do this' (miming flight attendant gestures) while the plane is in the air.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 1,
+      "question": "What is Bennett's professional background and how does he feel it relates to his current personal situation with his unborn child?",
+      "option": [
+        "A. He is a medical doctor who believes it is scientifically impossible for a fetus to hear external sounds.",
+        "B. He is a paleontologist who jokes that his child is currently like a fetus that is glad it no longer has gills.",
+        "C. He is a museum curator who thinks his child will grow up to be stupid because Susan reads 'Yertle the Turtle' to it.",
+        "D. He is a teacher at a faculty meeting who believes in 'belly time' but only for the mother.",
+        "E. He is an actor/model who is worried that his child will inherit his Lyme disease."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Yeah, Carol borrowed it for a class, and I have to get it back to the museum.", "dia_id": "3:4" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "So, on a dare, I picked paleontology.", "dia_id": "11:1" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "And you have no idea what I'm saying, because, let's face it, you're a fetus. You're just happy you don't have gills anymore.", "dia_id": "11:1" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett identifies his field of study/profession as paleontology.", "based_on": ["E2"] },
+        { "step": 2, "inference": "He uses his knowledge of evolution/biology to make a joke to the fetus about it 'not having gills anymore.'", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 2,
+      "question": "Which specific item does Bennett go to Carol and Susan's apartment to retrieve in November 1994?",
+      "option": [
+        "A. A copy of the book 'Yertle the Turtle' that he wants to read to the baby.",
+        "B. A turkey that he needs for Chloe's Thanksgiving dinner.",
+        "C. A biological specimen described as a face without skin that belongs to a museum.",
+        "D. A set of keys that Chloe mistakenly thought she had for the apartment.",
+        "E. A collection of books about lesbianism that he borrowed for a research project."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Oh, I uh, just came by to pick up my skull. Well, not mine, but...", "dia_id": "3:3" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Yeah, Carol borrowed it for a class, and I have to get it back to the museum.", "dia_id": "3:4" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Kinda like a big face without skin.", "dia_id": "3:6" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett explicitly states he is there to pick up a skull.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explains it is a museum piece Carol used for a class.", "based_on": ["E2"] },
+        { "step": 3, "inference": "He describes the skull as looking like a 'big face without skin.'", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 3,
+      "question": "How does Bennett's attitude toward interacting with Carol's pregnancy change between his first visit to her apartment and Thanksgiving evening?",
+      "option": [
+        "A. He moves from being skeptical of the baby hearing sounds to singing 'The Monkees' theme to the stomach.",
+        "B. He starts by wanting 'belly time' and ends by refusing to talk to the fetus because it's too weird.",
+        "C. He initially reads 'Yertle the Turtle' but later decides that only singing will make the baby kick.",
+        "D. He begins by arguing with Susan about his nickname and ends by hitting Chloe in the kitchen.",
+        "E. He shifts from thinking the baby is a genius to calling it a fetus with gills that can't understand him."
+      ],
+      "answer": "A",
+      "label": "Temporal Evolution Category",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "The uh, the baby that hasn't been born yet? Wouldn't that mean you're... crazy?", "dia_id": "3:12" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "You're not serious, I mean, you really... you really talk to it?", "dia_id": "3:14" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Look, if she's talking to it, I just think that I should get some belly time too.", "dia_id": "4:1" },
+        { "id": "E4", "speaker": "Bennett", "utterance": "Here we come, walkin' down the street, get the funniest looks from, everyone we meet. Hey, hey!", "dia_id": "11:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 3, Bennett mocks Susan for talking to the unborn baby, calling it crazy.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "By Session 4, he decides he wants 'belly time' since Susan is doing it.", "based_on": ["E3"] },
+        { "step": 3, "inference": "In Session 11, he is actually singing 'The Monkees' theme song to the baby's stomach.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 4,
+      "question": "What is the specific nature of the conflict regarding Bennett's role in his unborn child's life as discussed with Susan?",
+      "option": [
+        "A. Susan wants Bennett to pay for a trip to Puerto Rico, but he refuses.",
+        "B. Bennett is upset because Susan and Carol refer to him by a derogatory nickname to the baby.",
+        "C. Susan is preventing Bennett from bringing a skull to the baby's nursery.",
+        "D. Bennett feels excluded because Carol and Susan are celebrating Thanksgiving in December.",
+        "E. Susan thinks Bennett is crazy for trying to put his head inside a turkey to hear the baby."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Do you uh, do you talk about me?", "dia_id": "3:16" },
+        { "id": "E2", "speaker": "Susan", "utterance": "But um, we just refer to you as Bobo the Sperm Guy.", "dia_id": "3:19" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett asks Susan if they talk about him to the baby.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Susan reveals they use the nickname 'Bobo the Sperm Guy' to refer to him.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 5,
+      "question": "What is the specific culinary requirement Bennett insists upon for his Thanksgiving mashed potatoes?",
+      "option": [
+        "A. They must contain peas and onions like Fiona's mother used to make.",
+        "B. They must be served in the form of tater tots to maintain family tradition.",
+        "C. They must be whipped smoothly without any texture.",
+        "D. They must contain physical lumps to mimic his mother's cooking style.",
+        "E. They must be served alongside pumpkin pie and mulled cider."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Will you make the mashed potatoes with the lumps?", "dia_id": "2:28" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Bennett needs lumps!", "dia_id": "8:20" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "Well, here you go, buddy, ya got one.", "dia_id": "12:22" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett explicitly asks Chloe to make potatoes with lumps.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Chloe confirms this is a specific requirement for him later during prep.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Chloe eventually serves him the ruined food, referencing the 'lump' he wanted.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 6,
+      "question": "Based on his interactions with Susan and Carol, what does Bennett discover about the emotional connection between himself and his unborn child?",
+      "option": [
+        "A. He discovers that the baby is unable to feel or respond to anything he does.",
+        "B. He learns that the baby only responds to Susan's voice and not his own.",
+        "C. He realizes that the baby can actually respond physically to his singing.",
+        "D. He finds out that the baby prefers 'Yertle the Turtle' over 'The Monkees'.",
+        "E. He learns that singing makes the baby stop moving entirely."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Hey, hey! Hey, uh, did you just feel that?", "dia_id": "11:5" },
+        { "id": "E2", "speaker": "Carol", "utterance": "No, no that was the first.", "dia_id": "11:8" },
+        { "id": "E3", "speaker": "Susan", "utterance": "I felt it!", "dia_id": "11:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett is singing to the baby and feels a movement.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Carol confirms it was the first time the baby kicked/moved in that way.", "based_on": ["E2"] },
+        { "step": 3, "inference": "The baby kicks again when he continues singing, which Susan also feels.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 7,
+      "question": "What future promise does Bennett make to his unborn child during their one-on-one 'conversation'?",
+      "option": [
+        "A. He promises to take the child to Puerto Rico for their first Thanksgiving.",
+        "B. He commits to buying the child a bagel and going to the zoo after birth.",
+        "C. He vows to never let Susan read 'Yertle the Turtle' to the child again.",
+        "D. He promises to teach the child everything he knows about paleontology.",
+        "E. He pledges to always make mashed potatoes with lumps for the child."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "When you come out I'll buy you a bagel, and then we'll go to the zoo.", "dia_id": "11:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "During his song/talk to the baby, Bennett explicitly lists buying a bagel and going to the zoo as future activities they will do together.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 1,
+      "question": "What is Chloe's primary role within her friend group during the Thanksgiving holiday, and how does she feel it is perceived by others?",
+      "option": [
+        "A. She is the group's travel agent who feels ignored because Ariel missed her flight to Vail.",
+        "B. She is the emotional caretaker who feels guilty for her parents going to Puerto Rico.",
+        "C. She is the designated chef who feels overwhelmed and unappreciated for catering to everyone's specific needs.",
+        "D. She is the primary breadwinner who feels resentful for having to pay for Ariel's tickets and Dexter's Funyuns.",
+        "E. She is the peacekeeper who feels successful because she managed to make three perfect types of potatoes."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Ok, I'll tell you what. How about I cook dinner at my place?", "dia_id": "2:27" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Ok, three kinds of potatoes coming up.", "dia_id": "8:24" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "Why? Because everything is my responsibility? Isn't it enough that I'm making Thanksgiving dinner for everyone?", "dia_id": "12:18" },
+        { "id": "E4", "speaker": "Chloe", "utterance": "Does anybody care what kind of potatoes I want? Nooooo, no, no!", "dia_id": "12:18" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe volunteers to host and cook Thanksgiving dinner.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She agrees to cook multiple variations of the same dish to please each friend's specific tradition.", "based_on": ["E2"] },
+        { "step": 3, "inference": "She expresses deep frustration that she carries the responsibility and no one considers her own preferences.", "based_on": ["E3", "E4"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 2,
+      "question": "Which set of events leads to the total ruin of Chloe's first Thanksgiving dinner?",
+      "option": [
+        "A. Bennett got into a fight with Susan, causing Chloe to leave the kitchen unattended.",
+        "B. The friends were locked out of the apartment because they all went to the roof to see a runaway parade balloon.",
+        "C. Fiona accidentally whipped all the potatoes and added peas, making them inedible for Bennett.",
+        "D. Ariel spilled a drink on the stove, causing an electrical fire that burnt the turkey.",
+        "E. Dexter refused to eat anything but Funyuns, causing Chloe to stop cooking in a rage."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Underdog has just gotten away... I'm goin' to the roof, who's with me?", "dia_id": "8:26-8:28" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Got the keys? or Got the keys!", "dia_id": "8:32" },
+        { "id": "E3", "speaker": "Ariel", "utterance": "I wouldn't say I had the keys unless I had the keys, and I obviously didn't have the keys.", "dia_id": "12:8" },
+        { "id": "E4", "speaker": "Chloe", "utterance": "Well, the turkey's burnt. Potatoes are ruined, potatoes are ruined, potatoes are ruined.", "dia_id": "12:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The group leaves the apartment to see the Underdog balloon from the roof.", "based_on": ["E1"] },
+        { "step": 2, "inference": "There is a misunderstanding about who has the keys, resulting in them being locked out.", "based_on": ["E2", "E3"] },
+        { "step": 3, "inference": "Because they were locked out, the food was left cooking too long and was ruined.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 3,
+      "question": "How does Chloe's mood regarding the Thanksgiving preparations evolve from the morning of the 24th to the final dinner scene?",
+      "option": [
+        "A. She starts out angry at Bennett and ends up happily sharing a wishbone with Ethan.",
+        "B. She begins with high energy and optimism about the menu but collapses into an emotional outburst and resentment.",
+        "C. She is initially reluctant to cook but becomes enthusiastic after everyone chips in for Ariel.",
+        "D. She begins the day worried about her parents in Puerto Rico and ends the day celebrating with Carol and Susan.",
+        "E. She remains consistently stressed and angry from the moment she agrees to cook until the final toast."
+      ],
+      "answer": "B",
+      "label": "Temporal Evolution Category",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Mmm, looking good. Ok, cider's mulling, turkey's turking, yams are yamming.", "dia_id": "8:1" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Ok, three kinds of potatoes coming up.", "dia_id": "8:24" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "Isn't it enough that I'm making Thanksgiving dinner for everyone?... Does anybody care what kind of potatoes I want? Nooooo!", "dia_id": "12:18" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe starts the morning feeling positive and listing the dishes she is preparing.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She remains accommodating, agreeing to make three different potato dishes.", "based_on": ["E2"] },
+        { "step": 3, "inference": "By the dinner scene, the stress and the lockout lead her to a sarcastic and emotional breakdown about the lack of appreciation for her work.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 4,
+      "question": "What is the relationship between Chloe and Bennett as established by their conversations regarding their family?",
+      "option": [
+        "A. They are cousins who are upset that their shared aunt is going to Puerto Rico.",
+        "B. They are ex-spouses who share custody of an unborn child named Bobo.",
+        "C. They are siblings whose parents have decided to skip their traditional family Thanksgiving.",
+        "D. They are roommates who are trying to recreate a Thanksgiving meal they once had in Vail.",
+        "E. They are coworkers at a museum who have a shared history of making lumpy potatoes."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Hey. Bennett, did you know Mom and Dad are going to Puerto Rico for Thanksgiving?", "dia_id": "2:4" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "How can they do this to us, huh? It's Thanksgiving.", "dia_id": "2:26" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "It's just not the same without Mom in the kitchen.", "dia_id": "8:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe addresses Bennett and refers to 'Mom and Dad' as a shared entity.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett's response implies they are both affected as a unit by their parents' absence.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Bennett compares Chloe's cooking to their 'Mom's,' further establishing the sibling relationship.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 5,
+      "question": "Which of the following is NOT one of the three specific potato preparations Chloe attempts to make for her friends?",
+      "option": [
+        "A. Mashed potatoes with lumps",
+        "B. Tater tots",
+        "C. Whipped potatoes with peas and onions",
+        "D. Scalloped potatoes with dark cheese",
+        "E. Chloe was going to make all three of the other options."
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "All right, fine. Tonight's potatoes will be both mashed with lumps, and in the form of tots.", "dia_id": "8:15" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "I thought we could have them whipped and then add some peas and onions.", "dia_id": "8:21" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "Ok, three kinds of potatoes coming up.", "dia_id": "8:24" },
+        { "id": "E4", "speaker": "Bennett", "utterance": "I don't even wanna know about the dark cheese.", "dia_id": "12:38" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe agrees to make lumpy mashed potatoes for Bennett and tater tots for Ethan.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona requests whipped potatoes with peas and onions, which Chloe also adds to the list.", "based_on": ["E2", "E3"] },
+        { "step": 3, "inference": "Dark cheese is mentioned by Bennett in a joke about the grilled cheese sandwiches, not as a potato dish.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 6,
+      "question": "What does Chloe learn about managing group expectations through the failure of her Thanksgiving dinner?",
+      "option": [
+        "A. She learns that she should never cook for her friends because they are too ungrateful.",
+        "B. She learns that trying to please everyone simultaneously can lead to self-neglect and emotional burnout.",
+        "C. She realizes that her friends actually prefer grilled cheese and Funyuns over traditional turkey.",
+        "D. She discovers that Ariel is the most irresponsible member of the group regarding household safety.",
+        "E. She learns that Bennett is more like their mother than she realized."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Ok, three kinds of potatoes coming up.", "dia_id": "8:24" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "You know, everyone wants a different kind of potatoes, so I'm making different kinds of potatoes. Does anybody care what kind of potatoes I want? Nooooo!", "dia_id": "12:18" },
+        { "id": "E3", "speaker": "Chloe", "utterance": "So why was I busting my ass to make this delicious Thanksgiving dinner?", "dia_id": "12:25" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe goes to great lengths (three types of potatoes) to meet individual group demands.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She experiences an emotional breakdown when things go wrong, revealing that her own needs were ignored in the process.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Her outburst reflects the lesson that her extreme effort to please everyone did not prevent failure and only increased her own suffering.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 7,
+      "question": "What specific task does Chloe perform immediately before the group gets locked out of the apartment?",
+      "option": [
+        "A. She mulled the cider and put the yams in the oven.",
+        "B. She confirmed with Ariel that Ariel had the keys to the apartment.",
+        "C. She finished whipping the potatoes with Fiona.",
+        "D. She called her Mom and Dad in Puerto Rico to say Happy Thanksgiving.",
+        "E. She buttered Bennett's head for Fiona's experiment."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Got the keys? or Got the keys!", "dia_id": "8:32" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Ok.", "dia_id": "8:33" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "As the group is leaving for the roof, Chloe asks or states 'Got the keys!' to Ariel.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel responds with 'Ok,' which Chloe interprets as confirmation.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 1,
+      "question": "What is the primary reason for Dexter's persistent negative outlook on 'pilgrim holidays'?",
+      "option": [
+        "A. He suffered from severe food poisoning (projectile vomiting) at a young age.",
+        "B. He was forced to spend Thanksgiving in a city free clinic for Lyme disease.",
+        "C. His parents informed him of their divorce during a Thanksgiving dinner when he was nine.",
+        "D. He was traumatized by a runaway parade balloon in Washington Square Park.",
+        "E. He believes the holidays are a celebration of historical atrocities against indigenous people."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "And I assume, Dexter, you are still boycotting all the pilgrim holidays.", "dia_id": "2:31" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "All right, I'm nine years old... this is the moment my parents choose to tell me they're getting divorced.", "dia_id": "4:18-4:20" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "It's very difficult to appreciate a Thanksgiving dinner once you've seen it in reverse.", "dia_id": "4:22" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter is known for boycotting Thanksgiving and similar holidays.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explains this is due to a traumatic childhood event at age nine.", "based_on": ["E2"] },
+        { "step": 3, "inference": "The event was his parents announcing their divorce in the middle of the meal.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 2,
+      "question": "In the final scene, what does Dexter serve as the 'alternative' Thanksgiving meal once the original food is ruined?",
+      "option": [
+        "A. A family-size bag of Funyuns and mulled cider.",
+        "B. Pumpkin pie and mashed potatoes with lumps.",
+        "C. Grilled cheese sandwiches which he carves and offers as 'light' or 'dark'.",
+        "D. Tomato soup and tater tots that he salvaged from the oven.",
+        "E. Turkey scraps that weren't completely burnt during the lockout."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Dexter, here you go, got your traditional Thanksgiving feast, you got your tomato soup, your grilled cheese fixin's...", "dia_id": "4:16" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Shall I carve?", "dia_id": "12:35" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "Ok, who wants light cheese, and who wants dark cheese?", "dia_id": "12:37" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter's personal 'tradition' involves grilled cheese and tomato soup.", "based_on": ["E1"] },
+        { "step": 2, "inference": "After the main meal is ruined, he takes over the role of 'carving' for the group.", "based_on": ["E2"] },
+        { "step": 3, "inference": "He carves the grilled cheese sandwiches, jokingly offering 'light' or 'dark' cheese as one would with turkey.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 3,
+      "question": "How does Dexter's feeling about his friends' holiday plans change from the day before Thanksgiving to the actual evening of the 24th?",
+      "option": [
+        "A. He moves from encouraging Ariel to save money to feeling thankful that her flight plans failed.",
+        "B. He starts by mocking Ethan's makeup and ends by feeling sorry for Ethan's disease.",
+        "C. He initially wants everyone to stay and eventually gets angry when the turkey is burnt.",
+        "D. He shifts from boycotting the holiday alone to inviting the 'Ugly Naked Guy' to dinner.",
+        "E. He remains consistently optimistic that the Underdog balloon will make the holiday better."
+      ],
+      "answer": "A",
+      "label": "Temporal Evolution Category",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "No, but I hear lyme disease is open, so...", "dia_id": "2:23" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Good luck, man. I hope you get it.", "dia_id": "2:24" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "So I guess what I'm trying to say is that I'm very thankful that all of your Thanksgivings sucked.", "dia_id": "12:45" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In Session 2, Dexter is supportive of his friends' various endeavors (like Ariel's saving and Ethan's modeling).", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "By the end of the day on the 24th, he admits he is glad their original plans (like Ariel's flight to Vail) failed.", "based_on": ["E3"] },
+        { "step": 3, "inference": "He reasons that their individual failures allowed them to spend the holiday together, which he preferred.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 4,
+      "question": "Which friend does Dexter tease about their appearance and career choice in Session 2?",
+      "option": [
+        "A. Ariel, because of her waitressing tips and spillages.",
+        "B. Ethan, by suggesting he looks like a 'man slash woman' due to his makeup.",
+        "C. Fiona, because of her grandmother's 'lunar' boyfriend.",
+        "D. Bennett, because of his museum skull and paleontology major.",
+        "E. Chloe, because she is 'busting her ass' to cook a dinner he won't eat."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "As of today, I am officially Ethan Tribbiani, actor slash model.", "dia_id": "2:16" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "That's so funny, 'cause I was thinking you look more like Ethan Tribbiani, man slash woman.", "dia_id": "2:17" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan announces his new career as an actor/model and explains why he is wearing makeup.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter uses a play on Ethan's 'slash' phrasing to mock his appearance while wearing makeup.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 5,
+      "question": "What specifically does Dexter say he wants to do to Bennett during Fiona's experiment in Session 4?",
+      "option": [
+        "A. He wants to help him hear the baby by hitting him.",
+        "B. He wants to carve him like a Thanksgiving turkey.",
+        "C. He wants to butter his head.",
+        "D. He wants to give him a mouthful of pumpkin pie.",
+        "E. He wants to show him the city free clinic posters."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Look, this will seem a little weird, but you put your head inside this turkey...", "dia_id": "4:2" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "I'd just like to say that I'm totally behind this experiment. In fact, I'd very much like to butter your head.", "dia_id": "4:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona suggests Bennett put his head in a turkey to test if a fetus can hear.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter expresses enthusiastic support for this by stating he wants to 'butter [Bennett's] head.'", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 6,
+      "question": "What is Dexter's realization at the end of the day regarding the 'quality' of a holiday?",
+      "option": [
+        "A. A holiday is only good if the food is prepared exactly like one's mother used to make it.",
+        "B. The value of a holiday comes from being with friends, even if the circumstances are disastrous and original plans fail.",
+        "C. He realizes that he actually likes pilgrim holidays if he can eat grilled cheese instead of turkey.",
+        "D. He realizes that watching the Underdog balloon is more important than family traditions.",
+        "E. He concludes that Thanksgiving is always destined to end in divorce or vomiting."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "I know this isn't the kind of Thanksgiving that all of you all planned, but for me, this has been really great...", "dia_id": "12:45" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "if you'd gone to Vail, and if you guys'd been with your family... we wouldn't be all together, you know?", "dia_id": "12:45" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "So I guess what I'm trying to say is that I'm very thankful that all of your Thanksgivings sucked.", "dia_id": "12:45" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter acknowledges that everyone's original, 'better' plans (Vail, family, etc.) failed.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "He notes that these failures resulted in the group being together.", "based_on": ["E2"] },
+        { "step": 3, "inference": "He concludes that this togetherness made the holiday 'really great' for him, despite the ruined food and missed trips.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 7,
+      "question": "What specific event does Dexter witness and report to the group that triggers their departure from the apartment on Thanksgiving?",
+      "option": [
+        "A. He sees Ugly Naked Guy and Ugly Naked Gal dancing.",
+        "B. He hears on the news that a giant inflatable dog balloon has escaped and is over Washington Square Park.",
+        "C. He notices that the turkey has started to smoke and burn in the kitchen.",
+        "D. He sees the flight to Vail departing from the window.",
+        "E. He realizes that the Macy's parade has been canceled due to rain."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "The most unbelievable thing has happened. Underdog has just gotten away.", "dia_id": "8:26" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "It's all over the news. Right before he reached Macy's, he broke free and was spotted flying over Washington Square Park. I'm goin' to the roof, who's with me?", "dia_id": "8:28" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter informs the group that the 'Underdog' balloon has broken loose.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He provides the location (Washington Square Park) and invites everyone to the roof to see it, which they do.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 1,
+      "question": "What are the two components of Ethan's new professional identity as of November 17, 1994?",
+      "option": [
+        "A. Actor and Waiter",
+        "B. Model and Paleontologist",
+        "C. Actor and Model",
+        "D. Doctor and Clinic Volunteer",
+        "E. Chef and Tater Tot Specialist"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "As of today, I am officially Ethan Tribbiani, actor slash model.", "dia_id": "2:16" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan explicitly states his new title is 'actor slash model' on the date provided in the session metadata.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 2,
+      "question": "What specific modeling job did Ethan perform for the city free clinic?",
+      "option": [
+        "A. He was the 'asthma guy' whom Fiona found cute.",
+        "B. He was one of the 'healthy, healthy, healthy' guys on a poster.",
+        "C. He modeled for a poster campaign related to Lyme disease.",
+        "D. He appeared in a commercial for syphilis awareness.",
+        "E. He posed for a brochure about the effects of projectile vomiting."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "You know those posters for the city free clinic?", "dia_id": "2:19" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "No, but I hear lyme disease is open, so...", "dia_id": "2:23" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "It's bad enough I can't be with my family because of my disease.", "dia_id": "8:14" },
+        { "id": "E4", "speaker": "Dexter", "utterance": "if you didn't have syphilis and stuff, we wouldn't be all together, you know?", "dia_id": "12:45" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan mentions modeling for the city free clinic posters.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He mentions the 'Lyme disease' spot was open and he hoped to get it.", "based_on": ["E2"] },
+        { "step": 3, "inference": "By Thanksgiving, he refers to his 'disease' as the reason he can't see his family.", "based_on": ["E3"] },
+        { "step": 4, "inference": "Dexter's toast reveals the poster was actually for syphilis, confirming Ethan got a specific health-related modeling job.", "based_on": ["E4"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 3,
+      "question": "How does Ethan's level of awareness regarding the group's contribution to Ariel's trip change during Session 4?",
+      "option": [
+        "A. He initially suggests the idea and then collects the $20 from each person.",
+        "B. He is completely unaware that everyone 'chipped in' until Chloe mentions it, then discovers he owes her money.",
+        "C. He thinks Ariel is going to Vail with her family but then realizes she is staying for dinner.",
+        "D. He first refuses to help Ariel but then agrees after seeing the Underdog balloon.",
+        "E. He believes he paid $102 but later learns he only owed $20."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "We all chipped in.", "dia_id": "4:12" },
+        { "id": "id", "speaker": "Ethan", "utterance": "We did?", "dia_id": "4:13" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "You owe me 20 bucks.", "dia_id": "4:14" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe tells Ariel the group chipped in for her ticket.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ethan's question 'We did?' shows he was not aware of this collective action.", "based_on": ["id"] },
+        { "step": 3, "inference": "Chloe informs him of his specific financial obligation ($20) to her for his share.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 4,
+      "question": "What is Ethan's reaction to the 'Ugly Naked Guy' situation during the Thanksgiving dinner?",
+      "option": [
+        "A. He is disgusted and refuses to look out the window.",
+        "B. He is encouraging and cheers for him because he found a companion.",
+        "C. He is jealous because the Ugly Naked Guy has a better turkey than they do.",
+        "D. He mocks the Ugly Naked Guy for dancing while they are eating ruined food.",
+        "E. He suggests that Ugly Naked Guy should model for the city free clinic."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Ugly Naked Guy's having Thanksgiving dinner with Ugly Naked Gal.", "dia_id": "12:31" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "I've gotta see this. All right Ugly Naked Guy!", "dia_id": "12:32" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona announces that the neighbor is not alone for the holiday.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ethan expresses excitement and cheers for him with 'All right Ugly Naked Guy!'", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 5,
+      "question": "What specific item does Ethan try to use to unlock the apartment door, and what is the outcome?",
+      "option": [
+        "A. He uses a single key he found in his pocket but it's the wrong one.",
+        "B. He uses a 'zillion' keys from a bowl, testing them one by one in the single keyhole.",
+        "C. He tries to pick the lock with a fork from the Thanksgiving table.",
+        "D. He uses a special key provided by the museum for Bennett's skull.",
+        "E. He manages to find the right key after Chloe yells at him to go faster."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Nope, not that one.", "dia_id": "12:1" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Hey, I got one keyhole and about a zillion keys. You do the math.", "dia_id": "12:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan is shown attempting to unlock the door while the others wait.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He describes the situation as having one keyhole and a 'zillion' keys to test, implying a slow and tedious process.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 6,
+      "question": "What does Ethan realize about his own holiday plans in comparison to the rest of the group during their final confrontation?",
+      "option": [
+        "A. He realizes that he was the only one who actually wanted to be at Chloe's dinner.",
+        "B. He acknowledges that nobody in the group actually considered this dinner their 'first choice' for the holiday.",
+        "C. He realizes that his syphilis poster was more important to him than his family.",
+        "D. He discovers that he prefers tater tots over his mother's traditional cooking.",
+        "E. He realizes that he is the only one who truly appreciates Chloe's cooking."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Hey, we all had better plans. This was nobody's first choice.", "dia_id": "12:24" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "When tensions rise over the ruined dinner, Ethan explicitly points out that every person in the room had a 'better plan' they would have preferred over being there.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 7,
+      "question": "What specific culinary tradition does Ethan demand Chloe include in the Thanksgiving meal to make him feel like he is with his family?",
+      "option": [
+        "A. Mashed potatoes with lumps to mimic his Mom's cooking.",
+        "B. Tater tots to be eaten on a fork with turkey and cranberry sauce.",
+        "C. Whipped potatoes with peas and onions.",
+        "D. Grilled cheese sandwiches carved like a turkey.",
+        "E. Pumpkin pie with a mouthful of stuffing."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "But my mom always makes them. It's like a tradition. You get a little piece of turkey on your fork, a little cranberry sauce, and a tot!", "dia_id": "8:14" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Tonight's potatoes will be both mashed with lumps, and in the form of tots.", "dia_id": "8:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan asks for tater tots because it is his family tradition.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He describes the specific way he eats them (turkey, cranberry, and a tot on one fork).", "based_on": ["E1"] },
+        { "step": 3, "inference": "Chloe agrees to make them for him.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 1,
+      "question": "What are Fiona's persistent beliefs regarding the spiritual and sensory abilities of unborn children?",
+      "option": [
+        "A. She believes they can only hear sounds if the mother is reading a classic book like 'Yertle the Turtle'.",
+        "B. She believes they can hear everything and suggests a physical experiment involving a turkey to prove it.",
+        "C. She thinks they are purely biological 'fetuses with gills' and have no hearing until birth.",
+        "D. She believes they can only hear 'The Monkees' theme song.",
+        "E. She thinks they can communicate through movements if the father sings about bagels."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Oh, I believe it. I think the baby can totally hear everything. I can show you.", "dia_id": "4:2" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Look, this will seem a little weird, but you put your head inside this turkey, and then we'll all talk, and you'll hear everything we say.", "dia_id": "4:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona expresses a strong belief that unborn babies can hear.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She proposes a specific (and strange) experiment with a turkey to simulate the experience for Bennett.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 2,
+      "question": "Who is Fiona planning to celebrate Thanksgiving with, and why is she available on the actual Thursday holiday?",
+      "option": [
+        "A. She is with her mother who passed away, which is why she wants peas and onions.",
+        "B. She is with her grandma and her grandma's boyfriend, but they are celebrating in December because he is lunar.",
+        "C. She is with the 'asthma guy' from the clinic, but his treatment is on Thursday.",
+        "D. She is with Bennett's ex-wife Carol because they are both faculty members.",
+        "E. She is with the 'Ugly Naked Guy' because he is having dinner with an 'Ugly Naked Gal'.Suffix"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Yes, and her boyfriend. But we're celebrating Thanksgiving in December 'cause he is lunar.", "dia_id": "2:34" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "So you're free Thursday, then.", "dia_id": "2:35" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona confirms she is spending the holiday with her grandma and her grandma's boyfriend.", "based_on": ["E1"] },
+        { "step": 2, "inference": "She explains their celebration is delayed until December because the boyfriend is 'lunar.'", "based_on": ["E1"] },
+        { "step": 3, "inference": "This delay makes her free to join Chloe's dinner on Thursday.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 3,
+      "question": "How does Fiona's contribution to the mashed potatoes change the dinner plan in Session 8?",
+      "option": [
+        "A. She refuses to help, forcing Chloe to make three kinds herself.",
+        "B. She whips them smoothly, which contradicts Bennett's request for lumps, and suggests adding peas and onions.",
+        "C. She accidentally burns them while the group is on the roof watching the balloon.",
+        "D. She makes them into tater tots because she forgot Bennett's tradition.",
+        "E. She successfully makes them with lumps but then drops them on the floor."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "What, Fiona, did you whip the potatoes? Bennett needs lumps!", "dia_id": "8:20" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Oh, I'm sorry, oh, I just, I thought we could have them whipped and then add some peas and onions.", "dia_id": "8:21" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe discovers Fiona has whipped the potatoes.", "based_on": ["E1"] },
+        { "step": 2, "inference": "This is a change/problem because Bennett specifically wanted lumps.", "based_on": ["E1"] },
+        { "step": 3, "inference": "Fiona further suggests adding peas and onions to the whipped potatoes.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 4,
+      "question": "What is Fiona's reaction to learning about Bennett's relationship with Carol and Susan?",
+      "option": [
+        "A. She is angry and thinks Bennett should stay away from them.",
+        "B. She is enthusiastically supportive and wants to invite Carol to the Thanksgiving dinner.",
+        "C. She is confused and doesn't understand why they call him 'Bobo'.",
+        "D. She is jealous because Carol is a faculty member and she is not.",
+        "E. She is indifferent and only cares about her grandmother's lunar boyfriend."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Well, I'm off to Carol's.", "dia_id": "2:41" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Ooh, ooh! Why don't we invite her?", "dia_id": "2:42" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "As soon as Bennett mentions going to see Carol, Fiona excitedly suggests inviting her to their group dinner.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 5,
+      "question": "What specific item does Fiona suggest using for an 'experiment' in the kitchen during Session 8?",
+      "option": [
+        "A. A turkey to put on Bennett's head.",
+        "B. Stuffing to use as a prop for a joke.",
+        "C. Pumpkin pie to throw at Dexter.",
+        "D. Peas and onions to put in the whipped potatoes.",
+        "E. A bowl of tater tots to test Ethan's tradition."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Look out, incoming pumpkin pie!", "dia_id": "8:10" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Ok, we all laughed when you did it with the stuffing, but that's not funny anymore.", "dia_id": "8:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona playfully threatens the group with 'incoming pumpkin pie.'", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter's reaction clarifies that she had previously done something similar with 'the stuffing.'", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 6,
+      "question": "What does Fiona learn about the nature of family traditions from her attempt to make potatoes 'like her mom used to make'?",
+      "option": [
+        "A. She learns that her friends don't care about her late mother.",
+        "B. She realizes that her personal traditions (whipped with peas/onions) can coexist with others' traditions, leading to the 'three kinds of potatoes' compromise.",
+        "C. She learns that whipped potatoes are easier to cook than lumpy ones.",
+        "D. She discovers that Bennett's mother and her mother had identical cooking styles.",
+        "E. She learns that the Underdog balloon is a more important tradition than potatoes."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Well, 'cause then they'd be like my mom used to make them, you know, before she died.", "dia_id": "8:23" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Ok, three kinds of potatoes coming up.", "dia_id": "8:24" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona explains her specific potato preference is a way to honor her deceased mother.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Chloe acknowledges this by agreeing to make a third type of potato alongside the ones requested by Bennett and Ethan.", "based_on": ["E2"] },
+        { "step": 3, "inference": "This reflects a lesson in group compromise where multiple family traditions are accommodated simultaneously.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 7,
+      "question": "What specific ritual does Fiona insist the group perform at the end of their 'sucky' Thanksgiving meal?",
+      "option": [
+        "A. They must all watch the Ugly Naked Guy dance.",
+        "B. They must make a wish while splitting a specific part of the meal.",
+        "C. They must toast to a lousy Christmas and a crappy New Year.",
+        "D. They must all apologize to Chloe for the ruined dinner.",
+        "E. They must promise to spend the 'lunar' Thanksgiving together in December."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Ooh, you guys have to make a wish.", "dia_id": "12:41" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Come on, you know, Thanksgiving. Ooh, you got the bigger half. What'd you wish for?", "dia_id": "12:43" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona tells Chloe and Ethan they have to 'make a wish.'", "based_on": ["E1"] },
+        { "step": 2, "inference": "She references the 'bigger half' of what they split (implied to be a wishbone) as the tradition for making that wish.", "based_on": ["E2"] }
+      ]
+    }
+    ],
+    "conversation": {
+        "speaker_0": "Ariel",
+        "speaker_1": "Guy",
+        "speaker_2": "Chloe",
+        "speaker_3": "Bennett",
+        "speaker_4": "Ethan",
+        "speaker_5": "Dexter",
+        "speaker_6": "Fiona",
+        "session_2_date_time": "November 17, 1994",
+        "session_2": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:1",
+                "text": "Excuse me, sir. Hi, you come in here all time. I was just wondering, do you think there's a possibility that you could give me an advance on my tips?"
+            },
+            {
+                "speaker": "Guy",
+                "dia_id": "2:2",
+                "text": "Huh?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:3",
+                "text": "Ok, ok, that's fine. Fine. Hey, I'm sorry about that spill before.  Only $98.50 to go."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:4",
+                "text": "Hey. Bennett, did you know Mom and Dad are going to Puerto Rico for Thanksgiving?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:5",
+                "text": "No, they're not."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:6",
+                "text": "Yes, they are. The Blymens invited them."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:7",
+                "text": "You're wrong."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:8",
+                "text": "I am not wrong."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:9",
+                "text": "You're wrong."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:10",
+                "text": "No, I just talked to them."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:11",
+                "text": "I'm calling Mom."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:12",
+                "text": "Hey, hey."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:13",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:14",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:15",
+                "text": "And this from the cry-for-help department. Are you wearing makeup?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:16",
+                "text": "Yes, I am. As of today, I am officially Ethan Tribbiani, actor slash model."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:17",
+                "text": "That's so funny, 'cause I was thinking you look more like Ethan Tribbiani, man slash woman."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:18",
+                "text": "What were you modeling for?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:19",
+                "text": "You know those posters for the city free clinic?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:20",
+                "text": "Oh, wow, so you're gonna be one of those \"healthy, healthy, healthy guys\"?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:21",
+                "text": "You know, the asthma guy was really cute."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:22",
+                "text": "Do you know which one you're gonna be?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:23",
+                "text": "No, but I hear lyme disease is open, so..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:24",
+                "text": "Good luck, man. I hope you get it."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:25",
+                "text": "Thanks."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:26",
+                "text": "Well, you were right. How can they do this to us, huh? It's Thanksgiving."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:27",
+                "text": "Ok, I'll tell you what. How about I cook dinner at my place? I'll make it just like Mom's."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:28",
+                "text": "Will you make the mashed potatoes with the lumps?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:29",
+                "text": "You know, they're not actually supposed to have...  I'll work on the lumps. Ethan, you're going home, right?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:30",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:31",
+                "text": "And I assume, Dexter, you are still boycotting all the pilgrim holidays."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:32",
+                "text": "Yes, every single one of them."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:33",
+                "text": "Fiona, you're gonna be with your grandma?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:34",
+                "text": "Yes, and her boyfriend. But we're celebrating Thanksgiving in December 'cause he is lunar."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:35",
+                "text": "So you're free Thursday, then."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:36",
+                "text": "Yeah. Oh, can I come?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:37",
+                "text": "Yeah. Rach, are you thinking you're gonna make it to Vail?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:38",
+                "text": "Absolutely. Shoop, shoop, shoop. Only a hundred and two dollars to go."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:39",
+                "text": "I thought it was $98.50."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:40",
+                "text": "Yeah, well it was. I, I broke a cup."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:41",
+                "text": "Well, I'm off to Carol's."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:42",
+                "text": "Ooh, ooh! Why don't we invite her?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:43",
+                "text": "Ooh, ooh. Because she's my ex-wife, and will probably want to bring her, ooh, ooh, lesbian life partner."
+            }
+        ],
+        "session_3_date_time": "November 17, 1994",
+        "session_3": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:1",
+                "text": "Hi, is uh, is Carol here?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:2",
+                "text": "No, she's at a faculty meeting."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:3",
+                "text": "Oh, I uh, just came by to pick up my skull. Well, not mine, but...Susan: Come in."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:4",
+                "text": "Thanks. Yeah, Carol borrowed it for a class, and I have to get it back to the museum."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:5",
+                "text": "What's it look like?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:6",
+                "text": "Kinda like a big face without skin."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:7",
+                "text": "Yes, I'm familiar with the concept. We can just look for it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:8",
+                "text": "Ok.  Wow, you guys sure have a lot of books about bein' a lesbian."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:9",
+                "text": "Well, you know, you have to take a course. Otherwise, they don't let you do it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:10",
+                "text": "Hey, hey, Yertle the Turtle. A classic."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:11",
+                "text": "Actually, I'm reading it to the baby."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:12",
+                "text": "The uh, the baby that hasn't been born yet? Wouldn't that mean you're... crazy?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:13",
+                "text": "What, you don't think they can hear sounds in there?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:14",
+                "text": "You're not serious, I mean, you really... you really talk to it?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:15",
+                "text": "Yeah, all the time. I want the baby to know my voice."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:16",
+                "text": "Do you uh, do you talk about me?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:17",
+                "text": "Yeah, yeah, all the time."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "3:18",
+                "text": "Really?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "3:19",
+                "text": "But um, we just refer to you as Bobo the Sperm Guy."
+            }
+        ],
+        "session_4_date_time": "November 23, 1994",
+        "session_4": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:1",
+                "text": "Look, if she's talking to it, I just think that I should get some belly time too. Not that I believe any of this."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:2",
+                "text": "Oh, I believe it. I think the baby can totally hear everything. I can show you. Look, this will seem a little weird, but you put your head inside this turkey, and then we'll all talk, and you'll hear everything we say."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:3",
+                "text": "I'd just like to say that I'm totally behind this experiment. In fact, I'd very much like to butter your head."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:4",
+                "text": "Hey, Rach, did you make your money?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:5",
+                "text": "No, not even close. Forget Vail, forget seeing my family, forget shoop, shoop, shoop."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:6",
+                "text": "Rach, here's your mail."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:7",
+                "text": "Thanks, you can just put it on the table."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:8",
+                "text": "No, here's your mail."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:9",
+                "text": "Thanks, you can just put it on the table."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:10",
+                "text": "Would you just open it?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:11",
+                "text": "Oh my god, oh, you guys are great."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:12",
+                "text": "We all chipped in."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:13",
+                "text": "We did?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:14",
+                "text": "You owe me 20 bucks."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:15",
+                "text": "Thank you. Thank you so much!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:16",
+                "text": "Dexter, here you go, got your traditional Thanksgiving feast, you got your tomato soup, your grilled cheese fixin's, and your family size bag of Funyuns."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:17",
+                "text": "Wait, wait, Dexter, this is what you're havin' for Thanksgiving dinner? What, what, what is it with you and this holiday?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:18",
+                "text": "All right, I'm nine years old."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:19",
+                "text": "Oh, I hate this story."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:20",
+                "text": "We just finished this magnificent Thanksgiving dinner. I have--and I remember this part vividly--a mouthful of pumpkin pie, and this is the moment my parents choose to tell me they're getting divorced."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:21",
+                "text": "Oh my god."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:22",
+                "text": "Yes. It's very difficult to appreciate a Thanksgiving dinner once you've seen it in reverse."
+            }
+        ],
+        "session_8_date_time": "November 24, 1994",
+        "session_8": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:1",
+                "text": "Mmm, looking good. Ok, cider's mulling, turkey's turking, yams are yamming.  What?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:2",
+                "text": "I don't know. It's just not the same without Mom in the kitchen."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:3",
+                "text": "All right, that's it. You know what? Just get out of my way and stop moping."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:4",
+                "text": "That's closer."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:5",
+                "text": "I got the tickets! I got the tickets! Five hours from now, shoop, shoop, shoop."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:6",
+                "text": "Oh, you must stop shooping."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:7",
+                "text": "Ok, I'm gonna get my stuff."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:8",
+                "text": "Dexter, will you just come in already?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:9",
+                "text": "No, I prefer to keep a safe distance from all this merriment."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:10",
+                "text": "Look out, incoming pumpkin pie!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:11",
+                "text": "Ok, we all laughed when you did it with the stuffing, but that's not funny anymore."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:12",
+                "text": "Hey, Chloe, I got a question. I don't see any tater tots."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:13",
+                "text": "That's not a question."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:14",
+                "text": "But my mom always makes them. It's like a tradition. You get a little piece of turkey on your fork, a little cranberry sauce, and a tot! It's bad enough I can't be with my family because of my disease."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:15",
+                "text": "All right, fine. Tonight's potatoes will be both mashed with lumps, and in the form of tots."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:16",
+                "text": "Ok, I'm off to talk to my unborn child."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:17",
+                "text": "Ah!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "8:18",
+                "text": "Ok, Mom never hit."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:19",
+                "text": "Ok, all done."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:20",
+                "text": "What, Fiona, did you whip the potatoes? Bennett needs lumps!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:21",
+                "text": "Oh, I'm sorry, oh, I just, I thought we could have them whipped and then add some peas and onions."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:22",
+                "text": "Why would we do that?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:23",
+                "text": "Well, 'cause then they'd be like my mom used to make them, you know, before she died."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:24",
+                "text": "Ok, three kinds of potatoes coming up."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:25",
+                "text": "Ok, good-bye you guys. Thanks for everything.  Oh, sorry! Oh, sorry!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:26",
+                "text": "The most unbelievable thing has happened. Underdog has just gotten away."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "8:27",
+                "text": "The balloon?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:28",
+                "text": "No, no, the actual cartoon character. Of course the balloon. It's all over the news. Right before he reached Macy's, he broke free and was spotted flying over Washington Square Park. I'm goin' to the roof, who's with me?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:29",
+                "text": "I can't, I gotta go."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "8:30",
+                "text": "Come on. An 80-foot inflatable dog let loose over the city. How often does that happen?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "8:31",
+                "text": "Almost never."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "8:32",
+                "text": "Got the keys? or Got the keys!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "8:33",
+                "text": "Ok."
+            }
+        ],
+        "session_9_date_time": "November 24, 1994",
+        "session_9": [
+            {
+                "speaker": "Carol",
+                "dia_id": "9:1",
+                "text": "Anytime you're ready."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:2",
+                "text": "Ok, ok, here we go.  Ok, where am I talking to, here? I mean, uh, well, there is one way that seems to offer a certain acoustical advantage, but..."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "9:3",
+                "text": "Just aim for the bump."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:4",
+                "text": "Ok, ok, ok, ok, here goes. You know, I, you know, can't do this. Uh, this is too weird. I feel stupid."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "9:5",
+                "text": "So don't do it, it's fine. You don't have to do it just because Susan does it."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "9:6",
+                "text": "Hello, baby. Hello, hello."
+            }
+        ],
+        "session_11_date_time": "November 24, 1994",
+        "session_11": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:1",
+                "text": "And everyone's telling me, you gotta pick a major, you gotta pick a major. So, on a dare, I picked paleontology. And you have no idea what I'm saying, because, let's face it, you're a fetus. You're just happy you don't have gills anymore."
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "11:2",
+                "text": "Look, you don't have to talk to it. You can sing to it if you want."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:3",
+                "text": "Oh, please. I am not singing to your stomach, ok?"
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "11:4",
+                "text": "Hi, how's it goin?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:5",
+                "text": "Shh!  Here we come, walkin' down the street, get the funniest looks from, everyone we meet. Hey, hey!  Hey, uh, did you just feel that?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "11:6",
+                "text": "I did."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:7",
+                "text": "Does it always, uh--?"
+            },
+            {
+                "speaker": "Carol",
+                "dia_id": "11:8",
+                "text": "No, no that was the first."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "11:9",
+                "text": "Keep singing! Keep singing!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:10",
+                "text": "Hey, hey, you're my baby, and I can't wait to meet you. When you come out I'll buy you a bagel, and then we'll go to the zoo."
+            },
+            {
+                "speaker": "Susan",
+                "dia_id": "11:11",
+                "text": "I felt it!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:12",
+                "text": "Hey, hey, I'm your daddy. I'm the one without any breasts."
+            }
+        ],
+        "session_12_date_time": "November 24, 1994",
+        "session_12": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:1",
+                "text": "Nope, not that one."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:2",
+                "text": "Can you go any faster with that?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:3",
+                "text": "Hey, I got one keyhole and about a zillion keys. You do the math."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:4",
+                "text": "Why do you guys have so many keys in there anyway?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:5",
+                "text": "For an emergency just like this."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:6",
+                "text": "All right, listen, smirky. If it wasn't for you and your stupid balloon, I would be on a plane watching a woman do this  right now. But I'm not."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:7",
+                "text": "I swear you said you had the keys."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:8",
+                "text": "No, I didn't. I wouldn't say I had the keys unless I had the keys, and I obviously didn't have the keys."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:9",
+                "text": "Ooh, ok, that's it. Enough with the keys. No one say keys."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:10",
+                "text": "Why would I have the keys?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:11",
+                "text": "Aside from the fact that you said you had them?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:12",
+                "text": "But I didn't."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:13",
+                "text": "Well, you should have."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:14",
+                "text": "Why?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:15",
+                "text": "Because!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:16",
+                "text": "Why?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:17",
+                "text": "Because!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:18",
+                "text": "Why? Because everything is my responsibility? Isn't it enough that I'm making Thanksgiving dinner for everyone? You know, everyone wants a different kind of potatoes, so I'm making different kinds of potatoes. Does anybody care what kind of potatoes I want? Nooooo, no, no!  Just as long as Fiona gets her peas and onions, and Mario gets his tots, and it's my first Thanksgiving, and it's all burned, and, and I... I..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:19",
+                "text": "Ok, Chloe, only dogs can hear you now, so, look, the door's open. Here we go."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:20",
+                "text": "Well, the turkey's burnt.  Potatoes are ruined, potatoes are ruined, potatoes are ruined."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:21",
+                "text": "Here we come, walkin' down the—this doesn't smell like Mom's."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:22",
+                "text": "No, it doesn't, does it? But you wanted lumps, Bennett?  Well, here you go, buddy, ya got one."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:23",
+                "text": "Oh, god, this is great! The plane is gone, so it looks like I'm stuck here with you guys."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:24",
+                "text": "Hey, we all had better plans. This was nobody's first choice."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:25",
+                "text": "Oh, really? So why was I busting my ass to make this delicious Thanksgiving dinner?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:26",
+                "text": "You call that delicious?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:27",
+                "text": "Stop it, stop it, stop it!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:28",
+                "text": "Now this feels like Thanksgiving."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:29",
+                "text": "Ooh."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:30",
+                "text": "What?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:31",
+                "text": "Ugly Naked Guy's taking his turkey out of the oven. Oh my god. He's not alone. Ugly Naked Guy's having Thanksgiving dinner with Ugly Naked Gal."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:32",
+                "text": "I've gotta see this. All right Ugly Naked Guy!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:33",
+                "text": "Ooh, Ugly Naked Dancing!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:34",
+                "text": "It's nice that he has someone."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:35",
+                "text": "Shall I carve?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:36",
+                "text": "By all means."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:37",
+                "text": "Ok, who wants light cheese, and who wants dark cheese?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:38",
+                "text": "I don't even wanna know about the dark cheese."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:39",
+                "text": "Does anybody wanna split this with me?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:40",
+                "text": "Oh, I will."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:41",
+                "text": "Ooh, you guys have to make a wish."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "12:42",
+                "text": "Make a wish?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "12:43",
+                "text": "Come on, you know, Thanksgiving. Ooh, you got the bigger half. What'd you wish for?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "12:44",
+                "text": "The bigger half."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:45",
+                "text": "I'd like to propose a toast. Little toast here, ding ding. I know this isn't the kind of Thanksgiving that all of you all planned, but for me, this has been really great, you know, I think because it didn't involve divorce or projectile vomiting. Anyway, I was just thinking, I mean, if you'd gone to Vail, and if you guys'd been with your family, if you didn't have syphilis and stuff, we wouldn't be all together, you know? So I guess what I'm trying to say is that I'm very thankful that all of your Thanksgivings sucked."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "12:46",
+                "text": "That's so sweet."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "12:47",
+                "text": "And hey, here's to a lousy Christmas."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "12:48",
+                "text": "And a crappy New Year."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "12:49",
+                "text": "Here, here!"
+            }
+        ],
+        "speaker_7": "Susan",
+        "speaker_8": "Carol",
+        "speaker_9": "All"
+    }
+}

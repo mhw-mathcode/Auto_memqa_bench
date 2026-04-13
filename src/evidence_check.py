@@ -122,19 +122,27 @@ QUESTION
 
 
 ANSWER_PROMPT_ONLY_EVIDENCE = """
-You are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).
+You are a rigorous intelligent assistant. Your task is to answer questions by synthesizing provided evidence and pre-defined reasoning logic.
 
 # CONTEXT:
-You will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.
+You will be provided with two types of information:
+
+Evidence Fragments: Raw data or facts extracted from materials.
+
+Reasoning Steps: Specific logical paths or intermediate deductions that must be followed.
 
 # INSTRUCTIONS:
-1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the "EVIDENCE" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.
-2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.
-3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).
 
---- EVIDENCE ---
+STRICT SCOPE: Your answer must be derived exclusively from the "EVIDENCE" and "REASONING STEPS" sections below. Do not use external knowledge or introduce original reasoning that contradicts or exceeds the provided steps.
+
+NO AMBIGUITY: {{cannot_infer_instruction}}
+
+THOUGHT PROCESS: Before providing the final answer, perform a "Internal Chain of Thought" to verify that every part of your conclusion is anchored in either a piece of evidence or a provided reasoning step. Provide your reasoning steps, and then answer this question.
+
+--- REFERENCE MATERIAL ---
+[EVIDENCE]
 {{evidence}}
---- END OF EVIDENCE ---
+--- END OF MATERIAL ---
 
 Question: {{question}}
 """
@@ -251,7 +259,7 @@ class FullContextManager:
     def _conversation_without_evidence(
         self,
         conversation_item: Dict[str, Any],
-        evidence_dialogues: List[Dict[str, Any]],
+        evidence_blocks: List[Dict[str, Any]],
     ) -> Dict[str, Any]:
         """从 conversation 中删除已知证据对应的对话。"""
         conv = copy.deepcopy(conversation_item)
@@ -259,6 +267,12 @@ class FullContextManager:
         evidence_dia_ids = set()
         evidence_sessions_no_time = set()
         evidence_targets: List[Dict[str, Any]] = []
+
+        def _normalize_dia_id(dia_id: Any) -> Optional[str]:
+            normalized = str(dia_id or "").strip()
+            if not normalized or normalized == "N/A":
+                return None
+            return normalized.casefold()
 
         def _normalize_match_text(text: Any) -> str:
             normalized = str(text or "")
@@ -269,7 +283,7 @@ class FullContextManager:
                 .replace("\u201d", '"')
                 .replace("\u2026", "...")
             )
-            normalized = re.sub(r"\s+", " ", normalized).strip().lower()
+            normalized = re.sub(r"\s+", " ", normalized).strip().casefold()
             return normalized
 
         def _compact_text(text: str) -> str:
@@ -292,14 +306,17 @@ class FullContextManager:
             if not remaining or not fragment:
                 return remaining
 
+            remaining_fold = remaining.casefold()
+            fragment_fold = fragment.casefold()
+
             # 1) 完全一致直接删空
-            if remaining == fragment:
+            if remaining_fold == fragment_fold:
                 return ""
 
             # 2) 双向包含（AB 证据、A 对话 或证据是对话的子句）
-            if fragment in remaining and len(fragment) >= 8:
-                return _cleanup_remaining(re.sub(re.escape(fragment), " ", remaining))
-            if remaining in fragment and len(remaining) >= 8:
+            if fragment_fold in remaining_fold and len(fragment_fold) >= 8:
+                return _cleanup_remaining(re.sub(re.escape(fragment), " ", remaining, flags=re.IGNORECASE))
+            if remaining_fold in fragment_fold and len(remaining_fold) >= 8:
                 return ""
 
             # 3) 去标点后的包含匹配（处理 ... / 标点差异）
@@ -364,13 +381,14 @@ class FullContextManager:
 
             return False
 
-        for evidence in evidence_dialogues or []:
+        for evidence in evidence_blocks or []:
             if not isinstance(evidence, dict):
                 continue
 
             dia_id = evidence.get("dia_id")
             utterance = evidence.get("utterance", "")
             utterance_norm = _normalize_match_text(utterance)
+            normalized_dia_id = _normalize_dia_id(dia_id)
 
             if utterance_norm:
                 evidence_targets.append(
@@ -379,12 +397,12 @@ class FullContextManager:
                         "utterance_norm": utterance_norm,
                         "remaining_norm": utterance_norm,
                         "matched_fragments": [],
-                        "dia_id": str(dia_id) if dia_id and dia_id != "N/A" else None,
+                        "dia_id": normalized_dia_id,
                     }
                 )
 
-            if dia_id and dia_id != "N/A":
-                evidence_dia_ids.add(dia_id)
+            if normalized_dia_id:
+                evidence_dia_ids.add(normalized_dia_id)
 
             if dia_id == "N/A":
                 match = re.search(r"(session_\d+)_date_time", utterance)
@@ -408,9 +426,9 @@ class FullContextManager:
 
                 chat_text_norm = _normalize_match_text(chat.get("text", ""))
                 chat_text_raw = str(chat.get("text", "")).strip()
-                match_by_dia = chat.get("dia_id") in evidence_dia_ids
+                chat_dia_id = _normalize_dia_id(chat.get("dia_id"))
+                match_by_dia = chat_dia_id in evidence_dia_ids
                 match_by_text = False
-                chat_dia_id = str(chat.get("dia_id")) if chat.get("dia_id") else None
 
                 # 若按 dia_id 删除，也同步扣减对应证据剩余文本，避免“已删对话但残留仍显示完整”
                 if match_by_dia and chat_text_norm and chat_dia_id:
@@ -482,15 +500,26 @@ class FullContextManager:
         evidence_blocks: List[Dict[str, Any]],
         only_evidence: int,
         except_evidence: int,
-        evidence_dialogues: List[Dict[str, Any]],
+        allow_cannot_infer: bool = False,
     ) -> str:
         if only_evidence == 1:
             template = Template(ANSWER_PROMPT_ONLY_EVIDENCE)
             evidence_text = json.dumps(evidence_blocks, ensure_ascii=False)
-            return template.render({"evidence": evidence_text, "question": question})
+            cannot_infer_instruction = (
+                "You must provide a definitive answer. Option F (Cannot infer the answer based on the given information) is allowed only when the provided evidence truly cannot support any non-F option."
+                if allow_cannot_infer
+                else "You must provide a definitive answer and you are forbidden to choose option F (Cannot infer the answer based on the given information)."
+            )
+            return template.render(
+                {
+                    "evidence": evidence_text,
+                    "question": question,
+                    "cannot_infer_instruction": cannot_infer_instruction,
+                }
+            )
 
         if except_evidence == 1:
-            conversation_obj = self._conversation_without_evidence(conversation_item, evidence_dialogues)
+            conversation_obj = self._conversation_without_evidence(conversation_item, evidence_blocks)
         else:
             conversation_obj = conversation_item
 
@@ -514,9 +543,8 @@ class FullContextManager:
             try:
                 response = self.openai_client.chat.completions.create(
                     model=self.model_name,
-                    messages=[{"role": "system", "content": prompt}],
+                    messages=[{"role": "user", "content": prompt}],
                     temperature=0.0,
-                    extra_body={"enable_thinking": False},
                 )
                 content = response.choices[0].message.content or ""
                 return content, time.time() - start_time, max_context_exceeded
@@ -526,6 +554,24 @@ class FullContextManager:
                 error_text = str(exc)
                 if "maximum context length" in error_text.lower():
                     max_context_exceeded = 1
+
+                # 某些 OpenAI 兼容网关会把仅 system 消息识别为缺少 input/prompt。
+                # 这里兜底使用 Responses API，避免持续 400。
+                if "missing_required_parameter" in error_text or (
+                    "one of \"input\"" in error_text.lower()
+                    and "prompt" in error_text.lower()
+                ):
+                    try:
+                        response2 = self.openai_client.responses.create(
+                            model=self.model_name,
+                            input=prompt,
+                            temperature=0.0,
+                        )
+                        content2 = getattr(response2, "output_text", "") or ""
+                        return content2, time.time() - start_time, max_context_exceeded
+                    except Exception as exc2:  # noqa: PERF203
+                        last_error = exc2
+                        error_text = str(exc2)
 
                 if attempt >= max_retries:
                     break
@@ -556,7 +602,7 @@ class FullContextManager:
         evidence_blocks: List[Dict[str, Any]],
         only_evidence: int,
         except_evidence: int,
-        evidence_dialogues: List[Dict[str, Any]],
+        allow_cannot_infer: bool = False,
         max_json_retries: int = 10,
     ) -> Tuple[Dict[str, Any], str, float, str, int]:
         """
@@ -575,7 +621,7 @@ class FullContextManager:
                 evidence_blocks=evidence_blocks,
                 only_evidence=only_evidence,
                 except_evidence=except_evidence,
-                evidence_dialogues=evidence_dialogues,
+                allow_cannot_infer=allow_cannot_infer,
             )
 
             response, response_time, context_flag = self._call_llm(prompt)
@@ -606,7 +652,7 @@ class FullContextManager:
         evidence_blocks: List[Dict[str, Any]],
         only_evidence: int,
         except_evidence: int,
-        evidence_dialogues: List[Dict[str, Any]],
+        allow_cannot_infer: bool = False,
     ) -> Tuple[str, float, str, int]:
         """获取自由格式文本响应，不做 JSON 解析。"""
         prompt = self._build_prompt(
@@ -615,34 +661,62 @@ class FullContextManager:
             evidence_blocks=evidence_blocks,
             only_evidence=only_evidence,
             except_evidence=except_evidence,
-            evidence_dialogues=evidence_dialogues,
+            allow_cannot_infer=allow_cannot_infer,
         )
         response, response_time, max_context_exceeded = self._call_llm(prompt)
         return response, response_time, prompt, max_context_exceeded
 
+    def _answer_allows_cannot_infer(self, answer_candidates: List[str]) -> bool:
+        """判断标准答案是否允许选择 F。"""
+        for candidate in answer_candidates:
+            text = str(candidate or "").strip()
+            if re.match(r"^[Ff](?:[\s\)\]\.:,，、\-]|$)", text):
+                return True
+        return False
+
+    def _normalize_evidence_field(self, value: Any, field_name: str) -> List[Dict[str, Any]]:
+        """将任意格式的证据字段统一转换为列表，避免非 list 数据被丢弃。"""
+        normalized: List[Dict[str, Any]] = []
+
+        if value in (None, ""):
+            return normalized
+
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    normalized.append(item)
+                elif item not in (None, ""):
+                    normalized.append({"source_field": field_name, "content": item})
+            return normalized
+
+        if isinstance(value, dict):
+            return [value]
+
+        return [{"source_field": field_name, "content": value}]
+
     def _get_evidence_blocks(
         self,
         question_item: Dict[str, Any],
-    ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-        """合并 evidence_dialogues 和 reasoning_steps。"""
+    ) -> List[Dict[str, Any]]:
+        """统一返回传给模型的证据块: evidence_dialogues + reasoning_steps。"""
         evidence_dialogues = question_item.get("evidence_dialogues", [])
         reasoning_steps = question_item.get("reasoning_steps", [])
 
-        dialogues_list = evidence_dialogues if isinstance(evidence_dialogues, list) else []
-        reasoning_list = reasoning_steps if isinstance(reasoning_steps, list) else []
+        dialogues_list = self._normalize_evidence_field(evidence_dialogues, "evidence_dialogues")
+        reasoning_list = self._normalize_evidence_field(reasoning_steps, "reasoning_steps")
 
-        return dialogues_list + reasoning_list, dialogues_list
+        return dialogues_list + reasoning_list
 
     def _run_iterative_ablation(
         self,
         conversation_item: Dict[str, Any],
         answer: str,
         question: str,
-        base_evidence_dialogues: List[Dict[str, Any]],
+        base_evidence_blocks: List[Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         """兼容保留：排除证据模式下的迭代记录。"""
         iterative_records: List[Dict[str, Any]] = []
-        remaining_evidence = list(base_evidence_dialogues)
+        remaining_evidence = list(base_evidence_blocks)
         answer_candidates = normalize_answer_candidates(None, answer)
 
         for round_id in range(1, 4):
@@ -652,7 +726,6 @@ class FullContextManager:
                 evidence_blocks=remaining_evidence,
                 only_evidence=0,
                 except_evidence=1,
-                evidence_dialogues=remaining_evidence,
                 max_json_retries=10,
             )
 
@@ -694,8 +767,9 @@ class FullContextManager:
         question = question_item.get("question", "")
         answer = question_item.get("answer", "")
         answer_candidates = normalize_answer_candidates(question_item.get("answer_fixed"), answer)
+        allow_cannot_infer = self._answer_allows_cannot_infer(answer_candidates)
 
-        evidence_blocks, evidence_dialogues = self._get_evidence_blocks(question_item)
+        evidence_blocks = self._get_evidence_blocks(question_item)
 
         data: Dict[str, Any] = {}
         if only_evidence == 1:
@@ -705,7 +779,7 @@ class FullContextManager:
                 evidence_blocks=evidence_blocks,
                 only_evidence=only_evidence,
                 except_evidence=except_evidence,
-                evidence_dialogues=evidence_dialogues,
+                allow_cannot_infer=allow_cannot_infer,
             )
         else:
             data, response, response_time, answer_prompt, max_context_flag = self._request_json_answer(
@@ -714,7 +788,7 @@ class FullContextManager:
                 evidence_blocks=evidence_blocks,
                 only_evidence=only_evidence,
                 except_evidence=except_evidence,
-                evidence_dialogues=evidence_dialogues,
+                allow_cannot_infer=allow_cannot_infer,
                 max_json_retries=10,
             )
 
@@ -740,7 +814,7 @@ class FullContextManager:
                 conversation_item=conversation_item.get("conversation", {}),
                 answer=answer,
                 question=question,
-                base_evidence_dialogues=evidence_dialogues,
+                base_evidence_blocks=evidence_blocks,
             )
         else:
             result["fullcontext_check"] = context_data
@@ -770,7 +844,10 @@ class FullContextManager:
             for item in data:
                 for question_item in item.get("qa", []):
                     only_check = question_item.get("only_evidence_check", {})
-                    if isinstance(only_check, dict) and only_check.get("result") == "right":
+                    # v1b 逐题判定：仅当 v1a 明确给出非 right 结果时才跳过。
+                    if not isinstance(only_check, dict) or "result" not in only_check:
+                        pending_questions += 1
+                    elif only_check.get("result") == "right":
                         pending_questions += 1
             print(
                 f"--- Starting Full Context Evaluation: {total_questions} total questions, "
@@ -787,7 +864,7 @@ class FullContextManager:
                     for question_item in item.get("qa", []):
                         if except_evidence == 1:
                             only_check = question_item.get("only_evidence_check", {})
-                            if not isinstance(only_check, dict) or only_check.get("result") != "right":
+                            if isinstance(only_check, dict) and "result" in only_check and only_check.get("result") != "right":
                                 pbar.update(1)
                                 with self.lock:
                                     self.results[idx].append(copy.deepcopy(question_item))

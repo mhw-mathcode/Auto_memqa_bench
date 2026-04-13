@@ -1,0 +1,2801 @@
+{
+    "qa": [
+        {
+            "character": "Ariel",
+            "category": 1,
+            "question": "What is established regarding Ariel's educational background and professional training across her interactions with the group?",
+            "option": [
+                "A. She graduated from Lincoln High with Chloe and later pursued professional culinary training.",
+                "B. She is a Lincoln High survivor who admitted to having no professional training for any career.",
+                "C. She was a top student at Lincoln High and specialized in fashion merchandising before her wedding.",
+                "D. She attended Lincoln High and was previously trained as a professional waitress in the city.",
+                "E. She and Chloe both attended Lincoln High, after which Ariel studied history and art."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Okay, everybody, this is Ariel, another Lincoln High survivor.",
+                    "dia_id": "1:46"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Are you kidding? I'm trained for nothing! I was laughed out of twelve interviews today.",
+                    "dia_id": "13:12"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe identifies Ariel as a fellow 'Lincoln High survivor', establishing her school background.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel explicitly states she is 'trained for nothing' following her failed job interviews.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Combining these facts confirms she is a Lincoln High alumna with no professional training.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 2,
+            "question": "Which specific realization prompted Ariel to flee from her wedding ceremony?",
+            "option": [
+                "A. She realized she was more attracted to a Lamauge gravy boat than to her fiancé, Barry.",
+                "B. She discovered that Barry was having an affair with one of the four bridesmaids.",
+                "C. She noticed Barry looked like Mr. Potato Head and realized she didn't want a honeymoon in Aruba.",
+                "D. She decided that her independence was more important than Barry's family money.",
+                "E. She felt a sudden surge of affection for her old high school friend, Chloe."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I was looking at this gravy boat. This really gorgeous Lamauge gravy boat. When all of a sudden... I realized that I was more turned on by this gravy boat than by Barry!",
+                    "dia_id": "1:50"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "And then I got really freaked out, and that's when it hit me: how much Barry looks like Mr. Potato Head.",
+                    "dia_id": "1:50"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel identifies the specific 'Lamauge' brand of the gravy boat that triggered her realization.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She explicitly compares her attraction to the object versus her fiancé as the starting point of her freak-out.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "While the Mr. Potato Head observation followed, the primary prompt was the attraction to the gravy boat.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 3,
+            "question": "How did Ariel's employment status evolve from her first appearance to the final day described in the logs?",
+            "answer": "D",
+            "option": [
+                "A. She initially looked for fashion jobs but eventually accepted a position as a library clerk.",
+                "B. She started as a runaway bride and eventually became a professional coffee maker for the group.",
+                "C. She went from being supported by her father's credit cards to being a full-time waitress at the cafe.",
+                "D. She transitioned from being unemployed and 'trained for nothing' to serving coffee to others.",
+                "E. She unsuccessfully interviewed for twelve jobs before deciding to live off her savings."
+            ],
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Are you kidding? I'm trained for nothing! I was laughed out of twelve interviews today.",
+                    "dia_id": "13:12"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Would anybody like more coffee?",
+                    "dia_id": "15:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ariel",
+                    "utterance": "I'm just serving it.",
+                    "dia_id": "15:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "In session 13, Ariel confirms she has no training and was rejected from 12 interviews.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "By session 15, she is actively offering and serving coffee to the group and customers.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "This marks a shift from total unemployment to a service role, even if she claims she's 'just serving it'.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 4,
+            "question": "Based on the dialogue, what is the nature of Ariel's financial relationship with her father after leaving her wedding?",
+            "option": [
+                "A. She immediately cut all ties and refused to use his money for any purchases.",
+                "B. She relied on his credit card to buy expensive boots but later cut up her cards as a symbolic gesture.",
+                "C. She used his money to pay for her apartment since she was trained for nothing.",
+                "D. She borrowed money from him to buy John and David boots at a 50% discount.",
+                "E. She continued to use his credit card for everything until Chloe forced her to get a job."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Um... my... father.",
+                    "dia_id": "13:20"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "I can stop charging anytime I want.",
+                    "dia_id": "14:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Chloe",
+                    "utterance": "Ariel! That was a library card!",
+                    "dia_id": "14:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel admits her father pays for her credit card charges, such as the boots.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In session 14, the group pressures her to stop living off her parents.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Ariel participates in a 'cutting up cards' session, though she accidentally cuts a library card, signifying the attempt at independence.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 5,
+            "question": "What specific item and discount amount did Ariel mention regarding her shopping trip after being rejected from interviews?",
+            "option": [
+                "A. Lamauge gravy boat at a 50% discount.",
+                "B. John and David boots at 50% off.",
+                "C. John and David boots at 25% off.",
+                "D. A new 'parachute' outfit at half price.",
+                "E. A library card and a new pair of boots for her job."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "You would be too if you found John and David boots on sale, fifty percent off!",
+                    "dia_id": "13:14"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel specifies the brand 'John and David' for the boots she purchased.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She explicitly states the discount was 'fifty percent off'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 6,
+            "question": "Which metaphor did Ariel use to explain her decision to change her life path to her father?",
+            "option": [
+                "A. She no longer wanted to be a 'shoe' and suggested she might be a 'purse' or a 'hat' instead.",
+                "B. She felt like she was jumping out of a plane without a parachute.",
+                "C. She realized that she had been a 'gravy boat' her whole life and wanted to be a 'spoon'.",
+                "D. She compared herself to a 'library card' that was being used by everyone else.",
+                "E. She described her life as a 'murky aura' that needed to be cleansed through independence."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "It's like, it's like, all of my life, everyone has always told me, 'You're a shoe! You're a shoe, you're a shoe, you're a shoe!'. And today I just stopped and I said, 'What if I don't wanna be a shoe? What if I wanna be a- a purse, y'know? Or a- or a hat!",
+                    "dia_id": "2:8"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel explicitly describes a metaphor where she was told she was a 'shoe'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "She lists 'purse' and 'hat' as alternative identities she is considering in this metaphor.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ariel",
+            "category": 7,
+            "question": "What is established about Ariel's potential future plans regarding her romantic life at the end of the logs?",
+            "option": [
+                "A. She plans to reunite with Barry and go to Aruba for their honeymoon.",
+                "B. She agreed to go on a date with Bennett after he admitted to having a crush on her.",
+                "C. She is strictly focused on her new job and has no interest in dating anyone in the group.",
+                "D. She intends to wait for Paul the Wine Guy to finish his date with Chloe before asking him out.",
+                "E. She told Bennett she would 'maybe' let him ask her out sometime."
+            ],
+            "answer": "E",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "do you think it would be okay if I asked you out? Sometime? Maybe?",
+                    "dia_id": "14:36"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Yeah, maybe...",
+                    "dia_id": "14:37"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett asks Ariel if it would be okay to ask her out in the future.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ariel responds with 'Yeah, maybe...', leaving the possibility open but not as a firm 'yes'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 1,
+            "question": "What personal demographic detail does Bennett reveal about himself during his emotional breakdown?",
+            "option": [
+                "A. He is 26 years old and already a divorcee.",
+                "B. He has been married for four years and is currently 30.",
+                "C. He is Chloe's younger brother and is 24 years old.",
+                "D. He is 26 and was married to a woman named Christine.",
+                "E. He is 28 and recently found out his wife was a lesbian."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I'm divorced! I'm only 26 and I'm divorced!",
+                    "dia_id": "7:1"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett explicitly states his age as 26.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He explicitly confirms his status as being divorced.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 2,
+            "question": "What specific event involving his ex-wife's belongings occurred on the day of Bennett's first appearance in the logs?",
+            "option": [
+                "A. Carol threw all of his furniture out of their shared apartment.",
+                "B. Carol moved her stuff out of their home.",
+                "C. Carol told his parents that she was moving to Aruba.",
+                "D. Carol left him a note explaining her relationship with Christine.",
+                "E. Carol arrived to help him put together his new bookcase."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Carol moved her stuff out today.",
+                    "dia_id": "1:23"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe states the fact that Carol moved her belongings out on that specific day.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 3,
+            "question": "How did Bennett's outlook on his social and romantic life change between his divorce announcement and the end of the second day?",
+            "option": [
+                "A. He went from wanting to be married again to deciding to visit a strip joint with Ethan.",
+                "B. He transitioned from feeling like his small intestine was tied around his neck to 'grabbing a spoon'.",
+                "C. He stopped caring about Carol and decided to move in with Dexter and Ethan.",
+                "D. He went from being depressed about Carol to having a major crush on Ariel.",
+                "E. He moved from despairing about his divorce to asking Ariel to marry him."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "I just feel like someone reached down my throat, grabbed my small intestine, pulled it out of my mouth and tied it around my neck...",
+                    "dia_id": "1:21"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Welcome back to the world! Grab a spoon!",
+                    "dia_id": "7:7"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Bennett",
+                    "utterance": "I just grabbed a spoon.",
+                    "dia_id": "14:42"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett initially uses a visceral, painful metaphor to describe his state post-breakup.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan introduces the 'grab a spoon' metaphor as a way to get back into the world.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "At the very end, Bennett tells Chloe he 'grabbed a spoon', indicating he is ready to move on.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 4,
+            "question": "What does the dialogue reveal about Bennett's history with Ariel prior to her arrival at the cafe?",
+            "option": [
+                "A. They were best friends in high school who drifted apart.",
+                "B. He was Chloe's geeky older brother who had a major crush on Ariel in high school.",
+                "C. They were briefly engaged before she met Barry.",
+                "D. He was a survivor of Lincoln High who used to bully Ariel.",
+                "E. They had never met before Chloe introduced them in session 1."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "back in high school, I had a, um, major crush on you.",
+                    "dia_id": "14:32"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "I always figured you just thought I was Chloe's geeky older brother.",
+                    "dia_id": "14:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett explicitly confesses his high school crush to Ariel.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "He mentions his perception of himself as Chloe's 'geeky older brother' in her eyes during that time.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 5,
+            "question": "According to the logs, how many years of 'closeness and sharing' did Bennett have in his relationship with Carol before she left?",
+            "option": [
+                "A. Two years.",
+                "B. Three years.",
+                "C. Four years.",
+                "D. Five years.",
+                "E. Eight years."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "You, however have had the love of a woman for four years. Four years of closeness and sharing...",
+                    "dia_id": "7:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter explicitly mentions the duration of Bennett's relationship was four years.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 6,
+            "question": "What 'lesson' or perspective does Bennett ultimately adopt regarding his ignorance of his ex-wife's sexual orientation?",
+            "option": [
+                "A. He realized he should have known because she drank beer from a can.",
+                "B. He decided that since she didn't know herself, there was no way he could have known.",
+                "C. He learned that he is a 'geeky brother' who isn't good at reading people.",
+                "D. He concluded that his parents were more upset about the lack of grandchildren than the divorce.",
+                "E. He accepted that he was 'horny and hungry' and needed to stay out of Dexter's freezer."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "No!! Okay?! Why does everyone keep fixating on that? She didn't know, how should I know?",
+                    "dia_id": "1:34"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett argues that if Carol herself was unaware of her orientation during the marriage, he cannot be blamed for not knowing.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Bennett",
+            "category": 7,
+            "question": "What activity did Bennett have scheduled for the night Ariel first arrived, and who was supposed to help him?",
+            "option": [
+                "A. Moving his furniture into a new apartment with Chloe and Ariel.",
+                "B. Putting together his new furniture with the help of Ethan and Dexter.",
+                "C. Having dinner with his parents to discuss the divorce.",
+                "D. Going to a strip joint with Ethan to celebrate being single.",
+                "E. Helping Ariel find a job by going through twelve interviews."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Ethan and Dexter are coming over to help me put together my new furniture.",
+                    "dia_id": "2:50"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett explicitly states the plan to assemble furniture and identifies Ethan and Dexter as his helpers.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 1,
+            "question": "What is established about Chloe's residential situation based on Ariel's arrival?",
+            "option": [
+                "A. She lives in a building where a man with a big hammer works.",
+                "B. She shares an apartment with Fiona and Dexter.",
+                "C. She lives across the hall from Ethan and Dexter.",
+                "D. She moved into a new building on the day Carol moved out.",
+                "E. She lives in a house in the city with her brother, Bennett."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I just went to your building and you weren't there and then this guy with a big hammer said you might be here...",
+                    "dia_id": "1:44"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Me and Dexter live across the hall.",
+                    "dia_id": "2:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel mentions visiting Chloe's building and encountering a man with a hammer.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan's comment implies Chloe lives across the hall from them, establishing her specific location.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "Combining these provides a stable profile of her residence.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 2,
+            "question": "What hysterical news did Chloe receive via a 3:00 A.M. phone call?",
+            "option": [
+                "A. Ariel had left her wedding and was looking for her.",
+                "B. Bennett's ex-wife was moving her furniture out.",
+                "C. A sobbing woman was crying about never having grandchildren.",
+                "D. Paul the Wine Guy wanted to cancel their non-date.",
+                "E. Bennett had found out his wife was a lesbian."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "so that hysterical phone call I got from a woman at sobbing 3:00 A.M., \"I'll never have grandchildren, I'll never have grandchildren.\" was what?",
+                    "dia_id": "1:37"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe explicitly quotes the content of the 3:00 A.M. call and describes the caller's state.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 3,
+            "question": "How did Chloe's perception of her 'not a real date' with Paul evolve after the date actually occurred?",
+            "option": [
+                "A. She initially insisted it wasn't a date but later admitted she had a great time.",
+                "B. She claimed it wasn't a date but eventually realized Paul had used a 'line' on her.",
+                "C. She went from being excited about Paul the Wine Guy to hating all men after he stood her up.",
+                "D. She moved from defending the date to the group to realizing she wanted to be with Bennett.",
+                "E. She realized that Paul was actually a nice guy despite Ethan's warnings."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "This is not even a date. It's just two people going out to dinner and- not having sex.",
+                    "dia_id": "1:6"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "I just thought he was nice, y'know?",
+                    "dia_id": "13:8"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "I can't believe you didn't know it was a line!",
+                    "dia_id": "13:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe starts by minimizing the outing as 'not even a date'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After the date, she is upset and mentions she thought he was 'nice'.",
+                    "based_on": [
+                        "E2"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "inference": "The dialogue reveals the date ended poorly because Paul used a 'line', which Chloe failed to recognize initially.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 4,
+            "question": "Which of Ariel's social connections did Chloe point out was notably excluded from Ariel's wedding?",
+            "option": [
+                "A. Ariel's father.",
+                "B. Chloe herself.",
+                "C. The guy with the big hammer.",
+                "D. Bennett, the geeky older brother.",
+                "E. The four wet bridesmaids."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Who wasn't invited to the wedding.",
+                    "dia_id": "1:51"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ariel",
+                    "utterance": "Ooh, I was kinda hoping that wouldn't be an issue...",
+                    "dia_id": "1:52"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "When Ariel explains she came to Chloe because she's the only one she knows in the city, Chloe retorts by mentioning she wasn't invited to the wedding.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 5,
+            "question": "What specific time was Chloe's date with 'Paul the Wine Guy' scheduled for?",
+            "option": [
+                "A. 3:00 A.M.",
+                "B. 6:30 P.M.",
+                "C. 7:00 P.M.",
+                "D. Half an hour before the wedding.",
+                "E. 2:00 P.M."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Oh God, is it 6:30? Buzz him in!",
+                    "dia_id": "2:23"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe notes the time is 6:30 and immediately asks to buzz Paul in, indicating the start of their date.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 6,
+            "question": "What self-reflective question does Chloe ask after her date with Paul the Wine Guy turns out to be a failure?",
+            "option": [
+                "A. 'Why am I doing this, and who am I doing this for?'",
+                "B. 'Is it like I have some sort of beacon that only dogs and men with severe emotional problems can hear?'",
+                "C. 'Why would anybody do something like that to get someone into bed?'",
+                "D. 'Am I a shoe, or am I a purse or a hat?'",
+                "E. 'How can I be ready to jump out the airplane without a parachute?'"
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "Is it me? Is it like I have some sort of beacon that only dogs and men with severe emotional problems can hear?",
+                    "dia_id": "13:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Following the reveal that Paul used a line, Chloe questions her own pattern of attracting problematic men using this specific 'beacon' metaphor.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Chloe",
+            "category": 7,
+            "question": "What future commitment did Chloe make regarding Ariel's living situation?",
+            "option": [
+                "A. She promised to help Ariel find a job at the cafe.",
+                "B. She agreed to let Ariel stay at her apartment in the city.",
+                "C. She committed to helping Ariel move her furniture out of Barry's house.",
+                "D. She planned to take Ariel to Aruba for a replacement honeymoon.",
+                "E. She decided to set Ariel up on a date with her brother, Bennett."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "Well maybe I'll just stay here with Chloe.",
+                    "dia_id": "2:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Chloe",
+                    "utterance": "Well, I guess we've established who's staying here with Chloe...",
+                    "dia_id": "2:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ariel proposes staying with Chloe after her fallout with her father.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Chloe's sarcastic confirmation establishes that Ariel will indeed be staying with her.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 1,
+            "question": "Besides his shared apartment, what else is established about Dexter's background from high school?",
+            "option": [
+                "A. He was the most popular kid in the cafeteria.",
+                "B. He is considered one of the 'Lincoln High survivors' like Chloe and Ariel.",
+                "C. He was once a professional actor who played Liza Minelli.",
+                "D. He and Bennett were high school rivals for Ariel's affection.",
+                "E. He was a student at Lincoln High who never had a phone."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "this is Ariel, another Lincoln High survivor. This is everybody, this is Dexter, and Fiona, and Ethan, and- you remember my brother Bennett?",
+                    "dia_id": "1:46"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Chloe introduces the group as 'everybody' after calling Ariel 'another Lincoln High survivor', implying the original group shares that background.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 2,
+            "question": "What absurd detail did Dexter include in his cafeteria dream that made his friends skeptical?",
+            "option": [
+                "A. He was totally naked in front of the whole school.",
+                "B. He was standing in the middle of a cafeteria.",
+                "C. There was a phone located 'there' instead of his genitals.",
+                "D. His mother called him, and she never calls him.",
+                "E. He was dressed as Liza Minelli in Las Vegas."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Then I look down, and I realize there's a phone... there.",
+                    "dia_id": "1:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Instead of...?",
+                    "dia_id": "1:11"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "Never had that dream.",
+                    "dia_id": "1:13"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter describes the phone's unusual placement.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Ethan's question 'Instead of...?' and subsequent denial show that this is the detail that deviates from common dreams.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 3,
+            "question": "How did Dexter's dream narratives evolve from the first day to the final session recorded?",
+            "option": [
+                "A. He stopped dreaming about high school and started dreaming about a million dollars.",
+                "B. He shifted from a nightmare about a phone in a cafeteria to a dream about being Liza Minelli in Las Vegas.",
+                "C. He went from dreaming about being naked to dreaming about Ariel's wedding.",
+                "D. He evolved from dreaming about his mother to dreaming about Angela and Andrea.",
+                "E. He stopped having dreams about high school once Ariel moved into the city."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Alright, so I'm back in high school... and I realize I am totally naked... Then I look down, and I realize there's a phone... there.",
+                    "dia_id": "1:8-10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Okay, so, I'm in Las Vegas... I'm Liza Minelli-",
+                    "dia_id": "15:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Initially, Dexter shares a recurring or recent dream about a phone in a high school cafeteria.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "In the final session, he introduces a 'new dream' where he is in Las Vegas as Liza Minelli.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 4,
+            "question": "What is established about Dexter's living arrangement and his availability at home?",
+            "option": [
+                "A. He lives with Bennett and is rarely there because of work.",
+                "B. He lives with Ethan across the hall from Chloe and is away a lot.",
+                "C. He lives alone but invites Ethan and Ariel over frequently.",
+                "D. He shares an apartment with Chloe but is planning to move out.",
+                "E. He and Ethan are roommates who never leave the city."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Me and Dexter live across the hall. And he's away a lot.",
+                    "dia_id": "2:18"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan identifies Dexter as his roommate living across from Chloe and mentions Dexter's frequent absences.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 5,
+            "question": "In session 10, what specific detail does Dexter recall about a woman named Andrea in relation to Ethan's date?",
+            "option": [
+                "A. Andrea is the one who screams.",
+                "B. Andrea has a lot of cats.",
+                "C. Andrea was Ethan's high school crush.",
+                "D. Andrea is the one who drinks beer out of a can.",
+                "E. Andrea is actually Paul the Wine Guy's sister."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Angela's the screamer, Andrea has cats.",
+                    "dia_id": "10:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Dexter clarifies the identities of Ethan's potential dates, linking Andrea specifically to having cats.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 6,
+            "question": "What does Dexter realize about his attempt to explain why people avoid long-term relationships during his talk with Bennett?",
+            "option": [
+                "A. He realizes he was right about the Mento comparison.",
+                "B. He concludes that Bennett should have married Carol when he was eight.",
+                "C. He realizes at the end of his speech that it wasn't actually his point.",
+                "D. He learns that he shouldn't joke about being a lesbian out loud.",
+                "E. He decides that grabbing a spoon is better than wanting a million dollars."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Dexter",
+                    "utterance": "Four years of closeness and sharing at the end of which she ripped your heart out, and that is why we don't do it! I don't think that was my point!",
+                    "dia_id": "7:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "After explaining a cynical view of relationships to Bennett, Dexter immediately undercuts his own argument by admitting it wasn't his intended point.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Dexter",
+            "category": 7,
+            "question": "What future task did Dexter commit to that involved Bennett's apartment?",
+            "option": [
+                "A. Helping Bennett find a new wife through a strip joint.",
+                "B. Assisting Bennett in assembling new furniture.",
+                "C. Helping Bennett clean out Carol's leftover stuff.",
+                "D. Staying in Bennett's freezer to avoid his dreams.",
+                "E. Moving Ariel's bridesmaids' presents into Chloe's building."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "Ethan and Dexter are coming over to help me put together my new furniture.",
+                    "dia_id": "2:50"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Dexter",
+                    "utterance": "Yes, and we're very excited about it.",
+                    "dia_id": "2:51"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Bennett announces the plan for Ethan and Dexter to help him.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Dexter sarcastically confirms his participation and 'excitement' for the task.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 1,
+            "question": "What is Ethan's general philosophy on dealing with post-breakup pain, as shown in his advice to Bennett?",
+            "option": [
+                "A. He believes in 'grabbing a spoon' and exploring the many 'flavors' of the world.",
+                "B. He thinks the only solution is to get professional aromatherapy like Fiona.",
+                "C. He suggests that pain can only be solved by finding a woman who has cats.",
+                "D. He advocates for staying in a committed relationship for at least four years.",
+                "E. He believes men should wait at least six months before dating again."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Rocky Road, and Cookie Dough, and Bing! Cherry Vanilla... This is the best thing that ever happened to you!... Welcome back to the world! Grab a spoon!",
+                    "dia_id": "7:7"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan uses an ice cream metaphor to encourage Bennett to embrace singlehood and diverse experiences.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 2,
+            "question": "What 'tip' did Ethan give Paul the Wine Guy about Chloe during their first meeting?",
+            "option": [
+                "A. She likes her coffee de-caff and very hot.",
+                "B. She enjoys having her neck rubbed in the same spot until it gets red.",
+                "C. She was a survivor of Lincoln High and a geeky sister.",
+                "D. She was hysterical at 3:00 A.M. and wanted grandchildren.",
+                "E. She was more turned on by gravy boats than by men named Paul."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "she really likes it when you rub her neck in the same spot over and over and over again until it starts to get a little red.",
+                    "dia_id": "2:46"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan gives Paul highly specific and inappropriate advice regarding Chloe's physical preferences to annoy her.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 3,
+            "question": "How did Ethan's opinion of Paul the Wine Guy change after the date with Chloe occurred?",
+            "option": [
+                "A. He initially liked Paul but later thought he was a 'Wine Guy' who complained too much.",
+                "B. He went from being skeptical of the 'not a date' to realizing Paul was just using a 'line'.",
+                "C. He started by hating Paul and ended by wanting to go on a date with June instead.",
+                "D. He moved from helping Paul with tips to telling Chloe she shouldn't have gone out with him.",
+                "E. He initially thought Paul was a 'Wine Guy' and later confirmed Paul sells wine for a living."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Your 'not a real date' tonight is with Paul the Wine Guy?",
+                    "dia_id": "2:26"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Ethan",
+                    "utterance": "Of course it was a line!",
+                    "dia_id": "13:1"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "Ethan",
+                    "utterance": "I can't believe you didn't know it was a line!",
+                    "dia_id": "13:9"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan is initially mocking the concept of Chloe's 'non-date'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "After the fact, he is the first to point out that Paul's behavior was a scripted 'line' to get Chloe into bed.",
+                    "based_on": [
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 4,
+            "question": "Which two names did Ethan confuse when planning his upcoming date in session 10?",
+            "option": [
+                "A. Angela and June.",
+                "B. Andrea and Angela.",
+                "C. Carol and Christine.",
+                "D. Ariel and Chloe.",
+                "E. Andrea and June."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "I got a date with Andrea--Angela--Andrea... Oh man,",
+                    "dia_id": "10:2"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan struggles to remember whether the woman's name is Andrea or Angela.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 5,
+            "question": "What is the name of the woman Ethan was actually going out with at the end of session 10?",
+            "option": [
+                "A. Angela.",
+                "B. Andrea.",
+                "C. June.",
+                "D. Christine.",
+                "E. Carol."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "It's June. I'm outta here.",
+                    "dia_id": "10:4"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "After being confused about Angela/Andrea, Ethan concludes that the date's name is actually June.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 6,
+            "question": "What lesson did Ethan try to teach Chloe regarding the behavior of men like Paul?",
+            "option": [
+                "A. That men with 'Wine Guy' titles are always untrustworthy.",
+                "B. That some men use deceptive 'lines' specifically to get women into bed.",
+                "C. That she should always ask for ID before going on a de-caff date.",
+                "D. That she shouldn't rub a man's neck until it gets red on the first date.",
+                "E. That the 'real world' sucks and she's going to love it."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Of course it was a line!",
+                    "dia_id": "13:1"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Bennett",
+                    "utterance": "I assume we're looking for an answer more sophisticated than 'to get you into bed'.",
+                    "dia_id": "13:3"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan asserts that Paul's actions were a 'line'.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "The context of the group discussion, including Bennett's comment, clarifies that the purpose of such a line is to facilitate a sexual encounter.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Ethan",
+            "category": 7,
+            "question": "What did Ethan explicitly state he would do if Bennett continued to act depressed about Carol during the furniture assembly?",
+            "option": [
+                "A. He would call Carol and ask her to come back.",
+                "B. He would leave the apartment ('we're outta here').",
+                "C. He would take Bennett to a strip joint immediately.",
+                "D. He would stop helping with the 'L'-shaped bracket.",
+                "E. He would tell Ariel that Bennett had a crush on her."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "if you're gonna start with that stuff we're outta here.",
+                    "dia_id": "4:11"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Ethan warns Bennett that he and Dexter will leave if Bennett keeps being sentimental about Carol.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 1,
+            "question": "Which of the following is established as part of Fiona's persistent personal history or beliefs across the logs?",
+            "option": [
+                "A. She was a cheerleader at Lincoln High who studied aromatherapy.",
+                "B. She believes in cleansing auras and has a history of living with an albino windshield cleaner.",
+                "C. She is a professional singer who specializes in 'My Favorite Things'.",
+                "D. She was a survivor of a prison where her step-dad is currently held.",
+                "E. She believes that pulling out eyelashes is a sign of good luck in the universe."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Bennett",
+                    "utterance": "No, no don't! Stop cleansing my aura! No, just leave my aura alone, okay?",
+                    "dia_id": "1:28"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I ended up living with this albino guy who was, like, cleaning windshields outside port authority...",
+                    "dia_id": "14:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Session 1 establishes her habit/belief in aura cleansing.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Session 14 provides the detail about her past roommate, the albino guy.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 2,
+            "question": "What specific question did Fiona ask about Chloe's potential date, Carl's successor, to ensure Ariel wouldn't repeat her past mistake?",
+            "option": [
+                "A. 'Does he sell wine, drink it, or just complain a lot?'",
+                "B. 'Wait, does he eat chalk?'",
+                "C. 'Does he have a hump and a hairpiece?'",
+                "D. 'Is he a lesbian like Carol?'",
+                "E. 'Does he know how to cleanse an aura?'"
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Wait, does he eat chalk?",
+                    "dia_id": "1:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Just, 'cause, I don't want her to go through what I went through with Carl- oh!",
+                    "dia_id": "1:5"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona asks if the guy eats chalk because of her bad experience with someone named Carl.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 3,
+            "question": "How did Fiona's reaction to Ariel's situation change from when Ariel first arrived to when she decided to stay with Chloe?",
+            "option": [
+                "A. She initially tried to cleanse Ariel's aura but later sang a song to calm her down.",
+                "B. She went from being confused about Ariel's identity to sharing a deep, traumatic personal story to comfort her.",
+                "C. She moved from pulling out her eyelashes to helping Bennett with his furniture.",
+                "D. She initially ignored Ariel but later decided to help her find a job in aromatherapy.",
+                "E. She went from singing about kittens to warning Ariel about the dangers of the universe."
+            ],
+            "answer": "B",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Chloe",
+                    "utterance": "this is Ariel, another Lincoln High survivor. This is everybody, this is... Fiona...",
+                    "dia_id": "1:46"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I remember when I first came to this city... My mom had just killed herself... So believe me, I know exactly how you feel.",
+                    "dia_id": "14:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Initially, Fiona is just another member of the group being introduced.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, she empathizes with Ariel's struggle for independence by recounting her own extreme hardships upon arriving in the city.",
+                    "based_on": [
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 4,
+            "question": "What is established about Fiona's family background and her early life in the city?",
+            "option": [
+                "A. She came to the city at age fourteen after her mother's suicide and while her step-dad was in prison.",
+                "B. She was raised by an albino guy at Port Authority after her parents moved to Aruba.",
+                "C. She grew up with Chloe and Bennett and attended Lincoln High.",
+                "D. She lived in a house where her step-dad taught her how to cleanse auras.",
+                "E. She was orphaned at eight and was raised by a woman who sobbed about grandchildren."
+            ],
+            "answer": "A",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "I was fourteen. My mom had just killed herself and my step-dad was back in prison, and I got here, and I didn't know anybody.",
+                    "dia_id": "14:6"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona recounts her specific age (14) and family circumstances (mother's death, step-father's imprisonment) when she first arrived.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 5,
+            "question": "How many eyelashes did Fiona explicitly state she pulled out in session 2?",
+            "option": [
+                "A. Two.",
+                "B. Three.",
+                "C. Four.",
+                "D. Five.",
+                "E. Twelve."
+            ],
+            "answer": "C",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Fiona",
+                    "utterance": "Ooh, I just pulled out four eyelashes. That can't be good.",
+                    "dia_id": "2:43"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona mentions the specific number of eyelashes she pulled out.",
+                    "based_on": [
+                        "E1"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 6,
+            "question": "What meta-cognitive reflection did Fiona share after Ariel said she was 'all better' following Fiona's singing?",
+            "option": [
+                "A. 'Fine! Be murky!'",
+                "B. 'I helped!'",
+                "C. 'That can't be good.'",
+                "D. 'Ooh! Oh!'",
+                "E. 'Oh, was I doing it again?'"
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ariel",
+                    "utterance": "I'm all better now.",
+                    "dia_id": "2:15"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "I helped!",
+                    "dia_id": "2:16"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "After Ariel claims to be better, Fiona reflects on her own contribution with a short, affirmative statement.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        },
+        {
+            "character": "Fiona",
+            "category": 7,
+            "question": "What was Fiona's response when Ethan asked for her help with a specific task for Bennett?",
+            "option": [
+                "A. She offered to cleanse the aura of his new furniture.",
+                "B. She said she wished she could, but she didn't want to.",
+                "C. She agreed to help as long as there were no eyelashes involved.",
+                "D. She promised to sing 'My Favorite Things' while they worked.",
+                "E. She stated that she had to go to Port Authority to see an albino guy."
+            ],
+            "answer": "B",
+            "label": "Fact Extraction (Single Dialogue)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "Ethan",
+                    "utterance": "Hey Pheebs, you wanna help?",
+                    "dia_id": "2:54"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "Fiona",
+                    "utterance": "Oh, I wish I could, but I don't want to.",
+                    "dia_id": "2:55"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "Fiona explicitly refuses to help with the furniture assembly by using a contradictory excuse.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ]
+        }
+    ],
+    "conversation": {
+        "speaker_0": "Chloe",
+        "speaker_1": "Ethan",
+        "speaker_2": "Dexter",
+        "speaker_3": "Fiona",
+        "speaker_4": "All",
+        "speaker_5": "Bennett",
+        "speaker_6": "Ariel",
+        "speaker_7": "Waitress",
+        "speaker_8": "Paul",
+        "speaker_9": "Customer",
+        "session_1_date_time": "September 22, 1994",
+        "session_1": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:1",
+                "text": "There's nothing to tell! He's just some guy I work with!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:2",
+                "text": "C'mon, you're going out with the guy! There's gotta be something wrong with him!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:3",
+                "text": "All right Ethan, be nice.  So does he have a hump? A hump and a hairpiece?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:4",
+                "text": "Wait, does he eat chalk?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:5",
+                "text": "Just, 'cause, I don't want her to go through what I went through with Carl- oh!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:6",
+                "text": "Okay, everybody relax. This is not even a date. It's just two people going out to dinner and- not having sex."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:7",
+                "text": "Sounds like a date to me."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:8",
+                "text": "Alright, so I'm back in high school, I'm standing in the middle of the cafeteria, and I realize I am totally naked."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "1:9",
+                "text": "Oh, yeah. Had that dream."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:10",
+                "text": "Then I look down, and I realize there's a phone... there."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:11",
+                "text": "Instead of...?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:12",
+                "text": "That's right."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:13",
+                "text": "Never had that dream."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:14",
+                "text": "No."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:15",
+                "text": "All of a sudden, the phone starts to ring. Now I don't know what to do, everybody starts looking at me."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:16",
+                "text": "And they weren't looking at you before?!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:17",
+                "text": "Finally, I figure I'd better answer it, and it turns out it's my mother, which is very-very weird, because- she never calls me!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:18",
+                "text": "Hi."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:19",
+                "text": "This guy says hello, I wanna kill myself."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:20",
+                "text": "Are you okay, sweetie?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:21",
+                "text": "I just feel like someone reached down my throat, grabbed my small intestine, pulled it out of my mouth and tied it around my neck..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:22",
+                "text": "Cookie?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:23",
+                "text": "Carol moved her stuff out today."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:24",
+                "text": "Ohh."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:25",
+                "text": "Let me get you some coffee."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:26",
+                "text": "Thanks."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:27",
+                "text": "Ooh! Oh!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:28",
+                "text": "No, no don't! Stop cleansing my aura! No, just leave my aura alone, okay?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "1:29",
+                "text": "Fine!  Be murky!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:30",
+                "text": "I'll be fine, alright? Really, everyone. I hope she'll be very happy."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:31",
+                "text": "No you don't."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:32",
+                "text": "No I don't, to hell with her, she left me!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:33",
+                "text": "And you never knew she was a lesbian..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:34",
+                "text": "No!! Okay?! Why does everyone keep fixating on that? She didn't know, how should I know?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:35",
+                "text": "Sometimes I wish I was a lesbian...  Did I say that out loud?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:36",
+                "text": "I told mom and dad last night, they seemed to take it pretty well."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:37",
+                "text": "Oh really, so that hysterical phone call I got from a woman at sobbing 3:00 A.M., \"I'll never have grandchildren, I'll never have grandchildren.\" was what?  A wrong number?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:38",
+                "text": "Sorry."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:39",
+                "text": "Alright Bennett, look. You're feeling a lot of pain right now. You're angry. You're hurting. Can I tell you what the answer is?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "1:40",
+                "text": "Strip joint! C'mon, you're single! Have some hormones!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:41",
+                "text": "I don't want to be single, okay? I just... I just- I just wanna be married again!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "1:42",
+                "text": "And I just want a million dollars!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:43",
+                "text": "Ariel?!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:44",
+                "text": "Oh God Chloe hi! Thank God! I just went to your building and you weren't there and then this guy with a big hammer said you might be here and you are, you are!"
+            },
+            {
+                "speaker": "Waitress",
+                "dia_id": "1:45",
+                "text": "Can I get you some coffee?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:46",
+                "text": "De-caff.  Okay, everybody, this is Ariel, another Lincoln High survivor.  This is everybody, this is Dexter, and Fiona, and Ethan, and- you remember my brother Bennett?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:47",
+                "text": "Hi, sure!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "1:48",
+                "text": "Hi."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:49",
+                "text": "So you wanna tell us now, or are we waiting for four wet bridesmaids?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:50",
+                "text": "Oh God... well, it started about a half hour before the wedding. I was in the room where we were keeping all the presents, and I was looking at this gravy boat. This really gorgeous Lamauge gravy boat. When all of a sudden- Sweet 'n' Lo?- I realized that I was more turned on by this gravy boat than by Barry! And then I got really freaked out, and that's when it hit me: how much Barry looks like Mr. Potato Head. Y'know, I mean, I always knew looked familiar, but... Anyway, I just had to get out of there, and I started wondering 'Why am I doing this, and who am I doing this for?'.  So anyway I just didn't know where to go, and I know that you and I have kinda drifted apart, but you're the only person I knew who lived here in the city."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "1:51",
+                "text": "Who wasn't invited to the wedding."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "1:52",
+                "text": "Ooh, I was kinda hoping that wouldn't be an issue..."
+            }
+        ],
+        "session_2_date_time": "September 22, 1994",
+        "session_2": [
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:1",
+                "text": "Now I'm guessing that he bought her the big pipe organ, and she's really not happy about it."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:2",
+                "text": "Tuna or egg salad?  Decide!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:3",
+                "text": "I'll have whatever Christine is having."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:4",
+                "text": "Daddy, I just... I can't marry him! I'm sorry. I just don't love him. Well, it matters to me!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:5",
+                "text": "If I let go of my hair, my head will fall off."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:6",
+                "text": "Ooh, she should not be wearing those pants."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:7",
+                "text": "I say push her down the stairs."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:8",
+                "text": "C'mon Daddy, listen to me! It's like, it's like, all of my life, everyone has always told me, 'You're a shoe! You're a shoe, you're a shoe, you're a shoe!'. And today I just stopped and I said, 'What if I don't wanna be a shoe? What if I wanna be a- a purse, y'know? Or a- or a hat! No, I'm not saying I want you to buy me a hat, I'm saying I am a ha- It's a metaphor, Daddy!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:9",
+                "text": "You can see where he'd have trouble."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:10",
+                "text": "Look Daddy, it's my life. Well maybe I'll just stay here with Chloe."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:11",
+                "text": "Well, I guess we've established who's staying here with Chloe..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:12",
+                "text": "Well, maybe that's my decision. Well, maybe I don't need your money. Wait!! Wait, I said maybe!!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:13",
+                "text": "Just breathe, breathe.. that's it. Just try to think of nice calm things..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:14",
+                "text": "Raindrops on roses and rabbits and kittens,  bluebells and sleighbells and- something with mittens... La la la la...something and noodles with string.  These are a few..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:15",
+                "text": "I'm all better now."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:16",
+                "text": "I helped!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:17",
+                "text": "Okay, look, this is probably for the best, y'know? Independence. Taking control of your life.  The whole, 'hat' thing."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:18",
+                "text": "And hey, you need anything, you can always come to Ethan. Me and Dexter live across the hall. And he's away a lot."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:19",
+                "text": "Ethan, stop hitting on her! It's her wedding day!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:20",
+                "text": "What, like there's a rule or something?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:21",
+                "text": "Please don't do that again, it's a horrible sound."
+            },
+            {
+                "speaker": "Paul",
+                "dia_id": "2:22",
+                "text": "It's, uh, it's Paul."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:23",
+                "text": "Oh God, is it 6:30?  Buzz him in!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:24",
+                "text": "Who's Paul?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:25",
+                "text": "Paul the Wine Guy, Paul?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:26",
+                "text": "Maybe. Ethan: Wait. Your 'not a real date' tonight is with Paul the Wine Guy?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:27",
+                "text": "He finally asked you out?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:28",
+                "text": "Yes!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:29",
+                "text": "Ooh, this is a Dear Diary moment."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:30",
+                "text": "Rach, wait, I can cancel..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:31",
+                "text": "Please, no, go, that'd be fine!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:32",
+                "text": "Are, are you okay? I mean, do you want me to stay?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:33",
+                "text": "That'd be good..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:34",
+                "text": "Really?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:35",
+                "text": "No, go on! It's Paul the Wine Guy!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:36",
+                "text": "What does that mean?   Does he sell it, drink it, or just complain a lot?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:37",
+                "text": "Hi, come in! Paul, this is.. ... everybody, everybody, this is Paul."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "2:38",
+                "text": "Hey! Paul! Hi! The Wine Guy! Hey!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:39",
+                "text": "I'm sorry, I didn't catch your name. Paul, was it?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:40",
+                "text": "Okay, umm-umm, I'll just--I'll be right back, I just gotta go ah, go ah..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:41",
+                "text": "A wandering?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:42",
+                "text": "Change!  Okay, sit down.  Two seconds."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:43",
+                "text": "Ooh, I just pulled out four eyelashes. That can't be good."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:44",
+                "text": "Hey, Paul!"
+            },
+            {
+                "speaker": "Paul",
+                "dia_id": "2:45",
+                "text": "Yeah?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:46",
+                "text": "Here's a little tip, she really likes it when you rub her neck in the same spot over and over and over again until it starts to get a little red."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "2:47",
+                "text": "Shut up, Ethan!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:48",
+                "text": "So Ariel, what're you, uh... what're you up to tonight?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:49",
+                "text": "Well, I was kinda supposed to be headed for Aruba on my honeymoon, so nothing!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:50",
+                "text": "Right, you're not even getting your honeymoon, God.. No, no, although, Aruba, this time of year... talk about your-  -big lizards... Anyway, if you don't feel like being alone tonight, Ethan and Dexter are coming over to help me put together my new furniture."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:51",
+                "text": "Yes, and we're very excited about it."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "2:52",
+                "text": "Well actually thanks, but I think I'm just gonna hang out here tonight.  It's been kinda a long day."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:53",
+                "text": "Okay, sure."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:54",
+                "text": "Hey Pheebs, you wanna help?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "2:55",
+                "text": "Oh, I wish I could, but I don't want to."
+            }
+        ],
+        "session_4_date_time": "September 22, 1994",
+        "session_4": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:1",
+                "text": "I'm supposed to attach a brackety thing to the side things, using a bunch of these little worm guys. I have no brackety thing, I see no whim guys whatsoever and- I cannot feel my legs."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:2",
+                "text": "I'm thinking we've got a bookcase here."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:3",
+                "text": "It's a beautiful thing."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:4",
+                "text": "What's this?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:5",
+                "text": "I would have to say that is an 'L'-shaped bracket."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:6",
+                "text": "Which goes where?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:7",
+                "text": "I have no idea."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:8",
+                "text": "Done with the bookcase!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:9",
+                "text": "All finished!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:10",
+                "text": "This was Carol's favorite beer. She always drank it out of the can, I should have known."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:11",
+                "text": "Hey-hey-hey-hey, if you're gonna start with that stuff we're outta here."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:12",
+                "text": "Yes, please don't spoil all this fun."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:13",
+                "text": "Bennett, let me ask you a question. She got the furniture, the stereo, the good TV- what did you get?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:14",
+                "text": "You guys."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:15",
+                "text": "Oh, God."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "4:16",
+                "text": "You got screwed."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:17",
+                "text": "Oh my God!"
+            }
+        ],
+        "session_7_date_time": "September 22, 1994",
+        "session_7": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:1",
+                "text": "I'm divorced!  I'm only 26 and I'm divorced!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:2",
+                "text": "Shut up!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:3",
+                "text": "You must stop!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:4",
+                "text": "That only took me an hour."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:5",
+                "text": "Look, Bennett, you gotta understand, between us we haven't had a relationship that has lasted longer than a Mento.   You, however have had the love of a woman for four years.   Four years of closeness and sharing at the end of which she ripped your heart out, and that is why we don't do it!  I don't think that was my point!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:6",
+                "text": "You know what the scariest part is? What if there's only one woman for everybody, y'know? I mean what if you get one woman- and that's it? Unfortunately in my case, there was only one woman- for her..."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:7",
+                "text": "What are you talking about? 'One woman'? That's like saying there's only one flavor of ice cream for you. Lemme tell you something, Bennett. There's lots of flavors out there. There's Rocky Road, and Cookie Dough, and Bing! Cherry Vanilla. You could get 'em with Jimmies, or nuts, or whipped cream! This is the best thing that ever happened to you! You got married, you were, like, what, eight? Welcome back to the world! Grab a spoon!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:8",
+                "text": "I honestly don't know if I'm hungry or horny."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "7:9",
+                "text": "Stay out of my freezer!"
+            }
+        ],
+        "session_10_date_time": "September 22, 1994",
+        "session_10": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:1",
+                "text": "Grab a spoon. Do you know how long it's been since I've grabbed a spoon? Do the words 'Billy, don't be a hero' mean anything to you?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:2",
+                "text": "Great story!  But, I uh, I gotta go, I got a date with Andrea--Angela--Andrea...  Oh man,"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:3",
+                "text": "Angela's the screamer, Andrea has cats."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "10:4",
+                "text": "Right.  Thanks.  It's June.  I'm outta here."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:5",
+                "text": "Y'know, here's the thing. Even if I could get it together enough to- to ask a woman out,... who am I gonna ask?"
+            }
+        ],
+        "session_13_date_time": "September 23, 1994",
+        "session_13": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:1",
+                "text": "Of course it was a line!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:2",
+                "text": "Why?! Why? Why, why would anybody do something like that?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:3",
+                "text": "I assume we're looking for an answer more sophisticated than 'to get you into bed'."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:4",
+                "text": "I hate men!  I hate men!"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:5",
+                "text": "Oh no, don't hate, you don't want to put that out into the universe."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:6",
+                "text": "Is it me? Is it like I have some sort of beacon that only dogs and men with severe emotional problems can hear?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:7",
+                "text": "All right, c'mere, gimme your feet."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:8",
+                "text": "I just thought he was nice, y'know?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:9",
+                "text": "I can't believe you didn't know it was a line!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:10",
+                "text": "Guess what?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:11",
+                "text": "You got a job?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:12",
+                "text": "Are you kidding? I'm trained for nothing! I was laughed out of twelve interviews today."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:13",
+                "text": "And yet you're surprisingly upbeat."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:14",
+                "text": "You would be too if you found John and David boots on sale, fifty percent off!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:15",
+                "text": "Oh, how well you know me..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:16",
+                "text": "They're my new 'I don't need a job, I don't need my parents, I've got great boots' boots!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:17",
+                "text": "How'd you pay for them?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:18",
+                "text": "Uh, credit card."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:19",
+                "text": "And who pays for that?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "13:20",
+                "text": "Um... my... father."
+            }
+        ],
+        "session_14_date_time": "September 23, 1994",
+        "session_14": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:1",
+                "text": "Oh God, come on you guys, is this really necessary?  I mean, I can stop charging anytime I want."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:2",
+                "text": "C'mon, you can't live off your parents your whole life."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:3",
+                "text": "I know that. That's why I was getting married."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:4",
+                "text": "Give her a break, it's hard being on your own for the first time."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:5",
+                "text": "Thank you."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "14:6",
+                "text": "You're welcome. I remember when I first came to this city. I was fourteen. My mom had just killed herself and my step-dad was back in prison, and I got here, and I didn't know anybody. And I ended up living with this albino guy who was, like, cleaning windshields outside port authority, and then he killed himself, and then I found aromatherapy. So believe me, I know exactly how you feel."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:7",
+                "text": "The word you're looking for is 'Anyway'..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:8",
+                "text": "All right, you ready?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:9",
+                "text": "No.  No, no, I'm not ready!  How can I be ready?  \"Hey, Rach!  You ready to jump out the airplane without your parachute?\"  Come on, I can't do this!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:10",
+                "text": "You can, I know you can!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:11",
+                "text": "I don't think so."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:12",
+                "text": "Come on, you made coffee!   You can do anything!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:13",
+                "text": "C'mon, cut. Cut, cut, cut,..."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "14:14",
+                "text": "Cut, cut, cut, cut, cut, cut, cut..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:15",
+                "text": "Y'know what?  I think we can just leave it at that.  It's kinda like a symbolic gesture..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:16",
+                "text": "Ariel!  That was a library card!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "14:17",
+                "text": "Cut, cut, cut, cut, cut, cut, cut.."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "14:18",
+                "text": "Y'know, if you listen closely, you can hear a thousand retailers scream."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:19",
+                "text": "Welcome to the real world! It sucks. You're gonna love it!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:20",
+                "text": "Well, that's it  You gonna crash on the couch?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:21",
+                "text": "No. No, I gotta go home sometime."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:22",
+                "text": "You be okay?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:23",
+                "text": "Yeah."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:24",
+                "text": "Hey Mon, look what I just found on the floor.  What?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:25",
+                "text": "That's Paul's watch. You just put it back where you found it. Oh boy. Alright. Goodnight, everybody."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:26",
+                "text": "Mmm.  Oh, no-"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:27",
+                "text": "Sorry-"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:28",
+                "text": "No no no, go-"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:29",
+                "text": "No, you have it, really, I don't want it-"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:30",
+                "text": "Split it?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:31",
+                "text": "Okay."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:32",
+                "text": "Okay.  You know you probably didn't know this, but back in high school, I had a, um, major crush on you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:33",
+                "text": "I knew."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:34",
+                "text": "You did! Oh.... I always figured you just thought I was Chloe's geeky older brother."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:35",
+                "text": "I did."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:36",
+                "text": "Oh. Listen, do you think- and try not to let my intense vulnerability become any kind of a factor here- but do you think it would be okay if I asked you out? Sometime? Maybe?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:37",
+                "text": "Yeah, maybe..."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:38",
+                "text": "Okay... okay, maybe I will..."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:39",
+                "text": "Goodnight."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:40",
+                "text": "Goodnight."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:41",
+                "text": "See ya.... Waitwait, what's with you?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:42",
+                "text": "I just grabbed a spoon."
+            }
+        ],
+        "session_15_date_time": "September 24, 1994",
+        "session_15": [
+            {
+                "speaker": "Ethan",
+                "dia_id": "15:1",
+                "text": "I can't believe what I'm hearing here."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:2",
+                "text": "I can't believe what I'm hearing here..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:3",
+                "text": "What? I-I said you had a-"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:4",
+                "text": "What I said you had..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:5",
+                "text": "Would you stop?"
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "15:6",
+                "text": "Oh, was I doing it again?"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "15:7",
+                "text": "Yes!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "15:8",
+                "text": "I said that you had a nice butt, it's just not a great butt."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "15:9",
+                "text": "Oh, you wouldn't know a great butt if it came up and bit ya."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "15:10",
+                "text": "There's an image."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:11",
+                "text": "Would anybody like more coffee?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:12",
+                "text": "Did you make it, or are you just serving it?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:13",
+                "text": "I'm just serving it."
+            },
+            {
+                "speaker": "All",
+                "dia_id": "15:14",
+                "text": "Yeah. Yeah, I'll have a cup of coffee."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:15",
+                "text": "Kids, new dream... I'm in Las Vegas."
+            },
+            {
+                "speaker": "Customer",
+                "dia_id": "15:16",
+                "text": "Ahh, miss?   More coffee?"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "15:17",
+                "text": "Ugh.  Excuse me, could you give this to that guy over there?  Go ahead.  Thank you.  Sorry.  Okay, Las Vegas."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "15:18",
+                "text": "Okay, so, I'm in Las Vegas... I'm Liza Minelli-"
+            }
+        ]
+    }
+}

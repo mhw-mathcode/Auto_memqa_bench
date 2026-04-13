@@ -1,0 +1,1501 @@
+{
+    "qa": [
+       
+    {
+      "character": "Bennett",
+      "category": 1,
+      "question": "Which detail from Bennett's dream reflects his underlying anxiety about his readiness for upcoming life responsibilities?",
+      "option": [
+        "A. He dreams of playing professional football for the Tampa Bay team.",
+        "B. He is unable to find a babysitter while he plays in a major game.",
+        "C. He feels pressured to act because a professional defense is charging at him while he holds a baby.",
+        "D. He successfully makes a touchdown pass using a football instead of his child.",
+        "E. He believes he is a great father because he catches the baby at the end of the field."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "I know I've gotta do something 'cause the Tampa Bay defence is comin' right at me.", "dia_id": "2:2" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "See I, I am so not ready to be a father.", "dia_id": "2:7" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett describes a dream where he is on a field with a baby and feels he must act because the Tampa Bay defense is attacking him.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explicitly links the failure/panic in this dream to his feeling of not being ready to be a father.", "based_on": ["E2"] },
+        { "step": 3, "inference": "The pressure of the defense while holding the baby represents the anxiety of fatherhood.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 2,
+      "question": "Besides the letter 'K', what other specific items did the doctor find inside Bennett's pet monkey?",
+      "option": [
+        "A. A piece of General Tso's chicken and a remote control.",
+        "B. The letters 'M' and 'O' from a Scrabble set.",
+        "C. A lemon schmush and a 'B' shaped rose.",
+        "D. A hospital admission form and a TV remote.",
+        "E. A 'K', an 'I', and a 'D' to spell out 'KID'."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "You've got to help me my monkey swallowed a 'K'!", "dia_id": "11:1" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Yeah. The doctor got the 'K' out. He also found an 'M' and an 'O'.", "dia_id": "13:4" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett reports to the nurse that his monkey swallowed a 'K'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Later, Bennett confirms the doctor removed the 'K' and also found 'M' and 'O'.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 3,
+      "question": "How does Bennett's perception of his own fatherhood transition from his initial dream to the incident at the hospital?",
+      "option": [
+        "A. He remains convinced throughout that he is a terrible father because he threw the baby.",
+        "B. He goes from feeling completely unready to being told he acted like a father by stepping up during a crisis.",
+        "C. He moves from being excited about playing football to being angry at the hospital staff.",
+        "D. He initially feels like a great dad but later realizes he doesn't know how to spell 'MONKEY'.",
+        "E. He decides he prefers being a monkey owner over being a human father."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "See I, I am so not ready to be a father.", "dia_id": "2:7" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Hey, come on, you came through, you did what you had to do. That is very dad.", "dia_id": "13:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett initially expresses that he is not ready for fatherhood based on his dream failure.", "based_on": ["E1"] },
+        { "step": 2, "inference": "After the monkey incident, Dexter redefines Bennett's actions as 'very dad' because he took responsibility and handled the crisis.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 4,
+      "question": "When Bennett seeks advice regarding his panic about becoming a father, who does he call and what is their relationship?",
+      "option": [
+        "A. He calls Dexter, his best friend and Scrabble partner.",
+        "B. He calls his own father to ask if he also felt panicky before Bennett was born.",
+        "C. He calls the hospital admissions office to talk to the woman there.",
+        "D. He calls Ursula to discuss the odds of having twins.",
+        "E. He calls the veterinarian at the animal hospital across town."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Dad, before I was born, did you freak out at all?", "dia_id": "5:1" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Did you uh, ever get this sort of... panicky, \\\"Oh my god I'm gonna be a father\\\" kind of a thing?", "dia_id": "5:2" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett is having a conversation addressed to 'Dad'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "He explicitly asks his father if he felt panicky about fatherhood before Bennett's birth.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 5,
+      "question": "In the Scrabble game Bennett played with Dexter, what was the specific score Bennett claimed for the word 'KIDNEY'?",
+      "option": [
+        "A. 13 points",
+        "B. 0 points",
+        "C. 43 points",
+        "D. 7 points",
+        "E. 21 points"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Yours, I just got 43 points for 'KIDNEY'.", "dia_id": "10:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett explicitly states he got 43 points for the word 'KIDNEY'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 6,
+      "question": "What lesson did Bennett learn about the definition of fatherhood through the crisis with Marcel?",
+      "option": [
+        "A. He learned that he should never play Scrabble with a monkey in the room.",
+        "B. He learned that a father's role is primarily about being a good athlete and catching the ball.",
+        "C. He learned that being a father is defined by 'coming through' and doing what is necessary during a crisis.",
+        "D. He learned that he will never feel like a father as long as he lives in Williamsburg.",
+        "E. He learned that monkeys are more difficult to care for than human babies."
+      ],
+      "answer": "C",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "No, no you don't understand... he's choking I don't know what else to do.", "dia_id": "11:3" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Hey, come on, you came through, you did what you had to do. That is very dad.", "dia_id": "13:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett panics and rushes to the hospital because his 'people' (the monkey) is choking, taking responsibility despite the rules.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter validates this action by telling Bennett that 'doing what you had to do' is the essence of being a dad.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Bennett",
+      "category": 7,
+      "question": "According to Bennett's conversation with his father, where did he agree they could go?",
+      "option": [
+        "A. The Rainbow Room",
+        "B. Tampa Bay",
+        "C. Williamsburg",
+        "D. The hospital admissions office",
+        "E. A football stadium"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "No, we can go to Williamsburg.", "dia_id": "5:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett tells his father directly that they can go to Williamsburg.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 1,
+      "question": "Based on Ethan's comments, which of the following best describes his attitude toward professional sports teams?",
+      "option": [
+        "A. He is a loyal supporter of the Tampa Bay team.",
+        "B. He believes Tampa Bay has a terrible team.",
+        "C. He thinks Tampa Bay has the best defense in the league.",
+        "D. He is indifferent to football and only cares about Scrabble.",
+        "E. He believes that Tampa Bay only needs better blocking to win."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Tampa Bay's got a terrible team.", "dia_id": "2:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan explicitly states that Tampa Bay has a terrible team.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 2,
+      "question": "What conflict does Ethan face regarding his plans for the evening of February 28, 1995?",
+      "option": [
+        "A. He wants to go to the Rainbow Room but doesn't have enough money to order food.",
+        "B. He is scheduled to play a Scrabble tournament but his monkey is sick.",
+        "C. He has a date with Ursula, but it is also his friend Fiona's birthday on the same night.",
+        "D. He is supposed to catch a baby in a football game but has no blocking.",
+        "E. He was stood up by Ursula and has to spend the night with Fiona instead."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I'm takin' Ursula tonight. It's her birthday.", "dia_id": "2:12" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Wo-wo-whoa. What about Fiona's birthday?", "dia_id": "2:13" },
+        { "id": "E3", "speaker": "Bennett", "utterance": "Tonight.", "dia_id": "2:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan plans to take Ursula out because it's her birthday.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett points out that it is also Fiona's birthday tonight.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 3,
+      "question": "How does Ethan's romantic situation with Ursula change between the afternoon of February 28 and March 2?",
+      "option": [
+        "A. He successfully takes her to the Rainbow Room and they become engaged.",
+        "B. He realizes Ursula is actually Fiona's twin and gets confused.",
+        "C. He goes from being excited about her birthday date to being stood up by her and ignored for two days.",
+        "D. He decides to blow her off to spend more time at the hospital with Bennett.",
+        "E. He finds out Ursula is a doctor and starts dating her sister Chloe instead."
+      ],
+      "answer": "C",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I'm takin' Ursula tonight. It's her birthday.", "dia_id": "2:12" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "Your sister stood me up the other night.", "dia_id": "7:19" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "I've been trying for two days. When I called the restaurant, they said she was too busy to talk.", "dia_id": "7:22" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "On the 28th, Ethan is planning a date for Ursula's birthday.", "based_on": ["E1"] },
+        { "step": 2, "inference": "By March 2nd, he reports that she stood him up and hasn't spoken to him for two days.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 4,
+      "question": "What is the social relationship between Ethan, Ursula, and Fiona according to the dialogue?",
+      "option": [
+        "A. Ursula and Fiona are sisters, and Ethan is dating Ursula while being friends with Fiona.",
+        "B. Ursula and Fiona are the same person using a pseudonym.",
+        "C. Ethan is Fiona's brother and Ursula's former employer.",
+        "D. Fiona is Ethan's girlfriend, and Ursula is the waitress at the Rainbow Room.",
+        "E. Ethan is a doctor at the hospital where Ursula and Fiona work."
+      ],
+      "answer": "A",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "I'm takin' Ursula tonight. It's her birthday.", "dia_id": "2:12" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "And your friend Fiona?", "dia_id": "2:20" },
+        { "id": "E3", "speaker": "Ethan", "utterance": "Your sister stood me up the other night.", "dia_id": "7:19" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan is dating Ursula as shown by the birthday date.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter refers to Fiona as Ethan's 'friend'.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Ethan refers to Ursula as Fiona's sister.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 5,
+      "question": "What does Dexter tell Ethan about the cost of the Rainbow Room?",
+      "option": [
+        "A. It's $500 per person.",
+        "B. It's only expensive if you order stuff.",
+        "C. It's cheap because they have a birthday discount.",
+        "D. It's real expensive no matter what.",
+        "E. It's free if you are a doctor."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Well, only if you order stuff.", "dia_id": "2:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "In response to Ethan's question about price, Dexter says it is only expensive if you order things.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 6,
+      "question": "How did Fiona's reaction on March 2nd contradict Ethan's earlier assumption about his 'friends' understanding his social choices?",
+      "option": [
+        "A. Ethan thought Fiona would be happy he chose Ursula, but she tried to put him out of business.",
+        "B. Ethan assumed friends would understand him blowing them off for a date, but Fiona sarcastically asked if he hates it when people aren't there for him.",
+        "C. Ethan believed Fiona would bring Betty to the party, but she didn't.",
+        "D. Ethan thought his friends would help with the blocking in his football dream.",
+        "E. Ethan expected Fiona to pay for the Rainbow Room since it was her birthday."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Well, if she's my friend, hopefully she'll understand. I mean, wouldn't you guys?", "dia_id": "2:21" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Oh, no. Don't you hate it when people aren't there for you?", "dia_id": "7:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan initially hopes Fiona will 'understand' him missing her birthday for Ursula.", "based_on": ["E1"] },
+        { "step": 2, "inference": "When Ursula stands Ethan up, Fiona uses sarcasm to highlight the hypocrisy of his expectation, indicating she didn't actually appreciate being ignored.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ethan",
+      "category": 7,
+      "question": "What specific event did Ethan plan to attend with Ursula on the night of February 28?",
+      "option": [
+        "A. A Scrabble tournament at Bennett's.",
+        "B. A trip to Williamsburg with Bennett's dad.",
+        "C. A birthday celebration at the Rainbow Room.",
+        "D. A visit to the hospital admissions office.",
+        "E. A football game against Tampa Bay."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Oh, have either one of you guys ever been to the Rainbow Room?", "dia_id": "2:10" },
+        { "id": "E2", "speaker": "Ethan", "utterance": "I'm takin' Ursula tonight. It's her birthday.", "dia_id": "2:12" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan asks about the Rainbow Room and then says he is taking Ursula there for her birthday 'tonight'.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 1,
+      "question": "How does Dexter characterize Bennett's personality during their conversation about the football dream?",
+      "option": [
+        "A. He thinks Bennett is crazy for throwing a baby.",
+        "B. He describes Bennett as one of the most caring and responsible men in North America.",
+        "C. He views Bennett as an irresponsible person who forgets birthdays.",
+        "D. He believes Bennett is a professional athlete who is over-anxious.",
+        "E. He considers Bennett to be a 'furball' with no paternal instincts."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Hey, you're gonna be fine. You're one of the most caring, most responsible men in North America. You're gonna make a great dad.", "dia_id": "2:8" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter explicitly lists 'caring' and 'responsible' as Bennett's core traits to reassure him about fatherhood.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 2,
+      "question": "What was Dexter doing immediately before the monkey swallowing incident was revealed?",
+      "option": [
+        "A. He was at the Rainbow Room ordering food.",
+        "B. He was helping Chloe fix a cake for Fiona.",
+        "C. He was playing Scrabble with Bennett.",
+        "D. He was watching Jeopardy! with Marcel.",
+        "E. He was signing admission forms for the hospital."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Okay... ..whose turn is it?", "dia_id": "10:8" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Yours, I just got 43 points for 'KIDNEY'.", "dia_id": "10:9" },
+        { "id": "E3", "speaker": "Dexter", "utterance": "Marcel swallowed a Scrabble tile.", "dia_id": "11:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter and Bennett are discussing turns and points in a game.", "based_on": ["E1", "E2"] },
+        { "step": 2, "inference": "The context of '43 points' and 'Kidney' implies Scrabble, which is confirmed when Dexter says Marcel swallowed a tile.", "based_on": ["E2", "E3"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 3,
+      "question": "Which statement accurately reflects the change in Dexter's assessment of Bennett's parenting abilities between their first and last conversation?",
+      "option": [
+        "A. He begins by thinking Bennett is a great dad but ends by saying Bennett failed.",
+        "B. He starts by reassuring Bennett he will be a great dad and concludes that Bennett's actions during the crisis were 'very dad'.",
+        "C. He initially thinks Bennett is irresponsible and later admits he was wrong about the monkey.",
+        "D. He believes Bennett is only good at Scrabble but later thinks he is good at Spanish.",
+        "E. He suggests Bennett needs better blocking at first but later says Bennett should take the sack."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "You're gonna make a great dad.", "dia_id": "2:8" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "Hey, come on, you came through, you did what you had to do. That is very dad.", "dia_id": "13:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Early on, Dexter gives a future-tense prediction that Bennett will be a great dad.", "based_on": ["E1"] },
+        { "step": 2, "inference": "At the hospital, he updates this to a current assessment, calling Bennett's behavior 'very dad'.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 4,
+      "question": "In the Scrabble game, what specific disagreement did Dexter have with Bennett regarding the board state?",
+      "option": [
+        "A. Dexter claimed Bennett cheated by using the word 'MONKEY'.",
+        "B. Dexter argued that Bennett got zero points because the 'K' was missing.",
+        "C. Dexter insisted that 'KIDNEY' is not a real word.",
+        "D. Dexter accused Bennett of letting Marcel win the game.",
+        "E. Dexter thought it was Bennett's turn, but Bennett said it was Dexter's."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Yours, I just got 43 points for 'KIDNEY'.", "dia_id": "10:9" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "No, no, you got zero points for 'IDNEY'.", "dia_id": "10:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett claims 43 points for 'KIDNEY'.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Dexter counters that the 'K' is gone, leaving only 'IDNEY', which is worth zero points.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 5,
+      "question": "Which Scrabble word did Dexter specifically mention as being worth zero points because it was missing a letter?",
+      "option": [
+        "A. KIDNEY",
+        "B. IDNEY",
+        "C. MONKEY",
+        "D. SCHMUSH",
+        "E. PEEHE"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "No, no, you got zero points for 'IDNEY'.", "dia_id": "10:10" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter explicitly names the word 'IDNEY' as being worth zero points.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 6,
+      "question": "What 'worst-case scenario' did Dexter pose to Bennett to explore the potential long-term issues of Bennett not feeling like a father?",
+      "option": [
+        "A. That the Tampa Bay defense would eventually catch the baby.",
+        "B. That Bennett's son would never feel connected to him, affecting all of the son's relationships.",
+        "C. That Marcel would swallow all the Scrabble tiles and never spell 'MONKEY'.",
+        "D. That Fiona would have a hissy fit and ruin their friendship.",
+        "E. That Bennett would never learn to speak Spanish properly."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Say your son never feels connected to you, as one. Say all of his relationships are affected by this.", "dia_id": "10:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter describes a scenario where a lack of connection between father and son has a ripple effect on the son's future relationships.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Dexter",
+      "category": 7,
+      "question": "Whose turn did Dexter think it was right before the 'K' was discovered missing?",
+      "option": [
+        "A. Bennett's",
+        "B. Marcel's",
+        "C. Fiona's",
+        "D. His own",
+        "E. Ariel's"
+      ],
+      "answer": "D",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "Okay... ..whose turn is it?", "dia_id": "10:8" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Yours, I just got 43 points for 'KIDNEY'.", "dia_id": "10:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter asks whose turn it is.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett confirms it is Dexter's ('Yours').", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 1,
+      "question": "Which of Ariel's persistent traits is demonstrated by her repetition of adjectives when describing the doctors she met?",
+      "option": [
+        "A. Her tendency to focus on professional qualifications like 'admissions officer'.",
+        "B. Her enthusiasm and focus on physical attractiveness when dating.",
+        "C. Her anxiety about hospital forms and medical paperwork.",
+        "D. Her preference for lemon-flavored desserts at parties.",
+        "E. Her habit of speaking Spanish when she is around her friends."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "The very cute, cute, cute doctors asked us out for tomorrow night, and I said \\\"yes.\\\"", "dia_id": "4:3" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "What? Chloe, they are cute, they are doctors, cute doctors, doctors who are cute!", "dia_id": "4:5" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel repeatedly uses the word 'cute' to justify why she said yes to the date.", "based_on": ["E1", "E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 2,
+      "question": "What injury brought Ariel to the hospital where she met the 'cute doctors'?",
+      "option": [
+        "A. A broken arm from a football game.",
+        "B. A sprained ankle.",
+        "C. A choking incident involving a Scrabble tile.",
+        "D. A burn from a lemon schmush cake.",
+        "E. An injury from Billy Dreskin's father."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "..so, he said it was just a sprain, and that was it.", "dia_id": "4:1" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel mentions the doctor said it was 'just a sprain'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 3,
+      "question": "How did Ariel's opinion of her date with the doctors change after the hospital called about the admission forms?",
+      "option": [
+        "A. She became more excited and decided to change her clothes.",
+        "B. She realized it was 'just not worth it' after dealing with the administrative hassle.",
+        "C. She decided to bring Betty to the date to make it more fun.",
+        "D. She was glad she didn't blow off the dates as Chloe suggested.",
+        "E. She decided to go to Williamsburg instead of the date."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "The very cute, cute, cute doctors asked us out for tomorrow night, and I said \\\"yes.\\\"", "dia_id": "4:3" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Okay, you were right. You were right! This was just not worth it.", "dia_id": "7:12" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Initially, Ariel is very enthusiastic about the date with the doctors.", "based_on": ["E1"] },
+        { "step": 2, "inference": "After the stress of the phone call about the unsigned form, she tells Chloe she was right and it wasn't worth it.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 4,
+      "question": "According to Ariel's dialogue, why would she never sleep with Billy Dreskin?",
+      "option": [
+        "A. Because he is not a 'cute doctor'.",
+        "B. Because his father tried to put her own father out of business.",
+        "C. Because he stood her up for a date at the Rainbow Room.",
+        "D. Because he doesn't know how to sign hospital forms.",
+        "E. Because he is friends with Ethan."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "Daddy, why whyyy would I sleep with Billy Dreskin? His father tried to put you out of business!", "dia_id": "7:1" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel explicitly cites the business rivalry between their fathers as the reason she wouldn't be with Billy.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 5,
+      "question": "What incorrect name was written on the cake that Ariel and her friends were looking at on February 28?",
+      "option": [
+        "A. Betty",
+        "B. Fiona",
+        "C. Peehe",
+        "D. Ursula",
+        "E. General Tso"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "\\\"Happy Birthday Peehe.\\\"", "dia_id": "4:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter reads the text on the cake aloud, which says 'Happy Birthday Peehe'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 6,
+      "question": "What did Ariel realize about following Chloe's advice regarding the doctors?",
+      "option": [
+        "A. That she should have listened to Chloe and blown off the dates from the start.",
+        "B. That she should have used 'special cake tools' to fix the problem.",
+        "C. That cute doctors are better than caring, responsible men.",
+        "D. That she should have checked the admission forms herself.",
+        "E. That her father's business rivals are actually good people."
+      ],
+      "answer": "A",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "I think it's totally insane... I say we blow off the dates.", "dia_id": "4:4" },
+        { "id": "E2", "speaker": "Ariel", "utterance": "Okay, you were right. You were right! This was just not worth it.", "dia_id": "7:12" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe initially advises blowing off the dates because of the hospital connection.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Ariel eventually agrees with Chloe, realizing the trouble wasn't worth the outcome.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Ariel",
+      "category": 7,
+      "question": "On the evening of February 28, for what time had Ariel and the doctors scheduled their date?",
+      "option": [
+        "A. Tonight",
+        "B. Tomorrow night",
+        "C. Next Friday",
+        "D. March 2nd",
+        "E. They didn't schedule a specific time."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ariel", "utterance": "The very cute, cute, cute doctors asked us out for tomorrow night, and I said \\\"yes.\\\"", "dia_id": "4:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ariel states the date is for 'tomorrow night'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 1,
+      "question": "What is Chloe's characteristic reaction toward Ariel's dating choices as shown in the dialogues?",
+      "option": [
+        "A. She is unconditionally supportive of Ariel's choices.",
+        "B. She is skeptical and thinks dating hospital staff is 'insane'.",
+        "C. She is jealous because she wants to date the doctors herself.",
+        "D. She only cares if the dates take place at the Rainbow Room.",
+        "E. She is obsessed with whether the men are caring or responsible."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "I think it's totally insane, I mean, they work for the hospital. It's like returning to the scene of the crime.", "dia_id": "4:4" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe explicitly calls the idea of dating the doctors 'insane' and compares the hospital to a 'scene of the crime'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 2,
+      "question": "What administrative error did Chloe and Ariel make that resulted in the hospital calling Ariel's home?",
+      "option": [
+        "A. They provided the wrong phone number.",
+        "B. They forgot to pay the sprain treatment bill.",
+        "C. They forgot to sign one of the admissions forms.",
+        "D. They used a fake name ('Betty') on the forms.",
+        "E. They brought a monkey into the hospital."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "We forgot to sign one of the admissions forms.", "dia_id": "7:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe identifies the specific problem as a forgotten signature on an admissions form.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 3,
+      "question": "Which transition in Chloe's behavior occurred regarding the hospital forms?",
+      "option": [
+        "A. She initially ignored the forms but later decided to forge Ariel's signature.",
+        "B. She went from questioning what the hospital wanted to immediately agreeing to go 'right down' to fix the error.",
+        "C. She refused to help Ariel at first but then suggested using 'special cake tools'.",
+        "D. She decided the dates were worth it after all and changed her mind about the doctors.",
+        "E. She decided to go to Williamsburg instead of fixing the form."
+      ],
+      "answer": "B",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "I don't know! Why don't you just explain? What do they want? Find out what they want!", "dia_id": "7:7" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "Okay, yes, we'll be right, we'll be right down. Thank you.", "dia_id": "7:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "When the call first comes in, Chloe is confused and demands to know what they want.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Once she speaks to the woman, her attitude shifts to compliance, and she agrees to go down immediately.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 4,
+      "question": "How did Chloe react to Bennett's suggestion of using 'special cake tools'?",
+      "option": [
+        "A. She laughed and agreed that it was a great idea.",
+        "B. She ignored the sarcasm and suggested making a 'B' out of a rose instead.",
+        "C. She used the tools to fix the cake for Fiona's birthday.",
+        "D. She was the one who actually provided the 'lemon schmush' cake.",
+        "E. She told Bennett that he was not ready to be a father."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Well maybe we can make a, a, a 'B' out of one of those roses.", "dia_id": "4:14" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Yeah, we'll just use our special cake tools.", "dia_id": "4:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe suggests a manual fix for the misspelling on the cake ('Peehe' to 'Phoebe/B').", "based_on": ["E1"] },
+        { "step": 2, "inference": "Bennett makes a sarcastic comment about 'special cake tools', which Chloe does not engage with as she continues preparing for Fiona.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 5,
+      "question": "What kind of cake did Bennett bring that Chloe was concerned about for the birthday party?",
+      "option": [
+        "A. A chocolate fudge cake.",
+        "B. A General Tso chicken cake.",
+        "C. A lemon schmush.",
+        "D. A Scrabble-tile shaped cake.",
+        "E. A cake with 'Betty' written on it."
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Yeah, yeah. I got a lemon schmush.", "dia_id": "4:9" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Bennett identifies the cake he brought as a 'lemon schmush'.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 6,
+      "question": "What did Chloe learn about the consequences of dating doctors while they are still patients at the hospital?",
+      "option": [
+        "A. That doctors are better at blocking in football dreams.",
+        "B. That dating them leads to unwanted administrative follow-ups from the hospital admissions office.",
+        "C. That hospital food is not as good as General Tso's chicken.",
+        "D. That signing forms is more important than the quality of the cake.",
+        "E. That the Rainbow Room is too expensive for medical staff."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "they work for the hospital. It's like returning to the scene of the crime.", "dia_id": "4:4" },
+        { "id": "E2", "speaker": "Chloe", "utterance": "We forgot to sign one of the admissions forms.", "dia_id": "7:11" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe warns that dating the doctors links them back to the hospital ('scene of the crime').", "based_on": ["E1"] },
+        { "step": 2, "inference": "This connection results in the admissions office calling about the error, proving her point that the link would cause trouble.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Chloe",
+      "category": 7,
+      "question": "What task did Chloe urgently prompt everyone to finish because 'she'll be here any minute'?",
+      "option": [
+        "A. Signing the hospital admission forms.",
+        "B. Fixing the 'Peehe' cake for Fiona.",
+        "C. Finding the missing 'K' for the Scrabble game.",
+        "D. Changing their clothes for the date with the doctors.",
+        "E. Ordering the General Tso's chicken."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Chloe", "utterance": "Come on, she'll be here any minute.", "dia_id": "4:10" },
+        { "id": "E2", "speaker": "Dexter", "utterance": "\\\"Happy Birthday Peehe.\\\"", "dia_id": "4:13" },
+        { "id": "E3", "speaker": "Fiona", "utterance": "Hey, what's going on?", "dia_id": "4:16" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Chloe is rushing the group because a guest is arriving.", "based_on": ["E1"] },
+        { "step": 2, "inference": "The group is currently evaluating the 'Peehe' cake.", "based_on": ["E2"] },
+        { "step": 3, "inference": "Fiona's arrival shortly after confirms she was the one Chloe was referring to.", "based_on": ["E3"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 1,
+      "question": "How does Fiona's sarcastic remark about 'people not being there for you' reveal her core values?",
+      "option": [
+        "A. She values punctuality above all else.",
+        "B. She believes that friends should prioritize each other's important events (like birthdays).",
+        "C. She thinks people should always be at the hospital for their friends.",
+        "D. She believes that sisters should never stand up their boyfriends.",
+        "E. She values professional athletes who catch babies in dreams."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Wo-wo-whoa. What about Fiona's birthday?", "dia_id": "2:13" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Oh, no. Don't you hate it when people aren't there for you?", "dia_id": "7:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan planned to miss Fiona's birthday for a date.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona's comment is a direct jab at Ethan's earlier decision to not be 'there' for her on her birthday.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 2,
+      "question": "According to the dialogue, who did Fiona find at her birthday party that she was particularly excited about?",
+      "option": [
+        "A. Ethan",
+        "B. Ursula",
+        "C. Betty",
+        "D. General Tso",
+        "E. Billy Dreskin"
+      ],
+      "answer": "C",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "You found Betty! Oh my god! This is great.", "dia_id": "4:18" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona expresses specific excitement about 'Betty' being present.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 3,
+      "question": "On the night of March 2nd, how did Fiona's interaction with Ethan contrast with her birthday party on February 28?",
+      "option": [
+        "A. At the party she was looking for him, but on March 2nd she was sarcastic toward him.",
+        "B. At the party she was mad at him, but at the hospital she was supportive.",
+        "C. At the party she ignored him, but later she stood him up at the restaurant.",
+        "D. She was happy Ethan brought the cake on the 28th but angry he lost the 'K' on the 2nd.",
+        "E. She didn't recognize Ethan at the party but recognized him at the hospital."
+      ],
+      "answer": "A",
+      "label": "Memory Update",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Everybody I love is in the same room, Where's Ethan?", "dia_id": "4:18" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Oh, no. Don't you hate it when people aren't there for you?", "dia_id": "7:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "On the 28th, Fiona is happily celebrating and looking for Ethan.", "based_on": ["E1"] },
+        { "step": 2, "inference": "On the 2nd, she uses his misfortune (being stood up) to mock his previous lack of support for her.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 4,
+      "question": "What is Fiona's immediate concern when she arrives at the hospital on March 2nd?",
+      "option": [
+        "A. She wants to know if Bennett found the 'K'.",
+        "B. She wants to know if Marcel is alright.",
+        "C. She is looking for her sister Ursula.",
+        "D. She is angry at Ethan for being there.",
+        "E. She is worried about her own birthday cake."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Fiona", "utterance": "Is he alright?", "dia_id": "13:3" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Fiona arrives and immediately asks about the patient's well-being.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 5,
+      "question": "Which of the following phrases was Dexter reading from the cake intended for Fiona?",
+      "option": [
+        "A. Happy Birthday Phoebe",
+        "B. Happy Birthday Peehe",
+        "C. Happy Birthday Fiona",
+        "D. Happy Birthday Betty",
+        "E. Happy Birthday General Tso"
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Single Dialogue)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Dexter", "utterance": "\\\"Happy Birthday Peehe.\\\"", "dia_id": "4:13" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Dexter explicitly reads the misspelled name 'Peehe' from the cake.", "based_on": ["E1"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 6,
+      "question": "What meta-cognitive reflection did Fiona provide when she heard Ethan was stood up by her sister?",
+      "option": [
+        "A. She reflected on the fact that she and Ursula are twins.",
+        "B. She pointed out the irony of someone failing to be 'there' for another person.",
+        "C. She realized that she should have invited the doctors to her party.",
+        "D. She concluded that General Tso's chicken is better than birthday cake.",
+        "E. She decided that Scrabble is a dangerous game for monkeys."
+      ],
+      "answer": "B",
+      "label": "Multi-hop",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Ethan", "utterance": "Your sister stood me up the other night.", "dia_id": "7:19" },
+        { "id": "E2", "speaker": "Fiona", "utterance": "Oh, no. Don't you hate it when people aren't there for you?", "dia_id": "7:20" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "Ethan complains about being stood up by Fiona's sister.", "based_on": ["E1"] },
+        { "step": 2, "inference": "Fiona uses this to reflect on the general principle of 'being there for people', which is a pointed reference to Ethan's own past behavior.", "based_on": ["E2"] }
+      ]
+    },
+    {
+      "character": "Fiona",
+      "category": 7,
+      "question": "According to the dialogue, on which date did Fiona's birthday party occur?",
+      "option": [
+        "A. March 2, 1995",
+        "B. February 28, 1995",
+        "C. March 1, 1995",
+        "D. February 29, 1995",
+        "E. The dialogue doesn't specify a date."
+      ],
+      "answer": "B",
+      "label": "Fact Extraction (Multiple Dialogues)",
+      "evidence_dialogues": [
+        { "id": "E1", "speaker": "Bennett", "utterance": "Wo-wo-whoa. What about Fiona's birthday?", "dia_id": "2:13" },
+        { "id": "E2", "speaker": "Bennett", "utterance": "Tonight.", "dia_id": "2:15" }
+      ],
+      "reasoning_steps": [
+        { "step": 1, "inference": "The metadata for Session 2 and Session 4 indicates the date is February 28, 1995.", "based_on": [] },
+        { "step": 2, "inference": "Bennett states that Fiona's birthday is 'tonight' during Session 2.", "based_on": ["E1", "E2"] }
+      ]
+    }
+
+    ],
+    "conversation": {
+        "speaker_0": "Bennett",
+        "speaker_1": "Ethan",
+        "speaker_2": "Dexter",
+        "session_2_date_time": "February 28, 1995",
+        "session_2": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:1",
+                "text": "I had a dream last night where I was playing football with my kid."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:2",
+                "text": "No, no, with him.  I'm on this field, and they, they hike me the baby... and I, I know I've gotta do something 'cause the Tampa Bay defence is comin' right at me."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:3",
+                "text": "Tampa Bay's got a terrible team."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:4",
+                "text": "Right, but, it is just me and the baby, so I'm thinkin' they can take us. And so I uh, hah-hah, I just heave it down field."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:5",
+                "text": "What are you crazy? That's a baby!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:6",
+                "text": "He should take the sack?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:7",
+                "text": "Anyway, suddenly I'm down field, and I realise that I'm the one who's supposed to catch him, right? Only I know there is no way I'm gonna get there in time, so I am running, and running, and that, that is when I woke up. See I, I am so not ready to be a father."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:8",
+                "text": "Hey, you're gonna be fine. You're one of the most caring, most responsible men in North America. You're gonna make a great dad."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:9",
+                "text": "Yeah, Bennett. You and the baby just need better blocking."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:10",
+                "text": "Oh, have either one of you guys ever been to the Rainbow Room? Is it real expensive?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:11",
+                "text": "Well, only if you order stuff."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:12",
+                "text": "I'm takin' Ursula tonight. It's her birthday."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:13",
+                "text": "Wo-wo-whoa. What about Fiona's birthday?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:14",
+                "text": "When's that?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:15",
+                "text": "Tonight."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:16",
+                "text": "Oh, man. What're the odds of that happening?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "2:17",
+                "text": "You take your time."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:18",
+                "text": "There it is! So what're you gonna do?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:19",
+                "text": "What can I do? Look, I don't want to do anything to screw it up with Ursula."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:20",
+                "text": "And your friend Fiona?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "2:21",
+                "text": "Well, if she's my friend, hopefully she'll understand. I mean, wouldn't you guys?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "2:22",
+                "text": "Man, if you tried something like that on my birthday, you'd be starin' at the business end of a hissy fit."
+            }
+        ],
+        "speaker_3": "Ariel",
+        "speaker_4": "Chloe",
+        "session_4_date_time": "February 28, 1995",
+        "session_4": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:1",
+                "text": "..so, he said it was just a sprain, and that was it."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:2",
+                "text": "Uh, you left out the stupid part."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:3",
+                "text": "Not stupid. The very cute, cute, cute doctors asked us out for tomorrow night, and I said \"yes.\""
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:4",
+                "text": "I think it's totally insane, I mean, they work for the hospital. It's like returning to the scene of the crime. You know, I say we blow off the dates."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:5",
+                "text": "What? Chloe, they are cute, they are doctors,  cute doctors, doctors who are cute!"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:6",
+                "text": "Alright, what have we learned so far?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:7",
+                "text": "What the hell are you doing? You scared the crap outta me."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:8",
+                "text": "Was that the cake?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:9",
+                "text": "Yeah, yeah. I got a lemon schmush."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:10",
+                "text": "Come on, she'll be here any minute."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "4:11",
+                "text": "I hope it's okay."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:12",
+                "text": "Oh..."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:13",
+                "text": "\"Happy Birthday Peehe.\""
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "4:14",
+                "text": "Well maybe we can make a, a, a 'B' out of one of those roses."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:15",
+                "text": "Yeah, we'll just use our special cake tools."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:16",
+                "text": "Hey, what's going on?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "4:17",
+                "text": "Oh, we just..."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "4:18",
+                "text": "oh, oh, oh! This is so great! Oh my god! This was not at all scary. Hi everybody. Hi Betty! Betty, Hi!  You found Betty! Oh my god!  This is great. Everybody I love is in the same room,  Where's Ethan?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "4:19",
+                "text": "Did you see Betty?"
+            }
+        ],
+        "session_5_date_time": "March 1, 1995",
+        "session_5": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:1",
+                "text": "Dad, before I was born, did you freak out at all?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:2",
+                "text": "Dad, dad, dad, I'm talkin' about the whole uh, baby thing. Did you uh, ever get this sort of... panicky, \"Oh my god I'm gonna be a father\" kind of a thing?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:3",
+                "text": "No, no, Dad, I was just wondering."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:4",
+                "text": "Thanks, Dad, really, I ju... you know, I just, I just needed to know, um... when did you start to feel like a father?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "5:5",
+                "text": "No, we can go to Williamsburg."
+            }
+        ],
+        "session_7_date_time": "March 2, 1995",
+        "session_7": [
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:1",
+                "text": "Daddy... Daddy... Daddy, why whyyy would I sleep with Billy Dreskin? His father tried to put you out of business!  ...dead!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:2",
+                "text": "Bennett, he's got the remote again."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:3",
+                "text": "Good. Maybe he can switch it back."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:4",
+                "text": "Maybe not."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:5",
+                "text": "Hello?  Um, yeah, uh,  Okay ah, hold on a second, lemme lemme just check and see if see if she's here."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:6",
+                "text": "It's the woman from the hospital admissions office. She says there's a problem with the form. Oh, god, oh god..."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:7",
+                "text": "I don't know! Why don't you just explain? What do they want? Find out what they want!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:8",
+                "text": "Okay  no, you do it."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:9",
+                "text": "Hello, this is Chloe... Yeah??? Oh...  Okay, yes, we'll be right, we'll be right down. Thank you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:10",
+                "text": "What?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:11",
+                "text": "We forgot to sign one of the admissions forms."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:12",
+                "text": "Ohhh...  Okay, you were right. You were right! This was just not worth it."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:13",
+                "text": "Thank you."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "7:14",
+                "text": "Okay, let me just change."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:15",
+                "text": "Yes."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:16",
+                "text": "Hey."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "7:17",
+                "text": "Hi."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:18",
+                "text": "Trouble?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:19",
+                "text": "Your sister stood me up the other night."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "7:20",
+                "text": "Oh, no. Don't you hate it when people aren't there for you?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "7:21",
+                "text": "Well did you try calling her?"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "7:22",
+                "text": "I've been trying for two days. When I called the restaurant, they said she was too busy to talk. I can't believe she's blowin' me off."
+            }
+        ],
+        "session_10_date_time": "March 2, 1995",
+        "session_10": [
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:1",
+                "text": "Okay, worst case scenario. Say you never feel like a father."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:2",
+                "text": "Uh-huh."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:3",
+                "text": "Say your son never feels connected to you, as one. Say all of his relationships are affected by this."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:4",
+                "text": "Do you have a point?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:5",
+                "text": "You know, you think I would."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:6",
+                "text": "What's up with the simian?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:7",
+                "text": "It's just a fur ball."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:8",
+                "text": "Okay...  ..whose turn is it?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:9",
+                "text": "Yours, I just got 43 points for 'KIDNEY'."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "10:10",
+                "text": "No, no, you got zero points for 'IDNEY'."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "10:11",
+                "text": "I had a 'K'. Where's where's my 'K'?"
+            }
+        ],
+        "session_11_date_time": "March 2, 1995",
+        "session_11": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:1",
+                "text": "You've got to help me my monkey swallowed a 'K'!"
+            },
+            {
+                "speaker": "Nurse",
+                "dia_id": "11:2",
+                "text": "You go get that animal outta here."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:3",
+                "text": "No, no you don't understand the animal hospital is way across town he's choking I don't know what else to do."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:4",
+                "text": "What's goin' on?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "11:5",
+                "text": "Marcel swallowed a Scrabble tile."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:6",
+                "text": "Oh."
+            },
+            {
+                "speaker": "Nurse",
+                "dia_id": "11:7",
+                "text": "Excuse me... This hospital is for people!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "11:8",
+                "text": "Lady, he is people. He has a name, okay? He watches Jeopardy! He he touches himself when nobody's watching. Please, please have a heart!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:9",
+                "text": "Michael."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:10",
+                "text": "What?"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:11",
+                "text": "Chloe."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:12",
+                "text": "Oh."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "11:13",
+                "text": "Hi."
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "11:14",
+                "text": "Hi."
+            }
+        ],
+        "session_13_date_time": "March 2, 1995",
+        "session_13": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:1",
+                "text": "He looks so tiny."
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "13:2",
+                "text": "We just got the message."
+            },
+            {
+                "speaker": "Fiona",
+                "dia_id": "13:3",
+                "text": "Is he alright?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:4",
+                "text": "Yeah. The doctor got the 'K' out. He also found an 'M' and an 'O'."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:5",
+                "text": "We think he was trying to spell out 'MONKEY.'"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:6",
+                "text": "Well, the doctor says he's gonna be fine, he's just sleeping now."
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:7",
+                "text": "So, you feel like a dad yet?"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:8",
+                "text": "No, why?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "13:9",
+                "text": "Hey, come on, you came through, you did what you had to do. That is very dad."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "13:10",
+                "text": "Oh, look, he's waking up!"
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "13:11",
+                "text": "hey, fella! How you doing?"
+            }
+        ],
+        "speaker_5": "Fiona",
+        "session_14_date_time": "March 2, 1995",
+        "session_14": [
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:1",
+                "text": "Aqui est�."
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:2",
+                "text": "�A qui�n pidio el pollo General Tso?"
+            },
+            {
+                "speaker": "Dexter",
+                "dia_id": "14:3",
+                "text": "�Pudo aver sido General Tso!"
+            },
+            {
+                "speaker": "Ariel",
+                "dia_id": "14:4",
+                "text": "�Mira, mira, el viejo desnudo est� haciendo el hula hoop!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "14:5",
+                "text": "�Ewww!"
+            },
+            {
+                "speaker": "All",
+                "dia_id": "14:6",
+                "text": "�Hola, Ethan!"
+            },
+            {
+                "speaker": "Ethan",
+                "dia_id": "14:7",
+                "text": "�Hola, amigos!"
+            },
+            {
+                "speaker": "Chloe",
+                "dia_id": "14:8",
+                "text": "Mira, Bennett, Marcel se llevo el control remoto."
+            },
+            {
+                "speaker": "Bennett",
+                "dia_id": "14:9",
+                "text": "�Lo que sucedio es que no le gusta la tele!"
+            }
+        ],
+        "speaker_6": "Nurse",
+        "speaker_7": "All"
+    }
+}

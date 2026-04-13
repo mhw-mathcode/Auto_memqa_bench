@@ -2859,6 +2859,946 @@
                     ]
                 }
             ]
+        },
+        {
+            "character": "#2",
+            "category": 6,
+            "question": "What did #2's behavior during the second vote suggest about his approach to the trial, based on his comments and actions?\nA. He was trying to influence others with his personal opinions.\nB. He was trying to be the most vocal juror.\nC. He was trying to avoid making a decision.\nD. He was trying to keep the trial from getting too serious.\nE. He was trying to be the most responsible juror.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He was trying to influence others with his personal opinions.",
+                "B. He was trying to be the most vocal juror.",
+                "C. He was trying to avoid making a decision.",
+                "D. He was trying to keep the trial from getting too serious.",
+                "E. He was trying to be the most responsible juror.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "D. He was trying to keep the trial from getting too serious.",
+            "label": "Memory Update",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#2",
+                    "utterance": "I wonder if they let us go home in case we can't finish tonight. I've got a boy with mumps.",
+                    "dia_id": "D4:212"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#2",
+                    "utterance": "I've had enough!",
+                    "dia_id": "D4:206"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#2 initially made light-hearted comments about the trial being extended and the jurors' personal lives, suggesting he wanted to reduce the tension.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "Later, he was part of the group that voted not guilty, and his earlier comments were not corrected, indicating he was trying to keep the trial from getting too serious.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#2\", \"utterance\": \"I wonder if they let us go home in case we can't finish tonight. I've got a boy with mumps.\", \"dia_id\": \"D4:212\"}, {\"id\": \"E2\", \"speaker\": \"#2\", \"utterance\": \"I've had enough!\", \"dia_id\": \"D4:206\"}, {\"step\": 1, \"inference\": \"#2 initially made light-hearted comments about the trial being extended and the jurors' personal lives, suggesting he wanted to reduce the tension.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"Later, he was part of the group that voted not guilty, and his earlier comments were not corrected, indicating he was trying to keep the trial from getting too serious.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #2's behavior during the second vote suggest about his approach to the trial, based on his comments and actions?\nA. He was trying to keep the trial from getting too serious.\nB. He was trying to avoid making a decision.\nC. He was trying to influence others with his personal opinions.\nD. He was trying to be the most responsible juror.\nE. He was trying to be the most vocal juror.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.361370325088501,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "Not guilty.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I have a hard decision to make. I think for a long moment.",
+                            "dia_id": "dia_0003"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I wonder if they let us go home in case we can't finish tonight. I've got a boy with mumps.",
+                            "dia_id": "D4:212"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I've had enough!",
+                            "dia_id": "D4:206"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "Not guilty.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I have a hard decision to make. I think for a long moment.",
+                            "dia_id": "dia_0003"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I have.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "Don't you sweat?",
+                            "dia_id": "dia_0005"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#2",
+                            "utterance": "Six to six! I'm telling you, some of you people in here are out of your minds. A kid like that.",
+                            "dia_id": "dia_0013"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "He’s out to here. The wife says he looks like Mussolini.",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I have.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "Don't you sweat?",
+                            "dia_id": "dia_0005"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#2",
+                            "utterance": "Six to six! I'm telling you, some of you people in here are out of your minds. A kid like that.",
+                            "dia_id": "dia_0013"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I wonder if they let us go home in case we can't finish tonight. I've got a boy with mumps.",
+                            "dia_id": "D4:212"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I've had enough!",
+                            "dia_id": "D4:206"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "Not guilty.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I have a hard decision to make. I think for a long moment.",
+                            "dia_id": "dia_0003"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I have.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "Don't you sweat?",
+                            "dia_id": "dia_0005"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#2",
+                            "utterance": "Six to six! I'm telling you, some of you people in here are out of your minds. A kid like that.",
+                            "dia_id": "dia_0013"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "He’s out to here. The wife says he looks like Mussolini.",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 3,
+                    "answer": "(A)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "He’s out to here. The wife says he looks like Mussolini.",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I wonder if they let us go home in case we can't finish tonight. I've got a boy with mumps.",
+                            "dia_id": "D4:212"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I've had enough!",
+                            "dia_id": "D4:206"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "Not guilty.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "I have a hard decision to make. I think for a long moment.",
+                            "dia_id": "dia_0003"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "I have.",
+                            "dia_id": "dia_0002"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#2",
+                            "utterance": "Don't you sweat?",
+                            "dia_id": "dia_0005"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#2",
+                            "utterance": "Six to six! I'm telling you, some of you people in here are out of your minds. A kid like that.",
+                            "dia_id": "dia_0013"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#2",
+                            "utterance": "He’s out to here. The wife says he looks like Mussolini.",
+                            "dia_id": "dia_12"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(A) He was trying to influence others with his personal opinions.",
+                        "score": 0,
+                        "response_time": 2.233335494995117,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#4",
+            "category": 6,
+            "question": "What did #4's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to be the most responsible juror.\nB. He was trying to be the most vocal juror.\nC. He was trying to keep the trial from getting too serious.\nD. He was trying to influence others with his personal opinions.\nE. He was trying to avoid making a decision.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He was trying to be the most responsible juror.",
+                "B. He was trying to be the most vocal juror.",
+                "C. He was trying to keep the trial from getting too serious.",
+                "D. He was trying to influence others with his personal opinions.",
+                "E. He was trying to avoid making a decision.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "A. He was trying to be the most responsible juror.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#4",
+                    "utterance": "This getting to be a joke!",
+                    "dia_id": "D4:4"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#4",
+                    "utterance": "I don't see what we're going to prove here.",
+                    "dia_id": "D4:65"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#4 expressed frustration with the trial process, indicating he was trying to be responsible and wanted to move forward with a serious approach.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "His later comment about not seeing what they were trying to prove suggests he was trying to be the most responsible juror by focusing on the purpose of the trial.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#4\", \"utterance\": \"This getting to be a joke!\", \"dia_id\": \"D4:4\"}, {\"id\": \"E2\", \"speaker\": \"#4\", \"utterance\": \"I don't see what we're going to prove here.\", \"dia_id\": \"D4:65\"}, {\"step\": 1, \"inference\": \"#4 expressed frustration with the trial process, indicating he was trying to be responsible and wanted to move forward with a serious approach.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"His later comment about not seeing what they were trying to prove suggests he was trying to be the most responsible juror by focusing on the purpose of the trial.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #4's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to be the most vocal juror.\nB. He was trying to keep the trial from getting too serious.\nC. He was trying to avoid making a decision.\nD. He was trying to influence others with his personal opinions.\nE. He was trying to be the most responsible juror.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.4279196262359619,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(C)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "What reasonable doubt? That’s nothing but words!",
+                            "dia_id": "dia_003"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "He gets up and starts a walk down toward #7. Camera pans with him.",
+                            "dia_id": "dia_004"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "I mean you're sittin' in here pulling stories outa thin air! What're we supposed to believe?",
+                            "dia_id": "dia_007"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#4",
+                            "utterance": "He said, he want from his bedroom to the front door. That's enough, isn't it?",
+                            "dia_id": "dia_012"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#4",
+                            "utterance": "He sits back, relaxed, at ease.",
+                            "dia_id": "dia_022"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#4",
+                            "utterance": "This getting to be a joke!",
+                            "dia_id": "D4:4"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#4",
+                            "utterance": "I don't see what we're going to prove here.",
+                            "dia_id": "D4:65"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(E. He was trying to avoid making a decision.)",
+                        "score": 0,
+                        "response_time": 0.48665642738342285,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#11",
+            "category": 6,
+            "question": "What did #11's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to avoid making a decision.\nB. He was trying to be the most responsible juror.\nC. He was trying to keep the trial from getting too serious.\nD. He was trying to influence others with his personal opinions.\nE. He was trying to be the most vocal juror.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He was trying to avoid making a decision.",
+                "B. He was trying to be the most responsible juror.",
+                "C. He was trying to keep the trial from getting too serious.",
+                "D. He was trying to influence others with his personal opinions.",
+                "E. He was trying to be the most vocal juror.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "B. He was trying to be the most responsible juror.",
+            "label": "Fact Extraction (Multiple Dialogues)",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#11",
+                    "utterance": "I don't have to defend my decision to you! I have a reasonable doubt in my mind.",
+                    "dia_id": "D4:10"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#11",
+                    "utterance": "This is one of the reasons why we are strong. We should not make it a personal thing.",
+                    "dia_id": "D4:220"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#11 expressed a reasonable doubt, showing he was focused on the facts rather than personal feelings.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "His later statement about democracy and not making it a personal thing reinforces that he was trying to be the most responsible juror.",
+                    "based_on": [
+                        "E1",
+                        "E2"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(A)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#11\", \"utterance\": \"I don't have to defend my decision to you! I have a reasonable doubt in my mind.\", \"dia_id\": \"D4:10\"}, {\"id\": \"E2\", \"speaker\": \"#11\", \"utterance\": \"This is one of the reasons why we are strong. We should not make it a personal thing.\", \"dia_id\": \"D4:220\"}, {\"step\": 1, \"inference\": \"#11 expressed a reasonable doubt, showing he was focused on the facts rather than personal feelings.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"His later statement about democracy and not making it a personal thing reinforces that he was trying to be the most responsible juror.\", \"based_on\": [\"E1\", \"E2\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #11's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to be the most responsible juror.\nB. He was trying to influence others with his personal opinions.\nC. He was trying to be the most vocal juror.\nD. He was trying to keep the trial from getting too serious.\nE. He was trying to avoid making a decision.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.37357592582702637,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "A"
+                ],
+                "ground_truth_options": [
+                    [
+                        "A"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(D)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#11",
+                            "utterance": "Pardon. This fighting. This is not why we are here, to fight. We have a responsibility. This, I have always thought, is a remarkable thing about democracy. That we are, uh, what is the word?",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#11",
+                            "utterance": "Thank you.",
+                            "dia_id": "dia_id_11"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#11",
+                            "utterance": "Um, if no one else has an idea I may have a cutie here. I mean I haven't put much thought into it. Anyway, lemme throw it out on the stoop and see if the cat licks it up.",
+                            "dia_id": "dia_id_11"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#11",
+                            "utterance": "I don't have to defend my decision to you! I have a reasonable doubt in my mind.",
+                            "dia_id": "D4:10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#11",
+                            "utterance": "This is one of the reasons why we are strong. We should not make it a personal thing.",
+                            "dia_id": "D4:220"
+                        }
+                    ],
+                    "result": "wrong"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(A)",
+                        "score": 0,
+                        "response_time": 0.4878883361816406,
+                        "file_id": 1
+                    }
+                ]
+            }
+        },
+        {
+            "character": "#3",
+            "category": 6,
+            "question": "What did #3's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to understand the facts objectively.\nB. He was trying to keep the trial moving quickly.\nC. He was concerned about the accuracy of the diagram.\nD. He was trying to avoid responsibility for the verdict.\nE. He was focused on the emotional appeal of the case.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+            "option": [
+                "A. He was trying to understand the facts objectively.",
+                "B. He was trying to keep the trial moving quickly.",
+                "C. He was concerned about the accuracy of the diagram.",
+                "D. He was trying to avoid responsibility for the verdict.",
+                "E. He was focused on the emotional appeal of the case.",
+                "F. Cannot infer the answer based on the given information."
+            ],
+            "answer": "E. He was focused on the emotional appeal of the case.",
+            "label": "Multi-hop",
+            "evidence_dialogues": [
+                {
+                    "id": "E1",
+                    "speaker": "#3",
+                    "utterance": "I mean everybody's heart is starting to bleed for this punk little kid like the President just declared it Love Your Underprivileged Brother week, or something.",
+                    "dia_id": "D4:7"
+                },
+                {
+                    "id": "E2",
+                    "speaker": "#3",
+                    "utterance": "What're we supposed to believe?",
+                    "dia_id": "D4:28"
+                },
+                {
+                    "id": "E3",
+                    "speaker": "#3",
+                    "utterance": "I've had enough!",
+                    "dia_id": "D4:171"
+                }
+            ],
+            "reasoning_steps": [
+                {
+                    "step": 1,
+                    "inference": "#3 shows emotional involvement by referencing the President declaring a week for underprivileged kids, indicating he is influenced by sentiment.",
+                    "based_on": [
+                        "E1"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "inference": "His frustration with the old man's testimony and his outburst of 'I've had enough!' suggest he is more emotionally driven than factually grounded in his approach to the trial.",
+                    "based_on": [
+                        "E1",
+                        "E2",
+                        "E3"
+                    ]
+                }
+            ],
+            "only_evidence_check": {
+                "result": "right",
+                "response": "(E)",
+                "answer_prompt": "\nYou are a rigorous intelligent assistant. Your task is to answer questions based solely on the provided evidence fragments (Evidence and reasoning steps).\n\n# CONTEXT:\nYou will receive a set of evidence fragments extracted from the original materials. These fragments contain all the information necessary to answer the question.\n\n# INSTRUCTIONS:\n1. **EVIDENCE ONLY**: Your answer must be derived entirely from the text provided in the \"EVIDENCE\" section. The use of external knowledge, reasoning, or information not mentioned in the passage is strictly prohibited.\n2. **Conflict of evidence**: If there is a conflict between different fragments, please refer to the fragment with the most complete logic or the most recent one.\n3. **Cannot answer**: If the provided evidence is insufficient to answer the question, please indicate directly (or select a specific option according to the specific testing requirements).\n\n--- EVIDENCE ---\n[{\"id\": \"E1\", \"speaker\": \"#3\", \"utterance\": \"I mean everybody's heart is starting to bleed for this punk little kid like the President just declared it Love Your Underprivileged Brother week, or something.\", \"dia_id\": \"D4:7\"}, {\"id\": \"E2\", \"speaker\": \"#3\", \"utterance\": \"What're we supposed to believe?\", \"dia_id\": \"D4:28\"}, {\"id\": \"E3\", \"speaker\": \"#3\", \"utterance\": \"I've had enough!\", \"dia_id\": \"D4:171\"}, {\"step\": 1, \"inference\": \"#3 shows emotional involvement by referencing the President declaring a week for underprivileged kids, indicating he is influenced by sentiment.\", \"based_on\": [\"E1\"]}, {\"step\": 2, \"inference\": \"His frustration with the old man's testimony and his outburst of 'I've had enough!' suggest he is more emotionally driven than factually grounded in his approach to the trial.\", \"based_on\": [\"E1\", \"E2\", \"E3\"]}]\n--- END OF EVIDENCE ---\n\nQuestion: What did #3's behavior suggest about his approach to the trial, based on his reactions to the discussion of the old man's testimony and the diagram?\nA. He was trying to keep the trial moving quickly.\nB. He was trying to understand the facts objectively.\nC. He was trying to avoid responsibility for the verdict.\nD. He was concerned about the accuracy of the diagram.\nE. He was focused on the emotional appeal of the case.\nF. Cannot infer the answer based on the given information.\nPlease provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X).",
+                "response_time": 0.46892237663269043,
+                "max_context_exceeded": 0,
+                "prediction_malformed": false,
+                "predicted_options": [
+                    "E"
+                ],
+                "ground_truth_options": [
+                    [
+                        "E"
+                    ]
+                ]
+            },
+            "iterative_evidence_ablation": [
+                {
+                    "round": 1,
+                    "answer": "(E)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "What reasonable doubt? That’s nothing but words!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Here, look at this! The kid you just decided isn't guilty was seen ramming this thing into his father! Well, look at it, Mr. Reasonable Doubt!",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "Brilliant!",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "All right, what's this for? How come you're the only one in the room who wants to see exhibits all he time?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "What’s the matter with you people? Every one of you knows this kid is guilty! He's got to burn! We're letting him slip through our fingers here!",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "For this kid? You bet I’d like to pull the switch!",
+                            "dia_id": "26"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I mean everybody's heart is starting to bleed for this punk little kid like the President just declared it Love Your Underprivileged Brother week, or something.",
+                            "dia_id": "D4:7"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "What're we supposed to believe?",
+                            "dia_id": "D4:28"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "I've had enough!",
+                            "dia_id": "D4:171"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "What reasonable doubt? That’s nothing but words!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Here, look at this! The kid you just decided isn't guilty was seen ramming this thing into his father! Well, look at it, Mr. Reasonable Doubt!",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "Brilliant!",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "All right, what's this for? How come you're the only one in the room who wants to see exhibits all he time?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "What’s the matter with you people? Every one of you knows this kid is guilty! He's got to burn! We're letting him slip through our fingers here!",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "For this kid? You bet I’d like to pull the switch!",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "This getting to be a joke!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I’m telling ya if this guy sat ringside at the Dempsey-Firpo fight, he'd be tryin' to tell us Firpo won!",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "And I want to stop wasting time.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "He said twenty seconds!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "Now I’m telling you he said twenty! What're you trying to distort...",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "I’m one of ’em.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "Let me go! I'll kill him! I'll kill him!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "Listen, you shut up!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "Shut up!",
+                            "dia_id": "3"
+                        }
+                    ],
+                    "result": "right"
+                },
+                {
+                    "round": 2,
+                    "answer": "(E)",
+                    "used_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "This getting to be a joke!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I’m telling ya if this guy sat ringside at the Dempsey-Firpo fight, he'd be tryin' to tell us Firpo won!",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "And I want to stop wasting time.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "He said twenty seconds!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "Now I’m telling you he said twenty! What're you trying to distort...",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "I’m one of ’em.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "Let me go! I'll kill him! I'll kill him!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "Listen, you shut up!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "Shut up!",
+                            "dia_id": "3"
+                        }
+                    ],
+                    "all_evidence": [
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "I mean everybody's heart is starting to bleed for this punk little kid like the President just declared it Love Your Underprivileged Brother week, or something.",
+                            "dia_id": "D4:7"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "What're we supposed to believe?",
+                            "dia_id": "D4:28"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "I've had enough!",
+                            "dia_id": "D4:171"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "What reasonable doubt? That’s nothing but words!",
+                            "dia_id": "10"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "Here, look at this! The kid you just decided isn't guilty was seen ramming this thing into his father! Well, look at it, Mr. Reasonable Doubt!",
+                            "dia_id": "12"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "Brilliant!",
+                            "dia_id": "14"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "All right, what's this for? How come you're the only one in the room who wants to see exhibits all he time?",
+                            "dia_id": "18"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "What’s the matter with you people? Every one of you knows this kid is guilty! He's got to burn! We're letting him slip through our fingers here!",
+                            "dia_id": "24"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "For this kid? You bet I’d like to pull the switch!",
+                            "dia_id": "26"
+                        },
+                        {
+                            "id": "E1",
+                            "speaker": "#3",
+                            "utterance": "This getting to be a joke!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E2",
+                            "speaker": "#3",
+                            "utterance": "I’m telling ya if this guy sat ringside at the Dempsey-Firpo fight, he'd be tryin' to tell us Firpo won!",
+                            "dia_id": "7"
+                        },
+                        {
+                            "id": "E3",
+                            "speaker": "#3",
+                            "utterance": "And I want to stop wasting time.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E4",
+                            "speaker": "#3",
+                            "utterance": "He said twenty seconds!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E5",
+                            "speaker": "#3",
+                            "utterance": "Now I’m telling you he said twenty! What're you trying to distort...",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E6",
+                            "speaker": "#3",
+                            "utterance": "I’m one of ’em.",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E7",
+                            "speaker": "#3",
+                            "utterance": "Let me go! I'll kill him! I'll kill him!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E8",
+                            "speaker": "#3",
+                            "utterance": "Listen, you shut up!",
+                            "dia_id": "3"
+                        },
+                        {
+                            "id": "E9",
+                            "speaker": "#3",
+                            "utterance": "Shut up!",
+                            "dia_id": "3"
+                        }
+                    ],
+                    "result": "right"
+                }
+            ],
+            "pollution_check": {
+                "result": "good",
+                "correct_count": 0,
+                "total_count": 1,
+                "accuracy": "0.0000",
+                "all_responses_and_scores": [
+                    {
+                        "response": "(A) He was trying to understand the facts objectively.",
+                        "score": 0,
+                        "response_time": 0.48071956634521484,
+                        "file_id": 1
+                    }
+                ]
+            }
         }
     ],
     "conversation": {

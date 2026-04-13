@@ -3,11 +3,9 @@ import os
 import re
 import tiktoken
 from collections import defaultdict, OrderedDict
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from openai import OpenAI
-
-from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
 
 DEFAULT_API_KEY = os.getenv("OPENAI_API_KEY", "")
 DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
@@ -29,52 +27,30 @@ except Exception as e:
     tokenizer = None
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
-ABSTAIN_OPTION_TEXT = "F. Cannot infer the answer based on the given information."
-ABSTAIN_QUESTIONS_PER_CATEGORY = 2
-ABSTAIN_GENERATION_RETRIES = 6
-ABSTAIN_VALIDATION_RETRIES = 3
-
-CATEGORY_DESCRIPTIONS = {
-    1: "Long-term Persona: stable identity, values, long-term preferences, or recurring behavioral patterns.",
-    2: "Short-term State: immediate emotions, short-term needs, temporary goals, or situational mental states.",
-    3: "Temporal: time order, sequence changes, timing relations, or replacement of old and new information.",
-    4: "Plot-driven Event: specific events, experiences, actions, decisions, outcomes, and participant evaluations.",
-    5: "Interpersonal Relationship: explicit concrete relationships between people such as family, colleagues, classmates, roommates, and similar roles.",
-    6: "Fine-Grained Data: explicit numerical information such as counts, dates, ages, durations, quantities, or comparisons/calculations.",
-}
-
-ABSTAIN_VALIDATE_PROMPT = """
-You are an intelligent assistant. Your task is to answer a multiple-choice question based only on the provided conversation history.
-
-# RULES
-1. Use only the conversation history. Do not use outside knowledge.
-2. Choose exactly one option.
-3. If the answer cannot be determined from the history, choose the dedicated Cannot infer option.
-4. Do not explain your reasoning.
-5. Your final output must be only the option letter in parentheses, for example: (B)
-
---- CONVERSATION HISTORY ---
-{conversation_history}
---- END OF HISTORY ---
-
-Question: {question}
-
-Options:
-{options_text}
-
-Final answer:
-"""
-
 def gen_chat(prompt: str, temp=0.7) -> str:
     try:
         resp = client.chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=temp,
-            extra_body={"enable_thinking": False},
         )
         return resp.choices[0].message.content.strip()
     except Exception as e:
+        error_text = str(e).lower()
+        if "missing_required_parameter" in error_text or (
+            "one of \"input\"" in error_text and "prompt" in error_text
+        ):
+            try:
+                resp2 = client.responses.create(
+                    model=MODEL,
+                    input=prompt,
+                    temperature=temp,
+                )
+                return (getattr(resp2, "output_text", "") or "").strip()
+            except Exception as e2:
+                print(f"!!! 调用模型时发生错误: {e2}")
+                return ""
+
         print(f"!!! 调用模型时发生错误: {e}")
         return ""
 
@@ -215,203 +191,6 @@ class UltimateMemoryRefiner:
 
         return "\n".join(history).strip()
 
-    def _normalize_option_lines(self, options: List[Any]) -> List[str]:
-        normalized: List[str] = []
-        for index, option in enumerate(options or []):
-            letter = chr(ord("A") + index)
-            option_text = str(option).strip()
-            if option_text[:3].startswith(f"{letter}.") or (len(option_text) >= 3 and option_text[1:3] == ". "):
-                normalized.append(option_text)
-            else:
-                normalized.append(f"{letter}. {option_text}")
-        return normalized
-
-    def _extract_question_stem(self, question: str, option_lines: List[str]) -> str:
-        question_text = str(question or "").strip()
-        if not question_text:
-            return ""
-
-        for marker in (
-            "Please provide the option corresponding to the only correct answer",
-            "You need to select the correct answer from the following options:",
-        ):
-            if marker in question_text:
-                question_text = question_text.split(marker, 1)[0].strip()
-
-        if option_lines:
-            first_option = option_lines[0]
-            option_index = question_text.find(f"\n{first_option}")
-            if option_index >= 0:
-                question_text = question_text[:option_index].strip()
-
-        return question_text
-
-    def _build_abstain_generation_prompt(
-        self,
-        conversation_item: Dict[str, Any],
-        source_questions: List[Dict[str, Any]],
-    ) -> str:
-        category_text = "\n".join(
-            f"- Category {category}: {description}"
-            for category, description in CATEGORY_DESCRIPTIONS.items()
-        )
-        conversation_history = self._format_conversation_for_prompt(conversation_item)
-
-        return f"""
-You are an expert dataset construction system generating adversarial "abstain" (unanswerable) questions for long-context LLM memory evaluation.
-
-You will be given a standalone conversation transcript and a list of existing positive QA items derived from that same text.
-
-Your task is to generate exactly {ABSTAIN_QUESTIONS_PER_CATEGORY * 6} new multiple-choice questions that are highly plausible but intentionally unanswerable based strictly on the provided conversation.
-
-### Perturbation Strategies for Abstain Questions:
-To make the questions challenging and deceptive, use a diverse mix of the following strategies, heavily drawing inspiration from the `source_questions`:
-1. **Entity Swapping**: Take a real event from the text/source_questions, but swap the character/subject. (e.g., If Person A did X, ask why Person B did X).
-2. **Out-of-Scope Detail**: Take a real event, but ask for a hyper-specific detail not mentioned. (e.g., They drove a car -> What was the license plate?).
-3. **False Premise**: Embed a fabricated assumption into the question stem. (e.g., "Why was Person A crying when they left?" - when they actually left calmly).
-4. **The Phantom Entity**: Introduce a plausible person, object, or concept that fits the conversational universe but is completely absent from this specific text chunk.
-5. **Temporal/Causal Extension**: Ask about the aftermath, preceding events, or deeper motivations that are not explicitly stated in this exact transcript.
-
-### Strict Requirements:
-1. Generate exactly {ABSTAIN_QUESTIONS_PER_CATEGORY} questions for each category 1-6.
-2. The questions MUST sound highly realistic and native to the conversation's context. Do not ask absurd or obviously random questions.
-3. Every question must remain genuinely unanswerable using ONLY the provided conversation. The correct answer must always be the abstain option.
-4. Options A-E must be plausible distractor answers. They should sound like things that *could* be true in this context, making it tempting for a hallucinating LLM to choose them.
-5. Option F must be exactly: {ABSTAIN_OPTION_TEXT}
-6. The answer field must be exactly: {ABSTAIN_OPTION_TEXT}
-7. The label field must be exactly: abstain
-8. Keep the question stem completely separate from the option list.
-9. Return ONLY a valid JSON array. Do not wrap it in Markdown formatting (no ```json).
-
-Category definitions:
-{category_text}
-
-Reference QA (Mutate these using the Perturbation Strategies to create paired abstain questions):
-{json.dumps(source_questions, ensure_ascii=False, indent=2)}
-
-Conversation Context:
-{conversation_history}
-
-Output JSON array schema:
-[
-  {{
-    "question": "Question stem only, containing a deceptive premise or swapped entity",
-    "option": [
-      "A. [Plausible but unsupported distractor]",
-      "B. [Plausible but unsupported distractor]",
-      "C. [Plausible but unsupported distractor]",
-      "D. [Plausible but unsupported distractor]",
-      "E. [Plausible but unsupported distractor]",
-      "F. Cannot infer the answer based on the given information."
-    ],
-    "answer": "F",
-    "reasoning": "Identify which Perturbation Strategy was used, and explicitly explain why the conversation lacks the required evidence.",
-    "label": "abstain",
-    "category": 1
-  }}
-]
-"""
-    
-    def _normalize_generated_abstain_questions(
-        self,
-        generated_questions: Any,
-        source_index: int,
-    ) -> List[Dict[str, Any]]:
-        if not isinstance(generated_questions, list):
-            return []
-
-        normalized_questions: List[Dict[str, Any]] = []
-        category_counts = {category: 0 for category in range(1, 7)}
-
-        for item in generated_questions:
-            if not isinstance(item, dict):
-                continue
-
-            try:
-                category = int(item.get("category", 0))
-            except (TypeError, ValueError):
-                continue
-
-            if category not in category_counts:
-                continue
-            if category_counts[category] >= ABSTAIN_QUESTIONS_PER_CATEGORY:
-                continue
-
-            question_text = str(item.get("question", "")).strip()
-            if not question_text:
-                continue
-
-            raw_options = item.get("option", [])
-            if not isinstance(raw_options, list):
-                continue
-
-            non_abstain_options: List[str] = []
-            for option in raw_options:
-                option_text = str(option or "").strip()
-                if not option_text:
-                    continue
-                if option_text.startswith("F."):
-                    continue
-                non_abstain_options.append(option_text)
-
-            if len(non_abstain_options) < 5:
-                continue
-
-            normalized_questions.append(
-                {
-                    "question": question_text,
-                    "option": non_abstain_options[:5] + [ABSTAIN_OPTION_TEXT],
-                    "answer": ABSTAIN_OPTION_TEXT,
-                    "reasoning": str(item.get("reasoning", "")).strip(),
-                    "label": "abstain",
-                    "category": category,
-                    "character": str(item.get("character", "Unspecified") or "Unspecified"),
-                    "original_qa": item.get("original_qa", []) if isinstance(item.get("original_qa"), list) else [],
-                    "source_index": source_index,
-                }
-            )
-            category_counts[category] += 1
-
-        return normalized_questions
-
-    def _build_abstain_validation_prompt(
-        self,
-        conversation_item: Dict[str, Any],
-        question_item: Dict[str, Any],
-    ) -> str:
-        option_lines = self._normalize_option_lines(question_item.get("option", []))
-        question_stem = self._extract_question_stem(question_item.get("question", ""), option_lines)
-        conversation_history = self._format_conversation_for_prompt(conversation_item)
-        return ABSTAIN_VALIDATE_PROMPT.format(
-            conversation_history=conversation_history,
-            question=question_stem or str(question_item.get("question", "")).strip(),
-            options_text="\n".join(option_lines),
-        )
-
-    def _validate_abstain_question_on_conversation(
-        self,
-        question_item: Dict[str, Any],
-        conversation_item: Dict[str, Any],
-        target_name: str,
-    ) -> bool:
-        prompt = self._build_abstain_validation_prompt(conversation_item, question_item)
-        response = ""
-        for _ in range(ABSTAIN_VALIDATION_RETRIES):
-            response = gen_chat(prompt, temp=0.0)
-            if response:
-                break
-
-        score_result = score_mcq_prediction(
-            response,
-            normalize_answer_candidates(None, question_item.get("answer", ABSTAIN_OPTION_TEXT)),
-        )
-
-        if not score_result.get("is_correct", False):
-            print(
-                f"      × 弃权题验证失败 [{target_name}]: {question_item.get('question', '')[:60]}... -> {response[:120]}"
-            )
-            return False
-        return True
 
     def _build_merged_conversation(self):
         merged_conversation = OrderedDict()
@@ -504,88 +283,6 @@ Output JSON array schema:
             global_session_idx += 1
 
         return merged_conversation
-
-    def _generate_validated_abstain_questions(self) -> List[Dict[str, Any]]:
-        print(f"\n>>> 开始生成弃权问题并进行跨对话验证")
-        valid_questions: List[Dict[str, Any]] = []
-        merged_conversation = self._build_merged_conversation()
-
-        for source_index, item in enumerate(self.original_data):
-            conversation = item.get("conversation", {})
-            if not isinstance(conversation, dict) or not conversation:
-                continue
-
-            source_questions = []
-            for qa in item.get("qa", []):
-                if not isinstance(qa, dict):
-                    continue
-                source_questions.append(
-                    {
-                        "question": qa.get("question"),
-                        "category": qa.get("category"),
-                        "character": qa.get("character"),
-                    }
-                )
-
-            print(
-                f"\n>>> 正在为原始对话 {source_index + 1}/{len(self.original_data)} 生成弃权题..."
-            )
-
-            candidates: Optional[List[Dict[str, Any]]] = None
-            for attempt in range(ABSTAIN_GENERATION_RETRIES):
-                prompt = self._build_abstain_generation_prompt(conversation, source_questions)
-                if attempt > 0:
-                    prompt += "\n\nReturn JSON array only. Do not include markdown fences or any extra commentary."
-                response = gen_chat(prompt, temp=0.4)
-                parsed = self.extract_json(response)
-                normalized = self._normalize_generated_abstain_questions(parsed, source_index)
-                if normalized:
-                    candidates = normalized
-                    break
-
-            if not candidates:
-                print(f"      × 原始对话 {source_index + 1} 的弃权题生成失败，跳过")
-                continue
-
-            print(f"      - 初始生成 {len(candidates)} 道弃权题候选")
-
-            for candidate in candidates:
-                is_valid = True
-
-                if not self._validate_abstain_question_on_conversation(
-                    candidate,
-                    conversation,
-                    f"source_{source_index + 1}",
-                ):
-                    continue
-
-                for target_index, target_item in enumerate(self.original_data):
-                    if target_index == source_index:
-                        continue
-                    target_conversation = target_item.get("conversation", {})
-                    if not isinstance(target_conversation, dict) or not target_conversation:
-                        continue
-                    if not self._validate_abstain_question_on_conversation(
-                        candidate,
-                        target_conversation,
-                        f"other_{target_index + 1}",
-                    ):
-                        is_valid = False
-                        break
-
-                if is_valid and not self._validate_abstain_question_on_conversation(
-                    candidate,
-                    merged_conversation,
-                    "merged_all",
-                ):
-                    is_valid = False
-
-                if is_valid:
-                    valid_questions.append(candidate)
-                    print(f"      √ 弃权题通过验证: {candidate.get('question', '')[:60]}...")
-
-        print(f"\n>>> 弃权题验证完成，保留 {len(valid_questions)} 道题")
-        return valid_questions
 
     def build_refine_prompt(self, subject, final_chunk):
         """最终生成 Prompt"""
@@ -701,23 +398,114 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
 
 5. "original_qa": A list of question corresponding to the original QA items that were selected, referenced, or integrated to construct the current question.
 
+# Evidence / Reasoning Steps Constraints (Mandatory)
+
+1. Every generated item MUST include `evidence_dialogues` and `reasoning_steps` fields.
+2. `evidence_dialogues` must be a JSON array (can be empty if evidence is unavailable), and each item should follow:
+    - "id": "E1", "E2", ...
+    - "speaker": speaker name or null
+    - "utterance": exact evidence text
+    - "dia_id": dialogue id or "N/A"
+3. `reasoning_steps` must be a JSON array (can be empty if reasoning steps cannot be structured), and each item should follow:
+    - "step": integer starting from 1
+    - "inference": one atomic reasoning statement
+    - "based_on": list of evidence ids, e.g. ["E1", "E2"]
+4. Do NOT output `reasoning_steps` as a plain string.
+5. Keep all fields JSON-serializable and valid.
+
 # Input Semantic Cluster
 {json.dumps(compact_chunk, ensure_ascii=False, indent=4)}
 
 # Output Format (JSON)
 [
     {{
+        "character": "",
         "question": "Complete question text with necessary distractors",
         "option": ["A ...", "B ...", "C ...", "D ...", "E ..."],
         "answer": "Final conclusion or correct option label",
-        "reasoning": "Detailed explanation of how the answer follows from the full data",
+        "evidence_dialogues": [
+            {{"id": "E1", "speaker": "Name or null", "utterance": "Exact supporting text", "dia_id": "D1:23"}}
+        ],
+        "reasoning_steps": [
+            {{"step": 1, "inference": "Atomic inference here", "based_on": ["E1"]}}
+        ],
         "label": "It must be filled in with either 'Memory Update' or 'Fact Extraction (Multiple Conversations)', and absolutely not any other value.",
         "category": 1,
-        "is_conflict": true / false,
         "original_qa": ["Based on her interactions...", "What is Sandy's immediate reaction..."]
     }}
 ]
 """
+
+    def _normalize_refined_questions(self, refined: Any) -> List[Dict[str, Any]]:
+        """兜底补齐生成题中的 evidence_dialogues / reasoning_steps 字段。"""
+        if not isinstance(refined, list):
+            return []
+
+        normalized_items: List[Dict[str, Any]] = []
+        for item in refined:
+            if not isinstance(item, dict):
+                continue
+
+            normalized = dict(item)
+
+            evidence_value = normalized.get("evidence_dialogues")
+            if isinstance(evidence_value, list):
+                evidence_dialogues = evidence_value
+            elif isinstance(evidence_value, dict):
+                evidence_dialogues = [evidence_value]
+            elif isinstance(evidence_value, str) and evidence_value.strip():
+                evidence_dialogues = [
+                    {
+                        "id": "E1",
+                        "speaker": None,
+                        "utterance": evidence_value.strip(),
+                        "dia_id": "N/A",
+                    }
+                ]
+            else:
+                evidence_dialogues = []
+            normalized["evidence_dialogues"] = evidence_dialogues
+
+            reasoning_value = normalized.get("reasoning_steps")
+            if isinstance(reasoning_value, list):
+                reasoning_steps = reasoning_value
+            elif isinstance(reasoning_value, dict):
+                reasoning_steps = [reasoning_value]
+            elif isinstance(reasoning_value, str) and reasoning_value.strip():
+                based_on = [
+                    ev.get("id")
+                    for ev in evidence_dialogues
+                    if isinstance(ev, dict) and ev.get("id")
+                ]
+                reasoning_steps = [
+                    {
+                        "step": 1,
+                        "inference": reasoning_value.strip(),
+                        "based_on": based_on,
+                    }
+                ]
+            else:
+                fallback_reasoning = normalized.get("reasoning")
+                if isinstance(fallback_reasoning, str) and fallback_reasoning.strip():
+                    based_on = [
+                        ev.get("id")
+                        for ev in evidence_dialogues
+                        if isinstance(ev, dict) and ev.get("id")
+                    ]
+                    reasoning_steps = [
+                        {
+                            "step": 1,
+                            "inference": fallback_reasoning.strip(),
+                            "based_on": based_on,
+                        }
+                    ]
+                else:
+                    reasoning_steps = []
+            normalized["reasoning_steps"] = reasoning_steps
+
+            normalized_items.append(normalized)
+
+        return normalized_items
 
     def process(self):
         """
@@ -770,8 +558,9 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
                 refined = self.extract_json(response)
                 
                 if refined:
-                    all_refined_qa.extend(refined)
-                    print(f"      √ 角色 {subject} 重构成功 (尝试 {attempt+1} 次): 生成了 {len(refined)} 道新题")
+                    normalized_refined = self._normalize_refined_questions(refined)
+                    all_refined_qa.extend(normalized_refined)
+                    print(f"      √ 角色 {subject} 重构成功 (尝试 {attempt+1} 次): 生成了 {len(normalized_refined)} 道新题")
                     break
                 else:
                     print(f"      ! 角色 {subject} 第 {attempt+1} 次解析失败，正在重试...")

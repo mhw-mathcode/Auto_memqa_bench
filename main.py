@@ -65,13 +65,14 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
     print("  步骤 1: v0 → v1a → v1b 题目合理性检测")
     print("  步骤 2: v1b → v2 题目标注")
     print("  步骤 3: v2 → v3 new_qa (问答精炼重构)")
-    print("  步骤 4: v3 → v4 题目乱序 (污染检查)")
+    print("  步骤 4: v3 → v4 选项乱序 (污染检查)")
     print("  步骤 5: v4 → final 生成最终版本")
     print("="*60 + "\n")
     
     # 记录总体开始时间和各步骤耗时
     pipeline_start_time = time.time()
     step_times = {}
+    v0_shuffled = False
     
     config_loader = get_config()
     pipeline_cfg = config_loader.get_pipeline_config()
@@ -170,12 +171,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
 
     def _passes_v4_rule(qa_item):
         """v4 删题规则：仅当存在 pollution_check.result 且其不为 good 才删除。
-        
-        豁免：由 v3 生成的新题（is_generated_qa=true）不受 v4 规则影响。
         """
-        # v3 生成的题目豁免 v4 规则
-        if qa_item.get("is_generated_qa") is True:
-            return True
 
         if "pollution_check" not in qa_item:
             return True
@@ -307,6 +303,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         try:
             from src.pollution_check import rename_and_shuffle_options
             rename_and_shuffle_options(v0_path, v0_path)
+            v0_shuffled = True
         except Exception as e:
             print(f"❌ 打乱选项时出错: {e}")
             import traceback
@@ -316,7 +313,6 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         if not os.path.exists(v0_path):
             source_path = os.path.join(input_dir, dataset_name, f"{dataset_name}_1.json")
             if os.path.exists(source_path):
-                import shutil
                 shutil.copy(source_path, v0_path)
                 print(f"✓ 从源文件复制到 v0: {source_path}")
                 
@@ -325,6 +321,7 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
                 try:
                     from src.pollution_check import rename_and_shuffle_options
                     rename_and_shuffle_options(v0_path, v0_path)
+                    v0_shuffled = True
                 except Exception as e:
                     print(f"❌ 打乱选项时出错: {e}")
                     import traceback
@@ -354,8 +351,64 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
             answer_llm_api_key=step1_llm.api_key,
             max_workers=pipeline_cfg.get('max_workers', 4)
         )
-        
-        output_path, kept = evidence_check_main(args, v0_path, v1b_path)
+
+        step1_mode = str(
+            config_loader.get_step_flag("step_1_full_context", "mode", "full")
+        ).strip().lower()
+        if step1_mode not in {"full", "v1a", "v1b"}:
+            print(f"⚠️ step_1_full_context.mode={step1_mode} 非法，回退为 full")
+            step1_mode = "full"
+
+        def _shuffle_before_v1(input_path: str):
+            nonlocal v0_shuffled
+            if input_path == v0_path and v0_shuffled:
+                return
+            print(f"\n[步骤 1 前处理] 打乱输入选项顺序: {input_path}")
+            try:
+                from src.pollution_check import rename_and_shuffle_options
+                rename_and_shuffle_options(input_path, input_path)
+                if input_path == v0_path:
+                    v0_shuffled = True
+            except Exception as e:
+                print(f"❌ 步骤 1 前打乱选项时出错: {e}")
+                import traceback
+                traceback.print_exc()
+
+        if step1_mode == "v1a":
+            print("  模式: 仅执行 v1a (only_evidence)")
+            _shuffle_before_v1(v0_path)
+            output_path, kept = evidence_check_main(
+                args,
+                v0_path,
+                v1a_path,
+                only_evidence=1,
+                except_evidence=0,
+            )
+        elif step1_mode == "v1b":
+            # v1b 可独立执行：优先使用 v1a，若不存在则直接使用 v0。
+            step1_input_path = resolve_step_input(
+                "步骤 1(v1b)",
+                v1a_path,
+                [v0_path],
+            )
+            if not step1_input_path:
+                return
+
+            _shuffle_before_v1(step1_input_path)
+
+            print(f"  模式: 仅执行 v1b (iterative ablation)，输入: {step1_input_path}")
+            output_path, kept = evidence_check_main(
+                args,
+                step1_input_path,
+                v1b_path,
+                only_evidence=0,
+                except_evidence=1,
+            )
+        else:
+            print("  模式: 执行完整步骤 (v1a -> v1b)")
+            _shuffle_before_v1(v0_path)
+            output_path, kept = evidence_check_main(args, v0_path, v1b_path)
+
         step_times['步骤 1: 题目合理性检测'] = time.time() - step_start
         print(f"✓ 步骤 1 完成: {output_path}，耗时: {step_times['步骤 1: 题目合理性检测']:.2f} 秒")
     
@@ -608,3 +661,7 @@ def main():
 if __name__ == "__main__":
     main()
 
+# python -u main.py --run 12_Angry_Men --start 1 --end 5 > pipeline_12Angrymen.log 2>&1
+# python -u main.py --run An-Enemy-of-the-People --start 1 > pipeline_AnEnemy.log 2>&1
+# python -u main.py --run friends --start 1 > pipeline_friends.log 2>&1
+# python -u main.py --run the-man-from-earth-script --start 1 > pipeline_themanfromearth.log 2>&1

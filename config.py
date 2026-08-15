@@ -7,6 +7,16 @@ import os
 import json
 from dataclasses import dataclass
 from typing import Optional, Dict, Any
+from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
+
+
+STEP_DISPLAY_ORDER = [
+    "step_0_generate_qa",
+    "step_1_refine_qa",
+    "step_2_evidence_check",
+    "step_3_pollution_check",
+    "step_4_finalize",
+]
 
 
 @dataclass
@@ -53,7 +63,7 @@ class PipelineConfig:
         获取特定版本的文件路径
         
         Args:
-            version: 版本号（如 "v0", "v1a", "v1b"）
+            version: 版本号（如 "v0", "v2a", "v2b"）
             filename: 文件名
         
         Returns:
@@ -69,21 +79,19 @@ class VersionManager:
     
     版本说明：
     - v0: 原始生成的问答对
-    - v1a: 题目合理性检测后的数据（只使用证据）
-    - v1b: 题目合理性检测后的数据（迭代删除证据）
-    - v2: 题目标注后的数据（输入 v1b）
-    - v3: 精炼重构后的问答（new_qa）
-    - v4: 题目乱序和污染检查后的最终数据
+    - v1_refined: 精炼重构后的问答（step1_new_qa）
+    - v2a: 题目合理性检测后的数据（只使用证据）
+    - v2b: 题目合理性检测后的数据（迭代删除证据）
+    - v3: 污染检查后的数据
     """
     
     VERSION_DESCRIPTIONS = {
         "v0": "原始生成的问答对",
-        "v1a": "题目合理性检测后（只使用证据）",
-        "v1b": "题目合理性检测后（迭代删除证据）",
-        "v1": "题目合理性检测后（兼容旧版）",
-        "v2": "题目标注后（输入 v1b）",
-        "v3": "精炼重构后（new_qa）",
-        "v4": "题目乱序和污染检查后（最终版本）"
+        "v1_refined": "精炼重构后（step1_new_qa）",
+        "v2a": "题目合理性检测后（只使用证据）",
+        "v2b": "题目合理性检测后（迭代删除证据）",
+        "v3": "污染检查后",
+        "final": "最终版本"
     }
     
     def __init__(self, config: PipelineConfig):
@@ -97,14 +105,12 @@ class VersionManager:
         """获取版本描述"""
         return self.VERSION_DESCRIPTIONS.get(version, "未知版本")
     
-    def print_version_info(self):
+    @classmethod
+    def print_version_info(cls):
         """打印所有版本信息"""
-        print("\n" + "="*60)
-        print("数据处理流程版本信息")
-        print("="*60)
-        for version, description in self.VERSION_DESCRIPTIONS.items():
-            print(f"  {version}: {description}")
-        print("="*60 + "\n")
+        print_log_section("VERSION INFO")
+        for version, description in cls.VERSION_DESCRIPTIONS.items():
+            print_kv(version, description, indent=2)
 
 
 def build_llm_config(model: str, base_url: str, api_key: str) -> LLMConfig:
@@ -160,23 +166,23 @@ class ConfigLoader:
         with open(config_path, 'r', encoding='utf-8') as f:
             self._config = json.load(f)
         
-        print(f"✓ 配置文件加载成功: {config_path}")
+        log_event("config_load", status="success", path=config_path)
     
     def get_step_config(self, step_key: str) -> Dict[str, Any]:
         """
         获取指定步骤配置
         
         Args:
-            step_key: 步骤名称（如 'step_1_full_context'）
+            step_key: 步骤名称（如 'step_2_evidence_check'）
         """
         if self._config is None:
             raise RuntimeError("配置未加载，请先调用 load_config()")
         
         steps = self._config.get("steps", {})
-        if step_key not in steps:
-            raise ValueError(f"未找到步骤配置: {step_key}")
-        
-        return steps[step_key]
+        if step_key in steps:
+            return steps[step_key]
+
+        raise ValueError(f"未找到步骤配置: {step_key}")
 
     def get_step_llm(self, step_key: str) -> LLMConfig:
         """
@@ -203,59 +209,58 @@ class ConfigLoader:
             raise RuntimeError("配置未加载，请先调用 load_config()")
         return self._config.get("pipeline", {})
     
-    def get_tool_config(self, tool_key: str) -> Dict[str, Any]:
-        """
-        获取指定工具配置
-        """
-        if self._config is None:
-            raise RuntimeError("配置未加载，请先调用 load_config()")
-        
-        tools = self._config.get("tools", {})
-        if tool_key not in tools:
-            raise ValueError(f"未找到工具配置: {tool_key}")
-        
-        return tools[tool_key]
-
-    def get_option_perturbation_models(self) -> tuple:
-        """获取选项扰动生成和评分模型配置"""
-        tool_cfg = self.get_tool_config("option_perturbation")
-        llm_cfg = tool_cfg.get("llm", {})
-        return llm_cfg.get("gen_model"), llm_cfg.get("score_model")
-    
     def print_config_summary(self):
         """打印配置摘要"""
         if self._config is None:
-            print("配置未加载")
+            log_event("config_summary", status="failed", reason="config_not_loaded")
             return
         
-        print("\n" + "="*60)
-        print("当前配置摘要")
-        print("="*60)
+        print_log_section("CONFIG SUMMARY")
         
-        print("\n【步骤配置】")
-        for name, cfg in self._config.get("steps", {}).items():
+        log_subsection("Steps")
+        steps = self._config.get("steps", {})
+        ordered_step_names = [
+            name for name in STEP_DISPLAY_ORDER
+            if name in steps
+        ]
+        ordered_step_names.extend(
+            name for name in steps.keys()
+            if name not in ordered_step_names
+        )
+
+        for name in ordered_step_names:
+            cfg = self.get_step_config(name)
             desc = cfg.get("description", "")
             api_required = cfg.get("api_required", False)
             model = cfg.get("llm", {}).get("model", "")
             skip = cfg.get("skip", False)
-            print(f"  {name}: {desc}")
-            print(f"    api_required: {api_required}")
-            print(f"    skip: {skip}")
+            log_event(
+                "config_step",
+                status="loaded",
+                step=name,
+                description=desc,
+                api_required=api_required,
+                skip=skip,
+            )
             if model:
-                print(f"    model: {model}")
+                print_kv("model", model, indent=4)
+            for worker_key in (
+                "speaker_batch_size",
+                "max_workers",
+                "only_evidence_max_workers",
+                "iterative_ablation_max_workers",
+                "ablation_context_limit",
+                "ablation_prompt_safety_tokens",
+                "ablation_chunk_tokens",
+                "ablation_retrieval_chunks",
+                "ablation_chunk_max_workers",
+            ):
+                if worker_key in cfg:
+                    print_kv(worker_key, cfg[worker_key], indent=4)
 
-        print("\n【工具配置】")
-        for name, cfg in self._config.get("tools", {}).items():
-            desc = cfg.get("description", "")
-            api_required = cfg.get("api_required", False)
-            print(f"  {name}: {desc}")
-            print(f"    api_required: {api_required}")
-        
-        print("\n【流水线配置】")
+        log_subsection("Pipeline")
         for key, value in self._config.get("pipeline", {}).items():
-            print(f"  {key}: {value}")
-        
-        print("="*60 + "\n")
+            print_kv(key, value, indent=2)
 
 
 def get_config() -> ConfigLoader:

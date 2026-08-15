@@ -1,9 +1,10 @@
 {
   "pipeline": {
     "input_dir": "dataset",
-    "output_dir": "result",
-    "temp_dir": "temp",
+    "runs_dir": "runs",
     "max_workers": 4,
+    "run_targets": [],
+    "batch_max_workers": 1,
     "version_prefix": "v"
   },
   "steps": {
@@ -13,78 +14,66 @@
       "description": "步骤 0: 生成原始问答对",
       "skip": false,
       "force_generate_new_qa": false,
-      "speaker_batch_size": 8,
+      "speaker_batch_size": 1,
+      "max_workers": 4,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
         "api_key": "YOUR_API_KEY_HERE"
       }
     },
-    "step_1_full_context": {
-      "function": "evidence_check_main",
-      "api_required": true,
-      "description": "步骤 1: 题目合理性检测 (v0 -> v1a -> v1b)",
-      "skip": false,
-      "mode": "full",
-      "llm": {
-        "model": "qwen3-14b",
-        "base_url": "https://api.example.com/v1",
-        "api_key": "YOUR_API_KEY_HERE"
-      }
-    },
-    "step_2_label": {
-      "function": "label_main",
-      "api_required": true,
-      "description": "步骤 2: 题目标注 (v1b -> v2)",
-      "skip": false,
-      "llm": {
-        "model": "qwen3-14b",
-        "base_url": "https://api.example.com/v1",
-        "api_key": "YOUR_API_KEY_HERE"
-      }
-    },
-    "step_3_new_qa": {
+    "step_1_refine_qa": {
       "function": "new_qa_main",
       "api_required": true,
-      "description": "步骤 3: 问答精炼重构 (v2 -> v3)",
+      "description": "步骤 1: 问题精炼与重构 (v0 -> v1_refined)",
       "skip": false,
+      "max_workers": 4,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
         "api_key": "YOUR_API_KEY_HERE"
       }
     },
-    "step_4_pollution_check": {
+    "step_2_evidence_check": {
+      "function": "evidence_check_main",
+      "api_required": true,
+      "description": "步骤 2: 题目合理性检测 (v1_refined -> v2a -> v2b)",
+      "skip": false,
+      "mode": "full",
+      "max_workers": 4,
+      "only_evidence_max_workers": 4,
+      "iterative_ablation_max_workers": 3,
+      "ablation_context_limit": 32768,
+      "ablation_prompt_safety_tokens": 4096,
+      "ablation_chunk_tokens": 8192,
+      "ablation_retrieval_chunks": 6,
+      "ablation_chunk_max_workers": 4,
+      "llm": {
+        "model": "qwen3-14b",
+        "base_url": "https://api.example.com/v1",
+        "api_key": "YOUR_API_KEY_HERE"
+      }
+    },
+    "step_3_pollution_check": {
       "function": "pollution_check_main",
       "api_required": true,
-      "description": "步骤 4: 选项乱序和污染检查 (v3 -> v4)",
+      "description": "步骤 3: 污染检查 (v2b -> v3)",
       "skip": false,
       "enable_contamination_check": true,
       "cleanup_temp_files": true,
+      "max_workers": 4,
       "llm": {
         "model": "qwen3-14b",
         "base_url": "https://api.example.com/v1",
         "api_key": "YOUR_API_KEY_HERE"
       }
     },
-    "step_5_finalize": {
+    "step_4_finalize": {
       "function": "finalize_main",
       "api_required": false,
-      "description": "步骤 5: 生成最终版本 (v4 -> final)",
-      "skip": false
-    }
-  },
-  "tools": {
-    "option_perturbation": {
-      "function": "option_perturbation",
-      "api_required": true,
-      "description": "选项扰动生成和评分",
-      "llm": {
-        "gen_model": "Qwen/Qwen3-14B",
-        "score_model": "Qwen/Qwen2.5-7B-Instruct",
-        "base_url": "https://api.example.com/v1",
-        "api_key": "YOUR_API_KEY_HERE"
-      }
+      "description": "步骤 4: 生成最终版本 (v3 -> final)",
+      "skip": false,
+      "max_workers": 4
     }
   }
 }

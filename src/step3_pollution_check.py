@@ -1,17 +1,17 @@
 import json
 import re
-from typing import Dict, List, Any, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import os
 import time
 import shutil
-import numpy as np
-from typing import Any, Dict, List, Tuple, Optional
 from openai import OpenAI
 import math
 from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction, parse_mcq_gt_answers
 from src.qa_only_response import QAOnlyRunner
+from src.utils import count_qa_items, load_json_file, normalize_dataset_records, write_json_file
+from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
 
-# --- 1. 打乱顺序 ---
+# --- 1. 题干与选项展示格式 ---
 
 def _extract_core_question_text(question_text: str, unknown_placeholder: str = "") -> str:
     """
@@ -59,193 +59,95 @@ def _extract_core_question_text(question_text: str, unknown_placeholder: str = "
     fallback = re.sub(r"^Please\s+answer\s+the\s+question:\s*", "", fallback, flags=re.IGNORECASE)
     return fallback or unknown_placeholder
 
-def rename_and_shuffle_options(input_file_path: str, output_file_path: str) -> None:
-    """
-    读取 JSON 文件，进行人名替换，并打乱每道题目的选项顺序。
 
-    :param input_file_path: 输入 JSON 文件的路径。
-    :param output_file_path: 输出 JSON 文件的路径。
-    """
-    try:
-        # 1. 读取输入文件
-        with open(input_file_path, 'r', encoding='utf-8') as f:
-            data: List[Any] = json.load(f)
+def _strip_option_prefix(value: str) -> str:
+    """去掉选项字符串开头的 A./B. 等前缀，仅保留选项正文。"""
+    text = str(value or "").strip()
+    match = re.match(r"^[A-Fa-f][\.．\)]\s*(.*)$", text)
+    return match.group(1).strip() if match else text
 
-    except FileNotFoundError:
-        print(f"❌ 错误: 未找到输入文件 {input_file_path}")
-        return
-    except json.JSONDecodeError:
-        print(f"❌ 错误: 输入文件 {input_file_path} JSON 格式无效")
-        return
-    except Exception as e:
-        print(f"❌ 读取文件时发生意外错误: {e}")
-        return
 
-    # 2. 遍历数据结构进行处理 (选项打乱)
+def _normalize_option_lines_preserve_order(option_value: Any) -> List[str]:
+    """将 option 字段统一为 A-F 列表；保留原始 A-E 顺序，不做乱序。"""
+    option_lines: List[str] = []
+
+    if isinstance(option_value, dict):
+        for letter in ["A", "B", "C", "D", "E", "F"]:
+            matched_value = None
+            for key, value in option_value.items():
+                if str(key).strip().upper() == letter:
+                    matched_value = value
+                    break
+            if matched_value is None:
+                continue
+            body = _strip_option_prefix(str(matched_value))
+            if body:
+                option_lines.append(f"{letter}. {body}")
+
+    elif isinstance(option_value, list):
+        next_letter_ord = ord("A")
+        for raw_option in option_value:
+            text = str(raw_option or "").strip()
+            if not text:
+                continue
+            prefix_match = re.match(r"^([A-Fa-f])[\.．\)]\s*(.*)$", text)
+            if prefix_match:
+                letter = prefix_match.group(1).upper()
+                body = prefix_match.group(2).strip()
+                option_lines.append(f"{letter}. {body}")
+                next_letter_ord = max(next_letter_ord, ord(letter) + 1)
+            else:
+                letter = chr(next_letter_ord)
+                option_lines.append(f"{letter}. {text}")
+                next_letter_ord += 1
+
+    elif option_value not in (None, ""):
+        option_lines.append(f"A. {_strip_option_prefix(str(option_value))}")
+
+    has_f = any(re.match(r"^F[\.．\)]\s+", line, flags=re.IGNORECASE) for line in option_lines)
+    if not has_f:
+        option_lines.append("F. Cannot infer the answer based on the given information.")
+
+    return option_lines
+
+
+def _build_question_with_options(core_question: str, option_lines: List[str]) -> str:
+    option_block = "\n".join(option_lines)
+    return (
+        f"{core_question.strip()}\n"
+        f"{option_block}\n"
+        "Please provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X)."
+    )
+
+
+def format_questions_with_options(input_data: Any) -> Tuple[List[Dict[str, Any]], int]:
+    """生成 question + options 展示版本；不改变选项顺序。"""
     import copy
 
-    new_data = []
+    formatted_data = normalize_dataset_records(copy.deepcopy(input_data))
+    formatted_count = 0
 
-    def _strip_letter_prefix(s: str) -> str:
-        s = (s or "").strip()
-        match = re.match(r"^[A-Fa-f][\.．\)]\s*(.*)$", s)
-        return match.group(1).strip() if match else s
+    for section in formatted_data:
+        qa_list = section.get("qa", [])
+        if not isinstance(qa_list, list):
+            continue
 
-    def _build_question_text(core_question: str, option_lines: List[str]) -> str:
-        option_block = "\n".join(option_lines)
-        return (
-            f"{core_question}\n"
-            f"{option_block}\n"
-            "Please provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X)."
-        )
-
-    def _shuffle_item(new_item: Dict[str, Any]) -> Dict[str, Any]:
-        original_answer = (new_item.get("answer", "") or "").strip()
-        option_field = new_item.get("option", []) or []
-
-        # 支持字典格式：{"A": "...", "B": "...", ...}
-        if isinstance(option_field, dict):
-            ordered_ae_keys = []
-            for letter in ["A", "B", "C", "D", "E"]:
-                for key in option_field.keys():
-                    if str(key).strip().upper() == letter:
-                        ordered_ae_keys.append(key)
-                        break
-
-            ae_bodies = [str(option_field[key]).strip() for key in ordered_ae_keys]
-
-            f_body = None
-            for key, value in option_field.items():
-                if str(key).strip().upper() == "F":
-                    f_body = str(value).strip()
-                    break
-
-            answer_letter = ""
-            answer_body = ""
-
-            match = re.match(r"^([A-Fa-f])(?:[\.．\)]\s*)?$", original_answer)
-            if match:
-                answer_letter = match.group(1).upper()
-                if answer_letter in ["A", "B", "C", "D", "E"]:
-                    for key in ordered_ae_keys:
-                        if str(key).strip().upper() == answer_letter:
-                            answer_body = str(option_field.get(key, "")).strip()
-                            break
-                elif answer_letter == "F":
-                    answer_body = f_body or ""
-            else:
-                answer_body = _strip_letter_prefix(original_answer)
-
-            rng = np.random.default_rng()
-            shuffled_bodies = list(ae_bodies)
-            rng.shuffle(shuffled_bodies)
-
-            new_option_dict: Dict[str, str] = {}
-            new_answer = original_answer
-            matched_correct = False
-
-            for idx, body in enumerate(shuffled_bodies):
-                letter = ["A", "B", "C", "D", "E"][idx]
-                new_option_dict[letter] = body
-                if answer_body and body == answer_body and not matched_correct:
-                    new_answer = letter
-                    matched_correct = True
-
-            if f_body is not None:
-                new_option_dict["F"] = f_body
-                if answer_letter == "F":
-                    new_answer = "F"
-
-            new_item["option"] = new_option_dict
-            new_item["answer"] = new_answer
-            return new_item
-
-        # 兼容旧格式：option 为列表字符串
-        orig_option_list = option_field
-        if not isinstance(orig_option_list, list):
-            orig_option_list = [str(orig_option_list)]
-
-        ae_options = []
-        f_option = None
-        for opt in orig_option_list:
-            opt = (opt or "").strip()
-            if opt.startswith("F.") or opt.startswith("F．"):
-                f_option = opt
-            else:
-                ae_options.append(opt)
-
-        question = new_item.get("question", "")
-        core_question = _extract_core_question_text(question)
-
-        if len(original_answer) == 1 and original_answer.isalpha():
-            idx = ord(original_answer.upper()) - ord('A')
-            if 0 <= idx < len(ae_options):
-                answer_body = _strip_letter_prefix(ae_options[idx])
-            else:
-                answer_body = original_answer
-        else:
-            answer_body = _strip_letter_prefix(original_answer)
-
-        option_bodies = [_strip_letter_prefix(opt) for opt in ae_options]
-        rng = np.random.default_rng()
-        rng.shuffle(option_bodies)
-
-        new_option_list = []
-        new_correct_answer = ""
-        option_letters = ['A', 'B', 'C', 'D', 'E'][:len(option_bodies)]
-
-        for letter, body in zip(option_letters, option_bodies):
-            new_opt_full = f"{letter}. {body}"
-            new_option_list.append(new_opt_full)
-            if body == answer_body and not new_correct_answer:
-                new_correct_answer = new_opt_full
-
-        if f_option:
-            new_option_list.append(f_option)
-            if original_answer.startswith("F"):
-                new_correct_answer = f_option
-        else:
-            new_option_list.append(
-                "F. Cannot infer the answer based on the given information."
+        for qa_item in qa_list:
+            if not isinstance(qa_item, dict):
+                continue
+            option_lines = _normalize_option_lines_preserve_order(qa_item.get("option", []))
+            core_question = _extract_core_question_text(
+                qa_item.get("question", ""),
+                unknown_placeholder=str(qa_item.get("question", "")).strip(),
             )
+            qa_item["option"] = option_lines
+            qa_item["question"] = _build_question_with_options(core_question, option_lines)
+            formatted_count += 1
 
-        new_item["option"] = new_option_list
-        new_item["answer"] = new_correct_answer or original_answer
+    return formatted_data, formatted_count
 
-        new_item["question"] = _build_question_text(core_question, new_option_list)
-        return new_item
 
-    # 外层可能是 List[section]（section 内含 qa）或 List[qa_item]
-    if isinstance(data, dict):
-        data = [data]
-
-    for section in data:
-        if isinstance(section, dict) and 'qa' in section and isinstance(section['qa'], list):
-            new_qa_list = []
-            for item in section['qa']:
-                new_item = copy.deepcopy(item)
-                new_qa_list.append(_shuffle_item(new_item))
-
-            new_section = copy.deepcopy(section)
-            new_section["qa"] = new_qa_list
-            new_data.append(new_section)
-        elif isinstance(section, dict) and "question" in section and "option" in section:
-            new_item = copy.deepcopy(section)
-            new_data.append(_shuffle_item(new_item))
-        else:
-            new_data.append(copy.deepcopy(section))
-            
-    # 3. 写入输出文件
-    try:
-        with open(output_file_path, 'w', encoding='utf-8') as f:
-            json.dump(new_data, f, indent=4, ensure_ascii=False)
-
-        print(f"✓ 选项打乱完成: {output_file_path}")
-
-    except Exception as e:
-        print(f"❌ 写入输出文件时发生错误: {e}")
-
-# --- 2. response + eval ---
+# --- 1. response + eval ---
 
 def run_qa_only(answer_llm_config, dataset_name, max_workers, output_file):
     runner = QAOnlyRunner(
@@ -275,7 +177,7 @@ def run_eval(idx, file, output_file=None):
         for item in items:
             answer_candidates = normalize_answer_candidates(item.get("answer_fixed"), item.get("answer", ""))
 
-            # Prefer richer text when available, then fallback to option letter.
+            # Scoring uses only the parsed answer; rationale is retained for audit.
             prediction_text = item.get("response") or item.get("response_option") or item.get("response", "")
             score_result = score_mcq_prediction(prediction_text, answer_candidates)
 
@@ -302,12 +204,12 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
 
     question_stats: Dict[str, Dict[str, Any]] = {}
     
-    print(f"--- 开始聚合来自 {num_files} 个文件的实验结果 ---")
+    log_event("pollution_aggregate", status="start", files=num_files, threshold=threshold)
 
     for i in range(1, num_files + 1):
         file_name = f"{prefix}{i}{suffix}"
         if not os.path.exists(file_name):
-            print(f"⚠️ 警告: 文件 {file_name} 不存在，跳过。")
+            log_event("pollution_aggregate_file", status="skipped", file=file_name, reason="file_missing")
             continue
 
         try:
@@ -319,15 +221,17 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
                         if isinstance(conv_items, list):
                             results_list.extend(conv_items)
         except Exception as e:
-            print(f"❌ 错误: 读取文件 {file_name} 时发生异常: {e}")
+            log_event("pollution_aggregate_file", status="failed", file=file_name, reason="read_failed", error=e)
             continue
 
-        print(f"✅ 成功读取文件: {file_name}，包含 {len(results_list)} 个条目。")
+        log_event("pollution_aggregate_file", status="loaded", file=file_name, items=len(results_list))
 
         for item in results_list:
             full_question_text = item.get("question", "")
             score = item.get("score", 0.0)
             response = item.get("response") or item.get("response_option") or item.get("response", "NO_RESPONSE")
+            response_raw = item.get("response_raw", response)
+            response_reason = item.get("response_reason", "")
             response_time = item.get("response_time", 0.0)
             
             # 提取核心问题文本作为唯一键
@@ -354,6 +258,8 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
             # 记录本次实验的 response 和 score
             question_stats[core_question_text]["responses_and_scores"].append({
                 "response": response,
+                "response_raw": response_raw,
+                "reason": response_reason,
                 "score": score,
                 "response_time": response_time,
                 "file_id": i
@@ -363,7 +269,7 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
     # 2. 计算正确率和标记污染
     # ----------------------------------------------------
     
-    print("\n--- 计算正确率并进行污染标记 ---")
+    log_subsection("Pollution score aggregation")
     pollution_by_core_question: Dict[str, Dict[str, Any]] = {}
 
     for core_question_text, stats in question_stats.items():
@@ -371,7 +277,7 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
         total_count = stats["total_count"]
         accuracy = correct_count / total_count if total_count > 0 else 0.0
 
-        pollution_flag = "suspected" if accuracy > threshold else "good"
+        pollution_flag = "suspected" if accuracy >= threshold else "good"
         pollution_by_core_question[core_question_text] = {
             "result": pollution_flag,
             "correct_count": correct_count,
@@ -409,7 +315,7 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
             json.dump(output_data, f, indent=4, ensure_ascii=False)
         # Statistics reporting removed - only report pending questions at start
     except Exception as e:
-        print(f"❌ 错误: 写入输出文件时发生异常: {e}")
+        log_event("pollution_aggregate", status="failed", reason="write_failed", output=result_file, error=e)
 
 # --- 4. membership_inference ---
 def run_membership_inference_loss_api(
@@ -519,7 +425,7 @@ def run_membership_inference_loss_api(
     # =====================
     samples = load_qas_from_json(candidate_path)
     if verbose:
-        print(f"[Info] Loaded {len(samples)} samples. Starting MI detection...")
+        log_event("membership_inference", status="start", samples=len(samples), input=candidate_path)
 
     results = []
     for idx, sample in enumerate(samples):
@@ -537,12 +443,18 @@ def run_membership_inference_loss_api(
             results.append(record)
             
             if verbose and (idx + 1) % 10 == 0:
-                print(f"  Processed {idx+1}/{len(samples)} | Loss: {scores['avg_loss']:.4f}")
+                log_event(
+                    "membership_inference",
+                    status="progress",
+                    processed=f"{idx + 1}/{len(samples)}",
+                    avg_loss=f"{scores['avg_loss']:.4f}",
+                    indent=4,
+                )
             
             if api_sleep > 0:
                 time.sleep(api_sleep)
         except Exception as e:
-            print(f"Error at sample {idx}: {e}")
+            log_event("membership_inference_sample", status="failed", sample=idx, error=e)
 
     # 按 avg_loss 升序排序（Loss 越低，污染嫌疑越大）
     if return_sorted:
@@ -559,8 +471,8 @@ def run_membership_inference_loss_api(
     return results
 
 # --- 5. 运行配置 ---
-CONTAMINATION_CHECK_ROUNDS = 1  # 污染检测的测试轮数
-CONTAMINATION_THRESHOLD = 0.50  # 正确率 >= 50% 标记为可能被污染
+CONTAMINATION_CHECK_ROUNDS = 3  # 多次独立采样，避免一次偶然猜中就删除题目
+CONTAMINATION_THRESHOLD = 1.00  # 三轮全部答对才标记为可能被污染
 
 def pollution_check_main(
     args,
@@ -570,21 +482,19 @@ def pollution_check_main(
     cleanup_temp_files: bool = True
 ) -> str:
     """
-    步骤 4: 题目乱序和污染检查
+    步骤 3: 污染检查
     
     Args:
         args: 命令行参数
-        input_file_path: 输入文件路径（v3版本）
-        output_file_path: 输出文件路径（v4版本）
+        input_file_path: 输入文件路径（v2b版本）
+        output_file_path: 输出文件路径（v3版本）
         enable_contamination_check: 是否启用污染检测
         cleanup_temp_files: 污染检测完成后是否清理临时文件
     
     Returns:
         处理后的文件路径
     """
-    print("\n" + "="*60)
-    print("🔄 步骤 4: 题目乱序和污染检查（打乱选项）")
-    print("="*60)
+    print_log_section("STEP 3 | POLLUTION CHECK")
     
     def build_provider_config(model_value, base_url_value, api_key_value, optional_fields=None):
         config = {}
@@ -611,13 +521,19 @@ def pollution_check_main(
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
     
     # 计算待处理问题数
-    with open(input_file_path, 'r', encoding='utf-8') as f:
-        input_data = json.load(f)
-    total_questions = sum(len(item.get("qa", [])) for item in input_data)
-    print(f"--- 步骤 4 开始处理：共 {total_questions} 个问题 ---")
-    
-    # 打乱选项顺序
-    rename_and_shuffle_options(input_file_path, output_file_path)
+    input_data = load_json_file(input_file_path)
+    total_questions = count_qa_items(input_data)
+    log_event("pollution_check", status="start", total_questions=total_questions, input=input_file_path)
+
+    # 保持选项顺序不变，但将 question 统一展开为「题干 + A-E/F 选项 + 作答提示」。
+    formatted_data, formatted_count = format_questions_with_options(input_data)
+    write_json_file(formatted_data, output_file_path, indent=4)
+    log_event(
+        "pollution_prepare",
+        status="formatted_without_shuffle",
+        formatted_questions=formatted_count,
+        output=output_file_path,
+    )
     
     def _is_abstain_item(qa_item: Dict[str, Any]) -> bool:
         """判断题目是否为弃权题（答案为 F 或标注为 Abstain）。"""
@@ -636,23 +552,18 @@ def pollution_check_main(
 
     # 可选的污染检测
     def _run_contamination_check() -> None:
-        """执行污染检测，所有临时文件统一放在 temp/pollution_check/ 目录下"""
-        # 从输出文件路径提取数据集名称
-        dataset_name = os.path.basename(output_file_path).replace("_v4.json", "")
-        
-        # 创建污染检测专用临时目录
-        pollution_temp_dir = os.path.join("temp", "pollution_check", dataset_name)
+        """执行污染检测，临时文件放在本次运行的 temp/pollution_check/ 目录下。"""
+        dataset_name = os.path.splitext(os.path.basename(output_file_path))[0]
+        output_parent_dir = os.path.dirname(output_file_path) or "."
+        pollution_temp_dir = os.path.join(output_parent_dir, "pollution_check", dataset_name)
         os.makedirs(pollution_temp_dir, exist_ok=True)
         
-        print(f"\n🔍 开始污染检测 ({CONTAMINATION_CHECK_ROUNDS} 轮)")
-        print(f"   临时文件目录: {pollution_temp_dir}")
+        log_subsection("Contamination check")
+        print_kv("rounds", CONTAMINATION_CHECK_ROUNDS, indent=4)
+        print_kv("temp_dir", pollution_temp_dir, indent=4)
 
         # 过滤掉弃权题（答案为F），不进入污染检测
-        with open(output_file_path, 'r', encoding='utf-8') as f:
-            source_data = json.load(f)
-
-        if isinstance(source_data, dict):
-            source_data = [source_data]
+        source_data = normalize_dataset_records(load_json_file(output_file_path))
 
         import copy
         filtered_data = copy.deepcopy(source_data)
@@ -674,29 +585,33 @@ def pollution_check_main(
             section["qa"] = kept_questions
 
         remain_for_check = total_qa - skipped_abstain
-        print(
-            f"   本轮污染检测题数: {remain_for_check}（已跳过弃权题: {skipped_abstain}）"
+        log_event(
+            "contamination_prepare",
+            status="ready",
+            total_qa=total_qa,
+            skipped_abstain=skipped_abstain,
+            remain_for_check=remain_for_check,
         )
 
         if remain_for_check <= 0:
-            print("ℹ 没有可用于污染检测的非弃权题，跳过污染检测。")
+            log_event("contamination_check", status="skipped", reason="no_non_abstain_questions")
             return
 
         filtered_input_file = os.path.join(pollution_temp_dir, "contamination_input_filtered.json")
-        with open(filtered_input_file, 'w', encoding='utf-8') as f:
-            json.dump(filtered_data, f, ensure_ascii=False, indent=4)
+        write_json_file(filtered_data, filtered_input_file, indent=4)
         
         # 临时文件路径
         temp_result_file = os.path.join(pollution_temp_dir, "current_round.json")
         
         # 运行多轮测试
         for idx in range(1, CONTAMINATION_CHECK_ROUNDS + 1):
-            print(f"   第 {idx}/{CONTAMINATION_CHECK_ROUNDS} 轮测试中...")
+            log_event("contamination_round", status="start", round=f"{idx}/{CONTAMINATION_CHECK_ROUNDS}")
             run_qa_only(answer_llm_config, filtered_input_file, max_workers, temp_result_file)
             
             # 保存本轮结果到专用目录
             round_result_file = os.path.join(pollution_temp_dir, f"round_{idx}.json")
             run_eval(idx, temp_result_file, output_file=round_result_file)
+            log_event("contamination_round", status="success", round=f"{idx}/{CONTAMINATION_CHECK_ROUNDS}", output=round_result_file)
         
         # 聚合分析结果
         aggregate_and_analyze_results(
@@ -708,14 +623,14 @@ def pollution_check_main(
             conversation_file=output_file_path
         )
         
-        print(f"✓ 污染检测完成，结果已更新到: {output_file_path}")
+        log_event("contamination_check", status="success", output=output_file_path)
         
         # 可选：清理临时文件
         if cleanup_temp_files:
             shutil.rmtree(pollution_temp_dir)
-            print(f"✓ 已清理临时文件: {pollution_temp_dir}")
+            log_event("contamination_temp", status="cleaned", temp_dir=pollution_temp_dir)
         else:
-            print(f"ℹ 临时文件保留在: {pollution_temp_dir}")
+            log_event("contamination_temp", status="kept", temp_dir=pollution_temp_dir)
     
     if enable_contamination_check:
         _run_contamination_check()

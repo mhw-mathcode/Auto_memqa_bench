@@ -11,10 +11,8 @@ import json
 import math
 import os
 import random
-import time
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
-import numpy as np
+from typing import Any, Dict, List
 
 # ============================================================================
 # MODULE 1: STATS - 统计分析工具
@@ -77,14 +75,6 @@ def write_csv_stats(stats: List[Dict[str, Any]], output_csv: Path) -> None:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
-
-
-def _mixed_sort_key(value: Any) -> Tuple[int, Any]:
-    """Sort numeric-like keys numerically first, then text keys alphabetically."""
-    text = str(value)
-    if text.isdigit():
-        return (0, int(text))
-    return (1, text.lower())
 
 
 def should_include_qa(qa: Dict[str, Any], file_name: str) -> bool:
@@ -164,7 +154,6 @@ def collect_excluded_questions(script_obj: Dict[str, Any], file_name: str) -> Li
         
         # Keep most fields from original QA
         excluded_qa = {
-            "qid": qa.get("qid"),
             "character": qa.get("character"),
             "category": qa.get("category"),
             "label": qa.get("label"),
@@ -346,7 +335,7 @@ def sample_questions(
 ) -> Dict[int, List[Dict[str, Any]]]:
     """每个类别采样固定数量"""
     sampled: Dict[int, List[Dict[str, Any]]] = {}
-    for category in range(1, 7):
+    for category in range(1, 8):
         items = grouped.get(category, [])
         if len(items) < per_category:
             raise ValueError(
@@ -369,7 +358,7 @@ def write_csv_samples(path: str, sampled: Dict[int, List[Dict[str, Any]]]) -> No
         writer.writerow(
             ["Category", "question", "option", "answer", "evidence_dialogues", "reasoning_steps"]
         )
-        for category in range(1, 7):
+        for category in range(1, 8):
             for q in sampled[category]:
                 writer.writerow(
                     [
@@ -420,8 +409,8 @@ def load_json_records(path: str) -> List[Dict[str, Any]]:
     return records
 
 
-def make_qid(item: Dict[str, Any], fallback_i: int) -> str:
-    """构建问题ID"""
+def make_item_key(item: Dict[str, Any], fallback_i: int) -> str:
+    """构建用于重叠分析的稳定条目键。"""
     outer = item.get("outer_id", "")
     inner = item.get("inner_id", "")
     g_idx = item.get("global_index", "")
@@ -454,7 +443,7 @@ def compute_overlap_curves(
         loss = it.get(metric_key)
         if loss is None or math.isnan(float(loss)): continue
         processed_data.append({
-            "qid": make_qid(it, i),
+            "item_key": make_item_key(it, i),
             "k": get_blind_correct_count(it, correct_threshold),
             "loss": float(loss)
         })
@@ -464,21 +453,21 @@ def compute_overlap_curves(
 
     # 按 Loss 升序排序（可疑度从高到低）
     processed_data.sort(key=lambda x: x["loss"])
-    ranked_qids_mi = [d["qid"] for d in processed_data]
-    k_map = {d["qid"]: d["k"] for d in processed_data}
-    universe_qids = set(ranked_qids_mi)
+    ranked_item_keys_mi = [d["item_key"] for d in processed_data]
+    k_map = {d["item_key"]: d["k"] for d in processed_data}
+    universe_item_keys = set(ranked_item_keys_mi)
     
     results = []
     prev_jaccard = None
     
     for x in range(x_min, x_max + 1):
-        S1 = {qid for qid in universe_qids if k_map[qid] >= x}
+        S1 = {item_key for item_key in universe_item_keys if k_map[item_key] >= x}
         y = len(S1)
         if y == 0:
             results.append({"x": x, "y": 0, "jaccard": 0.0, "delta_j": 0.0, "overlap": 0.0})
             continue
 
-        S2 = set(ranked_qids_mi[:y])
+        S2 = set(ranked_item_keys_mi[:y])
         intersection = len(S1 & S2)
         union = len(S1 | S2)
         current_jaccard = intersection / union if union > 0 else 0

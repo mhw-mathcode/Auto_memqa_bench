@@ -6,23 +6,69 @@ Personal Memory Dataset 处理流水线主入口
 
 流程说明:
   步骤 0: v0 生成原始问答对
-    步骤 1: v0 → v1a → v1b 题目合理性检测
-    步骤 2: v1b → v2 题目标注
-  步骤 3: v2 → v3 new_qa (问答精炼重构)
-  步骤 4: v3 → v4 题目乱序 (污染检查)
-  步骤 5: v4 → final 生成最终版本
+  步骤 1: v0 → v1_refined 问题精炼重构
+  步骤 2: v1_refined → v2a → v2b 题目合理性检测
+  步骤 3: v2b → v3 污染检查
+  步骤 4: v3 → final 生成最终版本
 """
 
 import os
 import sys
-import json
 import argparse
 import time
 import shutil
-import tempfile
-from pathlib import Path
-from tqdm import tqdm
-from config import get_config, VersionManager, PipelineConfig
+import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from argparse import Namespace
+from config import get_config, VersionManager
+from src.pipeline_utils import (
+    PipelinePaths,
+    apply_cumulative_rules,
+    create_run_workspace,
+    log_event,
+    log_subsection,
+    print_pipeline_overview,
+    print_log_section,
+    print_kv,
+    print_run_footer,
+    print_run_header,
+    print_stage_footer,
+    print_stage_header,
+    resolve_step_input,
+    run_with_temp_filtered_input,
+    setup_run_logging,
+    summarize_step_config,
+)
+
+
+STEP_0_GENERATE_QA = "step_0_generate_qa"
+STEP_1_REFINE_QA = "step_1_refine_qa"
+STEP_2_EVIDENCE_CHECK = "step_2_evidence_check"
+STEP_3_POLLUTION_CHECK = "step_3_pollution_check"
+STEP_4_FINALIZE = "step_4_finalize"
+
+STAGE_META = {
+    0: {
+        "name": "生成原始问答对",
+        "purpose": "从输入剧本/对话中生成或复用 v0 初始问答。",
+    },
+    1: {
+        "name": "问题精炼与重构",
+        "purpose": "合并相似问题、修复冲突表达，形成进入合理性检测前的 v1_refined。",
+    },
+    2: {
+        "name": "题目合理性检测",
+        "purpose": "通过仅证据回答与删除证据后的消融测试，验证题目是否被证据支持且证据必要。",
+    },
+    3: {
+        "name": "污染检查",
+        "purpose": "在不改变选项顺序的前提下检查无上下文回答、选项泄漏与潜在污染，并输出 v3。",
+    },
+    4: {
+        "name": "生成最终版本",
+        "purpose": "累积应用合理性与污染过滤规则，生成 final 数据集。",
+    },
+}
 
 def show_config():
     """显示当前配置"""
@@ -32,48 +78,506 @@ def show_config():
 
 def show_versions():
     """显示版本信息"""
-    config_loader = get_config()
-    pipeline_cfg = config_loader.get_pipeline_config()
-    
-    # 创建一个临时的 PipelineConfig 对象
-    from config import LLMConfig
-    temp_cfg = PipelineConfig(
-        input_dir=pipeline_cfg.get('input_dir', 'dataset'),
-        output_dir=pipeline_cfg.get('output_dir', 'result'),
-        temp_dir=pipeline_cfg.get('temp_dir', 'temp'),
+    VersionManager.print_version_info()
+
+
+def resolve_stage_workers(config_loader, pipeline_cfg, step_key: str, field: str = "max_workers") -> int:
+    """Resolve a positive per-stage worker count with the pipeline value as fallback."""
+    pipeline_fallback = pipeline_cfg.get("max_workers", 4)
+    fallback = pipeline_fallback
+    if field != "max_workers":
+        fallback = config_loader.get_step_flag(step_key, "max_workers", pipeline_fallback)
+    raw_value = config_loader.get_step_flag(step_key, field, fallback)
+    try:
+        workers = max(1, int(raw_value))
+    except (TypeError, ValueError):
+        workers = max(1, int(fallback or 1))
+        log_event(
+            "stage_workers",
+            status="fallback",
+            step=step_key,
+            field=field,
+            configured=raw_value,
+            resolved=workers,
+        )
+    return workers
+
+
+def build_answer_args(step_llm, max_workers: int, **worker_overrides) -> Namespace:
+    """构造检测/污染阶段复用的简化参数对象。"""
+    return Namespace(
+        answer_llm_model=step_llm.model,
+        answer_llm_base_url=step_llm.base_url,
+        answer_llm_api_key=step_llm.api_key,
+        max_workers=max_workers,
+        **worker_overrides,
     )
-    
-    version_manager = VersionManager(temp_cfg)
-    version_manager.print_version_info()
 
 
-def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
+def format_questions_file(path: str, stage_label: str) -> bool:
+    """将题目统一格式化为 question + A-E/F options 展示文本，不改变选项顺序。"""
+    try:
+        from src.step3_pollution_check import format_questions_with_options
+        from src.utils import load_json_file, write_json_file
+
+        formatted_data, formatted_count = format_questions_with_options(load_json_file(path))
+        write_json_file(formatted_data, path, indent=4)
+        log_event(
+            "format_questions_with_options",
+            status="success",
+            stage=stage_label,
+            formatted_questions=formatted_count,
+            output=path,
+        )
+        return True
+    except Exception as exc:
+        log_event(
+            "format_questions_with_options",
+            status="failed",
+            stage=stage_label,
+            error=exc,
+            output=path,
+        )
+        return False
+
+
+def ensure_v0_input(paths: PipelinePaths, input_dir: str, dataset_name: str, input_target: str = None) -> bool:
+    """当跳过步骤 0 时，确保 v0 文件存在；不存在则从源文件复制。"""
+    if os.path.exists(paths.v0):
+        return format_questions_file(paths.v0, "prepare_v0_existing")
+
+    if input_target and os.path.isdir(input_target):
+        try:
+            from src.utils import load_json_file, write_json_file
+
+            records = []
+            for filename in sorted(name for name in os.listdir(input_target) if name.endswith(".json")):
+                file_path = os.path.join(input_target, filename)
+                data = load_json_file(file_path)
+                if isinstance(data, list):
+                    record = data[0] if data and isinstance(data[0], dict) else {}
+                elif isinstance(data, dict):
+                    record = data
+                else:
+                    record = {}
+                if not record:
+                    continue
+                records.append(
+                    {
+                        "filename": filename,
+                        "conversation": record.get("conversation", {}),
+                        "qa": record.get("qa", []),
+                    }
+                )
+            if not records:
+                log_event("prepare_v0_input", status="failed", reason="json_records_missing", source=input_target)
+                return False
+            write_json_file(records, paths.v0, indent=2)
+            log_event("prepare_v0_input", status="success", source=input_target, output=paths.v0, records=len(records))
+            return format_questions_file(paths.v0, "prepare_v0_folder")
+        except Exception as exc:
+            log_event("prepare_v0_input", status="failed", reason="folder_prepare_failed", source=input_target, error=exc)
+            return False
+
+    source_path = input_target if input_target and os.path.isfile(input_target) else paths.source_dataset_path(input_dir)
+    if not os.path.exists(source_path):
+        log_event("prepare_v0_input", status="failed", reason="source_missing", source=source_path)
+        return False
+
+    shutil.copy(source_path, paths.v0)
+    log_event("prepare_v0_input", status="success", source=source_path, output=paths.v0)
+    return format_questions_file(paths.v0, "prepare_v0_copied")
+
+
+def normalize_evidence_mode(raw_mode: str) -> str:
+    """Normalize evidence-check mode to the current pipeline modes."""
+    mode = str(raw_mode).strip().lower()
+    if mode not in {"full", "v2a", "v2b"}:
+        log_event("normalize_evidence_mode", status="warning", invalid_mode=mode, fallback="full")
+        return "full"
+    return mode
+
+
+def run_generate_stage(config_loader, dataset_name: str, input_dir: str, paths: PipelinePaths, input_target: str = None) -> bool:
+    """步骤 0：生成原始问答对。"""
+    log_event("stage_0_generate_qa", status="start")
+    from src.step0_qa_generate import generate_v0
+
+    step_llm = config_loader.get_step_llm(STEP_0_GENERATE_QA)
+    force_generate_new_qa = config_loader.get_step_flag(
+        STEP_0_GENERATE_QA,
+        "force_generate_new_qa",
+        False,
+    )
+    batch_size = config_loader.get_step_flag(
+        STEP_0_GENERATE_QA,
+        "speaker_batch_size",
+        8,
+    )
+    max_workers = resolve_stage_workers(
+        config_loader,
+        config_loader.get_pipeline_config(),
+        STEP_0_GENERATE_QA,
+    )
+
+    generated_v0_path = generate_v0(
+        dataset_name,
+        input_dir,
+        paths.v0,
+        step_llm,
+        force_generate_new_qa=bool(force_generate_new_qa),
+        initial_batch_size=int(batch_size),
+        max_workers=max_workers,
+        input_target=input_target,
+    )
+    if not generated_v0_path:
+        return False
+    return format_questions_file(paths.v0, "stage_0_v0")
+
+
+def run_refine_stage(config_loader, paths: PipelinePaths) -> bool:
+    """步骤 1：问题精炼与重构。"""
+    log_event("stage_1_refine_qa", status="start")
+    from src.step1_new_qa import new_qa_main
+
+    input_path = resolve_step_input("步骤 1", paths.v0, [])
+    if not input_path:
+        return False
+
+    step_llm = config_loader.get_step_llm(STEP_1_REFINE_QA)
+    max_workers = resolve_stage_workers(
+        config_loader,
+        config_loader.get_pipeline_config(),
+        STEP_1_REFINE_QA,
+    )
+    new_qa_main(
+        input_path,
+        paths.v1_refined,
+        api_key=step_llm.api_key,
+        base_url=step_llm.base_url,
+        model=step_llm.model,
+        max_workers=max_workers,
+    )
+    return format_questions_file(paths.v1_refined, "stage_1_v1_refined")
+
+
+def run_evidence_check_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> bool:
+    """步骤 2：题目合理性检测。"""
+    log_event("stage_2_evidence_check", status="start")
+    from src.step2_evidence_check import evidence_check_main
+
+    input_path = resolve_step_input("步骤 2", paths.v1_refined, [paths.v0])
+    if not input_path:
+        return False
+
+    step_llm = config_loader.get_step_llm(STEP_2_EVIDENCE_CHECK)
+    stage_workers = resolve_stage_workers(config_loader, pipeline_cfg, STEP_2_EVIDENCE_CHECK)
+    only_evidence_workers = resolve_stage_workers(
+        config_loader,
+        pipeline_cfg,
+        STEP_2_EVIDENCE_CHECK,
+        "only_evidence_max_workers",
+    )
+    iterative_ablation_workers = resolve_stage_workers(
+        config_loader,
+        pipeline_cfg,
+        STEP_2_EVIDENCE_CHECK,
+        "iterative_ablation_max_workers",
+    )
+    ablation_settings = {
+        key: config_loader.get_step_flag(
+            STEP_2_EVIDENCE_CHECK,
+            key,
+            default,
+        )
+        for key, default in {
+            "ablation_context_limit": 32768,
+            "ablation_prompt_safety_tokens": 4096,
+            "ablation_chunk_tokens": 8192,
+            "ablation_retrieval_chunks": 6,
+            "ablation_chunk_max_workers": 4,
+        }.items()
+    }
+    args = build_answer_args(
+        step_llm,
+        stage_workers,
+        only_evidence_max_workers=only_evidence_workers,
+        iterative_ablation_max_workers=iterative_ablation_workers,
+        **ablation_settings,
+    )
+    mode = normalize_evidence_mode(
+        config_loader.get_step_flag(STEP_2_EVIDENCE_CHECK, "mode", "full")
+    )
+
+    if mode == "v2a":
+        log_event("evidence_check_mode", mode="v2a_only_evidence")
+        output_path, _ = evidence_check_main(
+            args,
+            input_path,
+            paths.v2a,
+            only_evidence=1,
+            except_evidence=0,
+        )
+    elif mode == "v2b":
+        v2b_input_path = resolve_step_input(
+            "步骤 2(v2b)",
+            paths.v2a,
+            [paths.v1_refined, paths.v0],
+        )
+        if not v2b_input_path:
+            return False
+
+        log_event("evidence_check_mode", mode="v2b_iterative_ablation", input=v2b_input_path)
+        output_path, _ = evidence_check_main(
+            args,
+            v2b_input_path,
+            paths.v2b,
+            only_evidence=0,
+            except_evidence=1,
+        )
+    else:
+        log_event("evidence_check_mode", mode="full_v2a_to_v2b")
+        output_path, _ = evidence_check_main(args, input_path, paths.v2b)
+
+    log_event("stage_2_evidence_check", status="success", output=output_path)
+    return True
+
+
+def run_pollution_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> bool:
+    """步骤 3：污染检查。"""
+    log_event("stage_3_pollution_check", status="start")
+    from src.step3_pollution_check import pollution_check_main
+
+    input_path = resolve_step_input(
+        "步骤 3",
+        paths.v2b,
+        [paths.v2a, paths.v1_refined, paths.v0],
+    )
+    if not input_path:
+        return False
+
+    step_llm = config_loader.get_step_llm(STEP_3_POLLUTION_CHECK)
+    max_workers = resolve_stage_workers(config_loader, pipeline_cfg, STEP_3_POLLUTION_CHECK)
+    args = build_answer_args(step_llm, max_workers)
+    enable_contamination_check = config_loader.get_step_flag(
+        STEP_3_POLLUTION_CHECK,
+        "enable_contamination_check",
+        False,
+    )
+    cleanup_temp_files = config_loader.get_step_flag(
+        STEP_3_POLLUTION_CHECK,
+        "cleanup_temp_files",
+        True,
+    )
+
+    run_with_temp_filtered_input(
+        input_path,
+        ["v2a", "v2b"],
+        "step3",
+        lambda filtered_path: pollution_check_main(
+            args,
+            filtered_path,
+            paths.v3,
+            enable_contamination_check=enable_contamination_check,
+            cleanup_temp_files=cleanup_temp_files,
+        ),
+        temp_dir=paths.temp_dir,
+    )
+    return True
+
+
+def run_finalize_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> bool:
+    """步骤 4：生成最终版本。"""
+    log_event("stage_4_finalize", status="start")
+    input_path = resolve_step_input(
+        "步骤 4",
+        paths.v3,
+        [paths.v2b, paths.v2a, paths.v1_refined, paths.v0],
+    )
+    if not input_path:
+        return False
+
+    max_workers = resolve_stage_workers(config_loader, pipeline_cfg, STEP_4_FINALIZE)
+    apply_cumulative_rules(
+        input_path,
+        ["v2a", "v2b", "pollution"],
+        "步骤 4",
+        output_path=paths.final,
+        max_workers=max_workers,
+    )
+    return format_questions_file(paths.final, "stage_4_final")
+
+
+def print_timing_summary(step_times: dict, total_time: float):
+    """输出流水线耗时统计。"""
+    print_log_section("PIPELINE COMPLETED")
+    log_subsection("Stage elapsed", indent=2)
+    for step_name, step_time in step_times.items():
+        minutes = int(step_time // 60)
+        seconds = step_time % 60
+        print_kv(step_name, f"{minutes}m {seconds:.2f}s ({step_time:.2f}s)", indent=4)
+    total_minutes = int(total_time // 60)
+    total_seconds = total_time % 60
+    print_kv("total", f"{total_minutes}m {total_seconds:.2f}s ({total_time:.2f}s)", indent=4)
+
+
+def _safe_dataset_name(value: str) -> str:
+    """Convert a dataset name or path into a safe run/output stem."""
+    raw = str(value or "").strip().strip("\"'")
+    if not raw:
+        return "dataset"
+    stem = os.path.splitext(os.path.basename(raw))[0] if raw.lower().endswith(".json") else os.path.basename(raw)
+    stem = stem or raw
+    safe = "".join(ch if ch.isalnum() or ch in ("_", "-") else "_" for ch in stem)
+    safe = "_".join(part for part in safe.split("_") if part)
+    return safe or "dataset"
+
+
+def resolve_run_target(target: str, pipeline_cfg: dict) -> tuple[str, str]:
+    """
+    Resolve a CLI/config target.
+
+    Returns (dataset_name, input_target). input_target is an absolute file/dir
+    path when the target points to a concrete JSON file or folder; otherwise it
+    is None and the legacy dataset/<name> lookup is used.
+    """
+    input_dir = pipeline_cfg.get("input_dir", "dataset")
+    raw_target = str(target or "").strip().strip("\"'")
+    if not raw_target:
+        return "", None
+
+    candidates = [raw_target]
+    if not os.path.isabs(raw_target):
+        candidates.append(os.path.join(input_dir, raw_target))
+
+    for candidate in candidates:
+        abs_candidate = os.path.abspath(candidate)
+        if os.path.isfile(abs_candidate) or os.path.isdir(abs_candidate):
+            return _safe_dataset_name(abs_candidate), abs_candidate
+
+    return _safe_dataset_name(raw_target), None
+
+
+def get_configured_run_targets(pipeline_cfg: dict) -> list[str]:
+    """Read batch targets from config.json pipeline settings."""
+    targets = []
+    for key in ("run_targets", "input_files", "input_dirs"):
+        value = pipeline_cfg.get(key, [])
+        if isinstance(value, str):
+            value = [value]
+        if isinstance(value, list):
+            targets.extend(str(item).strip() for item in value if str(item).strip())
+    return targets
+
+
+def run_one_target(target: str, start_step: int, end_step: int, pipeline_cfg: dict) -> bool:
+    """Run one target in the current process."""
+    dataset_name, input_target = resolve_run_target(target, pipeline_cfg)
+    if not dataset_name:
+        log_event("run_target", status="failed", reason="empty_target", target=target)
+        return False
+
+    workspace = create_run_workspace(dataset_name, pipeline_cfg)
+    cleanup_logging = setup_run_logging(workspace.log_path)
+    try:
+        log_event(
+            "run_workspace",
+            status="created",
+            target=target,
+            dataset_name=dataset_name,
+            input_target=input_target,
+            root=workspace.root_dir,
+            log=workspace.log_path,
+        )
+        return run_pipeline(
+            dataset_name,
+            start_step,
+            end_step,
+            run_temp_dir=workspace.temp_dir,
+            run_output_dir=workspace.output_dir,
+            run_workspace=workspace,
+            input_target=input_target,
+        )
+    finally:
+        cleanup_logging()
+
+
+def run_batch_targets(targets: list[str], args, pipeline_cfg: dict) -> bool:
+    """Run multiple configured targets in parallel subprocesses."""
+    unique_targets = []
+    seen = set()
+    for target in targets:
+        normalized = str(target).strip()
+        if normalized and normalized not in seen:
+            unique_targets.append(normalized)
+            seen.add(normalized)
+
+    if not unique_targets:
+        log_event("batch_run", status="failed", reason="empty_targets")
+        return False
+
+    try:
+        max_workers = max(1, int(pipeline_cfg.get("batch_max_workers", 1)))
+    except (TypeError, ValueError):
+        max_workers = 1
+    max_workers = min(max_workers, len(unique_targets))
+
+    log_event("batch_run", status="start", targets=len(unique_targets), max_workers=max_workers)
+
+    def run_child(target: str) -> tuple[str, int]:
+        cmd = [
+            sys.executable,
+            os.path.abspath(__file__),
+            "--run",
+            target,
+            "--start",
+            str(args.start),
+            "--end",
+            str(args.end),
+            "--config",
+            args.config,
+        ]
+        completed = subprocess.run(
+            cmd,
+            cwd=os.getcwd(),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        return target, completed.returncode
+
+    results = []
+    with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix="pipeline-batch") as executor:
+        future_map = {executor.submit(run_child, target): target for target in unique_targets}
+        for future in as_completed(future_map):
+            target, return_code = future.result()
+            results.append((target, return_code))
+            log_event("batch_run_target", status="success" if return_code == 0 else "failed", target=target, return_code=return_code)
+
+    failed = [(target, code) for target, code in results if code != 0]
+    log_event("batch_run", status="success" if not failed else "failed", failed=len(failed), total=len(results))
+    return not failed
+
+
+def run_pipeline(
+    dataset_name: str,
+    start_step: int = 0,
+    end_step: int = 4,
+    run_temp_dir: str = None,
+    run_output_dir: str = None,
+    run_workspace=None,
+    input_target: str = None,
+):
     """
     运行完整流水线
-    
+
     Args:
         dataset_name: 数据集名称（不含扩展名）
-        start_step: 起始步骤（0-5）
-        end_step: 结束步骤（0-5）
+        start_step: 起始步骤（0-4）
+        end_step: 结束步骤（0-4）
     """
-    print("\n" + "="*60)
-    print(f"开始处理数据集: {dataset_name}")
-    print(f"执行步骤: {start_step} -> {end_step}")
-    print("="*60)
-    print("\n流程说明:")
-    print("  步骤 0: v0 生成原始问答对")
-    print("  步骤 1: v0 → v1a → v1b 题目合理性检测")
-    print("  步骤 2: v1b → v2 题目标注")
-    print("  步骤 3: v2 → v3 new_qa (问答精炼重构)")
-    print("  步骤 4: v3 → v4 选项乱序 (污染检查)")
-    print("  步骤 5: v4 → final 生成最终版本")
-    print("="*60 + "\n")
-    
-    # 记录总体开始时间和各步骤耗时
     pipeline_start_time = time.time()
     step_times = {}
-    v0_shuffled = False
-    
     config_loader = get_config()
     pipeline_cfg = config_loader.get_pipeline_config()
 
@@ -86,489 +590,157 @@ def run_pipeline(dataset_name: str, start_step: int = 1, end_step: int = 5):
         except ValueError:
             is_skip = False
         if is_skip:
-            print(f"\n[步骤 {step_idx}] 配置为 skip=true，跳过执行")
+            log_event("skip_stage", status="skipped", stage=step_idx, reason="skip=true")
             return False
         return True
-    
+
     input_dir = pipeline_cfg.get('input_dir', 'dataset')
-    temp_dir = pipeline_cfg.get('temp_dir', 'temp')
-    output_dir = pipeline_cfg.get('output_dir', 'result')
-    
-    input_dir = pipeline_cfg.get('input_dir', 'dataset')
-    temp_dir = pipeline_cfg.get('temp_dir', 'temp')
-    output_dir = pipeline_cfg.get('output_dir', 'result')
-    
-    # 确保目录存在
+    temp_dir = run_temp_dir or pipeline_cfg.get('temp_dir', 'temp')
+    output_dir = run_output_dir or pipeline_cfg.get('output_dir', 'result')
+
     os.makedirs(temp_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
-    
-    # 构建文件路径（新流程）
-    # v0: 原始问答对（步骤 0）
-    # v1a: 只使用证据检查（步骤 1a）
-    # v1b: 迭代删除证据检查（步骤 1b）
-    # v2: 题目标注（步骤 2，输入 v1b）
-    # v3: new_qa（步骤 3: new_qa）
-    # v4: 题目乱序（步骤 4: pollution_check）
-    # final: 最终版本（步骤 5）
-    v0_path = os.path.join(temp_dir, f"{dataset_name}_v0.json")
-    v1a_path = os.path.join(temp_dir, f"{dataset_name}_v1a.json")  # 合理性检测阶段A
-    v1b_path = os.path.join(temp_dir, f"{dataset_name}_v1b.json")  # 合理性检测阶段B
-    legacy_v1_path = os.path.join(temp_dir, f"{dataset_name}_v1.json")  # 兼容旧版
-    v2_path = os.path.join(temp_dir, f"{dataset_name}_v2.json")  # 题目标注
-    v3_path = os.path.join(temp_dir, f"{dataset_name}_v3.json")  # new_qa
-    v4_path = os.path.join(temp_dir, f"{dataset_name}_v4.json")  # 题目乱序
-    final_path = os.path.join(output_dir, f"{dataset_name}_final.json")
 
-    def resolve_step_input(step_label, preferred_path, fallback_paths):
-        """按顺序选择存在的输入文件，支持步骤间自动回退。"""
-        checked = []
-        ordered_candidates = [preferred_path] + list(fallback_paths)
+    paths = PipelinePaths(dataset_name, temp_dir, output_dir)
 
-        for candidate in ordered_candidates:
-            if not candidate or candidate in checked:
-                continue
-            checked.append(candidate)
-            if os.path.exists(candidate):
-                if candidate != preferred_path:
-                    print(
-                        f"⚠️ {step_label}: 输入 {os.path.basename(preferred_path)} 不存在，"
-                        f"回退使用 {os.path.basename(candidate)}"
-                    )
-                return candidate
+    print_run_header(dataset_name, start_step, end_step, run_workspace, pipeline_cfg)
+    print_pipeline_overview(dataset_name, start_step, end_step)
 
-        checked_text = ", ".join(os.path.basename(path) for path in checked)
-        print(f"❌ 错误: {step_label} 未找到可用输入文件，已检查: {checked_text}")
-        return None
-
-    def _passes_v1a_rule(qa_item):
-        only_check = qa_item.get("only_evidence_check")
-        if isinstance(only_check, dict):
-            return only_check.get("result") == "right"
-        # 缺失字段时不强制删除，保持向后兼容。
-        return True
-
-    def _passes_v1b_rule(qa_item):
-        """v1b 删题规则：仅当存在 round==3 且其 result != wrong 才删除。"""
-        # v3 生成的新题没有稳定的 iterative_evidence_ablation 语义，直接豁免。
-        if qa_item.get("is_generated_qa") is True:
-            return True
-
-        if "iterative_evidence_ablation" not in qa_item:
-            return True
-
-        ablation = qa_item.get("iterative_evidence_ablation")
-        if not isinstance(ablation, list):
-            return True
-
-        for record in ablation:
-            if not isinstance(record, dict):
-                continue
-            if record.get("round") == 3:
-                return record.get("result") == "wrong"
-
-        # 未找到 round == 3 则保留
-        return True
-
-    def _passes_v4_rule(qa_item):
-        """v4 删题规则：仅当存在 pollution_check.result 且其不为 good 才删除。
-        """
-
-        if "pollution_check" not in qa_item:
-            return True
-
-        pollution_check = qa_item.get("pollution_check")
-        if not isinstance(pollution_check, dict):
-            return True
-
-        if "result" not in pollution_check:
-            return True
-
-        return pollution_check.get("result") == "good"
-
-    def apply_cumulative_rules(input_path, rule_names, stage_label, output_path=None):
-        """对输入文件应用累积删题规则；仅在指定 output_path 时落盘。"""
-        with open(input_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        if isinstance(data, dict):
-            data = [data]
-
-        rule_checkers = {
-            "v1a": _passes_v1a_rule,
-            "v1b": _passes_v1b_rule,
-            "v4": _passes_v4_rule,
-        }
-
-        total_before = 0
-        total_after = 0
-        removed_by_rule = {rule: 0 for rule in rule_names}
-
-        for section in data:
-            qa_list = section.get("qa", [])
-            if not isinstance(qa_list, list):
-                continue
-
-            filtered = []
-            for qa_item in qa_list:
-                total_before += 1
-                removed_rule = None
-
-                for rule in rule_names:
-                    checker = rule_checkers.get(rule)
-                    if checker and not checker(qa_item):
-                        removed_rule = rule
-                        break
-
-                if removed_rule:
-                    removed_by_rule[removed_rule] += 1
-                    continue
-
-                filtered.append(qa_item)
-                total_after += 1
-
-            section["qa"] = filtered
-
-        if output_path:
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
-
-        removed_total = total_before - total_after
-        print(
-            f"  [{stage_label}] 规则过滤: {total_before} -> {total_after}，"
-            f"移除 {removed_total}"
-        )
-        for rule in rule_names:
-            print(f"    - {rule} 规则移除: {removed_by_rule.get(rule, 0)}")
-
-        return data
-
-    def run_with_temp_filtered_input(input_path, rule_names, stage_label, runner):
-        """在临时文件中传递过滤结果，执行后立即删除，避免持久化中间文件。"""
-        filtered_data = apply_cumulative_rules(
-            input_path,
-            rule_names,
-            stage_label
-        )
-
-        temp_file_path = None
+    def get_stage_config_summary(step_key: str) -> dict:
         try:
-            with tempfile.NamedTemporaryFile(
-                mode="w",
-                suffix=".json",
-                prefix=f"{dataset_name}_{stage_label}_",
-                encoding="utf-8",
-                delete=False,
-            ) as temp_file:
-                json.dump(filtered_data, temp_file, indent=4, ensure_ascii=False)
-                temp_file_path = temp_file.name
+            return summarize_step_config(config_loader.get_step_config(step_key))
+        except ValueError:
+            return {"config": "missing"}
 
-            return runner(temp_file_path)
-        finally:
-            if temp_file_path and os.path.exists(temp_file_path):
-                os.remove(temp_file_path)
-    
-    # 步骤 0: 生成原始问答对
-    if should_run_step(0, "step_0_generate_qa"):
+    def execute_logged_stage(
+        stage_idx: int,
+        step_key: str,
+        inputs: dict,
+        outputs: dict,
+        action,
+        timing_label: str,
+    ) -> bool:
+        meta = STAGE_META[stage_idx]
+        print_stage_header(
+            stage_idx,
+            meta["name"],
+            meta["purpose"],
+            inputs=inputs,
+            outputs=outputs,
+            config_summary=get_stage_config_summary(step_key),
+        )
         step_start = time.time()
-        print("\n[步骤 0] 生成原始问答对...")
-        from src.qa_generate import generate_v0
-        
-        step0_llm = config_loader.get_step_llm("step_0_generate_qa")
-        step0_force_generate_new_qa = config_loader.get_step_flag(
-            "step_0_generate_qa",
-            "force_generate_new_qa",
-            False,
-        )
-        step0_batch_size = config_loader.get_step_flag(
-            "step_0_generate_qa",
-            "speaker_batch_size",
-            8,
-        )
-        v0_path = generate_v0(
-            dataset_name,
-            input_dir,
-            v0_path,
-            step0_llm,
-            force_generate_new_qa=bool(step0_force_generate_new_qa),
-            initial_batch_size=int(step0_batch_size),
-        )
-        if not v0_path:
-            return
-        step_times['步骤 0: 生成原始问答对'] = time.time() - step_start
-        print(f"✓ 步骤 0 完成，耗时: {step_times['步骤 0: 生成原始问答对']:.2f} 秒")
-        
-        # 在 v0 上打乱选项顺序（不生成新文件，直接修改 v0）
-        print("\n[步骤 0 后处理] 打乱 v0 选项顺序...")
         try:
-            from src.pollution_check import rename_and_shuffle_options
-            rename_and_shuffle_options(v0_path, v0_path)
-            v0_shuffled = True
-        except Exception as e:
-            print(f"❌ 打乱选项时出错: {e}")
-            import traceback
-            traceback.print_exc()
-    else:
-        # 如果 v0 不存在，尝试从 input_dir 读取原始文件
-        if not os.path.exists(v0_path):
-            source_path = os.path.join(input_dir, dataset_name, f"{dataset_name}_1.json")
-            if os.path.exists(source_path):
-                shutil.copy(source_path, v0_path)
-                print(f"✓ 从源文件复制到 v0: {source_path}")
-                
-                # 打乱 v0 选项顺序
-                print("\n[后处理] 打乱 v0 选项顺序...")
-                try:
-                    from src.pollution_check import rename_and_shuffle_options
-                    rename_and_shuffle_options(v0_path, v0_path)
-                    v0_shuffled = True
-                except Exception as e:
-                    print(f"❌ 打乱选项时出错: {e}")
-                    import traceback
-                    traceback.print_exc()
-            else:
-                print(f"❌ 错误: 找不到源文件 {source_path}")
-                return
-
-    # 步骤 1: 题目合理性检测
-    if should_run_step(1, "step_1_full_context"):
-        step_start = time.time()
-        print("\n[步骤 1] 题目合理性检测...")
-        from src.evidence_check import evidence_check_main
-        from argparse import Namespace
-        
-        if not os.path.exists(v0_path):
-            print(f"❌ 错误: 输入文件不存在 {v0_path}")
-            return
-        
-        # 获取步骤 1 配置
-        step1_llm = config_loader.get_step_llm("step_1_full_context")
-        
-        # 创建简化的 args 对象
-        args = Namespace(
-            answer_llm_model=step1_llm.model,
-            answer_llm_base_url=step1_llm.base_url,
-            answer_llm_api_key=step1_llm.api_key,
-            max_workers=pipeline_cfg.get('max_workers', 4)
-        )
-
-        step1_mode = str(
-            config_loader.get_step_flag("step_1_full_context", "mode", "full")
-        ).strip().lower()
-        if step1_mode not in {"full", "v1a", "v1b"}:
-            print(f"⚠️ step_1_full_context.mode={step1_mode} 非法，回退为 full")
-            step1_mode = "full"
-
-        def _shuffle_before_v1(input_path: str):
-            nonlocal v0_shuffled
-            if input_path == v0_path and v0_shuffled:
-                return
-            print(f"\n[步骤 1 前处理] 打乱输入选项顺序: {input_path}")
-            try:
-                from src.pollution_check import rename_and_shuffle_options
-                rename_and_shuffle_options(input_path, input_path)
-                if input_path == v0_path:
-                    v0_shuffled = True
-            except Exception as e:
-                print(f"❌ 步骤 1 前打乱选项时出错: {e}")
-                import traceback
-                traceback.print_exc()
-
-        if step1_mode == "v1a":
-            print("  模式: 仅执行 v1a (only_evidence)")
-            _shuffle_before_v1(v0_path)
-            output_path, kept = evidence_check_main(
-                args,
-                v0_path,
-                v1a_path,
-                only_evidence=1,
-                except_evidence=0,
+            ok = bool(action())
+        except Exception as exc:
+            elapsed = time.time() - step_start
+            print_stage_footer(
+                stage_idx,
+                meta["name"],
+                "failed(exception)",
+                elapsed,
+                outputs=outputs,
+                note=str(exc),
             )
-        elif step1_mode == "v1b":
-            # v1b 可独立执行：优先使用 v1a，若不存在则直接使用 v0。
-            step1_input_path = resolve_step_input(
-                "步骤 1(v1b)",
-                v1a_path,
-                [v0_path],
+            raise
+
+        elapsed = time.time() - step_start
+        if ok:
+            step_times[timing_label] = elapsed
+            print_stage_footer(
+                stage_idx,
+                meta["name"],
+                "success",
+                elapsed,
+                outputs=outputs,
             )
-            if not step1_input_path:
-                return
+            return True
 
-            _shuffle_before_v1(step1_input_path)
-
-            print(f"  模式: 仅执行 v1b (iterative ablation)，输入: {step1_input_path}")
-            output_path, kept = evidence_check_main(
-                args,
-                step1_input_path,
-                v1b_path,
-                only_evidence=0,
-                except_evidence=1,
-            )
-        else:
-            print("  模式: 执行完整步骤 (v1a -> v1b)")
-            _shuffle_before_v1(v0_path)
-            output_path, kept = evidence_check_main(args, v0_path, v1b_path)
-
-        step_times['步骤 1: 题目合理性检测'] = time.time() - step_start
-        print(f"✓ 步骤 1 完成: {output_path}，耗时: {step_times['步骤 1: 题目合理性检测']:.2f} 秒")
-    
-    # 步骤 2: 题目标注
-    if should_run_step(2, "step_2_label"):
-        step_start = time.time()
-        print("\n[步骤 2] 题目标注...")
-        from src.label import label_main
-        
-        # 步骤 2 的输入是步骤 1 的输出；若缺失则向前回退。
-        preferred_step2_input = output_path if 'output_path' in locals() else v1b_path
-        step2_input_path = resolve_step_input(
-            "步骤 2",
-            preferred_step2_input,
-            [v1b_path, legacy_v1_path, v1a_path, v0_path],
+        print_stage_footer(
+            stage_idx,
+            meta["name"],
+            "failed",
+            elapsed,
+            outputs=outputs,
+            note="阶段返回失败，详见上方 Execution detail。",
         )
+        return False
 
-        if not step2_input_path:
-            return
+    def finish(status: str) -> bool:
+        total_time = time.time() - pipeline_start_time
+        if status == "success":
+            print_timing_summary(step_times, total_time)
+        print_run_footer(status, total_time, paths, step_times)
+        return status == "success"
 
-        step2_llm = config_loader.get_step_llm("step_2_label")
+    try:
+        if should_run_step(0, STEP_0_GENERATE_QA):
+            def _stage0_action():
+                if not run_generate_stage(config_loader, dataset_name, input_dir, paths, input_target=input_target):
+                    return False
+                log_event("stage_0_generate_qa", status="success", output=paths.v0)
+                return True
 
-        run_with_temp_filtered_input(
-            step2_input_path,
-            ["v1a", "v1b"],
-            "step2",
-            lambda filtered_path: label_main(
-                filtered_path,
-                v2_path,
-                api_key=step2_llm.api_key,
-                base_url=step2_llm.base_url,
-                model_name=step2_llm.model
-            ),
-        )
-        step_times['步骤 2: 题目标注'] = time.time() - step_start
-        print(f"✓ 步骤 2 完成: {v2_path}，耗时: {step_times['步骤 2: 题目标注']:.2f} 秒")
-    
-    # 步骤 3: new_qa (问答精炼重构)
-    if should_run_step(3, "step_3_new_qa"):
-        step_start = time.time()
-        print("\n[步骤 3] new_qa (问答精炼重构)...")
-        from src.new_qa import new_qa_main
+            if not execute_logged_stage(
+                0,
+                STEP_0_GENERATE_QA,
+                {"dataset_input": input_target or os.path.join(input_dir, dataset_name)},
+                {"v0": paths.v0},
+                _stage0_action,
+                "步骤 0: 生成原始问答对",
+            ):
+                return finish("failed")
+        elif not ensure_v0_input(paths, input_dir, dataset_name, input_target=input_target):
+            return finish("failed")
 
-        step3_input_path = resolve_step_input(
-            "步骤 3",
-            v2_path,
-            [v1b_path, legacy_v1_path, v1a_path, v0_path],
-        )
-        if not step3_input_path:
-            return
+        if should_run_step(1, STEP_1_REFINE_QA):
+            if not execute_logged_stage(
+                1,
+                STEP_1_REFINE_QA,
+                {"v0": paths.v0},
+                {"v1_refined": paths.v1_refined},
+                lambda: run_refine_stage(config_loader, paths),
+                "步骤 1: 问题精炼与重构",
+            ):
+                return finish("failed")
 
-        step3_llm = config_loader.get_step_llm("step_3_new_qa")
+        if should_run_step(2, STEP_2_EVIDENCE_CHECK):
+            if not execute_logged_stage(
+                2,
+                STEP_2_EVIDENCE_CHECK,
+                {"v1_refined": paths.v1_refined, "fallback_v0": paths.v0},
+                {"v2a": paths.v2a, "v2b": paths.v2b},
+                lambda: run_evidence_check_stage(config_loader, pipeline_cfg, paths),
+                "步骤 2: 题目合理性检测",
+            ):
+                return finish("failed")
 
-        run_with_temp_filtered_input(
-            step3_input_path,
-            ["v1a", "v1b"],
-            "step3",
-            lambda filtered_path: new_qa_main(
-                filtered_path,
-                v3_path,
-                api_key=step3_llm.api_key,
-                base_url=step3_llm.base_url,
-                model=step3_llm.model
-            ),
-        )
-        step_times['步骤 3: new_qa'] = time.time() - step_start
-        print(f"✓ 步骤 3 完成: {v3_path}，耗时: {step_times['步骤 3: new_qa']:.2f} 秒")
-    
-    # 步骤 4: 题目乱序 (污染检查)
-    if should_run_step(4, "step_4_pollution_check"):
-        step_start = time.time()
-        print("\n[步骤 4] 题目乱序 (污染性检查)...")
-        from src.pollution_check import pollution_check_main
-        from argparse import Namespace
+        if should_run_step(3, STEP_3_POLLUTION_CHECK):
+            if not execute_logged_stage(
+                3,
+                STEP_3_POLLUTION_CHECK,
+                {"v2b": paths.v2b, "fallback_v2a": paths.v2a},
+                {"v3": paths.v3},
+                lambda: run_pollution_stage(config_loader, pipeline_cfg, paths),
+                "步骤 3: 污染检查",
+            ):
+                return finish("failed")
 
-        step4_input_path = resolve_step_input(
-            "步骤 4",
-            v3_path,
-            [v2_path, v1b_path, legacy_v1_path, v1a_path, v0_path],
-        )
-        if not step4_input_path:
-            return
+        if should_run_step(4, STEP_4_FINALIZE):
+            if not execute_logged_stage(
+                4,
+                STEP_4_FINALIZE,
+                {"v3": paths.v3, "fallback_v2b": paths.v2b},
+                {"final": paths.final},
+                lambda: run_finalize_stage(config_loader, pipeline_cfg, paths),
+                "步骤 4: 生成最终版本",
+            ):
+                return finish("failed")
 
-        step4_llm = config_loader.get_step_llm("step_4_pollution_check")
-        enable_contamination_check = config_loader.get_step_flag(
-            "step_4_pollution_check",
-            "enable_contamination_check",
-            False
-        )
-        cleanup_temp_files = config_loader.get_step_flag(
-            "step_4_pollution_check",
-            "cleanup_temp_files",
-            True
-        )
-
-        # 创建简化的 args 对象
-        args = Namespace(
-            answer_llm_model=step4_llm.model,
-            answer_llm_base_url=step4_llm.base_url,
-            answer_llm_api_key=step4_llm.api_key,
-            max_workers=pipeline_cfg.get('max_workers', 4)
-        )
-
-        run_with_temp_filtered_input(
-            step4_input_path,
-            ["v1a", "v1b"],
-            "step4",
-            lambda filtered_path: pollution_check_main(
-                args,
-                filtered_path,
-                v4_path,
-                enable_contamination_check=enable_contamination_check,
-                cleanup_temp_files=cleanup_temp_files
-            ),
-        )
-        step_times['步骤 4: 题目乱序 (污染性检查)'] = time.time() - step_start
-        print(f"✓ 步骤 4 完成: {v4_path}，耗时: {step_times['步骤 4: 题目乱序 (污染性检查)']:.2f} 秒")
-    
-    # 步骤 5: 生成最终版本
-    if should_run_step(5, "step_5_finalize"):
-        step_start = time.time()
-        print("\n[步骤 5] 生成最终版本（过滤污染题目）...")
-
-        step5_input_path = resolve_step_input(
-            "步骤 5",
-            v4_path,
-            [v3_path, v2_path, v1b_path, legacy_v1_path, v1a_path, v0_path],
-        )
-        if not step5_input_path:
-            return
-
-        apply_cumulative_rules(
-            step5_input_path,
-            ["v1a", "v1b", "v4"],
-            "步骤 5",
-            output_path=final_path,
-        )
-
-        step_times['步骤 5: 生成最终版本'] = time.time() - step_start
-        print(f"✓ 步骤 5 完成: {final_path}，耗时: {step_times['步骤 5: 生成最终版本']:.2f} 秒")
-    
-    # 计算总耗时
-    total_time = time.time() - pipeline_start_time
-    
-    print("\n" + "="*60)
-    print("✅ 流水线执行完成")
-    print("="*60)
-    
-    # 输出时间统计
-    print("\n⏱️  时间统计:")
-    print("-" * 60)
-    for step_name, step_time in step_times.items():
-        minutes = int(step_time // 60)
-        seconds = step_time % 60
-        print(f"  {step_name}: {minutes}分{seconds:.2f}秒 ({step_time:.2f}秒)")
-    print("-" * 60)
-    total_minutes = int(total_time // 60)
-    total_seconds = total_time % 60
-    print(f"  总耗时: {total_minutes}分{total_seconds:.2f}秒 ({total_time:.2f}秒)")
-    print("="*60 + "\n")
+        return finish("success")
+    except Exception:
+        print_run_footer("failed(exception)", time.time() - pipeline_start_time, paths, step_times)
+        raise
 
 def main():
     parser = argparse.ArgumentParser(
@@ -584,15 +756,21 @@ def main():
   
   # 运行完整流水线
   python main.py --run An-Enemy-of-the-People
+
+  # 直接运行单个 JSON 文件
+  python main.py --run dataset/standard_ebooks_trace/dracula.json
+
+  # 一次运行多个文件或文件夹
+  python main.py --run dataset/standard_ebooks_trace/dracula.json dataset/standard_ebooks_trace/jane_eyre.json
   
   # 从指定步骤开始运行
-  python main.py --run An-Enemy-of-the-People --start 2 --end 5
+  python main.py --run An-Enemy-of-the-People --start 2 --end 4
   
   # 只运行特定步骤
   python main.py --run An-Enemy-of-the-People --start 3 --end 3
 
   # 从步骤 0 开始完整生成
-  python main.py --run An-Enemy-of-the-People --start 0 --end 5
+  python main.py --run An-Enemy-of-the-People --start 0 --end 4
         """
     )
     
@@ -611,24 +789,25 @@ def main():
     parser.add_argument(
         '--run',
         type=str,
+        nargs='+',
         metavar='DATASET',
-        help='运行流水线，指定数据集名称'
+        help='运行流水线，指定数据集名称、JSON 文件路径或文件夹路径；可一次传多个目标'
     )
     
     parser.add_argument(
         '--start',
         type=int,
         default=0,
-        choices=[0, 1, 2, 3, 4, 5],
-        help='起始步骤 (0-5)，默认为 0'
+        choices=[0, 1, 2, 3, 4],
+        help='起始步骤 (0-4)，默认为 0'
     )
     
     parser.add_argument(
         '--end',
         type=int,
-        default=5,
-        choices=[0, 1, 2, 3, 4, 5],
-        help='结束步骤 (0-5)，默认为 5'
+        default=4,
+        choices=[0, 1, 2, 3, 4],
+        help='结束步骤 (0-4)，默认为 4'
     )
     
     parser.add_argument(
@@ -652,16 +831,30 @@ def main():
         show_versions()
     elif args.run:
         if args.start > args.end:
-            print("❌ 错误: 起始步骤不能大于结束步骤")
+            log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=args.start, end=args.end)
             sys.exit(1)
-        run_pipeline(args.run, args.start, args.end)
+        pipeline_cfg = get_config().get_pipeline_config()
+        if len(args.run) == 1:
+            ok = run_one_target(args.run[0], args.start, args.end, pipeline_cfg)
+            sys.exit(0 if ok else 1)
+        ok = run_batch_targets(args.run, args, pipeline_cfg)
+        sys.exit(0 if ok else 1)
     else:
+        pipeline_cfg = get_config().get_pipeline_config()
+        configured_targets = get_configured_run_targets(pipeline_cfg)
+        if configured_targets:
+            if args.start > args.end:
+                log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=args.start, end=args.end)
+                sys.exit(1)
+            ok = run_batch_targets(configured_targets, args, pipeline_cfg)
+            sys.exit(0 if ok else 1)
         parser.print_help()
 
 if __name__ == "__main__":
     main()
 
-# python -u main.py --run 12_Angry_Men --start 1 --end 5 > pipeline_12Angrymen.log 2>&1
-# python -u main.py --run An-Enemy-of-the-People --start 1 > pipeline_AnEnemy.log 2>&1
-# python -u main.py --run friends --start 1 > pipeline_friends.log 2>&1
-# python -u main.py --run the-man-from-earth-script --start 1 > pipeline_themanfromearth.log 2>&1
+# python -u main.py --run trace1
+# python -u main.py --run An_Enemy_of_the_People_test
+# python -u main.py --run friends --start 0
+# python -u main.py --run the-man-from-earth-script --start 1
+

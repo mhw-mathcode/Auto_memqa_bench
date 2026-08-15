@@ -6,7 +6,36 @@
 
 ## ✨ 核心流程
 
-![alt text](<image/Flowchart.png>)
+
+当前流程顺序为：
+
+1. 生成初始题目。
+2. 问题精炼与重构。
+3. 将题目统一拼接为 `question + option` 展示形式，并补齐 F 选项。
+4. 证据对齐，确保 `evidence_dialogues` 中的 `dia_id`、`speaker` 与原始 conversation 严格对应，并且 `utterance` 是同一原始 turn 的完整文本或连续原文片段。
+5. 题目合理性检测：仅证据回答、迭代性证据删除。
+6. 污染检查。
+7. 生成最终版本。
+
+注意：答案为 `F` 的 Abstain 题目前只做证据对齐，不进入仅证据回答、迭代性证据删除和污染检查的证伪环节。这类题的核心要求是 A-E 均不可由文本推出，但当前流程尚未实现针对 A-E 逐项证伪的专门检查，因此会在检测阶段标记为跳过并保留。
+
+迭代性证据删除阶段会把删除证据后的剩余 conversation 以 JSONL 形式传入模型，每行都显式包含 `dia_id`、`speaker`、`utterance`。如果模型答对但没有返回可与剩余 conversation 严格对齐的新证据，本轮会重试；多次重试仍失败时，该题会被标记为应过滤，不再额外追问模型补证据。
+
+若模型把真实对话编号误写到 `id` 字段中（例如 `"id": "D1:29"` 且缺少 `dia_id`），系统会先做安全规范化：只有当该编号确实存在于当前剩余 conversation 中时，才将其移入 `dia_id`，并把 `id` 重写为 `E1/E2/...`。规范化后仍必须通过严格证据对齐。
+
+证据对齐允许连续原文片段作为合法 evidence，不强制保存完整 turn；但不接受改写、概括、非连续拼接、错误 `dia_id` 或错误 `speaker`。对齐报告中的 `match_type_counts` 会区分 `exact_turn`、`contiguous_excerpt` 和 `ordered_ellipsis`，其中 `contiguous_excerpt` 表示合法的连续原文片段。
+
+## 🧱 项目结构
+
+- `main.py`: 流水线命令行入口，只负责阶段编排。
+- `config.py` / `config.example.json`: 配置加载、版本说明和示例配置。
+- `src/pipeline_utils.py`: 流水线通用工具，包括版本路径、运行日志、输入回退和累积过滤。
+- `src/step0_qa_generate.py`: 初始题目生成。
+- `src/step1_new_qa.py`: 问题精炼与重构。
+- `src/step2_evidence_check.py`: 题目合理性检测。
+- `src/step3_pollution_check.py`: 污染检查。
+- `dataset/`: 输入数据。
+- `runs/`: 每次运行的独立目录，包含日志、中间版本和最终输出。
 
 ## 🚀 快速开始
 
@@ -20,6 +49,146 @@ pip install -r requirements.txt
 ```bash
 python main.py --show-config
 ```
+
+### 输入数据格式
+
+运行命令中的 `DATASET` 对应 `dataset/` 下的同名目录。例如：
+
+```bash
+python main.py --run An-Enemy-of-the-People
+```
+
+程序会读取：
+
+```text
+dataset/
+  An-Enemy-of-the-People/
+    An-Enemy-of-the-People_1.json
+    An-Enemy-of-the-People_2.json
+    ...
+```
+
+也可以直接传入单个 JSON 文件或一个包含多个 JSON 的文件夹：
+
+```bash
+python main.py --run dataset/standard_ebooks_trace/dracula.json
+python main.py --run dataset/standard_ebooks_trace
+```
+
+传入单个文件时，该文件会作为一个独立数据集运行；传入文件夹时，文件夹内每个 `.json` 会作为独立 record 汇总到同一次运行的 v0/v1/v2/v3/final 产物中。若希望每本书生成完全独立的 runs 目录和 final 文件，可以一次传多个文件：
+
+```bash
+python main.py --run dataset/standard_ebooks_trace/dracula.json dataset/standard_ebooks_trace/jane_eyre.json
+```
+
+也可以在 `config.json` 的 `pipeline.run_targets` 中配置多个文件或文件夹，并用 `pipeline.batch_max_workers` 控制并行运行数量。此时不传 `--run` 会自动执行这些目标：
+
+```json
+"pipeline": {
+  "input_dir": "dataset",
+  "runs_dir": "runs",
+  "run_targets": [
+    "dataset/standard_ebooks_trace/dracula.json",
+    "dataset/standard_ebooks_trace/jane_eyre.json",
+    "dataset/standard_ebooks_trace"
+  ],
+  "batch_max_workers": 2
+}
+```
+
+每个输入文件必须是 UTF-8 编码的 JSON，顶层可以是一个对象，也可以是只包含一个对象的数组。推荐使用对象格式：
+
+```json
+{
+  "conversation": {
+    "speakers": ["Nora", "Torvald"],
+    "session_1_date_time": "2024-01-01 10:00:00",
+    "session_1": [
+      {
+        "dia_id": "1-1",
+        "speaker": "Nora",
+        "utterance": "..."
+      },
+      {
+        "dia_id": "1-2",
+        "speaker": "Torvald",
+        "utterance": "..."
+      }
+    ],
+    "session_2_date_time": "2024-01-02 10:00:00",
+    "session_2": [
+      {
+        "dia_id": "2-1",
+        "speaker": "Nora",
+        "utterance": "..."
+      }
+    ]
+  },
+  "qa": []
+}
+```
+
+字段说明：
+
+- `conversation`: 必填，表示当前文件对应的剧本/对话内容。
+- `conversation.speakers`: 推荐填写，说话者列表。若缺失，程序会尝试从 `speaker_1`、`speaker_2` 等字段提取；仍缺失时会使用默认兜底角色列表。
+- `session_N`: 推荐格式，表示第 N 段对话，值为对话轮次数组。
+- `session_N_date_time`: 可选，表示该段对话时间。
+- `dia_id`: 推荐填写，表示单条对话证据 ID，后续证据定位会使用。
+- `speaker`: 推荐填写，表示该轮说话者。
+- `utterance`: 推荐填写，表示该轮对话文本。
+- `qa`: 可选。若已有题目且 `force_generate_new_qa=false`，步骤 0 会复用已有 `qa`；若为空或强制重建，则由模型生成初始题目。
+
+已有 `qa` 推荐格式如下：
+
+```json
+{
+  "question": "...",
+  "option": [
+    "A. ...",
+    "B. ...",
+    "C. ...",
+    "D. ...",
+    "E. ..."
+  ],
+  "answer": "A",
+  "category": 2,
+  "label": "Fact Extraction (Multiple Dialogues)",
+  "evidence_dialogues": [
+    {
+      "id": "E1",
+      "dia_id": "1-1",
+      "speaker": "Nora",
+      "utterance": "..."
+    }
+  ],
+  "reasoning_steps": ["..."]
+}
+```
+
+`option` 可以只提供 A-E，流水线会在格式化阶段自动补齐：
+
+```text
+F. Cannot infer the answer based on the given information.
+```
+
+### Category 定义
+
+- `Category 1 - User Profile Category`: 稳定长期属性，例如 demographics、core values、persistent habits，用于检查 persona consistency。
+- `Category 2 - Event-based Category`: 离散结构化事实与具体行为，强调 5W1H。
+- `Category 3 - Temporal Evolution Category`: 随时间变化的状态转移，要求模型识别新信息如何更新旧记忆。
+- `Category 4 - Social Relationship & Interaction Category`: 人际网络、互动模式、显式关系与隐式情绪细节。
+- `Category 5 - Fine-grained Data Category`: 高精度细节记忆，例如具体数字、字符串、代码片段或角色特定表述。
+- `Category 6 - Lessons Learned Category`: 反思过往反馈并将纠错经验迁移到未来策略。
+- `Category 7 - Plans & Commitments Category`: 前瞻性记忆，包括未来任务、计划事件和承诺触发条件。
+
+### Label 定义
+
+- `Fact Extraction (Single Dialogue)`: 正确答案可由单个 dialogue session 完全推出，干扰项来自其他 session 或角色。
+- `Fact Extraction (Multiple Dialogues)`: 关键线索分散在两个或多个 session 中，必须组合才能得到答案。
+- `Memory Update`: 同一事实在不同时间被更新，题目应奖励识别最新版本，旧版本应作为强干扰项。
+- `Multi-hop`: 至少需要两个由对话证据支撑的推理步骤，单个 utterance 不足以直接推出答案。
+- `Abstain`: A-E 必须全部是看似合理但错误或无法由对话支持的干扰项，`answer` 必须设为 `F`。
 
 ### 运行完整流水线
 ```bash
@@ -39,21 +208,59 @@ python main.py --run An-Enemy-of-the-People --config my_config.json
 ### 配置项说明
 
 **步骤配置（steps）**
-- step_0_generate_qa: 生成原始问答对
-- step_1_evidence_check: 题目合理性检测 (v0 → v1a → v1b)
-- step_2_label: 题目标注 (v1b → v2)
-- step_3_new_qa: 问答精炼重构 (v2 → v3)
-- step_4_pollution_check: 题目乱序 (v3 → v4)
-- step_5_finalize: 生成最终版本 (v4 → final)
-
-说明：步骤 1 会生成两个过程文件（v1a 与 v1b），步骤 2 默认以 v1b 作为输入。
-
-**工具配置（tools）**
-- option_perturbation: 选项扰动生成与评分
+- step_0_generate_qa: 生成原始问答对，并统一格式化为 question + A-E/F 选项展示文本
+- step_1_refine_qa: 问题精炼与重构，并再次统一格式化为 question + A-E/F 选项展示文本 (v0 → v1_refined)
+- step_2_evidence_check: 题目合理性检测 (v1_refined → v2a → v2b)
+- step_3_pollution_check: 污染检查 (v2b → v3)
+- step_4_finalize: 生成最终版本 (v3 → final)
 
 **Pipeline 配置**
 - input_dir: 输入数据集目录
-- output_dir: 最终输出目录
-- temp_dir: 中间文件目录
-- max_workers: 并发处理数
+- runs_dir: 每次运行的独立输出目录根路径
+- max_workers: 各步骤未单独配置时使用的并发兜底值
 
+**分步骤并发配置**
+- `step_0_generate_qa.max_workers`: 同一文件内角色批次的并发数；`speaker_batch_size` 决定每个任务包含多少角色
+- `step_1_refine_qa.max_workers`: 按角色并发执行问题精炼
+- `step_2_evidence_check.only_evidence_max_workers`: 仅证据回答的并发数
+- `step_2_evidence_check.iterative_ablation_max_workers`: 五轮迭代证据消融的并发数
+- `step_2_evidence_check.max_workers`: 单独运行其他证据检查模式时的并发数
+- `step_3_pollution_check.max_workers`: 每轮无上下文污染回答的并发数
+- `step_4_finalize.max_workers`: 最终累积规则按题检查的并发数
+
+各步骤存在版本依赖，因此步骤之间保持顺序执行；上述并发均发生在步骤内部。并发过高可能触发模型服务的 TPM/RPM 限制，迭代消融建议从 3 开始调整。
+
+**长文本的迭代证据消融**
+
+步骤 2 的 `v2b` 消融会先估算删除当前证据后的完整提示长度。提示可容纳时继续使用原来的整段上下文流程；超出上限时，按完整对话 turn 分块并保留原始 `dia_id` 和全局顺序。系统先检索最相关的块以尽快发现可继续删除的新证据；检索没有发现新证据时，会扫描全部剩余块并归并精确证据后再作答。检索结果不能单独证明“已无证据”，只有完整扫描成功才能判定通过；任一块反复失败都会将题目标记为 `needs_rerun`。
+
+- `step_2_evidence_check.ablation_context_limit`: 模型上下文容量，默认 `32768`
+- `step_2_evidence_check.ablation_prompt_safety_tokens`: 为指令和输出预留的 token，默认 `4096`
+- `step_2_evidence_check.ablation_chunk_tokens`: 每个对话源块的最大 token，默认 `8192`
+- `step_2_evidence_check.ablation_retrieval_chunks`: 快速检索阶段扫描的块数，默认 `6`
+- `step_2_evidence_check.ablation_chunk_max_workers`: 单题内部并行扫描块的上限，默认 `4`
+
+`iterative_ablation_max_workers` 控制同时处理多少道题，`ablation_chunk_max_workers` 控制每道长文本题内部同时扫描多少块；两者相乘会放大并发请求量，应结合模型服务限额调整。
+
+每次运行会创建：
+
+```text
+runs/{dataset}_{时间戳}/
+  run.log
+  temp/
+    xxx_v0.json
+    xxx_v1_refined.json
+    xxx_v2a.json
+    xxx_v2b.json
+    xxx_v3.json
+  result/
+    xxx_final.json
+```
+
+`run.log` 会记录本次运行的结构化过程信息：
+
+- `RUN START`: 数据集、步骤范围、运行目录、配置摘要。
+- `STAGE N START`: 当前阶段目标、输入文件快照、预计输出、阶段配置。
+- `Execution detail`: 阶段内部的详细执行日志。
+- `STAGE N END`: 阶段状态、耗时、实际输出文件统计。
+- `RUN SUMMARY`: 总耗时、各阶段耗时、v0/v1_refined/v2a/v2b/v3/final 的最终产物快照。

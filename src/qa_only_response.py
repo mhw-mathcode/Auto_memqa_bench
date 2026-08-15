@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import random
+import re
 import threading
 import time
 import traceback
@@ -16,6 +17,7 @@ from tqdm import tqdm
 
 from src.mcq_scoring import strip_prediction_text
 from src.utils import compute_dataset_stats, stream_normalized_dataset
+from src.pipeline_utils import log_event
 
 load_dotenv()
 
@@ -31,10 +33,46 @@ You are an expert knowledge retrieval and logical deduction system tasked with t
 2. You MUST select the single most likely correct option. Under no circumstances should you refuse to answer, state that there is insufficient context, or choose/output "F" (Insufficient evidence/Refusal).
 3. Evaluate Option Plausibility: Carefully analyze the provided options. Eliminate options that are logically absurd, contradict common sense, or feel out of place for natural human dialogue/behavior. Select the option that makes the most logical or real-world sense, even if you do not know the exact source material.
 4. If the question contains specific character names or recognizable scenarios, leverage your broad knowledge of popular culture and human interaction to deduce the most likely answer.
-5. The final answer must be strictly the selected option letter or the exact text of the chosen option (under 5-6 words).
+5. Explain WHY you selected that option. Your reason must name the decisive basis: pre-trained factual knowledge, a recognizable scenario, logical elimination, common sense, or linguistic/behavioral plausibility. Do not invent dialogue, events, relationships, or other context that is absent from the question and options.
+6. Return exactly two lines in this format. The answer must be one option letter from A to E, and the reason must be 1-2 concise sentences:
+Answer: <A-E>
+Reason: <why this option is more likely than the alternatives>
 
 Question: {{question}}
 """
+
+
+def parse_qa_only_response(text):
+    """Extract the option and rationale while retaining tolerant legacy parsing."""
+    raw = str(text or "").strip()
+    cleaned = raw.split("</think>", 1)[-1].strip() if "</think>" in raw else raw
+
+    json_text = cleaned
+    if json_text.startswith("```") and json_text.endswith("```"):
+        json_text = re.sub(r"^```(?:json)?\s*|\s*```$", "", json_text, flags=re.IGNORECASE)
+    try:
+        payload = json.loads(json_text)
+    except (json.JSONDecodeError, TypeError):
+        payload = None
+
+    if isinstance(payload, dict):
+        answer = ""
+        for key in ("answer", "final_answer", "response"):
+            value = payload.get(key)
+            if isinstance(value, str) and value.strip():
+                answer = value.strip()
+                break
+        reason = str(payload.get("reason") or payload.get("rationale") or "").strip()
+        return answer or strip_prediction_text(cleaned), reason
+
+    answer_match = re.search(
+        r"(?im)^\s*(?:answer|final answer)\s*[:：]\s*[\(\[]?\s*([A-E])\s*[\)\]]?(?:\s|$|[.,，。])",
+        cleaned,
+    )
+    reason_match = re.search(r"(?ims)^\s*(?:reason|rationale|理由)\s*[:：]\s*(.+?)\s*$", cleaned)
+    answer = answer_match.group(1).upper() if answer_match else strip_prediction_text(cleaned)
+    reason = reason_match.group(1).strip() if reason_match else ""
+    return answer, reason
 
 class IncrementalResultsWriter:
     """
@@ -122,8 +160,6 @@ class QAOnlyRunner:
         self.answer_client = OpenAI(api_key=answer_api_key, base_url=answer_base_url)
 
         self.output_path = output_path
-        self._max_parallelism_cap = max(1, min(os.cpu_count() * 2 or 8, 18))
-
         self._results_state_lock = threading.Lock()
         self._results_buffer = {}
         self._expected_results_per_conversation = []
@@ -145,12 +181,16 @@ class QAOnlyRunner:
             self._results_writer.append(idx, records)
 
     def _resolve_max_workers(self, requested: int) -> int:
-        if requested is None or requested <= 0:
-            self.logger.warning("Received invalid max_workers=%s. Falling back to 1.", requested)
+        try:
+            resolved = int(requested)
+        except (TypeError, ValueError):
+            resolved = 0
+        if resolved <= 0:
+            self.logger.warning(
+                "EVENT | qa_only_workers | status=fallback | requested=%s | resolved=1",
+                requested,
+            )
             return 1
-        resolved = min(requested, self._max_parallelism_cap)
-        if resolved != requested:
-            self.logger.info("Capping max_workers from %s to %s.", requested, resolved)
         return resolved
 
     def safe_chat(self, model, messages, temperature=0.0, max_tokens=64, sleep_time=10):
@@ -169,12 +209,18 @@ class QAOnlyRunner:
                 s = str(e).lower()
                 if "missing_required_parameter" in s or (
                     "one of \"input\"" in s and "prompt" in s
-                ):
-                    prompt_text = "\n".join(
-                        str(msg.get("content", ""))
+                ) or "contents is required" in s:
+                    prompt_parts = [
+                        str(msg.get("content", "")).strip()
                         for msg in messages
-                        if isinstance(msg, dict)
-                    )
+                        if isinstance(msg, dict) and str(msg.get("content", "")).strip()
+                    ]
+                    prompt_text = "\n".join(prompt_parts).strip()
+                    if not prompt_text:
+                        raise ValueError("qa_only prompt is empty") from e
+                    # Some OpenAI-compatible Gemini gateways reject chat messages
+                    # with provider-side `contents is required`; Responses API is
+                    # often accepted by those gateways.
                     try:
                         resp2 = self.answer_client.responses.create(
                             model=model,
@@ -186,12 +232,16 @@ class QAOnlyRunner:
                             choices=[SimpleNamespace(message=SimpleNamespace(content=content2))]
                         )
                     except Exception as e2:
+                        if "contents is required" in str(e2).lower():
+                            raise ValueError(
+                                "provider rejected qa_only request: contents is required"
+                            ) from e2
                         s = str(e2).lower()
                         e = e2
 
                 if ("429" in s) or ("tpm" in s) or ("rate limit" in s):
                     wait_s = sleep_time + random.uniform(0, 3)
-                    print(f"⚠️ 触发速率限制，等待 {wait_s:.1f}s 后重试...")
+                    log_event("qa_only_answer", status="retry", reason="rate_limit", wait=f"{wait_s:.1f}s")
                     time.sleep(wait_s)
                     continue
                 raise
@@ -213,27 +263,50 @@ class QAOnlyRunner:
             try:
                 resp = self.safe_chat(
                     model=self.answer_llm_model,
-                    messages=[{"role": "system", "content": prompt}],
-                    temperature=0.0,
-                    max_tokens=64,
+                    messages=[{"role": "user", "content": prompt}],
+                    # Pollution filtering aggregates three independent samples.
+                    # A non-zero temperature prevents one deterministic guess from
+                    # being counted as three independent confirmations.
+                    temperature=0.7,
+                    max_tokens=192,
                     sleep_time=min(30, 2 + attempts),
                 )
                 content = resp.choices[0].message.content or ""
                 elapsed = max(0.0, time.time() - start - sleep_penalty)
-                self.logger.info("Answer success %s in %.2fs (attempts=%d)", request_id, elapsed, attempts)
+                self.logger.info(
+                    "EVENT | qa_only_answer | status=success | request_id=%s | elapsed=%.2fs | attempts=%d",
+                    request_id,
+                    elapsed,
+                    attempts,
+                )
                 return content.strip(), elapsed, prompt
             except Exception as e:
                 last_err = e
+                error_text = str(e).lower()
+                if (
+                    "provider rejected qa_only request" in error_text
+                    or "qa_only prompt is empty" in error_text
+                ):
+                    self.logger.error(
+                        "EVENT | qa_only_answer | status=failed | request_id=%s | non_retryable=True | error=%s",
+                        request_id,
+                        e,
+                    )
+                    break
                 backoff = min(20.0, 0.8 * (2 ** (attempts - 1))) + random.uniform(0.1, 0.6)
                 sleep_penalty += backoff
                 self.logger.warning(
-                    "Answer retry %s attempt %d/%d backoff=%.2fs err=%s\n%s",
+                    "EVENT | qa_only_answer | status=retry | request_id=%s | attempt=%d/%d | backoff=%.2fs | error=%s | trace=%s",
                     request_id, attempts, max_retries, backoff, str(e), traceback.format_exc()
                 )
                 time.sleep(backoff)
 
         # 兜底
-        self.logger.error("Answer failed permanently %s: %s", request_id, last_err)
+        self.logger.error(
+            "EVENT | qa_only_answer | status=failed | request_id=%s | error=%s",
+            request_id,
+            last_err,
+        )
         return "Error", 0.0, prompt
 
     def process_question(self, val, idx, pbar=None):
@@ -243,7 +316,7 @@ class QAOnlyRunner:
         evidence = val.get("evidence", [])
 
         response, response_time, pollution_check_prompt = self.answer_question(question)
-        response_option = strip_prediction_text(response)
+        response_option, response_reason = parse_qa_only_response(response)
 
         result = {
             "question": question,
@@ -251,6 +324,8 @@ class QAOnlyRunner:
             "category": category,
             "evidence": evidence,
             "response": response_option,
+            "response_raw": response,
+            "response_reason": response_reason,
             "response_time": response_time,
             "pollution_check_prompt": pollution_check_prompt,
         }
@@ -266,15 +341,19 @@ class QAOnlyRunner:
         stats = compute_dataset_stats(dataset_path)
         total_questions = stats.get("total_questions", 0)
         if total_questions == 0:
-            print("No questions found to process.")
+            log_event("qa_only_process", status="skipped", reason="no_questions")
             self._results_writer = IncrementalResultsWriter(self.output_path)
             self._results_writer.finalize()
             return
 
-        print(f"--- 预计总共需要处理 {total_questions} 个问题 ---")
-
         resolved_workers = self._resolve_max_workers(max_workers)
-        print(f"⚙️ 使用 max_workers = {resolved_workers}")
+        log_event(
+            "qa_only_process",
+            status="start",
+            total_questions=total_questions,
+            max_workers=resolved_workers,
+            input=str(dataset_path),
+        )
 
         self._expected_results_per_conversation = stats.get("qa_per_conversation", [])
         self._results_buffer = {}
@@ -298,11 +377,16 @@ class QAOnlyRunner:
                 except Exception as exc:
                     failed_count += 1
                     error_details = "".join(traceback.format_exception(type(exc), exc, exc.__traceback__))
-                    pbar.write(f"\n--- ❌ Error processing task '{task_label}' ---")
-                    pbar.write(f"{exc}\n{error_details}\n")
+                    log_event(
+                        "qa_only_task",
+                        status="failed",
+                        task=task_label,
+                        error=exc,
+                        trace=error_details,
+                    )
                     pbar.update(1)
 
-        with tqdm(total=total_questions, desc="💡Total Questions Progress") as pbar:
+        with tqdm(total=total_questions, desc="Step 3 no-context QA", unit="question") as pbar:
             try:
                 with ThreadPoolExecutor(max_workers=resolved_workers, thread_name_prefix="qa-only-main") as executor:
                     for conv_idx, item in enumerate(stream_normalized_dataset(dataset_path)):
@@ -332,7 +416,13 @@ class QAOnlyRunner:
                     self._results_writer.append(conv_idx, bucket)
                 self._results_writer.finalize()
 
-        print(f"\n✅ All questions processed. Success: {successful_count}, Failed: {failed_count}")
+        log_event(
+            "qa_only_process",
+            status="completed",
+            success=successful_count,
+            failed=failed_count,
+            output=self.output_path,
+        )
 
     def close(self):
         pass

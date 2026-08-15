@@ -62,20 +62,22 @@ id_ed25519
 # ------------------------------
 # Pipeline/intermediate outputs
 # ------------------------------
+runs/
 temp/
 **/*_v0.json
 **/*_v1.json
 **/*_v2.json
 **/*_v3.json
 **/*_v4.json
-temp_qwen/
-temp_4o/
+runs_ebooks/
+runs_ebooks_gemini/
 
 # QA-only incremental scratch files
 *.partial
 *.tmp
 
 # Log files
+logs/
 *.log
 *.log.*
 
@@ -91,4 +93,8 @@ fix_new_qa_evidence_dialogues.py
 rebuild_question_with_options.py
 
 # If you don't want to upload final outputs, uncomment the next line:
-# result/*.json
+results/*.json
+scripts/
+tests/
+dataset/
+dataset_novel/

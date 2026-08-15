@@ -5,7 +5,10 @@ from openai import OpenAI
 import re
 import time
 import random
+from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
+from src.utils import load_json_file, write_json_file
+from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
 
 DEFAULT_USER_LIST = [
   "Ariel",
@@ -26,8 +29,7 @@ Role:
 You are a top-tier AI evaluation expert, specializing in designing extremely high-difficulty stress test datasets for evaluating large language models’ long-range, cross-conversation memory.
 
 Task:
-Based on the provided long text dialogue, please design 1 high-quality question-answer pair for each user in {user_list} for each of the seven specific categories 1-7 (total of {total_question_num} pairs).
-Hard requirement: for each user, categories 1, 2, 3, 4, 5, 6, and 7 must all appear at least once in the output.
+Based on the provided long text dialogue, please design as much as possible high-quality question-answer pair for each of the seven specific categories 1-7.
 
 Part I: Core Objectives and Depth Requirements
 
@@ -72,12 +74,22 @@ When crafting each question, select one of the following five construction metho
   Incorrect: “Which option reflects Ariel’s stable breakup-coping style?”
   Correct: “Which statement best matches how Ariel dealt with the aftermath of the breakup?”
 - Language should be direct, concrete, and non-rhetorical.
+- Follow the style of the trace benchmark questions: name the relevant person, object, event, relationship, or state transition in the stem, and ask what happened, how it changed, what relationship was established, or which exact detail remained true.
+- For literary or narrative texts, do not write abstract template stems such as “Which option correctly combines two separate details?”, “Which statement preserves the paired details?”, “Which option matches the two passages?”, or “Which option correctly combines two separate moments?”. These are invalid.
+- Do not make options into quote containers such as “One passage says ...; another says ...”. Options should be natural answer statements. Use the evidence_dialogues field for verbatim source text.
 
 2. Hard Distractor Requirements:
+- Options must be concise natural answer statements, not evidence dumps.
+  Target each option at roughly 10-24 English words when possible; do not exceed 35 words unless the fact itself requires it.
+- Do not join two copied evidence snippets with a semicolon. If two facts must appear together, write one natural sentence using "and", "while", or a short causal/temporal connector.
 - Length balance (critical): the correct answer must not be the longest or shortest among the five options.
   At least one distractor must be longer than the correct answer.
+- Enforce this numerically before returning JSON: every distractor length should be broadly comparable to the correct option, but do not pad options with copied evidence just to match length.
+- Style balance: all five options must have comparable clause count, specificity, named-entity density, temporal precision, and grammatical structure. The correct option must not be the only complete multi-clause statement.
 - Semantic proximity: distractors must be highly plausible and lie in a high-probability semantic neighborhood.
   Avoid extreme terms such as “always,” “never,” “completely,” or “absolutely.”
+- Distractors should be naturally plausible, but they do not all need to be near-identical one-word perturbations. Mix confusion types: outdated state, wrong actor, wrong motive, wrong order, over-specific unsupported detail, and true detail attached to the wrong person.
+- Avoid making all five options share the same sentence frame. The options should read like real candidate answers, not mechanically edited copies.
 - Information confusion: distractors must include
   (1) outdated statements from the target user,
   (2) true information belonging to another character (e.g., Bennett),
@@ -106,6 +118,7 @@ Part IV: Structured Proof (Necessary and Sufficient Condition Validation)
 Before outputting the final JSON, both checks must be satisfied:
 - Sufficiency: are the evidence items alone sufficient to 100% eliminate all four distractors?
 - Necessity (minimality): if any single evidence item is removed, does the reasoning chain break?
+- No-context leakage: if the dialogue and evidence were hidden, would option length, detail, fluency, common sense, or wording style reveal the answer? If yes, rewrite all distractors before returning JSON.
   Ensure no redundancy or unnecessary information.
 
 Part V: Output JSON Specification
@@ -120,7 +133,7 @@ Critical Output Constraints:
     {{
       "character": "Ariel",
       "category": 6,
-      "question": "[Direct, natural, focused on the character]",
+      "question": "",
       "option": [
         "A. ",
         "B. ",
@@ -264,14 +277,13 @@ def call_openai_json(
           break
         except Exception as e:
           error_str = str(e).lower()
-          print(error_str)
 
           # 部分网关在携带 response_format 时会错误返回缺参，先降级再重试 chat。
           if "missing_required_parameter" in error_str or (
             "one of \"input\"" in error_str and "prompt" in error_str
           ):
             if use_json_object_mode:
-              print("[INFO] 命中 missing_required_parameter，关闭 response_format 后重试 chat.completions")
+              log_event("llm_json_call", status="fallback", reason="missing_required_parameter", action="disable_response_format")
               use_json_object_mode = False
               continue
 
@@ -281,7 +293,7 @@ def call_openai_json(
             or "unsupported" in error_str
             or "not support" in error_str
           ):
-            print("[INFO] 模型不支持 response_format=json_object，已自动降级")
+            log_event("llm_json_call", status="fallback", reason="response_format_unsupported")
             use_json_object_mode = False
             continue
 
@@ -295,8 +307,7 @@ def call_openai_json(
             llm_error_retries += 1
             other_error_retries = 0
             sleep_duration = random.uniform(2, 20) + 5 * llm_error_retries
-            error_message = f"LLM Rate Limit related Error. Retrying in {sleep_duration:.2f}s... Error: {e}"
-            print(error_message)
+            log_event("llm_json_call", status="retry", reason="rate_limit_or_overload", attempt=llm_error_retries, wait=f"{sleep_duration:.2f}s")
             time.sleep(sleep_duration)
             continue
 
@@ -308,21 +319,18 @@ def call_openai_json(
             timeout_retries += 1
             other_error_retries = 0
             sleep_duration = random.uniform(3, 10) + 4 * timeout_retries
-            print(
-              f"[WARN] Request timeout. Retrying {timeout_retries}/{max_timeout_retries} "
-              f"in {sleep_duration:.2f}s..."
-            )
+            log_event("llm_json_call", status="retry", reason="timeout", attempt=f"{timeout_retries}/{max_timeout_retries}", wait=f"{sleep_duration:.2f}s")
             if timeout_retries >= max_timeout_retries:
-              print("Error: Timeout retries exceeded.")
+              log_event("llm_json_call", status="failed", reason="timeout_retries_exceeded")
               break
             time.sleep(sleep_duration)
             continue
 
           # 识别为其他错误
           other_error_retries += 1
-          print("other_error_retries: ", other_error_retries)
+          log_event("llm_json_call", status="retry", reason="other_error", attempt=f"{other_error_retries}/{max_other_error_retries}", error=e)
           if other_error_retries >= max_other_error_retries:
-            print("Error: Default response due to unrecoverable error.")
+            log_event("llm_json_call", status="failed", reason="unrecoverable_error")
             break
           time.sleep(random.uniform(1.0, 3.0))
 
@@ -332,25 +340,28 @@ def call_openai_json(
       last_content = resp.choices[0].message.content or ""
       last_finish_reason = getattr(resp.choices[0], "finish_reason", None)
       if last_finish_reason == "length":
-        print("[WARN] LLM finish_reason=length，输出可能被截断")
+        log_event("llm_json_call", status="warning", reason="finish_reason_length")
 
       try:
         return _strict_json_loads(last_content)
       except Exception as parse_error:
         try:
           repaired = _best_effort_json_loads(last_content)
-          print(f"[INFO] JSON repaired locally on attempt {attempt + 1}/{max_retries + 1}")
+          log_event("json_repair", status="success", method="local", attempt=attempt + 1)
           return repaired
         except Exception:
           try:
             repaired_text = _repair_json_with_llm(last_content)
             repaired = _strict_json_loads(repaired_text)
-            print(f"[INFO] JSON repaired by LLM on attempt {attempt + 1}/{max_retries + 1}")
+            log_event("json_repair", status="success", method="llm", attempt=attempt + 1)
             return repaired
           except Exception as repair_error:
-            print(
-              f"[WARN] JSON parse failed on attempt {attempt + 1}/{max_retries + 1}: "
-              f"{parse_error}; repair failed: {repair_error}"
+            log_event(
+              "json_parse",
+              status="retry",
+              attempt=f"{attempt + 1}/{max_retries + 1}",
+              parse_error=parse_error,
+              repair_error=repair_error,
             )
           json_retry_hint = (
             "\n\nIMPORTANT JSON RETRY INSTRUCTION:\n"
@@ -461,7 +472,12 @@ def _generate_qa_for_speakers_with_split(
       filtered_qa = _deduplicate_qa_items(filtered_qa)
 
       if unexpected_characters:
-        print(f"[WARN] {filename} 收到不在请求批次中的角色，已忽略: {sorted(unexpected_characters)}")
+        log_event(
+          "qa_generation_batch",
+          status="warning",
+          file=filename,
+          unexpected_characters=sorted(unexpected_characters),
+        )
 
       if not filtered_qa:
         raise ValueError("模型返回 qa 为空，或角色与请求批次不匹配")
@@ -475,14 +491,33 @@ def _generate_qa_for_speakers_with_split(
       for speaker in missing_speakers:
         have = sorted(coverage.get(speaker, set()))
         missing = sorted(REQUIRED_CATEGORIES - set(have))
-        print(f"[WARN] {filename} 角色 {speaker} 类别覆盖不足，已有={have} 缺失={missing}")
+        log_event(
+          "qa_category_coverage",
+          status="warning",
+          file=filename,
+          speaker=speaker,
+          have=have,
+          missing=missing,
+        )
 
       if missing_speakers:
         if repair_round >= max_repair_rounds:
-          print(f"[WARN] {filename} 达到补生成上限，未覆盖完整类别的角色将标记为失败: {missing_speakers}")
+          log_event(
+            "qa_category_repair",
+            status="failed",
+            file=filename,
+            missing_speakers=missing_speakers,
+            reason="max_repair_rounds",
+          )
           return filtered_qa, missing_speakers
 
-        print(f"[WARN] {filename} 批次缺少角色，自动补生成: {missing_speakers}")
+        log_event(
+          "qa_category_repair",
+          status="retry",
+          file=filename,
+          missing_speakers=missing_speakers,
+          repair_round=f"{repair_round + 1}/{max_repair_rounds}",
+        )
         recovered_qa, failed_missing = _generate_qa_for_speakers_with_split(
           conversation=conversation,
           speakers=missing_speakers,
@@ -506,14 +541,28 @@ def _generate_qa_for_speakers_with_split(
 
     except Exception as e:
       if len(speakers) == 1:
-        print(f"⚠️ {filename} 角色 {speakers[0]} 生成失败: {e}")
+        log_event(
+          "qa_generation_speaker",
+          status="failed",
+          file=filename,
+          speaker=speakers[0],
+          error=e,
+        )
         return [], list(speakers)
 
       split_idx = max(1, len(speakers) // 2)
       left = speakers[:split_idx]
       right = speakers[split_idx:]
 
-      print(f"[WARN] {filename} 批次生成失败，拆分重试: {speakers} -> {left} | {right}")
+      log_event(
+        "qa_generation_batch",
+        status="split_retry",
+        file=filename,
+        speakers=speakers,
+        left=left,
+        right=right,
+        error=e,
+      )
 
       left_qa, left_failed = _generate_qa_for_speakers_with_split(
         conversation=conversation,
@@ -542,40 +591,84 @@ def generate_v0(
   llm_config,
   force_generate_new_qa: bool = False,
   initial_batch_size: int = 8,
+  max_workers: int = 1,
+  input_target: Optional[str] = None,
 ) -> str:
     """
     生成 v0 原始问答对
     """
-    print("\n" + "="*60)
-    print("步骤 0: 生成原始问答对")
-    print("="*60)
+    print_log_section("STEP 0 | GENERATE RAW QA")
 
-    dataset_dir = os.path.join(input_dir, dataset_name)
-    if not os.path.isdir(dataset_dir):
-      print(f"❌ 错误: 数据集目录不存在 {dataset_dir}")
-      return ""
+    target_path = input_target or os.path.join(input_dir, dataset_name)
+    if not os.path.isabs(target_path):
+      target_path = os.path.abspath(target_path)
 
-    json_files = sorted(f for f in os.listdir(dataset_dir) if f.endswith(".json"))
-    if not json_files:
-      print(f"❌ 错误: 未找到任何 JSON 文件 {dataset_dir}")
-      return ""
+    if os.path.isfile(target_path):
+      dataset_dir = os.path.dirname(target_path)
+      json_files = [os.path.basename(target_path)]
+    else:
+      dataset_dir = target_path
+      if not os.path.isdir(dataset_dir):
+        log_event("generate_v0", status="failed", reason="dataset_input_missing", dataset_input=target_path)
+        return ""
+      json_files = sorted(f for f in os.listdir(dataset_dir) if f.endswith(".json"))
+      if not json_files:
+        log_event("generate_v0", status="failed", reason="json_files_missing", dataset_dir=dataset_dir)
+        return ""
 
     all_data = []
     total_qa_count = 0
     skipped_count = 0
     generated_count = 0
+    invalid_count = 0
 
-    print(f"--- 步骤 0 开始处理：共 {len(json_files)} 个文件 ---")
-    print(f"  生成模式: {'强制重建题目（忽略已有 qa）' if force_generate_new_qa else '复用已有 qa（默认）'}")
+    log_subsection("Step 0 input summary")
+    print_kv("dataset_input", target_path, indent=4)
+    print_kv("dataset_dir", dataset_dir, indent=4)
+    print_kv("json_files", len(json_files), indent=4)
+    print_kv("mode", "force_generate" if force_generate_new_qa else "reuse_existing_qa", indent=4)
+    normalized_workers = max(1, int(max_workers or 1))
+    print_kv("max_workers", normalized_workers, indent=4)
     
-    for filename in tqdm(json_files, desc=f"处理 {dataset_name}"):
+    for file_idx, filename in enumerate(
+      tqdm(json_files, desc=f"Step 0 files | {dataset_name}", unit="file"),
+      start=1,
+    ):
       file_path = os.path.join(dataset_dir, filename)
       if not os.path.exists(file_path):
-        print(f"[SKIP] {file_path} 不存在")
+        log_event(
+          "generate_v0_file",
+          status="skipped",
+          file=file_path,
+          reason="file_missing",
+          progress=f"{file_idx}/{len(json_files)}",
+        )
         continue
 
-      with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+      try:
+        data = load_json_file(file_path)
+      except json.JSONDecodeError as exc:
+        log_event(
+          "generate_v0_file",
+          status="skipped",
+          file=file_path,
+          reason="invalid_json",
+          error=exc,
+          progress=f"{file_idx}/{len(json_files)}",
+        )
+        invalid_count += 1
+        continue
+      except OSError as exc:
+        log_event(
+          "generate_v0_file",
+          status="skipped",
+          file=file_path,
+          reason="read_failed",
+          error=exc,
+          progress=f"{file_idx}/{len(json_files)}",
+        )
+        invalid_count += 1
+        continue
 
       # 提取 conversation 和 已有的 qa
       existing_qa = []
@@ -586,11 +679,26 @@ def generate_v0(
         conversation = data.get("conversation", {})
         existing_qa = data.get("qa", [])
       else:
-        print(f"[SKIP] {file_path} 数据类型不支持: {type(data)}")
+        log_event(
+          "generate_v0_file",
+          status="skipped",
+          file=file_path,
+          reason="unsupported_data_type",
+          data_type=type(data),
+          progress=f"{file_idx}/{len(json_files)}",
+        )
+        invalid_count += 1
         continue
 
       if not conversation:
-        print(f"[SKIP] {file_path} 对话为空")
+        log_event(
+          "generate_v0_file",
+          status="skipped",
+          file=file_path,
+          reason="empty_conversation",
+          progress=f"{file_idx}/{len(json_files)}",
+        )
+        invalid_count += 1
         continue
 
       
@@ -613,16 +721,34 @@ def generate_v0(
       has_existing_qa = bool(existing_qa and isinstance(existing_qa, list) and len(existing_qa) > 0)
       if has_existing_qa and not force_generate_new_qa:
         # 已有问答对，直接使用
-        print(f"\n✓ {filename} 已存在 {len(existing_qa)} 个问答对，跳过生成")
+        log_event(
+          "generate_v0_file",
+          status="reused_existing_qa",
+          file=filename,
+          existing_qa=len(existing_qa),
+          progress=f"{file_idx}/{len(json_files)}",
+        )
         current_qa = existing_qa
         skipped_count += 1
       else:
         if has_existing_qa and force_generate_new_qa:
-          print(f"\n⚙ {filename} 检测到已有 {len(existing_qa)} 个问答对，但配置要求强制重建")
-          print(f"\n⚙ {filename} 开始重新生成问答对 (说话者: {speakers})")
+          log_event(
+            "generate_v0_file",
+            status="force_regenerate",
+            file=filename,
+            existing_qa=len(existing_qa),
+            speakers=speakers,
+            progress=f"{file_idx}/{len(json_files)}",
+          )
         else:
           # 没有问答对，调用 LLM 生成
-          print(f"\n⚙ {filename} 未找到问答对，开始生成 (说话者: {speakers})")
+          log_event(
+            "generate_v0_file",
+            status="generating",
+            file=filename,
+            speakers=speakers,
+            progress=f"{file_idx}/{len(json_files)}",
+          )
         
         current_qa = []
 
@@ -634,23 +760,55 @@ def generate_v0(
 
         failed_speakers_all: List[str] = []
 
-        for batch in speaker_batches:
-          print(f"  -> 生成批次: {batch}")
-          batch_qa, failed_speakers = _generate_qa_for_speakers_with_split(
+        effective_workers = min(normalized_workers, len(speaker_batches))
+        log_event(
+          "generate_v0_workers",
+          status="configured",
+          file=filename,
+          requested=normalized_workers,
+          effective=effective_workers,
+          batches=len(speaker_batches),
+        )
+
+        def generate_batch(batch):
+          log_event("generate_v0_batch", status="start", file=filename, speakers=batch, indent=4)
+          return _generate_qa_for_speakers_with_split(
             conversation=conversation,
             speakers=batch,
             llm_config=llm_config,
             filename=filename,
           )
+
+        if effective_workers == 1:
+          batch_results = [generate_batch(batch) for batch in speaker_batches]
+        else:
+          with ThreadPoolExecutor(
+            max_workers=effective_workers,
+            thread_name_prefix="generate-v0",
+          ) as executor:
+            batch_results = list(executor.map(generate_batch, speaker_batches))
+
+        for batch_qa, failed_speakers in batch_results:
           current_qa.extend(batch_qa)
           failed_speakers_all.extend(failed_speakers)
 
         current_qa = _deduplicate_qa_items(current_qa)
 
         if failed_speakers_all:
-          print(f"⚠️ {filename} 以下角色生成失败，已跳过: {sorted(set(failed_speakers_all))}")
+          log_event(
+            "generate_v0_file",
+            status="warning",
+            file=filename,
+            failed_speakers=sorted(set(failed_speakers_all)),
+          )
 
-        print(f"  生成用户 {speakers} 类别1-7问题: {len(current_qa)} 个")
+        log_event(
+          "generate_v0_file",
+          status="generated",
+          file=filename,
+          speakers=speakers,
+          qa_count=len(current_qa),
+        )
 
         generated_count += 1
 
@@ -662,15 +820,15 @@ def generate_v0(
       all_data.append(file_data)
       total_qa_count += len(current_qa)
 
-    with open(v0_path, "w", encoding="utf-8") as f:
-      json.dump(all_data, f, ensure_ascii=False, indent=2)
+    write_json_file(all_data, v0_path, indent=2)
 
-    print(f"\n--- 步骤 0 完成统计 ---")
-    print(f"  总文件数: {len(json_files)}")
-    print(f"  跳过生成 (已有QA): {skipped_count}")
-    print(f"  LLM生成 (新QA): {generated_count}")
-    print(f"  总问答对数: {total_qa_count}")
-    print(f"  输出文件: {v0_path}")
+    log_subsection("Step 0 output summary")
+    print_kv("total_files", len(json_files), indent=4)
+    print_kv("reused_existing_qa_files", skipped_count, indent=4)
+    print_kv("generated_files", generated_count, indent=4)
+    print_kv("invalid_or_skipped_files", invalid_count, indent=4)
+    print_kv("total_qa", total_qa_count, indent=4)
+    print_kv("output", v0_path, indent=4)
     
     return v0_path
 

@@ -69,8 +69,6 @@ temp/
 **/*_v2.json
 **/*_v3.json
 **/*_v4.json
-runs_ebooks/
-runs_ebooks_gemini/
 
 # QA-only incremental scratch files
 *.partial
@@ -81,20 +79,10 @@ logs/
 *.log
 *.log.*
 
-# Pollution check artifacts
-membership_results_api.json
-
-# Analysis/export artifacts
-final_best_question.json
-result/category_stats.json
-result/category_stats.csv
-result/random_questions.csv
-fix_new_qa_evidence_dialogues.py
-rebuild_question_with_options.py
-
 # If you don't want to upload final outputs, uncomment the next line:
 results/*.json
 scripts/
 tests/
 dataset/
-dataset_novel/
+result/
+

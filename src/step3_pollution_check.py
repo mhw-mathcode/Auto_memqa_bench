@@ -6,10 +6,21 @@ import time
 import shutil
 from openai import OpenAI
 import math
-from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction, parse_mcq_gt_answers
+from src.mcq_scoring import (
+    MULTIPLE_SELECT,
+    ORDERING,
+    SINGLE_CHOICE,
+    count_question_types,
+    get_answer_instruction,
+    normalize_answer_candidates,
+    normalize_question_type,
+    parse_mcq_gt_answers,
+    score_mcq_prediction,
+)
 from src.qa_only_response import QAOnlyRunner
 from src.utils import count_qa_items, load_json_file, normalize_dataset_records, write_json_file
 from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
+from src import question_formatting
 
 # --- 1. 题干与选项展示格式 ---
 
@@ -48,6 +59,8 @@ def _extract_core_question_text(question_text: str, unknown_placeholder: str = "
     for pattern in (
         r"\n\s*\n\s*You need to select",
         r"\n\s*Please provide the option corresponding to the only correct answer",
+        r"\n\s*Please provide all correct options enclosed in parentheses",
+        r"\n\s*Please provide the options in the correct order enclosed in parentheses",
     ):
         match = re.search(pattern, text, re.IGNORECASE)
         if match:
@@ -67,7 +80,10 @@ def _strip_option_prefix(value: str) -> str:
     return match.group(1).strip() if match else text
 
 
-def _normalize_option_lines_preserve_order(option_value: Any) -> List[str]:
+def _normalize_option_lines_preserve_order(
+    option_value: Any,
+    question_type: Any = None,
+) -> List[str]:
     """将 option 字段统一为 A-F 列表；保留原始 A-E 顺序，不做乱序。"""
     option_lines: List[str] = []
 
@@ -105,46 +121,28 @@ def _normalize_option_lines_preserve_order(option_value: Any) -> List[str]:
         option_lines.append(f"A. {_strip_option_prefix(str(option_value))}")
 
     has_f = any(re.match(r"^F[\.．\)]\s+", line, flags=re.IGNORECASE) for line in option_lines)
-    if not has_f:
+    if normalize_question_type(question_type) == SINGLE_CHOICE and not has_f:
         option_lines.append("F. Cannot infer the answer based on the given information.")
 
     return option_lines
 
 
-def _build_question_with_options(core_question: str, option_lines: List[str]) -> str:
+def _build_question_with_options(
+    core_question: str,
+    option_lines: List[str],
+    question_type: Any = None,
+) -> str:
     option_block = "\n".join(option_lines)
     return (
         f"{core_question.strip()}\n"
         f"{option_block}\n"
-        "Please provide the option corresponding to the only correct answer, enclosed in parentheses, e.g., (X)."
+        f"{get_answer_instruction(question_type)}"
     )
 
 
 def format_questions_with_options(input_data: Any) -> Tuple[List[Dict[str, Any]], int]:
     """生成 question + options 展示版本；不改变选项顺序。"""
-    import copy
-
-    formatted_data = normalize_dataset_records(copy.deepcopy(input_data))
-    formatted_count = 0
-
-    for section in formatted_data:
-        qa_list = section.get("qa", [])
-        if not isinstance(qa_list, list):
-            continue
-
-        for qa_item in qa_list:
-            if not isinstance(qa_item, dict):
-                continue
-            option_lines = _normalize_option_lines_preserve_order(qa_item.get("option", []))
-            core_question = _extract_core_question_text(
-                qa_item.get("question", ""),
-                unknown_placeholder=str(qa_item.get("question", "")).strip(),
-            )
-            qa_item["option"] = option_lines
-            qa_item["question"] = _build_question_with_options(core_question, option_lines)
-            formatted_count += 1
-
-    return formatted_data, formatted_count
+    return question_formatting.format_questions_with_options(input_data)
 
 
 # --- 1. response + eval ---
@@ -179,7 +177,11 @@ def run_eval(idx, file, output_file=None):
 
             # Scoring uses only the parsed answer; rationale is retained for audit.
             prediction_text = item.get("response") or item.get("response_option") or item.get("response", "")
-            score_result = score_mcq_prediction(prediction_text, answer_candidates)
+            score_result = score_mcq_prediction(
+                prediction_text,
+                answer_candidates,
+                item.get("question_type"),
+            )
 
             item["score"] = 1 if score_result.get("is_correct", False) else 0
             item["prediction_malformed"] = score_result.get("prediction_malformed", False)
@@ -202,7 +204,7 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
     # Key: 提取出的核心问题文本 (e.g., "Regarding money, who did Ariel most habitually rely on?")
     # Value: { "correct_count": int, "total_count": int, "details": original_data, "responses": [str] }
 
-    question_stats: Dict[str, Dict[str, Any]] = {}
+    question_stats: Dict[Tuple[str, str], Dict[str, Any]] = {}
     
     log_event("pollution_aggregate", status="start", files=num_files, threshold=threshold)
 
@@ -241,22 +243,25 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
                 continue
 
             # 初始化或更新统计数据
-            if core_question_text not in question_stats:
-                question_stats[core_question_text] = {
+            question_type = normalize_question_type(item.get("question_type"))
+            stats_key = (question_type, core_question_text)
+            if stats_key not in question_stats:
+                question_stats[stats_key] = {
+                    "question_type": question_type,
                     "correct_count": 0,
                     "total_count": 0,
                     "responses_and_scores": [],  # 用于记录每次的 response 和 score
                 }
             
             # 统计总次数
-            question_stats[core_question_text]["total_count"] += 1
+            question_stats[stats_key]["total_count"] += 1
             
             # 统计答对次数
             if score == 1.0:
-                question_stats[core_question_text]["correct_count"] += 1
+                question_stats[stats_key]["correct_count"] += 1
 
             # 记录本次实验的 response 和 score
-            question_stats[core_question_text]["responses_and_scores"].append({
+            question_stats[stats_key]["responses_and_scores"].append({
                 "response": response,
                 "response_raw": response_raw,
                 "reason": response_reason,
@@ -270,21 +275,36 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
     # ----------------------------------------------------
     
     log_subsection("Pollution score aggregation")
-    pollution_by_core_question: Dict[str, Dict[str, Any]] = {}
+    pollution_by_core_question: Dict[Tuple[str, str], Dict[str, Any]] = {}
+    type_aggregate = {
+        question_type: {"questions": 0, "suspected": 0, "good": 0}
+        for question_type in (SINGLE_CHOICE, MULTIPLE_SELECT, ORDERING)
+    }
 
-    for core_question_text, stats in question_stats.items():
+    for stats_key, stats in question_stats.items():
         correct_count = stats["correct_count"]
         total_count = stats["total_count"]
         accuracy = correct_count / total_count if total_count > 0 else 0.0
 
         pollution_flag = "suspected" if accuracy >= threshold else "good"
-        pollution_by_core_question[core_question_text] = {
+        question_type = stats.get("question_type", SINGLE_CHOICE)
+        type_aggregate[question_type]["questions"] += 1
+        type_aggregate[question_type][pollution_flag] += 1
+        pollution_by_core_question[stats_key] = {
             "result": pollution_flag,
             "correct_count": correct_count,
             "total_count": total_count,
             "accuracy": f"{accuracy:.4f}",
             "all_responses_and_scores": stats["responses_and_scores"],
         }
+
+    for question_type, stats in type_aggregate.items():
+        log_event(
+            "pollution_question_type",
+            status="aggregated",
+            question_type=question_type,
+            **stats,
+        )
 
     # ----------------------------------------------------
     # 3. 输出结果
@@ -306,7 +326,9 @@ def aggregate_and_analyze_results(num_files: int, prefix: str, suffix: str, thre
                 qa_item.get("question", ""),
                 unknown_placeholder="UNKNOWN_QUESTION"
             )
-            pollution_result = pollution_by_core_question.get(core_question_text)
+            pollution_result = pollution_by_core_question.get(
+                (normalize_question_type(qa_item.get("question_type")), core_question_text)
+            )
             if pollution_result:
                 qa_item["pollution_check"] = pollution_result
 
@@ -534,6 +556,13 @@ def pollution_check_main(
         formatted_questions=formatted_count,
         output=output_file_path,
     )
+    for question_type, total in count_question_types(formatted_data).items():
+        log_event(
+            "pollution_question_type",
+            status="formatted",
+            question_type=question_type,
+            total=total,
+        )
     
     def _is_abstain_item(qa_item: Dict[str, Any]) -> bool:
         """判断题目是否为弃权题（答案为 F 或标注为 Abstain）。"""
@@ -592,6 +621,13 @@ def pollution_check_main(
             skipped_abstain=skipped_abstain,
             remain_for_check=remain_for_check,
         )
+        for question_type, total in count_question_types(filtered_data).items():
+            log_event(
+                "contamination_question_type",
+                status="ready",
+                question_type=question_type,
+                total=total,
+            )
 
         if remain_for_check <= 0:
             log_event("contamination_check", status="skipped", reason="no_non_abstain_questions")

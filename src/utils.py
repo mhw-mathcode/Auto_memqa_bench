@@ -465,6 +465,15 @@ def align_evidence_dialogues(
             "utterance": utterance,
             "dia_id": source_turn.get("dia_id"),
         }
+        evidence_option = str(evidence.get("option") or "").strip().upper()
+        if evidence_option in set("ABCDEF"):
+            aligned_item["option"] = evidence_option
+        try:
+            sequence_position = int(evidence.get("sequence_position"))
+        except (TypeError, ValueError):
+            sequence_position = 0
+        if sequence_position > 0:
+            aligned_item["sequence_position"] = sequence_position
         if character_speaker not in (None, ""):
             aligned_item["character_speaker"] = character_speaker
         if speaker_normalization:

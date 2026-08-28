@@ -166,11 +166,20 @@ python main.py --run dataset/standard_ebooks_trace/dracula.json dataset/standard
 }
 ```
 
-`option` 可以只提供 A-E，流水线会在格式化阶段自动补齐：
+单选题的 `option` 可以只提供 A-E，流水线会在格式化阶段自动补齐：
 
 ```text
 F. Cannot infer the answer based on the given information.
 ```
+
+### Question Type
+
+- 未提供 `question_type` 时自动补为 `single_choice`；值为空或无法识别时也按单选题处理。
+- `question_type: "multiple_choice"` 表示多选题，答案格式为 `"(A,E)"`；评分要求选项集合完整一致，但不要求顺序一致。
+- `question_type: "ordering"` 表示排序题，答案格式为 `"(B,A,D,C)"`；评分要求选项及顺序完全一致。
+- `answer` 也兼容字母数组，例如 `["A", "B", "E", "F"]` 会被视为一个组合答案；多选题按集合评分，排序题保留数组顺序。单选题仅接受单元素数组。
+- `answer_fixed` 的数组仍表示多个可接受的候选答案，不会被合并成一个组合答案。
+- 多选题和排序题不会自动补充 F 选项。单选题继续自动补充 F，并保持旧数据兼容。
 
 ### Category 定义
 

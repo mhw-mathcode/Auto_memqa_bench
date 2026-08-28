@@ -50,9 +50,14 @@ def _parse_mcq_gt_answers(text: Any) -> Set[str]:
 
 def _score_mcq_result(raw_result: Dict[str, Any]) -> Dict[str, Any]:
     answer_candidates = _normalize_answer_candidates(raw_result.get("answer_fixed"), raw_result.get("answer"))
-    score_result = mcq_scoring.score_mcq_prediction(raw_result.get("response", ""), answer_candidates)
+    score_result = mcq_scoring.score_mcq_prediction(
+        raw_result.get("response", ""),
+        answer_candidates,
+        raw_result.get("question_type"),
+    )
 
     scored_result = dict(raw_result)
+    scored_result["question_type"] = score_result.get("question_type")
     scored_result["mcq_score"] = score_result.get("score", 0.0)
     scored_result["prediction_malformed"] = score_result.get("prediction_malformed", False)
     scored_result["predicted_options"] = score_result.get("predicted_options", [])

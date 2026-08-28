@@ -22,6 +22,12 @@ from openai import OpenAI
 from tqdm import tqdm
 
 from src.utils import normalize_dataset_records
+from src.mcq_scoring import (
+    MULTIPLE_SELECT,
+    ORDERING,
+    get_answer_instruction,
+    normalize_question_type,
+)
 
 
 ANSWER_PROMPT_FULL_CONTEXT = """
@@ -32,11 +38,11 @@ You have access to the complete conversation history between these speakers. Thi
 
 # RULES
 1. Use only the conversation history. Do not use outside knowledge.
-2. Choose exactly one option.
+2. {{selection_rule}}
 3. Pay attention to timestamps and message order. Prefer the latest explicit information when conflicts exist.
 4. If the answer cannot be determined from the history, choose the dedicated "Cannot infer" option if one exists.
 5. Do not explain your reasoning.
-6. Your final output must be only the option letter in parentheses, for example: (B)
+6. {{answer_instruction}} Do not output an explanation.
 
 --- CONVERSATION HISTORY ---
 {{conversation_history}}
@@ -96,6 +102,8 @@ def extract_question_stem(question: str, option_lines: Sequence[str]) -> str:
 
     for marker in (
         "Please provide the option corresponding to the only correct answer",
+        "Please provide all correct options enclosed in parentheses",
+        "Please provide the options in the correct order enclosed in parentheses",
         "You need to select the correct answer from the following options:",
     ):
         if marker in question_text:
@@ -191,10 +199,19 @@ class FullContextRunner:
         history_slice = "\n".join(conversation_lines[:history_length]) if history_length else ""
         option_lines = normalize_option_lines(question_item.get("option") or [])
         question_stem = extract_question_stem(question_item.get("question", ""), option_lines)
+        question_type = normalize_question_type(question_item.get("question_type"))
+        if question_type == MULTIPLE_SELECT:
+            selection_rule = "Choose every correct option; incomplete or extra selections are incorrect."
+        elif question_type == ORDERING:
+            selection_rule = "Arrange every option in the correct sequence; any ordering error is incorrect."
+        else:
+            selection_rule = "Choose exactly one option."
         prompt_components = {
             "conversation_history": history_slice,
             "question": question_stem or str(question_item.get("question", "")).strip(),
             "options_text": "\n".join(option_lines),
+            "selection_rule": selection_rule,
+            "answer_instruction": get_answer_instruction(question_type),
         }
         return prompt_components, self.template.render(prompt_components)
 
@@ -277,6 +294,7 @@ class FullContextRunner:
             "category": question_item.get("category", -1),
             "option": question_item.get("option", []),
             "character": question_item.get("character"),
+            "question_type": normalize_question_type(question_item.get("question_type")),
             "response": response,
             "response_time": response_time,
             "answer_prompt": answer_prompt,

@@ -26,7 +26,20 @@ from src.ablation_chunking import (
     estimate_tokens,
     rank_chunks,
 )
-from src.mcq_scoring import normalize_answer_candidates, score_mcq_prediction
+from src.mcq_scoring import (
+    MULTIPLE_SELECT,
+    ORDERING,
+    SINGLE_CHOICE,
+    answer_evidence_covers_selection,
+    count_question_types,
+    extract_answer_fragment_from_json_text,
+    get_answer_instruction,
+    normalize_answer_candidates,
+    normalize_question_type,
+    parse_question_answer,
+    propagate_candidate_evidence_provenance,
+    score_mcq_prediction,
+)
 from src.utils import (
     align_evidence_dialogues,
     build_dialogue_index,
@@ -136,10 +149,10 @@ def parse_json_response(response: str) -> Tuple[Optional[Dict[str, Any]], str, s
     except (SyntaxError, ValueError, TypeError):
         pass
 
-    answer_match = re.search(r'"answer"\s*:\s*"?\(?([A-Fa-f])\)?"?', cleaned)
+    salvaged_answer = extract_answer_fragment_from_json_text(cleaned)
     dia_ids = re.findall(r'"dia_id"\s*:\s*"([^"]+)"', cleaned)
     speakers = re.findall(r'"speaker"\s*:\s*"([^"]*)"', cleaned)
-    if answer_match and dia_ids:
+    if salvaged_answer and dia_ids:
         evidence_dialogues = []
         for idx, dia_id in enumerate(dia_ids, start=1):
             speaker = speakers[idx - 1] if idx - 1 < len(speakers) else ""
@@ -153,7 +166,7 @@ def parse_json_response(response: str) -> Tuple[Optional[Dict[str, Any]], str, s
             )
         salvaged = {
             "question": "",
-            "answer": f"({answer_match.group(1).upper()})",
+            "answer": salvaged_answer,
             "evidence_dialogues": evidence_dialogues,
         }
         return salvaged, json.dumps(salvaged, ensure_ascii=False), "salvaged_references"
@@ -200,7 +213,8 @@ The conversation is JSONL. Each line has exactly:
 - "speaker"
 - "utterance"
 
-For every non-F answer, `evidence_dialogues` MUST contain at least one evidence object.
+For every answer other than standalone "(F)", `evidence_dialogues` MUST contain supporting evidence objects.
+If F appears alongside other selected options or inside an ordering sequence, treat it as a normal option and cite evidence for it.
 Each evidence object MUST point to one JSONL line that is still present in the CURRENT conversation.
 
 Required evidence fields:
@@ -219,14 +233,14 @@ Important:
 STRICT FAILURE RULES
 ======================
 
-Choose (F) if any of these are true:
+Choose standalone (F) if any of these are true:
 - You cannot find a supporting JSONL line in the CURRENT conversation.
 - The supporting line was removed in a previous ablation round and is no longer present.
 - You know the answer but cannot provide exact `dia_id` and `speaker`.
 - The evidence would require paraphrase, summary, inference without a cited line, or external knowledge.
 
 Do NOT do any of these:
-- Do not return a non-F answer with empty `evidence_dialogues`.
+- Do not return an answer other than standalone (F) with empty `evidence_dialogues`.
 - Do not reuse evidence that is no longer in the CURRENT conversation.
 - Do not invent or approximate `dia_id`.
 - Do not put E1/E2 or option letters in `dia_id`.
@@ -238,12 +252,13 @@ Do NOT do any of these:
 DECISION RULE
 ======================
 
-Only choose A/B/C/D/E when:
-1. You have selected at least one current JSONL line.
-2. Its exact `dia_id` and `speaker` are in `evidence_dialogues`.
-3. The selected evidence supports that option.
+Return a supported answer other than standalone (F) only when:
+1. You have selected current JSONL lines supporting every option in the answer.
+2. Their exact `dia_id` and `speaker` are in `evidence_dialogues`.
+3. Every evidence item has an `option` field naming the answer option it supports.
+4. For an Ordering question, every evidence item also has `sequence_position`, starting at 1, and the positions jointly establish the entire answer sequence.
 
-Otherwise choose F.
+Otherwise choose standalone (F).
 
 {{retry_instruction}}
 
@@ -255,10 +270,12 @@ Return exactly one valid JSON object:
 
 {
     "question": "<copy the question text>",
-    "answer": "(A)",
+    "answer": "<answer in the required format>",
     "evidence_dialogues": [
         {
             "id": "E1",
+            "option": "A",
+            "sequence_position": 1,
             "dia_id": "<exact dia_id from current JSONL>",
             "speaker": "<exact speaker from the same JSONL line>",
             "utterance": ""
@@ -266,7 +283,7 @@ Return exactly one valid JSON object:
     ]
 }
 
-For answer "(F)", return:
+For standalone fallback answer "(F)", return:
 
 {
     "question": "<copy the question text>",
@@ -283,6 +300,9 @@ CONVERSATION HISTORY (CURRENT JSONL ONLY)
 QUESTION
 ======================
 {{question}}
+
+ANSWER FORMAT:
+{{answer_instruction}}
 """
 
 
@@ -300,16 +320,15 @@ Reasoning Steps: Specific logical paths or intermediate deductions that must be 
 
 STRICT SCOPE: Your answer must be derived exclusively from the "EVIDENCE" and "REASONING STEPS" sections below. Do not use external knowledge or introduce original reasoning that contradicts or exceeds the provided steps.
 
-NO AMBIGUITY: {{cannot_infer_instruction}}
-
-THOUGHT PROCESS: Before providing the final answer, perform a "Internal Chain of Thought" to verify that every part of your conclusion is anchored in either a piece of evidence or a provided reasoning step. Provide your reasoning steps, and then answer this question.
-
 --- REFERENCE MATERIAL ---
 [EVIDENCE]
 {{evidence}}
 --- END OF MATERIAL ---
 
 Question: {{question}}
+
+ANSWER FORMAT:
+{{answer_instruction}}
 """
 
 
@@ -330,10 +349,13 @@ Return exactly one JSON object:
   "candidate_evidence": [
     {
       "option": "A",
+      "sequence_position": 1,
       "support_type": "partial",
       "evidence_dialogues": [
         {
           "id": "E1",
+          "option": "A",
+          "sequence_position": 1,
           "dia_id": "D1:1",
           "speaker": "narrator",
           "utterance": ""
@@ -362,9 +384,10 @@ candidates.
 
 Return exactly one JSON object:
 {
-  "answer": "(A)",
+  "answer": "<answer in the required format>",
   "evidence_dialogues": [
     {
+      "option": "A",
       "dia_id": "D1:1",
       "speaker": "narrator",
       "utterance": ""
@@ -372,15 +395,20 @@ Return exactly one JSON object:
   ]
 }
 
-For a non-F answer, cite the exact `dia_id` and `speaker` from the candidate
-evidence that support the answer. If the candidate evidence cannot establish a
-non-F option, answer "(F)" and return an empty evidence list.
+For every answer other than standalone "(F)", cite the exact `dia_id` and
+`speaker` from the candidate evidence that support every selected option. If F
+appears alongside other options or in an ordering sequence, treat it as a normal
+option and cite evidence for it. If the candidate evidence cannot establish a
+supported answer, return standalone "(F)" with an empty evidence list.
 
 VALIDATED CANDIDATE EVIDENCE:
 {{candidate_evidence}}
 
 QUESTION:
 {{question}}
+
+ANSWER FORMAT:
+{{answer_instruction}}
 """
 
 
@@ -640,7 +668,7 @@ class FullContextManager:
             if support_type not in allowed_support_types:
                 continue
 
-            raw_evidence = raw_candidate.get("evidence_dialogues", [])
+            raw_evidence = propagate_candidate_evidence_provenance(raw_candidate)
             if not isinstance(raw_evidence, list) or not raw_evidence:
                 continue
 
@@ -895,6 +923,7 @@ class FullContextManager:
         question: str,
         candidates: List[Dict[str, Any]],
         remaining_conversation: Dict[str, Any],
+        question_type: Any = None,
     ) -> Tuple[Dict[str, Any], str, Dict[str, Any]]:
         """Choose the global answer using only validated exact evidence."""
 
@@ -916,7 +945,7 @@ class FullContextManager:
                 "evidence_dialogues": [],
             }, "", diagnostics
 
-        prompt = self._build_ablation_reducer_prompt(question, candidates)
+        prompt = self._build_ablation_reducer_prompt(question, candidates, question_type)
         prompt_budget = self._ablation_prompt_budget()
         if estimate_tokens(prompt, self.model_name) > prompt_budget:
             diagnostics["candidate_batching_used"] = True
@@ -924,6 +953,7 @@ class FullContextManager:
                 self._compress_ablation_candidates_for_reducer(
                     question,
                     candidates,
+                    question_type,
                 )
             )
             diagnostics["candidate_batching"] = batching_diagnostics
@@ -938,7 +968,7 @@ class FullContextManager:
                 candidates,
                 remaining_conversation,
             )
-            prompt = self._build_ablation_reducer_prompt(question, candidates)
+            prompt = self._build_ablation_reducer_prompt(question, candidates, question_type)
 
         allowed_dia_ids = {
             str(evidence.get("dia_id", "")).strip().casefold()
@@ -955,13 +985,9 @@ class FullContextManager:
             return {}, raw_response, diagnostics
 
         answer = str(parsed.get("answer", "")).strip()
-        predicted = set(
-            score_mcq_prediction(
-                answer,
-                ["A", "B", "C", "D", "E", "F"],
-            ).get("predicted_options", [])
-        )
-        if len(predicted) != 1:
+        predicted_sequence, prediction_malformed = parse_question_answer(answer, question_type)
+        predicted = set(predicted_sequence)
+        if prediction_malformed or not predicted_sequence:
             diagnostics["error"] = "invalid_reducer_answer"
             return {}, raw_response, diagnostics
         if predicted == {"F"}:
@@ -989,6 +1015,13 @@ class FullContextManager:
         if not aligned:
             diagnostics["error"] = "non_f_answer_without_candidate_evidence"
             return {}, raw_response, diagnostics
+        if not answer_evidence_covers_selection(
+            question_type,
+            predicted_sequence,
+            aligned,
+        ):
+            diagnostics["error"] = "incomplete_answer_evidence_coverage"
+            return {}, raw_response, diagnostics
 
         return {
             "answer": answer,
@@ -1006,6 +1039,7 @@ class FullContextManager:
         self,
         question: str,
         candidates: List[Dict[str, Any]],
+        question_type: Any = None,
     ) -> str:
         return Template(ABLATION_CANDIDATE_REDUCE_PROMPT).render(
             {
@@ -1014,6 +1048,7 @@ class FullContextManager:
                     ensure_ascii=False,
                 ),
                 "question": question,
+                "answer_instruction": get_answer_instruction(question_type),
             }
         )
 
@@ -1021,6 +1056,7 @@ class FullContextManager:
         self,
         question: str,
         candidates: List[Dict[str, Any]],
+        question_type: Any = None,
     ) -> List[List[Dict[str, Any]]]:
         """Greedily form candidate batches that fit the reducer budget."""
 
@@ -1032,6 +1068,7 @@ class FullContextManager:
             prompt = self._build_ablation_reducer_prompt(
                 question,
                 proposed,
+                question_type,
             )
             if estimate_tokens(prompt, self.model_name) <= budget:
                 current = proposed
@@ -1042,6 +1079,7 @@ class FullContextManager:
             single_prompt = self._build_ablation_reducer_prompt(
                 question,
                 [candidate],
+                question_type,
             )
             if estimate_tokens(single_prompt, self.model_name) > budget:
                 return []
@@ -1111,6 +1149,7 @@ class FullContextManager:
         self,
         question: str,
         candidates: List[Dict[str, Any]],
+        question_type: Any = None,
     ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         """Recursively batch and shrink an oversized exact candidate pool."""
 
@@ -1120,6 +1159,7 @@ class FullContextManager:
             batches = self._partition_ablation_candidate_batches(
                 question,
                 current,
+                question_type,
             )
             if not batches:
                 return [], {
@@ -1157,6 +1197,7 @@ class FullContextManager:
             prompt = self._build_ablation_reducer_prompt(
                 question,
                 retained,
+                question_type,
             )
             if (
                 estimate_tokens(prompt, self.model_name)
@@ -1304,11 +1345,22 @@ class FullContextManager:
         data: Dict[str, Any],
         answer_candidates: List[str],
         cumulative_removed_evidence: List[Dict[str, Any]],
+        question_type: Any = None,
     ) -> bool:
-        if not data or not score_mcq_prediction(
+        if not data:
+            return False
+        score_result = score_mcq_prediction(
             data.get("answer", ""),
             answer_candidates,
-        ).get("is_correct", False):
+            question_type,
+        )
+        if not score_result.get("is_correct", False):
+            return False
+        if not answer_evidence_covers_selection(
+            question_type,
+            score_result.get("predicted_options", []),
+            data.get("evidence_dialogues", []),
+        ):
             return False
 
         removed_ids = {
@@ -1340,6 +1392,7 @@ class FullContextManager:
         question: str,
         answer_candidates: List[str],
         cumulative_removed_evidence: List[Dict[str, Any]],
+        question_type: Any = None,
         retry_instruction: str = "",
     ) -> Tuple[Dict[str, Any], str, Dict[str, Any]]:
         """Answer one ablation round using full context or chunked coverage."""
@@ -1357,6 +1410,7 @@ class FullContextManager:
             only_evidence=0,
             except_evidence=1,
             retry_instruction=retry_instruction,
+            question_type=question_type,
         )
         prompt_tokens = estimate_tokens(prompt, self.model_name)
         prompt_budget = max(
@@ -1389,6 +1443,7 @@ class FullContextManager:
                 except_evidence=1,
                 max_json_retries=3,
                 retry_instruction=retry_instruction,
+                question_type=question_type,
             )
             if not max_context_exceeded:
                 return data, raw_response, audit
@@ -1450,6 +1505,7 @@ class FullContextManager:
             question,
             retrieved_candidates,
             remaining_conversation,
+            question_type,
         )
         audit["retrieval_reducer"] = reducer_diagnostics
         audit["scanned_chunk_count"] = len(result_by_chunk)
@@ -1461,6 +1517,7 @@ class FullContextManager:
             data,
             answer_candidates,
             cumulative_removed_evidence,
+            question_type,
         ):
             return data, raw_response, audit
 
@@ -1505,6 +1562,7 @@ class FullContextManager:
             question,
             all_candidates,
             remaining_conversation,
+            question_type,
         )
         audit["exhaustive_reducer"] = reducer_diagnostics
         return data, raw_response, audit
@@ -1758,20 +1816,17 @@ class FullContextManager:
         except_evidence: int,
         allow_cannot_infer: bool = False,
         retry_instruction: Optional[str] = None,
+        question_type: Any = None,
     ) -> str:
         if only_evidence == 1:
             template = Template(ANSWER_PROMPT_ONLY_EVIDENCE)
             evidence_text = json.dumps(evidence_blocks, ensure_ascii=False)
-            cannot_infer_instruction = (
-                "You must provide a definitive answer. Option F (Cannot infer the answer based on the given information) is allowed only when the provided evidence truly cannot support any non-F option."
-                if allow_cannot_infer
-                else "You must provide a definitive answer and you are forbidden to choose option F (Cannot infer the answer based on the given information)."
-            )
+            normalized_type = normalize_question_type(question_type)
             return template.render(
                 {
                     "evidence": evidence_text,
                     "question": question,
-                    "cannot_infer_instruction": cannot_infer_instruction,
+                    "answer_instruction": get_answer_instruction(question_type),
                 }
             )
 
@@ -1787,6 +1842,7 @@ class FullContextManager:
                 "conversation_history": conversation_history,
                 "question": question,
                 "retry_instruction": retry_instruction or "",
+                "answer_instruction": get_answer_instruction(question_type),
             }
         )
 
@@ -1897,6 +1953,7 @@ class FullContextManager:
         allow_cannot_infer: bool = False,
         max_json_retries: int = 10,
         retry_instruction: Optional[str] = None,
+        question_type: Any = None,
     ) -> Tuple[Dict[str, Any], str, float, str, int]:
         """
         获取 JSON 响应。
@@ -1916,6 +1973,7 @@ class FullContextManager:
                 except_evidence=except_evidence,
                 allow_cannot_infer=allow_cannot_infer,
                 retry_instruction=retry_instruction,
+                question_type=question_type,
             )
 
             response, response_time, context_flag = self._call_llm(prompt)
@@ -1975,6 +2033,7 @@ class FullContextManager:
         only_evidence: int,
         except_evidence: int,
         allow_cannot_infer: bool = False,
+        question_type: Any = None,
     ) -> Tuple[str, float, str, int]:
         """获取自由格式文本响应，不做 JSON 解析。"""
         prompt = self._build_prompt(
@@ -1984,15 +2043,16 @@ class FullContextManager:
             only_evidence=only_evidence,
             except_evidence=except_evidence,
             allow_cannot_infer=allow_cannot_infer,
+            question_type=question_type,
         )
         response, response_time, max_context_exceeded = self._call_llm(prompt)
         return response, response_time, prompt, max_context_exceeded
 
     def _answer_allows_cannot_infer(self, answer_candidates: List[str]) -> bool:
-        """判断标准答案是否允许选择 F。"""
+        """Return whether a standalone F is one of the accepted answers."""
         for candidate in answer_candidates:
-            text = str(candidate or "").strip()
-            if re.match(r"^[Ff](?:[\s\)\]\.:,，、\-]|$)", text):
+            sequence, malformed = parse_question_answer(candidate, SINGLE_CHOICE)
+            if not malformed and sequence == ["F"]:
                 return True
         return False
 
@@ -2166,8 +2226,8 @@ class FullContextManager:
             "- Prefer evidence objects with exact `dia_id`, exact `speaker`, and `utterance` set to \"\".\n"
             "- Do not copy long dialogue text into `utterance`; the validator will recover it from `dia_id`.\n"
             "- Do not cite removed evidence or any dia_id that is absent from the CURRENT conversation.\n"
-            "- A non-F answer is valid only when `evidence_dialogues` contains at least one current JSONL line reference.\n"
-            "- If you cannot provide exact current `dia_id` and `speaker`, answer (F)."
+            "- Every answer other than standalone (F) is valid only when `evidence_dialogues` contains current JSONL line references covering every selected option, including F when it appears with other options or in an ordering sequence.\n"
+            "- If you cannot provide exact current `dia_id` and `speaker`, answer standalone (F)."
         )
 
     def _run_iterative_ablation(
@@ -2176,6 +2236,7 @@ class FullContextManager:
         answer: str,
         question: str,
         base_evidence_blocks: List[Dict[str, Any]],
+        question_type: Any = None,
     ) -> List[Dict[str, Any]]:
         """五轮迭代证据删除。
 
@@ -2216,6 +2277,7 @@ class FullContextManager:
                     question=question,
                     answer_candidates=answer_candidates,
                     cumulative_removed_evidence=cumulative_removed_evidence,
+                    question_type=question_type,
                     retry_instruction=retry_instruction,
                 )
 
@@ -2245,7 +2307,11 @@ class FullContextManager:
                     )
                     continue
 
-                score_result = score_mcq_prediction(data.get("answer", ""), answer_candidates)
+                score_result = score_mcq_prediction(
+                    data.get("answer", ""),
+                    answer_candidates,
+                    question_type,
+                )
                 is_right = bool(score_result.get("is_correct", False))
                 predicted_options = set(score_result.get("predicted_options", []))
                 correct_abstain_without_evidence = (
@@ -2280,6 +2346,28 @@ class FullContextManager:
                     if key in seen_evidence_keys:
                         continue
                     new_aligned_evidence.append(evidence)
+
+                evidence_coverage_complete = answer_evidence_covers_selection(
+                    question_type,
+                    score_result.get("predicted_options", []),
+                    aligned_used_evidence,
+                )
+                if is_right and not evidence_coverage_complete:
+                    invalid_attempts.append(
+                        {
+                            "attempt": attempt_id,
+                            "answer": data.get("answer", ""),
+                            "used_evidence": used_evidence,
+                            "used_evidence_alignment_check": used_alignment_report,
+                            "reason": "incomplete_answer_evidence_coverage",
+                        }
+                    )
+                    retry_instruction = (
+                        "PREVIOUS ATTEMPT DID NOT CITE OPTION-LEVEL EVIDENCE FOR EVERY "
+                        "SELECTED OPTION. Return an `option` field on each evidence item "
+                        "and cover the complete answer."
+                    )
+                    continue
 
                 if is_right and not new_aligned_evidence and not correct_abstain_without_evidence:
                     invalid_attempts.append(
@@ -2472,6 +2560,7 @@ class FullContextManager:
         question = question_item.get("question", "")
         answer = question_item.get("answer", "")
         answer_candidates = normalize_answer_candidates(question_item.get("answer_fixed"), answer)
+        question_type = normalize_question_type(question_item.get("question_type"))
         allow_cannot_infer = self._answer_allows_cannot_infer(answer_candidates)
         conversation = conversation_item.get("conversation", {})
 
@@ -2561,6 +2650,7 @@ class FullContextManager:
                 answer=answer,
                 question=question,
                 base_evidence_blocks=aligned_dialogue_evidence,
+                question_type=question_type,
             )
             result["iterative_evidence_ablation"] = ablation_records
             result["iterative_evidence_ablation_summary"] = self._summarize_iterative_ablation(
@@ -2581,6 +2671,7 @@ class FullContextManager:
                 only_evidence=only_evidence,
                 except_evidence=except_evidence,
                 allow_cannot_infer=allow_cannot_infer,
+                question_type=question_type,
             )
         else:
             data, response, response_time, answer_prompt, max_context_flag = self._request_json_answer(
@@ -2591,9 +2682,10 @@ class FullContextManager:
                 except_evidence=except_evidence,
                 allow_cannot_infer=allow_cannot_infer,
                 max_json_retries=10,
+                question_type=question_type,
             )
 
-        score_result = score_mcq_prediction(response, answer_candidates)
+        score_result = score_mcq_prediction(response, answer_candidates, question_type)
         check_result = "right" if score_result.get("is_correct", False) else "maybe_wrong"
 
         result = copy.deepcopy(question_item)
@@ -2625,6 +2717,12 @@ class FullContextManager:
         """处理数据文件并写出结果。"""
         raw_data = load_json_file(file_path)
         data = normalize_dataset_records(raw_data)
+        for item in data:
+            for question_item in item.get("qa", []):
+                if isinstance(question_item, dict):
+                    question_item["question_type"] = normalize_question_type(
+                        question_item.get("question_type")
+                    )
         self.original_data = data
         self.results = defaultdict(list)
         max_workers = max(1, int(max_workers or 1))
@@ -2634,6 +2732,14 @@ class FullContextManager:
             log_event("evidence_process", status="skipped", reason="no_questions")
             write_json_file(data, self.output_path, indent=4)
             return 0
+
+        for question_type, total in count_question_types(data).items():
+            log_event(
+                "evidence_question_type",
+                status="input",
+                question_type=question_type,
+                total=total,
+            )
 
         alignment_total = 0
         alignment_pass = 0
@@ -2729,6 +2835,35 @@ class FullContextManager:
             final_results.append(result_item)
 
         write_json_file(final_results, self.output_path, indent=4)
+
+        type_stats = {
+            question_type: {"processed": 0, "passed": 0, "failed": 0}
+            for question_type in (SINGLE_CHOICE, MULTIPLE_SELECT, ORDERING)
+        }
+        for item in final_results:
+            for question_item in item.get("qa", []):
+                question_type = normalize_question_type(question_item.get("question_type"))
+                stats = type_stats[question_type]
+                stats["processed"] += 1
+                if except_evidence == 1:
+                    passed = bool(
+                        (question_item.get("iterative_evidence_ablation_summary") or {}).get("passed")
+                    )
+                elif only_evidence == 1:
+                    passed = (question_item.get("only_evidence_check") or {}).get("result") in {
+                        "right",
+                        "skipped_abstain",
+                    }
+                else:
+                    passed = (question_item.get("fullcontext_check") or {}).get("result") == "right"
+                stats["passed" if passed else "failed"] += 1
+        for question_type, stats in type_stats.items():
+            log_event(
+                "evidence_question_type",
+                status="output",
+                question_type=question_type,
+                **stats,
+            )
 
         return sum(len(item.get("qa", [])) for item in final_results)
 

@@ -853,8 +853,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python -u main.py --run trace1
-# python -u main.py --run An_Enemy_of_the_People_test
 # python -u main.py --run friends --start 0
-# python -u main.py --run the-man-from-earth-script --start 1
 

@@ -19,6 +19,14 @@ from src.utils import (
     write_json_file,
 )
 from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
+from src.mcq_scoring import (
+    MULTIPLE_SELECT,
+    ORDERING,
+    SINGLE_CHOICE,
+    normalize_answer_candidates,
+    normalize_question_type,
+    parse_question_answer,
+)
 
 DEFAULT_API_KEY = os.getenv("OPENAI_API_KEY", "")
 DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
@@ -367,12 +375,12 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
 
 # Answer Field Constraints
 
-1. The `answer` field must contain ONLY the correct option letter:
-   - e.g., "A", "B", "C", "D", "E", or "F"
-   - No explanation, justification, or reasoning text
-
-2. The answer must be unique and deterministic.
-   Ambiguous or multi-valid answers are not allowed.
+1. Include `question_type` using exactly one of `single_choice`, `multiple_choice`, or `ordering`.
+2. For `single_choice`, `answer` must be one option letter such as `A`.
+3. For `multiple_choice`, `answer` must contain every correct letter in parentheses, such as `(A,E)`.
+4. For `ordering`, `answer` must contain every option in the correct sequence, such as `(B,A,D,C)`.
+5. For `multiple_choice` and `ordering`, option F is not added automatically. If F is explicitly provided as a normal option, it may be included with other correct options.
+6. The answer must be unique and deterministic, with no explanation in the `answer` field.
 
 # Explanation / Reasoning Field Constraints
 
@@ -425,6 +433,7 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
 [
     {{
         "character": "",
+        "question_type": "single_choice",
         "question": "Complete question text with necessary distractors",
         "option": ["A ...", "B ...", "C ...", "D ...", "E ..."],
         "answer": "A",
@@ -469,9 +478,24 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
                 normalized.append(f"{letter}. {option}")
         return normalized
 
-    def _normalize_answer_letter(self, answer_value: Any, options: List[str]) -> str:
-        """尽量把 answer 规整成单个选项字母。"""
-        answer = str(answer_value or "").strip()
+    def _normalize_answer_letter(
+        self,
+        answer_value: Any,
+        options: List[str],
+        question_type: Any = None,
+    ) -> str:
+        """Normalize answers without discarding multi-select or ordering data."""
+        normalized_type = normalize_question_type(question_type)
+        answer_candidate = normalize_answer_candidates(None, answer_value)[0]
+        sequence, malformed = parse_question_answer(answer_candidate, normalized_type)
+        if sequence and not malformed:
+            if normalized_type == SINGLE_CHOICE:
+                return sequence[0]
+            if normalized_type == MULTIPLE_SELECT:
+                sequence = sorted(sequence)
+            return f"({','.join(sequence)})"
+
+        answer = str(answer_candidate or "").strip()
         match = re.match(r"^\(?\s*([A-Fa-f])\s*\)?(?:[\.．\)]\s*)?$", answer)
         if match:
             return match.group(1).upper()
@@ -504,10 +528,13 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
                 continue
 
             normalized = dict(item)
+            question_type = normalize_question_type(normalized.get("question_type"))
+            normalized["question_type"] = question_type
             normalized["option"] = self._normalize_option_field(normalized.get("option", []))
             normalized["answer"] = self._normalize_answer_letter(
                 normalized.get("answer", ""),
                 normalized["option"],
+                question_type,
             )
             normalized["label"] = self._normalize_label(normalized.get("label", ""))
             normalized.pop("options", None)
@@ -692,6 +719,9 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
     def _normalize_existing_question(self, question_item: Dict[str, Any]) -> Dict[str, Any]:
         """补齐保留原题的统一字段，避免不同来源题目 schema 不一致。"""
         normalized = dict(question_item)
+        normalized["question_type"] = normalize_question_type(
+            normalized.get("question_type")
+        )
         normalized["option"] = self._normalize_option_field(
             normalized.get("option", normalized.get("options", []))
         )
@@ -699,6 +729,7 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
         normalized["answer"] = self._normalize_answer_letter(
             normalized.get("answer", ""),
             normalized["option"],
+            normalized["question_type"],
         )
         normalized["label"] = self._normalize_label(normalized.get("label", ""))
 
@@ -747,14 +778,37 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
             if field not in question_item:
                 errors.append(f"missing_field:{field}")
 
-        if not isinstance(question_item.get("option"), list) or len(question_item.get("option", [])) < 5:
+        normalized_type = normalize_question_type(question_item.get("question_type"))
+        minimum_options = 5 if normalized_type == SINGLE_CHOICE else 2
+        if (
+            not isinstance(question_item.get("option"), list)
+            or len(question_item.get("option", [])) < minimum_options
+        ):
             errors.append("invalid_option")
         if not str(question_item.get("question", "")).strip():
             errors.append("empty_question")
-        if not str(question_item.get("answer", "")).strip():
+        answer_candidate = normalize_answer_candidates(
+            None,
+            question_item.get("answer", ""),
+        )[0]
+        answer_sequence, answer_malformed = parse_question_answer(
+            answer_candidate,
+            normalized_type,
+        )
+        option_letters = {
+            match.group(1).upper()
+            for option in question_item.get("option", [])
+            for match in [re.match(r"^([A-Fa-f])[\.．\)]", str(option or "").strip())]
+            if match
+        }
+        if not answer_candidate.strip():
             errors.append("empty_answer")
-        elif not re.match(r"^[A-F]$", str(question_item.get("answer", "")).strip()):
-            errors.append("invalid_answer_letter")
+        elif answer_malformed or not answer_sequence:
+            errors.append("invalid_answer_format")
+        elif any(letter not in option_letters for letter in answer_sequence):
+            errors.append("answer_option_out_of_range")
+        elif normalized_type == ORDERING and set(answer_sequence) != option_letters:
+            errors.append("ordering_requires_all_options")
         if question_item.get("label") not in VALID_LABELS:
             errors.append("invalid_label")
         try:
@@ -781,7 +835,7 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
                 errors.append("empty_merged_source_evidence")
 
         if strict_label_rules:
-            answer_letter = str(question_item.get("answer", "")).strip().upper()
+            answer_letter = answer_sequence[0] if len(answer_sequence) == 1 else ""
             label = str(question_item.get("label", "")).strip()
             evidence_count = len(aligned_evidence)
 
@@ -884,6 +938,14 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
         self.load_data()
         
         log_subsection("Step 1 refinement plan")
+        input_type_counts = {
+            SINGLE_CHOICE: 0,
+            MULTIPLE_SELECT: 0,
+            ORDERING: 0,
+        }
+        for qa in self.raw_data:
+            input_type_counts[normalize_question_type(qa.get("question_type"))] += 1
+        log_event("refine_question_types", status="input", **input_type_counts)
         
         # 按角色分组（全局）
         subject_buckets = defaultdict(list)
@@ -1089,6 +1151,14 @@ The same cross-chunk pattern may be queried from multiple angles, and multiple q
         
         # 8. 保存文件
         write_json_file(final_data, self.output_file, indent=2)
+        output_type_counts = {
+            SINGLE_CHOICE: 0,
+            MULTIPLE_SELECT: 0,
+            ORDERING: 0,
+        }
+        for qa in all_qa:
+            output_type_counts[normalize_question_type(qa.get("question_type"))] += 1
+        log_event("refine_question_types", status="output", **output_type_counts)
         log_event(
             "refine_save",
             status="success",

@@ -11,12 +11,7 @@ from src.utils import load_json_file, write_json_file
 from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
 
 DEFAULT_USER_LIST = [
-  "Ariel",
-  "Bennett",
-  "Chloe",
-  "Dexter",
-  "Ethan",
-  "Fiona"
+
 ]
 
 TOTAL_CATEGORIES = 7
@@ -26,113 +21,245 @@ QA_GENERATE_PROMPT = """
 {conversation}
 
 Role:
-You are a top-tier AI evaluation expert, specializing in designing extremely high-difficulty stress test datasets for evaluating large language models’ long-range, cross-conversation memory.
+
+You are an expert in designing difficult long-range, cross-session memory evaluation datasets for large language models.
 
 Task:
-Based on the provided long text dialogue, please design as much as possible high-quality question-answer pair for each of the seven specific categories 1-7.
 
-Part I: Core Objectives and Depth Requirements
+Given a long multi-session dialogue, generate at least {} high-quality multiple-choice QA pairs.
 
-1. Cross-Conversation Reasoning:
-- It is strictly forbidden to generate questions that can be answered using only a single session or a single utterance.
-- Each question must require the model to extract and integrate information from at least two (preferably three or more) distinct conversation fragments.
-- Hard-case preference: prioritize fragmented information where a clue is planted in Session A, indirectly referenced in Session B, and only revealed or resolved in Session C.
+Distribute questions as evenly as possible across Categories 1-7 and approximately balance the five labels within each category.
 
-2. Extreme Source Constraints:
-- Absolutely no external knowledge, common sense assumptions, associative reasoning, or hallucinations are allowed.
-- If a fact is not explicitly stated or logically necessitated by the dialogue, it must be treated as non-existent.
+The benchmark should primarily test long-range memory, cross-session reasoning, state tracking, and precise evidence grounding rather than local retrieval.
 
-Part II: Strict Definitions of the Seven Question Categories
+# 1. Annotation Dimensions
 
-Category 1 - User Profile Category: Evaluates the model's ability to capture and maintain long-term, stable user attributes such as demographics, core values, and persistent habits to ensure persona consistency.
+Each question has two independent annotations:
 
-Category 2 - Event-based Category: Focuses on the precise storage and recall of discrete, structured facts and specific behaviors, characterized by the 5W1H (Who, What, Where, When, Why, How) framework.
+- `category`: WHAT memory capability is tested.
+- `label`: HOW the necessary evidence is organized.
 
-Category 3 - Temporal Evolution Category: Assesses the model's capacity to track dynamic changes and state transitions over time, ensuring the latest information correctly updates or supersedes outdated memories.
+Do not confuse them.
 
-Category 4 - Social Relationship & Interaction Category: Concentrates on mapping interpersonal networks and interaction patterns, including both explicit social links and implicit emotional nuances between multiple entities.
+# 2. Categories — WHAT Is Tested
 
-Category 5 - Fine-grained Data Category: Measures "pixel-level" memory precision for highly detailed micro-parameters, such as specific code snippets, numerical indicators, or character-specific strings.
+1. **User Profile**  
+   Stable or persistent attributes, values, habits, preferences, identities, or behavioral patterns.
 
-Category 6 - Lessons Learned Category: Gauges the model's meta-cognitive ability to reflect on past feedback and apply error-correction experiences to optimize future strategies and interaction styles.
+2. **Event-based**  
+   Specific events and structured 5W1H facts: who, what, where, when, why, and how.
 
-Category 7 - Plans & Commitments Category: Highlights the management of prospective memory, including the tracking of future tasks, scheduled events, and specific triggers for promised actions.
+3. **Temporal Evolution**  
+   Changes in facts, beliefs, roles, relationships, conditions, or other states over time.
 
-Part III: Construction Method Reference and Strong Confusion Design
+4. **Social Relationship & Interaction**  
+   Explicit or implicit interpersonal relationships, interaction patterns, social roles, and attitudes between named characters.
 
-When crafting each question, select one of the following five construction methods as your primary technique. The method shapes how the question is built and how distractors are arranged. Record the chosen method in the "label" field. Try to use each method at least once across all questions you generate for a given user.
+5. **Fine-grained Data**  
+   Precise details such as numbers, times, quantities, names, strings, objects, locations, or other micro-level information.
 
-- Fact Extraction (Single Dialogue): Ground the question in a single dialogue session. The correct answer is fully derivable from one scene; distractors are drawn from other sessions or other characters.
-- Fact Extraction (Multiple Dialogues): Scatter the key clues across two or more sessions so that the answer can only be obtained by combining them. The cross-session dependency should be non-obvious.
-- Memory Update: Exploit a fact that was stated differently at two points in time. The question rewards recognising the newer version; the outdated version must appear as a highly attractive distractor.
-- Multi-hop: Require at least two inferential steps, each grounded in dialogue evidence, to reach the answer. No single utterance is sufficient; the chain must be traceable.
-- Abstain: If constructing an Abstain question, options A through E MUST ALL be distractors. All five options must look highly plausible but be factually wrong or unsupported by the dialogue. In this case, you must set the "answer" strictly to "F" by default. The evidence_dialogues must demonstrate exactly why none of the options (A-E) can be derived from the text.
+6. **Lessons Learned**  
+   A past experience or failure leads to an explicit lesson, correction, or changed future strategy.
 
-1. Question Stem Design (Natural & Implicit):
-- Feature leakage is forbidden. Do not use phrases such as “based on their introverted personality” or “shows a stable coping pattern.”
-- Questions must read like natural user inquiries.
-  Incorrect: “Which option reflects Ariel’s stable breakup-coping style?”
-  Correct: “Which statement best matches how Ariel dealt with the aftermath of the breakup?”
-- Language should be direct, concrete, and non-rhetorical.
-- Follow the style of the trace benchmark questions: name the relevant person, object, event, relationship, or state transition in the stem, and ask what happened, how it changed, what relationship was established, or which exact detail remained true.
-- For literary or narrative texts, do not write abstract template stems such as “Which option correctly combines two separate details?”, “Which statement preserves the paired details?”, “Which option matches the two passages?”, or “Which option correctly combines two separate moments?”. These are invalid.
-- Do not make options into quote containers such as “One passage says ...; another says ...”. Options should be natural answer statements. Use the evidence_dialogues field for verbatim source text.
+7. **Plans & Commitments**  
+   Future intentions, promises, schedules, tasks, conditions, or commitments and their later status.
 
-2. Hard Distractor Requirements:
-- Options must be concise natural answer statements, not evidence dumps.
-  Target each option at roughly 10-24 English words when possible; do not exceed 35 words unless the fact itself requires it.
-- Do not join two copied evidence snippets with a semicolon. If two facts must appear together, write one natural sentence using "and", "while", or a short causal/temporal connector.
-- Length balance (critical): the correct answer must not be the longest or shortest among the five options.
-  At least one distractor must be longer than the correct answer.
-- Enforce this numerically before returning JSON: every distractor length should be broadly comparable to the correct option, but do not pad options with copied evidence just to match length.
-- Style balance: all five options must have comparable clause count, specificity, named-entity density, temporal precision, and grammatical structure. The correct option must not be the only complete multi-clause statement.
-- Semantic proximity: distractors must be highly plausible and lie in a high-probability semantic neighborhood.
-  Avoid extreme terms such as “always,” “never,” “completely,” or “absolutely.”
-- Distractors should be naturally plausible, but they do not all need to be near-identical one-word perturbations. Mix confusion types: outdated state, wrong actor, wrong motive, wrong order, over-specific unsupported detail, and true detail attached to the wrong person.
-- Avoid making all five options share the same sentence frame. The options should read like real candidate answers, not mechanically edited copies.
-- Information confusion: distractors must include
-  (1) outdated statements from the target user,
-  (2) true information belonging to another character (e.g., Bennett),
-  (3) statements that are logically similar but factually incorrect.
-- Mutual independence: options must not overlap semantically.
-  No option may partially contain another option’s content.
+# 3. Labels — HOW Evidence Is Organized
 
-Part IV: Structured Proof (Necessary and Sufficient Condition Validation)
+Each question must use exactly one label.
 
-1. Atomic Extraction:
-- Verbatim copying only. No paraphrasing or summarization is allowed.
-- Semantic completeness: if an utterance contains pronouns (e.g., “he”),
-  the immediately preceding utterance that resolves the reference must also be included.
-- Single-ID constraint: each evidence item must correspond to exactly one dia_id.
-  Merged IDs such as “1-2 1-3” are strictly forbidden.
+### Fact Extraction (Single Dialogue)
 
-2. The “Island” Self-Sufficiency Test:
-- Logical closure: a third party reading only the evidence must be able to derive one and only one correct answer.
-- No implicit knowledge: common sense or personality inference is forbidden.
-  All reasoning must follow the form:
-  E1 + E2 → Inference
-- Textual traceability: every fact used in reasoning_steps must have a direct match in evidence_dialogues.
-  Logical jumps are not allowed.
+Use evidence from exactly one session.
+The answer must require synthesis, reconstruction, comparison, or inference across multiple pieces of evidence within that session.
+Do not use questions whose answer can be copied directly from one utterance.
 
-3. Self-Verification Metrics:
-Before outputting the final JSON, both checks must be satisfied:
-- Sufficiency: are the evidence items alone sufficient to 100% eliminate all four distractors?
-- Necessity (minimality): if any single evidence item is removed, does the reasoning chain break?
-- No-context leakage: if the dialogue and evidence were hidden, would option length, detail, fluency, common sense, or wording style reveal the answer? If yes, rewrite all distractors before returning JSON.
-  Ensure no redundancy or unnecessary information.
+### Fact Extraction (Multiple Dialogues)
 
-Part V: Output JSON Specification
+Use necessary evidence from at least two distinct sessions.
+No single session may independently determine the complete answer.
+Each cited session must contribute information necessary to distinguish the correct answer.
 
-Critical Output Constraints:
-- Return only one valid JSON object. Do not use markdown code fences.
-- All keys and string values must use standard double quotes (").
-- If a string contains inner double quotes, escape them as \\".
+### Memory Update
 
-{{
+Test a genuine update to the SAME fact, state variable, belief, role, relationship, plan, preference, location, quantity, or other proposition.
+The evidence must establish: old state → changed/corrected state → latest valid state
+The old and new states must concern the same underlying slot or proposition.
+Do NOT treat two unrelated facts from different times as an update merely because one occurs later.
+Prefer cross-session updates.
+
+### Multi-hop
+
+Require at least two dependent reasoning steps.
+A valid structure is: 
+E1 + E2 → intermediate conclusion  
+intermediate conclusion + E3 → final answer
+
+The intermediate conclusion must be necessary for the final answer.
+Do NOT label simple aggregation such as: Fact A + Fact B + Fact C → answer containing A, B, and C as Multi-hop.
+Prefer reasoning chains spanning multiple sessions.
+
+### Abstain
+
+None of A-E may be uniquely supported by the full dialogue.
+All five options must be plausible but wrong, incomplete, contradictory, or unsupported.
+The answer must be `"F"`.
+Prefer naturally missing information rather than artificially withholding an otherwise obvious correct combination.
+
+# 4. Cross-Session Reasoning
+
+Except for Fact Extraction (Single Dialogue), prefer evidence from multiple distinct sessions whenever appropriate.
+
+Cross-session evidence must form a coherent narrative dependency, such as:
+
+Session A establishes a state →  
+Session B modifies, references, or challenges it →  
+Session C resolves, confirms, or applies it.
+
+Do not combine unrelated facts simply because they occur in different sessions.
+
+A question counts as genuinely cross-session only when every cited session contributes necessary information.
+
+If one session alone fully answers the question, reject the cross-session construction.
+
+# 5. Grounding Rules
+
+Use only information explicitly stated in the dialogue or logically necessary from the cited evidence.
+
+Do not use:
+
+- external knowledge,
+- common sense assumptions,
+- speculative intentions or emotions,
+- unstated causes,
+- unsupported identities or relationships,
+- assumed completion of plans.
+
+If the evidence does not uniquely determine the answer, reject the question or use Abstain.
+
+Every target character must have an explicit proper name in the dialogue.
+
+Unnamed speakers or narration may support evidence but should not be the target entity.
+
+For social questions, explicitly verify speaker, addressee, and coreference.
+
+Do not infer that a title such as "Onee-chan", "sir", or "commander" refers to a nearby named character unless the dialogue establishes that identity.
+
+# 6. Question and Option Quality
+
+Questions must sound like natural questions about the story.
+
+Ask directly about:
+
+- what happened,
+- what changed,
+- what remained true,
+- what relationship exists,
+- what was learned,
+- what was planned,
+- what exact detail applies.
+
+Do not expose the evidence structure with stems such as:
+
+- "Which option combines these facts?"
+- "Which statement matches both passages?"
+- "Which option is supported by the dialogue?"
+
+Do not construct answers or distractors by mechanically concatenating extracted clauses.
+
+Always rewrite evidence into fluent, self-contained natural language.
+
+Avoid options such as:
+
+"X did A, and said B, and started C."
+
+unless those facts form one coherent conclusion.
+
+All options must be grammatical, natural, mutually exclusive, and similar in detail and length.
+
+Prefer distractors based on real dialogue information:
+
+- outdated state,
+- wrong character,
+- wrong object or owner,
+- wrong time or location,
+- wrong relationship,
+- wrong event order,
+- plan vs. completion,
+- old vs. updated state,
+- plausible but unsupported detail.
+
+# 7. Category-Specific Validity
+
+For Category 3, the evidence must represent a meaningful state transition over time, not merely two different facts.
+
+For Category 4, verify all relationship and addressee assignments explicitly.
+
+For Category 6, require a traceable pattern such as:
+
+past experience/failure → explicit lesson or correction → future strategy or behavior
+
+A later preference or statement alone is not a lesson learned.
+
+For Category 7, distinguish clearly between:
+
+planned → promised → scheduled → attempted → completed → cancelled/changed
+
+Do not treat a plan as completed without explicit evidence.
+
+# 8. Evidence and Reasoning
+
+`evidence_dialogues` must contain verbatim text.
+
+Each evidence item corresponds to exactly one `dia_id`.
+
+Do not merge utterances.
+
+Include additional context only when necessary to resolve a pronoun, addressee, or reference.
+
+Every evidence set must satisfy:
+
+**Sufficiency:**  
+The evidence uniquely establishes the correct answer.
+
+**Necessity:**  
+Every cited item contributes to the answer. Remove redundant evidence.
+
+Every factual claim in `reasoning_steps` must be directly supported by cited evidence.
+
+Before accepting a question, verify:
+
+1. the category is correct;
+2. the label is correct;
+3. every evidence item is necessary;
+4. the correct option contains no unsupported claim;
+5. distractors are plausible but incorrect;
+6. the question and options are fluent natural English;
+7. cross-session evidence is semantically connected rather than mechanically aggregated.
+
+# 9. Output Format
+
+Return only one valid JSON object.
+
+{
   "qa": [
-    {{
-      "character": "Ariel",
-      "category": 6,
+    {
+      "character": "Yamato",
+      "category": 3,
+      "evidence_dialogues": [
+        {
+          "id": "E1",
+          "speaker": "Yamato",
+          "utterance": "...",
+          "dia_id": "D1:10"
+        },
+        {
+          "id": "E2",
+          "speaker": "Haruna",
+          "utterance": "...",
+          "dia_id": "D8:25"
+        }
+      ],
       "question": "",
       "option": [
         "A. ",
@@ -142,26 +269,36 @@ Critical Output Constraints:
         "E. "
       ],
       "answer": "C",
-      "label": "Fact Extraction (Multiple Dialogues)",
-      "evidence_dialogues": [
-        {{ "id": "E1", "speaker": "Ariel", "utterance": "...", "dia_id": "" }},
-        {{ "id": "E2", "speaker": "Ariel", "utterance": "...", "dia_id": "" }}
-      ],
+      "label": "Memory Update",
       "reasoning_steps": [
-        {{
+        {
           "step": 1,
-          "inference": "[Intermediate logic]",
+          "inference": "",
           "based_on": ["E1"]
-        }},
-        {{
+        },
+        {
           "step": 2,
-          "inference": "[Cross-session conclusion]",
+          "inference": "",
           "based_on": ["E1", "E2"]
-        }}
+        }
       ]
-    }}
+    }
   ]
-}}
+}
+
+Allowed `category`:
+1, 2, 3, 4, 5, 6, 7
+
+Allowed `label`:
+- "Fact Extraction (Single Dialogue)"
+- "Fact Extraction (Multiple Dialogues)"
+- "Memory Update"
+- "Multi-hop"
+- "Abstain"
+
+For Abstain, `"answer"` must be `"F"`.
+
+For all other labels, `"answer"` must be one of `"A"`, `"B"`, `"C"`, `"D"`, `"E"`.
 """
 
 def call_openai_json(

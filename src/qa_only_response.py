@@ -15,7 +15,13 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from tqdm import tqdm
 
-from src.mcq_scoring import strip_prediction_text
+from src.mcq_scoring import (
+    MULTIPLE_SELECT,
+    ORDERING,
+    get_answer_instruction,
+    normalize_question_type,
+    strip_prediction_text,
+)
 from src.utils import compute_dataset_stats, stream_normalized_dataset
 from src.pipeline_utils import log_event
 
@@ -30,12 +36,12 @@ You are an expert knowledge retrieval and logical deduction system tasked with t
 
 # INSTRUCTIONS:
 1. Answer the provided choice question using ONLY your pre-trained world knowledge, common sense, and logical deduction. Do not expect any external context or memory banks to be provided.
-2. You MUST select the single most likely correct option. Under no circumstances should you refuse to answer, state that there is insufficient context, or choose/output "F" (Insufficient evidence/Refusal).
+2. {{selection_rule}} {{f_rule}}
 3. Evaluate Option Plausibility: Carefully analyze the provided options. Eliminate options that are logically absurd, contradict common sense, or feel out of place for natural human dialogue/behavior. Select the option that makes the most logical or real-world sense, even if you do not know the exact source material.
 4. If the question contains specific character names or recognizable scenarios, leverage your broad knowledge of popular culture and human interaction to deduce the most likely answer.
 5. Explain WHY you selected that option. Your reason must name the decisive basis: pre-trained factual knowledge, a recognizable scenario, logical elimination, common sense, or linguistic/behavioral plausibility. Do not invent dialogue, events, relationships, or other context that is absent from the question and options.
-6. Return exactly two lines in this format. The answer must be one option letter from A to E, and the reason must be 1-2 concise sentences:
-Answer: <A-E>
+6. Return exactly two lines in this format. {{answer_instruction}} The reason must be 1-2 concise sentences:
+Answer: <answer>
 Reason: <why this option is more likely than the alternatives>
 
 Question: {{question}}
@@ -66,11 +72,11 @@ def parse_qa_only_response(text):
         return answer or strip_prediction_text(cleaned), reason
 
     answer_match = re.search(
-        r"(?im)^\s*(?:answer|final answer)\s*[:：]\s*[\(\[]?\s*([A-E])\s*[\)\]]?(?:\s|$|[.,，。])",
+        r"(?im)^\s*(?:answer|final answer)\s*[:：]\s*[\(\[]?\s*([A-F](?:\s*[,，]\s*[A-F])*)\s*[\)\]]?(?:\s|$|[.，。])",
         cleaned,
     )
     reason_match = re.search(r"(?ims)^\s*(?:reason|rationale|理由)\s*[:：]\s*(.+?)\s*$", cleaned)
-    answer = answer_match.group(1).upper() if answer_match else strip_prediction_text(cleaned)
+    answer = f"({answer_match.group(1).upper()})" if answer_match else strip_prediction_text(cleaned)
     reason = reason_match.group(1).strip() if reason_match else ""
     return answer, reason
 
@@ -246,12 +252,28 @@ class QAOnlyRunner:
                     continue
                 raise
 
-    def answer_question(self, question: str, max_retries=20):
+    def answer_question(self, question: str, question_type=None, max_retries=20):
         """
         只回答问题，不做任何检索。
         """
         request_id = f"qa-only-{uuid.uuid4()}"
-        prompt = ANSWER_PROMPT_QA_ONLY.replace("{{question}}", question)
+        normalized_type = normalize_question_type(question_type)
+        if normalized_type == MULTIPLE_SELECT:
+            selection_rule = "You MUST select every correct option; incomplete or extra selections are incorrect."
+            f_rule = "Do not refuse to answer; if F is explicitly provided as a normal option and is correct, include it like any other option."
+        elif normalized_type == ORDERING:
+            selection_rule = "You MUST return all options in the correct sequence; any ordering error is incorrect."
+            f_rule = "Do not refuse to answer; if F is explicitly provided as a normal option, place it in the sequence like any other option."
+        else:
+            selection_rule = "You MUST select the single most likely correct option."
+            f_rule = 'Under no circumstances should you refuse to answer, state that there is insufficient context, or choose/output "F" (Insufficient evidence/Refusal).'
+        prompt = (
+            ANSWER_PROMPT_QA_ONLY
+            .replace("{{question}}", question)
+            .replace("{{selection_rule}}", selection_rule)
+            .replace("{{f_rule}}", f_rule)
+            .replace("{{answer_instruction}}", get_answer_instruction(normalized_type))
+        )
 
         attempts = 0
         sleep_penalty = 0.0
@@ -315,12 +337,17 @@ class QAOnlyRunner:
         category = val.get("category", -1)
         evidence = val.get("evidence", [])
 
-        response, response_time, pollution_check_prompt = self.answer_question(question)
+        question_type = normalize_question_type(val.get("question_type"))
+        response, response_time, pollution_check_prompt = self.answer_question(
+            question,
+            question_type,
+        )
         response_option, response_reason = parse_qa_only_response(response)
 
         result = {
             "question": question,
             "answer": answer,
+            "question_type": question_type,
             "category": category,
             "evidence": evidence,
             "response": response_option,
@@ -363,6 +390,11 @@ class QAOnlyRunner:
         drain_threshold = max(resolved_workers, 1) * 4
         successful_count = 0
         failed_count = 0
+        question_type_counts = {
+            "single_choice": 0,
+            "multiple_choice": 0,
+            "ordering": 0,
+        }
 
         def consume_one(pbar):
             nonlocal successful_count, failed_count
@@ -392,6 +424,9 @@ class QAOnlyRunner:
                     for conv_idx, item in enumerate(stream_normalized_dataset(dataset_path)):
                         qa_list = item.get("qa", [])
                         for question_item in qa_list:
+                            question_type_counts[
+                                normalize_question_type(question_item.get("question_type"))
+                            ] += 1
                             future = executor.submit(self.process_question, question_item, conv_idx, pbar)
                             question_preview = (question_item.get("question") or "").strip().replace("\n", " ")
                             if len(question_preview) > 40:
@@ -423,6 +458,13 @@ class QAOnlyRunner:
             failed=failed_count,
             output=self.output_path,
         )
+        for question_type, total in question_type_counts.items():
+            log_event(
+                "qa_only_question_type",
+                status="completed",
+                question_type=question_type,
+                total=total,
+            )
 
     def close(self):
         pass

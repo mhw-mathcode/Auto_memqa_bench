@@ -23,8 +23,10 @@ from argparse import Namespace
 from config import get_config, VersionManager
 from src.pipeline_utils import (
     PipelinePaths,
+    RunWorkspaceLock,
     apply_cumulative_rules,
     create_run_workspace,
+    infer_resume_start_step,
     log_event,
     log_subsection,
     print_pipeline_overview,
@@ -35,6 +37,7 @@ from src.pipeline_utils import (
     print_stage_footer,
     print_stage_header,
     resolve_step_input,
+    open_run_workspace,
     run_with_temp_filtered_input,
     setup_run_logging,
     summarize_step_config,
@@ -284,6 +287,25 @@ def run_evidence_check_stage(config_loader, pipeline_cfg, paths: PipelinePaths) 
         STEP_2_EVIDENCE_CHECK,
         "iterative_ablation_max_workers",
     )
+    try:
+        checkpoint_every_questions = max(
+            1,
+            int(
+                config_loader.get_step_flag(
+                    STEP_2_EVIDENCE_CHECK,
+                    "checkpoint_every_questions",
+                    1,
+                )
+                or 1
+            ),
+        )
+    except (TypeError, ValueError):
+        checkpoint_every_questions = 1
+        log_event(
+            "evidence_checkpoint_config",
+            status="fallback",
+            resolved=checkpoint_every_questions,
+        )
     ablation_settings = {
         key: config_loader.get_step_flag(
             STEP_2_EVIDENCE_CHECK,
@@ -303,6 +325,7 @@ def run_evidence_check_stage(config_loader, pipeline_cfg, paths: PipelinePaths) 
         stage_workers,
         only_evidence_max_workers=only_evidence_workers,
         iterative_ablation_max_workers=iterative_ablation_workers,
+        checkpoint_every_questions=checkpoint_every_questions,
         **ablation_settings,
     )
     mode = normalize_evidence_mode(
@@ -478,28 +501,71 @@ def run_one_target(target: str, start_step: int, end_step: int, pipeline_cfg: di
         return False
 
     workspace = create_run_workspace(dataset_name, pipeline_cfg)
-    cleanup_logging = setup_run_logging(workspace.log_path)
-    try:
-        log_event(
-            "run_workspace",
-            status="created",
-            target=target,
-            dataset_name=dataset_name,
-            input_target=input_target,
-            root=workspace.root_dir,
-            log=workspace.log_path,
+    with RunWorkspaceLock(workspace.root_dir):
+        cleanup_logging = setup_run_logging(workspace.log_path)
+        try:
+            log_event(
+                "run_workspace",
+                status="created",
+                target=target,
+                dataset_name=dataset_name,
+                input_target=input_target,
+                root=workspace.root_dir,
+                log=workspace.log_path,
+            )
+            return run_pipeline(
+                dataset_name,
+                start_step,
+                end_step,
+                run_temp_dir=workspace.temp_dir,
+                run_output_dir=workspace.output_dir,
+                run_workspace=workspace,
+                input_target=input_target,
+            )
+        finally:
+            cleanup_logging()
+
+
+def run_resume_target(
+    run_dir: str,
+    start_step: int | None,
+    end_step: int | None,
+    pipeline_cfg: dict,
+) -> bool:
+    """Resume one existing run in place without creating a new timestamp directory."""
+    workspace, dataset_name = open_run_workspace(run_dir)
+    paths = PipelinePaths(dataset_name, workspace.temp_dir, workspace.output_dir)
+    config_loader = get_config()
+    evidence_mode = normalize_evidence_mode(
+        config_loader.get_step_flag(STEP_2_EVIDENCE_CHECK, "mode", "full")
+    )
+    inferred_start = infer_resume_start_step(paths, evidence_mode)
+    resolved_start = inferred_start if start_step is None else start_step
+    resolved_end = 4 if end_step is None else end_step
+    if resolved_start > resolved_end:
+        raise ValueError(
+            f"恢复阶段范围无效: start={resolved_start}, end={resolved_end}"
         )
-        return run_pipeline(
-            dataset_name,
-            start_step,
-            end_step,
-            run_temp_dir=workspace.temp_dir,
-            run_output_dir=workspace.output_dir,
-            run_workspace=workspace,
-            input_target=input_target,
-        )
-    finally:
-        cleanup_logging()
+
+    with RunWorkspaceLock(workspace.root_dir):
+        cleanup_logging = setup_run_logging(workspace.log_path, append=True)
+        try:
+            print_log_section("RUN RESUME")
+            print_kv("run_dir", workspace.root_dir)
+            print_kv("dataset", dataset_name)
+            print_kv("inferred_start", inferred_start)
+            print_kv("step_range", f"{resolved_start} -> {resolved_end}")
+            return run_pipeline(
+                dataset_name,
+                resolved_start,
+                resolved_end,
+                run_temp_dir=workspace.temp_dir,
+                run_output_dir=workspace.output_dir,
+                run_workspace=workspace,
+                input_target=None,
+            )
+        finally:
+            cleanup_logging()
 
 
 def run_batch_targets(targets: list[str], args, pipeline_cfg: dict) -> bool:
@@ -742,7 +808,7 @@ def run_pipeline(
         print_run_footer("failed(exception)", time.time() - pipeline_start_time, paths, step_times)
         raise
 
-def main():
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Personal Memory Dataset 处理流水线",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -771,6 +837,9 @@ def main():
 
   # 从步骤 0 开始完整生成
   python main.py --run An-Enemy-of-the-People --start 0 --end 4
+
+  # 从已有运行目录继续
+  python main.py --resume-run runs/An-Enemy-of-the-People_20260828_120000
         """
     )
     
@@ -786,26 +855,34 @@ def main():
         help='显示版本信息'
     )
     
-    parser.add_argument(
+    run_group = parser.add_mutually_exclusive_group()
+    run_group.add_argument(
         '--run',
         type=str,
         nargs='+',
         metavar='DATASET',
         help='运行流水线，指定数据集名称、JSON 文件路径或文件夹路径；可一次传多个目标'
     )
+
+    run_group.add_argument(
+        '--resume-run',
+        type=str,
+        metavar='RUN_DIR',
+        help='复用已有运行目录，从第一个未完成阶段继续运行'
+    )
     
     parser.add_argument(
         '--start',
         type=int,
-        default=0,
+        default=None,
         choices=[0, 1, 2, 3, 4],
-        help='起始步骤 (0-4)，默认为 0'
+        help='起始步骤 (0-4)；普通运行默认 0，恢复运行默认自动推断'
     )
     
     parser.add_argument(
         '--end',
         type=int,
-        default=4,
+        default=None,
         choices=[0, 1, 2, 3, 4],
         help='结束步骤 (0-4)，默认为 4'
     )
@@ -817,6 +894,11 @@ def main():
         help='配置文件路径，默认为 config.json'
     )
     
+    return parser
+
+
+def main():
+    parser = build_parser()
     args = parser.parse_args()
     
     # 加载配置
@@ -829,23 +911,43 @@ def main():
         show_config()
     elif args.show_versions:
         show_versions()
+    elif args.resume_run:
+        try:
+            ok = run_resume_target(
+                args.resume_run,
+                args.start,
+                args.end,
+                get_config().get_pipeline_config(),
+            )
+        except (OSError, ValueError, RuntimeError) as exc:
+            log_event("resume_run", status="failed", error=str(exc))
+            ok = False
+        sys.exit(0 if ok else 1)
     elif args.run:
-        if args.start > args.end:
-            log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=args.start, end=args.end)
+        start_step = 0 if args.start is None else args.start
+        end_step = 4 if args.end is None else args.end
+        if start_step > end_step:
+            log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=start_step, end=end_step)
             sys.exit(1)
         pipeline_cfg = get_config().get_pipeline_config()
         if len(args.run) == 1:
-            ok = run_one_target(args.run[0], args.start, args.end, pipeline_cfg)
+            ok = run_one_target(args.run[0], start_step, end_step, pipeline_cfg)
             sys.exit(0 if ok else 1)
+        args.start = start_step
+        args.end = end_step
         ok = run_batch_targets(args.run, args, pipeline_cfg)
         sys.exit(0 if ok else 1)
     else:
         pipeline_cfg = get_config().get_pipeline_config()
         configured_targets = get_configured_run_targets(pipeline_cfg)
         if configured_targets:
-            if args.start > args.end:
-                log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=args.start, end=args.end)
+            start_step = 0 if args.start is None else args.start
+            end_step = 4 if args.end is None else args.end
+            if start_step > end_step:
+                log_event("cli_args", status="failed", reason="start_step_greater_than_end_step", start=start_step, end=end_step)
                 sys.exit(1)
+            args.start = start_step
+            args.end = end_step
             ok = run_batch_targets(configured_targets, args, pipeline_cfg)
             sys.exit(0 if ok else 1)
         parser.print_help()
@@ -853,5 +955,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python -u main.py --run friends --start 0
+# python -u main.py --resume-run runs/nurse-love-addiction_revised_20260828_132217 --start 3
+# python -u main.py --resume-run runs/the-house-in-fata-morgana-a-requiem-for-innocence_revised_20260828_132537 --start 3
 

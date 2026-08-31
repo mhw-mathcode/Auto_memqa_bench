@@ -3,11 +3,38 @@ import re
 from typing import Any, Dict, List, Tuple
 
 from src.mcq_scoring import (
+    MULTIPLE_SELECT_INSTRUCTION,
+    ORDERING_INSTRUCTION,
     SINGLE_CHOICE,
+    SINGLE_CHOICE_INSTRUCTION,
     get_answer_instruction,
     normalize_question_type,
 )
 from src.utils import normalize_dataset_records
+
+
+ANSWER_INSTRUCTION_MARKERS = (
+    "Please provide the option corresponding to the only correct answer",
+    "Please provide all correct options enclosed in parentheses",
+    "Please provide the options in the correct order enclosed in parentheses",
+    "You need to select the correct answer from the following options:",
+)
+
+ANSWER_INSTRUCTION_SUFFIXES = (
+    SINGLE_CHOICE_INSTRUCTION,
+    MULTIPLE_SELECT_INSTRUCTION,
+    ORDERING_INSTRUCTION,
+)
+
+
+def strip_answer_instruction_suffix(question_text: str) -> str:
+    """Remove a trailing user-facing answer instruction while retaining options."""
+    text = (question_text or "").replace("\r\n", "\n").replace("\r", "\n").strip()
+    folded_text = text.casefold()
+    for instruction in ANSWER_INSTRUCTION_SUFFIXES:
+        if folded_text.endswith(instruction.casefold()):
+            return text[: -len(instruction)].rstrip()
+    return text
 
 
 def extract_core_question_text(question_text: str, unknown_placeholder: str = "") -> str:
@@ -38,12 +65,7 @@ def extract_core_question_text(question_text: str, unknown_placeholder: str = ""
                 flags=re.IGNORECASE,
             ) or unknown_placeholder
 
-    for marker in (
-        "Please provide the option corresponding to the only correct answer",
-        "Please provide all correct options enclosed in parentheses",
-        "Please provide the options in the correct order enclosed in parentheses",
-        "You need to select the correct answer from the following options:",
-    ):
+    for marker in ANSWER_INSTRUCTION_MARKERS:
         marker_index = text.casefold().find(marker.casefold())
         if marker_index >= 0:
             return text[:marker_index].strip() or unknown_placeholder

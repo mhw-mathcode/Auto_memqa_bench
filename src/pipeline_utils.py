@@ -12,8 +12,10 @@
 
 import json
 import os
+import re
 import sys
 import tempfile
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime
@@ -75,6 +77,77 @@ class RunWorkspace:
     log_path: str
 
 
+class RunWorkspaceLock:
+    """Exclusive process lock for mutating one existing run directory."""
+
+    def __init__(self, run_dir: os.PathLike | str):
+        self.lock_path = os.path.join(os.path.abspath(os.fspath(run_dir)), ".pipeline.lock")
+        self.token = uuid.uuid4().hex
+        self.acquired = False
+
+    @staticmethod
+    def _pid_is_running(pid: int) -> bool:
+        if pid <= 0:
+            return False
+        try:
+            os.kill(pid, 0)
+        except OSError:
+            return False
+        return True
+
+    def acquire(self) -> None:
+        payload = json.dumps({"pid": os.getpid(), "token": self.token})
+        for _ in range(2):
+            try:
+                descriptor = os.open(
+                    self.lock_path,
+                    os.O_CREAT | os.O_EXCL | os.O_WRONLY,
+                )
+            except FileExistsError:
+                try:
+                    with open(self.lock_path, "r", encoding="utf-8") as handle:
+                        existing = json.load(handle)
+                    existing_pid = int(existing.get("pid", 0))
+                except (OSError, ValueError, TypeError, json.JSONDecodeError):
+                    existing_pid = 0
+                if self._pid_is_running(existing_pid):
+                    raise RuntimeError(
+                        f"运行目录正在被另一个进程使用 (pid={existing_pid})"
+                    )
+                try:
+                    os.remove(self.lock_path)
+                except FileNotFoundError:
+                    pass
+                continue
+            else:
+                with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+                    handle.write(payload)
+                self.acquired = True
+                return
+        raise RuntimeError(f"无法获取运行目录锁: {self.lock_path}")
+
+    def release(self) -> None:
+        if not self.acquired:
+            return
+        try:
+            with open(self.lock_path, "r", encoding="utf-8") as handle:
+                existing = json.load(handle)
+            if existing.get("token") == self.token:
+                os.remove(self.lock_path)
+        except FileNotFoundError:
+            pass
+        finally:
+            self.acquired = False
+
+    def __enter__(self):
+        self.acquire()
+        return self
+
+    def __exit__(self, exc_type, exc, traceback):
+        self.release()
+        return False
+
+
 def create_run_workspace(dataset_name: str, pipeline_cfg: dict) -> RunWorkspace:
     """创建 runs/{dataset}_{timestamp}/ 目录结构。"""
     runs_dir = pipeline_cfg.get("runs_dir", "runs")
@@ -92,6 +165,104 @@ def create_run_workspace(dataset_name: str, pipeline_cfg: dict) -> RunWorkspace:
         output_dir=output_dir,
         log_path=os.path.join(root_dir, "run.log"),
     )
+
+
+_STAGE_FILE_RE = re.compile(r"^(?P<dataset>.+)_(?:v0|v1_refined|v2a|v2b|v3)\.json$")
+
+
+def open_run_workspace(run_dir: os.PathLike | str) -> tuple[RunWorkspace, str]:
+    """Open an existing run directory and infer its single dataset name."""
+    root_dir = os.path.abspath(os.fspath(run_dir))
+    temp_dir = os.path.join(root_dir, "temp")
+    output_dir = os.path.join(root_dir, "result")
+    if not os.path.isdir(root_dir):
+        raise ValueError(f"运行目录不存在: {root_dir}")
+    if not os.path.isdir(temp_dir):
+        raise ValueError(f"运行目录缺少 temp: {temp_dir}")
+
+    dataset_names = {
+        match.group("dataset")
+        for name in os.listdir(temp_dir)
+        if (match := _STAGE_FILE_RE.match(name))
+    }
+    if not dataset_names:
+        raise ValueError(f"temp 中没有可识别的阶段文件: {temp_dir}")
+    if len(dataset_names) > 1:
+        raise ValueError(f"temp 中包含多个数据集: {sorted(dataset_names)}")
+
+    os.makedirs(output_dir, exist_ok=True)
+    workspace = RunWorkspace(
+        root_dir=root_dir,
+        temp_dir=temp_dir,
+        output_dir=output_dir,
+        log_path=os.path.join(root_dir, "run.log"),
+    )
+    return workspace, next(iter(dataset_names))
+
+
+def _all_questions_terminal(path: str, phase: str) -> bool:
+    if not os.path.isfile(path):
+        return False
+    with open(path, "r", encoding="utf-8") as handle:
+        data = _normalize_records_for_stats(json.load(handle))
+    for record in data:
+        qa_items = record.get("qa", [])
+        if not isinstance(qa_items, list):
+            continue
+        for question in qa_items:
+            if not isinstance(question, dict):
+                return False
+            if phase == "v2a":
+                result = question.get("only_evidence_check")
+                if not isinstance(result, dict) or "result" not in result:
+                    return False
+            else:
+                only_check = question.get("only_evidence_check")
+                if (
+                    isinstance(only_check, dict)
+                    and "result" in only_check
+                    and only_check.get("result") != "right"
+                ):
+                    continue
+                summary = question.get("iterative_evidence_ablation_summary")
+                if (
+                    not isinstance(summary, dict)
+                    or "result" not in summary
+                    or summary.get("result") == "needs_rerun"
+                    or summary.get("needs_rerun") is True
+                ):
+                    return False
+    return True
+
+
+def infer_resume_start_step(paths: PipelinePaths, evidence_mode: str = "full") -> int:
+    """Infer the earliest unfinished pipeline stage in an existing workspace."""
+    upstream_exists = any(
+        os.path.isfile(path)
+        for path in (paths.v1_refined, paths.v2a, paths.v2b, paths.v3, paths.final)
+    )
+    if not os.path.isfile(paths.v0) and not upstream_exists:
+        return 0
+    if not os.path.isfile(paths.v1_refined) and not any(
+        os.path.isfile(path) for path in (paths.v2a, paths.v2b, paths.v3, paths.final)
+    ):
+        return 1
+
+    normalized_mode = str(evidence_mode or "full").strip().lower()
+    if normalized_mode == "v2a":
+        step2_complete = _all_questions_terminal(paths.v2a, "v2a")
+    elif normalized_mode == "v2b":
+        step2_complete = _all_questions_terminal(paths.v2b, "v2b")
+    else:
+        step2_complete = (
+            _all_questions_terminal(paths.v2a, "v2a")
+            and _all_questions_terminal(paths.v2b, "v2b")
+        )
+    if not step2_complete:
+        return 2
+    if not os.path.isfile(paths.v3):
+        return 3
+    return 4
 
 
 class TeeLogger:
@@ -113,10 +284,10 @@ class TeeLogger:
         return bool(getattr(self.stream, "isatty", lambda: False)())
 
 
-def setup_run_logging(log_path: str):
+def setup_run_logging(log_path: str, append: bool = False):
     """为一次 pipeline 运行创建日志文件，返回清理函数。"""
     os.makedirs(os.path.dirname(log_path), exist_ok=True)
-    log_file = open(log_path, "w", encoding="utf-8")
+    log_file = open(log_path, "a" if append else "w", encoding="utf-8")
 
     original_stdout = sys.stdout
     original_stderr = sys.stderr
@@ -201,6 +372,7 @@ def summarize_step_config(step_cfg: Dict[str, Any]) -> Dict[str, Any]:
         "max_workers",
         "only_evidence_max_workers",
         "iterative_ablation_max_workers",
+        "checkpoint_every_questions",
         "enable_contamination_check",
         "cleanup_temp_files",
     ):

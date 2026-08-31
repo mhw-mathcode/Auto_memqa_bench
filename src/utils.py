@@ -1,5 +1,7 @@
 import json
+import os
 import re
+import tempfile
 from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional, Sequence, Tuple, Union
@@ -23,6 +25,31 @@ def write_json_file(data: Any, path: Union[str, Path], indent: int = 2) -> None:
     ensure_parent_dir(path)
     with Path(path).open("w", encoding="utf-8") as handle:
         json.dump(data, handle, ensure_ascii=False, indent=indent)
+
+
+def write_json_file_atomic(data: Any, path: Union[str, Path], indent: int = 2) -> None:
+    """Atomically replace a JSON file with a complete UTF-8 document."""
+    output_path = Path(path)
+    ensure_parent_dir(output_path)
+    temp_path: Optional[Path] = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            suffix=".tmp",
+            prefix=f".{output_path.name}.",
+            dir=str(output_path.parent),
+            delete=False,
+        ) as handle:
+            temp_path = Path(handle.name)
+            json.dump(data, handle, ensure_ascii=False, indent=indent)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temp_path, output_path)
+        temp_path = None
+    finally:
+        if temp_path is not None:
+            temp_path.unlink(missing_ok=True)
 
 
 def count_qa_items(data: Any) -> int:

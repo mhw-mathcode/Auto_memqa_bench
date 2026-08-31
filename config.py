@@ -249,6 +249,7 @@ class ConfigLoader:
                 "max_workers",
                 "only_evidence_max_workers",
                 "iterative_ablation_max_workers",
+                "checkpoint_every_questions",
                 "ablation_context_limit",
                 "ablation_prompt_safety_tokens",
                 "ablation_chunk_tokens",

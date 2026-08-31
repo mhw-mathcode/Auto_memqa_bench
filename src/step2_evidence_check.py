@@ -9,7 +9,6 @@ import threading
 import time
 import traceback
 import uuid
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -48,9 +47,14 @@ from src.utils import (
     load_json_file,
     normalize_dataset_records,
     normalize_reasoning_steps,
-    write_json_file,
+    write_json_file_atomic,
 )
 from src.pipeline_utils import log_event, log_subsection, print_log_section, print_kv
+from src.question_formatting import strip_answer_instruction_suffix
+
+
+class EvidenceProcessingError(RuntimeError):
+    """A retryable infrastructure or model-response failure for one question."""
 
 
 def clean_json_response(response: str) -> str:
@@ -373,6 +377,11 @@ CURRENT CHUNK:
 
 QUESTION:
 {{question}}
+
+FINAL OUTPUT REQUIREMENT:
+Do not answer the multiple-choice question directly. Return only the JSON
+object with `chunk_id` and `candidate_evidence`; never return a bare option such
+as "(A)" or "(F)".
 """
 
 
@@ -384,10 +393,11 @@ candidates.
 
 Return exactly one JSON object:
 {
-  "answer": "<answer in the required format>",
+  "answer": "{{answer_example}}",
   "evidence_dialogues": [
     {
       "option": "A",
+      "sequence_position": 1,
       "dia_id": "D1:1",
       "speaker": "narrator",
       "utterance": ""
@@ -400,6 +410,8 @@ For every answer other than standalone "(F)", cite the exact `dia_id` and
 appears alongside other options or in an ordering sequence, treat it as a normal
 option and cite evidence for it. If the candidate evidence cannot establish a
 supported answer, return standalone "(F)" with an empty evidence list.
+For Ordering questions, every evidence item must include `sequence_position`,
+equal to that option's one-based position in the returned answer sequence.
 
 VALIDATED CANDIDATE EVIDENCE:
 {{candidate_evidence}}
@@ -407,8 +419,9 @@ VALIDATED CANDIDATE EVIDENCE:
 QUESTION:
 {{question}}
 
-ANSWER FORMAT:
-{{answer_instruction}}
+FINAL OUTPUT REQUIREMENT:
+Return only the JSON object described above. Even for standalone F, return
+{"answer":"(F)","evidence_dialogues":[]}; never return bare "(F)".
 """
 
 
@@ -428,6 +441,11 @@ CANDIDATES:
 
 QUESTION:
 {{question}}
+
+FINAL OUTPUT REQUIREMENT:
+Do not answer the multiple-choice question directly. Return only the JSON
+object with `candidate_indexes`; never return a bare option such as "(A)" or
+"(F)".
 """
 
 
@@ -569,9 +587,10 @@ class FullContextManager:
             logger=self.logger,
         )
 
-        self.results: Dict[int, List[Dict[str, Any]]] = defaultdict(list)
+        self.results: List[List[Dict[str, Any]]] = []
         self.lock = threading.Lock()
         self.original_data: List[Dict[str, Any]] = []
+        self.failed_questions = 0
 
     def _resolve_speaker_name(self, raw_speaker: Any, speaker_map: Dict[str, str]) -> str:
         if isinstance(raw_speaker, str):
@@ -809,7 +828,7 @@ class FullContextManager:
                 "conversation_history": self._format_conversation(
                     chunk.conversation
                 ),
-                "question": question,
+                "question": strip_answer_instruction_suffix(question),
             }
         )
 
@@ -981,6 +1000,12 @@ class FullContextManager:
         parsed, _, repair_status = parse_json_response(raw_response)
         diagnostics["parse_status"] = repair_status
         if not isinstance(parsed, dict):
+            if re.fullmatch(r"\(\s*F\s*\)", str(raw_response).strip(), re.IGNORECASE):
+                diagnostics["parse_status"] = "standalone_f_fallback"
+                return {
+                    "answer": "(F)",
+                    "evidence_dialogues": [],
+                }, raw_response, diagnostics
             diagnostics["error"] = "invalid_reducer_response"
             return {}, raw_response, diagnostics
 
@@ -1010,6 +1035,15 @@ class FullContextManager:
             if str(evidence.get("dia_id", "")).strip().casefold()
             in allowed_dia_ids
         ]
+        if normalize_question_type(question_type) == ORDERING:
+            position_by_option = {
+                option: position
+                for position, option in enumerate(predicted_sequence, start=1)
+            }
+            for evidence in aligned:
+                option = str(evidence.get("option", "")).strip().upper()
+                if option in position_by_option:
+                    evidence["sequence_position"] = position_by_option[option]
         diagnostics["normalization"] = normalization_report
         diagnostics["alignment"] = alignment_report
         if not aligned:
@@ -1041,14 +1075,19 @@ class FullContextManager:
         candidates: List[Dict[str, Any]],
         question_type: Any = None,
     ) -> str:
+        normalized_type = normalize_question_type(question_type)
+        answer_example = {
+            MULTIPLE_SELECT: "(A,C)",
+            ORDERING: "(B,A,D,C)",
+        }.get(normalized_type, "(A)")
         return Template(ABLATION_CANDIDATE_REDUCE_PROMPT).render(
             {
                 "candidate_evidence": json.dumps(
                     candidates,
                     ensure_ascii=False,
                 ),
-                "question": question,
-                "answer_instruction": get_answer_instruction(question_type),
+                "question": strip_answer_instruction_suffix(question),
+                "answer_example": answer_example,
             }
         )
 
@@ -1108,7 +1147,7 @@ class FullContextManager:
                     indexed_candidates,
                     ensure_ascii=False,
                 ),
-                "question": question,
+                "question": strip_answer_instruction_suffix(question),
             }
         )
         raw_response, _, context_exceeded = self._call_llm(
@@ -1233,10 +1272,21 @@ class FullContextManager:
             ),
         )
         if max_workers == 1:
-            return [
-                self._scan_ablation_chunk_with_split(chunk, question)
-                for chunk in chunks
-            ]
+            serial_results = []
+            for chunk in chunks:
+                try:
+                    result = self._scan_ablation_chunk_with_split(chunk, question)
+                except Exception as exc:  # noqa: PERF203
+                    result = {
+                        "status": "failed",
+                        "chunk_id": chunk.chunk_id,
+                        "candidate_evidence": [],
+                        "attempts": 1,
+                        "response": "",
+                        "error": f"{type(exc).__name__}: {exc}",
+                    }
+                serial_results.append(result)
+            return serial_results
 
         results_by_id: Dict[str, Dict[str, Any]] = {}
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -1394,6 +1444,7 @@ class FullContextManager:
         cumulative_removed_evidence: List[Dict[str, Any]],
         question_type: Any = None,
         retry_instruction: str = "",
+        chunk_result_cache: Optional[Dict[str, Dict[str, Any]]] = None,
     ) -> Tuple[Dict[str, Any], str, Dict[str, Any]]:
         """Answer one ablation round using full context or chunked coverage."""
 
@@ -1472,6 +1523,15 @@ class FullContextManager:
                 "evidence_dialogues": [],
             }, "", audit
 
+        if chunk_result_cache is None:
+            chunk_result_cache = {}
+        current_chunk_ids = {chunk.chunk_id for chunk in chunks}
+        result_by_chunk = {
+            chunk_id: result
+            for chunk_id, result in chunk_result_cache.items()
+            if chunk_id in current_chunk_ids and result.get("status") == "ok"
+        }
+
         retrieval_query = "\n".join(
             [
                 question,
@@ -1488,16 +1548,21 @@ class FullContextManager:
             max(1, int(self.ablation_config["retrieval_chunks"])),
         )
         audit["retrieved_chunk_count"] = len(retrieved_chunks)
-        result_by_chunk = {
-            result["chunk_id"]: result
-            for result in self._scan_ablation_chunks(
-                retrieved_chunks,
-                question,
-            )
-        }
+        retrieved_to_scan = [
+            chunk
+            for chunk in retrieved_chunks
+            if chunk.chunk_id not in result_by_chunk
+        ]
+        if retrieved_to_scan:
+            for result in self._scan_ablation_chunks(retrieved_to_scan, question):
+                result_by_chunk[result["chunk_id"]] = result
+                if result.get("status") == "ok":
+                    chunk_result_cache[result["chunk_id"]] = result
+        retrieved_chunk_ids = {chunk.chunk_id for chunk in retrieved_chunks}
         retrieved_candidates = [
             candidate
-            for result in result_by_chunk.values()
+            for chunk_id, result in result_by_chunk.items()
+            if chunk_id in retrieved_chunk_ids
             if result.get("status") == "ok"
             for candidate in result.get("candidate_evidence", [])
         ]
@@ -1508,12 +1573,22 @@ class FullContextManager:
             question_type,
         )
         audit["retrieval_reducer"] = reducer_diagnostics
-        audit["scanned_chunk_count"] = len(result_by_chunk)
+        audit["scanned_chunk_count"] = len(
+            [chunk_id for chunk_id in result_by_chunk if chunk_id in retrieved_chunk_ids]
+        )
         audit["failed_chunk_count"] = sum(
             result.get("status") != "ok"
-            for result in result_by_chunk.values()
+            for chunk_id, result in result_by_chunk.items()
+            if chunk_id in retrieved_chunk_ids
         )
-        if self._has_correct_new_ablation_evidence(
+        audit["coverage_complete"] = (
+            len(result_by_chunk) == len(chunks)
+            and all(
+                result.get("status") == "ok"
+                for result in result_by_chunk.values()
+            )
+        )
+        if audit["coverage_complete"] and self._has_correct_new_ablation_evidence(
             data,
             answer_candidates,
             cumulative_removed_evidence,
@@ -1532,8 +1607,11 @@ class FullContextManager:
             for chunk in chunks
             if chunk.chunk_id not in successful_chunk_ids
         ]
-        for result in self._scan_ablation_chunks(remaining_chunks, question):
-            result_by_chunk[result["chunk_id"]] = result
+        if remaining_chunks:
+            for result in self._scan_ablation_chunks(remaining_chunks, question):
+                result_by_chunk[result["chunk_id"]] = result
+                if result.get("status") == "ok":
+                    chunk_result_cache[result["chunk_id"]] = result
 
         failed_results = [
             result
@@ -1548,6 +1626,18 @@ class FullContextManager:
         )
         if not audit["coverage_complete"]:
             audit["coverage_error"] = "incomplete_exhaustive_chunk_scan"
+            audit["failed_chunks"] = [
+                {
+                    "chunk_id": result.get("chunk_id", ""),
+                    "error": result.get("error", "unknown_chunk_error"),
+                    "attempts": result.get("attempts", 0),
+                    "status": result.get("status", "failed"),
+                    "response_preview": " ".join(
+                        str(result.get("response", "")).split()
+                    )[:300],
+                }
+                for result in failed_results
+            ]
             return {}, raw_response, audit
 
         all_candidates = [
@@ -1941,7 +2031,9 @@ class FullContextManager:
             last_error,
             last_error_traceback,
         )
-        return "Error: Failed to get response from LLM.", time.time() - start_time, max_context_exceeded
+        raise EvidenceProcessingError(
+            f"LLM request failed after {max_retries} attempts: {last_error}"
+        ) from last_error
 
     def _request_json_answer(
         self,
@@ -2023,7 +2115,9 @@ class FullContextManager:
                 )
 
         self.logger.error("EVENT | evidence_json_parse | status=failed | attempts=%d", max_json_retries)
-        return {}, last_response, total_response_time, last_prompt, max_context_exceeded
+        raise EvidenceProcessingError(
+            f"JSON response parsing failed after {max_json_retries} attempts"
+        )
 
     def _request_text_answer(
         self,
@@ -2266,6 +2360,7 @@ class FullContextManager:
             invalid_attempts: List[Dict[str, Any]] = []
             retry_instruction = ""
             terminal_ablation_audit: Optional[Dict[str, Any]] = None
+            round_chunk_result_cache: Dict[str, Dict[str, Any]] = {}
             remaining_conversation = self._conversation_without_evidence(
                 conversation_item,
                 cumulative_removed_evidence,
@@ -2279,12 +2374,12 @@ class FullContextManager:
                     cumulative_removed_evidence=cumulative_removed_evidence,
                     question_type=question_type,
                     retry_instruction=retry_instruction,
+                    chunk_result_cache=round_chunk_result_cache,
                 )
 
-                if (
-                    not ablation_audit.get("coverage_complete", True)
-                    and not data
-                ):
+                if ablation_audit.get("coverage_complete", True):
+                    terminal_ablation_audit = None
+                if not ablation_audit.get("coverage_complete", True):
                     terminal_ablation_audit = ablation_audit
                     invalid_attempts.append(
                         {
@@ -2294,7 +2389,7 @@ class FullContextManager:
                             "ablation_audit": ablation_audit,
                         }
                     )
-                    break
+                    continue
 
                 if not data:
                     invalid_attempts.append(
@@ -2449,6 +2544,9 @@ class FullContextManager:
                         "should_filter": False,
                         "needs_rerun": True,
                         "ablation_audit": terminal_ablation_audit or {},
+                        "failed_chunks": (
+                            terminal_ablation_audit or {}
+                        ).get("failed_chunks", []),
                     }
                 )
                 break
@@ -2552,7 +2650,8 @@ class FullContextManager:
         self,
         conversation_item: Dict[str, Any],
         question_item: Dict[str, Any],
-        idx: int,
+        record_idx: int,
+        qa_idx: int,
         pbar,
         only_evidence: int,
         except_evidence: int,
@@ -2599,9 +2698,6 @@ class FullContextManager:
                     "error": "evidence_alignment_failed",
                 }
 
-            with self.lock:
-                self.results[idx].append(result)
-            pbar.update(1)
             return result
 
         if allow_cannot_infer and (only_evidence == 1 or except_evidence == 1):
@@ -2634,10 +2730,6 @@ class FullContextManager:
                     "rounds": 0,
                 }
 
-            with self.lock:
-                self.results[idx].append(result)
-
-            pbar.update(1)
             return result
 
         data: Dict[str, Any] = {}
@@ -2652,27 +2744,66 @@ class FullContextManager:
                 base_evidence_blocks=aligned_dialogue_evidence,
                 question_type=question_type,
             )
+            ablation_summary = self._summarize_iterative_ablation(ablation_records)
             result["iterative_evidence_ablation"] = ablation_records
-            result["iterative_evidence_ablation_summary"] = self._summarize_iterative_ablation(
-                ablation_records
-            )
+            result["iterative_evidence_ablation_summary"] = ablation_summary
 
-            with self.lock:
-                self.results[idx].append(result)
+            if (
+                ablation_summary.get("needs_rerun") is True
+                or ablation_summary.get("result") == "needs_rerun"
+            ):
+                last_record = (
+                    ablation_records[-1]
+                    if ablation_records and isinstance(ablation_records[-1], dict)
+                    else {}
+                )
+                self.logger.error(
+                    "EVENT | iterative_ablation | status=needs_rerun | "
+                    "record=%d | qa=%d | question_type=%s | reason=%s | "
+                    "stop_round=%s | failed_chunks=%s",
+                    record_idx,
+                    qa_idx,
+                    question_type,
+                    ablation_summary.get("reason", "unknown"),
+                    ablation_summary.get("stop_round", ""),
+                    json.dumps(
+                        last_record.get("failed_chunks", []),
+                        ensure_ascii=False,
+                    ),
+                )
 
-            pbar.update(1)
             return result
 
+        score_result = None
         if only_evidence == 1:
-            response, response_time, answer_prompt, max_context_flag = self._request_text_answer(
-                conversation_item=conversation,
-                question=question,
-                evidence_blocks=evidence_blocks,
-                only_evidence=only_evidence,
-                except_evidence=except_evidence,
-                allow_cannot_infer=allow_cannot_infer,
-                question_type=question_type,
-            )
+            for parse_attempt in range(1, 4):
+                response, response_time, answer_prompt, max_context_flag = self._request_text_answer(
+                    conversation_item=conversation,
+                    question=question,
+                    evidence_blocks=evidence_blocks,
+                    only_evidence=only_evidence,
+                    except_evidence=except_evidence,
+                    allow_cannot_infer=allow_cannot_infer,
+                    question_type=question_type,
+                )
+                score_result = score_mcq_prediction(response, answer_candidates, question_type)
+                parse_failed = (
+                    score_result.get("prediction_malformed", False)
+                    or not score_result.get("predicted_options")
+                )
+                if not parse_failed:
+                    break
+                self.logger.warning(
+                    "EVENT | evidence_answer_parse | status=retry | attempt=%d/3",
+                    parse_attempt,
+                )
+            if (
+                score_result.get("prediction_malformed", False)
+                or not score_result.get("predicted_options")
+            ):
+                raise EvidenceProcessingError(
+                    "v2a answer parsing failed after 3 attempts"
+                )
         else:
             data, response, response_time, answer_prompt, max_context_flag = self._request_json_answer(
                 conversation_item=conversation,
@@ -2685,7 +2816,8 @@ class FullContextManager:
                 question_type=question_type,
             )
 
-        score_result = score_mcq_prediction(response, answer_candidates, question_type)
+        if score_result is None:
+            score_result = score_mcq_prediction(response, answer_candidates, question_type)
         check_result = "right" if score_result.get("is_correct", False) else "maybe_wrong"
 
         result = copy.deepcopy(question_item)
@@ -2707,14 +2839,107 @@ class FullContextManager:
         else:
             result["fullcontext_check"] = context_data
 
-        with self.lock:
-            self.results[idx].append(result)
-
-        pbar.update(1)
         return result
 
-    def process_data_file(self, file_path: str, only_evidence: int, except_evidence: int, max_workers: int = 10) -> int:
-        """处理数据文件并写出结果。"""
+    @staticmethod
+    def _question_identity(question_item: Dict[str, Any]) -> Dict[str, Any]:
+        """Return fields that must remain stable between source and checkpoint."""
+        identity_fields = (
+            "id",
+            "character",
+            "category",
+            "question_type",
+            "question",
+            "option",
+            "answer",
+            "answer_fixed",
+            "label",
+            "reasoning_steps",
+        )
+        return {
+            key: copy.deepcopy(question_item.get(key))
+            for key in identity_fields
+            if key in question_item
+        }
+
+    def _validate_checkpoint_snapshot(
+        self,
+        source_data: List[Dict[str, Any]],
+        snapshot_data: List[Dict[str, Any]],
+    ) -> None:
+        if len(source_data) != len(snapshot_data):
+            raise ValueError(
+                "Step 2 检查点记录数量不匹配: "
+                f"source={len(source_data)}, checkpoint={len(snapshot_data)}"
+            )
+
+        for record_idx, (source_record, snapshot_record) in enumerate(
+            zip(source_data, snapshot_data)
+        ):
+            source_qa = source_record.get("qa", [])
+            snapshot_qa = snapshot_record.get("qa", [])
+            if len(source_qa) != len(snapshot_qa):
+                raise ValueError(
+                    "Step 2 检查点题目数量不匹配: "
+                    f"record={record_idx}, source={len(source_qa)}, "
+                    f"checkpoint={len(snapshot_qa)}"
+                )
+            for qa_idx, (source_question, snapshot_question) in enumerate(
+                zip(source_qa, snapshot_qa)
+            ):
+                if self._question_identity(source_question) != self._question_identity(
+                    snapshot_question
+                ):
+                    raise ValueError(
+                        "Step 2 检查点题目不匹配: "
+                        f"record={record_idx}, qa={qa_idx}"
+                    )
+
+    @staticmethod
+    def _is_question_terminal(
+        question_item: Dict[str, Any],
+        only_evidence: int,
+        except_evidence: int,
+    ) -> bool:
+        if only_evidence == 1:
+            result = question_item.get("only_evidence_check")
+            return isinstance(result, dict) and "result" in result
+        if except_evidence == 1:
+            only_check = question_item.get("only_evidence_check")
+            if (
+                isinstance(only_check, dict)
+                and "result" in only_check
+                and only_check.get("result") != "right"
+            ):
+                return True
+            summary = question_item.get("iterative_evidence_ablation_summary")
+            return (
+                isinstance(summary, dict)
+                and "result" in summary
+                and summary.get("result") != "needs_rerun"
+                and summary.get("needs_rerun") is not True
+            )
+        result = question_item.get("fullcontext_check")
+        return isinstance(result, dict) and "result" in result
+
+    def _build_checkpoint_snapshot(
+        self,
+        snapshot_records: List[Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        final_results = copy.deepcopy(snapshot_records)
+        for record_idx, record in enumerate(final_results):
+            record["qa"] = copy.deepcopy(self.results[record_idx])
+        return final_results
+
+    def process_data_file(
+        self,
+        file_path: str,
+        only_evidence: int,
+        except_evidence: int,
+        max_workers: int = 10,
+        checkpoint_every_questions: int = 1,
+    ) -> int:
+        """处理数据文件，逐批原子保存，并从已有输出跳过已完成题目。"""
         raw_data = load_json_file(file_path)
         data = normalize_dataset_records(raw_data)
         for item in data:
@@ -2724,13 +2949,32 @@ class FullContextManager:
                         question_item.get("question_type")
                     )
         self.original_data = data
-        self.results = defaultdict(list)
         max_workers = max(1, int(max_workers or 1))
+        checkpoint_every_questions = max(1, int(checkpoint_every_questions or 1))
+
+        if os.path.exists(self.output_path):
+            snapshot_data = normalize_dataset_records(load_json_file(self.output_path))
+            for item in snapshot_data:
+                for question_item in item.get("qa", []):
+                    if isinstance(question_item, dict):
+                        question_item["question_type"] = normalize_question_type(
+                            question_item.get("question_type")
+                        )
+            self._validate_checkpoint_snapshot(data, snapshot_data)
+        else:
+            snapshot_data = copy.deepcopy(data)
+            write_json_file_atomic(snapshot_data, self.output_path, indent=4)
+
+        self.results = [
+            copy.deepcopy(item.get("qa", []))
+            for item in snapshot_data
+        ]
 
         total_questions = count_qa_items(data)
         if total_questions == 0:
+            self.failed_questions = 0
             log_event("evidence_process", status="skipped", reason="no_questions")
-            write_json_file(data, self.output_path, indent=4)
+            write_json_file_atomic(data, self.output_path, indent=4)
             return 0
 
         for question_type, total in count_question_types(data).items():
@@ -2768,16 +3012,22 @@ class FullContextManager:
                 reason="evidence_alignment_failed",
             )
 
+        pending_positions = []
+        completed_questions = 0
+        for record_idx, item in enumerate(data):
+            for qa_idx, question_item in enumerate(item.get("qa", [])):
+                checkpoint_question = self.results[record_idx][qa_idx]
+                if self._is_question_terminal(
+                    checkpoint_question,
+                    only_evidence,
+                    except_evidence,
+                ):
+                    completed_questions += 1
+                else:
+                    pending_positions.append((record_idx, qa_idx, item, question_item))
+
+        pending_questions = len(pending_positions)
         if except_evidence == 1:
-            pending_questions = 0
-            for item in data:
-                for question_item in item.get("qa", []):
-                    only_check = question_item.get("only_evidence_check", {})
-                    # 消融阶段逐题判定：仅当 only_evidence 明确给出非 right 结果时才跳过。
-                    if not isinstance(only_check, dict) or "result" not in only_check:
-                        pending_questions += 1
-                    elif only_check.get("result") == "right":
-                        pending_questions += 1
             log_event(
                 "evidence_process",
                 status="start",
@@ -2791,50 +3041,91 @@ class FullContextManager:
                 "evidence_process",
                 status="start",
                 total_questions=total_questions,
+                pending_questions=pending_questions,
                 max_workers=max_workers,
                 mode="only_evidence" if only_evidence == 1 else "full_context",
             )
 
+        dirty_questions = 0
+        failed_questions = 0
+
+        def flush_checkpoint(force: bool = False) -> None:
+            nonlocal dirty_questions
+            with self.lock:
+                if dirty_questions == 0 or (
+                    not force and dirty_questions < checkpoint_every_questions
+                ):
+                    return
+                checkpoint = self._build_checkpoint_snapshot(snapshot_data)
+                flushed = dirty_questions
+                dirty_questions = 0
+            write_json_file_atomic(checkpoint, self.output_path, indent=4)
+            log_event(
+                "evidence_checkpoint",
+                status="saved",
+                phase="v2b" if except_evidence == 1 else "v2a",
+                completed_in_batch=flushed,
+                output=self.output_path,
+            )
+
         with tqdm(total=total_questions, desc="Step 2 evidence check", unit="question") as pbar:
+            if completed_questions:
+                pbar.update(completed_questions)
             with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                futures = []
-
-                for idx, item in enumerate(data):
-                    for question_item in item.get("qa", []):
-                        if except_evidence == 1:
-                            only_check = question_item.get("only_evidence_check", {})
-                            if isinstance(only_check, dict) and "result" in only_check and only_check.get("result") != "right":
-                                pbar.update(1)
-                                with self.lock:
-                                    self.results[idx].append(copy.deepcopy(question_item))
-                                continue
-
-                        future = executor.submit(
-                            self._process_single_question,
-                            item,
-                            question_item,
-                            idx,
-                            pbar,
-                            only_evidence,
-                            except_evidence,
-                        )
-                        futures.append(future)
+                futures = {
+                    executor.submit(
+                        self._process_single_question,
+                        item,
+                        question_item,
+                        record_idx,
+                        qa_idx,
+                        pbar,
+                        only_evidence,
+                        except_evidence,
+                    ): (record_idx, qa_idx)
+                    for record_idx, qa_idx, item, question_item in pending_positions
+                }
 
                 for future in as_completed(futures):
+                    record_idx, qa_idx = futures[future]
                     try:
-                        future.result()
+                        result = future.result()
                     except Exception as exc:
+                        failed_questions += 1
                         self.logger.exception("EVENT | evidence_task | status=failed | error=%s", exc)
+                    else:
+                        needs_rerun = False
+                        if except_evidence == 1 and isinstance(result, dict):
+                            summary = result.get(
+                                "iterative_evidence_ablation_summary",
+                                {},
+                            )
+                            needs_rerun = isinstance(summary, dict) and (
+                                summary.get("needs_rerun") is True
+                                or summary.get("result") == "needs_rerun"
+                            )
+                        if needs_rerun:
+                            failed_questions += 1
+                        with self.lock:
+                            self.results[record_idx][qa_idx] = result
+                            dirty_questions += 1
+                        flush_checkpoint()
+                    finally:
+                        pbar.update(1)
+
+        flush_checkpoint(force=True)
 
         log_event("evidence_process", status="saving", output=self.output_path)
-
-        final_results: List[Dict[str, Any]] = []
-        for idx, item in enumerate(self.original_data):
-            result_item = copy.deepcopy(item)
-            result_item["qa"] = self.results.get(idx, item.get("qa", []))
-            final_results.append(result_item)
-
-        write_json_file(final_results, self.output_path, indent=4)
+        final_results = self._build_checkpoint_snapshot(snapshot_data)
+        write_json_file_atomic(final_results, self.output_path, indent=4)
+        log_event(
+            "evidence_resume_summary",
+            status="warning" if failed_questions else "success",
+            completed_before_run=completed_questions,
+            attempted=pending_questions,
+            failed=failed_questions,
+        )
+        self.failed_questions = failed_questions
 
         type_stats = {
             question_type: {"processed": 0, "passed": 0, "failed": 0}
@@ -2930,6 +3221,11 @@ def evidence_check_main(
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
 
+    checkpoint_every_questions = max(
+        1,
+        int(getattr(args, "checkpoint_every_questions", 1) or 1),
+    )
+
     if default_mode:
         evidence_only_path, evidence_ablation_path = derive_evidence_stage_paths(output_file_path)
         only_evidence_workers = max(
@@ -2952,7 +3248,12 @@ def evidence_check_main(
             only_evidence=1,
             except_evidence=0,
             max_workers=only_evidence_workers,
+            checkpoint_every_questions=checkpoint_every_questions,
         )
+        if manager_evidence_only.failed_questions:
+            raise EvidenceProcessingError(
+                "v2a has retryable failed questions; resume this run to continue"
+            )
 
         log_subsection("Phase 2 | iterative evidence ablation")
         manager_evidence_ablation = FullContextManager(
@@ -2966,7 +3267,12 @@ def evidence_check_main(
             only_evidence=0,
             except_evidence=1,
             max_workers=iterative_ablation_workers,
+            checkpoint_every_questions=checkpoint_every_questions,
         )
+        if manager_evidence_ablation.failed_questions:
+            raise EvidenceProcessingError(
+                "v2b has retryable failed questions; resume this run to continue"
+            )
 
         log_event(
             "evidence_check_summary",
@@ -2995,5 +3301,11 @@ def evidence_check_main(
         only_evidence=only_evidence,
         except_evidence=except_evidence,
         max_workers=mode_workers,
+        checkpoint_every_questions=checkpoint_every_questions,
     )
+    if manager.failed_questions:
+        phase = "v2a" if only_evidence == 1 else "v2b" if except_evidence == 1 else "full_context"
+        raise EvidenceProcessingError(
+            f"{phase} has retryable failed questions; resume this run to continue"
+        )
     return output_file_path, kept_count

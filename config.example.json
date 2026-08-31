@@ -43,6 +43,7 @@
       "max_workers": 4,
       "only_evidence_max_workers": 4,
       "iterative_ablation_max_workers": 3,
+      "checkpoint_every_questions": 1,
       "ablation_context_limit": 32768,
       "ablation_prompt_safety_tokens": 4096,
       "ablation_chunk_tokens": 8192,

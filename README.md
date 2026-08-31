@@ -209,6 +209,14 @@ python main.py --run An-Enemy-of-the-People
 python main.py --run An-Enemy-of-the-People --start 3 --end 3
 ```
 
+### 从已有运行记录继续
+
+```bash
+python main.py --resume-run runs/An-Enemy-of-the-People_20260828_120000
+```
+
+恢复运行会复用原目录中的 `temp/`、`result/` 和 `run.log`，自动定位第一个未完成阶段。当前 Step 2 的 v2a 与 v2b 会保存完整题目快照，并跳过已有有效终态的题目；API 超时、网络异常或响应解析耗尽的题目会在下次恢复时重试。也可以用 `--start` 和 `--end` 限制恢复范围。
+
 ### 使用自定义配置文件
 ```bash
 python main.py --run An-Enemy-of-the-People --config my_config.json
@@ -234,6 +242,7 @@ python main.py --run An-Enemy-of-the-People --config my_config.json
 - `step_2_evidence_check.only_evidence_max_workers`: 仅证据回答的并发数
 - `step_2_evidence_check.iterative_ablation_max_workers`: 五轮迭代证据消融的并发数
 - `step_2_evidence_check.max_workers`: 单独运行其他证据检查模式时的并发数
+- `step_2_evidence_check.checkpoint_every_questions`: Step 2 每完成多少道题原子更新一次阶段快照，默认 `1`
 - `step_3_pollution_check.max_workers`: 每轮无上下文污染回答的并发数
 - `step_4_finalize.max_workers`: 最终累积规则按题检查的并发数
 

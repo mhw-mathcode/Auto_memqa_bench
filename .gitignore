@@ -82,7 +82,11 @@ logs/
 # If you don't want to upload final outputs, uncomment the next line:
 results/*.json
 scripts/
-tests/
 dataset/
 result/
-
+result_qa/
+tests/
+!tests/
+tests/*
+!tests/test_step2_checkpointing.py
+docs/

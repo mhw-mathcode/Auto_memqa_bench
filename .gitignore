@@ -86,7 +86,4 @@ dataset/
 result/
 result_qa/
 tests/
-!tests/
-tests/*
-!tests/test_step2_checkpointing.py
 docs/

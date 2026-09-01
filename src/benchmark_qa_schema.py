@@ -75,6 +75,15 @@ def _validate_raw_option_labels(raw_options: Any) -> None:
 def _normalized_options(raw_options: Any, question_type: str) -> list[str]:
     _validate_raw_option_labels(raw_options)
     option_lines = normalize_option_lines(raw_options, question_type)
+    if question_type == "single_choice" and not _raw_options_include_f(raw_options):
+        option_lines = [
+            line
+            for line in option_lines
+            if not (
+                line.startswith("F. ")
+                and _CANNOT_INFER_RE.match(_option_body(line).casefold())
+            )
+        ]
     if not option_lines:
         raise ValueError("option must not be empty")
 
@@ -97,6 +106,18 @@ def _normalized_options(raw_options: Any, question_type: str) -> list[str]:
     if labels != expected_labels:
         raise ValueError("option labels must be consecutive from A")
     return [f"{label}. {_option_body(line)}" for label, line in zip(labels, option_lines)]
+
+
+def _raw_options_include_f(raw_options: Any) -> bool:
+    if isinstance(raw_options, dict):
+        return "F" in {str(key).strip().upper() for key in raw_options}
+    if not isinstance(raw_options, list):
+        return False
+    return any(
+        isinstance(option, str)
+        and re.match(r"^F[\.．)]\s+", option.strip(), re.IGNORECASE)
+        for option in raw_options
+    )
 
 
 def _parse_answer(value: Any, question_type: str) -> list[str]:

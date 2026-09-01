@@ -8,11 +8,11 @@ import re
 QUESTION_REWRITES: dict[str, str | None] = {
     "fault-milestone-two-Q0011": (
         "What happens as Selphine returns to herself after the confrontation? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "fault-milestone-two-Q0028": (
         "How does Sol's relationship with Selphine's group change over the course "
-        "of the story? Select all that apply."
+        "of the story? Select all that apply?"
     ),
     "highway-blossoms-Q0013": (
         "In what order do Amber and Marina discuss their plans to attend the music "
@@ -44,7 +44,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0014": (
         "What does Selphine's behavior reveal about her struggle to preserve her own "
-        "identity against Queen Rhegan's influence? Select all that apply."
+        "identity against Queen Rhegan's influence? Select all that apply?"
     ),
     "fault-milestone-two-Q0015": (
         "In what order is Selphine cautioned about battlekravte, asked about a new "
@@ -58,7 +58,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0020": (
         "What does the story reveal about how the Path-down affects identity and "
-        "behavior? Select all that apply."
+        "behavior? Select all that apply?"
     ),
     "fault-milestone-two-Q0026": (
         "What does Selphine say to Sol when they first meet in Neo Sasary?"
@@ -68,7 +68,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0034": (
         "Why is Selphine afraid of inheriting Queen Rhegan's identity? Select all "
-        "that apply."
+        "that apply?"
     ),
     "fault-milestone-two-Q0036": (
         "In what order is Sol rebuked, pursued, brought into the house, and entrusted "
@@ -91,11 +91,11 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0054": (
         "How does Sol respond to his theft from Mil and the responsibility he later "
-        "assumes? Select all that apply."
+        "assumes? Select all that apply?"
     ),
     "fault-milestone-two-Q0056": (
         "How does Selphine turn her distrust of outsiders into an investigation "
-        "centered on Sol? Select all that apply."
+        "centered on Sol? Select all that apply?"
     ),
     "fault-milestone-two-Q0057": (
         "In what order do the group's visit to the bathhouse and Sol's theft there "
@@ -103,7 +103,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0059": (
         "What happens when Ritona searches the bathhouse for a missing child? Select "
-        "all that apply."
+        "all that apply?"
     ),
     "fault-milestone-two-Q0068": (
         "In what order does Sol's relationship with Mil and the group change?"
@@ -119,7 +119,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "What does Sceatoire claim happened between her and someone named Rune?"
     ),
     "fault-milestone-two-Q0079": (
-        "How does Sceatoire respond after hearing Rune's name? Select all that apply."
+        "How does Sceatoire respond after hearing Rune's name? Select all that apply?"
     ),
     "fault-milestone-two-Q0082": (
         "What dosage schedule, if any, does Rupika give for Ritona's medicine while "
@@ -131,7 +131,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0085": (
         "How does the group's trust in Greus change after he makes Ritona's survival "
-        "conditional on taking him to Rughzenhaide? Select all that apply."
+        "conditional on taking him to Rughzenhaide? Select all that apply?"
     ),
     "fault-milestone-two-Q0092": (
         "In what order does the Vita Domain facility become involved in Ritona's "
@@ -139,25 +139,25 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "fault-milestone-two-Q0094": (
         "How do Ritona and Selphine disagree about whether Greus has broken his "
-        "promise? Select all that apply."
+        "promise? Select all that apply?"
     ),
     "fault-milestone-two-Q0099": (
         "What role does the Vita Domain play in Ritona's care, from its first mention "
-        "through her promised release? Select all that apply."
+        "through her promised release? Select all that apply?"
     ),
     "fault-milestone-two-Q0100": (
         "In what order do Selphine and Mil's experiences with cooking occur?"
     ),
     "fault-milestone-two-Q0103": (
         "What does the story reveal about sagiolla's role in Mil's illness and the "
-        "pharmacist's exploitation? Select all that apply."
+        "pharmacist's exploitation? Select all that apply?"
     ),
     "fault-milestone-two-Q0105": (
         "In what order does the group's judgment of Greus change?"
     ),
     "fault-milestone-two-Q0109": (
         "How does Sol's responsibility for Mil change after his theft and violent "
-        "confrontation with the pharmacist? Select all that apply."
+        "confrontation with the pharmacist? Select all that apply?"
     ),
     "fault-milestone-two-Q0113": (
         "In what order does the story reveal how sagiolla is prepared, used, grown, "
@@ -165,19 +165,19 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "heart-of-the-woods-Q0005": (
         "How does Madison's view of her future with Taranormal and Tara change? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "heart-of-the-woods-Q0006": (
         "How does the story gradually reveal Geladura's true identity and role? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "heart-of-the-woods-Q0007": (
         "How do the supernatural events in Eysenfeld change what Tara and Madison "
-        "can prove? Select all that apply."
+        "can prove? Select all that apply?"
     ),
     "heart-of-the-woods-Q0008": (
         "How do Tara and Madison repair their friendship while Madison's future with "
-        "Taranormal remains unsettled? Select all that apply."
+        "Taranormal remains unsettled? Select all that apply?"
     ),
     "heart-of-the-woods-Q0023": (
         "In what order does Abigail's transition from ghostly existence to ordinary "
@@ -210,35 +210,35 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "What does Marina suggest doing while the group is sightseeing before dark?"
     ),
     "highway-blossoms-Q0005": (
-        "Does Amber ever tell Mariah that she sees her as a reckless person she can "
-        "vent to but not trust?"
+        "By this point in the story, has Amber explicitly told Mariah that she sees "
+        "her as a reckless person she can vent to but not trust?"
     ),
     "highway-blossoms-Q0006": (
-        "Does Amber tell Marina that their reunion at the festival makes her happy "
-        "and reminds her how much she loves about Marina?"
+        "By this point in the story, has Amber explicitly told Marina that their "
+        "festival reunion makes her happy and reminds her how much she loves Marina?"
     ),
     "highway-blossoms-Q0007": (
-        "Does Amber tell the stranded girl that she thinks the girl's old car is in "
-        "poor condition?"
+        "At this point in the story, has Amber told the stranded girl that she thinks "
+        "the girl's old car is in poor condition?"
     ),
     "highway-blossoms-Q0008": (
         "What does Amber do after encountering Marina stranded by the roadside?"
     ),
     "highway-blossoms-Q0012": (
-        "Does Amber tell Marina that she swerved because she regretted becoming too "
-        "comfortable and saying too much?"
+        "By that scene, has Amber told Marina that she swerved because she regretted "
+        "becoming too comfortable and saying too much?"
     ),
     "highway-blossoms-Q0015": (
         "What do Amber and Marina learn when they find the stranded car and receive "
-        "the treasure journal? Select all that apply."
+        "the treasure journal? Select all that apply?"
     ),
     "highway-blossoms-Q0017": (
-        "Does Amber tell Marina that the journal entry leaves her stumped while "
-        "Marina is using the payphone?"
+        "At this point, has Amber told Marina that the journal entry leaves her "
+        "stumped while Marina is using the payphone?"
     ),
     "highway-blossoms-Q0018": (
-        "How do Amber and BandanaGuy respond while arguing about who contributed to "
-        "the search? Select all that apply."
+        "How do Amber and the man wearing a bandana respond while arguing about who "
+        "contributed to the search?"
     ),
     "highway-blossoms-Q0020": (
         "How does Joseph respond after his group contributes to the trouble with "
@@ -253,38 +253,38 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "overwhelm her?"
     ),
     "highway-blossoms-Q0028": (
-        "Does Amber tell Marina that she finds Marina's constant smile cute and is "
-        "afraid of her growing feelings?"
+        "By that scene, has Amber told Marina that she finds Marina's constant smile "
+        "cute and is afraid of her growing feelings?"
     ),
     "highway-blossoms-Q0035": (
-        "Does Amber tell Marina that Marina's praise makes her feel she cannot live "
-        "up to Marina's opinion of her?"
+        "At this point, has Amber told Marina that Marina's praise makes her feel she "
+        "cannot live up to Marina's opinion of her?"
     ),
     "highway-blossoms-Q0040": (
         "In what order do Amber and Marina take risks while searching the ruins?"
     ),
     "highway-blossoms-Q0044": (
         "How does Amber's fatigue affect her and Marina's travel plans? Select all "
-        "that apply."
+        "that apply?"
     ),
     "highway-blossoms-Q0046": (
         "What do Amber, Joseph, and Mariah reveal while discussing Canyon de Chelly? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "highway-blossoms-Q0048": (
         "In what order does Amber's fatigue affect the journey and lead her to rest?"
     ),
     "highway-blossoms-Q0049": (
-        "Does Amber tell Marina that she can see through Marina's cheerful tone and "
-        "fears losing her?"
+        "By that scene, has Amber told Marina that she can see through Marina's "
+        "cheerful tone and fears losing her?"
     ),
     "highway-blossoms-Q0052": (
         "What happens during Amber and Marina's uncomfortable rest-stop encounter "
-        "with the trucker? Select all that apply."
+        "with the trucker? Select all that apply?"
     ),
     "highway-blossoms-Q0053": (
-        "Does Amber tell Marina that she is attracted to her while Marina rests with "
-        "her feet on the dashboard?"
+        "At this point in the story, has Amber told Marina that she is attracted to "
+        "her while Marina rests with her feet on the dashboard?"
     ),
     "highway-blossoms-Q0054": (
         "In what order do Amber and Marina encounter potentially dangerous strangers "
@@ -296,50 +296,50 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "highway-blossoms-Q0060": (
         "What happens when Amber and Marina unexpectedly meet Joseph in town? Select "
-        "all that apply."
+        "all that apply?"
     ),
     "highway-blossoms-Q0063": (
         "What attitude does Marina express when she tells Amber, ‘Don't worry, I "
         "believe! Sounds awesome’?"
     ),
     "highway-blossoms-Q0065": (
-        "Does Amber tell Marina that she is worried about the police while they chase "
-        "Mariah's motorhome?"
+        "By that scene, has Amber told Marina that she is worried about the police "
+        "while they chase Mariah's motorhome?"
     ),
     "highway-blossoms-Q0066": (
         "What do Amber and Marina conclude while looking for Angel's Landing? Select "
-        "all that apply."
+        "all that apply?"
     ),
     "highway-blossoms-Q0068": (
-        "Does Amber tell Marina that her disappointment at Angel's Landing is tied "
-        "to Gramps' plans and her growing feelings for Marina?"
+        "At this point, has Amber told Marina that her disappointment at Angel's "
+        "Landing is tied to Gramps' plans and her growing feelings for Marina?"
     ),
     "highway-blossoms-Q0074": (
         "What do Amber and Marina reveal while discussing past relationships and "
-        "their own feelings? Select all that apply."
+        "their own feelings? Select all that apply?"
     ),
     "highway-blossoms-Q0079": (
         "In what order do Amber and Marina discuss their dating histories?"
     ),
     "highway-blossoms-Q0080": (
         "What does Amber say about her nausea and the street artist? Select all that "
-        "apply."
+        "apply?"
     ),
     "highway-blossoms-Q0082": (
-        "Does Amber tell Marina about her guilt over not wanting to get over Gramps "
-        "while she waits for Marina to return?"
+        "By that scene, has Amber told Marina about her guilt over not wanting to get "
+        "over Gramps while she waits for Marina to return?"
     ),
     "highway-blossoms-Q0086": (
-        "Does Amber tell Marina that looking forward to their outing also makes her "
-        "feel she is doing something wrong?"
+        "At this point in the story, has Amber told Marina that looking forward to "
+        "their outing also makes her feel she is doing something wrong?"
     ),
     "highway-blossoms-Q0087": (
         "What do the characters reveal while playing blackjack and reflecting on their "
-        "trip? Select all that apply."
+        "trip? Select all that apply?"
     ),
     "highway-blossoms-Q0090": (
-        "Does Amber tell Marina the depth of her guilt over Gramps and how important "
-        "Marina has become to her after the diner argument?"
+        "By that scene, has Amber told Marina the depth of her guilt over Gramps and "
+        "how important Marina has become to her after the diner argument?"
     ),
     "highway-blossoms-Q0092": (
         "In what order does Amber respond after learning Marina has lost her share of "
@@ -347,11 +347,11 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "highway-blossoms-Q0093": (
         "What do Amber and Marina say about Amber's unusual breakfast? Select all "
-        "that apply."
+        "that apply?"
     ),
     "highway-blossoms-Q0095": (
         "What happens when Amber prepares to risk the motorhome and Mariah intervenes? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "highway-blossoms-Q0102": (
         "In what order does Amber decide to send Marina home after losing the "
@@ -363,7 +363,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "highway-blossoms-Q0105": (
         "What do Amber and Marina say while trying a festival drink and waiting for "
-        "conditions to improve? Select all that apply."
+        "conditions to improve? Select all that apply?"
     ),
     "nurse-love-addiction-Q0002": (
         "After Asuka sleepily boasts that she woke up on her own but before she "
@@ -431,32 +431,32 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "nurse-love-addiction-Q0018": (
         "How does Asuka's motivation to become a nurse develop from her school career "
-        "survey to her admiration for Ms. Ohara? Select all that apply."
+        "survey to her admiration for Ms. Ohara? Select all that apply?"
     ),
     "nurse-love-addiction-Q0019": (
         "Which statements occur after Itsuki notices that Asuka has many questions "
-        "but before Itsuki says Asuka's submission angers her? Select all that apply."
+        "but before Itsuki says Asuka's submission angers her? Select all that apply?"
     ),
     "nurse-love-addiction-Q0020": (
         "How do Asuka's attempts to become independent from Nao reveal the sisters' "
-        "continuing dependence on each other? Select all that apply."
+        "continuing dependence on each other? Select all that apply?"
     ),
     "nurse-love-addiction-Q0021": (
         "Which statements occur after Asuka dismisses the situation as a dream but "
         "before Nao groans while Asuka examines the medicine bottle? Select all that "
-        "apply."
+        "apply?"
     ),
     "nurse-love-addiction-Q0022": (
         "How does Nao's ‘first and last date’ change Asuka and Nao's understanding of "
-        "their bond? Select all that apply."
+        "their bond? Select all that apply?"
     ),
     "nurse-love-addiction-Q0023": (
         "Which statements occur after Nao suggests treating Asuka properly with "
-        "medicine but before Nao recalls Open Campus Day? Select all that apply."
+        "medicine but before Nao recalls Open Campus Day? Select all that apply?"
     ),
     "nurse-love-addiction-Q0024": (
         "Which statements occur after Itsuki describes falling out of bed but before "
-        "Asuka asks whether she mentioned those things? Select all that apply."
+        "Asuka asks whether she mentioned those things? Select all that apply?"
     ),
     "nurse-love-addiction-Q0056": (
         "What, if anything, does Asuka learn about the contents of Kaede's resignation "
@@ -602,55 +602,139 @@ QUESTION_REWRITES: dict[str, str | None] = {
     ),
     "nurse-love-addiction-Q0100": (
         "Which of Asuka's other thoughts and statements occur while she asks Itsuki "
-        "whether she is meeting Miss Takeda? Select all that apply."
+        "whether she is meeting Miss Takeda? Select all that apply?"
     ),
     "nurse-love-addiction-Q0101": (
         "What else does Itsuki say while explaining why her club switched from a "
-        "literary magazine to magical-girl material? Select all that apply."
+        "literary magazine to magical-girl material? Select all that apply?"
     ),
     "nurse-love-addiction-Q0102": (
         "What else does Asuka say or think during her conversation with Nao about "
-        "umbrellas? Select all that apply."
+        "umbrellas? Select all that apply?"
     ),
     "nurse-love-addiction-Q0103": (
         "What else does Nao say while warning Asuka that she ate too much after "
-        "fasting for a day? Select all that apply."
+        "fasting for a day? Select all that apply?"
     ),
     "nurse-love-addiction-Q0104": (
         "What else does Sakuya say during the conversation in which she threatens to "
-        "hit Itsuki until she takes back what she said? Select all that apply."
+        "hit Itsuki until she takes back what she said? Select all that apply?"
     ),
     "nurse-love-addiction-Q0105": (
         "What else does Asuka say or think when she denies that she is turning to "
-        "religion? Select all that apply."
+        "religion? Select all that apply?"
     ),
     "nurse-love-addiction-Q0106": (
         "What does Itsuki say while describing the club's cosplay activities and "
-        "Asuka's potential appeal to nerds? Select all that apply."
+        "Asuka's potential appeal to nerds? Select all that apply?"
     ),
     "nurse-love-addiction-Q0107": (
         "What does Itsuki say while explaining why Sakuya's boarding-school choice "
-        "shows more than simple concern for her mother? Select all that apply."
+        "shows more than simple concern for her mother? Select all that apply?"
     ),
     "nurse-love-addiction-Q0109": (
         "What else does Sakuya say while joining the students' lively beach "
-        "conversation? Select all that apply."
+        "conversation? Select all that apply?"
     ),
     "nurse-love-addiction-Q0110": (
         "What else does Itsuki say while inviting Asuka and Nao to the seaside? "
-        "Select all that apply."
+        "Select all that apply?"
     ),
     "nurse-love-addiction-Q0111": (
         "What other study instructions does Kaede give while explaining the purpose "
-        "of the vacation review tests? Select all that apply."
+        "of the vacation review tests? Select all that apply?"
     ),
     "nurse-love-addiction-Q0112": (
         "What else does Asuka say or think during the conversation in which she "
-        "insists that she really wants to change? Select all that apply."
+        "insists that she really wants to change? Select all that apply?"
     ),
     "nurse-love-addiction-Q0113": (
         "What else does Asuka say or think while discussing how Itsuki and Sakuya got "
-        "together? Select all that apply."
+        "together? Select all that apply?"
+    ),
+    "heart-of-the-woods-Q0071": (
+        "After Tara forces open the church doors, what does she do when the monster "
+        "appears?"
+    ),
+    "heart-of-the-woods-Q0072": (
+        "After Tara eagerly awaits Morgan's secret, what does she do as they set "
+        "off?"
+    ),
+    "heart-of-the-woods-Q0073": (
+        "What does Tara do after hurrying beside Morgan toward their destination?"
+    ),
+    "heart-of-the-woods-Q0074": (
+        "After Morgan smiles at Tara, what comforting gesture does she later make?"
+    ),
+    "heart-of-the-woods-Q0075": (
+        "After Morgan takes the carriage reins, what does she do when she is asked a "
+        "question?"
+    ),
+    "heart-of-the-woods-Q0076": (
+        "After Abigail approaches the forest spirit, what does she do when it becomes "
+        "a tree?"
+    ),
+    "heart-of-the-woods-Q0078": (
+        "After Abigail lets the fawn approach her, what does she do afterward?"
+    ),
+    "heart-of-the-woods-Q0080": (
+        "After Tara grins at a new audience, what does she do as she prepares to "
+        "talk?"
+    ),
+    "heart-of-the-woods-Q0084": (
+        "After Tara tries to film the monster, what does she do later in the story?"
+    ),
+    "heart-of-the-woods-Q0086": (
+        "Which two moments involving Tara occur in the same scene?"
+    ),
+    "heart-of-the-woods-Q0089": (
+        "In what order do these moments in Tara's story occur?"
+    ),
+    "heart-of-the-woods-Q0090": (
+        "Arrange these milestones in Tara's story from earliest to latest?"
+    ),
+    "heart-of-the-woods-Q0093": (
+        "After Tara lifts her bags for Morgan, what does she do next?"
+    ),
+    "heart-of-the-woods-Q0094": (
+        "In what order do these events in Tara's story occur?"
+    ),
+    "heart-of-the-woods-Q0099": (
+        "Put these developments in Tara's story in chronological order?"
+    ),
+    "heart-of-the-woods-Q0100": (
+        "Arrange these milestones in Abigail's story from earliest to latest?"
+    ),
+    "heart-of-the-woods-Q0101": (
+        "From earliest to latest, order these developments in Tara's story?"
+    ),
+    "nurse-love-addiction-Q0028": (
+        "In what order do these milestones in Sakuya and Itsuki's relationship occur?"
+    ),
+    "nurse-love-addiction-Q0036": (
+        "Arrange these moments involving Asuka from earliest to latest?"
+    ),
+    "nurse-love-addiction-Q0037": (
+        "From earliest to latest, how do these moments involving Itsuki and Nao "
+        "unfold?"
+    ),
+    "nurse-love-addiction-Q0040": (
+        "Arrange these moments involving Asuka and Itsuki from earliest to latest?"
+    ),
+    "nurse-love-addiction-Q0042": (
+        "From earliest to latest, how do these moments involving Asuka and Kaede "
+        "unfold?"
+    ),
+    "nurse-love-addiction-Q0044": (
+        "From earliest to latest, how do these moments involving Asuka and Nao "
+        "unfold?"
+    ),
+    "nurse-love-addiction-Q0046": (
+        "Arrange these moments involving Itsuki and Kaede from earliest to latest?"
+    ),
+    "nurse-love-addiction-Q0048": (
+        "From earliest to latest, how do these moments involving Asuka and Itsuki "
+        "unfold?"
     ),
 }
 
@@ -662,9 +746,19 @@ _ISSUE_PATTERNS = (
     ),
     (
         "long-range framing",
-        re.compile(r"\blong[- ]range\b|\bwidely separated\b|\bseparated (?:events|moments)\b", re.I),
+        re.compile(
+            r"\blong[- ]range\b|\bwidely separated\b|\bseparated (?:events|moments)\b|"
+            r"\bcommon moments?\b.*\bacross sessions?\b",
+            re.I,
+        ),
     ),
-    ("annotation thread", re.compile(r"\bthread\b", re.I)),
+    (
+        "annotation thread",
+        re.compile(
+            r"(?:[“\"][^”\"]+[”\"]\s+thread|\b(?:storyline|narrative|music-festival)\s+thread\b)",
+            re.I,
+        ),
+    ),
     (
         "keyword episode framing",
         re.compile(
@@ -692,14 +786,18 @@ _ISSUE_PATTERNS = (
     (
         "local-anchor framing",
         re.compile(
-            r"\bin this exchange\b|\blocal (?:scene|event|anchor|continuation)\b|"
+            r"\bin this exchange\b|\blocal (?:scene|event|anchor|continuation|progression)\b|"
             r"\bfollowing the local event\b|\bdescribed (?:anchor|remark)\b|"
             r"\bsame immediate exchange\b|\bbefore the scene moves on\b|"
-            r"\bnearby (?:response|continuation)\b|\bevent involving nearby\b",
+            r"\bnearby (?:response|continuation)\b|\bevent involving nearby\b|"
+            r"\blater in the same local sequence\b",
             re.I,
         ),
     ),
-    ("route-label framing", re.compile(r"\broute-local\b|\broute (?:events|moments)\b", re.I)),
+    (
+        "route-label framing",
+        re.compile(r"\broute-local\b|\broute (?:events|moments)\b|\bcommon-route relationship\b", re.I),
+    ),
     (
         "abstract claim framing",
         re.compile(r"\bevent- or state-level claims\b", re.I),

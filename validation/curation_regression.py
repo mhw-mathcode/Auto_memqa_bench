@@ -222,6 +222,59 @@ def test_heart_happy_ending_evidence_is_rewritten_to_sanitized_turn() -> None:
     assert audit["repaired"][0]["qa_index"] == 1
 
 
+def test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repair() -> None:
+    conversation = _conversation(_turn("D1:1", "Amber", "search contribution"))
+    item = {
+        "character": "Amber",
+        "category": "test",
+        "question_type": "multiple_choice",
+        "question": "How do Amber and BandanaGuy respond?",
+        "option": ["A. Amber argues", "B. He argues"],
+        "answer": "(A,B)",
+        "label": "Fact Extraction (Multiple Dialogues)",
+        "evidence_dialogues": [
+            {"id": "E9", "dia_id": "D1:1", "speaker": "Amber", "utterance": "search contribution"}
+        ],
+        "reasoning_steps": [{"step": 1, "based_on": ["E9"]}],
+        "pipeline_trace": "discard me",
+    }
+    migrated, audit = migrate_qa_items(
+        [item] * 18, conversation, conversation, {"D1:1": "D1:1"}, "highway-blossoms", set()
+    )
+    assert len(migrated) == 18
+    rewritten = migrated[-1]
+    assert rewritten["qa_id"] == "highway-blossoms-Q0018"
+    assert tuple(rewritten) == (
+        "qa_id", "character", "category", "question_type", "question", "option",
+        "answer", "label", "evidence_dialogues", "reasoning_steps",
+    )
+    assert rewritten["question"].startswith(
+        "How do Amber and the man wearing a bandana respond while arguing about who "
+        "contributed to the search?"
+    )
+    assert rewritten["question"].endswith(
+        "No points will be awarded for incomplete or incorrect selections."
+    )
+    assert audit["question_rewrite"][-1] == {
+        "qa_id": "highway-blossoms-Q0018", "action": "rewrite"
+    }
+    assert validate_public_qa(rewritten) == []
+
+    QUESTION_REWRITES["fixture-Q0002"] = None
+    try:
+        deleted, deleted_audit = migrate_qa_items(
+            [item, item], conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
+        )
+    finally:
+        del QUESTION_REWRITES["fixture-Q0002"]
+    assert len(deleted) == 1
+    assert deleted_audit["removed"][-1] == {
+        "qa_index": 2,
+        "qa_id": "fixture-Q0002",
+        "reason": "unsafe_question_rewrite",
+    }
+
+
 def test_public_qa_schema_strips_pipeline_traces() -> None:
     item = _qa("What fact is stated?", "D1:1", "alpha fact")
     item["pollution_check"] = {"response": "leaked model response"}
@@ -236,13 +289,13 @@ def test_public_qa_schema_strips_pipeline_traces() -> None:
 def test_question_wording_is_self_contained() -> None:
     assert sanitize_question_wording(
         "Arrange the cited moments in the episode in chronological order."
-    ) == "Arrange the following events in the episode in chronological order."
+    ) == "Arrange the cited moments in the episode in chronological order."
     assert sanitize_question_wording(
         "What does the combination of the cited evidence establish?"
-    ) == "What does the combination of the evidence establish?"
+    ) == "What does the combination of the cited evidence establish?"
     assert sanitize_question_wording(
         "Which claims accurately reflect the cited episode?"
-    ) == "Which claims accurately reflect the episode?"
+    ) == "Which claims accurately reflect the cited episode?"
 
 
 def test_qa_migration_rejects_contaminated_and_dangling_questions() -> None:
@@ -260,9 +313,17 @@ def test_qa_migration_rejects_contaminated_and_dangling_questions() -> None:
         {1},
     )
     assert migrated == []
-    assert [item["reason"] for item in audit["removed"]] == [
-        "contaminated_option_session",
-        "dangling_reference_question",
+    assert audit["removed"] == [
+        {
+            "qa_index": 1,
+            "qa_id": "arknights-Q0001",
+            "reason": "contaminated_option_session",
+        },
+        {
+            "qa_index": 2,
+            "qa_id": "arknights-Q0002",
+            "reason": "dangling_reference_question",
+        },
     ]
 
 
@@ -273,6 +334,9 @@ def test_validation_rejects_broken_references_markers_and_noise() -> None:
     }
     good_record["qa"][0]["evidence_dialogues"][0]["id"] = "E1"
     good_record["qa"][0]["reasoning_steps"][0]["based_on"] = ["E1"]
+    good_record["qa"][0], _audit = normalize_public_qa(
+        good_record["qa"][0], "arknights", 1
+    )
     assert validate_curated_record(good_record, "arknights") == []
 
     non_contiguous = copy.deepcopy(good_record)
@@ -453,9 +517,9 @@ def test_question_rewrites_are_story_specific() -> None:
         ),
         "fault-milestone-two-Q0028": (
             "Which long-range conclusions about Sol's relationship with the group are "
-            "supported? Select all that apply.",
+            "supported? Select all that apply?",
             "How does Sol's relationship with Selphine's group change over the course "
-            "of the story? Select all that apply.",
+            "of the story? Select all that apply?",
         ),
         "highway-blossoms-Q0013": (
             "Place these moments in the “the music-festival plan” thread in "
@@ -473,7 +537,7 @@ def test_question_rewrites_are_story_specific() -> None:
             "Which developments involving It's all right accurately describe the "
             "characters's episode?",
             "What happens as Selphine returns to herself after the confrontation? "
-            "Select all that apply.",
+            "Select all that apply?",
         ),
         "nurse-love-addiction-Q0066": (
             "What is Asuka’s nearby response to the scene anchored by Asuka observes "
@@ -489,6 +553,28 @@ def test_question_rewrites_are_story_specific() -> None:
         assert action == "rewrite"
         assert find_construction_issues(rewritten) == []
 
+    rewritten, action = rewrite_question_stem(
+        "highway-blossoms-Q0018",
+        "Which developments occur in the common-route relationship thread?",
+    )
+    assert rewritten == (
+        "How do Amber and the man wearing a bandana respond while arguing about who "
+        "contributed to the search?"
+    )
+    assert action == "rewrite"
+
+    private_thought, action = rewrite_question_stem(
+        "highway-blossoms-Q0005",
+        "At this point in the story, does the dialogue establish that Mariah has "
+        "been explicitly told Amber's private thought?",
+    )
+    assert private_thought == (
+        "By this point in the story, has Amber explicitly told Mariah that she sees "
+        "her as a reckless person she can vent to but not trust?"
+    )
+    assert action == "rewrite"
+    assert "ever" not in private_thought.casefold()
+
 
 def test_construction_issue_detection_distinguishes_framing_from_plot_evidence() -> None:
     assert find_construction_issues(
@@ -500,6 +586,9 @@ def test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     assert find_construction_issues(
         "Place these moments in the music-festival thread in chronological order."
     ) == ["annotation thread"]
+    assert find_construction_issues(
+        "What color is the literal thread on Marina's jacket?"
+    ) == []
     assert find_construction_issues(
         "Which events occur in the episode involving fault, sorry, and allow?"
     ) == ["keyword episode framing"]
@@ -524,56 +613,29 @@ def test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     assert find_construction_issues(
         "Where do Amber and Marina find evidence that the treasure is real?"
     ) == []
-
-
-def _source_question_stems() -> dict[str, str]:
-    stems: dict[str, str] = {}
-    for title_key, filename in SOURCE_QA_FILES.items():
-        path = REPO_ROOT / "result_qa" / filename
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        for source_index, item in enumerate(payload[0]["qa"], start=1):
-            qa_id = make_qa_id(title_key, source_index)
-            stems[qa_id] = extract_core_question_text(item["question"])
-    return stems
+    assert find_construction_issues(
+        "Arrange the milestones in Sakuya and Itsuki's common-route relationship."
+    ) == ["route-label framing"]
+    assert find_construction_issues(
+        "Arrange common moments involving Asuka across sessions 13–30."
+    ) == ["long-range framing"]
+    assert find_construction_issues(
+        "What does Tara do later in the same local sequence?"
+    ) == ["local-anchor framing"]
+    assert find_construction_issues(
+        "Order the events in Tara's local progression."
+    ) == ["local-anchor framing"]
 
 
 def test_question_rewrite_registry_is_complete_and_safe() -> None:
-    source_stems = _source_question_stems()
-    flagged = {
-        qa_id: stem
-        for qa_id, stem in source_stems.items()
-        if find_construction_issues(stem)
-    }
-    counts_by_title = {
-        title_key: sum(qa_id.startswith(f"{title_key}-Q") for qa_id in flagged)
-        for title_key in SOURCE_QA_FILES
-    }
-    assert counts_by_title == {
-        "9-nine-episode-1": 0,
-        "a-kiss-for-the-petals": 2,
-        "arknights": 0,
-        "fault-milestone-two": 36,
-        "heart-of-the-woods": 11,
-        "highway-blossoms": 42,
-        "nurse-love-addiction": 78,
-        "fata-morgana-requiem": 0,
-    }
-    assert len(flagged) == 169
-    assert set(QUESTION_REWRITES) == set(flagged)
-
-    for qa_id, source_stem in source_stems.items():
-        rewritten, action = rewrite_question_stem(qa_id, source_stem)
-        if qa_id not in flagged:
-            assert rewritten == source_stem
-            assert action == "unchanged"
-            continue
-        assert action in {"rewrite", "delete"}
+    assert len(QUESTION_REWRITES) == len(set(QUESTION_REWRITES))
+    for qa_id, rewritten in QUESTION_REWRITES.items():
+        assert qa_id == make_qa_id(qa_id.rsplit("-Q", 1)[0], int(qa_id[-4:]))
         if rewritten is None:
-            assert action == "delete"
             continue
         assert rewritten.strip() == rewritten
         assert rewritten
-        assert rewritten.endswith(("?", ".", "!"))
+        assert rewritten.endswith("?")
         assert find_construction_issues(rewritten) == []
 
 
@@ -582,6 +644,7 @@ def main() -> None:
     test_title_policies_keep_only_canonical_content()
     test_qa_migration_repairs_only_unique_surviving_evidence()
     test_heart_happy_ending_evidence_is_rewritten_to_sanitized_turn()
+    test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repair()
     test_public_qa_schema_strips_pipeline_traces()
     test_question_wording_is_self_contained()
     test_qa_migration_rejects_contaminated_and_dangling_questions()

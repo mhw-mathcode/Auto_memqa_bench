@@ -66,8 +66,10 @@ def _validate_raw_option_labels(raw_options: Any) -> None:
         if not isinstance(raw_option, str) or not raw_option.strip():
             raise ValueError("option entries must be non-empty strings")
         label_match = _RAW_OPTION_LABEL_RE.match(raw_option.strip())
-        if label_match and label_match.group(1).upper() not in set("ABCDEF"):
-            raise ValueError(f"invalid option label: {label_match.group(1)}")
+        if label_match:
+            label = label_match.group(1).upper()
+            if label not in set("ABCDEF") or raw_option.strip()[1] in ":：":
+                raise ValueError(f"invalid option label: {label}")
 
 
 def _normalized_options(raw_options: Any, question_type: str) -> list[str]:
@@ -122,18 +124,25 @@ def _remap_option_references(value: Any, mapping: dict[str, str]) -> Any:
     result: dict[str, Any] = {}
     for key, child in value.items():
         if key == "option":
-            if isinstance(child, str):
-                stripped = child.strip().upper()
-                result[key] = mapping.get(stripped, child)
-                continue
-            if isinstance(child, list):
-                result[key] = [
-                    mapping.get(str(item).strip().upper(), item) if isinstance(item, str) else item
-                    for item in child
-                ]
-                continue
+            result[key] = _remap_explicit_option_value(child, mapping)
+            continue
         result[key] = _remap_option_references(child, mapping)
     return result
+
+
+def _remap_explicit_option_value(value: Any, mapping: dict[str, str]) -> Any:
+    """Remap exact option tokens nested below an explicit ``option`` field."""
+    if isinstance(value, str):
+        stripped = value.strip().upper()
+        return mapping.get(stripped, value)
+    if isinstance(value, list):
+        return [_remap_explicit_option_value(item, mapping) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: _remap_explicit_option_value(child, mapping)
+            for key, child in value.items()
+        }
+    return value
 
 
 def _abstain_option_indices(option_lines: list[str]) -> list[int]:

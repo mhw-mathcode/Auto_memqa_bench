@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import copy
-import json
 import sys
-import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -364,18 +362,42 @@ def test_public_schema_permutates_abstain_option_and_nested_references() -> None
         ],
         "answer": "(D)",
         "label": "Abstain",
-        "evidence_dialogues": [{"id": "E1", "option": "D", "nested": {"option": "F"}}],
-        "reasoning_steps": [{"based_on": ["E1"], "details": {"option": "D"}}],
+        "evidence_dialogues": [
+            {
+                "id": "E1",
+                "option": {"primary": "D", "alternatives": [{"option": "F"}]},
+                "nested": {"option": "F"},
+            }
+        ],
+        "reasoning_steps": [
+            {"based_on": ["E1"], "details": {"option": [{"selected": "D"}, {"option": "F"}]}},
+        ],
     }
     normalized, audit = normalize_public_qa(item, "fixture", 9)
     assert normalized["option"][3].startswith("D. Sixth")
     assert normalized["option"][5].startswith("F. Cannot determine")
     assert normalized["answer"] == "(F)"
-    assert normalized["evidence_dialogues"][0]["option"] == "F"
+    assert normalized["evidence_dialogues"][0]["option"]["primary"] == "F"
+    assert normalized["evidence_dialogues"][0]["option"]["alternatives"][0]["option"] == "D"
     assert normalized["evidence_dialogues"][0]["nested"]["option"] == "D"
-    assert normalized["reasoning_steps"][0]["details"]["option"] == "F"
+    assert normalized["reasoning_steps"][0]["details"]["option"][0]["selected"] == "F"
+    assert normalized["reasoning_steps"][0]["details"]["option"][1]["option"] == "D"
     assert audit["abstain_permuted"] is True
     assert validate_public_qa(normalized) == []
+
+
+def test_public_schema_rejects_colon_option_labels() -> None:
+    item = {
+        "question": "Choose one.",
+        "option": ["A: Alpha", "B：Beta"],
+        "answer": "A",
+    }
+    try:
+        normalize_public_qa(item, "fixture", 11)
+    except ValueError as error:
+        assert "label" in str(error)
+    else:
+        raise AssertionError("colon option labels must not enter the public schema")
 
 
 def test_public_schema_canonicalizes_multiple_choice_answer_order() -> None:
@@ -408,6 +430,7 @@ def main() -> None:
     test_public_schema_rejects_invalid_answer_and_option_shape()
     test_public_schema_permutates_abstain_option_and_nested_references()
     test_public_schema_canonicalizes_multiple_choice_answer_order()
+    test_public_schema_rejects_colon_option_labels()
     print("curation regression checks passed")
 
 

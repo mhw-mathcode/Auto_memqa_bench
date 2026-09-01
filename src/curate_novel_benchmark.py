@@ -221,7 +221,7 @@ def sanitize_qa_item(item: dict) -> dict:
     return sanitized
 
 
-def migrate_qa_items(
+def _migrate_canonical_qa_items(
     qa_items: list[dict],
     old_conversation: dict,
     new_conversation: dict,
@@ -231,21 +231,16 @@ def migrate_qa_items(
 ) -> tuple[list[dict], dict]:
     del old_conversation  # The retained conversation is the only repair authority.
     new_index = _conversation_index(new_conversation)
-    migrated: list[dict] = []
+    canonical: list[dict] = []
     audit = {"repaired": [], "removed": [], "migrated": [], "question_rewrite": []}
 
     for qa_index, raw_qa in enumerate(qa_items, start=1):
-        existing_qa_id = str(raw_qa.get("qa_id") or "")
-        existing_match = re.fullmatch(rf"{re.escape(title_key)}-Q(\d{{4}})", existing_qa_id)
-        qa_id = existing_qa_id if existing_match else make_qa_id(title_key, qa_index)
-        source_index = int(existing_match.group(1)) if existing_match else qa_index
         qa = deepcopy(raw_qa)
         question = str(qa.get("question") or "")
         if _DANGLING_REFERENCE_RE.search(question):
             audit["removed"].append(
                 {
                     "qa_index": qa_index,
-                    "qa_id": qa_id,
                     "reason": "dangling_reference_question",
                 }
             )
@@ -254,7 +249,7 @@ def migrate_qa_items(
         raw_evidence = qa.get("evidence_dialogues") or []
         if not isinstance(raw_evidence, list):
             audit["removed"].append(
-                {"qa_index": qa_index, "qa_id": qa_id, "reason": "invalid_evidence_schema"}
+                {"qa_index": qa_index, "reason": "invalid_evidence_schema"}
             )
             continue
 
@@ -268,7 +263,6 @@ def migrate_qa_items(
                 audit["removed"].append(
                     {
                         "qa_index": qa_index,
-                        "qa_id": qa_id,
                         "reason": "contaminated_option_session",
                     }
                 )
@@ -276,7 +270,7 @@ def migrate_qa_items(
 
         if not raw_evidence and not _is_standalone_abstain(qa.get("answer")):
             audit["removed"].append(
-                {"qa_index": qa_index, "qa_id": qa_id, "reason": "empty_evidence"}
+                {"qa_index": qa_index, "reason": "empty_evidence"}
             )
             continue
 
@@ -348,7 +342,7 @@ def migrate_qa_items(
 
         if failed_reason:
             audit["removed"].append(
-                {"qa_index": qa_index, "qa_id": qa_id, "reason": failed_reason}
+                {"qa_index": qa_index, "reason": failed_reason}
             )
             continue
 
@@ -379,7 +373,6 @@ def migrate_qa_items(
             audit["removed"].append(
                 {
                     "qa_index": qa_index,
-                    "qa_id": qa_id,
                     "reason": "unresolved_reasoning_evidence",
                 }
             )
@@ -387,7 +380,29 @@ def migrate_qa_items(
 
         qa["evidence_dialogues"] = migrated_evidence
         qa["reasoning_steps"] = migrated_steps
-        source_stem = extract_core_question_text(question, unknown_placeholder="")
+        canonical.append(qa)
+        if repairs:
+            audit["repaired"].append(
+                {"qa_index": qa_index, "evidence_repairs": repairs}
+            )
+        elif any(
+            str(old.get("dia_id") or "") != str(new.get("dia_id") or "")
+            for old, new in zip(raw_evidence, migrated_evidence)
+        ):
+            audit["migrated"].append(qa_index)
+
+    return canonical, audit
+
+
+def publish_qa_items(
+    canonical_qa_items: list[dict], title_key: str, audit: dict
+) -> tuple[list[dict], dict]:
+    """Assign public IDs after canonical filtering, then apply publication rules."""
+    published: list[dict] = []
+    for qa_index, canonical_qa in enumerate(canonical_qa_items, start=1):
+        qa_id = make_qa_id(title_key, qa_index)
+        qa = deepcopy(canonical_qa)
+        source_stem = extract_core_question_text(qa.get("question", ""), unknown_placeholder="")
         rewritten_stem, rewrite_action = rewrite_question_stem(qa_id, source_stem)
         if rewritten_stem is None:
             audit["removed"].append(
@@ -400,7 +415,7 @@ def migrate_qa_items(
             continue
         qa["question"] = rewritten_stem
         try:
-            normalized, _normalization_audit = normalize_public_qa(qa, title_key, source_index)
+            normalized, _normalization_audit = normalize_public_qa(qa, title_key, qa_index)
         except ValueError as error:
             audit["removed"].append(
                 {
@@ -422,20 +437,30 @@ def migrate_qa_items(
                 }
             )
             continue
-        migrated.append(normalized)
+        published.append(normalized)
         if rewrite_action == "rewrite":
             audit["question_rewrite"].append({"qa_id": qa_id, "action": "rewrite"})
-        if repairs:
-            audit["repaired"].append(
-                {"qa_index": qa_index, "evidence_repairs": repairs}
-            )
-        elif any(
-            str(old.get("dia_id") or "") != str(new.get("dia_id") or "")
-            for old, new in zip(raw_evidence, migrated_evidence)
-        ):
-            audit["migrated"].append(qa_index)
+    return published, audit
 
-    return migrated, audit
+
+def migrate_qa_items(
+    qa_items: list[dict],
+    old_conversation: dict,
+    new_conversation: dict,
+    id_map: dict[str, str],
+    title_key: str,
+    contaminated_sessions: set[int],
+) -> tuple[list[dict], dict]:
+    """Produce public QA from canonical QA in its surviving source order."""
+    canonical, audit = _migrate_canonical_qa_items(
+        qa_items,
+        old_conversation,
+        new_conversation,
+        id_map,
+        title_key,
+        contaminated_sessions,
+    )
+    return publish_qa_items(canonical, title_key, audit)
 
 
 def _iter_turns(conversation: dict):
@@ -587,35 +612,35 @@ def validate_curated_record(record: dict, title_key: str) -> list[str]:
 
 INPUTS = {
     "9-nine-episode-1": (
-        "result_qa/9-nine-_Episode_1_final.json",
+        "runs/9-nine-_Episode_1_20260822_154315/result/9-nine-_Episode_1_final.json",
         "9-nine-_Episode_1_final.json",
     ),
     "a-kiss-for-the-petals": (
-        "result_qa/a-kiss-for-the-petals-remembering-how-we-met_revised_final.json",
+        "runs/a-kiss-for-the-petals-remembering-how-we-met_revised_20260824_104328/result/a-kiss-for-the-petals-remembering-how-we-met_revised_final.json",
         "a-kiss-for-the-petals-remembering-how-we-met_revised_final.json",
     ),
     "arknights": (
-        "result_qa/arknights_revised_final.json",
+        "runs/arknights_revised_20260831_223935/result/arknights_revised_final.json",
         "arknights_revised_final.json",
     ),
     "fault-milestone-two": (
-        "result_qa/fault-milestone-two-sidea-bove_revised_final.json",
+        "runs/fault-milestone-two-sidea-bove_revised_20260824_115522/result/fault-milestone-two-sidea-bove_revised_final.json",
         "fault-milestone-two-sidea-bove_revised_final.json",
     ),
     "heart-of-the-woods": (
-        "result_qa/heart-of-the-woods_revised_final.json",
+        "runs/heart-of-the-woods_revised_20260824_122111/result/heart-of-the-woods_revised_final.json",
         "heart-of-the-woods_revised_final.json",
     ),
     "highway-blossoms": (
-        "result_qa/highway-blossoms_revised_final.json",
+        "runs/highway-blossoms_revised_20260824_131041/result/highway-blossoms_revised_final.json",
         "highway-blossoms_revised_final.json",
     ),
     "nurse-love-addiction": (
-        "result_qa/nurse-love-addiction_revised_final.json",
+        "runs/nurse-love-addiction_revised_20260828_132217/result/nurse-love-addiction_revised_final.json",
         "nurse-love-addiction_revised_final.json",
     ),
     "fata-morgana-requiem": (
-        "result_qa/the-house-in-fata-morgana-a-requiem-for-innocence_revised_final.json",
+        "runs/the-house-in-fata-morgana-a-requiem-for-innocence_revised_20260828_132537/result/the-house-in-fata-morgana-a-requiem-for-innocence_revised_final.json",
         "the-house-in-fata-morgana-a-requiem-for-innocence_revised_final.json",
     ),
 }
@@ -660,10 +685,7 @@ def _curate_record(record: dict, title_key: str) -> tuple[dict, dict]:
             if re.search(r"(?:^|\n)Option_\d+:", str(turn.get("text") or "")):
                 contaminated_sessions.add(session)
 
-    already_public = bool(original_qa) and all(
-        isinstance(qa, dict) and "qa_id" in qa for qa in original_qa
-    )
-    if title_key in AFFECTED_TITLES and not already_public:
+    if title_key in AFFECTED_TITLES:
         curated_conversation, id_map, turn_audit = renumber_conversation(
             original_conversation, build_policy(title_key)
         )

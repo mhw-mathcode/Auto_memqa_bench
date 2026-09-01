@@ -3,14 +3,18 @@ from __future__ import annotations
 import copy
 import json
 import sys
+import tempfile
+from collections import Counter
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 from src.curate_novel_benchmark import (
+    INPUTS,
     PolicyAction,
     build_policy,
+    curate_all,
     migrate_qa_items,
     renumber_conversation,
     sanitize_qa_item,
@@ -45,6 +49,68 @@ SOURCE_QA_FILES = {
         "the-house-in-fata-morgana-a-requiem-for-innocence_revised_final.json"
     ),
 }
+
+
+def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
+    """A fresh publication must never depend on prior ``result_qa`` output."""
+    expected_dialogue_counts = {
+        "9-nine-episode-1": 3452,
+        "a-kiss-for-the-petals": 1862,
+        "arknights": 9806,
+        "fault-milestone-two": 7761,
+        "heart-of-the-woods": 4406,
+        "highway-blossoms": 4053,
+        "nurse-love-addiction": 7714,
+        "fata-morgana-requiem": 11271,
+    }
+    expected_qa_counts = {
+        "9-nine-episode-1": 57,
+        "a-kiss-for-the-petals": 40,
+        "arknights": 88,
+        "fault-milestone-two": 113,
+        "heart-of-the-woods": 116,
+        "highway-blossoms": 106,
+        "nurse-love-addiction": 121,
+        "fata-morgana-requiem": 180,
+    }
+    expected_removals = {
+        "9-nine-episode-1": {},
+        "a-kiss-for-the-petals": {},
+        "arknights": {
+            "contaminated_option_session": 31,
+            "dangling_reference_question": 34,
+        },
+        "fault-milestone-two": {},
+        "heart-of-the-woods": {"evidence_not_uniquely_repairable": 4},
+        "highway-blossoms": {
+            "dangling_reference_question": 9,
+            "evidence_not_uniquely_repairable": 6,
+        },
+        "nurse-love-addiction": {"evidence_not_uniquely_repairable": 94},
+        "fata-morgana-requiem": {"evidence_not_uniquely_repairable": 50},
+    }
+
+    with tempfile.TemporaryDirectory() as temporary_dir:
+        output_dir = Path(temporary_dir) / "result_qa"
+        assert not output_dir.exists()
+        report = curate_all(REPO_ROOT, output_dir)
+        assert {
+            title: details["final_dialogues"]
+            for title, details in report["titles"].items()
+        } == expected_dialogue_counts
+        assert {
+            title: details["final_qa"] for title, details in report["titles"].items()
+        } == expected_qa_counts
+        assert sum(expected_qa_counts.values()) == 821
+        assert {
+            title: dict(Counter(item["reason"] for item in details["qa_audit"]["removed"]))
+            for title, details in report["titles"].items()
+        } == expected_removals
+        assert all(
+            Path(input_rel).parts[0] != "result_qa"
+            for input_rel, _output_name in INPUTS.values()
+        )
+        assert curate_all(REPO_ROOT, output_dir, check=True) == report
 
 
 def _conversation(*turns: dict) -> dict:
@@ -275,6 +341,38 @@ def test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repa
     }
 
 
+def test_public_ids_and_rewrites_follow_surviving_canonical_order() -> None:
+    conversation = _conversation(_turn("D1:1", "Alice", "alpha fact"))
+    canonical_item = _qa("Which fact is stated?", "D1:1", "alpha fact")
+    QUESTION_REWRITES["fixture-Q0001"] = "What fact is stated?"
+    try:
+        migrated, audit = migrate_qa_items(
+            [
+                _qa(
+                    "Which interpretation is supported by this cited moment?",
+                    "D1:1",
+                    "alpha fact",
+                ),
+                canonical_item,
+            ],
+            conversation,
+            conversation,
+            {"D1:1": "D1:1"},
+            "fixture",
+            set(),
+        )
+    finally:
+        del QUESTION_REWRITES["fixture-Q0001"]
+    assert [qa["qa_id"] for qa in migrated] == ["fixture-Q0001"]
+    assert migrated[0]["question"].startswith("What fact is stated?")
+    assert audit["removed"] == [
+        {"qa_index": 1, "reason": "dangling_reference_question"}
+    ]
+    assert audit["question_rewrite"] == [
+        {"qa_id": "fixture-Q0001", "action": "rewrite"}
+    ]
+
+
 def test_public_qa_schema_strips_pipeline_traces() -> None:
     item = _qa("What fact is stated?", "D1:1", "alpha fact")
     item["pollution_check"] = {"response": "leaked model response"}
@@ -316,12 +414,10 @@ def test_qa_migration_rejects_contaminated_and_dangling_questions() -> None:
     assert audit["removed"] == [
         {
             "qa_index": 1,
-            "qa_id": "arknights-Q0001",
             "reason": "contaminated_option_session",
         },
         {
             "qa_index": 2,
-            "qa_id": "arknights-Q0002",
             "reason": "dangling_reference_question",
         },
     ]
@@ -645,6 +741,7 @@ def main() -> None:
     test_qa_migration_repairs_only_unique_surviving_evidence()
     test_heart_happy_ending_evidence_is_rewritten_to_sanitized_turn()
     test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repair()
+    test_public_ids_and_rewrites_follow_surviving_canonical_order()
     test_public_qa_schema_strips_pipeline_traces()
     test_question_wording_is_self_contained()
     test_qa_migration_rejects_contaminated_and_dangling_questions()
@@ -657,6 +754,7 @@ def main() -> None:
     test_question_rewrites_are_story_specific()
     test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     test_question_rewrite_registry_is_complete_and_safe()
+    test_clean_rebuild_uses_raw_runs_and_is_deterministic()
     print("curation regression checks passed")
 
 

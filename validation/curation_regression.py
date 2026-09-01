@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import json
 import sys
 from pathlib import Path
 
@@ -21,7 +22,29 @@ from src.benchmark_qa_schema import (
     normalize_public_qa,
     validate_public_qa,
 )
+from src.benchmark_question_rewrites import (
+    QUESTION_REWRITES,
+    find_construction_issues,
+    rewrite_question_stem,
+)
 from src.mcq_scoring import ORDERING_INSTRUCTION
+from src.question_formatting import extract_core_question_text
+
+
+SOURCE_QA_FILES = {
+    "9-nine-episode-1": "9-nine-_Episode_1_final.json",
+    "a-kiss-for-the-petals": (
+        "a-kiss-for-the-petals-remembering-how-we-met_revised_final.json"
+    ),
+    "arknights": "arknights_revised_final.json",
+    "fault-milestone-two": "fault-milestone-two-sidea-bove_revised_final.json",
+    "heart-of-the-woods": "heart-of-the-woods_revised_final.json",
+    "highway-blossoms": "highway-blossoms_revised_final.json",
+    "nurse-love-addiction": "nurse-love-addiction_revised_final.json",
+    "fata-morgana-requiem": (
+        "the-house-in-fata-morgana-a-requiem-for-innocence_revised_final.json"
+    ),
+}
 
 
 def _conversation(*turns: dict) -> dict:
@@ -417,6 +440,143 @@ def test_public_schema_canonicalizes_multiple_choice_answer_order() -> None:
     assert validate_public_qa(normalized) == []
 
 
+def test_question_rewrites_are_story_specific() -> None:
+    cases = {
+        "nurse-love-addiction-Q0001": (
+            "Which event involving Asuka belongs to the interval bounded by the two "
+            "boundary events? Earlier boundary: The narration establishes that the "
+            "teacher's tone is friendly, but the words resound within the classroom. "
+            "The narration establishes that within her. Later boundary: Itsuki "
+            "apologizes, and states she must leave. Itsuki has got to split for a while.",
+            "After the teacher's words resound through the classroom but before Itsuki "
+            "says she has to leave for a while, what does Asuka do?",
+        ),
+        "fault-milestone-two-Q0028": (
+            "Which long-range conclusions about Sol's relationship with the group are "
+            "supported? Select all that apply.",
+            "How does Sol's relationship with Selphine's group change over the course "
+            "of the story? Select all that apply.",
+        ),
+        "highway-blossoms-Q0013": (
+            "Place these moments in the “the music-festival plan” thread in "
+            "chronological order.",
+            "In what order do Amber and Marina discuss their plans to attend the music "
+            "festival?",
+        ),
+        "nurse-love-addiction-Q0108": (
+            "Identify the Itsuki statements that co-occur in the episode anchored by "
+            "Itsuki observes that tell her the truth and she will get really mad at her.",
+            "Which of Itsuki's other statements occur in the scene where she tells "
+            "Asuka, ‘Tell me the truth and I’ll get really mad at you’?",
+        ),
+        "fault-milestone-two-Q0011": (
+            "Which developments involving It's all right accurately describe the "
+            "characters's episode?",
+            "What happens as Selphine returns to herself after the confrontation? "
+            "Select all that apply.",
+        ),
+        "nurse-love-addiction-Q0066": (
+            "What is Asuka’s nearby response to the scene anchored by Asuka observes "
+            "that come on, Asuka. Asuka observes that stop talking gibberish and answer "
+            "the question?",
+            "What does Asuka say after Sakuya tells her to stop talking gibberish and "
+            "answer the question?",
+        ),
+    }
+    for qa_id, (source_stem, expected_stem) in cases.items():
+        rewritten, action = rewrite_question_stem(qa_id, source_stem)
+        assert rewritten == expected_stem
+        assert action == "rewrite"
+        assert find_construction_issues(rewritten) == []
+
+
+def test_construction_issue_detection_distinguishes_framing_from_plot_evidence() -> None:
+    assert find_construction_issues(
+        "Which event occurs between the earlier boundary and later boundary?"
+    ) == ["boundary framing"]
+    assert find_construction_issues(
+        "Which long-range conclusions about Sol are supported?"
+    ) == ["long-range framing"]
+    assert find_construction_issues(
+        "Place these moments in the music-festival thread in chronological order."
+    ) == ["annotation thread"]
+    assert find_construction_issues(
+        "Which events occur in the episode involving fault, sorry, and allow?"
+    ) == ["keyword episode framing"]
+    assert find_construction_issues(
+        "What does the provided dialogue establish?"
+    ) == ["source-material framing"]
+    assert find_construction_issues(
+        "Which conclusion follows from the supplied evidence?"
+    ) == ["source-material framing"]
+    assert find_construction_issues(
+        "What changes when the separated evidence is connected?"
+    ) == ["source-material framing"]
+    assert find_construction_issues(
+        "Which statements describe the characters's episode?"
+    ) == ["malformed possessive"]
+    assert find_construction_issues(
+        "What follows after Asuka observes that she feels ill?"
+    ) == ["mechanical clause"]
+    assert find_construction_issues(
+        "What conclusive evidence does Sceatoire provide that Rune killed her?"
+    ) == []
+    assert find_construction_issues(
+        "Where do Amber and Marina find evidence that the treasure is real?"
+    ) == []
+
+
+def _source_question_stems() -> dict[str, str]:
+    stems: dict[str, str] = {}
+    for title_key, filename in SOURCE_QA_FILES.items():
+        path = REPO_ROOT / "result_qa" / filename
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        for source_index, item in enumerate(payload[0]["qa"], start=1):
+            qa_id = make_qa_id(title_key, source_index)
+            stems[qa_id] = extract_core_question_text(item["question"])
+    return stems
+
+
+def test_question_rewrite_registry_is_complete_and_safe() -> None:
+    source_stems = _source_question_stems()
+    flagged = {
+        qa_id: stem
+        for qa_id, stem in source_stems.items()
+        if find_construction_issues(stem)
+    }
+    counts_by_title = {
+        title_key: sum(qa_id.startswith(f"{title_key}-Q") for qa_id in flagged)
+        for title_key in SOURCE_QA_FILES
+    }
+    assert counts_by_title == {
+        "9-nine-episode-1": 0,
+        "a-kiss-for-the-petals": 2,
+        "arknights": 0,
+        "fault-milestone-two": 36,
+        "heart-of-the-woods": 11,
+        "highway-blossoms": 42,
+        "nurse-love-addiction": 78,
+        "fata-morgana-requiem": 0,
+    }
+    assert len(flagged) == 169
+    assert set(QUESTION_REWRITES) == set(flagged)
+
+    for qa_id, source_stem in source_stems.items():
+        rewritten, action = rewrite_question_stem(qa_id, source_stem)
+        if qa_id not in flagged:
+            assert rewritten == source_stem
+            assert action == "unchanged"
+            continue
+        assert action in {"rewrite", "delete"}
+        if rewritten is None:
+            assert action == "delete"
+            continue
+        assert rewritten.strip() == rewritten
+        assert rewritten
+        assert rewritten.endswith(("?", ".", "!"))
+        assert find_construction_issues(rewritten) == []
+
+
 def main() -> None:
     test_generic_filter_renumbers_and_preserves_metadata()
     test_title_policies_keep_only_canonical_content()
@@ -431,6 +591,9 @@ def main() -> None:
     test_public_schema_permutates_abstain_option_and_nested_references()
     test_public_schema_canonicalizes_multiple_choice_answer_order()
     test_public_schema_rejects_colon_option_labels()
+    test_question_rewrites_are_story_specific()
+    test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
+    test_question_rewrite_registry_is_complete_and_safe()
     print("curation regression checks passed")
 
 

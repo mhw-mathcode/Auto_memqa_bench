@@ -87,3 +87,4 @@ result/
 result_qa/
 tests/
 docs/
+.worktrees/

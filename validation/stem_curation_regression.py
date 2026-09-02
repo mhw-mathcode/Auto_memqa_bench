@@ -16,6 +16,7 @@ sys.path.insert(0, str(REPO_ROOT))
 import src.curate_novel_benchmark as curation
 from src.benchmark_qa_schema import extract_core_question_text
 from src.benchmark_question_rewrites import (
+    OPTION_REWRITES,
     QUESTION_REWRITES,
     find_construction_issues,
     rewrite_publication_item,
@@ -341,7 +342,12 @@ def test_rewrites_preserve_protected_fields(repo_root: Path) -> None:
                 extract_core_question_text(qa["question"], ""),
                 qa["option"],
             )
-            assert options == before["option"]
+            expected_options = list(before["option"])
+            for letter, body in OPTION_REWRITES.get(rewrite_key, {}).items():
+                option_index = ord(letter) - ord("A")
+                assert expected_options[option_index].startswith(f"{letter}. ")
+                expected_options[option_index] = f"{letter}. {body}"
+            assert options == expected_options
             assert qa == before
             if rewritten is not None:
                 assert "Select all that apply" not in rewritten

@@ -334,21 +334,23 @@ def test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repa
         "No points will be awarded for incomplete or incorrect selections."
     )
     assert audit["question_rewrite"][-1] == {
-        "qa_id": "highway-blossoms-Q0018", "action": "rewrite"
+        "rewrite_key": "highway-blossoms-R0018",
+        "qa_id": "highway-blossoms-Q0018",
+        "action": "rewrite",
     }
     assert validate_public_qa(rewritten) == []
 
-    QUESTION_REWRITES["fixture-Q0002"] = None
+    QUESTION_REWRITES["fixture-R0002"] = None
     try:
         deleted, deleted_audit = migrate_qa_items(
             [item, item], conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
         )
     finally:
-        del QUESTION_REWRITES["fixture-Q0002"]
+        del QUESTION_REWRITES["fixture-R0002"]
     assert len(deleted) == 1
     assert deleted_audit["removed"][-1] == {
         "qa_index": 2,
-        "qa_id": "fixture-Q0002",
+        "rewrite_key": "fixture-R0002",
         "reason": "unsafe_question_rewrite",
     }
 
@@ -356,7 +358,7 @@ def test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repa
 def test_public_ids_and_rewrites_follow_surviving_canonical_order() -> None:
     conversation = _conversation(_turn("D1:1", "Alice", "alpha fact"))
     canonical_item = _qa("Which fact is stated?", "D1:1", "alpha fact")
-    QUESTION_REWRITES["fixture-Q0001"] = "What fact is stated?"
+    QUESTION_REWRITES["fixture-R0001"] = "What fact is stated?"
     try:
         migrated, audit = migrate_qa_items(
             [
@@ -374,14 +376,18 @@ def test_public_ids_and_rewrites_follow_surviving_canonical_order() -> None:
             set(),
         )
     finally:
-        del QUESTION_REWRITES["fixture-Q0001"]
+        del QUESTION_REWRITES["fixture-R0001"]
     assert [qa["qa_id"] for qa in migrated] == ["fixture-Q0001"]
     assert migrated[0]["question"].startswith("What fact is stated?")
     assert audit["removed"] == [
         {"qa_index": 1, "reason": "dangling_reference_question"}
     ]
     assert audit["question_rewrite"] == [
-        {"qa_id": "fixture-Q0001", "action": "rewrite"}
+        {
+            "rewrite_key": "fixture-R0001",
+            "qa_id": "fixture-Q0001",
+            "action": "rewrite",
+        }
     ]
 
 
@@ -392,22 +398,42 @@ def test_public_ids_and_rewrites_preserve_deleted_canonical_positions() -> None:
         _qa("This canonical question is explicitly unsafe.", "D1:1", "alpha fact"),
         _qa("Which fact is reported in the third source question?", "D1:1", "alpha fact"),
     ]
+    qa_items[2].update(
+        {
+            "question_type": "multiple_choice",
+            "answer": "(B,A)",
+            "category": {"source": "fixture"},
+        }
+    )
     rewrite_key = make_rewrite_key("fixture", 3)
-    QUESTION_REWRITES["fixture-Q0002"] = None
+    QUESTION_REWRITES["fixture-R0002"] = None
     QUESTION_REWRITES[rewrite_key] = "What fact survives from the third source question?"
     try:
         migrated, audit = migrate_qa_items(
             qa_items, conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
         )
     finally:
-        del QUESTION_REWRITES["fixture-Q0002"]
+        del QUESTION_REWRITES["fixture-R0002"]
         del QUESTION_REWRITES[rewrite_key]
     assert [qa["qa_id"] for qa in migrated] == ["fixture-Q0001", "fixture-Q0002"]
     assert extract_core_question_text(migrated[1]["question"], "") == (
         "What fact survives from the third source question?"
     )
+    assert migrated[1]["question_type"] == "multiple_choice"
+    assert migrated[1]["answer"] == "(A,B)"
+    assert migrated[1]["category"] == {"source": "fixture"}
+    assert migrated[1]["evidence_dialogues"] == [
+        {"id": "E1", "dia_id": "D1:1", "speaker": "Alice", "utterance": "alpha fact"}
+    ]
+    assert migrated[1]["reasoning_steps"] == [
+        {"step": 1, "inference": "supported", "based_on": ["E1"]}
+    ]
     assert audit["question_rewrite"] == [
-        {"qa_id": "fixture-Q0002", "action": "rewrite"}
+        {
+            "rewrite_key": "fixture-R0003",
+            "qa_id": "fixture-Q0002",
+            "action": "rewrite",
+        }
     ]
 
 
@@ -640,7 +666,7 @@ def test_public_schema_canonicalizes_multiple_choice_answer_order() -> None:
 
 def test_question_rewrites_are_story_specific() -> None:
     cases = {
-        "nurse-love-addiction-Q0001": (
+        "nurse-love-addiction-R0001": (
             "Which event involving Asuka belongs to the interval bounded by the two "
             "boundary events? Earlier boundary: The narration establishes that the "
             "teacher's tone is friendly, but the words resound within the classroom. "
@@ -649,31 +675,31 @@ def test_question_rewrites_are_story_specific() -> None:
             "After the teacher's words resound through the classroom but before Itsuki "
             "says she has to leave for a while, what does Asuka do?",
         ),
-        "fault-milestone-two-Q0028": (
+        "fault-milestone-two-R0028": (
             "Which long-range conclusions about Sol's relationship with the group are "
             "supported? Select all that apply?",
             "How does Sol's relationship with Selphine's group change over the course "
             "of the story? Select all that apply?",
         ),
-        "highway-blossoms-Q0013": (
+        "highway-blossoms-R0013": (
             "Place these moments in the “the music-festival plan” thread in "
             "chronological order.",
             "In what order do Amber and Marina discuss their plans to attend the music "
             "festival?",
         ),
-        "nurse-love-addiction-Q0108": (
+        "nurse-love-addiction-R0108": (
             "Identify the Itsuki statements that co-occur in the episode anchored by "
             "Itsuki observes that tell her the truth and she will get really mad at her.",
             "Which of Itsuki's other statements occur in the scene where she tells "
             "Asuka, ‘Tell me the truth and I’ll get really mad at you’?",
         ),
-        "fault-milestone-two-Q0011": (
+        "fault-milestone-two-R0011": (
             "Which developments involving It's all right accurately describe the "
             "characters's episode?",
             "What happens as Selphine returns to herself after the confrontation? "
             "Select all that apply?",
         ),
-        "nurse-love-addiction-Q0066": (
+        "nurse-love-addiction-R0066": (
             "What is Asuka’s nearby response to the scene anchored by Asuka observes "
             "that come on, Asuka. Asuka observes that stop talking gibberish and answer "
             "the question?",
@@ -688,7 +714,7 @@ def test_question_rewrites_are_story_specific() -> None:
         assert find_construction_issues(rewritten) == []
 
     rewritten, action = rewrite_question_stem(
-        "highway-blossoms-Q0018",
+        "highway-blossoms-R0018",
         "Which developments occur in the common-route relationship thread?",
     )
     assert rewritten == (
@@ -698,7 +724,7 @@ def test_question_rewrites_are_story_specific() -> None:
     assert action == "rewrite"
 
     private_thought, action = rewrite_question_stem(
-        "highway-blossoms-Q0005",
+        "highway-blossoms-R0005",
         "At this point in the story, does the dialogue establish that Mariah has "
         "been explicitly told Amber's private thought?",
     )
@@ -786,8 +812,10 @@ def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> N
 
 def test_question_rewrite_registry_is_complete_and_safe() -> None:
     assert len(QUESTION_REWRITES) == len(set(QUESTION_REWRITES))
-    for qa_id, rewritten in QUESTION_REWRITES.items():
-        assert qa_id == make_qa_id(qa_id.rsplit("-Q", 1)[0], int(qa_id[-4:]))
+    for rewrite_key, rewritten in QUESTION_REWRITES.items():
+        assert rewrite_key == make_rewrite_key(
+            rewrite_key.rsplit("-R", 1)[0], int(rewrite_key[-4:])
+        )
         if rewritten is None:
             continue
         assert rewritten.strip() == rewritten

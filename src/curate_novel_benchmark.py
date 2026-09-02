@@ -12,13 +12,13 @@ from typing import Callable, Optional
 
 from src.benchmark_qa_schema import (
     PUBLIC_QA_FIELDS,
-    make_qa_id,
     normalize_public_qa,
     validate_public_qa,
 )
 from src.benchmark_question_rewrites import (
     find_construction_issues,
-    rewrite_question_stem,
+    make_rewrite_key,
+    rewrite_publication_item,
 )
 from src.question_formatting import extract_core_question_text
 
@@ -397,49 +397,79 @@ def _migrate_canonical_qa_items(
 def publish_qa_items(
     canonical_qa_items: list[dict], title_key: str, audit: dict
 ) -> tuple[list[dict], dict]:
-    """Assign public IDs after canonical filtering, then apply publication rules."""
-    published: list[dict] = []
-    for qa_index, canonical_qa in enumerate(canonical_qa_items, start=1):
-        qa_id = make_qa_id(title_key, qa_index)
+    """Apply pre-publication rewrites, then assign gapless public QA IDs."""
+    survivors: list[tuple[dict, str, str]] = []
+    protected_fields = (
+        "question_type",
+        "answer",
+        "evidence_dialogues",
+        "reasoning_steps",
+    )
+
+    for canonical_index, canonical_qa in enumerate(canonical_qa_items, start=1):
+        rewrite_key = make_rewrite_key(title_key, canonical_index)
         qa = deepcopy(canonical_qa)
-        source_stem = extract_core_question_text(qa.get("question", ""), unknown_placeholder="")
-        rewritten_stem, rewrite_action = rewrite_question_stem(qa_id, source_stem)
+        retained_fields = {
+            field: deepcopy(canonical_qa.get(field)) for field in protected_fields
+        }
+        source_stem = extract_core_question_text(
+            qa.get("question", ""), unknown_placeholder=""
+        )
+        rewritten_stem, rewritten_options, rewrite_action = rewrite_publication_item(
+            rewrite_key, source_stem, qa.get("option") or []
+        )
         if rewritten_stem is None:
             audit["removed"].append(
                 {
-                    "qa_index": qa_index,
-                    "qa_id": qa_id,
+                    "qa_index": canonical_index,
+                    "rewrite_key": rewrite_key,
                     "reason": "unsafe_question_rewrite",
                 }
             )
             continue
+
         qa["question"] = rewritten_stem
+        qa["option"] = rewritten_options
+        qa.update(retained_fields)
         try:
-            normalized, _normalization_audit = normalize_public_qa(qa, title_key, qa_index)
+            provisional, _normalization_audit = normalize_public_qa(
+                qa, title_key, canonical_index
+            )
         except ValueError as error:
             audit["removed"].append(
                 {
-                    "qa_index": qa_index,
-                    "qa_id": qa_id,
+                    "qa_index": canonical_index,
+                    "rewrite_key": rewrite_key,
                     "reason": "invalid_public_schema",
                     "detail": str(error),
                 }
             )
             continue
-        validation_errors = validate_public_qa(normalized)
+        validation_errors = validate_public_qa(provisional)
         if validation_errors:
             audit["removed"].append(
                 {
-                    "qa_index": qa_index,
-                    "qa_id": qa_id,
+                    "qa_index": canonical_index,
+                    "rewrite_key": rewrite_key,
                     "reason": "invalid_public_schema",
                     "detail": "; ".join(validation_errors),
                 }
             )
             continue
+        survivors.append((qa, rewrite_key, rewrite_action))
+
+    published: list[dict] = []
+    for final_index, (qa, rewrite_key, rewrite_action) in enumerate(survivors, start=1):
+        normalized, _normalization_audit = normalize_public_qa(qa, title_key, final_index)
         published.append(normalized)
         if rewrite_action == "rewrite":
-            audit["question_rewrite"].append({"qa_id": qa_id, "action": "rewrite"})
+            audit["question_rewrite"].append(
+                {
+                    "rewrite_key": rewrite_key,
+                    "qa_id": normalized["qa_id"],
+                    "action": "rewrite",
+                }
+            )
     return published, audit
 
 

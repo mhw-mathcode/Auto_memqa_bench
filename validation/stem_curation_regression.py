@@ -6,6 +6,7 @@ import json
 import re
 import sys
 import tempfile
+from collections import Counter
 from copy import deepcopy
 from pathlib import Path
 
@@ -45,63 +46,63 @@ FATA_ORDERING_IDS = {
 # anchors deliberately name one scene, relationship, decision, or story phase;
 # none narrates two or more option events in the gold-answer order.
 APPROVED_FATA_STEMS = {
-    3: "How do the selected moments unfold during Imeon's conversation with Michel about survival?",
-    6: "How does the conversation about Danish seafaring unfold?",
-    12: "What is the chronology of the selected moments from Imeon's first extended conversation with Michel?",
-    13: "During Imeon's first visit to the mansion, what is the order of these moments?",
-    15: "How does Imeon's conversation with Michel about adventure unfold?",
-    19: "What is the story order of these moments in Imeon's early arc?",
-    22: "How do the selected moments in Imeon's early mansion storyline unfold?",
-    26: "How does the disturbance surrounding an unexpected mansion visitor unfold?",
-    30: "What is the order of these moments in Imeon's conversation with Michel?",
-    33: "How does Michel's first encounter with the unexpected visitor unfold?",
-    34: "What is the chronology of the selected moments from Imeon's arrival at the mansion?",
-    37: "How does the mansion commotion surrounding the visitor unfold?",
-    38: "During the unexpected visitor's arrival, what is the order of these moments?",
-    39: "How does the early disturbance inside the mansion unfold?",
-    41: "What is the chronology of these moments during the mansion's early commotion?",
-    43: "How do the selected moments from the studio disturbance unfold?",
-    45: "What is the story order of these moments in Imeon's early mansion arc?",
-    48: "How does Mell's conversation with Morgana about friendship unfold?",
-    51: "During Morgana's first night at the estate, what is the order of these moments?",
-    55: "How does the disturbance at Morgana's doorway unfold?",
-    60: "What is the chronology of these selected moments from life at the estate?",
-    64: "How do the selected moments from Morgana's unsettled first night unfold?",
-    68: "How does Morgana's move away from the great hall unfold?",
-    70: "How does Jacopo's care for Morgana unfold?",
-    73: "What is the chronology of these moments in Morgana's early relationships at the estate?",
-    75: "During the estate's unsettled night, what is the order of these moments?",
-    76: "How do the selected moments from Morgana's early days at the estate unfold?",
-    80: "What is the chronology of these moments during the estate's period of upheaval?",
-    84: "How do the selected moments from the estate's upheaval unfold?",
-    88: "How does Michel's movie date with Giselle get underway?",
-    90: "How does the couple's post-film conversation unfold?",
-    94: "During Michel and Giselle's movie date, what is the order of these moments?",
-    96: "How does Giselle's reaction to the film develop during the date?",
-    97: "How does Michel's reunion conversation with Giselle unfold?",
-    98: "What is the chronology of these moments near the end of the date?",
-    101: "How does Michel's decision about a future with Giselle unfold?",
-    104: "During the post-film discussion, what is the order of these moments?",
-    108: "How does Michel's invitation to Giselle unfold?",
-    111: "How does Michel's conversation about building a life with Giselle unfold?",
-    113: "What is the chronology of these moments in the couple's post-film conversation?",
-    119: "Across the movie outing, what is the order of these selected moments?",
-    121: "How does Michel's response to the film develop over the date?",
-    124: "How does the couple's reflection on living again unfold?",
-    127: "How does the date's reflective conversation unfold?",
-    131: "How does the couple's conversation about a shared future unfold?",
-    137: "How does Morgana's conversation about Midsummer unfold?",
-    140: "How does Morgana's final conversation about illusion unfold?",
-    143: "How does Morgana's effort to recover missed experiences unfold?",
-    151: "What is the chronology of these moments from Morgana's time in the idealized realm?",
-    155: "How does Morgana's reflection on her lost childhood unfold?",
-    158: "How does Morgana's effort to experience an ordinary life unfold?",
-    162: "What is the chronology of these moments as Morgana adjusts to the peaceful realm?",
-    164: "During Morgana's time in the peaceful realm, what is the order of these moments?",
-    169: "How does Morgana's view of the idealized realm develop?",
-    173: "How does Morgana's outlook during the peaceful interlude develop?",
-    176: "How does Morgana's reassessment of her companion unfold?",
-    180: "How does Morgana's relationship with her companion evolve in the peaceful realm?",
+    3: "Which sequence best traces Michel and Imeon's debate over survival?",
+    6: "Reconstruct the progression of Imeon's conversation about Danish seafaring.",
+    12: "Place the listed turning points from Imeon's first extended conversation with Michel in story order.",
+    13: "Which sequence best traces Imeon's first visit to Michel's mansion?",
+    15: "From the options, identify the progression of Imeon's debate with Michel about adventure.",
+    19: "Reconstruct the progression of Imeon's opening storyline at the mansion.",
+    22: "Place the listed turning points from Imeon's growing entanglement at the mansion in story order.",
+    26: "From the options, identify the progression of the commotion over an unexpected mansion visitor.",
+    30: "Which sequence best traces Imeon's evolving outlook during his conversation with Michel?",
+    33: "Reconstruct the progression of Michel's attempt to handle the unexpected visitor.",
+    34: "Place the listed turning points from the visitor's exchange with Michel in story order.",
+    37: "From the options, identify the progression of the visitor's disruption at the mansion.",
+    38: "Arrange the key exchanges in Michel's response to the intrusion in story order.",
+    39: "Track the changes in the mansion's atmosphere during the visitor's arrival.",
+    41: "Which ordering best captures the household's response to the unexpected guest?",
+    43: "Put the developments from Georges's studio commotion in story order.",
+    45: "Arrange the stages of Imeon's early mansion arc in story order.",
+    48: "Track the changes in Mell's bond with Morgana across their conversation.",
+    51: "Which sequence best traces Morgana's first night at the estate?",
+    55: "Reconstruct the progression of Morgana's doorway encounter.",
+    60: "Place the listed turning points from a period of strain at the estate in story order.",
+    64: "From the options, identify the progression of Morgana's search for security at the estate.",
+    68: "Arrange the developments in Morgana's departure from the great hall in story order.",
+    70: "Which sequence best traces Jacopo's protective role toward Morgana?",
+    73: "Reconstruct the progression of Morgana's early bonds at the estate.",
+    75: "Place the listed turning points from a tense night at the estate in story order.",
+    76: "From the options, identify the progression of Morgana's vulnerability during her early stay.",
+    80: "Arrange the developments in the estate's escalating unrest in story order.",
+    84: "Track the changes in the estate's atmosphere of crisis across this passage.",
+    88: "Track the changes in tone as Michel's movie date with Giselle begins.",
+    90: "Which ordering best captures the couple's reaction to the horror film?",
+    94: "Which ordering best captures the overall shape of Michel and Giselle's movie date?",
+    96: "Put the developments concerning the couple's attempt to process the horror film in story order.",
+    97: "Which sequence best traces the couple's commitment during their reunion conversation?",
+    98: "Put the developments from the closing phase of the date in story order.",
+    101: "Reconstruct the progression of Michel's choice about a future with Giselle.",
+    104: "Place the listed turning points from the couple's discussion of identity in story order.",
+    108: "From the options, identify the progression of Michel's invitation to Giselle.",
+    111: "Arrange the decisions shaping Michel's readiness to build a life with Giselle in story order.",
+    113: "Track the changes in Michel's thinking during the post-film conversation.",
+    119: "Which ordering best captures the emotional arc of the movie outing?",
+    121: "Put the developments concerning Michel's response to the film in story order.",
+    124: "Arrange the exchanges in the couple's reflection on living again in story order.",
+    127: "Track the changes in the date's reflective tone across the conversation.",
+    131: "Follow the arc of the couple's shared-future conversation by choosing the correct sequence.",
+    137: "Which ordering best captures Morgana's approach to Midsummer?",
+    140: "Which ordering best captures Morgana's final confrontation over the illusion?",
+    143: "Put the developments concerning Morgana's effort to recover missed experiences in story order.",
+    151: "Put the developments concerning Morgana's adjustment to the idealized realm in story order.",
+    155: "Identify the story order of the developments shaping Morgana's view of her lost childhood.",
+    158: "Identify the story order of the developments in Morgana's pursuit of an ordinary life.",
+    162: "Identify the story order of the developments shaping Morgana's engagement with the peaceful realm.",
+    164: "Identify the story order of the developments in Morgana's outlook on Midsummer.",
+    169: "Identify the story order of the developments shaping Morgana's view of the idealized realm.",
+    173: "Follow the arc of Morgana's outlook during the peaceful interlude by choosing the correct sequence.",
+    176: "Follow the arc of Morgana's reassessment of her companion by choosing the correct sequence.",
+    180: "Follow the arc of Morgana's relationship in the peaceful realm by choosing the correct sequence.",
 }
 
 APPROVED_ROUND2_STEMS = {
@@ -109,12 +110,43 @@ APPROVED_ROUND2_STEMS = {
         "Which statements accurately summarize Volthal and Flora's report about the missing pair?"
     ),
     "highway-blossoms-R0030": (
-        "What is the chronology of the trip- and future-related moments involving "
-        "Marina, the canyon guide, Linda, Jane, and Lacey?"
+        "Which sequence correctly orders the travelers' remarks during discussions "
+        "of destinations and personal goals?"
     ),
     "highway-blossoms-R0067": (
         "Which statements accurately describe Amber and Marina's decisions as they prepare to leave Arches?"
     ),
+}
+
+FATA_STYLE_FAMILY_PREFIXES = {
+    "which-sequence": "Which sequence best traces ",
+    "reconstruct": "Reconstruct the progression of ",
+    "place-turning-points": "Place the listed turning points ",
+    "from-options": "From the options, identify the progression of ",
+    "arrange": "Arrange the ",
+    "track": "Track the changes in ",
+    "which-ordering": "Which ordering best captures ",
+    "put-in-order": "Put the developments ",
+    "identify-order": "Identify the story order of ",
+    "follow-arc": "Follow the arc of ",
+}
+
+# Literal gold-order checklist used only to detect proposition enumeration in a
+# stem.  It is independent of the approved-stem snapshot above and is verified
+# against the canonical answer field before checking option/stem overlap.
+FATA_GOLD_SEQUENCE_CHECKLIST = {
+    3: "CDBA", 6: "BCAD", 12: "DCBA", 13: "DBCA", 15: "BADC",
+    19: "CBAD", 22: "BCDA", 26: "BDCA", 30: "BCAD", 33: "CADB",
+    34: "DBCA", 37: "DCAB", 38: "ABDC", 39: "ADBC", 41: "BDAC",
+    43: "CDBA", 45: "CABD", 48: "ACBD", 51: "CBAD", 55: "BCAD",
+    60: "BDCA", 64: "ADBC", 68: "CBAD", 70: "DABC", 73: "ACDB",
+    75: "ADBC", 76: "ADCB", 80: "BCAD", 84: "BDAC", 88: "BDCA",
+    90: "BADC", 94: "BCDA", 96: "CBDA", 97: "CBAD", 98: "DCAB",
+    101: "DBAC", 104: "ADCB", 108: "DCBA", 111: "BADC", 113: "ACDB",
+    119: "DABC", 121: "BACD", 124: "ADBC", 127: "BACD", 131: "DABC",
+    137: "DACB", 140: "CBDA", 143: "CDAB", 151: "BADC", 155: "BDAC",
+    158: "ADBC", 162: "BCDA", 164: "DACB", 169: "ABDC", 173: "DACB",
+    176: "ACBD", 180: "ABCD",
 }
 
 PREVIOUS_TASK3_KEYS = {
@@ -135,7 +167,7 @@ ORDERING_LEAKAGE_KEYS = {
 
 _DIRECTIONAL_LEAK_RE = re.compile(
     r"\bbefore\b|\bafter\b|\bpreced(?:e|es|ed|ing)\b|\blater\b|"
-    r"\bearliest\b|\blatest\b|\bfrom\b.+\bto\b",
+    r"\bearliest\b|\blatest\b|\bfrom\b(?!\s+the options\b).+\bto\b",
     re.I,
 )
 _QUOTED_FRAGMENT_RE = re.compile(r"[“\"]([^”\"]{12,})[”\"]")
@@ -240,8 +272,54 @@ def test_round2_stems_match_manual_approval_list() -> None:
     # R0068 is the review's concrete regression case: one scene anchor replaces
     # the previous rescue -> visitor -> refuge narration.
     r0068 = QUESTION_REWRITES["fata-morgana-requiem-R0068"]
-    assert r0068 == "How does Morgana's move away from the great hall unfold?"
+    assert r0068 == (
+        "Arrange the developments in Morgana's departure from the great hall in story order."
+    )
     assert not re.search(r"rescue|visitor|refuge", r0068, re.I)
+
+
+def test_fata_style_distribution_and_gold_enumeration(repo_root: Path) -> None:
+    assert set(FATA_GOLD_SEQUENCE_CHECKLIST) == FATA_ORDERING_IDS
+    family_counts: Counter[str] = Counter()
+    moment_reference_count = 0
+    items = _canonical_items(repo_root, "fata-morgana-requiem")
+
+    for item_id in sorted(FATA_ORDERING_IDS):
+        rewrite_key = f"fata-morgana-requiem-R{item_id:04d}"
+        stem = QUESTION_REWRITES[rewrite_key]
+        assert stem is not None
+        matching_families = [
+            family
+            for family, prefix in FATA_STYLE_FAMILY_PREFIXES.items()
+            if stem.startswith(prefix)
+        ]
+        assert len(matching_families) == 1, (rewrite_key, matching_families)
+        family_counts[matching_families[0]] += 1
+        moment_reference_count += len(
+            re.findall(r"\b(?:these|selected) moments\b", stem, re.I)
+        )
+
+        qa = items[item_id - 1]
+        answer_letters = "".join(re.findall(r"[A-D]", str(qa["answer"])))
+        assert answer_letters == FATA_GOLD_SEQUENCE_CHECKLIST[item_id]
+        enumerated_options = [
+            letter
+            for letter in answer_letters
+            if _shared_ngram(stem, qa["option"][ord(letter) - ord("A")], size=3)
+        ]
+        assert len(enumerated_options) <= 1, (
+            f"{rewrite_key} enumerates phrases from multiple gold propositions: "
+            f"{enumerated_options}"
+        )
+
+    assert len(family_counts) >= 8, family_counts
+    assert max(family_counts.values()) <= 10, family_counts
+    assert moment_reference_count <= 5, moment_reference_count
+    print(f"Fata style families: {dict(sorted(family_counts.items()))}")
+    print(
+        "Fata these/selected-moments references: "
+        f"{moment_reference_count}/57 (maximum 5)"
+    )
 
 
 def test_rewrites_preserve_protected_fields(repo_root: Path) -> None:
@@ -343,6 +421,8 @@ def main() -> None:
     )
     test_round2_stems_match_manual_approval_list()
     print("manual Fata non-leak approval list passed: 57/57 stems")
+    test_fata_style_distribution_and_gold_enumeration(repo_root)
+    print("Fata gold-sequence enumeration checklist passed: 57/57 stems")
     test_rewrites_preserve_protected_fields(repo_root)
     test_clean_rebuild_stems(repo_root)
     print("stem curation regression checks passed")

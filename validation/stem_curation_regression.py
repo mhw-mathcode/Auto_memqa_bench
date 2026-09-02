@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 import src.curate_novel_benchmark as curation
-from src.benchmark_qa_schema import extract_core_question_text
+from src.benchmark_qa_schema import extract_core_question_text, normalize_public_qa
 from src.benchmark_question_rewrites import (
     OPTION_REWRITES,
     QUESTION_REWRITES,
@@ -353,6 +353,60 @@ def test_rewrites_preserve_protected_fields(repo_root: Path) -> None:
                 assert "Select all that apply" not in rewritten
 
 
+def test_all_option_rewrites_preserve_real_canonical_fields(repo_root: Path) -> None:
+    covered: set[str] = set()
+    protected_fields = (
+        "answer",
+        "question_type",
+        "evidence_dialogues",
+        "reasoning_steps",
+    )
+    keys_by_title: dict[str, list[str]] = {}
+    for rewrite_key in OPTION_REWRITES:
+        title_key, _suffix = rewrite_key.rsplit("-R", 1)
+        keys_by_title.setdefault(title_key, []).append(rewrite_key)
+
+    for title_key, rewrite_keys in keys_by_title.items():
+        items = _canonical_items(repo_root, title_key)
+        for rewrite_key in sorted(rewrite_keys):
+            item_index = int(rewrite_key[-4:])
+            source = deepcopy(items[item_index - 1])
+            baseline, _audit = normalize_public_qa(source, title_key, item_index)
+            stem, options, action = rewrite_publication_item(
+                rewrite_key,
+                extract_core_question_text(source["question"], ""),
+                source["option"],
+            )
+            assert action == "rewrite"
+            assert stem is not None
+            rewritten_source = deepcopy(source)
+            rewritten_source["question"] = stem
+            rewritten_source["option"] = options
+            rewritten, _audit = normalize_public_qa(
+                rewritten_source, title_key, item_index
+            )
+            for field in protected_fields:
+                assert rewritten[field] == baseline[field], (rewrite_key, field)
+
+            configured = OPTION_REWRITES[rewrite_key]
+            assert len(options) == len(source["option"])
+            for before, after in zip(source["option"], options):
+                letter = before[0]
+                assert after.startswith(f"{letter}. ")
+                if letter in configured:
+                    assert after == f"{letter}. {configured[letter]}"
+                else:
+                    assert after == before
+            assert rewritten["question"].splitlines()[
+                1 : 1 + len(rewritten["option"])
+            ] == rewritten["option"]
+            covered.add(rewrite_key)
+
+    assert covered == set(OPTION_REWRITES)
+    assert len(covered) == 116
+    print(f"protected-field option coverage passed: {len(covered)}/116 registry keys")
+
+
 def test_clean_rebuild_stems(repo_root: Path) -> None:
     with tempfile.TemporaryDirectory(prefix="stem-curation-regression-") as temp_dir:
         report = curation.curate_all(repo_root, Path(temp_dir))
@@ -430,6 +484,7 @@ def main() -> None:
     test_fata_style_distribution_and_gold_enumeration(repo_root)
     print("Fata gold-sequence enumeration checklist passed: 57/57 stems")
     test_rewrites_preserve_protected_fields(repo_root)
+    test_all_option_rewrites_preserve_real_canonical_fields(repo_root)
     test_clean_rebuild_stems(repo_root)
     print("stem curation regression checks passed")
 

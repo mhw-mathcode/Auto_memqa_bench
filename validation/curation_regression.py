@@ -682,7 +682,7 @@ def test_question_rewrites_are_story_specific() -> None:
             "Which long-range conclusions about Sol's relationship with the group are "
             "supported? Select all that apply?",
             "How does Sol's relationship with Selphine's group change over the course "
-            "of the story? Select all that apply?",
+            "of the story?",
         ),
         "highway-blossoms-R0013": (
             "Place these moments in the “the music-festival plan” thread in "
@@ -699,8 +699,7 @@ def test_question_rewrites_are_story_specific() -> None:
         "fault-milestone-two-R0011": (
             "Which developments involving It's all right accurately describe the "
             "characters's episode?",
-            "What happens as Selphine returns to herself after the confrontation? "
-            "Select all that apply?",
+            "What happens as Selphine returns to herself after the confrontation?",
         ),
         "nurse-love-addiction-R0066": (
             "What is Asuka’s nearby response to the scene anchored by Asuka observes "
@@ -798,6 +797,9 @@ def test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
         "How should these four developments be arranged in story order? "
         "They concern Morgana's rescue and involve Jacopo and Morgana."
     ) == ["repeated ordering template"]
+    assert find_construction_issues("What happened? Select all that apply?") == [
+        "embedded selection instruction"
+    ]
 
 
 def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> None:
@@ -811,6 +813,9 @@ def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> N
         "lowercase option body"
     ]
     assert find_option_issues("D. eBay becomes their next lead.") == []
+    assert find_option_issues(
+        "A. Asuka reacts strongly and observes that stop spacing out, Prima."
+    ) == ["mechanical observation prose"]
 
 
 def test_option_rewrites_relabel_bodies_and_reject_invalid_registry_entries() -> None:

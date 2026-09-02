@@ -7,12 +7,13 @@ import re
 
 QUESTION_REWRITES: dict[str, str | None] = {
     "fault-milestone-two-R0011": (
-        "What happens as Selphine returns to herself after the confrontation? "
-        "Select all that apply?"
+        'What happens as Selphine returns to herself after the confrontation?'
     ),
     "fault-milestone-two-R0028": (
-        "How does Sol's relationship with Selphine's group change over the course "
-        "of the story? Select all that apply?"
+        (
+            "How does Sol's relationship with Selphine's group change over the "
+            'course of the story?'
+        )
     ),
     "highway-blossoms-R0013": (
         "In what order do Amber and Marina discuss their plans to attend the music "
@@ -43,8 +44,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "the confrontation?"
     ),
     "fault-milestone-two-R0014": (
-        "What does Selphine's behavior reveal about her struggle to preserve her own "
-        "identity against Queen Rhegan's influence? Select all that apply?"
+        (
+            "What does Selphine's behavior reveal about her struggle to preserve "
+            "her own identity against Queen Rhegan's influence?"
+        )
     ),
     "fault-milestone-two-R0015": (
         "In what order is Selphine cautioned about battlekravte, asked about a new "
@@ -57,8 +60,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "In what order do these encounters and discussions involving Melano occur?"
     ),
     "fault-milestone-two-R0020": (
-        "What does the story reveal about how the Path-down affects identity and "
-        "behavior? Select all that apply?"
+        (
+            'What does the story reveal about how the Path-down affects identity '
+            'and behavior?'
+        )
     ),
     "fault-milestone-two-R0026": (
         "What does Selphine say to Sol when they first meet in Neo Sasary?"
@@ -67,8 +72,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "In what order do these events involving the group's sea voyage occur?"
     ),
     "fault-milestone-two-R0034": (
-        "Why is Selphine afraid of inheriting Queen Rhegan's identity? Select all "
-        "that apply?"
+        "Why is Selphine afraid of inheriting Queen Rhegan's identity?"
     ),
     "fault-milestone-two-R0036": (
         "In what order is Sol rebuked, pursued, brought into the house, and entrusted "
@@ -90,20 +94,23 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "missing child?"
     ),
     "fault-milestone-two-R0054": (
-        "How does Sol respond to his theft from Mil and the responsibility he later "
-        "assumes? Select all that apply?"
+        (
+            'How does Sol respond to his theft from Mil and the responsibility he '
+            'later assumes?'
+        )
     ),
     "fault-milestone-two-R0056": (
-        "How does Selphine turn her distrust of outsiders into an investigation "
-        "centered on Sol? Select all that apply?"
+        (
+            'How does Selphine turn her distrust of outsiders into an investigation '
+            'centered on Sol?'
+        )
     ),
     "fault-milestone-two-R0057": (
         "In what order do the group's visit to the bathhouse and Sol's theft there "
         "unfold?"
     ),
     "fault-milestone-two-R0059": (
-        "What happens when Ritona searches the bathhouse for a missing child? Select "
-        "all that apply?"
+        'What happens when Ritona searches the bathhouse for a missing child?'
     ),
     "fault-milestone-two-R0068": (
         "In what order does Sol's relationship with Mil and the group change?"
@@ -119,7 +126,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "What does Sceatoire claim happened between her and someone named Rune?"
     ),
     "fault-milestone-two-R0079": (
-        "How does Sceatoire respond after hearing Rune's name? Select all that apply?"
+        "How does Sceatoire respond after hearing Rune's name?"
     ),
     "fault-milestone-two-R0082": (
         "What dosage schedule, if any, does Rupika give for Ritona's medicine while "
@@ -130,54 +137,66 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "displaying her language skills, and sharing food with Selphine?"
     ),
     "fault-milestone-two-R0085": (
-        "How does the group's trust in Greus change after he makes Ritona's survival "
-        "conditional on taking him to Rughzenhaide? Select all that apply?"
+        (
+            "How does the group's trust in Greus change after he makes Ritona's "
+            'survival conditional on taking him to Rughzenhaide?'
+        )
     ),
     "fault-milestone-two-R0092": (
         "In what order does the Vita Domain facility become involved in Ritona's "
         "treatment?"
     ),
     "fault-milestone-two-R0094": (
-        "How do Ritona and Selphine disagree about whether Greus has broken his "
-        "promise? Select all that apply?"
+        (
+            'How do Ritona and Selphine disagree about whether Greus has broken his '
+            'promise?'
+        )
     ),
     "fault-milestone-two-R0099": (
-        "What role does the Vita Domain play in Ritona's care, from its first mention "
-        "through her promised release? Select all that apply?"
+        (
+            "What role does the Vita Domain play in Ritona's care, from its first "
+            'mention through her promised release?'
+        )
     ),
     "fault-milestone-two-R0100": (
         "In what order do Selphine and Mil's experiences with cooking occur?"
     ),
     "fault-milestone-two-R0103": (
-        "What does the story reveal about sagiolla's role in Mil's illness and the "
-        "pharmacist's exploitation? Select all that apply?"
+        (
+            "What does the story reveal about sagiolla's role in Mil's illness and "
+            "the pharmacist's exploitation?"
+        )
     ),
     "fault-milestone-two-R0105": (
         "In what order does the group's judgment of Greus change?"
     ),
     "fault-milestone-two-R0109": (
-        "How does Sol's responsibility for Mil change after his theft and violent "
-        "confrontation with the pharmacist? Select all that apply?"
+        (
+            "How does Sol's responsibility for Mil change after his theft and "
+            'violent confrontation with the pharmacist?'
+        )
     ),
     "fault-milestone-two-R0113": (
         "In what order does the story reveal how sagiolla is prepared, used, grown, "
         "and exposed as ineffective?"
     ),
     "heart-of-the-woods-R0005": (
-        "How does Madison's view of her future with Taranormal and Tara change? "
-        "Select all that apply?"
+        "How does Madison's view of her future with Taranormal and Tara change?"
     ),
     "heart-of-the-woods-R0006": (
-        "How does the story gradually reveal Geladura's true identity and role? "
-        "Select all that apply?"
+        "How does the story gradually reveal Geladura's true identity and role?"
     ),
     "heart-of-the-woods-R0007": (
-        "How do the supernatural events in Eysenfeld change what Tara and Madison "
-        "can prove? Select all that apply?"
+        (
+            'How do the supernatural events in Eysenfeld change what Tara and '
+            'Madison can prove?'
+        )
     ),
     "heart-of-the-woods-R0008": (
-        "How do Tara and Madison repair their friendship while Madison's future with "
-        "Taranormal remains unsettled? Select all that apply?"
+        (
+            "How do Tara and Madison repair their friendship while Madison's future "
+            'with Taranormal remains unsettled?'
+        )
     ),
     "heart-of-the-woods-R0023": (
         "In what order does Abigail's transition from ghostly existence to ordinary "
@@ -229,8 +248,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "becoming too comfortable and saying too much?"
     ),
     "highway-blossoms-R0015": (
-        "What do Amber and Marina learn when they find the stranded car and receive "
-        "the treasure journal? Select all that apply?"
+        (
+            'What do Amber and Marina learn when they find the stranded car and '
+            'receive the treasure journal?'
+        )
     ),
     "highway-blossoms-R0017": (
         "At this point, has Amber told Marina that the journal entry leaves her "
@@ -264,12 +285,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "In what order do Amber and Marina take risks while searching the ruins?"
     ),
     "highway-blossoms-R0044": (
-        "How does Amber's fatigue affect her and Marina's travel plans? Select all "
-        "that apply?"
+        "How does Amber's fatigue affect her and Marina's travel plans?"
     ),
     "highway-blossoms-R0046": (
-        "What do Amber, Joseph, and Mariah reveal while discussing Canyon de Chelly? "
-        "Select all that apply?"
+        'What do Amber, Joseph, and Mariah reveal while discussing Canyon de Chelly?'
     ),
     "highway-blossoms-R0048": (
         "In what order does Amber's fatigue affect the journey and lead her to rest?"
@@ -279,8 +298,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "cheerful tone and fears losing her?"
     ),
     "highway-blossoms-R0052": (
-        "What happens during Amber and Marina's uncomfortable rest-stop encounter "
-        "with the trucker? Select all that apply?"
+        (
+            "What happens during Amber and Marina's uncomfortable rest-stop "
+            'encounter with the trucker?'
+        )
     ),
     "highway-blossoms-R0053": (
         "At this point in the story, has Amber told Marina that she is attracted to "
@@ -295,8 +316,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "getting food occur?"
     ),
     "highway-blossoms-R0060": (
-        "What happens when Amber and Marina unexpectedly meet Joseph in town? Select "
-        "all that apply?"
+        'What happens when Amber and Marina unexpectedly meet Joseph in town?'
     ),
     "highway-blossoms-R0063": (
         "What attitude does Marina express when she tells Amber, ‘Don't worry, I "
@@ -307,23 +327,23 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "while they chase Mariah's motorhome?"
     ),
     "highway-blossoms-R0066": (
-        "What do Amber and Marina conclude while looking for Angel's Landing? Select "
-        "all that apply?"
+        "What do Amber and Marina conclude while looking for Angel's Landing?"
     ),
     "highway-blossoms-R0068": (
         "At this point, has Amber told Marina that her disappointment at Angel's "
         "Landing is tied to Gramps' plans and her growing feelings for Marina?"
     ),
     "highway-blossoms-R0074": (
-        "What do Amber and Marina reveal while discussing past relationships and "
-        "their own feelings? Select all that apply?"
+        (
+            'What do Amber and Marina reveal while discussing past relationships '
+            'and their own feelings?'
+        )
     ),
     "highway-blossoms-R0079": (
         "In what order do Amber and Marina discuss their dating histories?"
     ),
     "highway-blossoms-R0080": (
-        "What does Amber say about her nausea and the street artist? Select all that "
-        "apply?"
+        'What does Amber say about her nausea and the street artist?'
     ),
     "highway-blossoms-R0082": (
         "By that scene, has Amber told Marina about her guilt over not wanting to get "
@@ -334,8 +354,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "their outing also makes her feel she is doing something wrong?"
     ),
     "highway-blossoms-R0087": (
-        "What do the characters reveal while playing blackjack and reflecting on their "
-        "trip? Select all that apply?"
+        (
+            'What do the characters reveal while playing blackjack and reflecting '
+            'on their trip?'
+        )
     ),
     "highway-blossoms-R0090": (
         "By that scene, has Amber told Marina the depth of her guilt over Gramps and "
@@ -346,12 +368,13 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "the treasure in Vegas?"
     ),
     "highway-blossoms-R0093": (
-        "What do Amber and Marina say about Amber's unusual breakfast? Select all "
-        "that apply?"
+        "What do Amber and Marina say about Amber's unusual breakfast?"
     ),
     "highway-blossoms-R0095": (
-        "What happens when Amber prepares to risk the motorhome and Mariah intervenes? "
-        "Select all that apply?"
+        (
+            'What happens when Amber prepares to risk the motorhome and Mariah '
+            'intervenes?'
+        )
     ),
     "highway-blossoms-R0102": (
         "In what order does Amber decide to send Marina home after losing the "
@@ -362,8 +385,10 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "her first explanation to their arrival?"
     ),
     "highway-blossoms-R0105": (
-        "What do Amber and Marina say while trying a festival drink and waiting for "
-        "conditions to improve? Select all that apply?"
+        (
+            'What do Amber and Marina say while trying a festival drink and waiting '
+            'for conditions to improve?'
+        )
     ),
     "nurse-love-addiction-R0002": (
         "What does Itsuki do after saying that she will check on Sakuya?"
@@ -420,33 +445,46 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "festival?"
     ),
     "nurse-love-addiction-R0018": (
-        "How does Asuka's motivation to become a nurse develop from her school career "
-        "survey to her admiration for Ms. Ohara? Select all that apply?"
+        (
+            "How does Asuka's motivation to become a nurse develop from her school "
+            'career survey to her admiration for Ms. Ohara?'
+        )
     ),
     "nurse-love-addiction-R0019": (
-        "Which statements occur after Itsuki notices that Asuka has many questions "
-        "but before Itsuki says Asuka's submission angers her? Select all that apply?"
+        (
+            'Which events occur while Asuka and Nao discuss medicine, independence, '
+            "and Asuka's past?"
+        )
     ),
     "nurse-love-addiction-R0020": (
-        "How do Asuka's attempts to become independent from Nao reveal the sisters' "
-        "continuing dependence on each other? Select all that apply?"
+        (
+            "How do Asuka's attempts to become independent from Nao reveal the "
+            "sisters' continuing dependence on each other?"
+        )
     ),
     "nurse-love-addiction-R0021": (
-        "Which statements occur after Asuka dismisses the situation as a dream but "
-        "before Nao groans while Asuka examines the medicine bottle? Select all that "
-        "apply?"
+        (
+            'Which statements describe the conversations in which Asuka and Nao '
+            'reconsider her memories and treatment?'
+        )
     ),
     "nurse-love-addiction-R0022": (
-        "How does Nao's ‘first and last date’ change Asuka and Nao's understanding of "
-        "their bond? Select all that apply?"
+        (
+            "How does Nao's ‘first and last date’ change Asuka and Nao's "
+            'understanding of their bond?'
+        )
     ),
     "nurse-love-addiction-R0023": (
-        "Which statements occur after Nao suggests treating Asuka properly with "
-        "medicine but before Nao recalls Open Campus Day? Select all that apply?"
+        (
+            "Which statements describe Nao and Sakuya's reactions as the group "
+            "discusses Asuka's condition and Itsuki's absence?"
+        )
     ),
     "nurse-love-addiction-R0024": (
-        "Which statements occur after Itsuki describes falling out of bed but before "
-        "Asuka asks whether she mentioned those things? Select all that apply?"
+        (
+            'Which moments occur as Asuka reflects on her training and learns more '
+            'about her history at the hospital?'
+        )
     ),
     "nurse-love-addiction-R0056": (
         "What, if anything, does Asuka learn about the contents of Kaede's resignation "
@@ -591,56 +629,79 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "she was joking?"
     ),
     "nurse-love-addiction-R0100": (
-        "Which of Asuka's other thoughts and statements occur while she asks Itsuki "
-        "whether she is meeting Miss Takeda? Select all that apply?"
+        (
+            "Which of Asuka's other thoughts and statements occur while she asks "
+            'Itsuki whether she is meeting Miss Takeda?'
+        )
     ),
     "nurse-love-addiction-R0101": (
-        "What else does Itsuki say while explaining why her club switched from a "
-        "literary magazine to magical-girl material? Select all that apply?"
+        (
+            'What else does Itsuki say while explaining why her club switched from '
+            'a literary magazine to magical-girl material?'
+        )
     ),
     "nurse-love-addiction-R0102": (
-        "What else does Asuka say or think during her conversation with Nao about "
-        "umbrellas? Select all that apply?"
+        (
+            'What else does Asuka say or think during her conversation with Nao '
+            'about umbrellas?'
+        )
     ),
     "nurse-love-addiction-R0103": (
-        "What else does Nao say while warning Asuka that she ate too much after "
-        "fasting for a day? Select all that apply?"
+        (
+            'What else does Nao say while warning Asuka that she ate too much after '
+            'fasting for a day?'
+        )
     ),
     "nurse-love-addiction-R0104": (
-        "What else does Sakuya say during the conversation in which she threatens to "
-        "hit Itsuki until she takes back what she said? Select all that apply?"
+        (
+            'What else does Sakuya say during the conversation in which she '
+            'threatens to hit Itsuki until she takes back what she said?'
+        )
     ),
     "nurse-love-addiction-R0105": (
-        "What else does Asuka say or think when she denies that she is turning to "
-        "religion? Select all that apply?"
+        (
+            'What else does Asuka say or think when she denies that she is turning '
+            'to religion?'
+        )
     ),
     "nurse-love-addiction-R0106": (
-        "What does Itsuki say while describing the club's cosplay activities and "
-        "Asuka's potential appeal to nerds? Select all that apply?"
+        (
+            "What does Itsuki say while describing the club's cosplay activities "
+            "and Asuka's potential appeal to nerds?"
+        )
     ),
     "nurse-love-addiction-R0107": (
-        "What does Itsuki say while explaining why Sakuya's boarding-school choice "
-        "shows more than simple concern for her mother? Select all that apply?"
+        (
+            "What does Itsuki say while explaining why Sakuya's boarding-school "
+            'choice shows more than simple concern for her mother?'
+        )
     ),
     "nurse-love-addiction-R0109": (
-        "What else does Sakuya say while joining the students' lively beach "
-        "conversation? Select all that apply?"
+        (
+            "What else does Sakuya say while joining the students' lively beach "
+            'conversation?'
+        )
     ),
     "nurse-love-addiction-R0110": (
-        "What else does Itsuki say while inviting Asuka and Nao to the seaside? "
-        "Select all that apply?"
+        'What else does Itsuki say while inviting Asuka and Nao to the seaside?'
     ),
     "nurse-love-addiction-R0111": (
-        "What other study instructions does Kaede give while explaining the purpose "
-        "of the vacation review tests? Select all that apply?"
+        (
+            'What other study instructions does Kaede give while explaining the '
+            'purpose of the vacation review tests?'
+        )
     ),
     "nurse-love-addiction-R0112": (
-        "What else does Asuka say or think during the conversation in which she "
-        "insists that she really wants to change? Select all that apply?"
+        (
+            'What else does Asuka say or think during the conversation in which she '
+            'insists that she really wants to change?'
+        )
     ),
     "nurse-love-addiction-R0113": (
-        "What else does Asuka say or think while discussing how Itsuki and Sakuya got "
-        "together? Select all that apply?"
+        (
+            'What else does Asuka say or think while discussing how Itsuki and '
+            'Sakuya got together?'
+        )
     ),
     "heart-of-the-woods-R0071": (
         "After Tara forces open the church doors, what does she do when the monster "
@@ -708,6 +769,12 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "From earliest to latest, how do these moments involving Itsuki and Nao "
         "unfold?"
     ),
+    'nurse-love-addiction-R0038': "In what order do these moments from Asuka's reflections and conversations with Nao and Itsuki occur?",
+    'nurse-love-addiction-R0039': "In what order do these moments from Asuka's training and interactions with Nao and Itsuki occur?",
+    'nurse-love-addiction-R0041': "In what order do these moments involving Asuka's dorm life and her friends occur?",
+    'nurse-love-addiction-R0043': "In what order do Asuka's remarks and thoughts during her time with Nao occur?",
+    'nurse-love-addiction-R0045': 'In what order do these reflections and exchanges involving Asuka, Itsuki, and Nao occur?',
+    'nurse-love-addiction-R0047': 'In what order do these moments involving Kaede, Nao, and Asuka occur?',
     "nurse-love-addiction-R0040": (
         "Arrange these moments involving Asuka and Itsuki from earliest to latest?"
     ),
@@ -1282,12 +1349,10 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'not a nurse outfit.'},
  'nurse-love-addiction-R0002': {'A': 'This time, Miss Sakuya will also be accompanying Ms. '
                                      'Shionogi.',
-                                'B': "Miss Sakuya's face is bright red. The narration describes it "
-                                     'as a rare sight.',
+                                'B': "Miss Sakuya's bright-red face is a rare sight.",
                                 'C': 'Her voice is surprisingly gentle and she cannot say anything '
                                      'in response.',
-                                'D': 'In that case, she loves, love, love, love, love her. Asuka '
-                                     'reacts to the situation.',
+                                'D': 'Asuka excitedly says that she loves her very much.',
                                 'E': 'Miss Itsuki waves her hand at her again and walks away.'},
  'nurse-love-addiction-R0003': {'A': 'Itsuki says of course, her lady. Itsuki asks whether they '
                                      'would like to request it.',
@@ -1305,21 +1370,17 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'from sight.',
                                 'E': 'Asuka cannot hear anything. Asuka cannot feel anything but '
                                      'her consciousness ebbing away.'},
- 'nurse-love-addiction-R0005': {'B': 'The two easygoing friends chime in. It is easy for them to '
-                                     "say. The narration describes Asuka's frustration.",
+ 'nurse-love-addiction-R0005': {'B': 'The two easygoing friends chime in, leaving Asuka frustrated by how easy it is for them to say that.',
                                 'D': 'As she asks her this, Miss Itsuki keeps a long silence '
                                      'before responding.',
                                 'E': 'Still worried about Nao, she cannot seem to think of any '
                                      'polite reply.'},
- 'nurse-love-addiction-R0006': {'A': 'Nao says escalated pretty quickly. Nao reacts to the '
-                                     'situation. Nao will support them, sis. Nao suggests that '
-                                     'they do their best.',
-                                'C': "Nao says come on. Nao says it's from Itsuki again. Nao says "
-                                     "‘Say goodnight to Prima for her.'.",
-                                'E': 'Nao reacts to the situation. Nao asks about supposed. Nao '
-                                     'says sis, if they do not wake up. Nao is going to kiss '
-                                     'them.'},
- 'nurse-love-addiction-R0007': {'C': "Itsuki says having such a ‘power' would be like having the "
+ 'nurse-love-addiction-R0006': {'A': 'Nao says the situation escalated quickly, then offers her support and encourages her sister to do her best.',
+                                'B': 'Nao says that she rushed home because she was worried about her sister and asks what she is doing.',
+                                'C': 'Nao says another message is from Itsuki and reads, ‘Say goodnight to Prima for me.’',
+                                'E': 'Nao warns her sister that if she does not wake up, Nao is going to kiss her.'},
+ 'nurse-love-addiction-R0007': {'A': 'Itsuki guarantees that Asuka has the potential to become a star among nerds.',
+                                'C': "Itsuki says having such a ‘power' would be like having the "
                                      'power of a god.',
                                 'D': "Itsuki says it won't just be that Itsuki will do this and "
                                      'that to them.',
@@ -1332,36 +1393,31 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'B': "Kaede says it's true that her elder sister, Sumire Ohara, "
                                      'won the Nightingale Award. Later, Kaede looks forward to '
                                      'getting to know them all.',
-                                'D': 'Kaede says bedridden patients and patients with delicate '
-                                     'skin will quickly form bedsores. Kaede adds that this will '
-                                     'lead to more serious problems. Later, Kaede says the patient '
-                                     'will already be nervous enough as it is, so small things can '
-                                     'add fuel to their anxiety. Kaede adds that this is relevant.',
-                                'E': 'Kaede says the patient will already be nervous enough as it '
-                                     'is, so small things can add fuel to their anxiety. Kaede '
-                                     "adds that this is relevant. Later, Kaede says it's true that her elder "
-                                     'sister, Sumire Ohara, won the Nightingale Award.'},
- 'nurse-love-addiction-R0009': {'D': 'Asuka apologizes, explaining that Oh, sorry, she just spaced '
-                                     'out a little. Asuka says —Hehe.'},
+                                'D': "Kaede explains that bedridden patients and those with delicate skin quickly develop bedsores, which can lead to more serious problems. Later, she says that small things can intensify an already nervous patient's anxiety.",
+                                'E': "Kaede says that small things can intensify an already nervous patient's anxiety. Later, she confirms that her elder sister, Sumire Ohara, won the Nightingale Award."},
+ 'nurse-love-addiction-R0009': {'A': 'Asuka says that she is basically the same age as their grandmother.',
+                                'B': 'Asuka interrupts and asks whether this is what they are looking for.',
+                                'D': 'Asuka apologizes for spacing out, then laughs softly.'},
  'nurse-love-addiction-R0010': {'A': 'Nao says now, milk and eggs go into the fridge.',
                                 'B': 'Nao tells Asuka that they took a while and asks whether they '
                                      'went far.',
+                                'D': 'Nao says that someone was there even though the room was empty.',
                                 'E': 'Nao wonders whether it could be a stalker.'},
  'nurse-love-addiction-R0011': {'B': 'The classroom is engulfed with cries of despair.',
                                 'C': 'The more she thinks of it the less she understands.',
                                 'D': 'Asuka turns away and ignores her. Eeek, mission failed.'},
- 'nurse-love-addiction-R0012': {'B': 'It may already be closed. Please, no. Just then.',
-                                'C': 'Miss Sakuya freezes. As if time itself has stopped.'},
+ 'nurse-love-addiction-R0012': {'B': 'She fears that it may already be closed; just then, something happens.',
+                                'C': 'Miss Sakuya freezes as though time itself has stopped.'},
  'nurse-love-addiction-R0013': {'B': 'Nao says sis, she is acting like a heckler with all her '
                                      'little jibes.',
                                 'C': "Nao says not to worry because she practiced a lot after school.",
+                                'D': 'Nao reminds her sister that they learned this in nutrition class two weeks earlier.',
                                 'E': "Nao says it's obvious, though, why she wasn't in any of the "
                                      "laboratory's data."},
  'nurse-love-addiction-R0014': {'A': "Asuka explains that she came chasing after them in a hurry.",
-                                'D': "Asuka says the nurse's cap and the candlelight service. "
-                                     'Asuka is so envious.',
-                                'E': 'Asuka reacts with amusement. Asuka says see, Nao, she woke '
-                                     'up on her own. Asuka says zzz.'},
+                                'C': 'Asuka says that Miss Takeda and Miss Amato have healing hands.',
+                                'D': "Asuka envies the nurse's cap and the candlelight service.",
+                                'E': 'Asuka playfully tells Nao that she woke up on her own, then pretends to sleep.'},
  'nurse-love-addiction-R0015': {'B': "Ms. Ohara's words flow, her body never taking a moment to "
                                      'rest as she moves serenely and gracefully.',
                                 'C': 'Swoosh. Crash. The sounds of the waves reach her ears. Asuka '
@@ -1372,38 +1428,28 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'voice, she looks towards her. Their eyes meet.'},
  'nurse-love-addiction-R0016': {'D': 'Asuka says that she and the others will go through a lot '
                                      'together over the next three years.',
-                                'E': "Asuka says it's not such a big deal. Asuka says even if "
-                                     "they're lost forever."},
+                                'E': 'Asuka says it is not a big deal, even if they are lost forever.'},
  'nurse-love-addiction-R0017': {'B': 'Once again, excited voices can be heard. There truly are a '
                                      'lot of events to come.',
                                 'D': 'Miss Sakuya responds coldly. Everyone seems to agree with '
                                      'this assessment. Machi and Michi are nodding.',
-                                'E': 'Ms. Ohara smiles kindly at her and she feels herself go weak '
-                                     'in the knees. As for Nao.'},
- 'nurse-love-addiction-R0019': {'A': 'Asuka broach the subject. As if to say to her that they '
-                                     'could do it if she wants. The narration notes that it had '
-                                     'been Nao who had said she should take medicine instead. It '
-                                     'feels kinda weird.',
+                                'E': "Ms. Ohara's kind smile makes her weak in the knees, unlike her reaction to Nao."},
+ 'nurse-love-addiction-R0019': {'A': 'Asuka broaches the subject as if to suggest that they could do it if Nao wanted, though it feels strange because Nao had recommended medicine instead.',
                                 'B': "Itsuki says it's what Prima looks like after she's "
                                      'transformed. Itsuki says when she first saw them at school, '
                                      'she felt shockwaves.',
                                 'C': 'Nao goes back into the kitchen as she speaks.',
-                                'D': 'Asuka open her photo folder. From amongst her photos, she '
-                                     'chose the oldest one. Asuka tap it with her finger.'},
+                                'D': 'Asuka opens her photo folder, chooses the oldest picture, and taps it with her finger.'},
  'nurse-love-addiction-R0021': {'A': 'Next to her, Nao is quietly scribbling in her notebook.',
-                                'B': "Ms. Ohara looks at her as if she doesn't quite comprehend "
-                                     'what she means, Oops.',
+                                'B': 'Ms. Ohara looks at Asuka as though she does not quite understand what Asuka means.',
                                 'C': 'Itsuki says perhaps having suffered traumatic experiences in '
                                      "the orphanage, she's lost her memories from then.",
-                                'D': 'Sakuya says they do know she can hear them. Sakuya does not '
-                                     'look out of place.',
+                                'D': 'Sakuya acknowledges that Asuka can hear them and does not appear out of place.',
                                 'F': 'Hearing these words from Nao, she begins to think that might '
                                      'be the case.'},
  'nurse-love-addiction-R0023': {'A': 'Environment Theory, Pathology, Microbiology, Clinical '
                                      'Testing, Information Science, Counseling. Her mind spirals.',
-                                'B': "Itsuki says —Yes, all she wants to do is make ‘ Prima ' into "
-                                     'something great. Itsuki responds affirmatively, she will see '
-                                     'them.',
+                                'B': 'Itsuki says that all she wants is to make Prima into something great, then agrees to see them.',
                                 'C': 'Asuka says words like spec and data are from that, and the '
                                      'names she did not know are her gaming friends.',
                                 'D': 'Nao looks deeply relieved, from the bottom of her heart.',
@@ -1412,94 +1458,67 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'F': "Sakuya says the only reason why she hasn't returned to the "
                                      "dorm is that she'd rather not be around her and her "
                                      'nagging.'},
- 'nurse-love-addiction-R0024': {'A': 'Asuka reacts to the situation. Asuka says even if they look '
-                                     'really carefully, she does not think they can see it.',
-                                'C': 'Asuka privately reflects that and of course, the answer to '
-                                     'that is the thigh. Asuka says too bad Nao, but this victory '
-                                     'is her own.',
-                                'D': 'Nao says all the tests which were done on her and the '
-                                     'others, were all.',
-                                'E': 'Nao asks about cruel and sister. Nao says Or no, she is not '
-                                     'even really their sister. Nao says just a cruel girl.',
+ 'nurse-love-addiction-R0024': {'A': 'Asuka says that she does not think they can see it, even if they look very carefully.',
+                                'C': 'Asuka decides that the answer is the thigh and privately celebrates her victory over Nao.',
+                                'D': 'Nao begins to describe all the tests that were performed on her and the others.',
+                                'E': 'Nao calls her a cruel girl and says that she is not really their sister.',
                                 'F': 'Led by Ms. Shionogi, they leave the nurse station. The '
                                      "hospital ward they head to isn't the one where Yuki is."},
  'nurse-love-addiction-R0036': {'C': 'Ms. Ohara nods, but her expression seems to say otherwise. '
                                      'Asuka does not seem convinced.',
-                                'D': 'Such meaningless thoughts dance in her head. The former '
-                                     'Jellyfish Club manager. Jellyfish-ish her.'},
+                                'D': 'Meaningless thoughts about the former Jellyfish Club manager dance through her head.'},
  'nurse-love-addiction-R0037': {'A': 'Nao says if they plan properly and work at it consistently '
                                      'then they will be able to get through it. Nao says leave it '
                                      'to her.',
-                                'B': 'Itsuki handle them independently. Itsuki says they are '
-                                     'slightly naughty in nature.',
+                                'B': 'Itsuki handles them independently and says that they are slightly naughty by nature.',
                                 'C': "Sakuya says it's not like they are together all the time. "
                                      'Sakuya says today, a bunch of girls from class took her off '
                                      'somewhere.',
-                                'D': 'Itsuki reacts to the situation. Itsuki says it took a small '
-                                     'amount of coercing.'},
+                                'D': 'Itsuki says that it took a little coercion.'},
  'nurse-love-addiction-R0038': {'B': 'As she asks her this, Miss Itsuki keeps a long silence '
                                      'before responding.',
-                                'C': 'About her past. About Miss Sakuya. Many things have happened '
-                                     'that have made it all so confusing. Asuka reacts to the '
-                                     'situation. The one thing in the middle of it all.',
-                                'D': 'Asuka involuntarily let out an odd cry, before quickly '
-                                     'covering her mouth. Fortunately, Nao shows no sign of '
-                                     'change. All she can hear is her adorable breathing.'},
+                                'C': "Asuka finds her past and Miss Sakuya's role confusing after everything that has happened.",
+                                'D': "Asuka involuntarily lets out an odd cry, quickly covers her mouth, and hears only Nao's quiet breathing."},
  'nurse-love-addiction-R0039': {'A': 'Nao breaks the tension. Miss Itsuki shrugs her shoulders '
-                                     'apologetically.'},
+                                     'apologetically.',
+                                'C': 'Asuka acknowledges the instruction and asks the patient to hold out an arm.'},
  'nurse-love-addiction-R0040': {'A': 'Itsuki says an event that is said to be the biggest doujin '
                                      'event in the country.',
                                 'C': 'Without any further words, she enters the classroom.',
                                 'D': 'Kaede says this decision has been made upon receiving a '
                                      'formal request from the chief nurse. Kaede asks whether they '
                                      'know what this means.'},
- 'nurse-love-addiction-R0041': {'A': 'Itsuki says her words. Itsuki told them to also.',
-                                'B': 'After school finishes, she return to their dorm. Alone.',
+ 'nurse-love-addiction-R0041': {'A': 'Itsuki says that her words told them to do the same.',
+                                'B': 'After school, she returns to the dorm alone.',
                                 'D': 'Nao says when she was cleaning the room she found it on the '
                                      'floor.'},
- 'nurse-love-addiction-R0042': {'A': 'Asuka reacts with amusement. Asuka says see, Nao, she woke '
-                                     'up on her own. Asuka says zzz.',
-                                'B': '—Click. Asuka hears the sound of the door opening. Her '
-                                     'senses vaguely return to her. The sound of footsteps '
-                                     'entering the room.',
-                                'C': "Asuka says them weren't in the first year classroom.",
-                                'D': 'Kaede says it will be held in the auditorium. Kaede says all '
-                                     'of they will attend wearing their training uniforms.'},
+ 'nurse-love-addiction-R0042': {'A': 'Asuka playfully tells Nao that she woke up on her own, then pretends to sleep.',
+                                'B': "A click and approaching footsteps bring Asuka's senses slowly back to her.",
+                                'C': 'Asuka says that they were not in the first-year classroom.',
+                                'D': 'Kaede says that the ceremony will be held in the auditorium and that everyone will attend in training uniforms.'},
  'nurse-love-addiction-R0043': {'B': 'Asuka says beyond the hill, she sees them, she sees them '
                                      'gooooo.',
                                 'D': 'Asuka says it seems like she is taking that medicine quite '
                                      'often.'},
- 'nurse-love-addiction-R0044': {'A': 'Nao says it is. Nao urges the listener not to patronize '
-                                     'their younger sister. Nao has been with them for a long '
-                                     'time.',
-                                'D': "Sakuya says them too, Itsuki. Sakuya says please don't say "
-                                     'unnecessary things.'},
+ 'nurse-love-addiction-R0044': {'A': 'Nao asks not to be patronized, reminding her sister that they have been together for a long time.',
+                                'B': 'Asuka slowly turns her eyes toward the paper and cries, ‘Burn!’',
+                                'D': 'Sakuya tells Itsuki not to say unnecessary things.'},
  'nurse-love-addiction-R0045': {'A': "Itsuki says it would've made her look a lot cooler if her "
                                      'reason for collapsing had been too much studying.',
-                                'B': 'A god. Someone who could heal any wound. Asuka supposes a '
-                                     'god could even bring the dead back to life. Asuka wonders '
-                                     'about the listener about the situation at hand. The '
-                                     "narration focuses on that's probably true.",
-                                'C': "Itsuki says it's always possible that there might have been "
-                                     'some kids whom she did not know. Itsuki says who knew her.',
-                                'D': 'Nao is an evil, cruel girl, and she did things which cannot '
-                                     'be forgiven. Nao says do as them please.'},
- 'nurse-love-addiction-R0046': {'A': 'Kaede is. Kaede says not worth making a role model out of.',
-                                'B': 'Sakuya wear a dress. Sakuya says not exactly the best wear '
-                                     'for hospital life.',
+                                'B': 'Asuka imagines a god who could heal any wound and even bring the dead back to life.',
+                                'C': 'Itsuki says that some children unknown to her might nevertheless have known her.',
+                                'D': 'Nao calls herself an evil, cruel girl who did unforgivable things and tells Asuka to do as she pleases.'},
+ 'nurse-love-addiction-R0046': {'A': 'Kaede says that she is not worth choosing as a role model.',
+                                'B': 'Sakuya wears a dress that is not particularly suitable for hospital life.',
                                 'C': 'Itsuki says of course, her lady. Itsuki asks whether they '
                                      'would like to request it.',
                                 'D': 'For a moment, she speaks in a questioning voice, but it '
                                      'quickly turns to a gasp of surprise.'},
- 'nurse-love-addiction-R0047': {'A': 'Kaede says —Hehe. Kaede is glad to hear that Kaede says '
-                                     'please look after their health.',
+ 'nurse-love-addiction-R0047': {'A': 'Kaede laughs, says she is glad to hear that, and asks everyone to look after their health.',
                                 'B': 'Nao puts her fingertip in between her lips.',
-                                'C': 'Nao would forgotten to give it to them. Nao apologizes, and '
-                                     'states she must leave. Nao says here.',
-                                'D': 'Crying without restraint, she runs into her arms. Of course, '
-                                     'she does not refuse her. Asuka accept her as her big '
-                                     'sister.'},
- 'nurse-love-addiction-R0048': {'A': 'Itsuki says must have been quite the ordeal for him.',
+                                'C': 'Nao says that she nearly forgot to give it to Asuka, hands it over, and apologizes before leaving.',
+                                'D': 'Asuka runs into her arms in tears and accepts her as an older sister.'},
+ 'nurse-love-addiction-R0048': {'A': 'Itsuki says that it must have been quite an ordeal for him.',
                                 'B': 'Sakuya does not have any. Sakuya says stop talking about '
                                      'stupid things.'},
  'nurse-love-addiction-R0051': {'A': 'Engaged.',
@@ -1533,48 +1552,36 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'D': 'Hippocampal suppression.',
                                 'E': 'Electrical stimulation.',
                                 'F': 'Surgical lesioning.'},
- 'nurse-love-addiction-R0061': {'A': "Nao says eww, a snot bubble. Nao says sis, that doesn't "
-                                     'become a second year student. Nao says them wanna go back to '
-                                     'being a first year.',
-                                'B': "Nao gets that they haven't eaten for an entire day, but them "
-                                     'stuffed themselves way too much. Nao says are them alright.',
-                                'C': 'Nao died at 65 during the autumn of their 5th year in '
-                                     "elementary school, so. Nao says she'd be 74.",
+ 'nurse-love-addiction-R0061': {'A': 'Nao notices a snot bubble, tells her sister that it is unbecoming of a second-year student, and asks whether she wants to be a first-year again.',
+                                'B': 'Nao understands that her sister had not eaten all day, but says that she ate far too much and asks whether she is all right.',
+                                'C': 'Nao calculates that someone who died at sixty-five during her fifth-grade autumn would now be seventy-four.',
                                 'D': "Nao says in any case, since they themselves haven't said "
                                      'anything, it might be best not to spread any rumors about '
-                                     'it.'},
+                                     'it.',
+                                'E': 'Nao says that the dormitory bath is too small; she appreciates the offer but only needs to warm up.'},
  'nurse-love-addiction-R0062': {'A': 'Itsuki says this is an important matter for the lab. Itsuki '
                                      'knows.',
-                                'B': 'Itsuki says if she work herself up too much, she will pee '
-                                     'her pants again.',
-                                'C': 'Itsuki handle them independently. Itsuki says they are '
-                                     'slightly naughty in nature.',
-                                'D': 'Itsuki reacts with surprise, for them to say that, she must '
-                                     "be. Itsuki says —It's nothing, really.",
+                                'B': 'Itsuki warns that if she gets too worked up, she will wet her pants again.',
+                                'C': 'Itsuki handles them independently and says that they are slightly naughty by nature.',
+                                'D': 'Itsuki is surprised that Asuka would say that, then insists that it is nothing.',
                                 'E': 'Itsuki says on the day, she will pretend like she has '
                                      "forgotten it's the Princess's birthday."},
  'nurse-love-addiction-R0063': {'A': 'Itsuki says morning, Princess. Itsuki is just about to head '
                                      'to bed.',
-                                'B': 'Itsuki responds affirmatively, here they are. Itsuki says '
-                                     'welcome to their secret base.',
-                                'E': 'Itsuki asks Asuka about the situation at hand. Itsuki just '
-                                     'wear whatever. Itsuki says sometimes she sleeps naked.'},
+                                'B': 'Itsuki welcomes them to her secret base.',
+                                'D': 'Itsuki describes thick eye shadow, baggy skirts, and a Hannya-demon brooch.',
+                                'E': 'Itsuki asks Asuka what she should wear, says that she wears whatever she likes, and admits that she sometimes sleeps naked.'},
  'nurse-love-addiction-R0064': {'B': "Kaede says people's hair grows at different rates. Kaede "
                                      "says there's nothing embarrassing about an adult without "
                                      'hair in certain areas.',
-                                'C': 'Kaede says her heart is in the right place, but do her best '
-                                     'to be polite tomorrow.',
-                                'E': 'Kaede says regarding hospital training, she will pass out '
-                                     'the papers later, so please confirm her details '
-                                     'individually.'},
+                                'C': 'Kaede says that her heart is in the right place but asks her to be polite tomorrow.',
+                                'E': 'Kaede says that she will distribute the hospital-training papers later so that everyone can check their details individually.'},
  'nurse-love-addiction-R0065': {'A': 'Nao says studying in a karaoke booth could make for a good '
                                      'change of pace. Nao says maybe.',
                                 'D': "Nao says of course. Nao says for now, let's just do some "
                                      'window shopping and take a walk around.',
-                                'E': 'Nao asks about fold-up and umbrella. Nao says they say it '
-                                     'might rain today.'},
- 'nurse-love-addiction-R0066': {'D': "Asuka regards it's different when they are going on a date "
-                                     'with their lover.'},
+                                'E': 'Nao asks whether they have a folding umbrella because rain is forecast.'},
+ 'nurse-love-addiction-R0066': {'D': 'Asuka says that it is different when someone is going on a date with a lover.'},
  'nurse-love-addiction-R0067': {'A': 'Sakuya says they went swimming. Sakuya says Itsuki '
                                      'challenged her to a race to the buoy.',
                                 'B': 'Sakuya says this is different. Sakuya says when they are '
@@ -1582,25 +1589,17 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'matter.',
                                 'D': "Sakuya says it's an important topic. Sakuya says clothing is "
                                      'one of the basic necessities of life.',
-                                'E': "Sakuya is right. Sakuya says in its own way, it's very cute. "
-                                     'Sakuya notes that Sakuya apologizes, explaining that she is '
-                                     'sorry.'},
- 'nurse-love-addiction-R0068': {'D': "Asuka reacts to the situation. Asuka says them shouldn't "
-                                     'share their umbrella. Asuka says not with the likes of her.'},
- 'nurse-love-addiction-R0069': {'A': 'Sakuya asks about talking and gaming. Sakuya says they were '
-                                     'playing until so late last night.',
+                                'E': 'Sakuya agrees that it is cute in its own way, then apologizes.'},
+ 'nurse-love-addiction-R0068': {'D': 'Asuka says that they should not share an umbrella, especially not with someone like her.'},
+ 'nurse-love-addiction-R0069': {'A': 'Sakuya asks whether they were talking and gaming until late the previous night.',
                                 'B': "Sakuya says one wrong word and it'll sound more like "
                                      'sarcasm. Sakuya says especially to someone who wears the '
                                      'same hospital nightwear every day.',
                                 'C': 'Sakuya says this is different. Sakuya says when they are '
                                      "surrounded by all their classmates it's obviously another "
                                      'matter.',
-                                'D': 'Sakuya says they have to. Sakuya says this is an important '
-                                     'class. Sakuya reacts to the situation. Sakuya says it is '
-                                     "pretty daunting, isn't it.",
-                                'E': 'Sakuya asks whether they plan on returning to their room '
-                                     "like that Sakuya says it's not like they can wear their wet "
-                                     'clothes.'},
+                                'D': 'Sakuya says that they have to attend because it is an important, if daunting, class.',
+                                'E': 'Sakuya asks whether they plan to return to their room like that, since they cannot keep wearing wet clothes.'},
  'nurse-love-addiction-R0070': {'A': 'Asuka says they have arrived. Asuka says this is the place.',
                                 'B': 'Asuka says actually, she was a little shocked.',
                                 'D': "Asuka says it's not a laughing matter.",
@@ -1612,37 +1611,19 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'B': "Itsuki says it's about the evil life form, Virilius, which "
                                      'is eating its way through the world and the magical girl who '
                                      'fights it with the power of healing.',
-                                'C': 'Itsuki asks about didnt, forbidden, and exchange. Itsuki '
-                                     'turned down everyone who asked. Itsuki responds '
-                                     "affirmatively. Itsuki says after they eat this, let's rest a "
-                                     'while and then move on to their dessert. Itsuki says '
-                                     'watermelon splitting.',
-                                'D': "Itsuki says she's gotten over it and now she tells her that "
-                                     'she has feelings for her. Itsuki asks about didnt, '
-                                     'forbidden, and exchange. Itsuki turned down everyone who '
-                                     'asked.',
-                                'E': 'Itsuki responds affirmatively. Itsuki says after they eat '
-                                     "this, let's rest a while and then move on to their dessert. "
-                                     'Itsuki says watermelon splitting. Itsuki is just thinking '
-                                     'about something. Itsuki says if she stays shut up in her '
-                                     'room it just makes her more depressed. Sigh.'},
- 'nurse-love-addiction-R0072': {'B': 'Asuka says it kind of had that sort of impact. Asuka says '
-                                     "like ‘boom!'.",
-                                'C': 'Asuka reacts strongly and observes that stop spacing out, '
-                                     'Prima. Asuka reacts strongly and observes that draw the '
-                                     'crowd. Asuka says draw the crowd.',
-                                'D': 'Asuka reacts to the situation. Asuka says can do it when she '
-                                     'set her mind to it.',
+                                'C': 'Itsuki says that she turned down everyone who asked to exchange forbidden items. She then suggests resting after the meal before moving on to dessert and watermelon splitting.',
+                                'D': 'Itsuki says that she has moved on and now admits her feelings, then recalls turning down everyone who requested a forbidden exchange.',
+                                'E': 'Itsuki suggests resting after the meal before dessert and watermelon splitting, then says that staying shut in her room would only make her more depressed.'},
+ 'nurse-love-addiction-R0072': {'B': 'Asuka says that it had that kind of impact, like a sudden boom.',
+                                'C': 'Asuka tells Prima to stop spacing out and draw the crowd.',
+                                'D': 'Asuka says that she can do it when she sets her mind to it.',
                                 'E': "Asuka says nah, she couldn't do it. Asuka says a bed is no "
                                      'place to pee.'},
- 'nurse-love-addiction-R0073': {'B': 'Nao asks Asuka about the situation at hand. Nao says miss '
-                                     "Itsuki, them shouldn't say things like that.",
+ 'nurse-love-addiction-R0073': {'B': 'Nao tells Miss Itsuki that she should not say things like that.',
                                 'D': 'Nao says aha. Nao would drop out too. Nao would chase after '
                                      'her.'},
  'nurse-love-addiction-R0074': {'B': "Itsuki says it probably wouldn't change anything."},
- 'nurse-love-addiction-R0075': {'A': "Kaede says next week, the second years' Capping Ceremony "
-                                     'will be held. Kaede says everyone, including them first '
-                                     'years, will attend.',
+ 'nurse-love-addiction-R0075': {'A': "Kaede says that the second-years' Capping Ceremony will be held the following week and that all first-years will attend.",
                                 'C': 'Kaede says next, in November. Kaede says it is still quite a '
                                      'way ahead of them, but they will hold their annual school '
                                      'festival.',
@@ -1651,143 +1632,93 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'training as well.',
                                 'E': 'Kaede says simple things like bed making, bathing, and blood '
                                      'pressure measurement will begin from autumn of this year.'},
- 'nurse-love-addiction-R0076': {'B': 'Itsuki says someone cuter than her. Itsuki notes that, more '
-                                     'of a handful as well.',
+ 'nurse-love-addiction-R0076': {'B': 'Itsuki says that the other person is cuter than she is and more of a handful.',
                                 'C': 'Itsuki says friendly competition is important. Itsuki says '
                                      'for that, rivalry is necessary.',
-                                'D': 'Itsuki responds affirmatively. Itsuki was probably excited. '
-                                     'Itsuki says until really late, she was.',
+                                'D': 'Itsuki admits that she was probably excited and stayed up very late.',
                                 'E': "Itsuki says that's true. Itsuki says fine, she will leave it to "
                                      'them then.'},
  'nurse-love-addiction-R0077': {'A': "Nao says it's not ‘standing.' It's ‘glued' onto the front "
                                      "door. Nao says it's an anatomical chart.",
                                 'C': 'Nao says there are test drills from the past national exams.',
-                                'D': 'Nao reacts to the situation. Nao says if they insist on '
-                                     'wearing their training uniform, she will wear her own too.',
+                                'D': 'Nao says that if Asuka insists on wearing her training uniform, Nao will wear hers too.',
                                 'E': 'Nao says they are. Nao says actually, they are even a little '
                                      'ahead of schedule.'},
- 'nurse-love-addiction-R0078': {'A': 'Nao reacts with amusement. Nao responds affirmatively, well '
-                                     'off they goes then, darling. Nao says be careful. Nao says '
-                                     'the sea at night is a dangerous place.',
-                                'C': "Nao does not think it'll beat the fried noodles from a beach "
-                                     'hut. Nao says matter how professionally made they are.',
+ 'nurse-love-addiction-R0078': {'A': 'Nao sends her sister off, warns her to be careful, and says that the sea is dangerous at night.',
+                                'C': 'Nao doubts that it will beat beach-hut fried noodles, no matter how professionally it is made.',
                                 'D': "Nao wouldn't want her sister to be like her. Nao says Asuka "
                                      "is Asuka and that is what's great about her.",
-                                'E': 'Nao says not at all. Nao will use the leftover rice to make '
-                                     "porridge. Nao says let her see, where's the milk."},
- 'nurse-love-addiction-R0079': {'B': 'Asuka notes that eh. Asuka reacts to the situation. Asuka '
-                                     'says them saved her. Asuka thanks Nao and explains that '
-                                     'thanks.',
-                                'C': 'Asuka reacts to the situation. Asuka says fried chicken with '
-                                     'the bones.',
-                                'D': "Asuka responds affirmatively. Asuka says then, let's go.",
-                                'E': 'Asuka responds affirmatively. Asuka says they were on the '
-                                     'phone.'},
- 'nurse-love-addiction-R0080': {'A': 'Asuka reacts to the situation. Asuka says even if they look '
-                                     'really carefully, she does not think they can see it.',
-                                'C': 'Asuka says Ms. Ohara, she will be fine from around here. '
-                                     'Asuka can get home on her own.',
+                                'E': 'Nao says that she will use the leftover rice to make porridge and looks for the milk.'},
+ 'nurse-love-addiction-R0079': {'B': 'Asuka thanks Nao for saving her.',
+                                'C': 'Asuka asks for bone-in fried chicken.',
+                                'D': "Asuka agrees and says, ‘Then let's go.’",
+                                'E': 'Asuka confirms that they were on the phone.'},
+ 'nurse-love-addiction-R0080': {'A': 'Asuka says that she does not think they can see it, even if they look very carefully.',
+                                'C': 'Asuka tells Ms. Ohara that she will be fine and can get home on her own.',
                                 'D': 'Asuka says miss Itsuki likes games, so she was just talking '
                                      'to her friend about them.'},
- 'nurse-love-addiction-R0081': {'A': 'Asuka just sort of. Asuka says ended up like this. Asuka '
-                                     "says it's not like she is spying on them.",
-                                'B': 'Asuka says perceptive. Asuka responds affirmatively, once '
-                                     'they get home she may put in a request for their ‘healing '
-                                     "forehead.'.",
-                                'D': 'Asuka urges the listener not to worry. Asuka will be fine on '
-                                     'her own. Asuka says them relax and take it easy, Nao.',
+ 'nurse-love-addiction-R0081': {'A': 'Asuka says that she somehow ended up like this and insists that she is not spying on them.',
+                                'B': "Asuka praises Nao's perceptiveness and says that she may request Nao's ‘healing forehead’ when they get home.",
+                                'D': 'Asuka tells Nao to relax and not to worry because she will be fine on her own.',
                                 'E': "Asuka says Ms. Ohara didn't seem to have an umbrella with "
                                      "her. Asuka wonders if she's alright."},
- 'nurse-love-addiction-R0082': {'A': "Sakuya apologizes, explaining that it's Itsuki's and her "
-                                     'fault. Sakuya apologizes, explaining that she is sorry. '
-                                     'Sakuya says allow her to apologize for both of them.'},
+ 'nurse-love-addiction-R0082': {'A': 'Sakuya apologizes on behalf of both herself and Itsuki.'},
  'nurse-love-addiction-R0083': {'A': 'Kaede says the classes she will be overseeing are the '
                                      'primary subjects such as Math and English, and General '
                                      'Nursing Theory.',
-                                'B': 'Kaede says everyone, look at their papers and listen '
-                                     'carefully. Kaede says the subjects that she will be '
-                                     'overseeing are.',
+                                'B': 'Kaede asks everyone to look at their papers and listen while she introduces the subjects she will oversee.',
                                 'D': 'Asuka says all the subjects look so difficult.'},
- 'nurse-love-addiction-R0084': {'A': "Nao says again. Nao says ‘It's a lie. Nao urges the listener "
-                                     "not to believe her.'.",
-                                'B': 'Asuka reacts with amusement. Asuka says those two really get '
-                                     "along, don't they.",
-                                'C': "Asuka says it's from Sakuya. Asuka says tell their younger "
-                                     "sister to block Itsuki's texts."},
+ 'nurse-love-addiction-R0084': {'A': 'Nao repeats that it is a lie and urges Asuka not to believe her.',
+                                'B': 'Amused, Asuka remarks that the two of them really get along.',
+                                'C': "Asuka says that Sakuya wants her younger sister to block Itsuki's messages."},
  'nurse-love-addiction-R0085': {'A': "Nao says it's not ‘standing.' It's ‘glued' onto the front "
                                      "door. Nao says it's an anatomical chart.",
-                                'C': 'Asuka says a-a skeleton. Asuka reacts strongly and observes '
-                                     "that there's a skeleton. Asuka says standing in front of the "
-                                     'door.'},
- 'nurse-love-addiction-R0086': {'A': 'Itsuki says yep. Itsuki did say that Itsuki says it is '
-                                     'impossible for them to have normal fights.',
-                                'B': 'Itsuki asks about told and didnt. Itsuki asks about huge and '
-                                     'fight. Itsuki says normal fights and huge fights are two '
-                                     'completely different things.',
+                                'C': 'Asuka cries out that a skeleton is standing in front of the door.'},
+ 'nurse-love-addiction-R0086': {'A': 'Itsuki confirms that she said it was impossible for them to have ordinary fights.',
+                                'B': 'Itsuki asks whether she had not been told that they never have huge fights, then distinguishes huge fights from ordinary ones.',
                                 'C': "Itsuki says maybe the fact that it's autumn."},
  'nurse-love-addiction-R0087': {'A': 'Kaede says they can. Kaede is sure of it.',
-                                'B': 'Asuka says Ms. Ohara, they are her role model. Asuka wants '
-                                     'to become a nurse just like them.'},
- 'nurse-love-addiction-R0089': {'B': 'Itsuki says whoops. Itsuki reacts strongly and observes that '
-                                     '—Haha. Itsuki would prefer not to be arrested. Itsuki says '
-                                     'the offer is off the table now.',
-                                'C': 'Itsuki handle them independently. Itsuki says they are '
-                                     'slightly naughty in nature.',
+                                'B': 'Asuka says that Ms. Ohara is her role model and that she wants to become a nurse just like her.'},
+ 'nurse-love-addiction-R0089': {'A': 'Sakuya threatens to have Itsuki arrested for violating entertainment-establishment laws.',
+                                'B': 'Itsuki laughs, says that she would rather not be arrested, and withdraws the offer.',
+                                'C': 'Itsuki handles them independently and says that they are slightly naughty by nature.',
                                 'D': 'Sakuya says take this seriously, Itsuki. Sakuya says this '
                                      "isn't play."},
- 'nurse-love-addiction-R0090': {'A': 'Asuka reacts to the situation. Asuka says it seems like she '
-                                     "hasn't returned to the dorm, but she does see them two "
-                                     'talking a lot at school.',
+ 'nurse-love-addiction-R0090': {'A': 'Asuka says that Sakuya has not returned to the dorm, although she often sees Sakuya and Itsuki talking at school.',
                                 'B': "Sakuya says that's true. Sakuya supposes the ice might soon melt "
                                      'between them.'},
  'nurse-love-addiction-R0091': {'C': "Asuka says come on now, don't be shy.",
                                 'D': 'Asuka says Nao, she was considering something last night '
                                      'before she slept.'},
- 'nurse-love-addiction-R0092': {'A': "Asuka asks Nao about huhh. Asuka says isn't what she wanted "
-                                     'to ask.'},
+ 'nurse-love-addiction-R0092': {'A': 'Asuka tells Nao that this is not what she wanted to ask.'},
  'nurse-love-addiction-R0093': {'B': 'Itsuki says hmph. Itsuki cannot just let them leave then.',
-                                'D': 'Asuka says as a matter of fact she did. Asuka reacts to the '
-                                     'situation.'},
- 'nurse-love-addiction-R0094': {'D': 'Asuka says No, she is not alright. Asuka is out of energy. '
-                                     'Asuka is thinking she might need some replenishment.'},
- 'nurse-love-addiction-R0095': {'B': "Kaede says now that all of they are here, let's begin the "
-                                     'morning homeroom.'},
+                                'D': 'Asuka confirms that she did.'},
+ 'nurse-love-addiction-R0094': {'D': 'Asuka says that she is not all right, has run out of energy, and may need to replenish it.'},
+ 'nurse-love-addiction-R0095': {'B': 'Kaede begins morning homeroom once everyone has arrived.'},
  'nurse-love-addiction-R0096': {'B': "Nao says it's pretty humid in here since the air "
                                      "conditioning isn't working.",
                                 'D': 'Itsuki says to pass her life in purity and to practice her '
                                      'profession faithfully.'},
- 'nurse-love-addiction-R0097': {'A': 'Kaede reacts to the situation. Kaede says them made her a '
-                                     'promise that day, and she thought they were the type of girl '
-                                     "who wouldn't break a promise.",
-                                'D': 'Kaede says last night, she had a dream. Kaede says in her '
-                                     'dream they had told the academy about her envelope and she.'},
- 'nurse-love-addiction-R0098': {'D': 'Nao is kidding. Nao says just trying a new approach, sis.'},
+ 'nurse-love-addiction-R0097': {'A': 'Kaede reminds Asuka of her promise and says that she believed Asuka was not the kind of girl who would break it.',
+                                'D': 'Kaede says that she dreamed Asuka had told the academy about her envelope.'},
+ 'nurse-love-addiction-R0098': {'D': 'Nao says that she is joking and only trying a new approach with her sister.'},
  'nurse-love-addiction-R0099': {'C': 'Asuka says it seems like she is taking that medicine quite '
                                      'often.'},
- 'nurse-love-addiction-R0100': {'C': "Asuka asks Nao about huhh. Asuka says isn't what she wanted "
-                                     'to ask.',
-                                'F': "Asuka reacts strongly and observes that they can't kiss her. "
-                                     'Asuka says they are her sister.'},
+ 'nurse-love-addiction-R0100': {'C': 'Asuka tells Nao that this is not what she wanted to ask.',
+                                'F': 'Asuka protests that Nao cannot kiss her because they are sisters.'},
  'nurse-love-addiction-R0101': {'A': 'Itsuki says originally, their club was putting out an indie '
                                      'magazine focused on novels. Itsuki says it was filled with '
                                      'short stories—literary, mystery, sci-fi, all sorts.',
-                                'B': 'Itsuki responds affirmatively, she heard. Itsuki asks about '
-                                     'nurse, uniform, and fashion. Itsuki says apparently there '
-                                     'are a variety of types.',
+                                'B': 'Itsuki says that she heard there are many styles of nurse uniforms.',
                                 'D': "Itsuki says the thing was, it really didn't sell very well.",
                                 'E': "Itsuki says she's gotten over it and now she tells her that "
                                      'she has feelings for her.',
                                 'F': 'Itsuki says —Anyway, it was just a friend. Itsuki says they '
                                      'just had a bit of an argument.'},
- 'nurse-love-addiction-R0102': {'A': "Asuka asks what they mean the end. Asuka says they haven't "
-                                     'talked about anything yet.',
-                                'B': "Asuka reacts strongly and observes that it's not that she "
-                                     'does not want to. Asuka says not at all.',
-                                'D': 'Asuka wonders why she asked her that way. Asuka says using '
-                                     'the wording Asuka reacts strongly and observes that matter '
-                                     'what.',
-                                'E': "Asuka says it's not like. Asuka needs to know, no matter "
-                                     'what, but.'},
+ 'nurse-love-addiction-R0102': {'A': 'Asuka asks what Nao means by ‘the end,’ since they have not discussed anything yet.',
+                                'B': 'Asuka insists that it is not that she does not want to.',
+                                'D': 'Asuka wonders why Nao asked her that way, especially using the phrase ‘no matter what.’',
+                                'E': 'Asuka says that it is not as though she needs to know no matter what.'},
  'nurse-love-addiction-R0103': {'A': "Nao says it's not like she does not want to do the magic "
                                      'charm or anything.',
                                 'B': "Nao says she's not in her room right now. Nao says this time "
@@ -1799,27 +1730,21 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'E': 'Nao heard there would be classes like this. Nao says it '
                                      'really is embarrassing.'},
  'nurse-love-addiction-R0104': {'A': "Sakuya says perhaps she could call it a ‘contract' of sorts.",
-                                'D': "Sakuya says Just as she thought. Sakuya says it's not really "
-                                     "well made. Sakuya says it's too oily.",
-                                'E': 'Sakuya says it was written in the Teito Nursing Academy '
-                                     'brochure. Sakuya says they did not read it.',
-                                'F': 'Sakuya was prepared for it. Sakuya says it really is a lot.'},
- 'nurse-love-addiction-R0105': {'E': 'Asuka says now all she has to do. Asuka says is plug this '
-                                     'in.',
-                                'F': 'Asuka reacts to the situation. Asuka says can do it when she '
-                                     'set her mind to it.'},
- 'nurse-love-addiction-R0106': {'B': 'Itsuki says Sakuya—she had someone she used to love. Itsuki '
-                                     'says wonder she turned her down.',
-                                'E': 'Itsuki guarantee. Itsuki says they have the potential to '
-                                     'become a star to the nerds.',
+                                'B': 'Sakuya threatens to have Itsuki arrested for violating entertainment-establishment laws.',
+                                'D': 'Sakuya says that the food is not well made and is too oily, just as she expected.',
+                                'E': 'Sakuya says that it was written in the Teito Nursing Academy brochure and asks whether they read it.',
+                                'F': 'Sakuya says that she was prepared for it, though it is still a lot.'},
+ 'nurse-love-addiction-R0105': {'B': 'Asuka says that she thinks she got it right this time while catching her breath.',
+                                'E': 'Asuka says that all she has to do now is plug it in.',
+                                'F': 'Asuka says that she can do it when she sets her mind to it.'},
+ 'nurse-love-addiction-R0106': {'B': 'Itsuki says that Sakuya once loved someone and wonders why that person rejected her.',
+                                'E': 'Itsuki guarantees that Asuka has the potential to become a star among nerds.',
                                 'F': 'Itsuki says in the past she took her to the lab, and she did '
                                      'some cosplay there.'},
  'nurse-love-addiction-R0107': {'A': 'Itsuki says there are plenty of nursing academies that '
                                      "aren't boarding schools.",
-                                'B': 'Itsuki says some stores have a backup generator. Itsuki '
-                                     'doubt that one does.',
-                                'C': 'Itsuki says they states that now, after they have lost. '
-                                     "Itsuki says that's not like them.",
+                                'B': 'Itsuki says that some stores have backup generators, though she doubts that this one does.',
+                                'C': 'Itsuki says that Asuka only claims that now because she has lost, which is unlike her.',
                                 'D': 'Itsuki says actually, the Prima costume looked out of place '
                                      "in the dorm. Itsuki says it's silly.",
                                 'E': "Itsuki says if she was simply worried, she wouldn't leave "
@@ -1830,30 +1755,20 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'to her, so look forward to it.',
                                 'B': "Itsuki says she's gotten over it and now she tells her that "
                                      'she has feelings for her.',
-                                'C': 'Itsuki says before they enrolled in Teito Nursing Academy, '
-                                     'Sakuya and she actually met Little Osachi at the Open '
-                                     'Campus.',
-                                'D': 'Itsuki says little Osachi was the one who approached them. '
-                                     'Itsuki notes that the reason. Itsuki says was something of a '
-                                     'coincidence.',
+                                'C': "Itsuki says that she and Sakuya met Little Osachi at Teito Nursing Academy's open campus before enrolling.",
+                                'D': 'Itsuki says that Little Osachi approached them for a coincidental reason.',
                                 'E': 'Itsuki says Sakuya dropped something, and Little Osachi '
                                      'picked it up and brought it to her.',
-                                'F': "Itsuki says last year. Itsuki regards it's already been two "
-                                     'years since then.'},
- 'nurse-love-addiction-R0109': {'A': "Sakuya says they do know that it's rude to just stare "
-                                     'silently at someone. Sakuya wonders what do they wants.',
+                                'F': 'Itsuki says that it happened last year and remarks that it has already been two years.'},
+ 'nurse-love-addiction-R0109': {'A': 'Sakuya says that staring silently is rude and asks what Asuka wants.',
                                 'B': 'Sakuya says something about it being essential that the '
                                      'fried noodles at the beach huts contain slightly uncooked '
                                      'cabbage core.',
-                                'C': 'Sakuya says silence. Sakuya says they are right, she agree '
-                                     'that they should talk about their own preferences first.',
-                                'D': 'Sakuya expresses thanks and explains that —Thank them. '
-                                     'Sakuya will humbly accept their compliment. Sakuya says them '
-                                     'look great themselves, Asuka.',
+                                'C': 'After a silence, Sakuya agrees that they should discuss their own preferences first.',
+                                'D': 'Sakuya thanks Asuka, humbly accepts the compliment, and says that Asuka looks great too.',
                                 'E': 'Sakuya says Nao may have pushed her, but she was able to '
                                      'finish her homework a week ago.',
-                                'F': 'Sakuya responds affirmatively. Sakuya says regardless of how '
-                                     'she comes across, Itsuki can really be like a rodent.'},
+                                'F': 'Sakuya agrees that, regardless of appearances, Itsuki can behave like a rodent.'},
  'nurse-love-addiction-R0110': {'F': 'Itsuki says actually, it started over two weeks ago.'},
  'nurse-love-addiction-R0111': {'A': 'Kaede says next, in November. Kaede says it is still quite a '
                                      'way ahead of them, but they will hold their annual school '
@@ -1864,33 +1779,25 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'C': 'Kaede says in their next class, they will have to make a '
                                      'speech, so use the training room for actual practice and '
                                      'make sure that everyone has their say.',
-                                'D': 'Kaede responds affirmatively. Kaede says with the entrance '
-                                     'ceremony over, from today regular classes will begin. Kaede '
-                                     "says today, she will talk about this year's study "
-                                     'curriculum.',
+                                'D': "Kaede says that regular classes begin after the entrance ceremony and introduces the year's curriculum.",
                                 'E': 'Kaede says during summer vacation, the training room will be '
                                      "available for use. Kaede says it's important to review their "
                                      'training as well.',
-                                'F': 'Kaede says everyone, look at their papers and listen '
-                                     'carefully. Kaede says the subjects that she will be '
-                                     'overseeing are.'},
- 'nurse-love-addiction-R0112': {'A': "Asuka reacts strongly and observes that n-no, they can't do "
-                                     'that Asuka reacts strongly and observes that criminal. Asuka '
-                                     'says criminal.',
-                                'D': 'Asuka asks Itsuki about h-huh. Asuka asks about bondage. '
-                                     'Asuka asks about drugs. Asuka says is hypnosis really that '
-                                     'easy to fall under.',
-                                'F': 'Asuka reacts with amusement. Asuka says see, Nao, she woke '
-                                     'up on her own. Asuka says zzz.'},
- 'nurse-love-addiction-R0113': {'A': 'Asuka wonders how did them first get together. Asuka says '
-                                     'them and Miss Sakuya.',
-                                'E': 'Asuka reacts to the situation. Asuka says can do it when she '
-                                     'set her mind to it.',
+                                'F': 'Kaede asks everyone to look at their papers and listen while she introduces the subjects she will oversee.'},
+ 'nurse-love-addiction-R0112': {'A': 'Asuka protests that they cannot do that and calls it criminal.',
+                                'D': 'Asuka asks Itsuki about bondage and drugs, then asks whether hypnosis is really so easy to succumb to.',
+                                'F': 'Asuka playfully tells Nao that she woke up on her own, then pretends to sleep.'},
+ 'nurse-love-addiction-R0113': {'A': 'Asuka asks how Itsuki and Miss Sakuya first got together.',
+                                'E': 'Asuka says that she can do it when she sets her mind to it.',
                                 'F': "Asuka says that's not it at all. Asuka just stammered, that's "
                                      'all.'}}
 
 
 _ISSUE_PATTERNS = (
+    (
+        "embedded selection instruction",
+        re.compile(r"\bSelect all that apply\?", re.I),
+    ),
     (
         "boundary framing",
         re.compile(r"\b(?:earlier|later) boundary\b|\bboundary (?:event|events)\b", re.I),
@@ -1978,7 +1885,11 @@ _ISSUE_PATTERNS = (
 _OPTION_ISSUE_PATTERNS = (
     (
         "mechanical observation prose",
-        re.compile(r"\b[A-Z][A-Za-z’'-]* observes that\b"),
+        re.compile(
+            r"\b(?:[A-Z][A-Za-z’'-]* observes that|"
+            r"reacts strongly and observes that)\b",
+            re.I,
+        ),
     ),
     (
         "mechanical consideration prose",

@@ -827,8 +827,8 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "Whom does Ritona consider consulting when the group discusses finding medical care?"
     ),
     "fault-milestone-two-R0046": (
-        "What do Volthal and Flora report about contact with the Inner-Pole and the "
-        "missing pair's chances of escape?"
+        "Which statements accurately summarize Volthal and Flora's report about the "
+        "missing pair?"
     ),
     "fault-milestone-two-R0047": (
         "How does the discussion of the Inner-Pole and the missing pair unfold?"
@@ -919,7 +919,8 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "How does the exchange about the missing car and Mariah's group unfold?"
     ),
     "highway-blossoms-R0030": (
-        "What is the chronology of Marina's conversations during the Canyon de Chelly visit?"
+        "What is the chronology of the trip- and future-related moments involving "
+        "Marina, the canyon guide, Linda, Jane, and Lacey?"
     ),
     "highway-blossoms-R0031": (
         "How do Marina's questions about the Grand Canyon recur during the treasure search?"
@@ -952,8 +953,8 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "How does Amber and Marina's uncomfortable rest-stop visit unfold?"
     ),
     "highway-blossoms-R0067": (
-        "What does Amber and Marina's planning after uncertainty at Arches show about "
-        "their commitment to the treasure hunt?"
+        "Which statements accurately describe Amber and Marina's decisions as they "
+        "prepare to leave Arches?"
     ),
     "highway-blossoms-R0069": (
         "How does the group's discussion at Angel's Landing unfold as they reassess the clue?"
@@ -1002,172 +1003,175 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "group unfold?"
     ),
     "fata-morgana-requiem-R0003": (
-        "Which sequence best represents Michel and Imeon's early conversation about survival?"
+        "How do the selected moments unfold during Imeon's conversation with Michel "
+        "about survival?"
     ),
     "fata-morgana-requiem-R0006": (
-        "How does Michel and Imeon's discussion of Danish seafaring unfold?"
+        "How does the conversation about Danish seafaring unfold?"
     ),
     "fata-morgana-requiem-R0012": (
-        "What is the chronology of Michel and Imeon's conversations about survival and distant voyages?"
+        "What is the chronology of the selected moments from Imeon's first extended "
+        "conversation with Michel?"
     ),
     "fata-morgana-requiem-R0013": (
-        "Which ordering traces Imeon's arrival at the mansion and his determination to live?"
+        "During Imeon's first visit to the mansion, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0015": (
-        "How do Michel and Imeon's debates about hope and Danish adventure unfold?"
+        "How does Imeon's conversation with Michel about adventure unfold?"
     ),
     "fata-morgana-requiem-R0019": (
-        "What is the story order of Imeon's dreams of overseas travel and Morgana's bargain with him?"
+        "What is the story order of these moments in Imeon's early arc?"
     ),
     "fata-morgana-requiem-R0022": (
-        "Which sequence connects Michel's interest in Danish voyages with Morgana's confrontation of Imeon?"
+        "How do the selected moments in Imeon's early mansion storyline unfold?"
     ),
     "fata-morgana-requiem-R0026": (
-        "How does the mansion scene involving Michelle, Georges, Michel, and the unexpected visitor unfold?"
+        "How does the disturbance surrounding an unexpected mansion visitor unfold?"
     ),
     "fata-morgana-requiem-R0030": (
-        "Which order traces Imeon's determination to live and fascination with Danish travel?"
+        "What is the order of these moments in Imeon's conversation with Michel?"
     ),
     "fata-morgana-requiem-R0033": (
-        "What is the chronology of Georges's studio disturbance and Michel's encounter with the visitor?"
+        "How does Michel's first encounter with the unexpected visitor unfold?"
     ),
     "fata-morgana-requiem-R0034": (
-        "How do Imeon's arrival at the mansion and his declaration of a will to live unfold?"
+        "What is the chronology of the selected moments from Imeon's arrival at the mansion?"
     ),
     "fata-morgana-requiem-R0037": (
-        "Which sequence best follows the commotion around Georges's studio and the visitor's arrival?"
+        "How does the mansion commotion surrounding the visitor unfold?"
     ),
     "fata-morgana-requiem-R0038": (
-        "What is the order of Michelle's concern about Georges and Michel's response to the visitor?"
+        "During the unexpected visitor's arrival, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0039": (
-        "How does the mansion's early commotion involving Michelle, Georges, and the visitor develop?"
+        "How does the early disturbance inside the mansion unfold?"
     ),
     "fata-morgana-requiem-R0041": (
-        "Which chronology fits Georges's outburst and the visitor's questions about the mansion?"
+        "What is the chronology of these moments during the mansion's early commotion?"
     ),
     "fata-morgana-requiem-R0043": (
-        "What is the story order of the studio disturbance and Michel's explanation of the mansion?"
+        "How do the selected moments from the studio disturbance unfold?"
     ),
     "fata-morgana-requiem-R0045": (
-        "How does Michel's interest in Danish warriors intersect chronologically with Morgana's bargain?"
+        "What is the story order of these moments in Imeon's early mansion arc?"
     ),
     "fata-morgana-requiem-R0048": (
-        "How does Mell and Morgana's conversation about friendship unfold?"
+        "How does Mell's conversation with Morgana about friendship unfold?"
     ),
     "fata-morgana-requiem-R0051": (
-        "Which sequence best represents Morgana's rescue and the nighttime disturbance at her shelter?"
+        "During Morgana's first night at the estate, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0055": (
-        "What is the chronology of Morgana regaining consciousness and answering an unexpected visitor?"
+        "How does the disturbance at Morgana's doorway unfold?"
     ),
     "fata-morgana-requiem-R0060": (
-        "How do Odilon's political demands on Jacopo and Mell's friendship with Morgana fit the story chronology?"
+        "What is the chronology of these selected moments from life at the estate?"
     ),
     "fata-morgana-requiem-R0064": (
-        "Which order traces Morgana's encounter at the door and Jacopo's effort to find her shelter?"
+        "How do the selected moments from Morgana's unsettled first night unfold?"
     ),
     "fata-morgana-requiem-R0068": (
-        "How does the story connect Jacopo's rescue of Morgana with the visitor at the door and the search for refuge?"
+        "How does Morgana's move away from the great hall unfold?"
     ),
     "fata-morgana-requiem-R0070": (
-        "What is the chronology of Jacopo's effort to protect Morgana during her rescue?"
+        "How does Jacopo's care for Morgana unfold?"
     ),
     "fata-morgana-requiem-R0073": (
-        "How do Jacopo's reassurance of Morgana and Mell's friendship with her fit in story order?"
+        "What is the chronology of these moments in Morgana's early relationships at "
+        "the estate?"
     ),
     "fata-morgana-requiem-R0075": (
-        "Which sequence situates Morgana's nighttime visitor relative to Odilon's demand that Jacopo act?"
+        "During the estate's unsettled night, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0076": (
-        "How does Morgana's changing security at the estate relate chronologically to Jacopo's political crisis?"
+        "How do the selected moments from Morgana's early days at the estate unfold?"
     ),
     "fata-morgana-requiem-R0080": (
-        "What is the story order of Morgana's recovery at the estate and Odilon's political warning?"
+        "What is the chronology of these moments during the estate's period of upheaval?"
     ),
     "fata-morgana-requiem-R0084": (
-        "Which sequence best spans Jacopo's rescue of Morgana and the estate's political tensions?"
+        "How do the selected moments from the estate's upheaval unfold?"
     ),
     "fata-morgana-requiem-R0088": (
         "How does Michel's movie date with Giselle get underway?"
     ),
     "fata-morgana-requiem-R0090": (
-        "What is the chronology of their response to the horror film and its echoes of their past lives?"
+        "How does the couple's post-film conversation unfold?"
     ),
     "fata-morgana-requiem-R0094": (
-        "Which ordering fits Michel and Giselle's conversations surrounding the horror film?"
+        "During Michel and Giselle's movie date, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0096": (
-        "How do Giselle's thoughts about ghosts and Michel's thoughts about identity unfold during the date?"
+        "How does Giselle's reaction to the film develop during the date?"
     ),
     "fata-morgana-requiem-R0097": (
-        "What is the story order of Michel and Giselle's conversation about staying together and finding each other?"
+        "How does Michel's reunion conversation with Giselle unfold?"
     ),
     "fata-morgana-requiem-R0098": (
-        "Which sequence follows Michel and Giselle as their ordinary date becomes a reunion?"
+        "What is the chronology of these moments near the end of the date?"
     ),
     "fata-morgana-requiem-R0101": (
-        "How does Michel's reflection on change relate chronologically to his decision about Giselle staying?"
+        "How does Michel's decision about a future with Giselle unfold?"
     ),
     "fata-morgana-requiem-R0104": (
-        "What chronology connects Giselle's response to ghosts with Michel's argument about changing identity?"
+        "During the post-film discussion, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0108": (
-        "Which order traces Michel's decision about inviting Giselle into his life?"
+        "How does Michel's invitation to Giselle unfold?"
     ),
     "fata-morgana-requiem-R0111": (
-        "How does Michel's thinking about physical change and a shared future with Giselle unfold?"
+        "How does Michel's conversation about building a life with Giselle unfold?"
     ),
     "fata-morgana-requiem-R0113": (
-        "What is the chronology of Michel's reaction to the film and his discussion of physical identity?"
+        "What is the chronology of these moments in the couple's post-film conversation?"
     ),
     "fata-morgana-requiem-R0119": (
-        "Which sequence best fits the turning points in Michel and Giselle's movie outing?"
+        "Across the movie outing, what is the order of these selected moments?"
     ),
     "fata-morgana-requiem-R0121": (
-        "How do Michel and Giselle's reflections prompted by the movie unfold during their date?"
+        "How does Michel's response to the film develop over the date?"
     ),
     "fata-morgana-requiem-R0124": (
-        "How do the couple's conversations about past lives and a shared future unfold?"
+        "How does the couple's reflection on living again unfold?"
     ),
     "fata-morgana-requiem-R0127": (
-        "Which chronology fits Giselle's reactions throughout the movie date and Michel's reflection on identity?"
+        "How does the date's reflective conversation unfold?"
     ),
     "fata-morgana-requiem-R0131": (
-        "How do Giselle and Michel's reflections on past lives and a shared future unfold during their date?"
+        "How does the couple's conversation about a shared future unfold?"
     ),
     "fata-morgana-requiem-R0137": (
-        "What is the chronology of Morgana's curiosity about ordinary celebrations and recreation?"
+        "How does Morgana's conversation about Midsummer unfold?"
     ),
     "fata-morgana-requiem-R0140": (
-        "How does Morgana's final conversation about illusion and solitude unfold?"
+        "How does Morgana's final conversation about illusion unfold?"
     ),
     "fata-morgana-requiem-R0143": (
-        "Which sequence traces Morgana learning ordinary skills in the idealized realm?"
+        "How does Morgana's effort to recover missed experiences unfold?"
     ),
     "fata-morgana-requiem-R0151": (
-        "How do Morgana's wish to learn and her confrontation about the illusion unfold?"
+        "What is the chronology of these moments from Morgana's time in the idealized realm?"
     ),
     "fata-morgana-requiem-R0155": (
-        "What is the story order of Morgana reflecting on the wheat fields and her missed childhood experiences?"
+        "How does Morgana's reflection on her lost childhood unfold?"
     ),
     "fata-morgana-requiem-R0158": (
-        "Which chronology follows Morgana as she explores life in the wheat-field realm?"
+        "How does Morgana's effort to experience an ordinary life unfold?"
     ),
     "fata-morgana-requiem-R0162": (
-        "How does Morgana's growing interest in rural life and celebration unfold?"
+        "What is the chronology of these moments as Morgana adjusts to the peaceful realm?"
     ),
     "fata-morgana-requiem-R0164": (
-        "What sequence captures Morgana reconsidering rural life and Midsummer?"
+        "During Morgana's time in the peaceful realm, what is the order of these moments?"
     ),
     "fata-morgana-requiem-R0169": (
-        "How do Morgana's thoughts about celebration and the unreal realm develop?"
+        "How does Morgana's view of the idealized realm develop?"
     ),
     "fata-morgana-requiem-R0173": (
-        "Which chronology fits Morgana's changing outlook in the peaceful realm?"
+        "How does Morgana's outlook during the peaceful interlude develop?"
     ),
     "fata-morgana-requiem-R0176": (
-        "What is the story order of Morgana's changing expectations of her companion in the peaceful realm?"
+        "How does Morgana's reassessment of her companion unfold?"
     ),
     "fata-morgana-requiem-R0180": (
         "How does Morgana's relationship with her companion evolve in the peaceful realm?"

@@ -41,6 +41,82 @@ FATA_ORDERING_IDS = {
     140, 143, 151, 155, 158, 162, 164, 169, 173, 176, 180,
 }
 
+# Each stem below was reviewed against its own options and evidence.  These exact
+# anchors deliberately name one scene, relationship, decision, or story phase;
+# none narrates two or more option events in the gold-answer order.
+APPROVED_FATA_STEMS = {
+    3: "How do the selected moments unfold during Imeon's conversation with Michel about survival?",
+    6: "How does the conversation about Danish seafaring unfold?",
+    12: "What is the chronology of the selected moments from Imeon's first extended conversation with Michel?",
+    13: "During Imeon's first visit to the mansion, what is the order of these moments?",
+    15: "How does Imeon's conversation with Michel about adventure unfold?",
+    19: "What is the story order of these moments in Imeon's early arc?",
+    22: "How do the selected moments in Imeon's early mansion storyline unfold?",
+    26: "How does the disturbance surrounding an unexpected mansion visitor unfold?",
+    30: "What is the order of these moments in Imeon's conversation with Michel?",
+    33: "How does Michel's first encounter with the unexpected visitor unfold?",
+    34: "What is the chronology of the selected moments from Imeon's arrival at the mansion?",
+    37: "How does the mansion commotion surrounding the visitor unfold?",
+    38: "During the unexpected visitor's arrival, what is the order of these moments?",
+    39: "How does the early disturbance inside the mansion unfold?",
+    41: "What is the chronology of these moments during the mansion's early commotion?",
+    43: "How do the selected moments from the studio disturbance unfold?",
+    45: "What is the story order of these moments in Imeon's early mansion arc?",
+    48: "How does Mell's conversation with Morgana about friendship unfold?",
+    51: "During Morgana's first night at the estate, what is the order of these moments?",
+    55: "How does the disturbance at Morgana's doorway unfold?",
+    60: "What is the chronology of these selected moments from life at the estate?",
+    64: "How do the selected moments from Morgana's unsettled first night unfold?",
+    68: "How does Morgana's move away from the great hall unfold?",
+    70: "How does Jacopo's care for Morgana unfold?",
+    73: "What is the chronology of these moments in Morgana's early relationships at the estate?",
+    75: "During the estate's unsettled night, what is the order of these moments?",
+    76: "How do the selected moments from Morgana's early days at the estate unfold?",
+    80: "What is the chronology of these moments during the estate's period of upheaval?",
+    84: "How do the selected moments from the estate's upheaval unfold?",
+    88: "How does Michel's movie date with Giselle get underway?",
+    90: "How does the couple's post-film conversation unfold?",
+    94: "During Michel and Giselle's movie date, what is the order of these moments?",
+    96: "How does Giselle's reaction to the film develop during the date?",
+    97: "How does Michel's reunion conversation with Giselle unfold?",
+    98: "What is the chronology of these moments near the end of the date?",
+    101: "How does Michel's decision about a future with Giselle unfold?",
+    104: "During the post-film discussion, what is the order of these moments?",
+    108: "How does Michel's invitation to Giselle unfold?",
+    111: "How does Michel's conversation about building a life with Giselle unfold?",
+    113: "What is the chronology of these moments in the couple's post-film conversation?",
+    119: "Across the movie outing, what is the order of these selected moments?",
+    121: "How does Michel's response to the film develop over the date?",
+    124: "How does the couple's reflection on living again unfold?",
+    127: "How does the date's reflective conversation unfold?",
+    131: "How does the couple's conversation about a shared future unfold?",
+    137: "How does Morgana's conversation about Midsummer unfold?",
+    140: "How does Morgana's final conversation about illusion unfold?",
+    143: "How does Morgana's effort to recover missed experiences unfold?",
+    151: "What is the chronology of these moments from Morgana's time in the idealized realm?",
+    155: "How does Morgana's reflection on her lost childhood unfold?",
+    158: "How does Morgana's effort to experience an ordinary life unfold?",
+    162: "What is the chronology of these moments as Morgana adjusts to the peaceful realm?",
+    164: "During Morgana's time in the peaceful realm, what is the order of these moments?",
+    169: "How does Morgana's view of the idealized realm develop?",
+    173: "How does Morgana's outlook during the peaceful interlude develop?",
+    176: "How does Morgana's reassessment of her companion unfold?",
+    180: "How does Morgana's relationship with her companion evolve in the peaceful realm?",
+}
+
+APPROVED_ROUND2_STEMS = {
+    "fault-milestone-two-R0046": (
+        "Which statements accurately summarize Volthal and Flora's report about the missing pair?"
+    ),
+    "highway-blossoms-R0030": (
+        "What is the chronology of the trip- and future-related moments involving "
+        "Marina, the canyon guide, Linda, Jane, and Lacey?"
+    ),
+    "highway-blossoms-R0067": (
+        "Which statements accurately describe Amber and Marina's decisions as they prepare to leave Arches?"
+    ),
+}
+
 PREVIOUS_TASK3_KEYS = {
     "fault-milestone-two": {6, 8, 29, 37, 70, 81, 96, 104},
     "highway-blossoms": {11, 29, 41, 43, 45, 55, 72, 84, 85, 94},
@@ -153,6 +229,21 @@ def test_task3_stems_do_not_leak_gold_answers(repo_root: Path) -> None:
     assert "ultimatum" not in fault_r0006.casefold()
 
 
+def test_round2_stems_match_manual_approval_list() -> None:
+    assert set(APPROVED_FATA_STEMS) == FATA_ORDERING_IDS
+    for item_id, approved_stem in APPROVED_FATA_STEMS.items():
+        rewrite_key = f"fata-morgana-requiem-R{item_id:04d}"
+        assert QUESTION_REWRITES[rewrite_key] == approved_stem, rewrite_key
+    for rewrite_key, approved_stem in APPROVED_ROUND2_STEMS.items():
+        assert QUESTION_REWRITES[rewrite_key] == approved_stem, rewrite_key
+
+    # R0068 is the review's concrete regression case: one scene anchor replaces
+    # the previous rescue -> visitor -> refuge narration.
+    r0068 = QUESTION_REWRITES["fata-morgana-requiem-R0068"]
+    assert r0068 == "How does Morgana's move away from the great hall unfold?"
+    assert not re.search(r"rescue|visitor|refuge", r0068, re.I)
+
+
 def test_rewrites_preserve_protected_fields(repo_root: Path) -> None:
     reviewed = {
         title_key: set(item_ids) | PREVIOUS_TASK3_KEYS.get(title_key, set())
@@ -250,6 +341,8 @@ def main() -> None:
         "gold-answer leakage audit passed: "
         f"{reviewed_count - deleted_count} live Task 3 stems"
     )
+    test_round2_stems_match_manual_approval_list()
+    print("manual Fata non-leak approval list passed: 57/57 stems")
     test_rewrites_preserve_protected_fields(repo_root)
     test_clean_rebuild_stems(repo_root)
     print("stem curation regression checks passed")

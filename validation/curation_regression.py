@@ -390,13 +390,13 @@ def test_public_ids_and_rewrites_preserve_deleted_canonical_positions() -> None:
     qa_items = [
         _qa("What fact survives from the first source question?", "D1:1", "alpha fact"),
         _qa("This canonical question is explicitly unsafe.", "D1:1", "alpha fact"),
-        _qa("What fact survives from the third source question?", "D1:1", "alpha fact"),
+        _qa("Which fact is reported in the third source question?", "D1:1", "alpha fact"),
     ]
     rewrite_key = make_rewrite_key("fixture", 3)
     QUESTION_REWRITES["fixture-Q0002"] = None
     QUESTION_REWRITES[rewrite_key] = "What fact survives from the third source question?"
     try:
-        migrated, _audit = migrate_qa_items(
+        migrated, audit = migrate_qa_items(
             qa_items, conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
         )
     finally:
@@ -406,6 +406,9 @@ def test_public_ids_and_rewrites_preserve_deleted_canonical_positions() -> None:
     assert extract_core_question_text(migrated[1]["question"], "") == (
         "What fact survives from the third source question?"
     )
+    assert audit["question_rewrite"] == [
+        {"qa_id": "fixture-Q0002", "action": "rewrite"}
+    ]
 
 
 def test_public_qa_schema_strips_pipeline_traces() -> None:

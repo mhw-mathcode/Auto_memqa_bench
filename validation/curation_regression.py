@@ -29,6 +29,8 @@ from src.benchmark_qa_schema import (
 from src.benchmark_question_rewrites import (
     QUESTION_REWRITES,
     find_construction_issues,
+    find_option_issues,
+    make_rewrite_key,
     rewrite_question_stem,
 )
 from src.mcq_scoring import ORDERING_INSTRUCTION
@@ -106,6 +108,16 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
             title: dict(Counter(item["reason"] for item in details["qa_audit"]["removed"]))
             for title, details in report["titles"].items()
         } == expected_removals
+        for title_key, (_input_rel, output_name) in INPUTS.items():
+            output_payload = json.loads(
+                (output_dir / output_name).read_text(encoding="utf-8")
+            )
+            for final_index, qa in enumerate(output_payload[0]["qa"], start=1):
+                assert find_construction_issues(
+                    extract_core_question_text(qa["question"], "")
+                ) == []
+                assert all(find_option_issues(option) == [] for option in qa["option"])
+                assert qa["qa_id"] == make_qa_id(title_key, final_index)
         assert all(
             Path(input_rel).parts[0] != "result_qa"
             for input_rel, _output_name in INPUTS.values()
@@ -371,6 +383,29 @@ def test_public_ids_and_rewrites_follow_surviving_canonical_order() -> None:
     assert audit["question_rewrite"] == [
         {"qa_id": "fixture-Q0001", "action": "rewrite"}
     ]
+
+
+def test_public_ids_and_rewrites_preserve_deleted_canonical_positions() -> None:
+    conversation = _conversation(_turn("D1:1", "Alice", "alpha fact"))
+    qa_items = [
+        _qa("What fact survives from the first source question?", "D1:1", "alpha fact"),
+        _qa("This canonical question is explicitly unsafe.", "D1:1", "alpha fact"),
+        _qa("What fact survives from the third source question?", "D1:1", "alpha fact"),
+    ]
+    rewrite_key = make_rewrite_key("fixture", 3)
+    QUESTION_REWRITES["fixture-Q0002"] = None
+    QUESTION_REWRITES[rewrite_key] = "What fact survives from the third source question?"
+    try:
+        migrated, _audit = migrate_qa_items(
+            qa_items, conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
+        )
+    finally:
+        del QUESTION_REWRITES["fixture-Q0002"]
+        del QUESTION_REWRITES[rewrite_key]
+    assert [qa["qa_id"] for qa in migrated] == ["fixture-Q0001", "fixture-Q0002"]
+    assert extract_core_question_text(migrated[1]["question"], "") == (
+        "What fact survives from the third source question?"
+    )
 
 
 def test_public_qa_schema_strips_pipeline_traces() -> None:
@@ -721,6 +756,29 @@ def test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     assert find_construction_issues(
         "Order the events in Tara's local progression."
     ) == ["local-anchor framing"]
+    assert find_construction_issues(
+        "Arrange the cited moments in the correct order."
+    ) == ["cited-material framing"]
+    assert find_construction_issues(
+        "Which conclusion follows after linking multiple cited facts?"
+    ) == ["cited-material framing"]
+    assert find_construction_issues(
+        "How should these four developments be arranged in story order? "
+        "They concern Morgana's rescue and involve Jacopo and Morgana."
+    ) == ["repeated ordering template"]
+
+
+def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> None:
+    assert find_option_issues("A. Asuka observes that sounds fun.") == [
+        "mechanical observation prose"
+    ]
+    assert find_option_issues("B. The narration establishes that she leaves.") == [
+        "mechanical narration prose"
+    ]
+    assert find_option_issues("C. she later warns Kakeru.") == [
+        "lowercase option body"
+    ]
+    assert find_option_issues("D. eBay becomes their next lead.") == []
 
 
 def test_question_rewrite_registry_is_complete_and_safe() -> None:
@@ -742,6 +800,7 @@ def main() -> None:
     test_heart_happy_ending_evidence_is_rewritten_to_sanitized_turn()
     test_qa_migration_assigns_stable_ids_and_audits_rewrites_after_evidence_repair()
     test_public_ids_and_rewrites_follow_surviving_canonical_order()
+    test_public_ids_and_rewrites_preserve_deleted_canonical_positions()
     test_public_qa_schema_strips_pipeline_traces()
     test_question_wording_is_self_contained()
     test_qa_migration_rejects_contaminated_and_dangling_questions()
@@ -753,6 +812,7 @@ def main() -> None:
     test_public_schema_rejects_colon_option_labels()
     test_question_rewrites_are_story_specific()
     test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
+    test_option_prose_detection_distinguishes_mechanical_and_valid_bodies()
     test_question_rewrite_registry_is_complete_and_safe()
     test_clean_rebuild_uses_raw_runs_and_is_deterministic()
     print("curation regression checks passed")

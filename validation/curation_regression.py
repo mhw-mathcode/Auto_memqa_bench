@@ -27,10 +27,12 @@ from src.benchmark_qa_schema import (
     validate_public_qa,
 )
 from src.benchmark_question_rewrites import (
+    OPTION_REWRITES,
     QUESTION_REWRITES,
     find_construction_issues,
     find_option_issues,
     make_rewrite_key,
+    rewrite_publication_item,
     rewrite_question_stem,
 )
 from src.mcq_scoring import ORDERING_INSTRUCTION
@@ -71,7 +73,7 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
         "arknights": 88,
         "fault-milestone-two": 113,
         "heart-of-the-woods": 116,
-        "highway-blossoms": 106,
+        "highway-blossoms": 105,
         "nurse-love-addiction": 121,
         "fata-morgana-requiem": 180,
     }
@@ -87,6 +89,7 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
         "highway-blossoms": {
             "dangling_reference_question": 9,
             "evidence_not_uniquely_repairable": 6,
+            "unsafe_question_rewrite": 1,
         },
         "nurse-love-addiction": {"evidence_not_uniquely_repairable": 94},
         "fata-morgana-requiem": {"evidence_not_uniquely_repairable": 50},
@@ -103,7 +106,7 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
         assert {
             title: details["final_qa"] for title, details in report["titles"].items()
         } == expected_qa_counts
-        assert sum(expected_qa_counts.values()) == 821
+        assert sum(expected_qa_counts.values()) == 820
         assert {
             title: dict(Counter(item["reason"] for item in details["qa_audit"]["removed"]))
             for title, details in report["titles"].items()
@@ -672,8 +675,8 @@ def test_question_rewrites_are_story_specific() -> None:
             "teacher's tone is friendly, but the words resound within the classroom. "
             "The narration establishes that within her. Later boundary: Itsuki "
             "apologizes, and states she must leave. Itsuki has got to split for a while.",
-            "After the teacher's words resound through the classroom but before Itsuki "
-            "says she has to leave for a while, what does Asuka do?",
+            "What does Asuka say when she opens the empty archive room and fears that "
+            "a ghost may be there?",
         ),
         "fault-milestone-two-R0028": (
             "Which long-range conclusions about Sol's relationship with the group are "
@@ -810,6 +813,90 @@ def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> N
     assert find_option_issues("D. eBay becomes their next lead.") == []
 
 
+def test_option_rewrites_relabel_bodies_and_reject_invalid_registry_entries() -> None:
+    rewrite_key = "fixture-R0001"
+    source_options = ["A. Alice observes that sounds fun.", "B. Bob stays home."]
+    OPTION_REWRITES[rewrite_key] = {"A": "Alice says it sounds fun."}
+    try:
+        stem, options, action = rewrite_publication_item(
+            rewrite_key, "What does Alice say?", source_options
+        )
+        assert stem == "What does Alice say?"
+        assert options == ["A. Alice says it sounds fun.", "B. Bob stays home."]
+        assert action == "rewrite"
+        assert source_options == [
+            "A. Alice observes that sounds fun.",
+            "B. Bob stays home.",
+        ]
+
+        invalid_rewrites = (
+            {"C": "Charlie leaves."},
+            {"A": ""},
+            {"AA": "Alice leaves."},
+            {"A": "Bob stays home."},
+        )
+        for invalid in invalid_rewrites:
+            OPTION_REWRITES[rewrite_key] = invalid
+            try:
+                rewrite_publication_item(
+                    rewrite_key, "What does Alice say?", source_options
+                )
+            except ValueError:
+                pass
+            else:
+                raise AssertionError(f"invalid option rewrite accepted: {invalid!r}")
+    finally:
+        del OPTION_REWRITES[rewrite_key]
+
+
+def test_option_rewrites_preserve_protected_qa_semantics_and_rendering() -> None:
+    conversation = _conversation(_turn("D1:1", "Alice", "sounds fun"))
+    item = _qa("What does Alice say?", "D1:1", "sounds fun")
+    item["option"] = [
+        "A. Alice observes that sounds fun.",
+        "B. Bob stays home.",
+    ]
+    item["answer"] = "(A)"
+    item["question_type"] = "single_choice"
+    baseline, _baseline_audit = migrate_qa_items(
+        [item], conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
+    )
+    protected = {
+        field: copy.deepcopy(baseline[0][field])
+        for field in (
+            "answer",
+            "question_type",
+            "evidence_dialogues",
+            "reasoning_steps",
+        )
+    }
+    OPTION_REWRITES["fixture-R0001"] = {"A": "Alice says it sounds fun."}
+    try:
+        migrated, audit = migrate_qa_items(
+            [item], conversation, conversation, {"D1:1": "D1:1"}, "fixture", set()
+        )
+    finally:
+        del OPTION_REWRITES["fixture-R0001"]
+
+    assert len(migrated) == 1
+    rewritten = migrated[0]
+    assert rewritten["option"] == [
+        "A. Alice says it sounds fun.",
+        "B. Bob stays home.",
+    ]
+    for field, expected in protected.items():
+        assert rewritten[field] == expected
+    rendered_options = rewritten["question"].split("\n")[1:-1]
+    assert rendered_options == rewritten["option"]
+    assert audit["question_rewrite"] == [
+        {
+            "rewrite_key": "fixture-R0001",
+            "qa_id": "fixture-Q0001",
+            "action": "rewrite",
+        }
+    ]
+
+
 def test_question_rewrite_registry_is_complete_and_safe() -> None:
     assert len(QUESTION_REWRITES) == len(set(QUESTION_REWRITES))
     for rewrite_key, rewritten in QUESTION_REWRITES.items():
@@ -820,8 +907,19 @@ def test_question_rewrite_registry_is_complete_and_safe() -> None:
             continue
         assert rewritten.strip() == rewritten
         assert rewritten
-        assert rewritten.endswith("?")
+        assert rewritten.endswith(("?", "."))
         assert find_construction_issues(rewritten) == []
+
+    for rewrite_key, option_rewrites in OPTION_REWRITES.items():
+        assert rewrite_key == make_rewrite_key(
+            rewrite_key.rsplit("-R", 1)[0], int(rewrite_key[-4:])
+        )
+        assert option_rewrites
+        for letter, body in option_rewrites.items():
+            assert len(letter) == 1 and letter.isascii() and letter.isupper()
+            assert body and body.strip() == body
+            assert not body.startswith(f"{letter}. ")
+            assert find_option_issues(f"{letter}. {body}") == []
 
 
 def main() -> None:
@@ -844,6 +942,8 @@ def main() -> None:
     test_question_rewrites_are_story_specific()
     test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     test_option_prose_detection_distinguishes_mechanical_and_valid_bodies()
+    test_option_rewrites_relabel_bodies_and_reject_invalid_registry_entries()
+    test_option_rewrites_preserve_protected_qa_semantics_and_rendering()
     test_question_rewrite_registry_is_complete_and_safe()
     test_clean_rebuild_uses_raw_runs_and_is_deterministic()
     print("curation regression checks passed")

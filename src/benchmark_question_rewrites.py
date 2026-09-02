@@ -373,7 +373,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "cheerful?"
     ),
     "nurse-love-addiction-R0004": (
-        "What does Asuka notice when she spots Itsuki in front of the dorm one day?"
+        "How does Itsuki appear when Asuka encounters her outside the dorm?"
     ),
     "nurse-love-addiction-R0005": (
         "What does Asuka think she and Nao must do to perform the magic charm?"
@@ -413,7 +413,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "How does Asuka try to coax Nao into performing the magic charm with her?"
     ),
     "nurse-love-addiction-R0016": (
-        "Who does Asuka ask Itsuki whether she plans to go out with?"
+        "Who does Asuka think Itsuki may be planning to go out with?"
     ),
     "nurse-love-addiction-R0017": (
         "How does the class respond when Ms. Ohara announces the annual school "
@@ -727,8 +727,7 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "unfold?"
     ),
     "fault-milestone-two-R0006": (
-        "How does Melano turn her demonstration of the group's helplessness into an "
-        "ultimatum about whether they may return home?"
+        "What best describes how Melano's confrontation with the group develops?"
     ),
     "fault-milestone-two-R0008": (
         "What does Melano tell the group about stopping the attacks, their apparent "
@@ -758,12 +757,11 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "the invisible noose and selling sagiolla?"
     ),
     "highway-blossoms-R0011": (
-        "In what order do Amber and Marina meet, seek help for the stranded car, and "
-        "hear about the Miner's Treasure?"
+        "How does Amber and Marina's first encounter develop into the beginning of "
+        "their treasure hunt?"
     ),
     "highway-blossoms-R0029": (
-        "What is the chronology of Tess confronting Mariah, Marina asking about the "
-        "Grand Canyon, and Amber waking after falling asleep?"
+        "How does the group's visit to Canyon de Chelly unfold?"
     ),
     "highway-blossoms-R0041": (
         "How does Marina respond to Amber's fatigue and to the food cooling during "
@@ -773,17 +771,12 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "How does Joseph explain why his partnership with Mariah works despite their "
         "differences?"
     ),
-    "highway-blossoms-R0045": (
-        "How do Joseph's role with Mariah and Tess and Marina's influence shape the "
-        "group's interactions?"
-    ),
+    "highway-blossoms-R0045": None,
     "highway-blossoms-R0055": (
-        "In what order do the group discuss Tess's poetry, Amber's dislike of "
-        "photographs, watching the sunset, and Marina's need for a stop?"
+        "How do the travelers' relationships develop during their shared sightseeing?"
     ),
     "highway-blossoms-R0072": (
-        "In what order does Marina ask to wait for the fog, discuss her brother's "
-        "replacement car, hear Amber compare Gramps to her, and suggest a hike?"
+        "How do Amber and Marina's conversations during their visit to Zion unfold?"
     ),
     "highway-blossoms-R0084": (
         "How do Marina and Amber's limited dating histories differ, and why had Amber "
@@ -794,237 +787,390 @@ QUESTION_REWRITES: dict[str, str | None] = {
         "treasure?"
     ),
     "highway-blossoms-R0094": (
-        "In what order do Amber and Marina's conversations before the festival move "
-        "from crossed-off plans to a blown engine?"
+        "How do Amber and Marina's conversations in the lead-up to the festival unfold?"
+    ),
+    "fault-milestone-two-R0005": (
+        "What do Selphine and Melano reveal when Selphine introduces herself and "
+        "Melano assesses her symptoms?"
+    ),
+    "fault-milestone-two-R0013": (
+        "How does the opening confrontation among Selphine, Melano, and Reighnvhasta unfold?"
+    ),
+    "fault-milestone-two-R0016": (
+        "How does Melano's confrontation with Selphine's group reach its conclusion?"
+    ),
+    "fault-milestone-two-R0018": (
+        "How does the group regroup once Selphine returns to herself?"
+    ),
+    "fault-milestone-two-R0021": (
+        "How does Ritona's explanation of the Path-down to Rune unfold?"
+    ),
+    "fault-milestone-two-R0022": (
+        "How does Riggs's conversation with Flora about Rughzenhaide unfold?"
+    ),
+    "fault-milestone-two-R0030": (
+        "How does the group's first voyage through unfamiliar surroundings unfold?"
+    ),
+    "fault-milestone-two-R0035": (
+        "How does Selphine and Ritona's discussion of food and mana develop?"
+    ),
+    "fault-milestone-two-R0039": (
+        "What does the owner ask the group to do about Sol?"
+    ),
+    "fault-milestone-two-R0040": (
+        "What do the innkeeper and Sol say about whether the group can stay?"
+    ),
+    "fault-milestone-two-R0044": (
+        "How does the conversation about Sol joining the group unfold over dinner?"
+    ),
+    "fault-milestone-two-R0045": (
+        "Whom does Ritona consider consulting when the group discusses finding medical care?"
+    ),
+    "fault-milestone-two-R0046": (
+        "What do Volthal and Flora report about contact with the Inner-Pole and the "
+        "missing pair's chances of escape?"
+    ),
+    "fault-milestone-two-R0047": (
+        "How does the discussion of the Inner-Pole and the missing pair unfold?"
+    ),
+    "fault-milestone-two-R0053": (
+        "How does the group's search for medical help and supplies unfold after they "
+        "meet Sol?"
+    ),
+    "fault-milestone-two-R0055": (
+        "How does the lodging dispute involving Sol and the girls unfold?"
+    ),
+    "fault-milestone-two-R0058": (
+        "How does Selphine conduct her investigation involving Sol?"
+    ),
+    "fault-milestone-two-R0061": (
+        "How does the search for a missing child at the bathhouse escalate?"
+    ),
+    "fault-milestone-two-R0062": (
+        "How does the confrontation over Selphine's mind dive and Sol unfold?"
+    ),
+    "fault-milestone-two-R0065": (
+        "What does Sol ask the group to help arrange for Mil?"
+    ),
+    "fault-milestone-two-R0067": (
+        "What do Sol and Selphine say about Mil's crisis and Greus's past?"
+    ),
+    "fault-milestone-two-R0074": (
+        "Where does Sol say the group can find fertile soil?"
+    ),
+    "fault-milestone-two-R0075": (
+        "How does the group discuss Serisian soil and the search for fertile soil?"
+    ),
+    "fault-milestone-two-R0076": (
+        "How does the conversation about seeking Greus's help for Mil unfold?"
+    ),
+    "fault-milestone-two-R0080": (
+        "How does Sceatoire's confrontation with Selphine and Rune unfold?"
+    ),
+    "fault-milestone-two-R0088": (
+        "How does Selphine assess whether Greus has kept his word?"
+    ),
+    "fault-milestone-two-R0090": (
+        "How does the discussion of Ritona's condition and Greus's demands unfold?"
+    ),
+    "fault-milestone-two-R0091": (
+        "How does Rupika explain the role of the Vita Domain in Ritona's care?"
+    ),
+    "fault-milestone-two-R0098": (
+        "How does the group discuss spreading news and the consequences it may bring?"
+    ),
+    "fault-milestone-two-R0102": (
+        "How do Ritona and Selphine's views of Greus develop during their discussion?"
+    ),
+    "fault-milestone-two-R0106": (
+        "How does the conversation about Mil's article and special maytaux dish unfold?"
+    ),
+    "fault-milestone-two-R0107": (
+        "How do Sol and Mil respond to the pharmacist's actions?"
+    ),
+    "fault-milestone-two-R0108": (
+        "What does Mil tell Sol about killing the man responsible for her condition?"
+    ),
+    "fault-milestone-two-R0111": (
+        "How does the discussion expose the truth about the invisible noose and sagiolla?"
+    ),
+    "fault-milestone-two-R0112": (
+        "How does the confrontation among Sol, Mil, Selphine, and the pharmacist unfold?"
+    ),
+    "highway-blossoms-R0010": (
+        "How does Amber and Marina's relationship develop across their trip?"
+    ),
+    "highway-blossoms-R0014": (
+        "How does their first attempt to interpret the treasure clues unfold?"
+    ),
+    "highway-blossoms-R0019": (
+        "How does Amber and Marina's encounter with Mariah's group near the store unfold?"
+    ),
+    "highway-blossoms-R0021": (
+        "How does Amber and Marina's search planning near Roswell unfold?"
+    ),
+    "highway-blossoms-R0022": (
+        "How does the story establish Mariah's relationships with Joseph and Tess?"
+    ),
+    "highway-blossoms-R0023": (
+        "How does the conversation about Marina's car and the treasure search unfold?"
+    ),
+    "highway-blossoms-R0027": (
+        "How does the exchange about the missing car and Mariah's group unfold?"
+    ),
+    "highway-blossoms-R0030": (
+        "What is the chronology of Marina's conversations during the Canyon de Chelly visit?"
+    ),
+    "highway-blossoms-R0031": (
+        "How do Marina's questions about the Grand Canyon recur during the treasure search?"
+    ),
+    "highway-blossoms-R0036": (
+        "How do Amber and Marina's encounters with strangers during the journey unfold?"
+    ),
+    "highway-blossoms-R0038": (
+        "How does the group's visit and search at the ruins unfold?"
+    ),
+    "highway-blossoms-R0039": (
+        "How does Amber and Marina's conversation during the drive to the Grand Canyon develop?"
+    ),
+    "highway-blossoms-R0047": (
+        "How do the group's interactions develop during their shared sightseeing?"
+    ),
+    "highway-blossoms-R0050": (
+        "How does the group's attitude toward taking photographs change during the trip?"
+    ),
+    "highway-blossoms-R0051": (
+        "How does the story establish the sibling dynamic among Mariah, Joseph, and Tess?"
+    ),
+    "highway-blossoms-R0057": (
+        "How does Amber and Marina's diner conversation unfold?"
+    ),
+    "highway-blossoms-R0061": (
+        "What is the chronology of Amber and Marina's stop in town and exchange with Mariah?"
+    ),
+    "highway-blossoms-R0062": (
+        "How does Amber and Marina's uncomfortable rest-stop visit unfold?"
+    ),
+    "highway-blossoms-R0067": (
+        "What does Amber and Marina's planning after uncertainty at Arches show about "
+        "their commitment to the treasure hunt?"
+    ),
+    "highway-blossoms-R0069": (
+        "How does the group's discussion at Angel's Landing unfold as they reassess the clue?"
+    ),
+    "highway-blossoms-R0071": (
+        "Which sequence best traces Amber's changing sense of family?"
+    ),
+    "highway-blossoms-R0073": (
+        "How do Amber and Marina respond to setbacks around Angel's Landing?"
+    ),
+    "highway-blossoms-R0075": (
+        "How does Amber and Marina's conversation during their approach to Las Vegas develop?"
+    ),
+    "highway-blossoms-R0077": (
+        "How does Amber and Marina's first day in Las Vegas unfold?"
+    ),
+    "highway-blossoms-R0081": (
+        "How does Amber and Marina's afternoon in Las Vegas unfold?"
+    ),
+    "highway-blossoms-R0083": (
+        "How does Amber's relationship with her memories of Gramps develop over the journey?"
+    ),
+    "highway-blossoms-R0088": (
+        "How does the group respond to the motorhome breakdown?"
+    ),
+    "highway-blossoms-R0091": (
+        "How does the conversation leading into Amber's wager with Mariah unfold?"
+    ),
+    "highway-blossoms-R0096": (
+        "How does Amber and Marina's argument after the engine trouble unfold?"
+    ),
+    "highway-blossoms-R0097": (
+        "How does Amber's plan to recover Marina's share play out at blackjack?"
+    ),
+    "highway-blossoms-R0099": (
+        "How do Amber and Marina's conversations about music develop across the trip?"
+    ),
+    "highway-blossoms-R0101": (
+        "How does Mariah and Amber's diner confrontation unfold?"
+    ),
+    "highway-blossoms-R0104": (
+        "How does Amber and Marina's reconciliation at the hotel unfold?"
+    ),
+    "highway-blossoms-R0106": (
+        "How does the final stretch of the treasure hunt and the farewell with Joseph's "
+        "group unfold?"
     ),
     "fata-morgana-requiem-R0003": (
-        "In what order does Michel keep listening as Imeon rejects fatalism, chooses "
-        "life, and answers Michel's skepticism about perseverance?"
+        "Which sequence best represents Michel and Imeon's early conversation about survival?"
     ),
     "fata-morgana-requiem-R0006": (
-        "How does Michel and Imeon's conversation move from Michel's book knowledge "
-        "of the Danes to teasing, admiration of their ships, and dreams of distant lands?"
+        "How does Michel and Imeon's discussion of Danish seafaring unfold?"
     ),
     "fata-morgana-requiem-R0012": (
-        "In what order does Imeon affirm his will to live, agree with Michel about "
-        "perseverance, hear Michel admit his book knowledge, and tease him about the Danes?"
+        "What is the chronology of Michel and Imeon's conversations about survival and distant voyages?"
     ),
     "fata-morgana-requiem-R0013": (
-        "How do the visitor's questions about the mansion, Michel's admission of "
-        "ownership, Michel's decision to keep listening, and Imeon's rejection of "
-        "fatalism unfold?"
+        "Which ordering traces Imeon's arrival at the mansion and his determination to live?"
     ),
     "fata-morgana-requiem-R0015": (
-        "In what order does Michel dismiss guaranteed rewards and admit his book "
-        "knowledge before Imeon teases him and praises Danish ships?"
+        "How do Michel and Imeon's debates about hope and Danish adventure unfold?"
     ),
     "fata-morgana-requiem-R0019": (
-        "In what order does Imeon praise Danish voyages and imagine paradise overseas "
-        "before Morgana accuses him of lying and offers a bargain?"
+        "What is the story order of Imeon's dreams of overseas travel and Morgana's bargain with him?"
     ),
     "fata-morgana-requiem-R0022": (
-        "How does the exchange progress from Michel's book knowledge and Imeon's "
-        "teasing to Imeon's dream of distant lands and Morgana's accusation?"
+        "Which sequence connects Michel's interest in Danish voyages with Morgana's confrontation of Imeon?"
     ),
     "fata-morgana-requiem-R0026": (
-        "What is the order of Michelle identifying Georges, Georges complaining about "
-        "his art, Michel deciding to remove the stranger, and the visitor revealing his search?"
+        "How does the mansion scene involving Michelle, Georges, Michel, and the unexpected visitor unfold?"
     ),
     "fata-morgana-requiem-R0030": (
-        "How do Imeon's refusal of fatalism and insistence on living precede his "
-        "teasing Michel and praising the Danes' ships?"
+        "Which order traces Imeon's determination to live and fascination with Danish travel?"
     ),
     "fata-morgana-requiem-R0033": (
-        "What is the chronology from Georges's frustrated outburst to Michel's wish "
-        "to remove the visitor, the visitor's explanation, and his suspicion of the mansion?"
+        "What is the chronology of Georges's studio disturbance and Michel's encounter with the visitor?"
     ),
     "fata-morgana-requiem-R0034": (
-        "In what order does the visitor explain his search, question the mansion, "
-        "reject passive fatalism, and insist on living?"
+        "How do Imeon's arrival at the mansion and his declaration of a will to live unfold?"
     ),
     "fata-morgana-requiem-R0037": (
-        "In what order does Georges vent about his art before the visitor explains "
-        "his search, questions the mansion, and learns how much Michel owns?"
+        "Which sequence best follows the commotion around Georges's studio and the visitor's arrival?"
     ),
     "fata-morgana-requiem-R0038": (
-        "How do Michelle's concern about Georges, Michel's wish to remove the visitor, "
-        "and the visitor's explanation and questions unfold?"
+        "What is the order of Michelle's concern about Georges and Michel's response to the visitor?"
     ),
     "fata-morgana-requiem-R0039": (
-        "What is the chronology of Michelle identifying Georges, Georges voicing his "
-        "frustration, and the visitor explaining his search and questioning the mansion?"
+        "How does the mansion's early commotion involving Michelle, Georges, and the visitor develop?"
     ),
     "fata-morgana-requiem-R0041": (
-        "How does the mansion sequence move from Michelle identifying Georges to his "
-        "outburst, the visitor's suspicions, and Michel's admission of ownership?"
+        "Which chronology fits Georges's outburst and the visitor's questions about the mansion?"
     ),
     "fata-morgana-requiem-R0043": (
-        "What is the order of Michelle identifying Georges, Georges venting about his "
-        "art, Michel focusing on removing the visitor, and Michel confirming his ownership?"
+        "What is the story order of the studio disturbance and Michel's explanation of the mansion?"
     ),
     "fata-morgana-requiem-R0045": (
-        "In what order does Michel discuss Danish warriors before Morgana accuses "
-        "Imeon of lying, offers him a wish, and explains who can perceive her?"
+        "How does Michel's interest in Danish warriors intersect chronologically with Morgana's bargain?"
     ),
     "fata-morgana-requiem-R0048": (
-        "How does Mell's conversation with Morgana progress from valuing a confidante "
-        "to explaining his isolation, calling her his only friend, and proposing more time together?"
+        "How does Mell and Morgana's conversation about friendship unfold?"
     ),
     "fata-morgana-requiem-R0051": (
-        "How does Morgana's story progress from Jacopo carrying her out of the great "
-        "hall to her vision of Heaven, encounter with a shouting visitor, and concern for the sleepers?"
+        "Which sequence best represents Morgana's rescue and the nighttime disturbance at her shelter?"
     ),
     "fata-morgana-requiem-R0055": (
-        "In what order does Morgana mistake the light for Heaven, hear a visitor shout, "
-        "worry that the sleepers will wake, and react to the visitor's scream?"
+        "What is the chronology of Morgana regaining consciousness and answering an unexpected visitor?"
     ),
     "fata-morgana-requiem-R0060": (
-        "In what order does Odilon demand immediate action and warn Jacopo before Mell "
-        "values having a confidante and explains his isolation?"
+        "How do Odilon's political demands on Jacopo and Mell's friendship with Morgana fit the story chronology?"
     ),
     "fata-morgana-requiem-R0064": (
-        "How does Morgana's encounter with the shouting visitor unfold before Jacopo "
-        "later searches for a quiet place for her?"
+        "Which order traces Morgana's encounter at the door and Jacopo's effort to find her shelter?"
     ),
     "fata-morgana-requiem-R0068": (
-        "In what order is Morgana carried from the great hall, startled by a visitor, "
-        "confused by the visitor's scream, and later taken somewhere quiet by Jacopo?"
+        "How does the story connect Jacopo's rescue of Morgana with the visitor at the door and the search for refuge?"
     ),
     "fata-morgana-requiem-R0070": (
-        "How does Morgana's rescue progress from Jacopo carrying her away through her "
-        "vision of Heaven to his search for shelter and reassurance about his intentions?"
+        "What is the chronology of Jacopo's effort to protect Morgana during her rescue?"
     ),
     "fata-morgana-requiem-R0073": (
-        "How do Jacopo's reassurances to Morgana precede Mell's later appreciation of "
-        "her company and admission that he feels isolated?"
+        "How do Jacopo's reassurance of Morgana and Mell's friendship with her fit in story order?"
     ),
     "fata-morgana-requiem-R0075": (
-        "How does the story move from Morgana worrying about the sleepers and reacting "
-        "to the visitor's scream to Odilon demanding swift political action?"
+        "Which sequence situates Morgana's nighttime visitor relative to Odilon's demand that Jacopo act?"
     ),
     "fata-morgana-requiem-R0076": (
-        "In what order does Morgana mistake the light for Heaven, worry about the "
-        "sleepers, hear Jacopo deny romantic interest, and hear Odilon reject delay?"
+        "How does Morgana's changing security at the estate relate chronologically to Jacopo's political crisis?"
     ),
     "fata-morgana-requiem-R0080": (
-        "How do Morgana's vision of Heaven, concern for the sleepers, and confusion at "
-        "a visitor's scream precede Odilon's demand for immediate action?"
+        "What is the story order of Morgana's recovery at the estate and Odilon's political warning?"
     ),
     "fata-morgana-requiem-R0084": (
-        "What is the order of Jacopo carrying Morgana from the great hall, a visitor "
-        "shouting at the door, Morgana worrying about the sleepers, and Odilon refusing a delay?"
+        "Which sequence best spans Jacopo's rescue of Morgana and the estate's political tensions?"
     ),
     "fata-morgana-requiem-R0088": (
-        "How does Michel's date with Giselle progress from her asking which film he "
-        "chose to his admission, her laughter, and her reassurance?"
+        "How does Michel's movie date with Giselle get underway?"
     ),
     "fata-morgana-requiem-R0090": (
-        "In what order do Michel and Giselle dismiss the movie's resemblance to their "
-        "past, consider investigating it, and discuss Giselle's feelings about ghosts?"
+        "What is the chronology of their response to the horror film and its echoes of their past lives?"
     ),
     "fata-morgana-requiem-R0094": (
-        "How does their movie date move from Michel's apology about the film choice to "
-        "their coincidence theory, his plan to investigate, and Giselle's view of ghosts?"
+        "Which ordering fits Michel and Giselle's conversations surrounding the horror film?"
     ),
     "fata-morgana-requiem-R0096": (
-        "What is the chronology of Michel considering an investigation, Giselle "
-        "explaining her lack of fear and sympathy for ghosts, and Michel discussing bodily change?"
+        "How do Giselle's thoughts about ghosts and Michel's thoughts about identity unfold during the date?"
     ),
     "fata-morgana-requiem-R0097": (
-        "How do Michel's request that Giselle stay, their thanks for finding and "
-        "waiting for each other, and his declaration of love unfold?"
+        "What is the story order of Michel and Giselle's conversation about staying together and finding each other?"
     ),
     "fata-morgana-requiem-R0098": (
-        "What is the order of Giselle calling their date miraculous, Michel asking her "
-        "to stay, and the two thanking each other for finding and waiting?"
+        "Which sequence follows Michel and Giselle as their ordinary date becomes a reunion?"
     ),
     "fata-morgana-requiem-R0101": (
-        "How does Michel move from describing continual transformation to explaining "
-        "his restraint, hearing Giselle call the date miraculous, and asking her to stay?"
+        "How does Michel's reflection on change relate chronologically to his decision about Giselle staying?"
     ),
     "fata-morgana-requiem-R0104": (
-        "In what order does Giselle explain her feelings about ghosts before Michel "
-        "uses changing cells and bones to describe continual transformation?"
+        "What chronology connects Giselle's response to ghosts with Michel's argument about changing identity?"
     ),
     "fata-morgana-requiem-R0108": (
-        "How do Michel's explanation for holding back, request that Giselle stay, "
-        "thanks for her patience, and declaration of love unfold?"
+        "Which order traces Michel's decision about inviting Giselle into his life?"
     ),
     "fata-morgana-requiem-R0111": (
-        "In what order does Michel discuss the body's changing cells, conclude that "
-        "people continually transform, explain his restraint, and ask Giselle to stay?"
+        "How does Michel's thinking about physical change and a shared future with Giselle unfold?"
     ),
     "fata-morgana-requiem-R0113": (
-        "How does Michel move from dismissing the movie's resemblance as coincidence "
-        "to planning an investigation and explaining physical transformation?"
+        "What is the chronology of Michel's reaction to the film and his discussion of physical identity?"
     ),
     "fata-morgana-requiem-R0119": (
-        "In what order do Michel and Giselle discuss the unchosen film, its resemblance "
-        "to their past, Giselle's lack of fear, and Michel's changing body?"
+        "Which sequence best fits the turning points in Michel and Giselle's movie outing?"
     ),
     "fata-morgana-requiem-R0121": (
-        "How does the date progress from Michel's apology about choosing no film to "
-        "the coincidence discussion, his planned investigation, and his account of bodily change?"
+        "How do Michel and Giselle's reflections prompted by the movie unfold during their date?"
     ),
     "fata-morgana-requiem-R0124": (
-        "In what order does Giselle express sympathy for ghosts before Michel discusses "
-        "changing cells, perpetual transformation, and why he held back?"
+        "How do the couple's conversations about past lives and a shared future unfold?"
     ),
     "fata-morgana-requiem-R0127": (
-        "How do Giselle's laughter over Michel's vague movie plan, their coincidence "
-        "theory, her sympathy for ghosts, and Michel's explanation of bodily change unfold?"
+        "Which chronology fits Giselle's reactions throughout the movie date and Michel's reflection on identity?"
     ),
     "fata-morgana-requiem-R0131": (
-        "What is the chronology of Giselle expressing sympathy for ghosts, Michel "
-        "explaining his restraint, Giselle calling the date miraculous, and Michel asking her to stay?"
+        "How do Giselle and Michel's reflections on past lives and a shared future unfold during their date?"
     ),
     "fata-morgana-requiem-R0137": (
-        "How does Morgana move from asking about Midsummer and accepting an invitation "
-        "to weighing the noisy festival and admitting her unfamiliarity with ordinary play?"
+        "What is the chronology of Morgana's curiosity about ordinary celebrations and recreation?"
     ),
     "fata-morgana-requiem-R0140": (
-        "In what order does Morgana challenge her companion's pursuit of an illusion, "
-        "describe the realm as fantasy, mention him holding her hand, and question his solitude?"
+        "How does Morgana's final conversation about illusion and solitude unfold?"
     ),
     "fata-morgana-requiem-R0143": (
-        "How does Morgana move from asking to recover missed experiences and recalling "
-        "her companion's fishing to proposing lessons and admitting she could not help?"
+        "Which sequence traces Morgana learning ordinary skills in the idealized realm?"
     ),
     "fata-morgana-requiem-R0151": (
-        "In what order does Morgana ask to learn fishing, confront her companion's "
-        "self-punishment, call the realm a fantasy, and mention him holding her hand?"
+        "How do Morgana's wish to learn and her confrontation about the illusion unfold?"
     ),
     "fata-morgana-requiem-R0155": (
-        "How does Morgana move from assuming her companion had outgrown rural scenery "
-        "to feeling relieved, describing her deprived childhood, and asking to catch up?"
+        "What is the story order of Morgana reflecting on the wheat fields and her missed childhood experiences?"
     ),
     "fata-morgana-requiem-R0158": (
-        "In what order does Morgana express relief about the wheat fields, ask to "
-        "recover lost experiences, request fishing lessons, and admit she could not help?"
+        "Which chronology follows Morgana as she explores life in the wheat-field realm?"
     ),
     "fata-morgana-requiem-R0162": (
-        "How does Morgana's relief about rural life lead into considering Midsummer, "
-        "asking to learn fishing, and admitting she did not know how to help?"
+        "How does Morgana's growing interest in rural life and celebration unfold?"
     ),
     "fata-morgana-requiem-R0164": (
-        "In what order does Morgana welcome her companion's enduring love of the "
-        "countryside, accept Midsummer, weigh the crowds, and admit her helplessness?"
+        "What sequence captures Morgana reconsidering rural life and Midsummer?"
     ),
     "fata-morgana-requiem-R0169": (
-        "How does Morgana move from considering the Midsummer festival to admitting "
-        "her helplessness and confronting the fantasy that let her companion hold her hand?"
+        "How do Morgana's thoughts about celebration and the unreal realm develop?"
     ),
     "fata-morgana-requiem-R0173": (
-        "In what order does Morgana ask about Midsummer, accept an invitation, weigh "
-        "the noisy celebration, and later criticize the fantasy behind a held hand?"
+        "Which chronology fits Morgana's changing outlook in the peaceful realm?"
     ),
     "fata-morgana-requiem-R0176": (
-        "How do Morgana's recognition of the golden wheat fields, expectation that her "
-        "companion had changed, relief that he had not, and later helplessness unfold?"
+        "What is the story order of Morgana's changing expectations of her companion in the peaceful realm?"
     ),
     "fata-morgana-requiem-R0180": (
-        "In what order does Morgana express relief about rural life, accept Midsummer, "
-        "ask to recover lost experiences, and confront her companion's reliance on fantasy?"
+        "How does Morgana's relationship with her companion evolve in the peaceful realm?"
     ),
 }
 

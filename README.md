@@ -194,7 +194,7 @@ F. Cannot infer the answer based on the given information.
 ### Label 定义
 
 - `Fact Extraction (Single Dialogue)`: 正确答案可由单个 dialogue session 完全推出，干扰项来自其他 session 或角色。
-- `Fact Extraction (Multiple Dialogues)`: 关键线索分散在两个或多个 session 中，必须组合才能得到答案。
+- `Fact Extraction (Multiple Dialogues)`: 关键线索分散在多个彼此分离的 dialogue turns 或 passages 中，必须组合才能得到答案；同一 session 内跨度较大的分离片段也符合此定义。
 - `Memory Update`: 同一事实在不同时间被更新，题目应奖励识别最新版本，旧版本应作为强干扰项。
 - `Multi-hop`: 至少需要两个由对话证据支撑的推理步骤，单个 utterance 不足以直接推出答案。
 - `Abstain`: A-E 必须全部是看似合理但错误或无法由对话支持的干扰项，`answer` 必须设为 `F`。

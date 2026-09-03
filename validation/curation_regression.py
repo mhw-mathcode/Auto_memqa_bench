@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 import sys
 import tempfile
 from collections import Counter
@@ -55,6 +56,48 @@ SOURCE_QA_FILES = {
 }
 
 
+_CONSERVATIVE_OPTION_RESIDUAL_PATTERNS = (
+    (
+        "reaction placeholder",
+        re.compile(
+            r"\breacts? (?:to the situation|strongly|with (?:surprise|frustration))\b",
+            re.I,
+        ),
+    ),
+    (
+        "reporting placeholder",
+        re.compile(
+            r"\b(?:responds? affirmatively|the narration focuses on)\b",
+            re.I,
+        ),
+    ),
+    (
+        "keyword salad",
+        re.compile(
+            r"\basks? (?:[A-Z][A-Za-z’'-]+ )?about (?:the situation at hand|"
+            r"hang, miss, and takeda|delete, photo, and smartphone|"
+            r"enough, text, and upstairs|things, miss, and itsuki|"
+            r"actually, miss, and amato|heard, phone, and call|"
+            r"compliment, things, and considered|osachi, sisters, and home|"
+            r"osachi, songs, and usually)\b|\bdidnt\b",
+            re.I,
+        ),
+    ),
+    (
+        "mechanical grammar",
+        re.compile(r"\b(?:kinds scary|kinda wish|just somehow feel)\b", re.I),
+    ),
+)
+
+
+def find_conservative_option_residuals(option: str) -> list[str]:
+    return [
+        label
+        for label, pattern in _CONSERVATIVE_OPTION_RESIDUAL_PATTERNS
+        if pattern.search(option)
+    ]
+
+
 def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
     """A fresh publication must never depend on prior ``result_qa`` output."""
     expected_dialogue_counts = {
@@ -74,7 +117,7 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
         "fault-milestone-two": 113,
         "heart-of-the-woods": 116,
         "highway-blossoms": 105,
-        "nurse-love-addiction": 121,
+        "nurse-love-addiction": 117,
         "fata-morgana-requiem": 180,
     }
     expected_removals = {
@@ -91,7 +134,10 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
             "evidence_not_uniquely_repairable": 6,
             "unsafe_question_rewrite": 1,
         },
-        "nurse-love-addiction": {"evidence_not_uniquely_repairable": 94},
+        "nurse-love-addiction": {
+            "evidence_not_uniquely_repairable": 94,
+            "unsafe_question_rewrite": 4,
+        },
         "fata-morgana-requiem": {"evidence_not_uniquely_repairable": 50},
     }
 
@@ -106,7 +152,7 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
         assert {
             title: details["final_qa"] for title, details in report["titles"].items()
         } == expected_qa_counts
-        assert sum(expected_qa_counts.values()) == 820
+        assert sum(expected_qa_counts.values()) == 816
         assert {
             title: dict(Counter(item["reason"] for item in details["qa_audit"]["removed"]))
             for title, details in report["titles"].items()
@@ -120,6 +166,10 @@ def test_clean_rebuild_uses_raw_runs_and_is_deterministic() -> None:
                     extract_core_question_text(qa["question"], "")
                 ) == []
                 assert all(find_option_issues(option) == [] for option in qa["option"])
+                assert all(
+                    find_conservative_option_residuals(option) == []
+                    for option in qa["option"]
+                )
                 assert qa["qa_id"] == make_qa_id(title_key, final_index)
         assert all(
             Path(input_rel).parts[0] != "result_qa"
@@ -818,6 +868,30 @@ def test_option_prose_detection_distinguishes_mechanical_and_valid_bodies() -> N
     ) == ["mechanical observation prose"]
 
 
+def test_conservative_option_residuals_reject_scoped_generator_artifacts() -> None:
+    assert find_conservative_option_residuals(
+        "A. Asuka reacts to the situation."
+    ) == ["reaction placeholder"]
+    assert find_conservative_option_residuals(
+        "B. Nao responds affirmatively, she will go."
+    ) == ["reporting placeholder"]
+    assert find_conservative_option_residuals(
+        "C. Asuka asks about hang, miss, and takeda."
+    ) == ["keyword salad"]
+    assert find_conservative_option_residuals(
+        "D. Asuka kinda wish she could read it."
+    ) == ["mechanical grammar"]
+    assert find_conservative_option_residuals(
+        "E. Morgan reacts to the horror film by covering her eyes."
+    ) == []
+    assert find_conservative_option_residuals(
+        "F. Asuka asks Itsuki about bondage and drugs, then asks about hypnosis."
+    ) == []
+    assert find_conservative_option_residuals(
+        "G. Alice asks Bob about work, school, and family."
+    ) == []
+
+
 def test_option_rewrites_relabel_bodies_and_reject_invalid_registry_entries() -> None:
     rewrite_key = "fixture-R0001"
     source_options = ["A. Alice observes that sounds fun.", "B. Bob stays home."]
@@ -947,6 +1021,7 @@ def main() -> None:
     test_question_rewrites_are_story_specific()
     test_construction_issue_detection_distinguishes_framing_from_plot_evidence()
     test_option_prose_detection_distinguishes_mechanical_and_valid_bodies()
+    test_conservative_option_residuals_reject_scoped_generator_artifacts()
     test_option_rewrites_relabel_bodies_and_reject_invalid_registry_entries()
     test_option_rewrites_preserve_protected_qa_semantics_and_rendering()
     test_question_rewrite_registry_is_complete_and_safe()

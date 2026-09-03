@@ -14,6 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 import src.curate_novel_benchmark as curation
+from validation.curation_regression import find_conservative_option_residuals
 from src.benchmark_qa_schema import extract_core_question_text, normalize_public_qa
 from src.benchmark_question_rewrites import (
     OPTION_REWRITES,
@@ -156,6 +157,36 @@ PREVIOUS_TASK3_KEYS = {
     "fata-morgana-requiem": FATA_ORDERING_IDS,
     "nurse-love-addiction": set(range(1, 18)),
 }
+
+RESIDUAL_OPTION_REVIEW_KEYS = {
+    1: "C",
+    5: "A",
+    6: "D",
+    10: "C",
+    16: "C",
+    36: "B",
+    39: "B",
+    43: "A",
+    44: "C",
+    64: "AD",
+    68: "AC",
+    73: "CE",
+    74: "D",
+    87: "D",
+    90: "D",
+    92: "BD",
+    93: "AC",
+    94: "B",
+    95: "CD",
+    99: "AB",
+    100: "BE",
+    103: "F",
+    110: "AE",
+    112: "E",
+    113: "C",
+}
+
+RESIDUAL_DELETION_KEYS = {19, 21, 23, 24}
 
 ORDERING_LEAKAGE_KEYS = {
     *(f"fata-morgana-requiem-R{item_id:04d}" for item_id in FATA_ORDERING_IDS),
@@ -355,6 +386,7 @@ def test_rewrites_preserve_protected_fields(repo_root: Path) -> None:
 
 def test_all_option_rewrites_preserve_real_canonical_fields(repo_root: Path) -> None:
     covered: set[str] = set()
+    deleted: set[str] = set()
     protected_fields = (
         "answer",
         "question_type",
@@ -377,6 +409,15 @@ def test_all_option_rewrites_preserve_real_canonical_fields(repo_root: Path) -> 
                 extract_core_question_text(source["question"], ""),
                 source["option"],
             )
+            if action == "delete":
+                assert rewrite_key in {
+                    f"nurse-love-addiction-R{item_index:04d}"
+                    for item_index in RESIDUAL_DELETION_KEYS
+                }
+                assert stem is None
+                assert options == source["option"]
+                deleted.add(rewrite_key)
+                continue
             assert action == "rewrite"
             assert stem is not None
             rewritten_source = deepcopy(source)
@@ -402,9 +443,44 @@ def test_all_option_rewrites_preserve_real_canonical_fields(repo_root: Path) -> 
             ] == rewritten["option"]
             covered.add(rewrite_key)
 
-    assert covered == set(OPTION_REWRITES)
-    assert len(covered) == 116
-    print(f"protected-field option coverage passed: {len(covered)}/116 registry keys")
+    assert covered | deleted == set(OPTION_REWRITES)
+    assert len(covered) == 112
+    assert len(deleted) == 4
+    print(
+        "protected-field option coverage passed: "
+        f"{len(covered)}/112 surviving registry keys; 4 deleted keys"
+    )
+
+
+def test_residual_review_dispositions_cover_real_canonical_items(
+    repo_root: Path,
+) -> None:
+    items = _canonical_items(repo_root, "nurse-love-addiction")
+
+    for item_index in sorted(RESIDUAL_DELETION_KEYS):
+        rewrite_key = f"nurse-love-addiction-R{item_index:04d}"
+        stem, _options, action = rewrite_publication_item(
+            rewrite_key,
+            extract_core_question_text(items[item_index - 1]["question"], ""),
+            items[item_index - 1]["option"],
+        )
+        assert stem is None, rewrite_key
+        assert action == "delete", rewrite_key
+
+    for item_index, letters in sorted(RESIDUAL_OPTION_REVIEW_KEYS.items()):
+        rewrite_key = f"nurse-love-addiction-R{item_index:04d}"
+        source = items[item_index - 1]
+        _stem, options, action = rewrite_publication_item(
+            rewrite_key,
+            extract_core_question_text(source["question"], ""),
+            source["option"],
+        )
+        assert action == "rewrite", rewrite_key
+        for letter in letters:
+            option_index = ord(letter) - ord("A")
+            assert letter in OPTION_REWRITES[rewrite_key], (rewrite_key, letter)
+            assert options[option_index] != source["option"][option_index]
+            assert find_conservative_option_residuals(options[option_index]) == []
 
 
 def test_clean_rebuild_stems(repo_root: Path) -> None:
@@ -423,6 +499,12 @@ def test_clean_rebuild_stems(repo_root: Path) -> None:
                 assert qa["qa_id"] == f"{title_key}-Q{expected_index:04d}"
                 stem = extract_core_question_text(qa["question"], "")
                 assert find_construction_issues(stem) == []
+                assert all(
+                    find_conservative_option_residuals(option) == []
+                    for option in qa["option"]
+                )
+
+        assert published_count == 816
 
         assert highway_items
         removed = report["titles"]["highway-blossoms"]["qa_audit"]["removed"]
@@ -485,6 +567,7 @@ def main() -> None:
     print("Fata gold-sequence enumeration checklist passed: 57/57 stems")
     test_rewrites_preserve_protected_fields(repo_root)
     test_all_option_rewrites_preserve_real_canonical_fields(repo_root)
+    test_residual_review_dispositions_cover_real_canonical_items(repo_root)
     test_clean_rebuild_stems(repo_root)
     print("stem curation regression checks passed")
 

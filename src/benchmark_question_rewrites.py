@@ -450,42 +450,22 @@ QUESTION_REWRITES: dict[str, str | None] = {
             'career survey to her admiration for Ms. Ohara?'
         )
     ),
-    "nurse-love-addiction-R0019": (
-        (
-            'Which events occur while Asuka and Nao discuss medicine, independence, '
-            "and Asuka's past?"
-        )
-    ),
+    "nurse-love-addiction-R0019": None,
     "nurse-love-addiction-R0020": (
         (
             "How do Asuka's attempts to become independent from Nao reveal the "
             "sisters' continuing dependence on each other?"
         )
     ),
-    "nurse-love-addiction-R0021": (
-        (
-            'Which statements describe the conversations in which Asuka and Nao '
-            'reconsider her memories and treatment?'
-        )
-    ),
+    "nurse-love-addiction-R0021": None,
     "nurse-love-addiction-R0022": (
         (
             "How does Nao's ‘first and last date’ change Asuka and Nao's "
             'understanding of their bond?'
         )
     ),
-    "nurse-love-addiction-R0023": (
-        (
-            "Which statements describe Nao and Sakuya's reactions as the group "
-            "discusses Asuka's condition and Itsuki's absence?"
-        )
-    ),
-    "nurse-love-addiction-R0024": (
-        (
-            'Which moments occur as Asuka reflects on her training and learns more '
-            'about her history at the hospital?'
-        )
-    ),
+    "nurse-love-addiction-R0023": None,
+    "nurse-love-addiction-R0024": None,
     "nurse-love-addiction-R0056": (
         "What, if anything, does Asuka learn about the contents of Kaede's resignation "
         "letter when she first sees the envelope?"
@@ -1345,6 +1325,7 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                               'F': 'The forest.'},
  'nurse-love-addiction-R0001': {'A': 'Asuka says it sounds fun. Asuka suggests that they do it. Asuka '
                                      'asks whether the plan would satisfy Sakuya.',
+                                'C': 'Asuka repeatedly apologizes to Nao, says that she means no harm, and begs the supposed ghost not to haunt her.',
                                 'E': "Asuka says it's true that it's completely white, but it's "
                                      'not a nurse outfit.'},
  'nurse-love-addiction-R0002': {'A': 'This time, Miss Sakuya will also be accompanying Ms. '
@@ -1370,7 +1351,8 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      'from sight.',
                                 'E': 'Asuka cannot hear anything. Asuka cannot feel anything but '
                                      'her consciousness ebbing away.'},
- 'nurse-love-addiction-R0005': {'B': 'The two easygoing friends chime in, leaving Asuka frustrated by how easy it is for them to say that.',
+ 'nurse-love-addiction-R0005': {'A': "Nao's worried face makes Asuka feel that she has failed as an elder sister.",
+                                'B': 'The two easygoing friends chime in, leaving Asuka frustrated by how easy it is for them to say that.',
                                 'D': 'As she asks her this, Miss Itsuki keeps a long silence '
                                      'before responding.',
                                 'E': 'Still worried about Nao, she cannot seem to think of any '
@@ -1378,6 +1360,7 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
  'nurse-love-addiction-R0006': {'A': 'Nao says the situation escalated quickly, then offers her support and encourages her sister to do her best.',
                                 'B': 'Nao says that she rushed home because she was worried about her sister and asks what she is doing.',
                                 'C': 'Nao says another message is from Itsuki and reads, ‘Say goodnight to Prima for me.’',
+                                'D': 'Nao says that she must return before lunch break ends and will cook quickly.',
                                 'E': 'Nao warns her sister that if she does not wake up, Nao is going to kiss her.'},
  'nurse-love-addiction-R0007': {'A': 'Itsuki guarantees that Asuka has the potential to become a star among nerds.',
                                 'C': "Itsuki says having such a ‘power' would be like having the "
@@ -1401,6 +1384,7 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
  'nurse-love-addiction-R0010': {'A': 'Nao says now, milk and eggs go into the fridge.',
                                 'B': 'Nao tells Asuka that they took a while and asks whether they '
                                      'went far.',
+                                'C': 'Nao laughs and calls herself a naughty girl.',
                                 'D': 'Nao says that someone was there even though the room was empty.',
                                 'E': 'Nao wonders whether it could be a stalker.'},
  'nurse-love-addiction-R0011': {'B': 'The classroom is engulfed with cries of despair.',
@@ -1426,7 +1410,8 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                      "a downcast expression appears on Nao's face.",
                                 'E': 'Asuka hears Miss Takeda whisper quietly. Responding to her '
                                      'voice, she looks towards her. Their eyes meet.'},
- 'nurse-love-addiction-R0016': {'D': 'Asuka says that she and the others will go through a lot '
+ 'nurse-love-addiction-R0016': {'C': 'Asuka asks whether the person she is going to meet is Miss Takeda.',
+                                'D': 'Asuka says that she and the others will go through a lot '
                                      'together over the next three years.',
                                 'E': 'Asuka says it is not a big deal, even if they are lost forever.'},
  'nurse-love-addiction-R0017': {'B': 'Once again, excited voices can be heard. There truly are a '
@@ -1464,7 +1449,8 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'E': 'Nao calls her a cruel girl and says that she is not really their sister.',
                                 'F': 'Led by Ms. Shionogi, they leave the nurse station. The '
                                      "hospital ward they head to isn't the one where Yuki is."},
- 'nurse-love-addiction-R0036': {'C': 'Ms. Ohara nods, but her expression seems to say otherwise. '
+ 'nurse-love-addiction-R0036': {'B': 'Asuka says that it sounds dramatic and wishes that she could read it.',
+                                'C': 'Ms. Ohara nods, but her expression seems to say otherwise. '
                                      'Asuka does not seem convinced.',
                                 'D': 'Meaningless thoughts about the former Jellyfish Club manager dance through her head.'},
  'nurse-love-addiction-R0037': {'A': 'Nao says if they plan properly and work at it consistently '
@@ -1481,6 +1467,7 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'D': "Asuka involuntarily lets out an odd cry, quickly covers her mouth, and hears only Nao's quiet breathing."},
  'nurse-love-addiction-R0039': {'A': 'Nao breaks the tension. Miss Itsuki shrugs her shoulders '
                                      'apologetically.',
+                                'B': 'Asuka reminds herself that she is there for training as a nursing student and needs to shape up.',
                                 'C': 'Asuka acknowledges the instruction and asks the patient to hold out an arm.'},
  'nurse-love-addiction-R0040': {'A': 'Itsuki says an event that is said to be the biggest doujin '
                                      'event in the country.',
@@ -1496,12 +1483,14 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'B': "A click and approaching footsteps bring Asuka's senses slowly back to her.",
                                 'C': 'Asuka says that they were not in the first-year classroom.',
                                 'D': 'Kaede says that the ceremony will be held in the auditorium and that everyone will attend in training uniforms.'},
- 'nurse-love-addiction-R0043': {'B': 'Asuka says beyond the hill, she sees them, she sees them '
+ 'nurse-love-addiction-R0043': {'A': 'Asuka notices that it is the same number and wonders who is calling.',
+                                'B': 'Asuka says beyond the hill, she sees them, she sees them '
                                      'gooooo.',
                                 'D': 'Asuka says it seems like she is taking that medicine quite '
                                      'often.'},
  'nurse-love-addiction-R0044': {'A': 'Nao asks not to be patronized, reminding her sister that they have been together for a long time.',
                                 'B': 'Asuka slowly turns her eyes toward the paper and cries, ‘Burn!’',
+                                'C': 'Asuka laughs and says that she somehow feels as though someone has been watching her all day.',
                                 'D': 'Sakuya tells Itsuki not to say unnecessary things.'},
  'nurse-love-addiction-R0045': {'A': "Itsuki says it would've made her look a lot cooler if her "
                                      'reason for collapsing had been too much studying.',
@@ -1571,10 +1560,12 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'B': 'Itsuki welcomes them to her secret base.',
                                 'D': 'Itsuki describes thick eye shadow, baggy skirts, and a Hannya-demon brooch.',
                                 'E': 'Itsuki asks Asuka what she should wear, says that she wears whatever she likes, and admits that she sometimes sleeps naked.'},
- 'nurse-love-addiction-R0064': {'B': "Kaede says people's hair grows at different rates. Kaede "
+ 'nurse-love-addiction-R0064': {'A': 'Kaede says that the class will practice bathing newborns in maternity nursing that day.',
+                                'B': "Kaede says people's hair grows at different rates. Kaede "
                                      "says there's nothing embarrassing about an adult without "
                                      'hair in certain areas.',
                                 'C': 'Kaede says that her heart is in the right place but asks her to be polite tomorrow.',
+                                'D': 'Kaede says goodbye and tells them that she will see them at the academy the next day.',
                                 'E': 'Kaede says that she will distribute the hospital-training papers later so that everyone can check their details individually.'},
  'nurse-love-addiction-R0065': {'A': 'Nao says studying in a karaoke booth could make for a good '
                                      'change of pace. Nao says maybe.',
@@ -1590,7 +1581,9 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'D': "Sakuya says it's an important topic. Sakuya says clothing is "
                                      'one of the basic necessities of life.',
                                 'E': 'Sakuya agrees that it is cute in its own way, then apologizes.'},
- 'nurse-love-addiction-R0068': {'D': 'Asuka says that they should not share an umbrella, especially not with someone like her.'},
+ 'nurse-love-addiction-R0068': {'A': 'Asuka says that she invited everyone but admits that six people are a lot for one room.',
+                                'C': 'Asuka vaguely remembers the sternum but admits that she does not know the answer.',
+                                'D': 'Asuka says that they should not share an umbrella, especially not with someone like her.'},
  'nurse-love-addiction-R0069': {'A': 'Sakuya asks whether they were talking and gaming until late the previous night.',
                                 'B': "Sakuya says one wrong word and it'll sound more like "
                                      'sarcasm. Sakuya says especially to someone who wears the '
@@ -1619,10 +1612,13 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'D': 'Asuka says that she can do it when she sets her mind to it.',
                                 'E': "Asuka says nah, she couldn't do it. Asuka says a bed is no "
                                      'place to pee.'},
- 'nurse-love-addiction-R0073': {'B': 'Nao tells Miss Itsuki that she should not say things like that.',
+'nurse-love-addiction-R0073': {'B': 'Nao tells Miss Itsuki that she should not say things like that.',
+                                'C': 'Nao asks Asuka whether she deleted the photo from her smartphone.',
                                 'D': 'Nao says aha. Nao would drop out too. Nao would chase after '
-                                     'her.'},
- 'nurse-love-addiction-R0074': {'B': "Itsuki says it probably wouldn't change anything."},
+                                     'her.',
+                                'E': 'Nao says there is enough for six and asks Asuka to text the people upstairs.'},
+'nurse-love-addiction-R0074': {'B': "Itsuki says it probably wouldn't change anything.",
+                                'D': 'Itsuki exclaims that it was a close call, but she made it.'},
  'nurse-love-addiction-R0075': {'A': "Kaede says that the second-years' Capping Ceremony will be held the following week and that all first-years will attend.",
                                 'C': 'Kaede says next, in November. Kaede says it is still quite a '
                                      'way ahead of them, but they will hold their annual school '
@@ -1678,23 +1674,32 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'B': 'Itsuki asks whether she had not been told that they never have huge fights, then distinguishes huge fights from ordinary ones.',
                                 'C': "Itsuki says maybe the fact that it's autumn."},
  'nurse-love-addiction-R0087': {'A': 'Kaede says they can. Kaede is sure of it.',
-                                'B': 'Asuka says that Ms. Ohara is her role model and that she wants to become a nurse just like her.'},
+                                'B': 'Asuka says that Ms. Ohara is her role model and that she wants to become a nurse just like her.',
+                                'D': 'Kaede encourages Miss Osachi to do her best.'},
  'nurse-love-addiction-R0089': {'A': 'Sakuya threatens to have Itsuki arrested for violating entertainment-establishment laws.',
                                 'B': 'Itsuki laughs, says that she would rather not be arrested, and withdraws the offer.',
                                 'C': 'Itsuki handles them independently and says that they are slightly naughty by nature.',
                                 'D': 'Sakuya says take this seriously, Itsuki. Sakuya says this '
                                      "isn't play."},
- 'nurse-love-addiction-R0090': {'A': 'Asuka says that Sakuya has not returned to the dorm, although she often sees Sakuya and Itsuki talking at school.',
+'nurse-love-addiction-R0090': {'A': 'Asuka says that Sakuya has not returned to the dorm, although she often sees Sakuya and Itsuki talking at school.',
                                 'B': "Sakuya says that's true. Sakuya supposes the ice might soon melt "
-                                     'between them.'},
+                                     'between them.',
+                                'D': 'Asuka asks Sakuya how things have been with Itsuki lately.'},
  'nurse-love-addiction-R0091': {'C': "Asuka says come on now, don't be shy.",
                                 'D': 'Asuka says Nao, she was considering something last night '
                                      'before she slept.'},
- 'nurse-love-addiction-R0092': {'A': 'Asuka tells Nao that this is not what she wanted to ask.'},
- 'nurse-love-addiction-R0093': {'B': 'Itsuki says hmph. Itsuki cannot just let them leave then.',
+'nurse-love-addiction-R0092': {'A': 'Asuka tells Nao that this is not what she wanted to ask.',
+                                'B': 'Itsuki asks what they wear to sleep and jokes that no clothes are involved.',
+                                'D': 'Asuka asks Miss Amato whether she can ask her something.'},
+'nurse-love-addiction-R0093': {'A': 'Itsuki asks Asuka whether she overheard her phone call.',
+                                'B': 'Itsuki says hmph. Itsuki cannot just let them leave then.',
+                                'C': 'Asuka says that she does not know what is happening and asks why Itsuki said her name.',
                                 'D': 'Asuka confirms that she did.'},
- 'nurse-love-addiction-R0094': {'D': 'Asuka says that she is not all right, has run out of energy, and may need to replenish it.'},
- 'nurse-love-addiction-R0095': {'B': 'Kaede begins morning homeroom once everyone has arrived.'},
+ 'nurse-love-addiction-R0094': {'B': 'Nao reminds Asuka that she already gave her one that day.',
+                                'D': 'Asuka says that she is not all right, has run out of energy, and may need to replenish it.'},
+'nurse-love-addiction-R0095': {'B': 'Kaede begins morning homeroom once everyone has arrived.',
+                                'C': 'Itsuki asks Sakuya to compliment her for never officially being late, all things considered.',
+                                'D': 'Itsuki exclaims that it was a close call, but she made it.'},
  'nurse-love-addiction-R0096': {'B': "Nao says it's pretty humid in here since the air "
                                      "conditioning isn't working.",
                                 'D': 'Itsuki says to pass her life in purity and to practice her '
@@ -1702,9 +1707,13 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
  'nurse-love-addiction-R0097': {'A': 'Kaede reminds Asuka of her promise and says that she believed Asuka was not the kind of girl who would break it.',
                                 'D': 'Kaede says that she dreamed Asuka had told the academy about her envelope.'},
  'nurse-love-addiction-R0098': {'D': 'Nao says that she is joking and only trying a new approach with her sister.'},
- 'nurse-love-addiction-R0099': {'C': 'Asuka says it seems like she is taking that medicine quite '
+ 'nurse-love-addiction-R0099': {'A': 'Asuka asks why Nao is in the kitchen when it is still early to make dinner.',
+                                'B': 'Nao says that she takes the medicine about once a day.',
+                                'C': 'Asuka says it seems like she is taking that medicine quite '
                                      'often.'},
- 'nurse-love-addiction-R0100': {'C': 'Asuka tells Nao that this is not what she wanted to ask.',
+'nurse-love-addiction-R0100': {'C': 'Asuka tells Nao that this is not what she wanted to ask.',
+                                'B': 'Asuka asks Miss Amato whether she can ask her something.',
+                                'E': 'Asuka thinks that the nursing academy is kind of scary.',
                                 'F': 'Asuka protests that Nao cannot kiss her because they are sisters.'},
  'nurse-love-addiction-R0101': {'A': 'Itsuki says originally, their club was putting out an indie '
                                      'magazine focused on novels. Itsuki says it was filled with '
@@ -1728,7 +1737,8 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'D': "Nao says if it's about Miss Sakuya, she could ask Miss "
                                      'Itsuki.',
                                 'E': 'Nao heard there would be classes like this. Nao says it '
-                                     'really is embarrassing.'},
+                                     'really is embarrassing.',
+                                'F': 'Nao wonders what she should make and says that she cannot spend too much time on it.'},
  'nurse-love-addiction-R0104': {'A': "Sakuya says perhaps she could call it a ‘contract' of sorts.",
                                 'B': 'Sakuya threatens to have Itsuki arrested for violating entertainment-establishment laws.',
                                 'D': 'Sakuya says that the food is not well made and is too oily, just as she expected.',
@@ -1769,7 +1779,9 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'E': 'Sakuya says Nao may have pushed her, but she was able to '
                                      'finish her homework a week ago.',
                                 'F': 'Sakuya agrees that, regardless of appearances, Itsuki can behave like a rodent.'},
- 'nurse-love-addiction-R0110': {'F': 'Itsuki says actually, it started over two weeks ago.'},
+'nurse-love-addiction-R0110': {'A': 'Itsuki asks whether the Osachi sisters are going home to visit their family.',
+                                'E': 'Itsuki asks Little Osachi what kinds of songs she usually sings.',
+                                'F': 'Itsuki says actually, it started over two weeks ago.'},
  'nurse-love-addiction-R0111': {'A': 'Kaede says next, in November. Kaede says it is still quite a '
                                      'way ahead of them, but they will hold their annual school '
                                      'festival.',
@@ -1786,8 +1798,10 @@ OPTION_REWRITES: dict[str, dict[str, str]] = {'9-nine-episode-1-R0046': {'A': 'T
                                 'F': 'Kaede asks everyone to look at their papers and listen while she introduces the subjects she will oversee.'},
  'nurse-love-addiction-R0112': {'A': 'Asuka protests that they cannot do that and calls it criminal.',
                                 'D': 'Asuka asks Itsuki about bondage and drugs, then asks whether hypnosis is really so easy to succumb to.',
+                                'E': 'Asuka says that it sounds dramatic and wishes that she could read it.',
                                 'F': 'Asuka playfully tells Nao that she woke up on her own, then pretends to sleep.'},
  'nurse-love-addiction-R0113': {'A': 'Asuka asks how Itsuki and Miss Sakuya first got together.',
+                                'C': 'Asuka asks whether the person she is going to meet is Miss Takeda.',
                                 'E': 'Asuka says that she can do it when she sets her mind to it.',
                                 'F': "Asuka says that's not it at all. Asuka just stammered, that's "
                                      'all.'}}

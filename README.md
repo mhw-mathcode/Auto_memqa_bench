@@ -9,15 +9,15 @@
 
 当前流程顺序为：
 
-1. 生成初始题目。
+1. 生成初始题目，并由同一模型执行独立的第二遍自我反思：逐题检查结构、证据、答案唯一性、类别与 label，再修订或替换有问题的题目。
 2. 问题精炼与重构。
 3. 将题目统一拼接为 `question + option` 展示形式，并补齐 F 选项。
 4. 证据对齐，确保 `evidence_dialogues` 中的 `dia_id`、`speaker` 与原始 conversation 严格对应，并且 `utterance` 是同一原始 turn 的完整文本或连续原文片段。
 5. 题目合理性检测：仅证据回答、迭代性证据删除。
 6. 污染检查。
-7. 生成最终版本。
+7. 最终筛选：先执行确定性的 schema / evidence / reasoning 检查，再由模型执行语义质量检查；任一检查失败的 QA 都从 final 中删除，并写入删除审计文件。
 
-注意：答案为 `F` 的 Abstain 题目前只做证据对齐，不进入仅证据回答、迭代性证据删除和污染检查的证伪环节。这类题的核心要求是 A-E 均不可由文本推出，但当前流程尚未实现针对 A-E 逐项证伪的专门检查，因此会在检测阶段标记为跳过并保留。
+注意：答案为 `F` 的 Abstain 题仍不进入 Step 2 的仅证据回答、迭代性证据删除和 Step 3 污染检查，但会进入 Step 4 的最终 schema 与语义门禁。最终评审会检查 A-E 是否被所给证据支持、题干和选项是否存在歧义；对整部作品执行穷尽式的 A-E 逐项证伪仍可作为后续人工校验环节。
 
 迭代性证据删除阶段会把删除证据后的剩余 conversation 以 JSONL 形式传入模型，每行都显式包含 `dia_id`、`speaker`、`utterance`。如果模型答对但没有返回可与剩余 conversation 严格对齐的新证据，本轮会重试；多次重试仍失败时，该题会被标记为应过滤，不再额外追问模型补证据。
 
@@ -34,6 +34,7 @@
 - `src/step1_new_qa.py`: 问题精炼与重构。
 - `src/step2_evidence_check.py`: 题目合理性检测。
 - `src/step3_pollution_check.py`: 污染检查。
+- `src/step4_finalize.py`: 最终 schema 与语义质量门禁，以及删题审计。
 - `dataset/`: 输入数据。
 - `runs/`: 每次运行的独立目录，包含日志、中间版本和最终输出。
 
@@ -199,6 +200,11 @@ F. Cannot infer the answer based on the given information.
 - `Multi-hop`: 至少需要两个由对话证据支撑的推理步骤，单个 utterance 不足以直接推出答案。
 - `Abstain`: A-E 必须全部是看似合理但错误或无法由对话支持的干扰项，`answer` 必须设为 `F`。
 
+`Temporal Evolution` 只作为 Category 3 的能力类别使用，不再作为 label。对于
+`question_type: "ordering"` 的题目，label 仍按证据组织方式确定：多个分散 dialogue
+明确给出待排序事件时使用 `Fact Extraction (Multiple Dialogues)`；需要用新信息覆盖旧
+状态时使用 `Memory Update`；顺序依赖额外身份、因果或关系推导时使用 `Multi-hop`。
+
 ### 运行完整流水线
 ```bash
 python main.py --run An-Enemy-of-the-People
@@ -225,11 +231,11 @@ python main.py --run An-Enemy-of-the-People --config my_config.json
 ### 配置项说明
 
 **步骤配置（steps）**
-- step_0_generate_qa: 生成原始问答对，并统一格式化为 question + A-E/F 选项展示文本
+- step_0_generate_qa: 生成原始问答对，执行模型自我反思和修订，并统一格式化为 question + A-E/F 选项展示文本
 - step_1_refine_qa: 问题精炼与重构，并再次统一格式化为 question + A-E/F 选项展示文本 (v0 → v1_refined)
 - step_2_evidence_check: 题目合理性检测 (v1_refined → v2a → v2b)
 - step_3_pollution_check: 污染检查 (v2b → v3)
-- step_4_finalize: 生成最终版本 (v3 → final)
+- step_4_finalize: 累积前序过滤规则，执行最终 schema 与语义检查，删除不合格 QA 并生成 final
 
 **Pipeline 配置**
 - input_dir: 输入数据集目录
@@ -238,13 +244,20 @@ python main.py --run An-Enemy-of-the-People --config my_config.json
 
 **分步骤并发配置**
 - `step_0_generate_qa.max_workers`: 同一文件内角色批次的并发数；`speaker_batch_size` 决定每个任务包含多少角色
+- `step_0_generate_qa.enable_self_reflection`: 是否对模型第一遍生成结果执行独立的反思修订回合，默认 `true`
 - `step_1_refine_qa.max_workers`: 按角色并发执行问题精炼
 - `step_2_evidence_check.only_evidence_max_workers`: 仅证据回答的并发数
 - `step_2_evidence_check.iterative_ablation_max_workers`: 五轮迭代证据消融的并发数
 - `step_2_evidence_check.max_workers`: 单独运行其他证据检查模式时的并发数
 - `step_2_evidence_check.checkpoint_every_questions`: Step 2 每完成多少道题原子更新一次阶段快照，默认 `1`
 - `step_3_pollution_check.max_workers`: 每轮无上下文污染回答的并发数
-- `step_4_finalize.max_workers`: 最终累积规则按题检查的并发数
+- `step_4_finalize.enable_schema_check`: 是否执行最终确定性结构检查，默认 `true`
+- `step_4_finalize.enable_semantic_check`: 是否执行最终逐题语义检查，默认 `true`
+- `step_4_finalize.max_workers`: 最终语义检查的并发数
+
+Step 4 的语义检查启用时需要 LLM。优先使用 `step_4_finalize.llm`；为兼容旧配置，如果该项未配置，会回退使用 `step_3_pollution_check.llm`。最终保留题写入 `*_final.json`，删除原因写入同目录的 `*_final_review.json`。如果任何语义评审请求最终失败，Step 4 会整体失败且不写出新的 final，避免把 API 故障误判成应删题。
+
+Step 0 的第二遍输出还包含精简的 `reflection_summary`（发现问题数、修订题数和问题代码）；流水线把该摘要写入运行日志，只把修订后的 `qa` 写入 v0，不保存模型的隐式推理过程。
 
 各步骤存在版本依赖，因此步骤之间保持顺序执行；上述并发均发生在步骤内部。并发过高可能触发模型服务的 TPM/RPM 限制，迭代消融建议从 3 开始调整。
 

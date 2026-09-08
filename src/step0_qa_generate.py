@@ -26,7 +26,7 @@ You are an expert in designing difficult long-range, cross-session memory evalua
 
 Task:
 
-Given a long multi-session dialogue, generate at least {} high-quality multiple-choice QA pairs.
+Given a long multi-session dialogue, generate at least {total_question_num} high-quality multiple-choice QA pairs.
 
 Distribute questions as evenly as possible across Categories 1-7 and approximately balance the five labels within each category.
 
@@ -70,15 +70,16 @@ Each question must use exactly one label.
 
 ### Fact Extraction (Single Dialogue)
 
-Use evidence from exactly one session.
-The answer must require synthesis, reconstruction, comparison, or inference across multiple pieces of evidence within that session.
-Do not use questions whose answer can be copied directly from one utterance.
+Use exactly one necessary `evidence_dialogues` item from one dialogue turn.
+The answer may be a precise fact stated in that turn, but the question and
+options must still be natural and non-trivial.
 
 ### Fact Extraction (Multiple Dialogues)
 
-Use necessary evidence from at least two distinct sessions.
-No single session may independently determine the complete answer.
-Each cited session must contribute information necessary to distinguish the correct answer.
+Use at least two necessary `evidence_dialogues` items from distinct dialogue
+turns. They may come from the same session when the dialogue distance is large
+enough to create a real memory burden. Each cited turn must contribute
+information necessary to distinguish the correct answer.
 
 ### Memory Update
 
@@ -108,7 +109,7 @@ Prefer naturally missing information rather than artificially withholding an oth
 
 # 4. Cross-Session Reasoning
 
-Except for Fact Extraction (Single Dialogue), prefer evidence from multiple distinct sessions whenever appropriate.
+Except for Fact Extraction (Single Dialogue), prefer evidence from multiple distinct sessions whenever appropriate, but do not require a session boundary when distant turns in one long session form the needed dependency.
 
 Cross-session evidence must form a coherent narrative dependency, such as:
 
@@ -120,7 +121,7 @@ Do not combine unrelated facts simply because they occur in different sessions.
 
 A question counts as genuinely cross-session only when every cited session contributes necessary information.
 
-If one session alone fully answers the question, reject the cross-session construction.
+If one session alone fully answers the question, do not describe it as cross-session; judge it by dialogue distance and evidence necessity instead.
 
 # 5. Grounding Rules
 
@@ -299,6 +300,66 @@ Allowed `label`:
 For Abstain, `"answer"` must be `"F"`.
 
 For all other labels, `"answer"` must be one of `"A"`, `"B"`, `"C"`, `"D"`, `"E"`.
+"""
+
+QA_SELF_REFLECTION_PROMPT = """
+Role:
+
+You are the senior reviewer responsible for the second pass of a long-range
+memory benchmark. The draft questions below were produced by you in a first
+pass. Before returning them, critically inspect each item and improve it.
+
+# Required reflection procedure
+
+For every draft QA, silently check both levels below.
+
+1. Schema and annotation correctness
+   - required fields and JSON types are present;
+   - character belongs to the requested target speakers;
+   - category is 1-7 and label is one of the allowed labels;
+   - answer points to an existing option;
+   - evidence IDs, dia_ids, speakers, and reasoning references are coherent;
+   - every target speaker still has Categories 1-7 represented.
+
+2. Semantic quality
+   - the question is natural, self-contained, unambiguous, and non-trivial;
+   - the cited evidence is necessary and sufficient for the keyed answer;
+   - the keyed option contains no unsupported claim;
+   - no distractor is also correct and options are mutually exclusive;
+   - category and label describe what the question actually tests;
+   - cross-session evidence is narratively connected rather than aggregated;
+   - Memory Update, Multi-hop, Lessons Learned, Plans & Commitments, and
+     Abstain satisfy their stricter definitions;
+   - no outside knowledge, speaker guess, or unsupported causal/emotional
+     inference is required.
+
+Repair every problem you find. If an item cannot be repaired, replace it with a
+new valid item for the SAME target character and category. Preserve or restore
+complete Category 1-7 coverage for every target speaker. Report only a compact
+audit summary, never hidden chain-of-thought or a long critique.
+
+Return ONLY one valid JSON object with this shape:
+
+{
+  "reflection_summary": {
+    "issue_count": 0,
+    "repaired_item_count": 0,
+    "issue_codes": []
+  },
+  "qa": [...]
+}
+
+# Target speakers
+
+{speakers}
+
+# Conversation
+
+{conversation}
+
+# First-pass draft QA
+
+{draft_qa}
 """
 
 def call_openai_json(
@@ -518,12 +579,59 @@ def call_openai_json(
 
 
 def _build_qa_generate_prompt(conversation: Dict[str, Any], speakers: List[str]) -> str:
-    return QA_GENERATE_PROMPT.format(
-      conversation=conversation,
-      user_list=speakers,
-      question_num=1,
-      total_question_num=len(speakers) * TOTAL_CATEGORIES
+    return (
+      QA_GENERATE_PROMPT
+      .replace("{conversation}", json.dumps(conversation, ensure_ascii=False))
+      .replace("{total_question_num}", str(len(speakers) * TOTAL_CATEGORIES))
     )
+
+
+def _reflect_and_improve_qa(
+  conversation: Dict[str, Any],
+  speakers: List[str],
+  draft_qa: List[Dict[str, Any]],
+  llm_config,
+  filename: str,
+) -> List[Dict[str, Any]]:
+    """Run a distinct second LLM pass that critiques and repairs generated QA."""
+    prompt = (
+      QA_SELF_REFLECTION_PROMPT
+      .replace("{speakers}", json.dumps(speakers, ensure_ascii=False))
+      .replace("{conversation}", json.dumps(conversation, ensure_ascii=False))
+      .replace("{draft_qa}", json.dumps(draft_qa, ensure_ascii=False))
+    )
+    reflected = call_openai_json(
+      answer_prompt=prompt,
+      model=llm_config.model,
+      api_key=llm_config.api_key,
+      base_url=llm_config.base_url,
+    )
+    summary = reflected.get("reflection_summary")
+    if not isinstance(summary, dict):
+      raise ValueError("自我反思缺少 reflection_summary")
+    try:
+      issue_count = int(summary["issue_count"])
+      repaired_item_count = int(summary["repaired_item_count"])
+    except (KeyError, TypeError, ValueError) as exc:
+      raise ValueError("自我反思统计字段无效") from exc
+    issue_codes = summary.get("issue_codes")
+    if issue_count < 0 or repaired_item_count < 0 or not isinstance(issue_codes, list):
+      raise ValueError("自我反思统计值无效")
+    revised_qa = reflected.get("qa", [])
+    if not isinstance(revised_qa, list) or not revised_qa:
+      raise ValueError("自我反思未返回非空 qa list")
+    log_event(
+      "qa_self_reflection",
+      status="success",
+      file=filename,
+      speakers=speakers,
+      draft_count=len(draft_qa),
+      revised_count=len(revised_qa),
+      issues_found=issue_count,
+      repaired_items=repaired_item_count,
+      issue_codes=issue_codes,
+    )
+    return revised_qa
 
 
 def _deduplicate_qa_items(qa_items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -569,6 +677,7 @@ def _generate_qa_for_speakers_with_split(
   filename: str,
   repair_round: int = 0,
   max_repair_rounds: int = 3,
+  enable_self_reflection: bool = True,
 ) -> Tuple[List[Dict[str, Any]], List[str]]:
     """
     为 speaker 列表生成题目，失败时自动二分拆批重试。
@@ -590,6 +699,15 @@ def _generate_qa_for_speakers_with_split(
       qa_list = all_users_qa.get("qa", [])
       if not isinstance(qa_list, list):
         raise ValueError("字段 qa 缺失或不是 list")
+
+      if enable_self_reflection:
+        qa_list = _reflect_and_improve_qa(
+          conversation=conversation,
+          speakers=speakers,
+          draft_qa=qa_list,
+          llm_config=llm_config,
+          filename=filename,
+        )
 
       expected = set(speakers)
       filtered_qa: List[Dict[str, Any]] = []
@@ -662,6 +780,7 @@ def _generate_qa_for_speakers_with_split(
           filename=filename,
           repair_round=repair_round + 1,
           max_repair_rounds=max_repair_rounds,
+          enable_self_reflection=enable_self_reflection,
         )
         merged_qa = filtered_qa + recovered_qa
         merged_qa = _deduplicate_qa_items(merged_qa)
@@ -708,6 +827,7 @@ def _generate_qa_for_speakers_with_split(
         filename=filename,
         repair_round=repair_round,
         max_repair_rounds=max_repair_rounds,
+        enable_self_reflection=enable_self_reflection,
       )
       right_qa, right_failed = _generate_qa_for_speakers_with_split(
         conversation=conversation,
@@ -716,6 +836,7 @@ def _generate_qa_for_speakers_with_split(
         filename=filename,
         repair_round=repair_round,
         max_repair_rounds=max_repair_rounds,
+        enable_self_reflection=enable_self_reflection,
       )
 
       merged = left_qa + right_qa
@@ -730,6 +851,7 @@ def generate_v0(
   initial_batch_size: int = 8,
   max_workers: int = 1,
   input_target: Optional[str] = None,
+  enable_self_reflection: bool = True,
 ) -> str:
     """
     生成 v0 原始问答对
@@ -766,6 +888,7 @@ def generate_v0(
     print_kv("mode", "force_generate" if force_generate_new_qa else "reuse_existing_qa", indent=4)
     normalized_workers = max(1, int(max_workers or 1))
     print_kv("max_workers", normalized_workers, indent=4)
+    print_kv("self_reflection", bool(enable_self_reflection), indent=4)
     
     for file_idx, filename in enumerate(
       tqdm(json_files, desc=f"Step 0 files | {dataset_name}", unit="file"),
@@ -914,6 +1037,7 @@ def generate_v0(
             speakers=batch,
             llm_config=llm_config,
             filename=filename,
+            enable_self_reflection=enable_self_reflection,
           )
 
         if effective_workers == 1:

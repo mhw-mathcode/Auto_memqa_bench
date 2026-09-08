@@ -85,6 +85,8 @@ scripts/
 dataset/
 result/
 result_qa/
+result_qa_fixed/
 tests/
 docs/
 .worktrees/
+runs_remain/

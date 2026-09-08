@@ -23,11 +23,11 @@ from typing import Any, Callable, Dict, Iterable, Optional
 
 
 PIPELINE_OVERVIEW = [
-    "步骤 0: v0 生成原始问答对",
+    "步骤 0: v0 初次生成 → 模型自我反思 → 修订问答对",
     "步骤 1: v0 → v1_refined 问题精炼重构",
     "步骤 2: v1_refined → v2a → v2b 题目合理性检测",
     "步骤 3: v2b → v3 污染检查",
-    "步骤 4: v3 → final 生成最终版本",
+    "步骤 4: v3 → 累积规则 → schema 检查 → 语义检查 → final",
 ]
 
 
@@ -62,6 +62,10 @@ class PipelinePaths:
     @property
     def final(self) -> str:
         return os.path.join(self.output_dir, f"{self.dataset_name}_final.json")
+
+    @property
+    def final_review(self) -> str:
+        return os.path.join(self.output_dir, f"{self.dataset_name}_final_review.json")
 
     def source_dataset_path(self, input_dir: str) -> str:
         return os.path.join(input_dir, self.dataset_name, f"{self.dataset_name}_1.json")
@@ -368,6 +372,7 @@ def summarize_step_config(step_cfg: Dict[str, Any]) -> Dict[str, Any]:
         "skip",
         "mode",
         "force_generate_new_qa",
+        "enable_self_reflection",
         "speaker_batch_size",
         "max_workers",
         "only_evidence_max_workers",
@@ -375,6 +380,8 @@ def summarize_step_config(step_cfg: Dict[str, Any]) -> Dict[str, Any]:
         "checkpoint_every_questions",
         "enable_contamination_check",
         "cleanup_temp_files",
+        "enable_schema_check",
+        "enable_semantic_check",
     ):
         if key in step_cfg:
             summary[key] = step_cfg[key]
@@ -586,6 +593,7 @@ def print_run_footer(
             "v2b": paths.v2b,
             "v3": paths.v3,
             "final": paths.final,
+            "final_review": paths.final_review,
         }
         for label, path in artifact_paths.items():
             print_file_snapshot(label, path, indent=4)
@@ -767,9 +775,15 @@ def run_with_temp_filtered_input(
     stage_label: str,
     runner: Callable[[str], object],
     temp_dir: Optional[str] = None,
+    max_workers: int = 1,
 ):
     """在临时文件中传递过滤结果，执行后立即删除，避免持久化中间文件。"""
-    filtered_data = apply_cumulative_rules(input_path, rule_names, stage_label)
+    filtered_data = apply_cumulative_rules(
+        input_path,
+        rule_names,
+        stage_label,
+        max_workers=max_workers,
+    )
 
     temp_file_path = None
     try:

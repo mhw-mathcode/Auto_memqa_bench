@@ -91,7 +91,7 @@ class VersionManager:
         "v2a": "题目合理性检测后（只使用证据）",
         "v2b": "题目合理性检测后（迭代删除证据）",
         "v3": "污染检查后",
-        "final": "最终版本"
+        "final": "最终 schema 与语义筛选后的版本"
     }
     
     def __init__(self, config: PipelineConfig):
@@ -245,6 +245,7 @@ class ConfigLoader:
             if model:
                 print_kv("model", model, indent=4)
             for worker_key in (
+                "enable_self_reflection",
                 "speaker_batch_size",
                 "max_workers",
                 "only_evidence_max_workers",
@@ -255,6 +256,8 @@ class ConfigLoader:
                 "ablation_chunk_tokens",
                 "ablation_retrieval_chunks",
                 "ablation_chunk_max_workers",
+                "enable_schema_check",
+                "enable_semantic_check",
             ):
                 if worker_key in cfg:
                     print_kv(worker_key, cfg[worker_key], indent=4)

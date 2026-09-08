@@ -24,7 +24,6 @@ from config import get_config, VersionManager
 from src.pipeline_utils import (
     PipelinePaths,
     RunWorkspaceLock,
-    apply_cumulative_rules,
     create_run_workspace,
     infer_resume_start_step,
     log_event,
@@ -69,7 +68,7 @@ STAGE_META = {
     },
     4: {
         "name": "生成最终版本",
-        "purpose": "累积应用合理性与污染过滤规则，生成 final 数据集。",
+        "purpose": "累积应用前序规则，再执行最终 schema 与语义质量门禁，删除不合格 QA。",
     },
 }
 
@@ -217,6 +216,11 @@ def run_generate_stage(config_loader, dataset_name: str, input_dir: str, paths: 
         "speaker_batch_size",
         8,
     )
+    enable_self_reflection = config_loader.get_step_flag(
+        STEP_0_GENERATE_QA,
+        "enable_self_reflection",
+        True,
+    )
     max_workers = resolve_stage_workers(
         config_loader,
         config_loader.get_pipeline_config(),
@@ -232,6 +236,7 @@ def run_generate_stage(config_loader, dataset_name: str, input_dir: str, paths: 
         initial_batch_size=int(batch_size),
         max_workers=max_workers,
         input_target=input_target,
+        enable_self_reflection=bool(enable_self_reflection),
     )
     if not generated_v0_path:
         return False
@@ -410,8 +415,10 @@ def run_pollution_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> bo
 
 
 def run_finalize_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> bool:
-    """步骤 4：生成最终版本。"""
+    """步骤 4：累积过滤后执行最终 schema 与语义质量门禁。"""
     log_event("stage_4_finalize", status="start")
+    from src.step4_finalize import finalize_qa_file
+
     input_path = resolve_step_input(
         "步骤 4",
         paths.v3,
@@ -421,14 +428,47 @@ def run_finalize_stage(config_loader, pipeline_cfg, paths: PipelinePaths) -> boo
         return False
 
     max_workers = resolve_stage_workers(config_loader, pipeline_cfg, STEP_4_FINALIZE)
-    apply_cumulative_rules(
+    enable_schema_check = bool(
+        config_loader.get_step_flag(STEP_4_FINALIZE, "enable_schema_check", True)
+    )
+    enable_semantic_check = bool(
+        config_loader.get_step_flag(STEP_4_FINALIZE, "enable_semantic_check", True)
+    )
+    step_llm = config_loader.get_step_llm(STEP_4_FINALIZE)
+    if enable_semantic_check and not step_llm.model:
+        step_llm = config_loader.get_step_llm(STEP_3_POLLUTION_CHECK)
+        log_event(
+            "stage_4_llm",
+            status="fallback",
+            reason="step_4_llm_missing",
+            source=STEP_3_POLLUTION_CHECK,
+            model=step_llm.model,
+        )
+    if enable_semantic_check and not step_llm.model:
+        log_event("stage_4_finalize", status="failed", reason="semantic_llm_missing")
+        return False
+
+    def run_final_review(filtered_path: str):
+        if not format_questions_file(filtered_path, "stage_4_pre_review"):
+            return ""
+        return finalize_qa_file(
+            filtered_path,
+            paths.final,
+            llm_config=step_llm,
+            max_workers=max_workers,
+            enable_schema_check=enable_schema_check,
+            enable_semantic_check=enable_semantic_check,
+        )
+
+    finalized_path = run_with_temp_filtered_input(
         input_path,
         ["v2a", "v2b", "pollution"],
-        "步骤 4",
-        output_path=paths.final,
+        "step4",
+        run_final_review,
+        temp_dir=paths.temp_dir,
         max_workers=max_workers,
     )
-    return format_questions_file(paths.final, "stage_4_final")
+    return bool(finalized_path and os.path.exists(paths.final))
 
 
 def print_timing_summary(step_times: dict, total_time: float):
@@ -955,6 +995,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-# python -u main.py --resume-run runs/nurse-love-addiction_revised_20260828_132217 --start 3
+# python -u main.py --resume-run runs_remain/a-kiss-for-the-petals-remembering-how-we-met_revised_fixed_20260906_183426 --start 3
 # python -u main.py --resume-run runs/the-house-in-fata-morgana-a-requiem-for-innocence_revised_20260828_132537 --start 3
-
